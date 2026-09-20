@@ -1,103 +1,31 @@
-import re
 import requests
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin
 
 URL = "https://www.arubabrokers.com/property-status/for-sale/"
-MAX_PRICE = 650000
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0"
-}
+response = requests.get(
+    URL,
+    headers={"User-Agent": "Mozilla/5.0"},
+    timeout=30
+)
 
-print("Aruba Property Agent starting...")
-print("Checking Aruba Brokers...")
-
-response = requests.get(URL, headers=HEADERS, timeout=30)
 response.raise_for_status()
 
 soup = BeautifulSoup(response.text, "html.parser")
 
-properties = []
+print("Aruba Property Agent starting...")
+print("Checking Aruba Brokers...")
+print("Status code:", response.status_code)
+print("Page title:", soup.title.get_text(strip=True) if soup.title else "NO TITLE")
 
-# Each listing is an <article class="property ...">.
-for article in soup.find_all("article"):
+articles = soup.find_all("article")
 
-    classes = article.get("class", [])
+print("ARTICLE COUNT:", len(articles))
 
-    if "property" not in classes:
-        continue
-
-    # Find the property title and URL.
-    heading = article.find("h2")
-
-    if not heading:
-        continue
-
-    link = heading.find("a", href=True)
-
-    if not link:
-        continue
-
-    href = urljoin(URL, link["href"])
-    title = heading.get_text(" ", strip=True)
-
-    # Get all text belonging ONLY to this listing.
-    text = article.get_text(" ", strip=True)
-
-    # Extract price.
-    price_match = re.search(r"\$[\d,]+", text)
-
-    if not price_match:
-        continue
-
-    price = int(
-        price_match.group(0)
-        .replace("$", "")
-        .replace(",", "")
-    )
-
-    # Maximum price.
-    if price > MAX_PRICE:
-        continue
-
-    # This page is the For Sale page, but keep the status check
-    # so we do not accidentally accept a different status.
-    if not re.search(r"\bFor Sale\b", text, re.IGNORECASE):
-        continue
-
-    # Exclude commercial properties.
-    if re.search(r"\bCommercial\b", text, re.IGNORECASE):
-        continue
-
-    properties.append({
-        "title": title,
-        "price": price,
-        "url": href,
-        "details": text
-    })
-
-
-# Remove duplicate property URLs.
-unique = {}
-
-for property_item in properties:
-    unique[property_item["url"]] = property_item
-
-properties = list(unique.values())
-
-print()
-print("=" * 60)
-print(f"QUALIFYING PROPERTIES FOUND: {len(properties)}")
-print("=" * 60)
-
-for number, property_item in enumerate(properties, start=1):
-
+for article in articles[:5]:
     print()
-    print(f"{number}. {property_item['title']}")
-    print(f"   Price: ${property_item['price']:,}")
-    print(f"   URL: {property_item['url']}")
-    print(f"   Details: {property_item['details'][:500]}")
+    print("ARTICLE CLASS:", article.get("class"))
+    print("ARTICLE TEXT:", article.get_text(" ", strip=True)[:500])
 
 print()
-print("Monitor test completed successfully.")
+print("Diagnostic test completed successfully.")
