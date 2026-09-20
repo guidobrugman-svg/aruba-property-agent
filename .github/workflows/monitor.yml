@@ -35,38 +35,9 @@ jobs:
             exit 1
           fi
 
-      - name: Send Resend test email
+      - name: Run monitor
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-        run: |
-          python - <<'PY'
-          import os
-          import requests
-
-          api_key = os.environ["RESEND_API_KEY"]
-
-          response = requests.post(
-              "https://api.resend.com/emails",
-              headers={
-                  "Authorization": f"Bearer {api_key}",
-                  "Content-Type": "application/json",
-              },
-              json={
-                  "from": "onboarding@resend.dev",
-                  "to": ["delivered@resend.dev"],
-                  "subject": "Aruba Property Agent - Test",
-                  "html": "<p>Your Aruba Property Agent email connection is working.</p>",
-              },
-              timeout=30,
-          )
-
-          print(f"Resend HTTP status: {response.status_code}")
-          print(response.text)
-
-          response.raise_for_status()
-          PY
-
-      - name: Run monitor
         run: python monitor.py
 
       - name: Save monitor state
