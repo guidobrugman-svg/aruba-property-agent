@@ -1,8 +1,16 @@
 name: Aruba Property Monitor
+
 on:
-workflow_dispatch:
-schedule:
-- cron: "*/5 * * * *"
+  workflow_dispatch:
+  schedule:
+    - cron: "*/5 * * * *"
+
 jobs:
-monitor:
-runs-on: ubuntu-latest
+  monitor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test monitor
+        run: |
+          echo "Aruba Property Agent is running."
+          date -u
