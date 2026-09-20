@@ -24,6 +24,17 @@ jobs:
       - name: Install Python packages
         run: pip install requests beautifulsoup4
 
+      - name: Check Resend secret
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: |
+          if [ -n "$RESEND_API_KEY" ]; then
+            echo "RESEND_API_KEY is available."
+          else
+            echo "RESEND_API_KEY is missing."
+            exit 1
+          fi
+
       - name: Run monitor
         run: python monitor.py
 
