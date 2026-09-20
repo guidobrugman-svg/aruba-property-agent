@@ -6,9 +6,10 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 from html import escape
 
-URL = "https://www.arubabrokers.com/property-status/for-sale/"
-MAX_PRICE = 650000
 STATE_FILE = "state.json"
+SOURCES_FILE = "SOURCES.json"
+
+MAX_PRICE = 650000
 
 EMAIL_RECIPIENT = "guidobrugman@live.nl"
 EMAIL_FROM = "Aruba Property Agent <alerts@arubapropertywatch.com>"
@@ -52,6 +53,189 @@ def send_email(subject, html):
     return False
 
 
+def load_json_file(filename, default):
+    if not os.path.exists(filename):
+        return default
+
+    with open(filename, "r", encoding="utf-8") as file:
+        return json.load(file)
+
+
+def get_price(text):
+    price_match = re.search(r"\$\s*([\d,]+)", text)
+
+    if not price_match:
+        return None
+
+    return int(price_match.group(1).replace(",", ""))
+
+
+def is_excluded(text):
+    excluded_terms = [
+        "commercial building",
+        "commercial property",
+        "warehouse",
+        "office",
+        "retail",
+    ]
+
+    text_lower = text.lower()
+
+    return any(term in text_lower for term in excluded_terms)
+
+
+def scrape_aruba_brokers(source):
+    response = requests.get(
+        source["url"],
+        headers=HEADERS,
+        timeout=30
+    )
+
+    response.raise_for_status()
+
+    soup = BeautifulSoup(response.text, "html.parser")
+
+    properties = []
+
+    for article in soup.find_all("article"):
+
+        heading = article.find("h2")
+
+        if not heading:
+            continue
+
+        link = heading.find("a", href=True)
+
+        if not link:
+            continue
+
+        title = heading.get_text(" ", strip=True)
+        url = urljoin(source["url"], link["href"])
+        text = article.get_text(" ", strip=True)
+
+        price = get_price(text)
+
+        if price is None:
+            continue
+
+        if price > MAX_PRICE:
+            continue
+
+        if is_excluded(text):
+            continue
+
+        properties.append({
+            "title": title,
+            "price": price,
+            "url": url,
+            "details": text,
+            "source": source["name"],
+            "source_priority": source["priority"]
+        })
+
+    return properties
+
+
+def scrape_generic_source(source):
+    response = requests.get(
+        source["url"],
+        headers=HEADERS,
+        timeout=30
+    )
+
+    response.raise_for_status()
+
+    soup = BeautifulSoup(response.text, "html.parser")
+
+    properties = []
+
+    for link in soup.find_all("a", href=True):
+
+        url = urljoin(source["url"], link["href"])
+
+        if not url.startswith("http"):
+            continue
+
+        container = link
+
+        for _ in range(3):
+            if container.parent:
+                container = container.parent
+
+        text = container.get_text(" ", strip=True)
+
+        if not text:
+            continue
+
+        price = get_price(text)
+
+        if price is None:
+            continue
+
+        if price > MAX_PRICE:
+            continue
+
+        if is_excluded(text):
+            continue
+
+        title = link.get_text(" ", strip=True)
+
+        if not title:
+            continue
+
+        if len(title) < 5:
+            continue
+
+        properties.append({
+            "title": title,
+            "price": price,
+            "url": url,
+            "details": text,
+            "source": source["name"],
+            "source_priority": source["priority"]
+        })
+
+    return properties
+
+
+def scrape_source(source):
+    print()
+    print(f"Checking source: {source['name']}")
+    print(f"URL: {source['url']}")
+
+    if source["name"] == "Aruba Brokers":
+        properties = scrape_aruba_brokers(source)
+    else:
+        properties = scrape_generic_source(source)
+
+    print(f"Properties found: {len(properties)}")
+
+    return properties
+
+
+def normalize_url(url):
+    return url.rstrip("/").lower()
+
+
+def deduplicate_properties(properties):
+    deduplicated = {}
+
+    for property_item in properties:
+
+        key = normalize_url(property_item["url"])
+
+        if key not in deduplicated:
+            deduplicated[key] = property_item
+            continue
+
+        existing = deduplicated[key]
+
+        if property_item["source_priority"] < existing["source_priority"]:
+            deduplicated[key] = property_item
+
+    return list(deduplicated.values())
+
+
 def build_new_property_email(properties):
     rows = []
 
@@ -60,6 +244,7 @@ def build_new_property_email(properties):
         price = property_item["price"]
         url = escape(property_item["url"], quote=True)
         details = escape(property_item["details"])
+        source = escape(property_item["source"])
 
         rows.append(
             f"""
@@ -85,7 +270,7 @@ def build_new_property_email(properties):
                 </p>
 
                 <p style="font-size:12px;color:#666666;">
-                    Source: Aruba Brokers
+                    Source: {source}
                 </p>
             </div>
             """
@@ -158,7 +343,7 @@ def build_price_reduction_email(changes):
                 </p>
 
                 <p style="font-size:12px;color:#666666;">
-                    Source: Aruba Brokers
+                    Source: {escape(change["source"])}
                 </p>
             </div>
             """
@@ -186,98 +371,63 @@ def build_price_reduction_email(changes):
 
 
 print("Aruba Property Agent starting...")
-print("Checking Aruba Brokers...")
 
-# Load previous state.
-if os.path.exists(STATE_FILE):
-    with open(STATE_FILE, "r", encoding="utf-8") as file:
-        previous_state = json.load(file)
-else:
-    previous_state = {}
+previous_state = load_json_file(STATE_FILE, {})
+source_config = load_json_file(SOURCES_FILE, {"sources": []})
 
-response = requests.get(
-    URL,
-    headers=HEADERS,
-    timeout=30
-)
+sources = [
+    source
+    for source in source_config.get("sources", [])
+    if source.get("enabled", True)
+]
 
-response.raise_for_status()
+all_properties = []
 
-soup = BeautifulSoup(response.text, "html.parser")
+for source in sources:
 
-properties = []
+    try:
+        source_properties = scrape_source(source)
+        all_properties.extend(source_properties)
 
-for article in soup.find_all("article"):
-
-    heading = article.find("h2")
-
-    if not heading:
-        continue
-
-    link = heading.find("a", href=True)
-
-    if not link:
-        continue
-
-    title = heading.get_text(" ", strip=True)
-    url = urljoin(URL, link["href"])
-    text = article.get_text(" ", strip=True)
-
-    price_match = re.search(r"\$\s*([\d,]+)", text)
-
-    if not price_match:
-        continue
-
-    price = int(
-        price_match.group(1).replace(",", "")
-    )
-
-    if price > MAX_PRICE:
-        continue
-
-    if re.search(r"\bCommercial\b", text, re.IGNORECASE):
-        continue
-
-    properties.append({
-        "title": title,
-        "price": price,
-        "url": url,
-        "details": text
-    })
+    except Exception as error:
+        print()
+        print(f"ERROR checking {source['name']}:")
+        print(str(error))
 
 
-# Remove duplicate URLs.
+properties = deduplicate_properties(all_properties)
+
 current_state = {}
 
 for property_item in properties:
-    current_state[property_item["url"]] = {
+
+    key = normalize_url(property_item["url"])
+
+    current_state[key] = {
         "title": property_item["title"],
         "price": property_item["price"],
-        "details": property_item["details"]
+        "details": property_item["details"],
+        "source": property_item["source"],
+        "url": property_item["url"]
     }
 
 
-# Find genuinely new properties.
 new_properties = []
 
-for url, property_item in current_state.items():
+for key, property_item in current_state.items():
 
-    if url not in previous_state:
-        new_properties.append({
-            "url": url,
-            **property_item
-        })
+    if key not in previous_state:
+        new_properties.append(property_item)
 
 
-# Find price reductions.
 price_reductions = []
 
-for url, property_item in current_state.items():
+for key, property_item in current_state.items():
 
-    if url not in previous_state:
+    if key not in previous_state:
         continue
 
-    old_price = previous_state[url]["price"]
+    old_price = previous_state[key]["price"]
     new_price = property_item["price"]
 
     if new_price < old_price:
@@ -287,15 +437,15 @@ for url, property_item in current_state.items():
         ) * 100
 
         price_reductions.append({
-            "url": url,
+            "url": property_item["url"],
             "title": property_item["title"],
             "old_price": old_price,
             "new_price": new_price,
-            "reduction_percent": reduction_percent
+            "reduction_percent": reduction_percent,
+            "source": property_item["source"]
         })
 
 
-# Save the current state.
 with open(STATE_FILE, "w", encoding="utf-8") as file:
     json.dump(current_state, file, indent=2, ensure_ascii=False)
 
@@ -314,6 +464,7 @@ for property_item in new_properties:
     print("NEW PROPERTY:")
     print(f"Title: {property_item['title']}")
     print(f"Price: ${property_item['price']:,}")
+    print(f"Source: {property_item['source']}")
     print(f"URL: {property_item['url']}")
 
 
@@ -325,11 +476,12 @@ for change in price_reductions:
     print(f"Old price: ${change['old_price']:,}")
     print(f"New price: ${change['new_price']:,}")
     print(f"Reduction: {change['reduction_percent']:.1f}%")
+    print(f"Source: {change['source']}")
     print(f"URL: {change['url']}")
 
 
-# Send alerts only when something actually changed.
 if new_properties:
+
     print()
     print("Sending new-property email...")
 
@@ -345,6 +497,7 @@ if new_properties:
 
 
 if price_reductions:
+
     print()
     print("Sending price-reduction email...")
 
