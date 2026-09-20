@@ -15,6 +15,13 @@
       "enabled": true
     },
     {
+      "name": "RE/MAX Aruba",
+      "type": "direct_broker",
+      "url": "https://remaxaruba.com/listings",
+      "priority": 1,
+      "enabled": true
+    },
+    {
       "name": "RES Aruba Realty",
       "type": "direct_broker",
       "url": "https://resarubarealty.com/status/for-sale/",
