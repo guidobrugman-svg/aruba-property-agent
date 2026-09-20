@@ -86,17 +86,93 @@ def load_json_file(filename, default):
 
 
 def save_json_file(filename, data):
-    with open(
-        filename,
-        "w",
-        encoding="utf-8"
-    ) as file:
+    with open(filename, "w", encoding="utf-8") as file:
         json.dump(
             data,
             file,
             indent=2,
             ensure_ascii=False
         )
+
+
+def get_previous_properties(previous_state):
+    if not isinstance(previous_state, dict):
+        return {}
+
+    if isinstance(
+        previous_state.get("properties"),
+        dict
+    ):
+        return previous_state["properties"]
+
+    # Supports the old flat state format.
+    return {
+        key: value
+        for key, value in previous_state.items()
+        if isinstance(value, dict)
+        and "price" in value
+        and "url" in value
+    }
+
+
+def get_previous_pending_new(previous_state):
+    if not isinstance(previous_state, dict):
+        return []
+
+    pending = previous_state.get(
+        "pending_new",
+        []
+    )
+
+    return pending if isinstance(
+        pending,
+        list
+    ) else []
+
+
+def get_previous_pending_reductions(
+    previous_state
+):
+    if not isinstance(previous_state, dict):
+        return []
+
+    pending = previous_state.get(
+        "pending_reductions",
+        []
+    )
+
+    return pending if isinstance(
+        pending,
+        list
+    ) else []
+
+
+def get_previous_event_history(
+    previous_state
+):
+    if not isinstance(previous_state, dict):
+        return {}
+
+    history = previous_state.get(
+        "event_history",
+        {}
+    )
+
+    return history if isinstance(
+        history,
+        dict
+    ) else {}
+
+
+def get_previous_digest_date(
+    previous_state
+):
+    if not isinstance(previous_state, dict):
+        return None
+
+    return previous_state.get(
+        "last_digest_date"
+    )
 
 
 def get_price(text):
@@ -318,7 +394,6 @@ def extract_location(text):
     found = []
 
     for location in locations:
-
         if re.search(
             r"\b" + re.escape(location) + r"\b",
             text,
@@ -856,7 +931,6 @@ def deduplicate_properties(properties):
                 "source_priority"
             ]
         ):
-
             deduplicated[
                 existing_key
             ] = property_item
@@ -1020,7 +1094,6 @@ def build_new_property_email(
     rows = []
 
     for property_item in properties:
-
         rows.append(
             property_html(
                 property_item
@@ -1077,12 +1150,17 @@ def build_price_reduction_email(
             change["source"]
         )
 
-        old_price = change["old_price"]
-        new_price = change["new_price"]
+        old_price = change[
+            "old_price"
+        ]
 
-        reduction_percent = (
-            change["reduction_percent"]
-        )
+        new_price = change[
+            "new_price"
+        ]
+
+        reduction_percent = change[
+            "reduction_percent"
+        ]
 
         rows.append(
             f"""
@@ -1097,7 +1175,9 @@ def build_price_reduction_email(
                 <p style="font-size:20px;">
                     ${old_price:,}
                     &nbsp;&rarr;&nbsp;
-                    <strong>${new_price:,}</strong>
+                    <strong>
+                        ${new_price:,}
+                    </strong>
                 </p>
 
                 <p>
@@ -1165,12 +1245,14 @@ def build_daily_digest_email(
 
     for event in events:
 
-        if event["type"] == "new":
+        if event.get("type") == "new":
             new_properties.append(
                 event["property"]
             )
 
-        elif event["type"] == "price_reduction":
+        elif event.get(
+            "type"
+        ) == "price_reduction":
             reductions.append(event)
 
     sections = []
@@ -1216,11 +1298,9 @@ def build_daily_digest_email(
                 "new_price"
             ]
 
-            reduction_percent = (
-                change[
-                    "reduction_percent"
-                ]
-            )
+            reduction_percent = change[
+                "reduction_percent"
+            ]
 
             reduction_rows.append(
                 f"""
@@ -1307,11 +1387,12 @@ def build_daily_digest_email(
     """
 
 
-def add_event(
-    state,
-    event
-):
-    event_date = now_aruba().date().isoformat()
+def add_event(state, event):
+    event_date = (
+        now_aruba()
+        .date()
+        .isoformat()
+    )
 
     history = state.setdefault(
         "event_history",
@@ -1353,6 +1434,12 @@ print(
 previous_state = load_json_file(
     STATE_FILE,
     {}
+)
+
+previous_properties = (
+    get_previous_properties(
+        previous_state
+    )
 )
 
 source_config = load_json_file(
@@ -1483,7 +1570,7 @@ new_properties = []
 
 for key, property_item in current_state.items():
 
-    if key not in previous_state:
+    if key not in previous_properties:
 
         new_properties.append(
             property_item
@@ -1495,10 +1582,10 @@ price_reductions = []
 
 for key, property_item in current_state.items():
 
-    if key not in previous_state:
+    if key not in previous_properties:
         continue
 
-    old_price = previous_state[
+    old_price = previous_properties[
         key
     ].get("price")
 
@@ -1521,39 +1608,33 @@ for key, property_item in current_state.items():
         ) * 100
 
         price_reductions.append({
-            "url": property_item[
-                "url"
-            ],
-            "title": property_item[
-                "title"
-            ],
+            "url": property_item["url"],
+            "title": property_item["title"],
             "old_price": old_price,
             "new_price": new_price,
             "reduction_percent":
                 reduction_percent,
-            "source": property_item[
-                "source"
-            ]
+            "source": property_item["source"]
         })
 
 
 state = {
     "properties": current_state,
-    "pending_new": previous_state.get(
-        "pending_new",
-        []
+    "pending_new": get_previous_pending_new(
+        previous_state
     ),
-    "pending_reductions": previous_state.get(
-        "pending_reductions",
-        []
-    ),
-    "event_history": previous_state.get(
-        "event_history",
-        {}
-    ),
-    "last_digest_date": previous_state.get(
-        "last_digest_date"
-    )
+    "pending_reductions":
+        get_previous_pending_reductions(
+            previous_state
+        ),
+    "event_history":
+        get_previous_event_history(
+            previous_state
+        ),
+    "last_digest_date":
+        get_previous_digest_date(
+            previous_state
+        )
 }
 
 
@@ -1614,10 +1695,13 @@ for item in state["pending_new"]:
     ).total_seconds() / 60
 
     if age_minutes >= BATCH_MINUTES:
+
         ready_new.append(
             item["property"]
         )
+
     else:
+
         remaining_new.append(item)
 
 
@@ -1645,16 +1729,20 @@ for item in state[
     ).total_seconds() / 60
 
     if age_minutes >= BATCH_MINUTES:
+
         ready_reductions.append(
             item["change"]
         )
+
     else:
+
         remaining_reductions.append(
             item
         )
 
 
 state["pending_new"] = remaining_new
+
 state[
     "pending_reductions"
 ] = remaining_reductions
@@ -1670,7 +1758,7 @@ if ready_new:
     subject = (
         "Aruba Property Alert — "
         f"{len(ready_new)} New "
-        f"Property"
+        "Property"
         f"{'ies' if len(ready_new) != 1 else ''}"
     )
 
@@ -1746,7 +1834,6 @@ if (
 
 
 clean_old_history(state)
-
 
 state["properties"] = current_state
 
