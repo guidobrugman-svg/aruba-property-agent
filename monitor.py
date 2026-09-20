@@ -20,17 +20,19 @@ soup = BeautifulSoup(response.text, "html.parser")
 
 properties = []
 
-# Find all links that point to individual property pages.
-for link in soup.find_all("a", href=True):
+# The Aruba Brokers page uses h2 headings for property titles.
+for heading in soup.find_all("h2"):
 
-    href = urljoin(URL, link["href"])
+    link = heading.find("a", href=True)
 
-    # Individual Aruba Brokers property pages use /property/
-    if "/property/" not in href:
+    if not link:
         continue
 
-    # Find a nearby container containing the listing information.
-    container = link
+    title = heading.get_text(" ", strip=True)
+    href = urljoin(URL, link["href"])
+
+    # Walk upward until we find the listing block.
+    container = heading
 
     for _ in range(8):
         if container.parent:
@@ -43,45 +45,29 @@ for link in soup.find_all("a", href=True):
 
     text = container.get_text(" ", strip=True)
 
-    # Extract price.
-    prices = re.findall(r"\$[\d,]+", text)
+    # Must be an active For Sale listing.
+    if not re.search(r"\bFor Sale\b", text, re.IGNORECASE):
+        continue
 
-    if not prices:
+    # Find the price.
+    price_match = re.search(r"\$[\d,]+", text)
+
+    if not price_match:
         continue
 
     price = int(
-        prices[0]
+        price_match.group(0)
         .replace("$", "")
         .replace(",", "")
     )
 
-    # Price limit.
+    # Maximum price.
     if price > MAX_PRICE:
         continue
 
-    # Must be for sale.
-    if not re.search(r"\bFor Sale\b", text, re.IGNORECASE):
-        continue
-
-    # Exclude commercial buildings/properties.
+    # Exclude commercial properties.
     if re.search(r"\bCommercial\b", text, re.IGNORECASE):
         continue
-
-    # Find a title.
-    title = ""
-
-    for heading in container.find_all(["h2", "h3", "h4"]):
-        candidate = heading.get_text(" ", strip=True)
-
-        if candidate:
-            title = candidate
-            break
-
-    if not title:
-        title = link.get_text(" ", strip=True)
-
-    if not title:
-        title = "Untitled property"
 
     properties.append({
         "title": title,
@@ -91,7 +77,7 @@ for link in soup.find_all("a", href=True):
     })
 
 
-# Remove duplicate property URLs.
+# Remove duplicate URLs.
 unique = {}
 
 for property_item in properties:
