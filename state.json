@@ -4,62 +4,116 @@
     "price": 495000,
     "details": "For Sale $ 495,000 Condos/Apartments Aruba’s Life Garden Condo Noord, Turibana, Noord, Aruba, Netherlands Beds: 2 Baths: 2 Aruba Brokers 5 months ago",
     "source": "Aruba Brokers",
-    "url": "https://www.arubabrokers.com/property/arubas-life-garden-condo/"
+    "url": "https://www.arubabrokers.com/property/arubas-life-garden-condo/",
+    "image": "https://www.arubabrokers.com/wp-content/uploads/2026/05/ChatGPT-Image-May-6-2026-10_31_54-AM-850x550.png",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "size": null,
+    "property_type": "Condo / Apartment",
+    "location": "Noord, Turibana"
   },
   "https://www.arubabrokers.com/property/rooi-santo-residences": {
     "title": "Rooi Santo Residences",
     "price": 299000,
     "details": "For Sale $ 299,000 Condos/Apartments Rooi Santo Residences 12C, Rooi Santo, West Punt, Aruba, Netherlands Beds: 1 Baths: 2 m2: 459 Juan Sonensein 7 months ago",
     "source": "Aruba Brokers",
-    "url": "https://www.arubabrokers.com/property/rooi-santo-residences/"
+    "url": "https://www.arubabrokers.com/property/rooi-santo-residences/",
+    "image": "https://www.arubabrokers.com/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-08-at-10.23.22-AM-2-1-850x550.jpeg",
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "size": "459",
+    "property_type": "Condo / Apartment",
+    "location": "Rooi Santo"
   },
   "https://www.arubabrokers.com/property/summerside-iii-townhomes-in-noord": {
     "title": "Summerside III – Townhomes in Noord",
     "price": 559000,
     "details": "For Sale New Construction $ 559,000 Condos/Apartments , Single Family Home Summerside III – Townhomes in Noord Noord 40 Beds: 2 Baths: 2 Juan Sonensein 10 months ago",
     "source": "Aruba Brokers",
-    "url": "https://www.arubabrokers.com/property/summerside-iii-townhomes-in-noord/"
+    "url": "https://www.arubabrokers.com/property/summerside-iii-townhomes-in-noord/",
+    "image": "https://www.arubabrokers.com/wp-content/uploads/2025/11/IMG-20251112-WA0016-850x550.jpg",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "size": null,
+    "property_type": "House",
+    "location": "Noord"
   },
   "https://www.arubabrokers.com/property/10314": {
     "title": "2-Bedroom Condo with Ocean View",
     "price": 635000,
     "details": "For Sale $ 635,000 Condos/Apartments 2-Bedroom Condo with Ocean View Aracari 27 Beds: 2 Baths: 2 Juan Sonensein 1 year ago",
     "source": "Aruba Brokers",
-    "url": "https://www.arubabrokers.com/property/10314/"
+    "url": "https://www.arubabrokers.com/property/10314/",
+    "image": "https://www.arubabrokers.com/wp-content/uploads/2025/06/IMG-20250618-WA0014-850x550.jpg",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "size": null,
+    "property_type": "Condo / Apartment",
+    "location": null
   },
   "https://www.arubabrokers.com/property/the-stork-club-residences": {
     "title": "The Stork Club Residences",
     "price": 460900,
     "details": "For Sale New Construction $ 460,900 Condos/Apartments The Stork Club Residences Avenida Nelson O. Oduber, Bushiri, Oranjestad West, Bubali, Oranjestad (city), Aruba, Netherlands Beds: 1 Baths: 2 Aruba Brokers 3 years ago",
     "source": "Aruba Brokers",
-    "url": "https://www.arubabrokers.com/property/the-stork-club-residences/"
+    "url": "https://www.arubabrokers.com/property/the-stork-club-residences/",
+    "image": "https://www.arubabrokers.com/wp-content/uploads/2024/03/Stork_Club_Aruba_01-850x550.jpg",
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "size": null,
+    "property_type": "Condo / Apartment",
+    "location": "Bushiri, Oranjestad"
   },
   "https://www.arubabrokers.com/property/aracari-phase-ii-pre-construction": {
     "title": "Aracari Phase II – Pre Construction",
     "price": 599000,
     "details": "For Sale New Construction $ 599,000 Condos/Apartments Aracari Phase II – Pre Construction Rooi Santo, West Punt, Aruba, Netherlands Beds: 2 Baths: 2 Aruba Brokers 3 years ago",
     "source": "Aruba Brokers",
-    "url": "https://www.arubabrokers.com/property/aracari-phase-ii-pre-construction/"
+    "url": "https://www.arubabrokers.com/property/aracari-phase-ii-pre-construction/",
+    "image": "https://www.arubabrokers.com/wp-content/uploads/2024/02/WhatsApp-Image-2025-11-17-at-09.29.08_b2c6c9b1-850x550.jpg",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "size": null,
+    "property_type": "Condo / Apartment",
+    "location": "Rooi Santo"
   },
   "https://benarubarealestate.com/sale/wariruri-residences-1bdr": {
-    "title": "Wariruri Residences | 1BDR Condo For Sale Rooi Santo, Noord, Aruba AWG 943,400 | $530,000 1 1 Reinier Chilla",
+    "title": "Wariruri Residences",
     "price": 530000,
     "details": "Wariruri Residences | 1BDR Condo For Sale Rooi Santo, Noord, Aruba AWG 943,400 | $530,000 1 1 Reinier Chilla",
     "source": "Ben Real Estate",
-    "url": "https://benarubarealestate.com/sale/wariruri-residences-1bdr"
+    "url": "https://benarubarealestate.com/sale/wariruri-residences-1bdr",
+    "image": "https://benarubarealestate.com/storage/app/uploads/public/6a9/3d1/93c/thumb_5374_900_0_auto.webp",
+    "bedrooms": 1,
+    "bathrooms": null,
+    "size": null,
+    "property_type": "Condo",
+    "location": "Rooi Santo, Noord"
   },
   "https://benarubarealestate.com/sale/ponton-fixer-upper-house": {
-    "title": "Ponton | Fixer-Upper House Residential For Sale Ponton, Oranjestad, Aruba AWG 685,300 | $385,000 422 Sq Mt 3 2 Natalia Sanchez",
+    "title": "Ponton",
     "price": 385000,
     "details": "Ponton | Fixer-Upper House Residential For Sale Ponton, Oranjestad, Aruba AWG 685,300 | $385,000 422 Sq Mt 3 2 Natalia Sanchez",
     "source": "Ben Real Estate",
-    "url": "https://benarubarealestate.com/sale/ponton-fixer-upper-house"
+    "url": "https://benarubarealestate.com/sale/ponton-fixer-upper-house",
+    "image": "https://benarubarealestate.com/storage/app/uploads/public/6a9/3d0/b2d/thumb_5175_900_0_auto.webp",
+    "bedrooms": null,
+    "bathrooms": null,
+    "size": "422",
+    "property_type": null,
+    "location": "Ponton, Oranjestad"
   },
   "https://benarubarealestate.com/sale/laquila-residences-1-bedroom": {
-    "title": "L’Aquila Residences | 1 Bedroom New Development For Sale Eagle Beach, Aruba AWG 1,149,346 | $645,700 84 Sq Mt 1 1 Ben Real Estate",
+    "title": "L’Aquila Residences",
     "price": 645700,
     "details": "L’Aquila Residences | 1 Bedroom New Development For Sale Eagle Beach, Aruba AWG 1,149,346 | $645,700 84 Sq Mt 1 1 Ben Real Estate",
     "source": "Ben Real Estate",
-    "url": "https://benarubarealestate.com/sale/laquila-residences-1-bedroom"
+    "url": "https://benarubarealestate.com/sale/laquila-residences-1-bedroom",
+    "image": "https://benarubarealestate.com/storage/app/uploads/public/6a9/3cf/e4d/thumb_4939_900_0_auto.webp",
+    "bedrooms": 1,
+    "bathrooms": null,
+    "size": "84",
+    "property_type": "Development",
+    "location": "Eagle Beach"
   }
 }
