@@ -1,7 +1,10 @@
+import re
 import requests
 from bs4 import BeautifulSoup
+from urllib.parse import urljoin
 
 URL = "https://www.arubabrokers.com/property-status/for-sale/"
+MAX_PRICE = 650000
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0"
@@ -16,19 +19,80 @@ response = requests.get(
     timeout=30
 )
 
-print("Status code:", response.status_code)
-print("Response length:", len(response.text))
-
 response.raise_for_status()
 
 soup = BeautifulSoup(response.text, "html.parser")
 
-print("Page title:", soup.title.get_text(" ", strip=True) if soup.title else "NO TITLE")
-print("H1 COUNT:", len(soup.find_all("h1")))
-print("H2 COUNT:", len(soup.find_all("h2")))
-print("H3 COUNT:", len(soup.find_all("h3")))
-print("ARTICLE COUNT:", len(soup.find_all("article")))
-print("PROPERTY LINKS:", len(soup.find_all("a", href=lambda x: x and "/property/" in x)))
+properties = []
+
+for article in soup.find_all("article"):
+
+    heading = article.find("h2")
+
+    if not heading:
+        continue
+
+    link = heading.find("a", href=True)
+
+    if not link:
+        continue
+
+    href = urljoin(URL, link["href"])
+    title = heading.get_text(" ", strip=True)
+
+    text = article.get_text(" ", strip=True)
+
+    # Only accept listings marked For Sale.
+    if not re.search(r"\bFor Sale\b", text, re.IGNORECASE):
+        continue
+
+    # Extract price.
+    price_match = re.search(r"\$[\d,]+", text)
+
+    if not price_match:
+        continue
+
+    price = int(
+        price_match.group(0)
+        .replace("$", "")
+        .replace(",", "")
+    )
+
+    # Maximum price.
+    if price > MAX_PRICE:
+        continue
+
+    # Exclude commercial properties.
+    if re.search(r"\bCommercial\b", text, re.IGNORECASE):
+        continue
+
+    properties.append({
+        "title": title,
+        "price": price,
+        "url": href,
+        "details": text
+    })
+
+# Remove duplicate URLs.
+unique = {}
+
+for property_item in properties:
+    unique[property_item["url"]] = property_item
+
+properties = list(unique.values())
 
 print()
-print("Diagnostic test completed successfully.")
+print("=" * 60)
+print(f"QUALIFYING PROPERTIES FOUND: {len(properties)}")
+print("=" * 60)
+
+for number, property_item in enumerate(properties, start=1):
+
+    print()
+    print(f"{number}. {property_item['title']}")
+    print(f"   Price: ${property_item['price']:,}")
+    print(f"   URL: {property_item['url']}")
+    print(f"   Details: {property_item['details'][:500]}")
+
+print()
+print("Monitor test completed successfully.")
