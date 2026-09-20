@@ -1,1880 +1,1827 @@
 import json
 import os
 import re
+import time
+import hashlib
+from datetime import datetime, timedelta, timezone
+from urllib.parse import urljoin
+
 import requests
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin
-from html import escape
-from datetime import datetime, timezone, timedelta
 
+try:
+    from zoneinfo import ZoneInfo
+except ImportError:
+    ZoneInfo = None
+
+
+# ============================================================
+# CONFIGURATION
+# ============================================================
+
+RESEND_API_KEY = os.environ.get("RESEND_API_KEY", "")
+RECIPIENT = "guidobrugman@live.nl"
+SENDER = "Aruba Property Agent <alerts@arubapropertywatch.com>"
 
 STATE_FILE = "state.json"
 SOURCES_FILE = "SOURCES.json"
 
-MAX_PRICE = 650000
-
-EMAIL_RECIPIENT = "guidobrugman@live.nl"
-EMAIL_FROM = "Aruba Property Agent <alerts@arubapropertywatch.com>"
-
-ARUBA_TZ = timezone(timedelta(hours=-4))
-
+PRICE_LIMIT = 650000
 BATCH_MINUTES = 30
 
+ARUBA_TZ = (
+    ZoneInfo("America/Aruba")
+    if ZoneInfo
+    else timezone(timedelta(hours=-4))
+)
+
 HEADERS = {
-    "User-Agent": "Mozilla/5.0"
+    "User-Agent": (
+        "Mozilla/5.0 (X11; Linux x86_64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/128.0 Safari/537.36"
+    ),
+    "Accept": (
+        "text/html,application/xhtml+xml,application/xml;"
+        "q=0.9,image/avif,image/webp,*/*;q=0.8"
+    ),
+    "Accept-Language": "en-US,en;q=0.9",
+    "Cache-Control": "no-cache",
+    "Pragma": "no-cache",
 }
 
+EXCLUDED_STATUS = (
+    "sold",
+    "under contract",
+    "sale in progress",
+    "withdrawn",
+    "unavailable",
+    "off market",
+    "off-market",
+    "rented",
+)
 
-def now_aruba():
-    return datetime.now(ARUBA_TZ)
+EXCLUDED_TYPES = (
+    "commercial",
+    "office",
+    "warehouse",
+    "retail",
+    "store",
+    "hospitality",
+    "restaurant",
+    "hotel",
+    "resort",
+)
+
+session = requests.Session()
+session.headers.update(HEADERS)
+
+
+# ============================================================
+# GENERAL HELPERS
+# ============================================================
+
+def now_utc():
+    return datetime.now(timezone.utc)
 
 
 def iso_now():
-    return now_aruba().isoformat()
+    return now_utc().isoformat()
 
 
-def parse_time(value):
-    if not value:
+def clean_text(value):
+    if value is None:
+        return ""
+    return re.sub(r"\s+", " ", str(value)).strip()
+
+
+def normalize(value):
+    value = clean_text(value).lower()
+    value = re.sub(r"[^\w\s]", " ", value)
+    return re.sub(r"\s+", " ", value).strip()
+
+
+def html_escape(value):
+    return (
+        str(value or "")
+        .replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+        .replace('"', "&quot;")
+    )
+
+
+def absolute_url(base_url, href):
+    if not href:
+        return ""
+    return urljoin(base_url, href)
+
+
+# ============================================================
+# HTTP / SOURCE ACCESS
+# ============================================================
+
+def get_page(url):
+    """
+    Try normal HTTPS first.
+
+    If an Aruba site has a certificate-hostname problem, retry
+    without certificate verification. This is only a fallback for
+    fetching public listing pages; normal HTTPS remains preferred.
+
+    403 responses are not treated as successful. They are reported
+    and skipped so the other sources continue working.
+    """
+
+    last_error = None
+
+    for attempt in range(3):
+        try:
+            response = session.get(
+                url,
+                timeout=25,
+                allow_redirects=True,
+            )
+
+            response.raise_for_status()
+
+            return response.text, response.url
+
+        except requests.exceptions.SSLError as exc:
+            last_error = exc
+
+            try:
+                response = session.get(
+                    url,
+                    timeout=25,
+                    allow_redirects=True,
+                    verify=False,
+                )
+
+                response.raise_for_status()
+
+                print(
+                    "  SSL fallback succeeded with certificate "
+                    "verification disabled."
+                )
+
+                return response.text, response.url
+
+            except Exception as fallback_error:
+                last_error = fallback_error
+
+        except requests.RequestException as exc:
+            last_error = exc
+
+            if attempt < 2:
+                time.sleep(1.5 * (attempt + 1))
+
+    raise last_error
+
+
+# ============================================================
+# PARSING HELPERS
+# ============================================================
+
+def parse_price(text):
+    text = clean_text(text)
+
+    if not text:
         return None
 
+    # Explicit USD / dollar values first.
+    patterns = [
+        r"(?:USD|US\$)\s*([\d,]+(?:\.\d+)?)",
+        r"\$\s*([\d,]+(?:\.\d+)?)",
+        r"([\d,]+(?:\.\d+)?)\s*(?:USD|US\$)",
+    ]
+
+    for pattern in patterns:
+        match = re.search(pattern, text, re.IGNORECASE)
+
+        if match:
+            try:
+                return float(match.group(1).replace(",", ""))
+            except ValueError:
+                pass
+
+    # Do not accidentally interpret a pure AWG amount as USD.
+    if (
+        re.search(r"\bAWG\b", text, re.IGNORECASE)
+        and not re.search(r"\bUSD\b|\$", text, re.IGNORECASE)
+    ):
+        return None
+
+    return None
+
+
+def first_match(patterns, text):
+    for pattern in patterns:
+        match = re.search(pattern, text, re.IGNORECASE)
+
+        if match:
+            return clean_text(match.group(1))
+
+    return ""
+
+
+def extract_status(text):
+    lower = normalize(text)
+
+    for status in EXCLUDED_STATUS:
+        if status in lower:
+            return status
+
+    return ""
+
+
+def extract_type(text, title=""):
+    combined = normalize(f"{title} {text}")
+
+    mapping = [
+        ("apartment complex", "Apartment Complex"),
+        ("condominium", "Condominium"),
+        ("townhouse", "Townhouse"),
+        ("townhome", "Townhouse"),
+        ("development", "Development"),
+        ("villa", "Villa"),
+        ("apartment", "Apartment"),
+        ("house", "House"),
+        ("land", "Land"),
+        ("commercial", "Commercial"),
+        ("office", "Office"),
+        ("warehouse", "Warehouse"),
+        ("retail", "Retail"),
+        ("store", "Retail"),
+        ("hotel", "Hotel"),
+        ("resort", "Resort"),
+    ]
+
+    for needle, result in mapping:
+        if needle in combined:
+            return result
+
+    return ""
+
+
+def extract_details(title, text):
+    beds = first_match(
+        [
+            r"\b(\d+)\s*(?:bed|beds|bedroom|bedrooms|bd|bdr)\b",
+        ],
+        text,
+    )
+
+    baths = first_match(
+        [
+            r"\b(\d+(?:\.\d+)?)\s*(?:bath|baths|bathroom|bathrooms|ba)\b",
+        ],
+        text,
+    )
+
+    size = first_match(
+        [
+            r"\b([\d,.]+)\s*(?:m²|m2|sqm)\b",
+            r"\b([\d,.]+)\s*(?:sq\s*ft|sqft|ft²)\b",
+        ],
+        text,
+    )
+
+    location = first_match(
+        [
+            r"\b(?:location|area|neighborhood|neighbourhood)"
+            r"\s*[:\-]\s*([^|•\n]+)",
+        ],
+        text,
+    )
+
+    # Many Aruba listings simply contain the location as a known area.
+    if not location:
+        known_areas = [
+            "Noord",
+            "Oranjestad",
+            "Palm Beach",
+            "Eagle Beach",
+            "Bakval",
+            "Malmok",
+            "Tanki Leendert",
+            "Tanki Flip",
+            "Santa Cruz",
+            "Paradera",
+            "Savaneta",
+            "Pos Chiquito",
+            "Ponton",
+            "Bubali",
+            "Wayaca",
+            "Alto Vista",
+            "Westpunt",
+            "San Nicolas",
+            "Hooiberg",
+            "Sabana Grandi",
+            "Pavia",
+        ]
+
+        lower_text = text.lower()
+
+        for area in known_areas:
+            if area.lower() in lower_text:
+                location = area
+                break
+
+    return beds, baths, size, location
+
+
+def image_from(node, base_url):
+    if not node:
+        return ""
+
+    image = node.find("img")
+
+    if not image:
+        return ""
+
+    for attribute in (
+        "src",
+        "data-src",
+        "data-lazy-src",
+        "data-original",
+    ):
+        value = image.get(attribute)
+
+        if value:
+            return absolute_url(base_url, value)
+
+    srcset = image.get("srcset")
+
+    if srcset:
+        first = srcset.split(",")[0].strip().split(" ")[0]
+        return absolute_url(base_url, first)
+
+    return ""
+
+
+def looks_like_property_title(title):
+    title = clean_text(title)
+    normalized = normalize(title)
+
+    if not normalized:
+        return False
+
+    if normalized in {
+        "details",
+        "view",
+        "view details",
+        "read more",
+        "learn more",
+    }:
+        return False
+
+    if len(title) < 5:
+        return False
+
+    junk = (
+        "lorem ipsum",
+        "test listing",
+        "sample property",
+        "asdfsaf",
+    )
+
+    return not any(item in normalized for item in junk)
+
+
+def make_description(text, title):
+    text = clean_text(text)
+
+    if title:
+        text = text.replace(title, " ", 1)
+
+    text = re.sub(
+        r"\bview details\b",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    )
+
+    text = clean_text(text)
+
+    if len(text) > 320:
+        text = text[:317].rsplit(" ", 1)[0] + "..."
+
+    return text
+
+
+# ============================================================
+# PROPERTY BUILDING
+# ============================================================
+
+def build_property(
+    source,
+    title,
+    url,
+    price,
+    text,
+    image="",
+):
+    title = clean_text(title)
+    text = clean_text(text)
+
+    if not looks_like_property_title(title):
+        return None
+
+    if price is None:
+        return None
+
+    if price <= 0 or price > PRICE_LIMIT:
+        return None
+
+    status = extract_status(text)
+
+    if status:
+        return None
+
+    beds, baths, size, location = extract_details(
+        title,
+        text,
+    )
+
+    property_type = extract_type(
+        text,
+        title,
+    )
+
+    combined = normalize(
+        f"{title} {property_type} {text}"
+    )
+
+    if any(
+        excluded in combined
+        for excluded in EXCLUDED_TYPES
+    ):
+        return None
+
+    mls = first_match(
+        [
+            r"\bMLS\s*[:#]?\s*([A-Z0-9\-]+)\b",
+            r"\bAW\d{6,}\b",
+        ],
+        text,
+    )
+
+    if not mls:
+        m = re.search(
+            r"\b(AW\d{6,})\b",
+            text,
+            re.IGNORECASE,
+        )
+
+        if m:
+            mls = m.group(1)
+
+    return {
+        "name": title,
+        "url": url,
+        "price": round(price, 2),
+        "location": location,
+        "type": property_type or "Property",
+        "beds": beds,
+        "baths": baths,
+        "size": size,
+        "image": image,
+        "description": make_description(
+            text,
+            title,
+        ),
+        "source": source,
+        "mls": mls,
+        "status": "available",
+        "detected_at": iso_now(),
+    }
+
+
+# ============================================================
+# SCRAPING
+# ============================================================
+
+def get_card_nodes(soup):
+    selectors = [
+        "article",
+        ".property",
+        ".property-item",
+        ".property-card",
+        ".listing",
+        ".listing-item",
+        ".property-listing",
+        ".item-property",
+        "[class*='property-card']",
+        "[class*='listing-card']",
+    ]
+
+    nodes = []
+    seen = set()
+
+    for selector in selectors:
+        for node in soup.select(selector):
+            marker = id(node)
+
+            if marker not in seen:
+                seen.add(marker)
+                nodes.append(node)
+
+    return nodes
+
+
+def scrape_generic(source, url):
+    html, final_url = get_page(url)
+
+    soup = BeautifulSoup(
+        html,
+        "html.parser",
+    )
+
+    results = get_card_nodes(soup)
+
+    if not results:
+        results = soup.find_all(
+            ["article", "li"],
+            limit=500,
+        )
+
+    properties = []
+
+    for node in results:
+        text = clean_text(
+            node.get_text(
+                " ",
+                strip=True,
+            )
+        )
+
+        if not text:
+            continue
+
+        title = ""
+
+        for tag in (
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5",
+        ):
+            heading = node.find(tag)
+
+            if heading:
+                candidate = clean_text(
+                    heading.get_text(
+                        " ",
+                        strip=True,
+                    )
+                )
+
+                if looks_like_property_title(candidate):
+                    title = candidate
+                    break
+
+        link = node.find(
+            "a",
+            href=True,
+        )
+
+        if not title and link:
+            candidate = clean_text(
+                link.get_text(
+                    " ",
+                    strip=True,
+                )
+            )
+
+            if looks_like_property_title(candidate):
+                title = candidate
+
+        if not title:
+            continue
+
+        price = parse_price(text)
+
+        if price is None:
+            continue
+
+        property_url = (
+            absolute_url(
+                final_url,
+                link.get("href"),
+            )
+            if link
+            else final_url
+        )
+
+        prop = build_property(
+            source=source,
+            title=title,
+            url=property_url,
+            price=price,
+            text=text,
+            image=image_from(
+                node,
+                final_url,
+            ),
+        )
+
+        if prop:
+            properties.append(prop)
+
+    return dedupe_properties(properties)
+
+
+def scrape_bluefin(source, url):
+    """
+    Bluefin is treated as one consolidated source.
+
+    We deliberately do NOT scrape individual Bluefin agency
+    URLs. Bluefin's main property feed already aggregates
+    participating agencies.
+    """
+
+    html, final_url = get_page(url)
+
+    soup = BeautifulSoup(
+        html,
+        "html.parser",
+    )
+
+    nodes = get_card_nodes(soup)
+
+    if not nodes:
+        nodes = soup.find_all(
+            "article",
+            limit=500,
+        )
+
+    properties = []
+
+    for node in nodes:
+        text = clean_text(
+            node.get_text(
+                " ",
+                strip=True,
+            )
+        )
+
+        if not text:
+            continue
+
+        title = ""
+
+        for tag in (
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5",
+        ):
+            heading = node.find(tag)
+
+            if heading:
+                candidate = clean_text(
+                    heading.get_text(
+                        " ",
+                        strip=True,
+                    )
+                )
+
+                if looks_like_property_title(candidate):
+                    title = candidate
+                    break
+
+        if not title:
+            for link in node.find_all(
+                "a",
+                href=True,
+            ):
+                candidate = clean_text(
+                    link.get_text(
+                        " ",
+                        strip=True,
+                    )
+                )
+
+                if looks_like_property_title(candidate):
+                    title = candidate
+                    break
+
+        if not title:
+            continue
+
+        price = parse_price(text)
+
+        if price is None:
+            continue
+
+        link = node.find(
+            "a",
+            href=True,
+        )
+
+        property_url = (
+            absolute_url(
+                final_url,
+                link.get("href"),
+            )
+            if link
+            else final_url
+        )
+
+        prop = build_property(
+            source=source,
+            title=title,
+            url=property_url,
+            price=price,
+            text=text,
+            image=image_from(
+                node,
+                final_url,
+            ),
+        )
+
+        if prop:
+            properties.append(prop)
+
+    return dedupe_properties(properties)
+
+
+def scrape_source(source):
+    name = source["name"]
+    url = source["url"]
+
+    if name == "Bluefin Realtors":
+        return scrape_bluefin(
+            name,
+            url,
+        )
+
+    return scrape_generic(
+        name,
+        url,
+    )
+
+
+# ============================================================
+# DEDUPLICATION
+# ============================================================
+
+def canonical_text(prop):
+    values = [
+        prop.get("name", ""),
+        prop.get("location", ""),
+        prop.get("type", ""),
+        prop.get("mls", ""),
+    ]
+
+    return normalize(
+        " ".join(values)
+    )
+
+
+def property_key(prop):
+    mls = normalize(
+        prop.get("mls", "")
+    )
+
+    if mls:
+        return f"mls:{mls}"
+
+    canonical = canonical_text(prop)
+
+    if not canonical:
+        canonical = prop.get(
+            "url",
+            "",
+        )
+
+    return hashlib.sha1(
+        canonical.encode("utf-8")
+    ).hexdigest()
+
+
+def development_key(prop):
+    """
+    Collapse obvious unit-level duplicates for the
+    same development while retaining genuinely different
+    properties.
+    """
+
+    title = normalize(
+        prop.get("name", "")
+    )
+
+    location = normalize(
+        prop.get("location", "")
+    )
+
+    # Remove unit / apartment / lot identifiers.
+    title = re.sub(
+        r"\b(?:unit|apt|apartment|condo|villa|lot|phase)"
+        r"\s*[-#]?\s*[a-z0-9]+\b",
+        "",
+        title,
+    )
+
+    # Remove standalone unit numbers.
+    title = re.sub(
+        r"\b\d{1,4}[a-z]?\b",
+        "",
+        title,
+    )
+
+    title = re.sub(
+        r"\s+",
+        " ",
+        title,
+    ).strip()
+
+    if len(title) < 10:
+        return ""
+
+    return f"{location}|{title}"
+
+
+def dedupe_properties(properties):
+    unique = {}
+
+    for prop in properties:
+        mls = normalize(
+            prop.get("mls", "")
+        )
+
+        if mls:
+            key = f"mls:{mls}"
+        else:
+            key = canonical_text(prop)
+
+        if not key:
+            key = prop.get(
+                "url",
+                "",
+            )
+
+        if key not in unique:
+            unique[key] = prop
+        else:
+            existing = unique[key]
+
+            # Preserve richer information.
+            for field in (
+                "image",
+                "description",
+                "location",
+                "beds",
+                "baths",
+                "size",
+                "mls",
+            ):
+                if (
+                    not existing.get(field)
+                    and prop.get(field)
+                ):
+                    existing[field] = prop[field]
+
+    return list(
+        unique.values()
+    )
+
+
+def cross_source_dedupe(properties):
+    result = []
+    seen = set()
+    developments = {}
+
+    for prop in sorted(
+        properties,
+        key=lambda p: (
+            p.get("source", ""),
+            p.get("name", ""),
+        ),
+    ):
+        key = property_key(prop)
+
+        if key in seen:
+            continue
+
+        dev_key = development_key(prop)
+
+        if dev_key:
+            existing_index = developments.get(
+                dev_key
+            )
+
+            if existing_index is not None:
+                existing = result[
+                    existing_index
+                ]
+
+                existing_price = existing.get(
+                    "price",
+                    0,
+                )
+
+                new_price = prop.get(
+                    "price",
+                    0,
+                )
+
+                similar_price = (
+                    abs(
+                        existing_price
+                        - new_price
+                    )
+                    <= max(
+                        5000,
+                        existing_price
+                        * 0.03,
+                    )
+                )
+
+                if similar_price:
+                    # Keep the lower qualifying price.
+                    if (
+                        new_price
+                        and new_price
+                        < existing_price
+                    ):
+                        result[
+                            existing_index
+                        ] = prop
+
+                    continue
+
+            developments[
+                dev_key
+            ] = len(result)
+
+        seen.add(key)
+        result.append(prop)
+
+    return result
+
+
+# ============================================================
+# STATE
+# ============================================================
+
+def load_json(path, default):
     try:
-        return datetime.fromisoformat(value)
+        with open(
+            path,
+            "r",
+            encoding="utf-8",
+        ) as file:
+            return json.load(file)
+
+    except (
+        FileNotFoundError,
+        json.JSONDecodeError,
+    ):
+        return default
+
+
+def save_json(path, data):
+    with open(
+        path,
+        "w",
+        encoding="utf-8",
+    ) as file:
+        json.dump(
+            data,
+            file,
+            indent=2,
+            ensure_ascii=False,
+        )
+
+
+def previous_properties(state):
+    """
+    Supports both the current nested state format and
+    the older flat format.
+    """
+
+    if (
+        isinstance(state, dict)
+        and isinstance(
+            state.get("properties"),
+            dict,
+        )
+    ):
+        return state["properties"]
+
+    if isinstance(state, dict):
+        return state
+
+    return {}
+
+
+def parse_datetime(value):
+    try:
+        return datetime.fromisoformat(
+            value.replace(
+                "Z",
+                "+00:00",
+            )
+        )
     except Exception:
         return None
 
 
-def send_email(subject, html):
-    api_key = os.environ.get("RESEND_API_KEY")
+# ============================================================
+# CHANGE DETECTION
+# ============================================================
 
-    if not api_key:
-        print("RESEND_API_KEY is not available.")
+def field_changes(old, new):
+    changes = {}
+
+    fields = [
+        ("beds", "Bedrooms"),
+        ("baths", "Bathrooms"),
+        ("size", "Size"),
+        ("location", "Location"),
+        ("type", "Property type"),
+        ("status", "Status"),
+    ]
+
+    for field, label in fields:
+        before = clean_text(
+            old.get(field, "")
+        )
+
+        after = clean_text(
+            new.get(field, "")
+        )
+
+        if (
+            before
+            and after
+            and before != after
+        ):
+            changes[label] = {
+                "old": before,
+                "new": after,
+            }
+
+    return changes
+
+
+def reduction_percent(
+    old_price,
+    new_price,
+):
+    if (
+        not old_price
+        or new_price >= old_price
+    ):
+        return 0
+
+    return round(
+        (
+            (old_price - new_price)
+            / old_price
+        )
+        * 100,
+        1,
+    )
+
+
+# ============================================================
+# EMAIL HTML
+# ============================================================
+
+def property_block(
+    prop,
+    event_type="new",
+    old=None,
+    changes=None,
+):
+    name = html_escape(
+        prop.get("name")
+        or "Unnamed property"
+    )
+
+    price = prop.get(
+        "price"
+    )
+
+    price_text = (
+        f"${price:,.0f}"
+        if price is not None
+        else "Price not available"
+    )
+
+    html = [
+        "<div style='padding:20px 0;"
+        "border-bottom:1px solid #ddd'>"
+    ]
+
+    # PROPERTY NAME — deliberately prominent.
+    html.append(
+        f"<h2 style='margin:0 0 8px;"
+        f"font-size:22px'>{name}</h2>"
+    )
+
+    html.append(
+        f"<div style='font-size:24px;"
+        f"font-weight:700;"
+        f"margin-bottom:12px'>"
+        f"{price_text}</div>"
+    )
+
+    if (
+        event_type == "reduction"
+        and old
+    ):
+        old_price = old.get(
+            "price",
+            0,
+        )
+
+        percentage = reduction_percent(
+            old_price,
+            price,
+        )
+
+        html.append(
+            f"<div style='margin-bottom:8px'>"
+            f"<strong>PRICE REDUCTION:</strong> "
+            f"${old_price:,.0f} → "
+            f"${price:,.0f} "
+            f"({percentage}% reduction)"
+            f"</div>"
+        )
+
+    if prop.get("location"):
+        html.append(
+            f"<div><strong>Location:</strong> "
+            f"{html_escape(prop['location'])}"
+            f"</div>"
+        )
+
+    if prop.get("type"):
+        html.append(
+            f"<div><strong>Property type:</strong> "
+            f"{html_escape(prop['type'])}"
+            f"</div>"
+        )
+
+    facts = []
+
+    if prop.get("beds"):
+        facts.append(
+            f"{html_escape(prop['beds'])} beds"
+        )
+
+    if prop.get("baths"):
+        facts.append(
+            f"{html_escape(prop['baths'])} baths"
+        )
+
+    if prop.get("size"):
+        facts.append(
+            html_escape(
+                prop["size"]
+            )
+        )
+
+    if facts:
+        html.append(
+            "<div><strong>Details:</strong> "
+            + " · ".join(facts)
+            + "</div>"
+        )
+
+    if changes:
+        change_items = []
+
+        for label, values in changes.items():
+            change_items.append(
+                f"{html_escape(label)}: "
+                f"{html_escape(values['old'])} → "
+                f"{html_escape(values['new'])}"
+            )
+
+        html.append(
+            "<div style='margin-top:8px'>"
+            "<strong>Major changes:</strong> "
+            + " · ".join(change_items)
+            + "</div>"
+        )
+
+    if prop.get("description"):
+        html.append(
+            f"<p style='margin:12px 0'>"
+            f"{html_escape(prop['description'])}"
+            f"</p>"
+        )
+
+    if prop.get("source"):
+        html.append(
+            f"<div><strong>Broker/source:</strong> "
+            f"{html_escape(prop['source'])}"
+            f"</div>"
+        )
+
+    if prop.get("detected_at"):
+        detected = (
+            prop["detected_at"][:10]
+        )
+
+        html.append(
+            f"<div><strong>First detected:</strong> "
+            f"{detected}</div>"
+        )
+
+    if prop.get("image"):
+        html.append(
+            "<div style='margin:15px 0'>"
+            f"<img src='{html_escape(prop['image'])}' "
+            "style='max-width:100%;height:auto;"
+            "border-radius:8px' "
+            "alt='Property image'>"
+            "</div>"
+        )
+
+    if prop.get("url"):
+        html.append(
+            "<p style='margin-top:16px'>"
+            f"<a href='{html_escape(prop['url'])}' "
+            "style='display:inline-block;"
+            "padding:12px 20px;"
+            "background:#111;"
+            "color:#fff;"
+            "text-decoration:none;"
+            "border-radius:6px;"
+            "font-weight:600'>"
+            "VIEW PROPERTY"
+            "</a>"
+            "</p>"
+        )
+
+    html.append("</div>")
+
+    return "".join(html)
+
+
+def email_footer():
+    return (
+        "<div style='margin-top:25px;"
+        "padding-top:15px;"
+        "border-top:1px solid #ddd;"
+        "font-size:12px;"
+        "color:#777'>"
+        "<strong>Manage alerts:</strong> "
+        "<a href='mailto:"
+        "guidobrugman@live.nl"
+        "?subject=STOP%20ARUBA%20PROPERTY%20ALERTS'>"
+        "request changes or stop alerts"
+        "</a>."
+        "</div>"
+    )
+
+
+# ============================================================
+# RESEND
+# ============================================================
+
+def send_email(
+    subject,
+    html,
+):
+    if not RESEND_API_KEY:
+        print(
+            "RESEND_API_KEY missing; "
+            "email not sent."
+        )
         return False
 
     response = requests.post(
         "https://api.resend.com/emails",
         headers={
-            "Authorization": f"Bearer {api_key}",
+            "Authorization": (
+                f"Bearer {RESEND_API_KEY}"
+            ),
             "Content-Type": "application/json",
         },
         json={
-            "from": EMAIL_FROM,
-            "to": [EMAIL_RECIPIENT],
+            "from": SENDER,
+            "to": [RECIPIENT],
             "subject": subject,
             "html": html,
         },
         timeout=30,
     )
 
-    print(f"Resend HTTP status: {response.status_code}")
-
-    if response.ok:
-        print("Email sent successfully.")
-        return True
-
-    print("Resend error:")
-    print(response.text)
-
-    return False
-
-
-def load_json_file(filename, default):
-    if not os.path.exists(filename):
-        return default
-
-    with open(filename, "r", encoding="utf-8") as file:
-        return json.load(file)
-
-
-def save_json_file(filename, data):
-    with open(filename, "w", encoding="utf-8") as file:
-        json.dump(
-            data,
-            file,
-            indent=2,
-            ensure_ascii=False
-        )
-
-
-def get_previous_properties(previous_state):
-    if not isinstance(previous_state, dict):
-        return {}
-
-    if isinstance(
-        previous_state.get("properties"),
-        dict
-    ):
-        return previous_state["properties"]
-
-    # Supports the old flat state format.
-    return {
-        key: value
-        for key, value in previous_state.items()
-        if isinstance(value, dict)
-        and "price" in value
-        and "url" in value
-    }
-
-
-def get_previous_pending_new(previous_state):
-    if not isinstance(previous_state, dict):
-        return []
-
-    pending = previous_state.get(
-        "pending_new",
-        []
-    )
-
-    return pending if isinstance(
-        pending,
-        list
-    ) else []
-
-
-def get_previous_pending_reductions(
-    previous_state
-):
-    if not isinstance(previous_state, dict):
-        return []
-
-    pending = previous_state.get(
-        "pending_reductions",
-        []
-    )
-
-    return pending if isinstance(
-        pending,
-        list
-    ) else []
-
-
-def get_previous_event_history(
-    previous_state
-):
-    if not isinstance(previous_state, dict):
-        return {}
-
-    history = previous_state.get(
-        "event_history",
-        {}
-    )
-
-    return history if isinstance(
-        history,
-        dict
-    ) else {}
-
-
-def get_previous_digest_date(
-    previous_state
-):
-    if not isinstance(previous_state, dict):
-        return None
-
-    return previous_state.get(
-        "last_digest_date"
-    )
-
-
-def get_price(text):
-    matches = re.findall(
-        r"\$\s*([\d,]+)",
-        text
-    )
-
-    if not matches:
-        return None
-
-    prices = []
-
-    for match in matches:
-        try:
-            prices.append(
-                int(match.replace(",", ""))
-            )
-        except ValueError:
-            pass
-
-    if not prices:
-        return None
-
-    return min(prices)
-
-
-def is_excluded(text):
-    text_lower = text.lower()
-
-    excluded_terms = [
-        "commercial building",
-        "commercial property",
-        "warehouse",
-        "office",
-        "retail",
-    ]
-
-    return any(
-        term in text_lower
-        for term in excluded_terms
-    )
-
-
-def is_unavailable(text):
-    text_lower = text.lower()
-
-    unavailable_terms = [
-        "under contract",
-        "sale in progress",
-        "sold",
-        "withdrawn",
-        "unavailable",
-        "off market",
-    ]
-
-    return any(
-        term in text_lower
-        for term in unavailable_terms
-    )
-
-
-def get_image_from_container(
-    container,
-    base_url
-):
-    if not container:
-        return None
-
-    image = container.find("img")
-
-    if not image:
-        return None
-
-    image_url = (
-        image.get("src")
-        or image.get("data-src")
-        or image.get("data-lazy-src")
-    )
-
-    if not image_url:
-        srcset = image.get("srcset")
-
-        if srcset:
-            image_url = (
-                srcset.split(",")[0]
-                .strip()
-                .split(" ")[0]
-            )
-
-    if not image_url:
-        return None
-
-    return urljoin(
-        base_url,
-        image_url
-    )
-
-
-def extract_bedrooms(text):
-    patterns = [
-        r"\bBeds?\s*:\s*(\d+)",
-        r"\b(\d+)\s*(?:BDR|BDRS|Bedroom|Bedrooms)\b",
-        r"\bBed\s*:\s*(\d+)",
-    ]
-
-    for pattern in patterns:
-        match = re.search(
-            pattern,
-            text,
-            re.IGNORECASE
-        )
-
-        if match:
-            return int(match.group(1))
-
-    return None
-
-
-def extract_bathrooms(text):
-    patterns = [
-        r"\bBaths?\s*:\s*(\d+(?:\.\d+)?)",
-        r"\b(\d+(?:\.\d+)?)\s*(?:Bath|Baths|Bathroom|Bathrooms)\b",
-    ]
-
-    for pattern in patterns:
-        match = re.search(
-            pattern,
-            text,
-            re.IGNORECASE
-        )
-
-        if match:
-            return match.group(1)
-
-    return None
-
-
-def extract_size(text):
-    patterns = [
-        r"\bm2\s*:\s*([\d,.]+)",
-        r"\b([\d,.]+)\s*(?:m²|m2|Sq\s*Mt|Sq\s*M)\b",
-    ]
-
-    for pattern in patterns:
-        match = re.search(
-            pattern,
-            text,
-            re.IGNORECASE
-        )
-
-        if match:
-            return match.group(1)
-
-    return None
-
-
-def extract_property_type(text):
-    text_lower = text.lower()
-
-    property_types = [
-        ("single family home", "House"),
-        ("single-family home", "House"),
-        ("villa", "Villa"),
-        ("townhouse", "Townhouse"),
-        ("townhomes", "Townhouse"),
-        ("condos/apartments", "Condo / Apartment"),
-        ("condominium", "Condo / Apartment"),
-        ("condo", "Condo"),
-        ("apartment complex", "Apartment Complex"),
-        ("apartment", "Apartment"),
-        ("land", "Land"),
-        ("development", "Development"),
-        ("new construction", "New Construction"),
-        ("commercial", "Commercial"),
-    ]
-
-    for search_term, display_name in property_types:
-        if search_term in text_lower:
-            return display_name
-
-    return None
-
-
-def extract_location(text):
-    locations = [
-        "Noord",
-        "Oranjestad",
-        "Palm Beach",
-        "Eagle Beach",
-        "Malmok",
-        "Savaneta",
-        "Paradera",
-        "San Nicolas",
-        "Santa Cruz",
-        "Ponton",
-        "Rooi Santo",
-        "Bushiri",
-        "Tanki Leendert",
-        "Turibana",
-        "Pos Chiquito",
-        "Kudawecha",
-        "Sabana Basora",
-        "Sabana Liber",
-        "Cas Ariba",
-        "Washington",
-        "Alto Vista",
-        "Bubali",
-        "Wayaca",
-        "Tanki Flip",
-        "Brasil",
-        "Pavia",
-        "Dakota",
-        "Hooiberg",
-        "Piedra Plat",
-        "Balashi",
-    ]
-
-    found = []
-
-    for location in locations:
-        if re.search(
-            r"\b" + re.escape(location) + r"\b",
-            text,
-            re.IGNORECASE
-        ):
-            if location.lower() not in [
-                item.lower()
-                for item in found
-            ]:
-                found.append(location)
-
-    if found:
-        return ", ".join(found[:2])
-
-    return None
-
-
-def clean_title(title):
-    title = re.sub(
-        r"\s+",
-        " ",
-        title
-    ).strip()
-
-    if not title:
-        return "Untitled property"
-
-    title = re.sub(
-        r"\s+\|\s+\d+\s*BDR.*$",
-        "",
-        title,
-        flags=re.IGNORECASE
-    )
-
-    title = re.sub(
-        r"\s+\|\s+.*?\$[\d,]+.*$",
-        "",
-        title,
-        flags=re.IGNORECASE
-    )
-
-    return title.strip()
-
-
-def build_property_record(
-    title,
-    price,
-    url,
-    details,
-    source,
-    source_priority,
-    image=None
-):
-    return {
-        "title": clean_title(title),
-        "price": price,
-        "url": url,
-        "details": details,
-        "source": source,
-        "source_priority": source_priority,
-        "image": image,
-        "bedrooms": extract_bedrooms(details),
-        "bathrooms": extract_bathrooms(details),
-        "size": extract_size(details),
-        "property_type": extract_property_type(details),
-        "location": extract_location(details),
-    }
-
-
-def scrape_aruba_brokers(source):
-    response = requests.get(
-        source["url"],
-        headers=HEADERS,
-        timeout=30
-    )
-
     response.raise_for_status()
 
-    soup = BeautifulSoup(
-        response.text,
-        "html.parser"
-    )
-
-    properties = []
-
-    for article in soup.find_all("article"):
-
-        heading = article.find("h2")
-
-        if not heading:
-            continue
-
-        link = heading.find(
-            "a",
-            href=True
-        )
-
-        if not link:
-            continue
-
-        title = heading.get_text(
-            " ",
-            strip=True
-        )
-
-        url = urljoin(
-            source["url"],
-            link["href"]
-        )
-
-        text = article.get_text(
-            " ",
-            strip=True
-        )
-
-        if is_unavailable(text):
-            continue
-
-        price = get_price(text)
-
-        if price is None:
-            continue
-
-        if price > MAX_PRICE:
-            continue
-
-        if is_excluded(text):
-            continue
-
-        image = get_image_from_container(
-            article,
-            source["url"]
-        )
-
-        properties.append(
-            build_property_record(
-                title=title,
-                price=price,
-                url=url,
-                details=text,
-                source=source["name"],
-                source_priority=source["priority"],
-                image=image
-            )
-        )
-
-    return properties
-
-
-def scrape_bluefin(source):
-    response = requests.get(
-        source["url"],
-        headers=HEADERS,
-        timeout=30
-    )
-
-    response.raise_for_status()
-
-    soup = BeautifulSoup(
-        response.text,
-        "html.parser"
-    )
-
-    properties = []
-
-    seen_urls = set()
-
-    for link in soup.find_all(
-        "a",
-        href=True
-    ):
-
-        href = link.get(
-            "href",
-            ""
-        )
-
-        if "/property/" not in href:
-            continue
-
-        url = urljoin(
-            source["url"],
-            href
-        )
-
-        if url in seen_urls:
-            continue
-
-        seen_urls.add(url)
-
-        container = link
-
-        for _ in range(5):
-
-            if not container.parent:
-                break
-
-            container = container.parent
-
-            text = container.get_text(
-                " ",
-                strip=True
-            )
-
-            if (
-                "$" in text
-                and len(text) > 40
-            ):
-                break
-
-        text = container.get_text(
-            " ",
-            strip=True
-        )
-
-        if not text:
-            continue
-
-        if is_unavailable(text):
-            continue
-
-        price = get_price(text)
-
-        if price is None:
-            continue
-
-        if price > MAX_PRICE:
-            continue
-
-        if is_excluded(text):
-            continue
-
-        title = None
-
-        for candidate in container.find_all(
-            ["h1", "h2", "h3", "h4"]
-        ):
-
-            candidate_text = candidate.get_text(
-                " ",
-                strip=True
-            )
-
-            if (
-                candidate_text
-                and candidate_text.lower()
-                != "details"
-            ):
-                title = candidate_text
-                break
-
-        if not title:
-
-            link_text = link.get_text(
-                " ",
-                strip=True
-            )
-
-            if (
-                link_text
-                and link_text.lower()
-                != "details"
-            ):
-                title = link_text
-
-        if not title:
-            continue
-
-        image = get_image_from_container(
-            container,
-            source["url"]
-        )
-
-        properties.append(
-            build_property_record(
-                title=title,
-                price=price,
-                url=url,
-                details=text,
-                source=source["name"],
-                source_priority=source["priority"],
-                image=image
-            )
-        )
-
-    return properties
-
-
-def scrape_generic_source(source):
-    response = requests.get(
-        source["url"],
-        headers=HEADERS,
-        timeout=30
-    )
-
-    response.raise_for_status()
-
-    soup = BeautifulSoup(
-        response.text,
-        "html.parser"
-    )
-
-    properties = []
-
-    seen_urls = set()
-
-    for link in soup.find_all(
-        "a",
-        href=True
-    ):
-
-        url = urljoin(
-            source["url"],
-            link["href"]
-        )
-
-        if not url.startswith("http"):
-            continue
-
-        if url in seen_urls:
-            continue
-
-        seen_urls.add(url)
-
-        container = link.parent
-
-        if not container:
-            continue
-
-        text = container.get_text(
-            " ",
-            strip=True
-        )
-
-        if not text:
-            continue
-
-        if is_unavailable(text):
-            continue
-
-        price = get_price(text)
-
-        if price is None:
-            continue
-
-        if price > MAX_PRICE:
-            continue
-
-        if is_excluded(text):
-            continue
-
-        title = link.get_text(
-            " ",
-            strip=True
-        )
-
-        if not title:
-            continue
-
-        if title.lower() == "details":
-
-            for heading in container.find_all(
-                ["h1", "h2", "h3", "h4"]
-            ):
-
-                candidate = heading.get_text(
-                    " ",
-                    strip=True
-                )
-
-                if (
-                    candidate
-                    and candidate.lower()
-                    != "details"
-                ):
-                    title = candidate
-                    break
-
-        if len(title) < 5:
-            continue
-
-        image = get_image_from_container(
-            container,
-            source["url"]
-        )
-
-        properties.append(
-            build_property_record(
-                title=title,
-                price=price,
-                url=url,
-                details=text,
-                source=source["name"],
-                source_priority=source["priority"],
-                image=image
-            )
-        )
-
-    return properties
-
-
-def scrape_source(source):
-    print()
     print(
-        f"Checking source: "
-        f"{source['name']}"
+        "Email sent successfully."
     )
 
-    print(
-        f"URL: "
-        f"{source['url']}"
-    )
-
-    if source["name"] == "Aruba Brokers":
-        properties = scrape_aruba_brokers(
-            source
-        )
-
-    elif source["name"] == "Bluefin Realtors":
-        properties = scrape_bluefin(
-            source
-        )
-
-    else:
-        properties = scrape_generic_source(
-            source
-        )
-
-    print(
-        f"Properties found: "
-        f"{len(properties)}"
-    )
-
-    return properties
+    return True
 
 
-def normalize_url(url):
-    return url.rstrip("/").lower()
+# ============================================================
+# ALERT EMAILS
+# ============================================================
 
-
-def normalize_text(text):
-    if not text:
-        return ""
-
-    text = text.lower()
-
-    text = re.sub(
-        r"[^a-z0-9]+",
-        " ",
-        text
-    )
-
-    text = re.sub(
-        r"\s+",
-        " ",
-        text
-    )
-
-    return text.strip()
-
-
-def property_identity(property_item):
-    title_key = normalize_text(
-        property_item.get(
-            "title",
-            ""
-        )
-    )
-
-    location_key = normalize_text(
-        property_item.get(
-            "location",
-            ""
-        )
-    )
-
-    return (
-        title_key,
-        location_key
-    )
-
-
-def deduplicate_properties(properties):
-    deduplicated = {}
-
-    for property_item in properties:
-
-        url_key = normalize_url(
-            property_item["url"]
-        )
-
-        identity_key = property_identity(
-            property_item
-        )
-
-        url_identity = (
-            "url:",
-            url_key
-        )
-
-        text_identity = (
-            "identity:",
-            identity_key
-        )
-
-        existing_key = None
-
-        for key in [
-            url_identity,
-            text_identity
-        ]:
-
-            if key in deduplicated:
-                existing_key = key
-                break
-
-        if existing_key is None:
-
-            deduplicated[
-                url_identity
-            ] = property_item
-
-            continue
-
-        existing = deduplicated[
-            existing_key
-        ]
-
-        if (
-            property_item[
-                "source_priority"
-            ]
-            <
-            existing[
-                "source_priority"
-            ]
-        ):
-            deduplicated[
-                existing_key
-            ] = property_item
-
-    return list(
-        deduplicated.values()
-    )
-
-
-def build_property_details_html(
-    property_item
+def send_event_email(
+    new_items,
+    reductions,
+    major_changes,
 ):
-    rows = []
-
-    location = property_item.get(
-        "location"
-    )
-
-    property_type = property_item.get(
-        "property_type"
-    )
-
-    bedrooms = property_item.get(
-        "bedrooms"
-    )
-
-    bathrooms = property_item.get(
-        "bathrooms"
-    )
-
-    size = property_item.get(
-        "size"
-    )
-
-    if location:
-        rows.append(
-            f"<strong>Location:</strong> "
-            f"{escape(location)}"
-        )
-
-    if property_type:
-        rows.append(
-            f"<strong>Property type:</strong> "
-            f"{escape(property_type)}"
-        )
-
-    if bedrooms is not None:
-        rows.append(
-            f"<strong>Bedrooms:</strong> "
-            f"{bedrooms}"
-        )
-
-    if bathrooms is not None:
-        rows.append(
-            f"<strong>Bathrooms:</strong> "
-            f"{escape(str(bathrooms))}"
-        )
-
-    if size:
-        rows.append(
-            f"<strong>Size:</strong> "
-            f"{escape(str(size))} m²"
-        )
-
-    if not rows:
-        rows.append(
-            escape(
-                property_item[
-                    "details"
-                ]
-            )
-        )
-
-    return "<br>".join(rows)
-
-
-def property_html(property_item):
-    title = escape(
-        property_item["title"]
-    )
-
-    price = property_item["price"]
-
-    url = escape(
-        property_item["url"],
-        quote=True
-    )
-
-    source = escape(
-        property_item["source"]
-    )
-
-    details_html = (
-        build_property_details_html(
-            property_item
-        )
-    )
-
-    image_html = ""
-
-    if property_item.get("image"):
-
-        image_url = escape(
-            property_item["image"],
-            quote=True
-        )
-
-        image_html = f"""
-            <p>
-                <img src="{image_url}"
-                     alt="{title}"
-                     style="max-width:100%;
-                            width:600px;
-                            height:auto;
-                            border-radius:8px;">
-            </p>
-        """
-
-    return f"""
-        <div style="margin-bottom:36px;
-                    padding-bottom:28px;
-                    border-bottom:1px solid #dddddd;">
-
-            <h2 style="margin-bottom:8px;">
-                ${price:,}
-            </h2>
-
-            <h3 style="margin-bottom:12px;">
-                {title}
-            </h3>
-
-            {image_html}
-
-            <p style="line-height:1.7;">
-                {details_html}
-            </p>
-
-            <p>
-                <a href="{url}"
-                   style="display:inline-block;
-                          padding:12px 20px;
-                          background:#111827;
-                          color:#ffffff;
-                          text-decoration:none;
-                          border-radius:6px;">
-                    VIEW PROPERTY
-                </a>
-            </p>
-
-            <p style="font-size:12px;color:#666666;">
-                Source: {source}
-            </p>
-
-        </div>
-    """
-
-
-def build_new_property_email(
-    properties
-):
-    rows = []
-
-    for property_item in properties:
-        rows.append(
-            property_html(
-                property_item
-            )
-        )
-
-    return f"""
-    <!DOCTYPE html>
-    <html>
-    <body style="font-family:Arial,sans-serif;
-                 line-height:1.5;
-                 color:#222;
-                 max-width:700px;
-                 margin:0 auto;
-                 padding:20px;">
-
-        <h1>Aruba Property Alert</h1>
-
-        <p>
-            {len(properties)} new qualifying
-            property
-            {"has" if len(properties) == 1 else "have"}
-            been detected.
-        </p>
-
-        {"".join(rows)}
-
-        <p style="font-size:12px;color:#777;">
-            Aruba Property Agent
-        </p>
-
-    </body>
-    </html>
-    """
-
-
-def build_price_reduction_email(
-    changes
-):
-    rows = []
-
-    for change in changes:
-
-        title = escape(
-            change["title"]
-        )
-
-        url = escape(
-            change["url"],
-            quote=True
-        )
-
-        source = escape(
-            change["source"]
-        )
-
-        old_price = change[
-            "old_price"
-        ]
-
-        new_price = change[
-            "new_price"
-        ]
-
-        reduction_percent = change[
-            "reduction_percent"
-        ]
-
-        rows.append(
-            f"""
-            <div style="margin-bottom:36px;
-                        padding-bottom:28px;
-                        border-bottom:1px solid #dddddd;">
-
-                <h2>PRICE REDUCTION</h2>
-
-                <h3>{title}</h3>
-
-                <p style="font-size:20px;">
-                    ${old_price:,}
-                    &nbsp;&rarr;&nbsp;
-                    <strong>
-                        ${new_price:,}
-                    </strong>
-                </p>
-
-                <p>
-                    Reduction:
-                    <strong>
-                        {reduction_percent:.1f}%
-                    </strong>
-                </p>
-
-                <p>
-                    <a href="{url}"
-                       style="display:inline-block;
-                              padding:12px 20px;
-                              background:#111827;
-                              color:#ffffff;
-                              text-decoration:none;
-                              border-radius:6px;">
-                        VIEW PROPERTY
-                    </a>
-                </p>
-
-                <p style="font-size:12px;color:#666666;">
-                    Source: {source}
-                </p>
-
-            </div>
-            """
-        )
-
-    return f"""
-    <!DOCTYPE html>
-    <html>
-    <body style="font-family:Arial,sans-serif;
-                 line-height:1.5;
-                 color:#222;
-                 max-width:700px;
-                 margin:0 auto;
-                 padding:20px;">
-
-        <h1>Aruba Property Alert</h1>
-
-        <p>
-            {len(changes)} qualifying property
-            {"has" if len(changes) == 1 else "have"}
-            had a price reduction.
-        </p>
-
-        {"".join(rows)}
-
-        <p style="font-size:12px;color:#777;">
-            Aruba Property Agent
-        </p>
-
-    </body>
-    </html>
-    """
-
-
-def build_daily_digest_email(
-    events,
-    digest_date
-):
-    new_properties = []
-    reductions = []
-
-    for event in events:
-
-        if event.get("type") == "new":
-            new_properties.append(
-                event["property"]
-            )
-
-        elif event.get(
-            "type"
-        ) == "price_reduction":
-            reductions.append(event)
-
     sections = []
 
-    if new_properties:
+    if new_items:
+        sections.append(
+            "<h2>NEW PROPERTIES</h2>"
+        )
 
-        property_rows = []
-
-        for property_item in new_properties:
-            property_rows.append(
-                property_html(
-                    property_item
+        for prop in new_items:
+            sections.append(
+                property_block(
+                    prop,
+                    "new",
                 )
             )
 
+    if reductions:
         sections.append(
-            f"""
-            <h2>New properties</h2>
-            {"".join(property_rows)}
-            """
+            "<h2>PRICE REDUCTIONS</h2>"
+        )
+
+        for prop, old in reductions:
+            sections.append(
+                property_block(
+                    prop,
+                    "reduction",
+                    old=old,
+                )
+            )
+
+    if major_changes:
+        sections.append(
+            "<h2>MAJOR CHANGES</h2>"
+        )
+
+        for prop, changes in major_changes:
+            sections.append(
+                property_block(
+                    prop,
+                    "major",
+                    changes=changes,
+                )
+            )
+
+    if not sections:
+        return False
+
+    html = (
+        "<html><body style='font-family:Arial,"
+        "sans-serif;max-width:760px;"
+        "margin:auto;padding:20px;"
+        "color:#222'>"
+        "<h1>Aruba Property Alert</h1>"
+        + "".join(sections)
+        + email_footer()
+        + "</body></html>"
+    )
+
+    subject_parts = []
+
+    if new_items:
+        subject_parts.append(
+            f"{len(new_items)} new"
         )
 
     if reductions:
+        subject_parts.append(
+            f"{len(reductions)} price reduction"
+        )
 
-        reduction_rows = []
+    if major_changes:
+        subject_parts.append(
+            f"{len(major_changes)} major change"
+        )
 
-        for change in reductions:
+    subject = (
+        "Aruba Property Alert — "
+        + ", ".join(subject_parts)
+    )
 
-            title = escape(
-                change["title"]
+    return send_email(
+        subject,
+        html,
+    )
+
+
+def send_daily_digest(properties):
+    if not properties:
+        return False
+
+    items = []
+
+    for prop in sorted(
+        properties,
+        key=lambda p: p.get(
+            "price",
+            0,
+        ),
+    ):
+        items.append(
+            property_block(
+                prop,
+                "digest",
             )
-
-            url = escape(
-                change["url"],
-                quote=True
-            )
-
-            old_price = change[
-                "old_price"
-            ]
-
-            new_price = change[
-                "new_price"
-            ]
-
-            reduction_percent = change[
-                "reduction_percent"
-            ]
-
-            reduction_rows.append(
-                f"""
-                <div style="margin-bottom:28px;
-                            padding-bottom:20px;
-                            border-bottom:1px solid #dddddd;">
-
-                    <h3>{title}</h3>
-
-                    <p style="font-size:18px;">
-                        ${old_price:,}
-                        &nbsp;&rarr;&nbsp;
-                        <strong>
-                            ${new_price:,}
-                        </strong>
-                    </p>
-
-                    <p>
-                        Reduction:
-                        <strong>
-                            {reduction_percent:.1f}%
-                        </strong>
-                    </p>
-
-                    <p>
-                        <a href="{url}"
-                           style="display:inline-block;
-                                  padding:10px 18px;
-                                  background:#111827;
-                                  color:#ffffff;
-                                  text-decoration:none;
-                                  border-radius:6px;">
-                            VIEW PROPERTY
-                        </a>
-                    </p>
-
-                </div>
-                """
-            )
-
-        sections.append(
-            f"""
-            <h2>Price reductions</h2>
-            {"".join(reduction_rows)}
-            """
         )
 
-    if not sections:
+    html = (
+        "<html><body style='font-family:Arial,"
+        "sans-serif;max-width:760px;"
+        "margin:auto;padding:20px;"
+        "color:#222'>"
+        "<h1>Aruba Property Daily Digest</h1>"
+        f"<p>{len(properties)} qualifying "
+        "properties currently tracked "
+        "under $650,000.</p>"
+        + "".join(items)
+        + email_footer()
+        + "</body></html>"
+    )
 
-        sections.append(
-            """
-            <p>
-                No new qualifying properties or
-                price reductions were detected
-                during this period.
-            </p>
-            """
+    return send_email(
+        "Aruba Property Daily Digest",
+        html,
+    )
+
+
+# ============================================================
+# DAILY DIGEST TIMING
+# ============================================================
+
+def should_send_daily_digest(state):
+    local = datetime.now(
+        ARUBA_TZ
+    )
+
+    if local.hour != 8:
+        return False
+
+    today = local.date().isoformat()
+
+    return (
+        state.get(
+            "last_digest_date"
         )
-
-    return f"""
-    <!DOCTYPE html>
-    <html>
-    <body style="font-family:Arial,sans-serif;
-                 line-height:1.5;
-                 color:#222;
-                 max-width:700px;
-                 margin:0 auto;
-                 padding:20px;">
-
-        <h1>Aruba Property Daily Summary</h1>
-
-        <p>
-            Summary for {escape(digest_date)}.
-        </p>
-
-        {"".join(sections)}
-
-        <p style="font-size:12px;color:#777;">
-            Aruba Property Agent
-        </p>
-
-    </body>
-    </html>
-    """
-
-
-def add_event(state, event):
-    event_date = (
-        now_aruba()
-        .date()
-        .isoformat()
+        != today
     )
 
-    history = state.setdefault(
-        "event_history",
-        {}
-    )
 
-    day_events = history.setdefault(
-        event_date,
-        []
-    )
+# ============================================================
+# MAIN
+# ============================================================
 
-    day_events.append(event)
-
-
-def clean_old_history(state):
-    history = state.get(
-        "event_history",
-        {}
-    )
-
-    cutoff = (
-        now_aruba().date()
-        - timedelta(days=8)
-    ).isoformat()
-
-    state["event_history"] = {
-        date: events
-        for date, events
-        in history.items()
-        if date >= cutoff
-    }
-
-
-print(
-    "Aruba Property Agent starting..."
-)
-
-
-previous_state = load_json_file(
-    STATE_FILE,
-    {}
-)
-
-previous_properties = (
-    get_previous_properties(
-        previous_state
-    )
-)
-
-source_config = load_json_file(
-    SOURCES_FILE,
-    {"sources": []}
-)
-
-sources = [
-    source
-    for source
-    in source_config.get(
-        "sources",
-        []
-    )
-    if source.get(
-        "enabled",
-        True
-    )
-]
-
-
-all_properties = []
-successful_sources = 0
-
-
-for source in sources:
-
-    try:
-
-        source_properties = scrape_source(
-            source
-        )
-
-        all_properties.extend(
-            source_properties
-        )
-
-        successful_sources += 1
-
-    except Exception as error:
-
-        print()
-        print(
-            f"ERROR checking "
-            f"{source['name']}:"
-        )
-
-        print(str(error))
-
-
-if successful_sources == 0:
-
-    print()
+def main():
     print(
-        "ERROR: No sources could be "
-        "checked successfully."
+        "Aruba Property Agent starting..."
     )
 
-    print(
-        "Existing state will NOT be changed."
+    source_data = load_json(
+        SOURCES_FILE,
+        {"sources": []},
     )
 
-    print(
-        "Monitor stopped safely."
-    )
-
-    raise SystemExit(1)
-
-
-properties = deduplicate_properties(
-    all_properties
-)
-
-
-if not properties:
-
-    print()
-    print(
-        "WARNING: No qualifying "
-        "properties were found."
-    )
-
-    print(
-        "Existing state will NOT be replaced."
-    )
-
-    raise SystemExit(0)
-
-
-current_state = {}
-
-
-for property_item in properties:
-
-    key = normalize_url(
-        property_item["url"]
-    )
-
-    current_state[key] = {
-        "title": property_item["title"],
-        "price": property_item["price"],
-        "details": property_item["details"],
-        "source": property_item["source"],
-        "url": property_item["url"],
-        "image": property_item.get(
-            "image"
-        ),
-        "bedrooms": property_item.get(
-            "bedrooms"
-        ),
-        "bathrooms": property_item.get(
-            "bathrooms"
-        ),
-        "size": property_item.get(
-            "size"
-        ),
-        "property_type": property_item.get(
-            "property_type"
-        ),
-        "location": property_item.get(
-            "location"
+    sources = [
+        source
+        for source in source_data.get(
+            "sources",
+            [],
         )
-    }
-
-
-new_properties = []
-
-
-for key, property_item in current_state.items():
-
-    if key not in previous_properties:
-
-        new_properties.append(
-            property_item
-        )
-
-
-price_reductions = []
-
-
-for key, property_item in current_state.items():
-
-    if key not in previous_properties:
-        continue
-
-    old_price = previous_properties[
-        key
-    ].get("price")
-
-    new_price = property_item[
-        "price"
+        if source.get("enabled")
     ]
 
-    if (
-        old_price is not None
-        and new_price < old_price
-    ):
+    state = load_json(
+        STATE_FILE,
+        {
+            "properties": {},
+            "pending_new": [],
+            "pending_reductions": [],
+            "pending_major_changes": [],
+            "last_digest_date": None,
+        },
+    )
 
-        reduction_percent = (
-            (
-                old_price
-                - new_price
+    previous = previous_properties(
+        state
+    )
+
+    current = []
+
+    for source in sources:
+        name = source["name"]
+        url = source["url"]
+
+        print(
+            f"\nChecking source: {name}"
+        )
+
+        print(
+            f"URL: {url}"
+        )
+
+        try:
+            properties = scrape_source(
+                source
             )
-            /
+
+            print(
+                f"Properties found: "
+                f"{len(properties)}"
+            )
+
+            current.extend(
+                properties
+            )
+
+        except Exception as error:
+            print(
+                f"ERROR checking {name}: "
+                f"{error}"
+            )
+
+    current = cross_source_dedupe(
+        current
+    )
+
+    current_by_key = {
+        property_key(prop): prop
+        for prop in current
+    }
+
+    new_items = []
+    reductions = []
+    major_changes = []
+
+    for key, prop in current_by_key.items():
+        old = previous.get(key)
+
+        if not old:
+            prop["detected_at"] = iso_now()
+
+            new_items.append(
+                prop
+            )
+
+            continue
+
+        prop["detected_at"] = old.get(
+            "detected_at",
+            prop.get(
+                "detected_at",
+                iso_now(),
+            ),
+        )
+
+        old_price = old.get(
+            "price"
+        )
+
+        new_price = prop.get(
+            "price"
+        )
+
+        if (
             old_price
-        ) * 100
+            and new_price
+            and new_price < old_price
+        ):
+            reductions.append(
+                (
+                    prop,
+                    old,
+                )
+            )
 
-        price_reductions.append({
-            "url": property_item["url"],
-            "title": property_item["title"],
-            "old_price": old_price,
-            "new_price": new_price,
-            "reduction_percent":
-                reduction_percent,
-            "source": property_item["source"]
-        })
+        changes = field_changes(
+            old,
+            prop,
+        )
 
+        if changes:
+            major_changes.append(
+                (
+                    prop,
+                    changes,
+                )
+            )
 
-state = {
-    "properties": current_state,
-    "pending_new": get_previous_pending_new(
-        previous_state
-    ),
-    "pending_reductions":
-        get_previous_pending_reductions(
-            previous_state
+    # --------------------------------------------------------
+    # BATCH QUEUE
+    # --------------------------------------------------------
+
+    pending_new = list(
+        state.get(
+            "pending_new",
+            [],
+        )
+    )
+
+    pending_reductions = list(
+        state.get(
+            "pending_reductions",
+            [],
+        )
+    )
+
+    pending_major = list(
+        state.get(
+            "pending_major_changes",
+            [],
+        )
+    )
+
+    pending_new.extend(
+        new_items
+    )
+
+    for prop, old in reductions:
+        pending_reductions.append(
+            {
+                "property": prop,
+                "old": old,
+                "queued_at": iso_now(),
+            }
+        )
+
+    for prop, changes in major_changes:
+        pending_major.append(
+            {
+                "property": prop,
+                "changes": changes,
+                "queued_at": iso_now(),
+            }
+        )
+
+    # Give new items an explicit queue time.
+    for prop in pending_new:
+        if not prop.get("queued_at"):
+            prop["queued_at"] = (
+                prop.get(
+                    "detected_at"
+                )
+                or iso_now()
+            )
+
+    cutoff = (
+        now_utc()
+        - timedelta(
+            minutes=BATCH_MINUTES
+        )
+    )
+
+    def is_old_enough(item):
+        queued = parse_datetime(
+            item.get(
+                "queued_at",
+                "",
+            )
+        )
+
+        if not queued:
+            return False
+
+        return queued <= cutoff
+
+    batch_ready = (
+        any(
+            is_old_enough(item)
+            for item in pending_new
+        )
+        or any(
+            is_old_enough(item)
+            for item in pending_reductions
+        )
+        or any(
+            is_old_enough(item)
+            for item in pending_major
+        )
+    )
+
+    if batch_ready:
+        send_event_email(
+            pending_new,
+            [
+                (
+                    item["property"],
+                    item["old"],
+                )
+                for item in pending_reductions
+            ],
+            [
+                (
+                    item["property"],
+                    item["changes"],
+                )
+                for item in pending_major
+            ],
+        )
+
+        pending_new = []
+        pending_reductions = []
+        pending_major = []
+
+    # --------------------------------------------------------
+    # STATE
+    # --------------------------------------------------------
+
+    new_state = {
+        "properties": current_by_key,
+        "pending_new": pending_new,
+        "pending_reductions": pending_reductions,
+        "pending_major_changes": pending_major,
+        "last_digest_date": state.get(
+            "last_digest_date"
         ),
-    "event_history":
-        get_previous_event_history(
-            previous_state
-        ),
-    "last_digest_date":
-        get_previous_digest_date(
-            previous_state
-        )
-}
+    }
 
+    # --------------------------------------------------------
+    # DAILY DIGEST
+    # --------------------------------------------------------
 
-for property_item in new_properties:
+    if should_send_daily_digest(
+        new_state
+    ):
+        if send_daily_digest(
+            list(
+                current_by_key.values()
+            )
+        ):
+            new_state[
+                "last_digest_date"
+            ] = datetime.now(
+                ARUBA_TZ
+            ).date().isoformat()
 
-    state["pending_new"].append({
-        "detected_at": iso_now(),
-        "property": property_item
-    })
-
-    add_event(
-        state,
-        {
-            "type": "new",
-            "time": iso_now(),
-            "property": property_item
-        }
+    save_json(
+        STATE_FILE,
+        new_state,
     )
 
+    # --------------------------------------------------------
+    # SUMMARY
+    # --------------------------------------------------------
 
-for change in price_reductions:
-
-    state["pending_reductions"].append({
-        "detected_at": iso_now(),
-        "change": change
-    })
-
-    add_event(
-        state,
-        {
-            "type": "price_reduction",
-            "time": iso_now(),
-            **change
-        }
-    )
-
-
-current_time = now_aruba()
-
-
-ready_new = []
-remaining_new = []
-
-
-for item in state["pending_new"]:
-
-    detected_at = parse_time(
-        item.get("detected_at")
-    )
-
-    if not detected_at:
-        remaining_new.append(item)
-        continue
-
-    age_minutes = (
-        current_time
-        - detected_at
-    ).total_seconds() / 60
-
-    if age_minutes >= BATCH_MINUTES:
-
-        ready_new.append(
-            item["property"]
-        )
-
-    else:
-
-        remaining_new.append(item)
-
-
-ready_reductions = []
-remaining_reductions = []
-
-
-for item in state[
-    "pending_reductions"
-]:
-
-    detected_at = parse_time(
-        item.get("detected_at")
-    )
-
-    if not detected_at:
-        remaining_reductions.append(
-            item
-        )
-        continue
-
-    age_minutes = (
-        current_time
-        - detected_at
-    ).total_seconds() / 60
-
-    if age_minutes >= BATCH_MINUTES:
-
-        ready_reductions.append(
-            item["change"]
-        )
-
-    else:
-
-        remaining_reductions.append(
-            item
-        )
-
-
-state["pending_new"] = remaining_new
-
-state[
-    "pending_reductions"
-] = remaining_reductions
-
-
-if ready_new:
-
-    print()
     print(
-        "Sending batched new-property email..."
+        "\n============================================================"
     )
 
-    subject = (
-        "Aruba Property Alert — "
-        f"{len(ready_new)} New "
-        "Property"
-        f"{'ies' if len(ready_new) != 1 else ''}"
-    )
-
-    send_email(
-        subject,
-        build_new_property_email(
-            ready_new
-        )
-    )
-
-
-if ready_reductions:
-
-    print()
     print(
-        "Sending batched price-reduction email..."
+        f"CURRENT QUALIFYING PROPERTIES: "
+        f"{len(current_by_key)}"
     )
 
-    subject = (
-        "Aruba Property Alert — "
-        f"{len(ready_reductions)} "
-        "Price Reduction"
-        f"{'s' if len(ready_reductions) != 1 else ''}"
-    )
-
-    send_email(
-        subject,
-        build_price_reduction_email(
-            ready_reductions
-        )
-    )
-
-
-digest_date = (
-    current_time.date()
-    - timedelta(days=1)
-).isoformat()
-
-
-if (
-    current_time.hour == 8
-    and current_time.minute < 15
-    and state.get(
-        "last_digest_date"
-    ) != digest_date
-):
-
-    yesterday_events = state[
-        "event_history"
-    ].get(
-        digest_date,
-        []
-    )
-
-    print()
     print(
-        f"Sending daily digest for "
-        f"{digest_date}..."
+        f"NEW DETECTED THIS RUN: "
+        f"{len(new_items)}"
     )
 
-    send_email(
-        "Aruba Property Agent — "
-        f"Daily Summary {digest_date}",
-        build_daily_digest_email(
-            yesterday_events,
-            digest_date
-        )
+    print(
+        f"PRICE REDUCTIONS THIS RUN: "
+        f"{len(reductions)}"
     )
 
-    state[
-        "last_digest_date"
-    ] = digest_date
+    print(
+        f"MAJOR CHANGES THIS RUN: "
+        f"{len(major_changes)}"
+    )
+
+    print(
+        f"PENDING NEW ALERTS: "
+        f"{len(pending_new)}"
+    )
+
+    print(
+        f"PENDING PRICE ALERTS: "
+        f"{len(pending_reductions)}"
+    )
+
+    print(
+        f"PENDING MAJOR CHANGE ALERTS: "
+        f"{len(pending_major)}"
+    )
+
+    print(
+        "============================================================"
+    )
+
+    print(
+        "Monitor run completed successfully."
+    )
 
 
-clean_old_history(state)
-
-state["properties"] = current_state
-
-
-save_json_file(
-    STATE_FILE,
-    state
-)
-
-
-print()
-print("=" * 60)
-
-print(
-    f"CURRENT QUALIFYING PROPERTIES: "
-    f"{len(current_state)}"
-)
-
-print(
-    f"NEW DETECTED THIS RUN: "
-    f"{len(new_properties)}"
-)
-
-print(
-    f"PRICE REDUCTIONS THIS RUN: "
-    f"{len(price_reductions)}"
-)
-
-print(
-    f"PENDING NEW ALERTS: "
-    f"{len(state['pending_new'])}"
-)
-
-print(
-    f"PENDING PRICE ALERTS: "
-    f"{len(state['pending_reductions'])}"
-)
-
-print("=" * 60)
-
-print()
-print(
-    "Monitor run completed successfully."
-)
+if __name__ == "__main__":
+    main()
