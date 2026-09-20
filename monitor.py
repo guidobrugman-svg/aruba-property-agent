@@ -10,10 +10,8 @@ URL = "https://www.arubabrokers.com/property-status/for-sale/"
 MAX_PRICE = 650000
 STATE_FILE = "state.json"
 
-# Temporary test recipient.
-# We will change this later when production sending is ready.
-EMAIL_RECIPIENT = "delivered@resend.dev"
-EMAIL_FROM = "onboarding@resend.dev"
+EMAIL_RECIPIENT = "guidobrugman@live.nl"
+EMAIL_FROM = "Aruba Property Agent <alerts@arubapropertywatch.com>"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0"
