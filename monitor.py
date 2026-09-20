@@ -71,6 +71,8 @@ def get_price(text):
 
 
 def is_excluded(text):
+    text_lower = text.lower()
+
     excluded_terms = [
         "commercial building",
         "commercial property",
@@ -78,8 +80,6 @@ def is_excluded(text):
         "office",
         "retail",
     ]
-
-    text_lower = text.lower()
 
     return any(term in text_lower for term in excluded_terms)
 
@@ -156,13 +156,7 @@ def scrape_generic_source(source):
         if not url.startswith("http"):
             continue
 
-        container = link
-
-        for _ in range(3):
-            if container.parent:
-                container = container.parent
-
-        text = container.get_text(" ", strip=True)
+        text = link.parent.get_text(" ", strip=True)
 
         if not text:
             continue
@@ -240,6 +234,7 @@ def build_new_property_email(properties):
     rows = []
 
     for property_item in properties:
+
         title = escape(property_item["title"])
         price = property_item["price"]
         url = escape(property_item["url"], quote=True)
@@ -248,8 +243,13 @@ def build_new_property_email(properties):
 
         rows.append(
             f"""
-            <div style="margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid #dddddd;">
-                <h2 style="margin-bottom:8px;">NEW PROPERTY — ${price:,}</h2>
+            <div style="margin-bottom:32px;
+                        padding-bottom:24px;
+                        border-bottom:1px solid #dddddd;">
+
+                <h2 style="margin-bottom:8px;">
+                    NEW PROPERTY — ${price:,}
+                </h2>
 
                 <p>
                     <strong>{title}</strong>
@@ -272,6 +272,7 @@ def build_new_property_email(properties):
                 <p style="font-size:12px;color:#666666;">
                     Source: {source}
                 </p>
+
             </div>
             """
         )
@@ -279,12 +280,16 @@ def build_new_property_email(properties):
     return f"""
     <!DOCTYPE html>
     <html>
-    <body style="font-family:Arial,sans-serif;line-height:1.5;color:#222;">
+    <body style="font-family:Arial,sans-serif;
+                 line-height:1.5;
+                 color:#222;">
+
         <h1>Aruba Property Alert</h1>
 
         <p>
             {len(properties)} new qualifying property
-            {"has" if len(properties) == 1 else "have"} been detected.
+            {"has" if len(properties) == 1 else "have"}
+            been detected.
         </p>
 
         {"".join(rows)}
@@ -292,6 +297,7 @@ def build_new_property_email(properties):
         <p style="font-size:12px;color:#777;">
             Aruba Property Agent
         </p>
+
     </body>
     </html>
     """
@@ -301,19 +307,22 @@ def build_price_reduction_email(changes):
     rows = []
 
     for change in changes:
+
         title = escape(change["title"])
         url = escape(change["url"], quote=True)
 
         old_price = change["old_price"]
         new_price = change["new_price"]
         reduction_percent = change["reduction_percent"]
+        source = escape(change["source"])
 
         rows.append(
             f"""
-            <div style="margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid #dddddd;">
-                <h2 style="margin-bottom:8px;">
-                    PRICE REDUCTION
-                </h2>
+            <div style="margin-bottom:32px;
+                        padding-bottom:24px;
+                        border-bottom:1px solid #dddddd;">
+
+                <h2>PRICE REDUCTION</h2>
 
                 <p>
                     <strong>{title}</strong>
@@ -343,8 +352,9 @@ def build_price_reduction_email(changes):
                 </p>
 
                 <p style="font-size:12px;color:#666666;">
-                    Source: {escape(change["source"])}
+                    Source: {source}
                 </p>
+
             </div>
             """
         )
@@ -352,12 +362,16 @@ def build_price_reduction_email(changes):
     return f"""
     <!DOCTYPE html>
     <html>
-    <body style="font-family:Arial,sans-serif;line-height:1.5;color:#222;">
+    <body style="font-family:Arial,sans-serif;
+                 line-height:1.5;
+                 color:#222;">
+
         <h1>Aruba Property Alert</h1>
 
         <p>
             {len(changes)} qualifying property
-            {"has" if len(changes) == 1 else "have"} had a price reduction.
+            {"has" if len(changes) == 1 else "have"}
+            had a price reduction.
         </p>
 
         {"".join(rows)}
@@ -365,6 +379,7 @@ def build_price_reduction_email(changes):
         <p style="font-size:12px;color:#777;">
             Aruba Property Agent
         </p>
+
     </body>
     </html>
     """
@@ -381,23 +396,52 @@ sources = [
     if source.get("enabled", True)
 ]
 
+
 all_properties = []
+successful_sources = 0
+
 
 for source in sources:
 
     try:
+
         source_properties = scrape_source(source)
+
         all_properties.extend(source_properties)
 
+        successful_sources += 1
+
     except Exception as error:
+
         print()
         print(f"ERROR checking {source['name']}:")
         print(str(error))
 
 
+if successful_sources == 0:
+
+    print()
+    print("ERROR: No sources could be checked successfully.")
+    print("Existing state will NOT be changed.")
+    print("Monitor test stopped safely.")
+
+    raise SystemExit(1)
+
+
 properties = deduplicate_properties(all_properties)
 
+
+if not properties:
+
+    print()
+    print("WARNING: No qualifying properties were found.")
+    print("Existing state will NOT be replaced.")
+
+    raise SystemExit(0)
+
+
 current_state = {}
+
 
 for property_item in properties:
 
@@ -414,13 +458,16 @@ for property_item in properties:
 
 new_properties = []
 
+
 for key, property_item in current_state.items():
 
     if key not in previous_state:
+
         new_properties.append(property_item)
 
 
 price_reductions = []
+
 
 for key, property_item in current_state.items():
 
@@ -447,7 +494,13 @@ for key, property_item in current_state.items():
 
 
 with open(STATE_FILE, "w", encoding="utf-8") as file:
-    json.dump(current_state, file, indent=2, ensure_ascii=False)
+
+    json.dump(
+        current_state,
+        file,
+        indent=2,
+        ensure_ascii=False
+    )
 
 
 print()
