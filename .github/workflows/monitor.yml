@@ -18,5 +18,8 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install Python packages
+        run: pip install requests beautifulsoup4
+
       - name: Run monitor
         run: python monitor.py
