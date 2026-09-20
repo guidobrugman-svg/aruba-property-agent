@@ -20,7 +20,6 @@ soup = BeautifulSoup(response.text, "html.parser")
 
 properties = []
 
-# Each real listing has an H2 containing the property title.
 for heading in soup.find_all("h2"):
 
     link = heading.find("a", href=True)
@@ -28,30 +27,37 @@ for heading in soup.find_all("h2"):
     if not link:
         continue
 
-    title = heading.get_text(" ", strip=True)
     href = urljoin(URL, link["href"])
 
-    # Ignore non-property headings.
     if "/property/" not in href:
         continue
 
-    # The listing information is contained in the heading's
-    # surrounding article/card.
-    card = heading
+    title = heading.get_text(" ", strip=True)
 
-    for _ in range(6):
-        if card.parent:
-            card = card.parent
+    # Find the smallest surrounding element that contains
+    # exactly one dollar price.
+    card = None
+    current = heading
 
-        card_text = card.get_text(" ", strip=True)
+    for _ in range(8):
 
-        # Stop once we have found the price belonging to this listing.
-        if re.search(r"\$[\d,]+", card_text):
+        if not current.parent:
             break
+
+        current = current.parent
+        text = current.get_text(" ", strip=True)
+
+        prices = re.findall(r"\$[\d,]+", text)
+
+        if len(prices) == 1:
+            card = current
+            break
+
+    if card is None:
+        continue
 
     card_text = card.get_text(" ", strip=True)
 
-    # Extract price.
     price_match = re.search(r"\$[\d,]+", card_text)
 
     if not price_match:
@@ -63,15 +69,13 @@ for heading in soup.find_all("h2"):
         .replace(",", "")
     )
 
-    # Maximum price.
     if price > MAX_PRICE:
         continue
 
-    # Must be an active For Sale listing.
-    if not re.search(r"\bFor Sale\b", card_text, re.IGNORECASE):
-        continue
+    # The page itself is the For Sale page,
+    # so an individual property found here is considered for sale.
 
-    # Exclude commercial properties.
+    # Exclude commercial listings.
     if re.search(r"\bCommercial\b", card_text, re.IGNORECASE):
         continue
 
