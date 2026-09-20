@@ -84,6 +84,177 @@ def is_excluded(text):
     return any(term in text_lower for term in excluded_terms)
 
 
+def get_image_from_container(container, base_url):
+    if not container:
+        return None
+
+    image = container.find("img")
+
+    if not image:
+        return None
+
+    image_url = (
+        image.get("src")
+        or image.get("data-src")
+        or image.get("data-lazy-src")
+    )
+
+    if not image_url:
+        srcset = image.get("srcset")
+
+        if srcset:
+            image_url = srcset.split(",")[0].strip().split(" ")[0]
+
+    if not image_url:
+        return None
+
+    return urljoin(base_url, image_url)
+
+
+def extract_bedrooms(text):
+    match = re.search(r"\bBeds?\s*:\s*(\d+)", text, re.IGNORECASE)
+
+    if match:
+        return int(match.group(1))
+
+    match = re.search(r"\b(\d+)\s*(?:BDR|BDRS|Bedroom|Bedrooms)\b", text, re.IGNORECASE)
+
+    if match:
+        return int(match.group(1))
+
+    return None
+
+
+def extract_bathrooms(text):
+    match = re.search(r"\bBaths?\s*:\s*(\d+)", text, re.IGNORECASE)
+
+    if match:
+        return int(match.group(1))
+
+    match = re.search(r"\b(\d+)\s*(?:Bath|Baths|Bathroom|Bathrooms)\b", text, re.IGNORECASE)
+
+    if match:
+        return int(match.group(1))
+
+    return None
+
+
+def extract_size(text):
+    match = re.search(
+        r"\bm2\s*:\s*([\d,.]+)",
+        text,
+        re.IGNORECASE
+    )
+
+    if match:
+        return match.group(1)
+
+    match = re.search(
+        r"\b([\d,.]+)\s*(?:Sq\s*Mt|Sq\s*M|m²|m2)\b",
+        text,
+        re.IGNORECASE
+    )
+
+    if match:
+        return match.group(1)
+
+    return None
+
+
+def extract_property_type(text):
+    text_lower = text.lower()
+
+    property_types = [
+        ("single family home", "House"),
+        ("single-family home", "House"),
+        ("villa", "Villa"),
+        ("townhouse", "Townhouse"),
+        ("townhomes", "Townhouse"),
+        ("condos/apartments", "Condo / Apartment"),
+        ("condo", "Condo"),
+        ("apartment", "Apartment"),
+        ("land", "Land"),
+        ("development", "Development"),
+        ("new construction", "New Construction"),
+        ("commercial", "Commercial"),
+    ]
+
+    for search_term, display_name in property_types:
+        if search_term in text_lower:
+            return display_name
+
+    return None
+
+
+def extract_location(text):
+    patterns = [
+        r"\b(?:Noord|Oranjestad|Palm Beach|Eagle Beach|Malmok|Savaneta|Paradera|San Nicolas|Santa Cruz|Ponton|Rooi Santo|Bushiri|Tanki Leendert|Turibana|Pos Chiquito|Kudawecha|Sabana Basora|Cas Ariba|Washington)\b",
+    ]
+
+    locations = []
+
+    for pattern in patterns:
+        matches = re.findall(pattern, text, re.IGNORECASE)
+
+        for match in matches:
+            clean_match = match.strip()
+
+            if clean_match.lower() not in [
+                location.lower() for location in locations
+            ]:
+                locations.append(clean_match)
+
+    if locations:
+        return ", ".join(locations[:2])
+
+    return None
+
+
+def clean_title(title):
+    title = re.sub(r"\s+", " ", title).strip()
+
+    title = re.sub(
+        r"\s+\|\s+\d+\s*BDR.*$",
+        "",
+        title,
+        flags=re.IGNORECASE
+    )
+
+    title = re.sub(
+        r"\s+\|\s+.*?\$[\d,]+.*$",
+        "",
+        title,
+        flags=re.IGNORECASE
+    )
+
+    return title.strip()
+
+
+def build_property_record(
+    title,
+    price,
+    url,
+    details,
+    source,
+    source_priority,
+    image=None
+):
+    return {
+        "title": clean_title(title),
+        "price": price,
+        "url": url,
+        "details": details,
+        "source": source,
+        "source_priority": source_priority,
+        "image": image,
+        "bedrooms": extract_bedrooms(details),
+        "bathrooms": extract_bathrooms(details),
+        "size": extract_size(details),
+        "property_type": extract_property_type(details),
+        "location": extract_location(details),
+    }
+
+
 def scrape_aruba_brokers(source):
     response = requests.get(
         source["url"],
@@ -124,14 +295,19 @@ def scrape_aruba_brokers(source):
         if is_excluded(text):
             continue
 
-        properties.append({
-            "title": title,
-            "price": price,
-            "url": url,
-            "details": text,
-            "source": source["name"],
-            "source_priority": source["priority"]
-        })
+        image = get_image_from_container(article, source["url"])
+
+        properties.append(
+            build_property_record(
+                title=title,
+                price=price,
+                url=url,
+                details=text,
+                source=source["name"],
+                source_priority=source["priority"],
+                image=image
+            )
+        )
 
     return properties
 
@@ -156,7 +332,12 @@ def scrape_generic_source(source):
         if not url.startswith("http"):
             continue
 
-        text = link.parent.get_text(" ", strip=True)
+        container = link.parent
+
+        if not container:
+            continue
+
+        text = container.get_text(" ", strip=True)
 
         if not text:
             continue
@@ -180,14 +361,19 @@ def scrape_generic_source(source):
         if len(title) < 5:
             continue
 
-        properties.append({
-            "title": title,
-            "price": price,
-            "url": url,
-            "details": text,
-            "source": source["name"],
-            "source_priority": source["priority"]
-        })
+        image = get_image_from_container(container, source["url"])
+
+        properties.append(
+            build_property_record(
+                title=title,
+                price=price,
+                url=url,
+                details=text,
+                source=source["name"],
+                source_priority=source["priority"],
+                image=image
+            )
+        )
 
     return properties
 
@@ -230,6 +416,48 @@ def deduplicate_properties(properties):
     return list(deduplicated.values())
 
 
+def build_property_details_html(property_item):
+    rows = []
+
+    location = property_item.get("location")
+    property_type = property_item.get("property_type")
+    bedrooms = property_item.get("bedrooms")
+    bathrooms = property_item.get("bathrooms")
+    size = property_item.get("size")
+
+    if location:
+        rows.append(
+            f"<strong>Location:</strong> {escape(location)}"
+        )
+
+    if property_type:
+        rows.append(
+            f"<strong>Property type:</strong> {escape(property_type)}"
+        )
+
+    if bedrooms is not None:
+        rows.append(
+            f"<strong>Bedrooms:</strong> {bedrooms}"
+        )
+
+    if bathrooms is not None:
+        rows.append(
+            f"<strong>Bathrooms:</strong> {bathrooms}"
+        )
+
+    if size:
+        rows.append(
+            f"<strong>Size:</strong> {escape(size)} m²"
+        )
+
+    if not rows:
+        rows.append(
+            escape(property_item["details"])
+        )
+
+    return "<br>".join(rows)
+
+
 def build_new_property_email(properties):
     rows = []
 
@@ -238,24 +466,48 @@ def build_new_property_email(properties):
         title = escape(property_item["title"])
         price = property_item["price"]
         url = escape(property_item["url"], quote=True)
-        details = escape(property_item["details"])
         source = escape(property_item["source"])
+
+        details_html = build_property_details_html(property_item)
+
+        image_html = ""
+
+        if property_item.get("image"):
+            image_url = escape(
+                property_item["image"],
+                quote=True
+            )
+
+            image_html = f"""
+                <p>
+                    <img src="{image_url}"
+                         alt="{title}"
+                         style="max-width:100%;
+                                width:600px;
+                                height:auto;
+                                border-radius:8px;">
+                </p>
+            """
 
         rows.append(
             f"""
-            <div style="margin-bottom:32px;
-                        padding-bottom:24px;
+            <div style="margin-bottom:36px;
+                        padding-bottom:28px;
                         border-bottom:1px solid #dddddd;">
 
                 <h2 style="margin-bottom:8px;">
                     NEW PROPERTY — ${price:,}
                 </h2>
 
-                <p>
-                    <strong>{title}</strong>
-                </p>
+                <h3 style="margin-bottom:12px;">
+                    {title}
+                </h3>
 
-                <p>{details}</p>
+                {image_html}
+
+                <p style="line-height:1.7;">
+                    {details_html}
+                </p>
 
                 <p>
                     <a href="{url}"
@@ -282,7 +534,10 @@ def build_new_property_email(properties):
     <html>
     <body style="font-family:Arial,sans-serif;
                  line-height:1.5;
-                 color:#222;">
+                 color:#222;
+                 max-width:700px;
+                 margin:0 auto;
+                 padding:20px;">
 
         <h1>Aruba Property Alert</h1>
 
@@ -310,25 +565,25 @@ def build_price_reduction_email(changes):
 
         title = escape(change["title"])
         url = escape(change["url"], quote=True)
+        source = escape(change["source"])
 
         old_price = change["old_price"]
         new_price = change["new_price"]
         reduction_percent = change["reduction_percent"]
-        source = escape(change["source"])
 
         rows.append(
             f"""
-            <div style="margin-bottom:32px;
-                        padding-bottom:24px;
+            <div style="margin-bottom:36px;
+                        padding-bottom:28px;
                         border-bottom:1px solid #dddddd;">
 
                 <h2>PRICE REDUCTION</h2>
 
-                <p>
-                    <strong>{title}</strong>
-                </p>
+                <h3>
+                    {title}
+                </h3>
 
-                <p style="font-size:18px;">
+                <p style="font-size:20px;">
                     ${old_price:,}
                     &nbsp;&rarr;&nbsp;
                     <strong>${new_price:,}</strong>
@@ -364,7 +619,10 @@ def build_price_reduction_email(changes):
     <html>
     <body style="font-family:Arial,sans-serif;
                  line-height:1.5;
-                 color:#222;">
+                 color:#222;
+                 max-width:700px;
+                 margin:0 auto;
+                 padding:20px;">
 
         <h1>Aruba Property Alert</h1>
 
@@ -388,7 +646,10 @@ def build_price_reduction_email(changes):
 print("Aruba Property Agent starting...")
 
 previous_state = load_json_file(STATE_FILE, {})
-source_config = load_json_file(SOURCES_FILE, {"sources": []})
+source_config = load_json_file(
+    SOURCES_FILE,
+    {"sources": []}
+)
 
 sources = [
     source
@@ -423,7 +684,7 @@ if successful_sources == 0:
     print()
     print("ERROR: No sources could be checked successfully.")
     print("Existing state will NOT be changed.")
-    print("Monitor test stopped safely.")
+    print("Monitor stopped safely.")
 
     raise SystemExit(1)
 
@@ -452,7 +713,13 @@ for property_item in properties:
         "price": property_item["price"],
         "details": property_item["details"],
         "source": property_item["source"],
-        "url": property_item["url"]
+        "url": property_item["url"],
+        "image": property_item.get("image"),
+        "bedrooms": property_item.get("bedrooms"),
+        "bathrooms": property_item.get("bathrooms"),
+        "size": property_item.get("size"),
+        "property_type": property_item.get("property_type"),
+        "location": property_item.get("location")
     }
 
 
