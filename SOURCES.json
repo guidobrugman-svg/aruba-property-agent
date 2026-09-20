@@ -19,7 +19,7 @@
       "type": "aggregator",
       "url": "https://arubalistings.com/sale/all",
       "priority": 2,
-      "enabled": true
+      "enabled": false
     }
   ]
 }
