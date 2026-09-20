@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 from html import escape
 
+
 STATE_FILE = "state.json"
 SOURCES_FILE = "SOURCES.json"
 
@@ -62,12 +63,23 @@ def load_json_file(filename, default):
 
 
 def get_price(text):
-    price_match = re.search(r"\$\s*([\d,]+)", text)
+    matches = re.findall(r"\$\s*([\d,]+)", text)
 
-    if not price_match:
+    if not matches:
         return None
 
-    return int(price_match.group(1).replace(",", ""))
+    prices = []
+
+    for match in matches:
+        try:
+            prices.append(int(match.replace(",", "")))
+        except ValueError:
+            pass
+
+    if not prices:
+        return None
+
+    return min(prices)
 
 
 def is_excluded(text):
@@ -82,6 +94,21 @@ def is_excluded(text):
     ]
 
     return any(term in text_lower for term in excluded_terms)
+
+
+def is_unavailable(text):
+    text_lower = text.lower()
+
+    unavailable_terms = [
+        "under contract",
+        "sale in progress",
+        "sold",
+        "withdrawn",
+        "unavailable",
+        "off market",
+    ]
+
+    return any(term in text_lower for term in unavailable_terms)
 
 
 def get_image_from_container(container, base_url):
@@ -112,51 +139,51 @@ def get_image_from_container(container, base_url):
 
 
 def extract_bedrooms(text):
-    match = re.search(r"\bBeds?\s*:\s*(\d+)", text, re.IGNORECASE)
+    patterns = [
+        r"\bBeds?\s*:\s*(\d+)",
+        r"\b(\d+)\s*(?:BDR|BDRS|Bedroom|Bedrooms)\b",
+        r"\bBed\s*:\s*(\d+)",
+    ]
 
-    if match:
-        return int(match.group(1))
+    for pattern in patterns:
+        match = re.search(pattern, text, re.IGNORECASE)
 
-    match = re.search(r"\b(\d+)\s*(?:BDR|BDRS|Bedroom|Bedrooms)\b", text, re.IGNORECASE)
-
-    if match:
-        return int(match.group(1))
+        if match:
+            return int(match.group(1))
 
     return None
 
 
 def extract_bathrooms(text):
-    match = re.search(r"\bBaths?\s*:\s*(\d+)", text, re.IGNORECASE)
+    patterns = [
+        r"\bBaths?\s*:\s*(\d+(?:\.\d+)?)",
+        r"\b(\d+(?:\.\d+)?)\s*(?:Bath|Baths|Bathroom|Bathrooms)\b",
+    ]
 
-    if match:
-        return int(match.group(1))
+    for pattern in patterns:
+        match = re.search(pattern, text, re.IGNORECASE)
 
-    match = re.search(r"\b(\d+)\s*(?:Bath|Baths|Bathroom|Bathrooms)\b", text, re.IGNORECASE)
-
-    if match:
-        return int(match.group(1))
+        if match:
+            return match.group(1)
 
     return None
 
 
 def extract_size(text):
-    match = re.search(
+    patterns = [
         r"\bm2\s*:\s*([\d,.]+)",
-        text,
-        re.IGNORECASE
-    )
+        r"\b([\d,.]+)\s*(?:m²|m2|Sq\s*Mt|Sq\s*M)\b",
+    ]
 
-    if match:
-        return match.group(1)
+    for pattern in patterns:
+        match = re.search(
+            pattern,
+            text,
+            re.IGNORECASE
+        )
 
-    match = re.search(
-        r"\b([\d,.]+)\s*(?:Sq\s*Mt|Sq\s*M|m²|m2)\b",
-        text,
-        re.IGNORECASE
-    )
-
-    if match:
-        return match.group(1)
+        if match:
+            return match.group(1)
 
     return None
 
@@ -171,7 +198,9 @@ def extract_property_type(text):
         ("townhouse", "Townhouse"),
         ("townhomes", "Townhouse"),
         ("condos/apartments", "Condo / Apartment"),
+        ("condominium", "Condo / Apartment"),
         ("condo", "Condo"),
+        ("apartment complex", "Apartment Complex"),
         ("apartment", "Apartment"),
         ("land", "Land"),
         ("development", "Development"),
@@ -187,31 +216,64 @@ def extract_property_type(text):
 
 
 def extract_location(text):
-    patterns = [
-        r"\b(?:Noord|Oranjestad|Palm Beach|Eagle Beach|Malmok|Savaneta|Paradera|San Nicolas|Santa Cruz|Ponton|Rooi Santo|Bushiri|Tanki Leendert|Turibana|Pos Chiquito|Kudawecha|Sabana Basora|Cas Ariba|Washington)\b",
+    locations = [
+        "Noord",
+        "Oranjestad",
+        "Palm Beach",
+        "Eagle Beach",
+        "Malmok",
+        "Savaneta",
+        "Paradera",
+        "San Nicolas",
+        "Santa Cruz",
+        "Ponton",
+        "Rooi Santo",
+        "Bushiri",
+        "Tanki Leendert",
+        "Turibana",
+        "Pos Chiquito",
+        "Kudawecha",
+        "Sabana Basora",
+        "Sabana Liber",
+        "Cas Ariba",
+        "Washington",
+        "Alto Vista",
+        "Bubali",
+        "Wayaca",
+        "Tanki Flip",
+        "Brasil",
+        "Pavia",
+        "Dakota",
+        "Hooiberg",
+        "Piedra Plat",
+        "Balashi",
     ]
 
-    locations = []
+    found = []
 
-    for pattern in patterns:
-        matches = re.findall(pattern, text, re.IGNORECASE)
+    for location in locations:
 
-        for match in matches:
-            clean_match = match.strip()
-
-            if clean_match.lower() not in [
-                location.lower() for location in locations
+        if re.search(
+            r"\b" + re.escape(location) + r"\b",
+            text,
+            re.IGNORECASE
+        ):
+            if location.lower() not in [
+                item.lower() for item in found
             ]:
-                locations.append(clean_match)
+                found.append(location)
 
-    if locations:
-        return ", ".join(locations[:2])
+    if found:
+        return ", ".join(found[:2])
 
     return None
 
 
 def clean_title(title):
     title = re.sub(r"\s+", " ", title).strip()
+
+    if not title:
+        return "Untitled property"
 
     title = re.sub(
         r"\s+\|\s+\d+\s*BDR.*$",
@@ -284,6 +346,9 @@ def scrape_aruba_brokers(source):
         url = urljoin(source["url"], link["href"])
         text = article.get_text(" ", strip=True)
 
+        if is_unavailable(text):
+            continue
+
         price = get_price(text)
 
         if price is None:
@@ -295,7 +360,132 @@ def scrape_aruba_brokers(source):
         if is_excluded(text):
             continue
 
-        image = get_image_from_container(article, source["url"])
+        image = get_image_from_container(
+            article,
+            source["url"]
+        )
+
+        properties.append(
+            build_property_record(
+                title=title,
+                price=price,
+                url=url,
+                details=text,
+                source=source["name"],
+                source_priority=source["priority"],
+                image=image
+            )
+        )
+
+    return properties
+
+
+def scrape_bluefin(source):
+    response = requests.get(
+        source["url"],
+        headers=HEADERS,
+        timeout=30
+    )
+
+    response.raise_for_status()
+
+    soup = BeautifulSoup(response.text, "html.parser")
+
+    properties = []
+
+    seen_urls = set()
+
+    for link in soup.find_all("a", href=True):
+
+        href = link.get("href", "")
+
+        if "/property/" not in href:
+            continue
+
+        url = urljoin(source["url"], href)
+
+        if url in seen_urls:
+            continue
+
+        seen_urls.add(url)
+
+        container = link
+
+        for _ in range(5):
+
+            if not container.parent:
+                break
+
+            container = container.parent
+
+            text = container.get_text(
+                " ",
+                strip=True
+            )
+
+            if "$" in text and len(text) > 40:
+                break
+
+        text = container.get_text(
+            " ",
+            strip=True
+        )
+
+        if not text:
+            continue
+
+        if is_unavailable(text):
+            continue
+
+        price = get_price(text)
+
+        if price is None:
+            continue
+
+        if price > MAX_PRICE:
+            continue
+
+        if is_excluded(text):
+            continue
+
+        title = None
+
+        for candidate in container.find_all(
+            ["h1", "h2", "h3", "h4"]
+        ):
+
+            candidate_text = candidate.get_text(
+                " ",
+                strip=True
+            )
+
+            if (
+                candidate_text
+                and candidate_text.lower() != "details"
+            ):
+                title = candidate_text
+                break
+
+        if not title:
+
+            link_text = link.get_text(
+                " ",
+                strip=True
+            )
+
+            if (
+                link_text
+                and link_text.lower() != "details"
+            ):
+                title = link_text
+
+        if not title:
+            continue
+
+        image = get_image_from_container(
+            container,
+            source["url"]
+        )
 
         properties.append(
             build_property_record(
@@ -325,21 +515,37 @@ def scrape_generic_source(source):
 
     properties = []
 
+    seen_urls = set()
+
     for link in soup.find_all("a", href=True):
 
-        url = urljoin(source["url"], link["href"])
+        url = urljoin(
+            source["url"],
+            link["href"]
+        )
 
         if not url.startswith("http"):
             continue
+
+        if url in seen_urls:
+            continue
+
+        seen_urls.add(url)
 
         container = link.parent
 
         if not container:
             continue
 
-        text = container.get_text(" ", strip=True)
+        text = container.get_text(
+            " ",
+            strip=True
+        )
 
         if not text:
+            continue
+
+        if is_unavailable(text):
             continue
 
         price = get_price(text)
@@ -353,15 +559,37 @@ def scrape_generic_source(source):
         if is_excluded(text):
             continue
 
-        title = link.get_text(" ", strip=True)
+        title = link.get_text(
+            " ",
+            strip=True
+        )
 
         if not title:
             continue
 
+        if title.lower() == "details":
+            for heading in container.find_all(
+                ["h1", "h2", "h3", "h4"]
+            ):
+                candidate = heading.get_text(
+                    " ",
+                    strip=True
+                )
+
+                if (
+                    candidate
+                    and candidate.lower() != "details"
+                ):
+                    title = candidate
+                    break
+
         if len(title) < 5:
             continue
 
-        image = get_image_from_container(container, source["url"])
+        image = get_image_from_container(
+            container,
+            source["url"]
+        )
 
         properties.append(
             build_property_record(
@@ -385,6 +613,10 @@ def scrape_source(source):
 
     if source["name"] == "Aruba Brokers":
         properties = scrape_aruba_brokers(source)
+
+    elif source["name"] == "Bluefin Realtors":
+        properties = scrape_bluefin(source)
+
     else:
         properties = scrape_generic_source(source)
 
@@ -397,57 +629,129 @@ def normalize_url(url):
     return url.rstrip("/").lower()
 
 
+def normalize_text(text):
+    if not text:
+        return ""
+
+    text = text.lower()
+    text = re.sub(r"[^a-z0-9]+", " ", text)
+    text = re.sub(r"\s+", " ", text)
+
+    return text.strip()
+
+
+def property_identity(property_item):
+    url_key = normalize_url(property_item["url"])
+
+    title_key = normalize_text(
+        property_item.get("title", "")
+    )
+
+    location_key = normalize_text(
+        property_item.get("location", "")
+    )
+
+    price_key = str(
+        property_item.get("price", "")
+    )
+
+    return (
+        title_key,
+        location_key,
+        price_key
+    )
+
+
 def deduplicate_properties(properties):
     deduplicated = {}
 
     for property_item in properties:
 
-        key = normalize_url(property_item["url"])
+        url_key = normalize_url(
+            property_item["url"]
+        )
 
-        if key not in deduplicated:
-            deduplicated[key] = property_item
+        identity_key = property_identity(
+            property_item
+        )
+
+        keys_to_check = [
+            f"url:{url_key}",
+            f"identity:{identity_key}"
+        ]
+
+        existing_key = None
+
+        for key in keys_to_check:
+            if key in deduplicated:
+                existing_key = key
+                break
+
+        if existing_key is None:
+
+            deduplicated[
+                f"url:{url_key}"
+            ] = property_item
+
             continue
 
-        existing = deduplicated[key]
+        existing = deduplicated[
+            existing_key
+        ]
 
-        if property_item["source_priority"] < existing["source_priority"]:
-            deduplicated[key] = property_item
+        if (
+            property_item["source_priority"]
+            <
+            existing["source_priority"]
+        ):
+            deduplicated[
+                existing_key
+            ] = property_item
 
-    return list(deduplicated.values())
+    return list(
+        deduplicated.values()
+    )
 
 
 def build_property_details_html(property_item):
     rows = []
 
     location = property_item.get("location")
-    property_type = property_item.get("property_type")
+    property_type = property_item.get(
+        "property_type"
+    )
     bedrooms = property_item.get("bedrooms")
     bathrooms = property_item.get("bathrooms")
     size = property_item.get("size")
 
     if location:
         rows.append(
-            f"<strong>Location:</strong> {escape(location)}"
+            f"<strong>Location:</strong> "
+            f"{escape(location)}"
         )
 
     if property_type:
         rows.append(
-            f"<strong>Property type:</strong> {escape(property_type)}"
+            f"<strong>Property type:</strong> "
+            f"{escape(property_type)}"
         )
 
     if bedrooms is not None:
         rows.append(
-            f"<strong>Bedrooms:</strong> {bedrooms}"
+            f"<strong>Bedrooms:</strong> "
+            f"{bedrooms}"
         )
 
     if bathrooms is not None:
         rows.append(
-            f"<strong>Bathrooms:</strong> {bathrooms}"
+            f"<strong>Bathrooms:</strong> "
+            f"{escape(str(bathrooms))}"
         )
 
     if size:
         rows.append(
-            f"<strong>Size:</strong> {escape(size)} m²"
+            f"<strong>Size:</strong> "
+            f"{escape(str(size))} m²"
         )
 
     if not rows:
@@ -463,16 +767,31 @@ def build_new_property_email(properties):
 
     for property_item in properties:
 
-        title = escape(property_item["title"])
-        price = property_item["price"]
-        url = escape(property_item["url"], quote=True)
-        source = escape(property_item["source"])
+        title = escape(
+            property_item["title"]
+        )
 
-        details_html = build_property_details_html(property_item)
+        price = property_item["price"]
+
+        url = escape(
+            property_item["url"],
+            quote=True
+        )
+
+        source = escape(
+            property_item["source"]
+        )
+
+        details_html = (
+            build_property_details_html(
+                property_item
+            )
+        )
 
         image_html = ""
 
         if property_item.get("image"):
+
             image_url = escape(
                 property_item["image"],
                 quote=True
@@ -563,13 +882,24 @@ def build_price_reduction_email(changes):
 
     for change in changes:
 
-        title = escape(change["title"])
-        url = escape(change["url"], quote=True)
-        source = escape(change["source"])
+        title = escape(
+            change["title"]
+        )
+
+        url = escape(
+            change["url"],
+            quote=True
+        )
+
+        source = escape(
+            change["source"]
+        )
 
         old_price = change["old_price"]
         new_price = change["new_price"]
-        reduction_percent = change["reduction_percent"]
+        reduction_percent = (
+            change["reduction_percent"]
+        )
 
         rows.append(
             f"""
@@ -579,9 +909,7 @@ def build_price_reduction_email(changes):
 
                 <h2>PRICE REDUCTION</h2>
 
-                <h3>
-                    {title}
-                </h3>
+                <h3>{title}</h3>
 
                 <p style="font-size:20px;">
                     ${old_price:,}
@@ -591,7 +919,9 @@ def build_price_reduction_email(changes):
 
                 <p>
                     Reduction:
-                    <strong>{reduction_percent:.1f}%</strong>
+                    <strong>
+                        {reduction_percent:.1f}%
+                    </strong>
                 </p>
 
                 <p>
@@ -645,7 +975,12 @@ def build_price_reduction_email(changes):
 
 print("Aruba Property Agent starting...")
 
-previous_state = load_json_file(STATE_FILE, {})
+
+previous_state = load_json_file(
+    STATE_FILE,
+    {}
+)
+
 source_config = load_json_file(
     SOURCES_FILE,
     {"sources": []}
@@ -653,8 +988,14 @@ source_config = load_json_file(
 
 sources = [
     source
-    for source in source_config.get("sources", [])
-    if source.get("enabled", True)
+    for source in source_config.get(
+        "sources",
+        []
+    )
+    if source.get(
+        "enabled",
+        True
+    )
 ]
 
 
@@ -666,37 +1007,60 @@ for source in sources:
 
     try:
 
-        source_properties = scrape_source(source)
+        source_properties = scrape_source(
+            source
+        )
 
-        all_properties.extend(source_properties)
+        all_properties.extend(
+            source_properties
+        )
 
         successful_sources += 1
 
     except Exception as error:
 
         print()
-        print(f"ERROR checking {source['name']}:")
+        print(
+            f"ERROR checking "
+            f"{source['name']}:"
+        )
+
         print(str(error))
 
 
 if successful_sources == 0:
 
     print()
-    print("ERROR: No sources could be checked successfully.")
-    print("Existing state will NOT be changed.")
+    print(
+        "ERROR: No sources could be "
+        "checked successfully."
+    )
+
+    print(
+        "Existing state will NOT be changed."
+    )
+
     print("Monitor stopped safely.")
 
     raise SystemExit(1)
 
 
-properties = deduplicate_properties(all_properties)
+properties = deduplicate_properties(
+    all_properties
+)
 
 
 if not properties:
 
     print()
-    print("WARNING: No qualifying properties were found.")
-    print("Existing state will NOT be replaced.")
+    print(
+        "WARNING: No qualifying "
+        "properties were found."
+    )
+
+    print(
+        "Existing state will NOT be replaced."
+    )
 
     raise SystemExit(0)
 
@@ -706,7 +1070,9 @@ current_state = {}
 
 for property_item in properties:
 
-    key = normalize_url(property_item["url"])
+    key = normalize_url(
+        property_item["url"]
+    )
 
     current_state[key] = {
         "title": property_item["title"],
@@ -715,11 +1081,21 @@ for property_item in properties:
         "source": property_item["source"],
         "url": property_item["url"],
         "image": property_item.get("image"),
-        "bedrooms": property_item.get("bedrooms"),
-        "bathrooms": property_item.get("bathrooms"),
-        "size": property_item.get("size"),
-        "property_type": property_item.get("property_type"),
-        "location": property_item.get("location")
+        "bedrooms": property_item.get(
+            "bedrooms"
+        ),
+        "bathrooms": property_item.get(
+            "bathrooms"
+        ),
+        "size": property_item.get(
+            "size"
+        ),
+        "property_type": property_item.get(
+            "property_type"
+        ),
+        "location": property_item.get(
+            "location"
+        )
     }
 
 
@@ -730,7 +1106,9 @@ for key, property_item in current_state.items():
 
     if key not in previous_state:
 
-        new_properties.append(property_item)
+        new_properties.append(
+            property_item
+        )
 
 
 price_reductions = []
@@ -747,7 +1125,11 @@ for key, property_item in current_state.items():
     if new_price < old_price:
 
         reduction_percent = (
-            (old_price - new_price) / old_price
+            (
+                old_price - new_price
+            )
+            /
+            old_price
         ) * 100
 
         price_reductions.append({
@@ -755,12 +1137,17 @@ for key, property_item in current_state.items():
             "title": property_item["title"],
             "old_price": old_price,
             "new_price": new_price,
-            "reduction_percent": reduction_percent,
+            "reduction_percent":
+                reduction_percent,
             "source": property_item["source"]
         })
 
 
-with open(STATE_FILE, "w", encoding="utf-8") as file:
+with open(
+    STATE_FILE,
+    "w",
+    encoding="utf-8"
+) as file:
 
     json.dump(
         current_state,
@@ -772,9 +1159,18 @@ with open(STATE_FILE, "w", encoding="utf-8") as file:
 
 print()
 print("=" * 60)
-print(f"CURRENT QUALIFYING PROPERTIES: {len(current_state)}")
-print(f"NEW PROPERTIES: {len(new_properties)}")
-print(f"PRICE REDUCTIONS: {len(price_reductions)}")
+print(
+    f"CURRENT QUALIFYING PROPERTIES: "
+    f"{len(current_state)}"
+)
+print(
+    f"NEW PROPERTIES: "
+    f"{len(new_properties)}"
+)
+print(
+    f"PRICE REDUCTIONS: "
+    f"{len(price_reductions)}"
+)
 print("=" * 60)
 
 
@@ -782,55 +1178,113 @@ for property_item in new_properties:
 
     print()
     print("NEW PROPERTY:")
-    print(f"Title: {property_item['title']}")
-    print(f"Price: ${property_item['price']:,}")
-    print(f"Source: {property_item['source']}")
-    print(f"URL: {property_item['url']}")
+
+    print(
+        f"Title: "
+        f"{property_item['title']}"
+    )
+
+    print(
+        f"Price: "
+        f"${property_item['price']:,}"
+    )
+
+    print(
+        f"Source: "
+        f"{property_item['source']}"
+    )
+
+    print(
+        f"URL: "
+        f"{property_item['url']}"
+    )
 
 
 for change in price_reductions:
 
     print()
     print("PRICE REDUCTION:")
-    print(f"Title: {change['title']}")
-    print(f"Old price: ${change['old_price']:,}")
-    print(f"New price: ${change['new_price']:,}")
-    print(f"Reduction: {change['reduction_percent']:.1f}%")
-    print(f"Source: {change['source']}")
-    print(f"URL: {change['url']}")
+
+    print(
+        f"Title: "
+        f"{change['title']}"
+    )
+
+    print(
+        f"Old price: "
+        f"${change['old_price']:,}"
+    )
+
+    print(
+        f"New price: "
+        f"${change['new_price']:,}"
+    )
+
+    print(
+        f"Reduction: "
+        f"{change['reduction_percent']:.1f}%"
+    )
+
+    print(
+        f"Source: "
+        f"{change['source']}"
+    )
+
+    print(
+        f"URL: "
+        f"{change['url']}"
+    )
 
 
 if new_properties:
 
     print()
-    print("Sending new-property email...")
+    print(
+        "Sending new-property email..."
+    )
 
     subject = (
-        f"Aruba Property Alert — "
-        f"{len(new_properties)} New Property"
+        "Aruba Property Alert — "
+        f"{len(new_properties)} "
+        "New Property"
         f"{'ies' if len(new_properties) != 1 else ''}"
     )
 
-    html = build_new_property_email(new_properties)
+    html = build_new_property_email(
+        new_properties
+    )
 
-    send_email(subject, html)
+    send_email(
+        subject,
+        html
+    )
 
 
 if price_reductions:
 
     print()
-    print("Sending price-reduction email...")
+    print(
+        "Sending price-reduction email..."
+    )
 
     subject = (
-        f"Aruba Property Alert — "
-        f"{len(price_reductions)} Price Reduction"
+        "Aruba Property Alert — "
+        f"{len(price_reductions)} "
+        "Price Reduction"
         f"{'s' if len(price_reductions) != 1 else ''}"
     )
 
-    html = build_price_reduction_email(price_reductions)
+    html = build_price_reduction_email(
+        price_reductions
+    )
 
-    send_email(subject, html)
+    send_email(
+        subject,
+        html
+    )
 
 
 print()
-print("Monitor test completed successfully.")
+print(
+    "Monitor test completed successfully."
+)
