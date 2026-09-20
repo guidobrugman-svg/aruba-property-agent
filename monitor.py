@@ -13,12 +13,7 @@ HEADERS = {
 print("Aruba Property Agent starting...")
 print("Checking Aruba Brokers...")
 
-response = requests.get(
-    URL,
-    headers=HEADERS,
-    timeout=30
-)
-
+response = requests.get(URL, headers=HEADERS, timeout=30)
 response.raise_for_status()
 
 soup = BeautifulSoup(response.text, "html.parser")
@@ -28,25 +23,17 @@ properties = []
 for article in soup.find_all("article"):
 
     heading = article.find("h2")
-
     if not heading:
         continue
 
     link = heading.find("a", href=True)
-
     if not link:
         continue
 
-    href = urljoin(URL, link["href"])
     title = heading.get_text(" ", strip=True)
-
+    url = urljoin(URL, link["href"])
     text = article.get_text(" ", strip=True)
 
-    # Only accept listings marked For Sale.
-    if not re.search(r"\bFor Sale\b", text, re.IGNORECASE):
-        continue
-
-    # Extract price.
     price_match = re.search(r"\$[\d,]+", text)
 
     if not price_match:
@@ -58,28 +45,20 @@ for article in soup.find_all("article"):
         .replace(",", "")
     )
 
-    # Maximum price.
+    # Ignore properties above our maximum price.
     if price > MAX_PRICE:
         continue
 
-    # Exclude commercial properties.
-    if re.search(r"\bCommercial\b", text, re.IGNORECASE):
+    # Ignore commercial properties.
+    if "Commercial" in text:
         continue
 
     properties.append({
         "title": title,
         "price": price,
-        "url": href,
+        "url": url,
         "details": text
     })
-
-# Remove duplicate URLs.
-unique = {}
-
-for property_item in properties:
-    unique[property_item["url"]] = property_item
-
-properties = list(unique.values())
 
 print()
 print("=" * 60)
@@ -87,12 +66,10 @@ print(f"QUALIFYING PROPERTIES FOUND: {len(properties)}")
 print("=" * 60)
 
 for number, property_item in enumerate(properties, start=1):
-
     print()
     print(f"{number}. {property_item['title']}")
     print(f"   Price: ${property_item['price']:,}")
     print(f"   URL: {property_item['url']}")
-    print(f"   Details: {property_item['details'][:500]}")
 
 print()
 print("Monitor test completed successfully.")
