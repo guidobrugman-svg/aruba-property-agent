@@ -15,25 +15,67 @@
       "enabled": true
     },
     {
+      "name": "Bluefin Realtors",
+      "type": "multi_broker",
+      "url": "https://bluefinrealtors.com/property/",
+      "priority": 1,
+      "enabled": true
+    },
+    {
+      "name": "Aruba Palms Realtors",
+      "type": "direct_broker",
+      "url": "https://arubapalmsrealtors.com/property-type/houses/",
+      "priority": 1,
+      "enabled": true
+    },
+    {
+      "name": "Home 4 Everyone",
+      "type": "direct_broker",
+      "url": "https://homeforeveryonearuba.com/search-results/",
+      "priority": 1,
+      "enabled": true
+    },
+    {
+      "name": "Smiley Real Estate",
+      "type": "direct_broker",
+      "url": "https://smileyaruba.com/offer-type/sale/",
+      "priority": 1,
+      "enabled": true
+    },
+    {
+      "name": "Aruba Real Estate",
+      "type": "direct_broker",
+      "url": "https://www.arubarealestate.com/statusnew/for-sale/",
+      "priority": 1,
+      "enabled": true
+    },
+    {
+      "name": "Aruba Happy Realty",
+      "type": "direct_broker",
+      "url": "https://arubahappyrealty.com/status/for-sale/",
+      "priority": 1,
+      "enabled": true
+    },
+    {
       "name": "RE/MAX Aruba",
       "type": "direct_broker",
       "url": "https://remaxaruba.com/listings",
       "priority": 1,
-      "enabled": false
+      "enabled": true
     },
     {
       "name": "RES Aruba Realty",
       "type": "direct_broker",
       "url": "https://resarubarealty.com/status/for-sale/",
       "priority": 1,
-      "enabled": false
+      "enabled": true
     },
     {
       "name": "Aruba Listings",
       "type": "aggregator",
       "url": "https://arubalistings.com/sale/all",
       "priority": 2,
-      "enabled": false
+      "enabled": true
     }
   ]
 }
