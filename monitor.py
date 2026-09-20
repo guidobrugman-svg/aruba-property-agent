@@ -1,11 +1,9 @@
 import requests
-from bs4 import BeautifulSoup
 
-URL = "https://arubalistings.com/sale/all"
-MAX_PRICE = 650000
+URL = "https://www.arubabrokers.com/property-status/for-sale/"
 
 print("Aruba Property Agent starting...")
-print("Checking Aruba Listings...")
+print("Checking Aruba Brokers...")
 
 response = requests.get(
     URL,
@@ -15,10 +13,6 @@ response = requests.get(
 
 response.raise_for_status()
 
-soup = BeautifulSoup(response.text, "html.parser")
-
-text = soup.get_text(" ", strip=True)
-
-print("Successfully connected to Aruba Listings.")
+print("Successfully connected to Aruba Brokers.")
 print(f"Page size: {len(response.text)} characters")
-print("Sale page contains:", text[:500])
+print(response.text[:500])
