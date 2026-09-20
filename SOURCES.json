@@ -15,6 +15,13 @@
       "enabled": true
     },
     {
+      "name": "RES Aruba Realty",
+      "type": "direct_broker",
+      "url": "https://resarubarealty.com/status/for-sale/",
+      "priority": 1,
+      "enabled": true
+    },
+    {
       "name": "Aruba Listings",
       "type": "aggregator",
       "url": "https://arubalistings.com/sale/all",
