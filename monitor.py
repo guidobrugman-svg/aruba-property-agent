@@ -1,48 +1,103 @@
+import re
 import requests
 from bs4 import BeautifulSoup
+from urllib.parse import urljoin
 
 URL = "https://www.arubabrokers.com/property-status/for-sale/"
+MAX_PRICE = 650000
 
-response = requests.get(
-    URL,
-    headers={"User-Agent": "Mozilla/5.0"},
-    timeout=30
-)
+HEADERS = {
+    "User-Agent": "Mozilla/5.0"
+}
 
+print("Aruba Property Agent starting...")
+print("Checking Aruba Brokers...")
+
+response = requests.get(URL, headers=HEADERS, timeout=30)
 response.raise_for_status()
 
 soup = BeautifulSoup(response.text, "html.parser")
 
-# Find the first real property heading.
-for heading in soup.find_all("h2"):
+properties = []
+
+# Each listing is an <article class="property ...">.
+for article in soup.find_all("article"):
+
+    classes = article.get("class", [])
+
+    if "property" not in classes:
+        continue
+
+    # Find the property title and URL.
+    heading = article.find("h2")
+
+    if not heading:
+        continue
 
     link = heading.find("a", href=True)
 
     if not link:
         continue
 
-    if "/property/" not in link.get("href", ""):
+    href = urljoin(URL, link["href"])
+    title = heading.get_text(" ", strip=True)
+
+    # Get all text belonging ONLY to this listing.
+    text = article.get_text(" ", strip=True)
+
+    # Extract price.
+    price_match = re.search(r"\$[\d,]+", text)
+
+    if not price_match:
         continue
 
-    print("PROPERTY TITLE:")
-    print(heading.get_text(" ", strip=True))
+    price = int(
+        price_match.group(0)
+        .replace("$", "")
+        .replace(",", "")
+    )
+
+    # Maximum price.
+    if price > MAX_PRICE:
+        continue
+
+    # This page is the For Sale page, but keep the status check
+    # so we do not accidentally accept a different status.
+    if not re.search(r"\bFor Sale\b", text, re.IGNORECASE):
+        continue
+
+    # Exclude commercial properties.
+    if re.search(r"\bCommercial\b", text, re.IGNORECASE):
+        continue
+
+    properties.append({
+        "title": title,
+        "price": price,
+        "url": href,
+        "details": text
+    })
+
+
+# Remove duplicate property URLs.
+unique = {}
+
+for property_item in properties:
+    unique[property_item["url"]] = property_item
+
+properties = list(unique.values())
+
+print()
+print("=" * 60)
+print(f"QUALIFYING PROPERTIES FOUND: {len(properties)}")
+print("=" * 60)
+
+for number, property_item in enumerate(properties, start=1):
+
     print()
+    print(f"{number}. {property_item['title']}")
+    print(f"   Price: ${property_item['price']:,}")
+    print(f"   URL: {property_item['url']}")
+    print(f"   Details: {property_item['details'][:500]}")
 
-    current = heading
-
-    for level in range(1, 7):
-
-        if not current.parent:
-            break
-
-        current = current.parent
-
-        print("=" * 60)
-        print("PARENT LEVEL:", level)
-        print("TAG:", current.name)
-        print("CLASS:", current.get("class"))
-        print("TEXT:")
-        print(current.get_text(" ", strip=True)[:1500])
-        print()
-
-    break
+print()
+print("Monitor test completed successfully.")
