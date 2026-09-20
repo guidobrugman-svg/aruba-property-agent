@@ -19,7 +19,7 @@
       "type": "direct_broker",
       "url": "https://resarubarealty.com/status/for-sale/",
       "priority": 1,
-      "enabled": true
+      "enabled": false
     },
     {
       "name": "Aruba Listings",
