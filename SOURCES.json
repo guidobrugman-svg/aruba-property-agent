@@ -19,7 +19,7 @@
       "type": "direct_broker",
       "url": "https://remaxaruba.com/listings",
       "priority": 1,
-      "enabled": true
+      "enabled": false
     },
     {
       "name": "RES Aruba Realty",
