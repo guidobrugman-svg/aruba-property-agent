@@ -1,7 +1,6 @@
 {
-  "properties": {},
-  "pending_new": [
-    {
+  "properties": {
+    "1f6909980c04ec969541566c25d69426132559d8": {
       "name": "2-Bedroom Condo with Ocean View",
       "url": "https://www.arubabrokers.com/property/10314/",
       "price": 635000.0,
@@ -15,10 +14,10 @@
       "source": "Aruba Brokers",
       "mls": "",
       "status": "available",
-      "detected_at": "2026-09-20T23:56:11.758969+00:00",
-      "queued_at": "2026-09-20T23:56:11.758969+00:00"
+      "detected_at": "2026-09-21T00:30:04.658704+00:00",
+      "queued_at": "2026-09-21T00:30:04.658704+00:00"
     },
-    {
+    "71bd004f4f5f0faff812a542a3289491954649fc": {
       "name": "Aracari Phase II – Pre Construction",
       "url": "https://www.arubabrokers.com/property/aracari-phase-ii-pre-construction/",
       "price": 599000.0,
@@ -32,10 +31,10 @@
       "source": "Aruba Brokers",
       "mls": "",
       "status": "available",
-      "detected_at": "2026-09-20T23:56:11.758986+00:00",
-      "queued_at": "2026-09-20T23:56:11.758986+00:00"
+      "detected_at": "2026-09-21T00:30:04.658719+00:00",
+      "queued_at": "2026-09-21T00:30:04.658719+00:00"
     },
-    {
+    "6445e2941ebe2530d3a2563021fc0379defba41d": {
       "name": "Aruba’s Life Garden Condo",
       "url": "https://www.arubabrokers.com/property/arubas-life-garden-condo/",
       "price": 495000.0,
@@ -49,10 +48,10 @@
       "source": "Aruba Brokers",
       "mls": "",
       "status": "available",
-      "detected_at": "2026-09-20T23:56:11.758989+00:00",
-      "queued_at": "2026-09-20T23:56:11.758989+00:00"
+      "detected_at": "2026-09-21T00:30:04.658722+00:00",
+      "queued_at": "2026-09-21T00:30:04.658722+00:00"
     },
-    {
+    "cdd4ae3e4bf4e3db56b493247911b8d382d18a72": {
       "name": "Rooi Santo Residences",
       "url": "https://www.arubabrokers.com/property/rooi-santo-residences/",
       "price": 299000.0,
@@ -66,10 +65,10 @@
       "source": "Aruba Brokers",
       "mls": "",
       "status": "available",
-      "detected_at": "2026-09-20T23:56:11.758991+00:00",
-      "queued_at": "2026-09-20T23:56:11.758991+00:00"
+      "detected_at": "2026-09-21T00:30:04.658724+00:00",
+      "queued_at": "2026-09-21T00:30:04.658724+00:00"
     },
-    {
+    "f86e26dba99379dbab3b8add8f32f57bd9328494": {
       "name": "Summerside III – Townhomes in Noord",
       "url": "https://www.arubabrokers.com/property/summerside-iii-townhomes-in-noord/",
       "price": 559000.0,
@@ -83,10 +82,10 @@
       "source": "Aruba Brokers",
       "mls": "",
       "status": "available",
-      "detected_at": "2026-09-20T23:56:11.758992+00:00",
-      "queued_at": "2026-09-20T23:56:11.758992+00:00"
+      "detected_at": "2026-09-21T00:30:04.658726+00:00",
+      "queued_at": "2026-09-21T00:30:04.658726+00:00"
     },
-    {
+    "0711d885afe193da5194f63cf362ef2ee6112b1c": {
       "name": "The Stork Club Residences",
       "url": "https://www.arubabrokers.com/property/the-stork-club-residences/",
       "price": 460900.0,
@@ -100,10 +99,11 @@
       "source": "Aruba Brokers",
       "mls": "",
       "status": "available",
-      "detected_at": "2026-09-20T23:56:11.758994+00:00",
-      "queued_at": "2026-09-20T23:56:11.758994+00:00"
+      "detected_at": "2026-09-21T00:30:04.658728+00:00",
+      "queued_at": "2026-09-21T00:30:04.658728+00:00"
     }
-  ],
+  },
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "last_digest_date": null
