@@ -637,117 +637,164 @@ def scrape_bluefin(source, url):
     """
     Bluefin is treated as one consolidated source.
 
-    We deliberately do NOT scrape individual Bluefin agency
-    URLs. Bluefin's main property feed already aggregates
-    participating agencies.
+    Bluefin's current page structure exposes listing titles/prices as
+    heading links, so this parser does not depend on a specific card
+    CSS class. It also follows the first three listing pages to improve
+    coverage while keeping the run lightweight.
     """
 
-    html, final_url = get_page(url)
-
-    soup = BeautifulSoup(
-        html,
-        "html.parser",
-    )
-
-    nodes = get_card_nodes(soup)
-
-    if not nodes:
-        nodes = soup.find_all(
-            "article",
-            limit=500,
-        )
-
     properties = []
+    seen_urls = set()
+    page_urls = [url]
 
-    for node in nodes:
-        text = clean_text(
-            node.get_text(
-                " ",
-                strip=True,
-            )
-        )
+    clean_base = url.rstrip("/") + "/"
+    for page_number in (2, 3):
+        page_urls.append(f"{clean_base}page/{page_number}/")
+        page_urls.append(f"{clean_base}?paged={page_number}")
 
-        if not text:
+    fetched_pages = set()
+
+    for page_url in page_urls:
+        if page_url in fetched_pages:
             continue
 
-        title = ""
+        fetched_pages.add(page_url)
 
-        for tag in (
-            "h1",
-            "h2",
-            "h3",
-            "h4",
-            "h5",
+        try:
+            html, final_url = get_page(page_url)
+        except Exception:
+            if page_url == url:
+                raise
+            continue
+
+        soup = BeautifulSoup(html, "html.parser")
+
+        heading_links = []
+
+        for heading in soup.find_all(
+            ["h1", "h2", "h3", "h4", "h5"]
         ):
-            heading = node.find(tag)
+            link = heading.find("a", href=True)
+            if not link:
+                continue
 
-            if heading:
-                candidate = clean_text(
-                    heading.get_text(
-                        " ",
-                        strip=True,
-                    )
-                )
+            title = clean_text(
+                link.get_text(" ", strip=True)
+            )
 
-                if looks_like_property_title(candidate):
-                    title = candidate
-                    break
+            if not looks_like_property_title(title):
+                continue
 
-        if not title:
-            for link in node.find_all(
-                "a",
-                href=True,
-            ):
-                candidate = clean_text(
-                    link.get_text(
-                        " ",
-                        strip=True,
-                    )
-                )
-
-                if looks_like_property_title(candidate):
-                    title = candidate
-                    break
-
-        if not title:
-            continue
-
-        price = parse_price(text)
-
-        if price is None:
-            continue
-
-        link = node.find(
-            "a",
-            href=True,
-        )
-
-        property_url = (
-            absolute_url(
+            href = absolute_url(
                 final_url,
                 link.get("href"),
             )
-            if link
-            else final_url
-        )
 
-        prop = build_property(
-            source=source,
-            title=title,
-            url=property_url,
-            price=price,
-            text=text,
-            image=image_from(
-                node,
-                final_url,
-            ),
-        )
+            if not href or href in seen_urls:
+                continue
 
-        if prop:
-            properties.append(prop)
+            heading_links.append(
+                (heading, link, title, href)
+            )
+
+        if not heading_links:
+            for link in soup.find_all("a", href=True):
+                title = clean_text(
+                    link.get_text(" ", strip=True)
+                )
+
+                if not looks_like_property_title(title):
+                    continue
+
+                href = absolute_url(
+                    final_url,
+                    link.get("href"),
+                )
+
+                if not href or href in seen_urls:
+                    continue
+
+                parent_text = (
+                    link.parent.get_text(
+                        " ",
+                        strip=True,
+                    )
+                    if link.parent
+                    else ""
+                )
+
+                if parse_price(parent_text) is not None:
+                    heading_links.append(
+                        (
+                            link,
+                            link,
+                            title,
+                            href,
+                        )
+                    )
+
+        page_properties = 0
+
+        for heading, link, title, property_url in heading_links:
+            seen_urls.add(property_url)
+
+            container = heading
+            text = ""
+
+            for _ in range(8):
+                if not container:
+                    break
+
+                candidate_text = clean_text(
+                    container.get_text(
+                        " ",
+                        strip=True,
+                    )
+                )
+
+                if parse_price(candidate_text) is not None:
+                    text = candidate_text
+                    break
+
+                container = container.parent
+
+            if not text:
+                parent = heading.parent
+                if parent:
+                    text = clean_text(
+                        parent.get_text(
+                            " ",
+                            strip=True,
+                        )
+                    )
+
+            price = parse_price(text)
+
+            if price is None:
+                continue
+
+            prop = build_property(
+                source=source,
+                title=title,
+                url=property_url,
+                price=price,
+                text=text,
+                image=image_from(
+                    container,
+                    final_url,
+                ),
+            )
+
+            if prop:
+                properties.append(prop)
+                page_properties += 1
+
+        print(
+            f"  Bluefin page {page_url}: "
+            f"{page_properties} qualifying listings"
+        )
 
     return dedupe_properties(properties)
-
 
 def scrape_source(source):
     name = source["name"]
