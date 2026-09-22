@@ -69,48 +69,6 @@
       "url": "https://smileyaruba.com/offer-type/sale/",
       "priority": 2,
       "enabled": true
-    },
-    {
-      "name": "Maurer Real Estate Aruba",
-      "type": "direct_broker",
-      "url": "https://bluefinrealtors.com/agency/maurer/",
-      "priority": 2,
-      "enabled": true
-    },
-    {
-      "name": "Home Sweet Home Real VBA",
-      "type": "direct_broker",
-      "url": "https://bluefinrealtors.com/agency/homesweet/",
-      "priority": 2,
-      "enabled": true
-    },
-    {
-      "name": "C & C Real Estate Aruba",
-      "type": "direct_broker",
-      "url": "https://bluefinrealtors.com/agency/cc/",
-      "priority": 2,
-      "enabled": true
-    },
-    {
-      "name": "Jax Simons Aruba Luxury Realty",
-      "type": "direct_broker",
-      "url": "https://bluefinrealtors.com/agency/jaxsimons/",
-      "priority": 2,
-      "enabled": true
-    },
-    {
-      "name": "North Side Realty Aruba",
-      "type": "direct_broker",
-      "url": "https://bluefinrealtors.com/agency/northside/",
-      "priority": 2,
-      "enabled": true
-    },
-    {
-      "name": "Bon Choice Aruba Realty",
-      "type": "direct_broker",
-      "url": "https://bluefinrealtors.com/agency/bonchoice/",
-      "priority": 2,
-      "enabled": true
     }
   ]
 }
