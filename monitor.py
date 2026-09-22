@@ -73,6 +73,11 @@ EXCLUDED_TYPES = (
     "resort",
 )
 
+EXCLUDED_RESIDENTIAL_UNIT_TYPES = (
+    "Apartment",
+    "Condominium",
+)
+
 session = requests.Session()
 session.headers.update(HEADERS)
 
@@ -240,12 +245,12 @@ def extract_type(text, title=""):
 
     mapping = [
         ("apartment complex", "Apartment Complex"),
-        ("condominium", "Condominium"),
         ("townhouse", "Townhouse"),
         ("townhome", "Townhouse"),
+        ("condominium", "Condominium"),
+        ("apartment", "Apartment"),
         ("development", "Development"),
         ("villa", "Villa"),
-        ("apartment", "Apartment"),
         ("house", "House"),
         ("land", "Land"),
         ("commercial", "Commercial"),
@@ -448,6 +453,12 @@ def build_property(
         text,
         title,
     )
+
+    # User preference: alert on full residential homes, not
+    # individual apartments or condominium units. Apartment
+    # complexes remain eligible as whole investment properties.
+    if property_type in EXCLUDED_RESIDENTIAL_UNIT_TYPES:
+        return None
 
     combined = normalize(
         f"{title} {property_type} {text}"
@@ -1670,12 +1681,15 @@ def main():
     # BATCH QUEUE
     # --------------------------------------------------------
 
-    pending_new = list(
-        state.get(
+    pending_new = [
+        item
+        for item in state.get(
             "pending_new",
             [],
         )
-    )
+        if item.get("type")
+        not in EXCLUDED_RESIDENTIAL_UNIT_TYPES
+    ]
 
     pending_reductions = list(
         state.get(
@@ -1694,6 +1708,12 @@ def main():
     pending_new.extend(
         new_items
     )
+
+    # Never keep the same property more than once in the NEW queue.
+    unique_pending_new = {}
+    for item in pending_new:
+        unique_pending_new[property_key(item)] = item
+    pending_new = list(unique_pending_new.values())
 
     for prop, old in reductions:
         pending_reductions.append(
@@ -1759,7 +1779,7 @@ def main():
     )
 
     if batch_ready:
-        send_event_email(
+        email_sent = send_event_email(
             pending_new,
             [
                 (
@@ -1777,16 +1797,25 @@ def main():
             ],
         )
 
-        pending_new = []
-        pending_reductions = []
-        pending_major = []
+        # Only remove queued alerts after Resend confirms success.
+        if email_sent:
+            pending_new = []
+            pending_reductions = []
+            pending_major = []
 
     # --------------------------------------------------------
     # STATE
     # --------------------------------------------------------
 
+    # Keep a permanent history of every property we have already
+    # seen. Do not replace history with only this run's results:
+    # a temporarily blocked/unavailable source would otherwise
+    # disappear from state and be treated as NEW when it returns.
+    property_history = dict(previous)
+    property_history.update(current_by_key)
+
     new_state = {
-        "properties": current_by_key,
+        "properties": property_history,
         "pending_new": pending_new,
         "pending_reductions": pending_reductions,
         "pending_major_changes": pending_major,
