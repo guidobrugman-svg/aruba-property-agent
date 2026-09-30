@@ -131,7 +131,7 @@ def parse_page(html, url, source, api):
         if name == 'RE/MAX Aruba':
             context += ' Vacant Land' if '/land-for-sale' in url else ' House'
         text = context + ' ' + text
-        type_node = node.select_one(source.get('type_selector', '.property-type, .item-type'))
+        type_node = node.select_one(source.get('type_selector', '.property-type, .item-type, .h-type'))
         declared = api.clean_text(type_node.get_text(' ', strip=True)) if type_node else ''
         text = f'{declared} {text}'
         status = api.extract_status(text)

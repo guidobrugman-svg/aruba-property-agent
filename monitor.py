@@ -134,6 +134,7 @@ def html_escape(value):
         .replace("<", "&lt;")
         .replace(">", "&gt;")
         .replace('"', "&quot;")
+        .replace("'", "&#x27;")
     )
 
 
@@ -455,7 +456,7 @@ def infer_property_type(title, text):
     title_n = normalize(title)
     text_n = normalize(text)
 
-    full_home = bool(re.search(r"\b(house|home|villa|townhouse|townhome|town house)\b", title_n))
+    full_home = bool(re.search(r"\b(houses?|homes?|villas?|townhouses?|townhomes?|town houses?)\b", title_n))
     complex_signal = bool(re.search(r"\b(apartment complex|apartment building|multi unit|multi family|multifamily|\d+ units)\b", title_n))
     if not full_home and not complex_signal and re.search(r"\b(condos?|condominiums?|apartments?|studio|penthouse)\b", text_n):
         return "Condominium" if re.search(r"\b(condos?|condominiums?)\b", text_n) else "Apartment"
@@ -483,13 +484,13 @@ def infer_property_type(title, text):
         return "Land"
 
     if re.search(
-        r"\b(townhouse|townhome|town house|town home)\b",
+        r"\b(townhouses?|townhomes?|town houses?|town homes?)\b",
         title_n,
     ):
         return "Townhouse"
 
     if re.search(
-        r"\bvilla\b",
+        r"\bvillas?\b",
         title_n,
     ):
         return "Villa"
@@ -546,7 +547,7 @@ def infer_property_type(title, text):
     # Beds/baths plus residential language strongly suggests a house.
     has_beds = bool(
         re.search(
-            r"(?:\b\d+\s*(?:bed|beds|bedroom|bedrooms|bd|bdr)\b|\bbeds?\s*:\s*\d+)",
+            r"(?:\b\d+\s*(?:bed|beds|bedroom|bedrooms|bd|bdr)\b|\bbeds?\s*:?\s*\d+)",
             text_n,
         )
     )
@@ -554,7 +555,7 @@ def infer_property_type(title, text):
     has_baths = bool(
         re.search(
             r"\b\d+(?:\.\d+)?\s*"
-            r"(?:bath|baths|bathroom|bathrooms|ba)\b|\bbaths?\s*:\s*\d+",
+            r"(?:bath|baths|bathroom|bathrooms|ba)\b|\bbaths?\s*:?\s*\d+",
             text_n,
         )
     )
@@ -573,13 +574,13 @@ def infer_property_type(title, text):
         return "House"
 
     if re.search(
-        r"\b(townhouse|townhome|town house|town home)\b",
+        r"\b(townhouses?|townhomes?|town houses?|town homes?)\b",
         combined,
     ):
         return "Townhouse"
 
     if re.search(
-        r"\bvilla\b",
+        r"\bvillas?\b",
         combined,
     ):
         return "Villa"
@@ -872,7 +873,7 @@ def build_property(
     text = clean_text(text)
     price_meta = price_meta or {}
 
-    if not looks_like_property_title(title):
+    if not looks_like_property_title(title) or not looks_like_url(url):
         return None
 
     if re.search(r"\b(timeshare|each week|per week|per night|modular homes|own land in aruba)\b", normalize(f'{title} {text}')):
@@ -910,7 +911,7 @@ def build_property(
 
     if type_hint:
         hinted = infer_property_type(type_hint, '')
-        if hinted and property_type not in ('House', 'Villa', 'Townhouse', 'Apartment Complex'):
+        if hinted and property_type not in ('House', 'Villa', 'Townhouse', 'Apartment Complex', 'Condominium', 'Apartment'):
             property_type = hinted
 
     # Individual apartments and condominiums are intentionally
@@ -967,7 +968,7 @@ def build_property(
         "beds": beds,
         "baths": baths,
         "size": size,
-        "image": image,
+        "image": image if looks_like_url(image) else "",
         "description": make_description(
             text,
             title,
@@ -1788,6 +1789,8 @@ def property_block(
         "border-bottom:1px solid #ddd'>"
     ]
 
+    if event_type == "new":
+        html.append("<div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div>")
     html.append(
         f"<h2 style='margin:0 0 8px;"
         f"font-size:22px'>{name}</h2>"
@@ -1908,8 +1911,6 @@ def property_block(
             f"</p>"
         )
 
-    if event_type == 'new':
-        html.append("<div><strong>NEW PROPERTY</strong></div>")
     if prop.get("source"):
         html.append(
             f"<div><strong>Broker/source:</strong> "
@@ -1959,20 +1960,9 @@ def property_block(
 
 
 def email_footer():
-    return (
-        "<div style='margin-top:25px;"
-        "padding-top:15px;"
-        "border-top:1px solid #ddd;"
-        "font-size:12px;"
-        "color:#777'>"
-        "<strong>Manage alerts:</strong> "
-        "<a href='mailto:"
-        "guidobrugman@live.nl"
-        "?subject=STOP%20ARUBA%20PROPERTY%20ALERTS'>"
-        "contact recipient about alert settings"
-        "</a>."
-        "</div>"
-    )
+    return ("<div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'>"
+            "<a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>"
+            "Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div>")
 
 
 # ============================================================

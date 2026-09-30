@@ -20,7 +20,7 @@ The first upgraded run establishes a baseline for newly uncovered inventory with
 
 Resend, the existing verified sender, recipient, and `RESEND_API_KEY` are preserved. New-listing emails are queued immediately after detection. Confirmed reductions/major changes are batched after 30 minutes. This may increase email frequency compared with batching every event. GitHub commits discoveries and frozen outbox payloads before sending; accepted-email acknowledgements are committed afterward. Retries reuse the same payload and Resend idempotency key. Resend acceptance is not proof of inbox delivery; an ambiguous failure retried after Resend's 24-hour idempotency retention can still duplicate a message.
 
-Daily digests target 08:00 Aruba (12:00 UTC). A delayed run catches up later the same local day. Digests contain activity since the last successfully sent digest and an approximate monitoring count, never a full inventory dump. Digest activity clears only after API acceptance. The existing mailto footer is a contact link, not an automated unsubscribe system.
+Daily digests target 08:00 Aruba (12:00 UTC). A delayed run catches up later the same local day. Digests contain activity since the last successfully sent digest and an approximate monitoring count, never a full inventory dump. Digest activity clears only after API acceptance. The email footer links to the GitHub monitoring workflow; disable it there to stop alerts. No hosted unsubscribe service is added.
 
 ## Test and investigate
 

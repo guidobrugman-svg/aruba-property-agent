@@ -19,6 +19,7 @@ for source,(items,observations,health) in results:
     current.extend(items)
     print(source['name'],json.dumps(health),flush=True)
 current=m.cross_source_dedupe(current)
+scan_seconds=round(time.monotonic()-started,2)
 production=json.load(open('state.json'))
 with tempfile.TemporaryDirectory() as folder:
     path=str(Path(folder)/'state.json')
@@ -27,12 +28,15 @@ with tempfile.TemporaryDirectory() as folder:
         m.main()
         first=json.load(open(path))
         assert first['last_scan']['new']==0, 'Migration generated NEW alerts'
+        assert first['daily_activity']==production.get('daily_activity',m.empty_daily_activity()), 'Migration discarded digest activity'
         assert set(production['properties']) <= set(first['properties']), 'History keys were lost'
         m.main()
         second=json.load(open(path))
         assert second['last_scan']['new']==0, 'Replayed inventory generated NEW alerts'
+        assert second['last_scan']['major_changes']==0, 'Replayed inventory generated false major changes'
+        assert second['last_scan']['reductions']==0, 'Replayed inventory generated false reductions'
         assert first['last_scan']['qualifying_observed']==second['last_scan']['qualifying_observed']
-report={'mode':mode,'duration_seconds':round(time.monotonic()-started,2),'qualifying_count':len(current),
+report={'mode':mode,'duration_seconds':round(time.monotonic()-started,2),'scan_seconds':scan_seconds,'qualifying_count':len(current),
         'sources':{source['name']:health for source,(_,_,health) in results},
         'migration_false_new':0,'replay_false_new':0,'production_history_preserved':len(production['properties']),
         'properties':current}

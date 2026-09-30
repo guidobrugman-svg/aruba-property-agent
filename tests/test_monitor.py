@@ -41,6 +41,14 @@ class Rules(unittest.TestCase):
             with self.subTest(title=title,text=text):self.assertIsNone(self.build(title,text))
         self.assertIsNone(self.build('House 14','For Sale',650001))
 
+    def test_broad_hint_cannot_promote_condo(self):
+        self.assertIsNone(m.build_property('B','Gated Community Living','https://b.test/unit',463000,'For Sale Houses in Aruba Condominiums in Aruba 3 Bedrooms 2 Bathrooms',type_hint='Houses in Aruba, Condominiums in Aruba'))
+
+    def test_generic_residential_labeled_beds(self):
+        self.assertIsNotNone(self.build('Ponton 12','For Sale Residential Beds: 3 Baths: 2'))
+        self.assertEqual(m.infer_property_type('Ponton 12','Residential Beds: 3 Baths: 2'),'House')
+        self.assertIsNone(self.build('Ponton 12','For Sale Condominium Beds: 3 Baths: 2'))
+
     def test_rental_income_sale(self):
         self.assertIsNotNone(self.build('House 14','For Sale $500000 with potential rental income'))
 
@@ -150,6 +158,11 @@ class Rules(unittest.TestCase):
         self.assertIn('38 qualifying',html);self.assertIn('since the previous',html)
         self.assertNotIn('VIEW PROPERTY',html)
 
+    def test_email_quotes_and_schemes(self):
+        self.assertIn('&#x27;',m.html_escape("a'b"))
+        self.assertIsNone(m.build_property('B','House 12','javascript:alert(1)',500000,'For Sale'))
+        self.assertEqual(m.build_property('B','House 12','https://b.test/12',500000,'For Sale',image='javascript:bad')['image'],'')
+
     def test_one_image(self):
         self.assertEqual(m.property_block(prop(image='https://b.test/a.jpg'),'new').count('<img'),1)
 
@@ -169,6 +182,19 @@ class Rules(unittest.TestCase):
             self.assertEqual(state['outbox'],payload);self.assertEqual(len(state['pending_new']),1)
             with patch.object(m,'send_email',return_value=True):m.flush_outbox(state)
             self.assertEqual(state['outbox'],[]);self.assertEqual(state['pending_new'],[])
+
+    def test_digest_clears_only_snapshot_after_success(self):
+        old=prop();fresh=prop(name='House Ponton 14',url='https://b.test/14')
+        state={'daily_activity':{'new':[old],'reductions':[],'major_changes':[]},'properties':{}}
+        snapshot={'date':'2026-09-30','activity':{'new':[m.event_token(old)],'reductions':[],'major_changes':[]}}
+        m.queue_message(state,'digest',(state['daily_activity'],1,{}),snapshot)
+        state['daily_activity']['new'].append(fresh)
+        with tempfile.TemporaryDirectory() as d,patch.object(m,'STATE_FILE',str(Path(d)/'state.json')):
+            with patch.object(m,'send_email',return_value=False):m.flush_outbox(state)
+            self.assertEqual(len(state['daily_activity']['new']),2)
+            with patch.object(m,'send_email',return_value=True):m.flush_outbox(state)
+        self.assertEqual(state['daily_activity']['new'],[fresh])
+        self.assertEqual(state['last_digest_date'],'2026-09-30')
 
     def test_source_nonfatal(self):
         source={'name':'B','type':'direct_broker','url':'https://b.test','card_selector':'article'}
