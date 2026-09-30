@@ -3786,61 +3786,61 @@
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
-      "checked_at": "2026-09-30T05:32:00.665513+00:00",
+      "checked_at": "2026-09-30T05:50:08.177799+00:00",
       "properties_found": 14,
       "error": ""
     },
     "Ben Real Estate": {
       "status": "ok",
-      "checked_at": "2026-09-30T05:32:59.254538+00:00",
+      "checked_at": "2026-09-30T05:51:06.421099+00:00",
       "properties_found": 7,
       "error": ""
     },
     "Bluefin Realtors": {
       "status": "ok",
-      "checked_at": "2026-09-30T05:33:02.537052+00:00",
+      "checked_at": "2026-09-30T05:51:09.593379+00:00",
       "properties_found": 37,
       "error": ""
     },
     "Aruba Listings": {
       "status": "error",
-      "checked_at": "2026-09-30T05:33:12.070174+00:00",
+      "checked_at": "2026-09-30T05:51:18.875271+00:00",
       "properties_found": 0,
       "error": "403 Client Error: Forbidden for url: https://arubalistings.com/sale/all"
     },
     "RE/MAX Aruba": {
       "status": "error",
-      "checked_at": "2026-09-30T05:33:21.577668+00:00",
+      "checked_at": "2026-09-30T05:51:28.160829+00:00",
       "properties_found": 0,
       "error": "403 Client Error: Forbidden for url: https://remaxaruba.com/listings"
     },
     "RES Aruba Realty": {
       "status": "error",
-      "checked_at": "2026-09-30T05:33:31.488591+00:00",
+      "checked_at": "2026-09-30T05:51:37.644267+00:00",
       "properties_found": 0,
       "error": "403 Client Error: Forbidden for url: https://resarubarealty.com/status/for-sale/"
     },
     "Aruba Happy Realty": {
       "status": "error",
-      "checked_at": "2026-09-30T05:33:34.048450+00:00",
+      "checked_at": "2026-09-30T05:51:40.165957+00:00",
       "properties_found": 0,
       "error": "404 Client Error: Not Found for url: https://www.arubahappyrealty.com/404.html"
     },
     "Aruba Palms Realtors": {
       "status": "ok",
-      "checked_at": "2026-09-30T05:36:10.207711+00:00",
+      "checked_at": "2026-09-30T05:54:15.343106+00:00",
       "properties_found": 15,
       "error": ""
     },
     "Home 4 Everyone": {
       "status": "ok",
-      "checked_at": "2026-09-30T05:36:28.922547+00:00",
+      "checked_at": "2026-09-30T05:54:53.633725+00:00",
       "properties_found": 31,
       "error": ""
     },
     "Smiley Real Estate": {
       "status": "ok",
-      "checked_at": "2026-09-30T05:38:19.531666+00:00",
+      "checked_at": "2026-09-30T05:56:42.371419+00:00",
       "properties_found": 0,
       "error": ""
     }
