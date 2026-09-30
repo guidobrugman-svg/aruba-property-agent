@@ -1786,43 +1786,7 @@
     }
   },
   "pending_new": [],
-  "pending_reductions": [
-    {
-      "property": {
-        "name": "New Construction",
-        "url": "https://www.arubabrokers.com/property-status/for-sale/",
-        "price": 559000.0,
-        "location": "",
-        "type": "Development",
-        "beds": "",
-        "baths": "",
-        "size": "",
-        "image": "https://www.arubabrokers.com/wp-content/uploads/2025/11/IMG-20251112-WA0016-850x550.jpg",
-        "description": "For Sale $ 559,000",
-        "source": "Aruba Brokers",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-09-30T02:27:03.209073+00:00"
-      },
-      "old": {
-        "name": "New Construction",
-        "url": "https://arubapalmsrealtors.com/status/for-sale/",
-        "price": 627949.0,
-        "location": "",
-        "type": "Development",
-        "beds": "",
-        "baths": "",
-        "size": "",
-        "image": "https://arubapalmsrealtors.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-18-at-11.26.25-AM-1-584x438.jpeg",
-        "description": "For Sale New Listing $627,949",
-        "source": "Aruba Palms Realtors",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-09-30T02:27:03.209073+00:00"
-      },
-      "queued_at": "2026-09-30T14:55:10.523874+00:00"
-    }
-  ],
+  "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
     "new": [],
@@ -1868,61 +1832,61 @@
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
-      "checked_at": "2026-09-30T15:07:01.421879+00:00",
+      "checked_at": "2026-09-30T15:30:15.546613+00:00",
       "properties_found": 14,
       "error": ""
     },
     "Ben Real Estate": {
       "status": "ok",
-      "checked_at": "2026-09-30T15:07:58.316614+00:00",
+      "checked_at": "2026-09-30T15:31:15.532520+00:00",
       "properties_found": 7,
       "error": ""
     },
     "Bluefin Realtors": {
       "status": "ok",
-      "checked_at": "2026-09-30T15:08:01.466791+00:00",
+      "checked_at": "2026-09-30T15:31:18.131567+00:00",
       "properties_found": 37,
       "error": ""
     },
     "Aruba Listings": {
       "status": "error",
-      "checked_at": "2026-09-30T15:08:15.522982+00:00",
+      "checked_at": "2026-09-30T15:31:27.511974+00:00",
       "properties_found": 0,
       "error": "403 Client Error: Forbidden for url: https://arubalistings.com/sale/all"
     },
     "RE/MAX Aruba": {
       "status": "error",
-      "checked_at": "2026-09-30T15:08:26.604762+00:00",
+      "checked_at": "2026-09-30T15:31:36.973763+00:00",
       "properties_found": 0,
       "error": "403 Client Error: Forbidden for url: https://remaxaruba.com/listings"
     },
     "RES Aruba Realty": {
       "status": "error",
-      "checked_at": "2026-09-30T15:08:36.752241+00:00",
+      "checked_at": "2026-09-30T15:31:46.586707+00:00",
       "properties_found": 0,
       "error": "403 Client Error: Forbidden for url: https://resarubarealty.com/status/for-sale/"
     },
     "Aruba Happy Realty": {
       "status": "error",
-      "checked_at": "2026-09-30T15:08:39.506835+00:00",
+      "checked_at": "2026-09-30T15:31:48.434729+00:00",
       "properties_found": 0,
       "error": "404 Client Error: Not Found for url: https://www.arubahappyrealty.com/404.html"
     },
     "Aruba Palms Realtors": {
       "status": "ok",
-      "checked_at": "2026-09-30T15:12:20.580388+00:00",
+      "checked_at": "2026-09-30T15:34:52.530268+00:00",
       "properties_found": 15,
       "error": ""
     },
     "Home 4 Everyone": {
       "status": "ok",
-      "checked_at": "2026-09-30T15:12:49.939973+00:00",
+      "checked_at": "2026-09-30T15:35:09.523782+00:00",
       "properties_found": 31,
       "error": ""
     },
     "Smiley Real Estate": {
       "status": "ok",
-      "checked_at": "2026-09-30T15:14:40.031805+00:00",
+      "checked_at": "2026-09-30T15:37:03.612693+00:00",
       "properties_found": 0,
       "error": ""
     }
