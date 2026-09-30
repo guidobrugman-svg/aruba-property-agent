@@ -111,6 +111,19 @@ class Rules(unittest.TestCase):
             self.assertEqual(m.get_page('https://broker.test/')[0],'ok')
         self.assertEqual(fake.get.call_count,2)
 
+    def test_rss_listing_scope(self):
+        xml='<rss version="2.0"><channel><item><title>House Ponton 12 :: $450,000 US</title><link>https://b.test/12</link><description>3 bedrooms 2 baths rental income potential</description></item></channel></rss>'
+        items,_,_,_=c.parse_page(xml,'https://feed.test/',{'name':'Coldwell Banker Aruba','type':'direct_broker'},m)
+        self.assertEqual(items[0]['price'],450000)
+        self.assertEqual(items[0]['type'],'House')
+
+    def test_unclassified_sale_not_silent_zero(self):
+        source={'name':'B','type':'direct_broker','url':'https://b.test/','card_selector':'article'}
+        html='<article><h2><a href="/12">Ponton 12</a></h2>For Sale $450000 Beds: 3 Baths: 2</article>'
+        with patch.object(m,'get_page',return_value=(html,source['url'])):
+            items,_,health=c.scrape(source,'fast',m)
+        self.assertEqual(items,[]);self.assertEqual(health['status'],'partial');self.assertEqual(health['unclassified_cards'],1)
+
     def test_parser_failure_not_empty(self):
         with self.assertRaises(c.ParserError):c.parse_page('<nav>House $500000</nav>','https://b.test',{'name':'B','card_selector':'.listing'},m)
 

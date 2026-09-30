@@ -944,7 +944,7 @@ def build_property(
         )
     )
 
-    if re.search(r"\b(commercial|warehouse|office|retail|hotel)\b", normalize(title)):
+    if re.search(r"\b(commercial|warehouse|office|retail|hotel)\b", normalize(title)) and not (property_type == "Land" and "residential" in normalize(title + " " + text)):
         strong_commercial = True
 
     if strong_commercial:
@@ -1908,10 +1908,12 @@ def property_block(
             f"</p>"
         )
 
+    if event_type == 'new':
+        html.append("<div><strong>NEW PROPERTY</strong></div>")
     if prop.get("source"):
         html.append(
             f"<div><strong>Broker/source:</strong> "
-            f"{html_escape(prop['source'])}"
+            f"{html_escape(prop.get('broker') or prop['source'])} ({html_escape(prop['source'])})"
             f"</div>"
         )
 
@@ -2430,6 +2432,7 @@ def main():
     for key in ('pending_new', 'pending_reductions', 'pending_major_changes', 'outbox'):
         state.setdefault(key, [])
     state['daily_activity'] = normalize_daily_activity(state.get('daily_activity'))
+    baselined = set(state.get('baselined_sources', []))
     state.setdefault('source_health', {})
     previous = previous_properties(state)
     migration = state.get('schema_version', 1) < 2
@@ -2447,6 +2450,7 @@ def main():
         raise ValueError('SCAN_MODE must be auto, fast, or deep')
     print(f'Aruba Property Agent: {mode} scan')
     current, observations = [], []
+    newly_baselined = set()
     results = collectors.scan(sources, mode, state['source_health'], sys.modules[__name__])
     for source, (items, observed, health) in results:
         name = source['name']
@@ -2461,10 +2465,14 @@ def main():
         else:
             health['last_success_at'] = iso_now()
             health['consecutive_failures'] = 0
+        if health['status'] in ('ok', 'empty', 'partial') and name not in baselined:
+            newly_baselined.add(name)
+            baselined.add(name)
         state['source_health'][name] = health
         print(f"{name}: {health['status']}, {len(items)} qualifying / {health['cards_seen']} cards, {health['pages_fetched']} pages, {health['duration_seconds']}s")
         current.extend(items)
         observations.extend((name, x) for x in observed)
+    state['baselined_sources'] = sorted(baselined)
     current = cross_source_dedupe(current)
     history, new, reductions, major = reconcile(previous, current)
     # Explicit unavailability updates history; absence on a shallow scan never means sold.
@@ -2487,6 +2495,10 @@ def main():
                 baseline.pop('change_candidate', None)
         state['migration'] = {'at': iso_now(), 'baseline_discoveries': len(new), 'preserved_history': len(previous)}
         new, reductions, major = [], [], []
+    if not migration and newly_baselined:
+        discoveries = [p for p in new if p['source'] in newly_baselined]
+        state.setdefault('coverage_discoveries', []).extend({'key':property_key(p), 'at':iso_now(), 'source':p['source']} for p in discoveries)
+        new = [p for p in new if p['source'] not in newly_baselined]
     record_daily_activity(state['daily_activity'], new, reductions, major)
     state['pending_new'] = dedupe_pending_new(state['pending_new'] + [dict(p, queued_at=iso_now()) for p in new])
     for field, events, label in [('pending_reductions', reductions, 'old'), ('pending_major_changes', major, 'changes')]:

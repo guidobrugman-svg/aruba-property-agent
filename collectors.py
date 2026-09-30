@@ -2,6 +2,7 @@
 import hashlib
 import json
 import re
+import xml.etree.ElementTree as ET
 import time
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urljoin, urlparse
@@ -33,9 +34,28 @@ def page_links(soup, base, source):
 
 
 def parse_page(html, url, source, api):
-    soup = BeautifulSoup(html, 'html.parser')
     items, observations = [], []
     name = source['name']
+    if '<rss ' in html[:300]:
+        root = ET.fromstring(html)
+        entries = root.findall('./channel/item')
+        if not entries:
+            raise ParserError('RSS feed has no listing entries')
+        for entry in entries:
+            raw_title = entry.findtext('title', '')
+            title = raw_title.split(' :: ')[0].strip()
+            href = entry.findtext('link', '')
+            desc = BeautifulSoup(entry.findtext('description', ''), 'html.parser').get_text(' ', strip=True)
+            text = 'For Sale ' + desc
+            status = api.extract_status(title + ' ' + text)
+            observations.append({'url': href, 'name': title, 'status': status})
+            price, meta = api.parse_price_details(raw_title)
+            p = api.build_property(name, title, href, price, text, '', meta)
+            if p:
+                p.update(source_type=source['type'], published_or_updated_at=entry.findtext('pubDate', ''))
+                items.append(p)
+        return items, observations, len(entries), BeautifulSoup('', 'html.parser')
+    soup = BeautifulSoup(html, 'html.parser')
     if source.get('adapter') == 'myhome':
         match = re.search(r'var MyHomeListing\d+ = (\{.*?\});', html, re.S)
         if match:
@@ -122,6 +142,8 @@ def parse_page(html, url, source, api):
         if api.extract_per_m2_rate(price_text):
             price, meta = api.parse_price_details(price_text + ' ' + text)
         p = api.build_property(name, title, href, price, text, api.image_from(node, url), meta, declared)
+        if not p and price is not None and 0 < price <= api.PRICE_LIMIT and not status and not api.infer_property_type(title, text):
+            observations[-1]['needs_type_review'] = True
         if p:
             p['source_type'] = source['type']
             items.append(p)
@@ -132,7 +154,7 @@ def scrape(source, mode, api):
     start = time.monotonic()
     budget = source.get('deep_seconds', 65) if mode == 'deep' else source.get('fast_seconds', 30)
     limit = source.get('deep_pages', 12) if mode == 'deep' else source.get('fast_pages', 1)
-    queue = list(source.get('urls', [source['url']]))
+    queue = list(source.get('fast_urls', source.get('urls', [source['url']]))) if mode == 'fast' else list(source.get('urls', [source['url']]))
     if mode == 'deep':
         queue.extend(source.get('deep_urls', []))
     seen, fingerprints = set(), set()
@@ -182,15 +204,16 @@ def scrape(source, mode, api):
     if source.get('adapter') == 'myhome':
         # Each API response reports the same total; use the observed distinct rows.
         truncated = truncated or count > len({o['url'] for o in observations})
+    unclassified = sum(bool(o.get('needs_type_review')) for o in observations)
     if errors and not pages:
         status = errors[0]['status']
-    elif errors or repeated or (source.get('adapter') == 'myhome' and truncated):
+    elif errors or repeated or unclassified or (source.get('adapter') == 'myhome' and truncated):
         status = 'partial'
     else:
         status = 'ok' if items else 'empty'
     return api.dedupe_properties(items), observations, {
         'status': status, 'checked_at': api.iso_now(), 'properties_found': len(api.dedupe_properties(items)),
-        'cards_seen': cards, 'pages_fetched': pages, 'mode': mode, 'coverage_limited': truncated,
+        'cards_seen': cards, 'unclassified_cards': unclassified, 'pages_fetched': pages, 'mode': mode, 'coverage_limited': truncated,
         'duration_seconds': round(time.monotonic()-start, 2), 'repeated_pages': repeated, 'errors': errors,
     }
 

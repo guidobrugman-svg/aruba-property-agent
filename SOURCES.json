@@ -38,7 +38,7 @@
     {
       "name": "Aruba Listings",
       "type": "aggregator",
-      "url": "https://arubalistings.com/sale/all",
+      "url": "https://arubalistings.com/listings",
       "priority": 1,
       "enabled": true,
       "card_selector": ".item-listing-wrap",
@@ -160,7 +160,15 @@
       "listing_context": "For Sale",
       "fast_pages": 2,
       "deep_pages": 15,
-      "enabled": true
+      "enabled": true,
+      "fast_urls": [
+        "https://moonraker.cbislands.com/rss.php?affiliate=aruba&class=res&type=updated",
+        "https://moonraker.cbislands.com/rss.php?affiliate=aruba&class=raw&type=updated"
+      ],
+      "deep_urls": [
+        "https://moonraker.cbislands.com/rss.php?affiliate=aruba&class=res&type=updated",
+        "https://moonraker.cbislands.com/rss.php?affiliate=aruba&class=raw&type=updated"
+      ]
     },
     {
       "name": "Keller Williams Aruba",

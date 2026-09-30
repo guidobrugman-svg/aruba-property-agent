@@ -12,6 +12,8 @@ GitHub Actions requests a run every five minutes. GitHub schedules can be delaye
 
 Existing history keys and first-detected dates are retained. URLs from alternate brokers/aggregators become aliases; changes to type, price, or source do not define identity. Separate numbered lots are not automatically merged. Development consolidation requires an explicit project identity; this intentionally favors avoiding false merges.
 
+A source’s first successful check also baselines newly uncovered inventory rather than labeling it NEW. Coldwell Banker’s advertised public updated-listing RSS feeds are checked in the fast layer.
+
 The first upgraded run establishes a baseline for newly uncovered inventory without generating historical NEW alerts. It archives the old unsent short-alert queues in `legacy_queues` for audit rather than releasing a backlog of potentially misclassified listings. All old history and daily activity remain in state. Subsequent runs detect new opportunities. A source/parser switch establishes a new price baseline instead of reporting a reduction. Same-source price reductions and major field changes need two agreeing successful observations. Missing listings on shallow/failed scans remain in permanent history; only explicit unavailable status changes availability. The daily count includes available qualifying records seen in the past seven days, so it is an approximate recent monitoring count, not a claim that every historical listing is still available.
 
 ## Email
