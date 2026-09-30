@@ -3,6 +3,10 @@ import os
 import re
 import time
 import hashlib
+import sys
+import threading
+from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
+import collectors
 from datetime import datetime, timedelta, timezone
 from urllib.parse import urljoin, urlparse, parse_qs
 
@@ -23,11 +27,13 @@ RESEND_API_KEY = os.environ.get("RESEND_API_KEY", "")
 RECIPIENT = "guidobrugman@live.nl"
 SENDER = "Aruba Property Agent <alerts@arubapropertywatch.com>"
 
-STATE_FILE = "state.json"
+STATE_FILE = os.environ.get("STATE_FILE", "state.json")
 SOURCES_FILE = "SOURCES.json"
 
 PRICE_LIMIT = 650000
 BATCH_MINUTES = 30
+DRY_RUN = os.environ.get("DRY_RUN", "0") == "1"
+_local = threading.local()
 
 ARUBA_TZ = (
     ZoneInfo("America/Aruba")
@@ -59,6 +65,9 @@ EXCLUDED_STATUS = (
     "off market",
     "off-market",
     "rented",
+    "pending",
+    "on hold",
+    "reserved",
 )
 
 EXCLUDED_TYPES = (
@@ -88,8 +97,6 @@ DIRECT_SOURCE_NAMES = {
     "Smiley Real Estate",
 }
 
-session = requests.Session()
-session.headers.update(HEADERS)
 
 
 # ============================================================
@@ -137,7 +144,7 @@ def absolute_url(base_url, href):
 
 
 def source_priority(source_name):
-    if source_name in DIRECT_SOURCE_NAMES:
+    if source_name in DIRECT_SOURCE_NAMES or source_name in {"Century 21 Aruba", "Coldwell Banker Aruba", "Keller Williams Aruba"}:
         return 0
     if source_name == "Bluefin Realtors":
         return 1
@@ -156,61 +163,38 @@ def looks_like_url(value):
 # HTTP / SOURCE ACCESS
 # ============================================================
 
-def get_page(url):
-    """
-    Fetch a public listing page.
-
-    Normal HTTPS is always preferred. Some Aruba websites have
-    certificate-chain or hostname issues, so a verify=False fallback
-    is attempted only after a normal SSL request fails.
-
-    403/404/etc. remain failures and are reported to the source-health
-    system rather than being interpreted as "zero listings".
-    """
-
-    last_error = None
-
-    for attempt in range(3):
+def get_page(url, request_data=None):
+    """One bounded retry for transient failures; TLS verification stays enabled."""
+    if not hasattr(_local, "session"):
+        _local.session = requests.Session()
+        _local.session.headers.update(HEADERS)
+    for attempt in range(2):
         try:
-            response = session.get(
-                url,
-                timeout=25,
-                allow_redirects=True,
-            )
-
+            if request_data is None:
+                response = _local.session.get(url, timeout=(4, 8), allow_redirects=True)
+            else:
+                response = _local.session.post(url, data=request_data, timeout=(4, 8), allow_redirects=True)
             response.raise_for_status()
             return response.text, response.url
+        except requests.exceptions.SSLError:
+            raise
+        except requests.exceptions.HTTPError as exc:
+            if exc.response.status_code != 429 and exc.response.status_code < 500:
+                raise
+            if attempt:
+                raise
+        except (requests.exceptions.Timeout, requests.exceptions.ConnectionError):
+            if attempt:
+                raise
+        time.sleep(0.5)
 
-        except requests.exceptions.SSLError as exc:
-            last_error = exc
 
-            try:
-                response = session.get(
-                    url,
-                    timeout=25,
-                    allow_redirects=True,
-                    verify=False,
-                )
-
-                response.raise_for_status()
-
-                print(
-                    "  SSL fallback succeeded with certificate "
-                    "verification disabled."
-                )
-
-                return response.text, response.url
-
-            except Exception as fallback_error:
-                last_error = fallback_error
-
-        except requests.RequestException as exc:
-            last_error = exc
-
-            if attempt < 2:
-                time.sleep(1.5 * (attempt + 1))
-
-    raise last_error
+def canonical_url(url):
+    parsed = urlsplit(clean_text(url))
+    query = [(k, v) for k, v in parse_qsl(parsed.query, keep_blank_values=True)
+             if not k.lower().startswith('utm_') and k.lower() not in ('fbclid', 'gclid')]
+    return urlunsplit((parsed.scheme.lower(), parsed.netloc.lower(),
+                      parsed.path.rstrip('/'), urlencode(sorted(query)), ''))
 
 
 # ============================================================
@@ -218,13 +202,16 @@ def get_page(url):
 # ============================================================
 
 def parse_number(value):
-    value = clean_text(value)
-
+    value = clean_text(value).replace(' ', '')
     if not value:
         return None
-
-    value = value.replace(",", "")
-
+    # Aruba brokers use both 650,000 and 650.000 (and decimal rates).
+    if re.fullmatch(r"\d{1,3}(?:[.,]\d{3})+", value):
+        value = value.replace(',', '').replace('.', '')
+    elif ',' in value and '.' in value:
+        value = value.replace(',', '') if value.rfind('.') > value.rfind(',') else value.replace('.', '').replace(',', '.')
+    else:
+        value = value.replace(',', '.')
     try:
         return float(value)
     except ValueError:
@@ -242,7 +229,7 @@ def extract_area_m2(text):
     values = []
 
     for match in re.finditer(
-        r"\b([\d,.]+)\s*(?:m²|m2|sqm|sq\.?\s*m)\b",
+        r"\b([\d,.]+)\s*(?:m²|m2|sqm|sq\.?\s*m|sq\s*mt)(?!\w)",
         text,
         re.IGNORECASE,
     ):
@@ -254,7 +241,7 @@ def extract_area_m2(text):
     if not values:
         return None
 
-    return max(values)
+    return values[0] if len(set(values)) == 1 else None
 
 
 def extract_per_m2_rate(text):
@@ -267,14 +254,14 @@ def extract_per_m2_rate(text):
 
     patterns = [
         (
-            r"(?:USD|US\$|\$)\s*([\d,]+(?:\.\d+)?)"
+            r"(?:USD|US\$|\$)\s*([\d,.]+)"
             r"\s*(?:/|per\s+)"
-            r"(?:m²|m2|sqm|sq\.?\s*m)\b"
+            r"(?:m²|m2|sqm|sq\.?\s*m|sq\s*mt)(?!\w)"
         ),
         (
-            r"([\d,]+(?:\.\d+)?)\s*(?:USD|US\$|\$)"
+            r"([\d,.]+)\s*(?:USD|US\$|\$)"
             r"\s*(?:/|per\s+)"
-            r"(?:m²|m2|sqm|sq\.?\s*m)\b"
+            r"(?:m²|m2|sqm|sq\.?\s*m|sq\s*mt)(?!\w)"
         ),
     ]
 
@@ -327,9 +314,9 @@ def parse_price_details(text):
         }
 
     patterns = [
-        r"(?:USD|US\$)\s*([\d,]+(?:\.\d+)?)",
-        r"\$\s*([\d,]+(?:\.\d+)?)",
-        r"([\d,]+(?:\.\d+)?)\s*(?:USD|US\$)",
+        r"(?:USD|US\$)\s*([\d,.]+)",
+        r"\$\s*([\d,.]+)",
+        r"([\d,.]+)\s*(?:USD|US\$)",
     ]
 
     for pattern in patterns:
@@ -444,7 +431,7 @@ def extract_status(text):
     lower = normalize(text)
 
     for status in EXCLUDED_STATUS:
-        if status in lower:
+        if re.search(r"\b" + re.escape(normalize(status)) + r"\b", lower):
             return status
 
     if has_explicit_rental_status(text):
@@ -468,6 +455,11 @@ def infer_property_type(title, text):
     title_n = normalize(title)
     text_n = normalize(text)
 
+    full_home = bool(re.search(r"\b(house|home|villa|townhouse|townhome|town house)\b", title_n))
+    complex_signal = bool(re.search(r"\b(apartment complex|apartment building|multi unit|multi family|multifamily|\d+ units)\b", title_n))
+    if not full_home and not complex_signal and re.search(r"\b(condos?|condominiums?|apartments?|studio|penthouse)\b", text_n):
+        return "Condominium" if re.search(r"\b(condos?|condominiums?)\b", text_n) else "Apartment"
+
     # --------------------------------------------------------
     # Strong title signals
     # --------------------------------------------------------
@@ -476,7 +468,7 @@ def infer_property_type(title, text):
         r"\b("
         r"apartment complex|apartment building|"
         r"multi unit|multiunit|multi family|multifamily|"
-        r"income property|investment property"
+        r"entire apartment complex"
         r")\b",
         title_n,
     ):
@@ -504,7 +496,7 @@ def infer_property_type(title, text):
 
     if re.search(
         r"\b("
-        r"house|home|residence|residential home|"
+        r"houses?|homes?|residence|residential home|"
         r"family home|fixer upper|fixer-upper"
         r")\b",
         title_n,
@@ -546,10 +538,15 @@ def infer_property_type(title, text):
     ):
         return "Apartment Complex"
 
+    if re.search(r"\b(houses?|single family homes?|new homes)\b", text_n):
+        return 'House'
+    if re.search(r"\b(vacant land|land lot)\b", text_n):
+        return 'Land'
+
     # Beds/baths plus residential language strongly suggests a house.
     has_beds = bool(
         re.search(
-            r"\b\d+\s*(?:bed|beds|bedroom|bedrooms|bd|bdr)\b",
+            r"(?:\b\d+\s*(?:bed|beds|bedroom|bedrooms|bd|bdr)\b|\bbeds?\s*:\s*\d+)",
             text_n,
         )
     )
@@ -557,7 +554,7 @@ def infer_property_type(title, text):
     has_baths = bool(
         re.search(
             r"\b\d+(?:\.\d+)?\s*"
-            r"(?:bath|baths|bathroom|bathrooms|ba)\b",
+            r"(?:bath|baths|bathroom|bathrooms|ba)\b|\bbaths?\s*:\s*\d+",
             text_n,
         )
     )
@@ -650,6 +647,7 @@ def first_match(patterns, text):
 def extract_details(title, text):
     beds = first_match(
         [
+            r"\b(?:beds?|bedrooms?)\s*:\s*(\d+)\b",
             r"\b(\d+)\s*"
             r"(?:bed|beds|bedroom|bedrooms|bd|bdr)\b",
         ],
@@ -658,6 +656,7 @@ def extract_details(title, text):
 
     baths = first_match(
         [
+            r"\b(?:baths?|bathrooms?)\s*:\s*(\d+(?:\.\d+)?)\b",
             r"\b(\d+(?:\.\d+)?)\s*"
             r"(?:bath|baths|bathroom|bathrooms|ba)\b",
         ],
@@ -867,6 +866,7 @@ def build_property(
     text,
     image="",
     price_meta=None,
+    type_hint="",
 ):
     title = clean_text(title)
     text = clean_text(text)
@@ -875,6 +875,11 @@ def build_property(
     if not looks_like_property_title(title):
         return None
 
+    if re.search(r"\b(timeshare|each week|per week|per night|modular homes|own land in aruba)\b", normalize(f'{title} {text}')):
+        return None
+    # A named one-bedroom development unit is not purchase of a whole project.
+    if re.search(r"\b(?:\d+ bedroom|unit \d+|\d+bdr)\b", normalize(title)) and re.search(r"new development|pre construction", normalize(text)) and not re.search(r"\b(house|home|villa|townhouse|townhome)\b", normalize(title)):
+        return None
     if has_explicit_rental_status(
         f"{title} {text}"
     ):
@@ -903,10 +908,15 @@ def build_property(
         text,
     )
 
+    if type_hint:
+        hinted = infer_property_type(type_hint, '')
+        if hinted and property_type not in ('House', 'Villa', 'Townhouse', 'Apartment Complex'):
+            property_type = hinted
+
     # Individual apartments and condominiums are intentionally
     # excluded. Whole apartment complexes / multi-unit investment
     # properties remain eligible.
-    if property_type in EXCLUDED_RESIDENTIAL_UNIT_TYPES:
+    if not property_type or property_type in EXCLUDED_RESIDENTIAL_UNIT_TYPES:
         return None
 
     combined = normalize(
@@ -933,6 +943,9 @@ def build_property(
             for excluded in EXCLUDED_TYPES
         )
     )
+
+    if re.search(r"\b(commercial|warehouse|office|retail|hotel)\b", normalize(title)):
+        strong_commercial = True
 
     if strong_commercial:
         return None
@@ -981,692 +994,6 @@ def build_property(
 # SCRAPING HELPERS
 # ============================================================
 
-def get_card_nodes(soup):
-    selectors = [
-        "article",
-        ".property",
-        ".property-item",
-        ".property-card",
-        ".listing",
-        ".listing-item",
-        ".property-listing",
-        ".item-property",
-        ".property-box",
-        ".property-list",
-        ".listing-box",
-        ".listing-card",
-        ".estate",
-        ".real-estate",
-        "[class*='property-card']",
-        "[class*='listing-card']",
-        "[class*='property-item']",
-        "[class*='listing-item']",
-    ]
-
-    nodes = []
-    seen = set()
-
-    for selector in selectors:
-        for node in soup.select(selector):
-            marker = id(node)
-
-            if marker not in seen:
-                seen.add(marker)
-                nodes.append(node)
-
-    return nodes
-
-
-def best_listing_link(node, base_url):
-    links = node.find_all(
-        "a",
-        href=True,
-    )
-
-    best = ""
-
-    for link in links:
-        href = absolute_url(
-            base_url,
-            link.get("href"),
-        )
-
-        if not href:
-            continue
-
-        href_n = normalize(href)
-
-        if any(
-            word in href_n
-            for word in (
-                "property",
-                "listing",
-                "real estate",
-                "for sale",
-                "sale",
-            )
-        ):
-            return href
-
-        if not best:
-            best = href
-
-    return best
-
-
-def best_title_from_node(node):
-    for tag in (
-        "h1",
-        "h2",
-        "h3",
-        "h4",
-        "h5",
-        "h6",
-    ):
-        for heading in node.find_all(tag):
-            candidate = clean_text(
-                heading.get_text(
-                    " ",
-                    strip=True,
-                )
-            )
-
-            if looks_like_property_title(
-                candidate
-            ):
-                return candidate
-
-    for link in node.find_all(
-        "a",
-        href=True,
-    ):
-        candidate = clean_text(
-            link.get_text(
-                " ",
-                strip=True,
-            )
-        )
-
-        if looks_like_property_title(
-            candidate
-        ):
-            return candidate
-
-    return ""
-
-
-def extract_property_from_node(
-    source,
-    node,
-    base_url,
-):
-    text = clean_text(
-        node.get_text(
-            " ",
-            strip=True,
-        )
-    )
-
-    if not text:
-        return None
-
-    title = best_title_from_node(node)
-
-    if not title:
-        return None
-
-    price, price_meta = parse_price_details(
-        text
-    )
-
-    if price is None:
-        return None
-
-    property_url = best_listing_link(
-        node,
-        base_url,
-    )
-
-    if not property_url:
-        property_url = base_url
-
-    return build_property(
-        source=source,
-        title=title,
-        url=property_url,
-        price=price,
-        text=text,
-        image=image_from(
-            node,
-            base_url,
-        ),
-        price_meta=price_meta,
-    )
-
-
-def scrape_page_cards(
-    source,
-    page_url,
-):
-    html, final_url = get_page(
-        page_url
-    )
-
-    soup = BeautifulSoup(
-        html,
-        "html.parser",
-    )
-
-    nodes = get_card_nodes(soup)
-
-    if not nodes:
-        nodes = soup.find_all(
-            ["article", "li", "div"],
-            limit=1500,
-        )
-
-    properties = []
-
-    for node in nodes:
-        prop = extract_property_from_node(
-            source,
-            node,
-            final_url,
-        )
-
-        if prop:
-            properties.append(prop)
-
-    return dedupe_properties(properties)
-
-
-def page_candidates(
-    url,
-    max_pages=5,
-):
-    """
-    Generate common pagination forms used by Aruba broker sites.
-    Failed secondary pages are harmless; the main source page remains
-    authoritative for source-health reporting.
-    """
-
-    result = [url]
-    base = url.rstrip("/") + "/"
-
-    for page_number in range(
-        2,
-        max_pages + 1,
-    ):
-        result.extend(
-            [
-                f"{base}page/{page_number}/",
-                f"{url}?page={page_number}",
-                f"{url}?paged={page_number}",
-            ]
-        )
-
-    unique = []
-    seen = set()
-
-    for candidate in result:
-        if candidate not in seen:
-            seen.add(candidate)
-            unique.append(candidate)
-
-    return unique
-
-
-def scrape_paginated_generic(
-    source,
-    url,
-    max_pages=5,
-):
-    all_properties = []
-    successful_pages = 0
-
-    for index, page_url in enumerate(
-        page_candidates(
-            url,
-            max_pages=max_pages,
-        )
-    ):
-        try:
-            properties = scrape_page_cards(
-                source,
-                page_url,
-            )
-
-            successful_pages += 1
-
-            if properties:
-                print(
-                    f"  Page {page_url}: "
-                    f"{len(properties)} qualifying"
-                )
-
-                all_properties.extend(
-                    properties
-                )
-
-        except Exception as error:
-            # The first/main URL must work. Pagination guesses are
-            # optional and should not fail the whole source.
-            if index == 0:
-                raise
-
-            continue
-
-    if successful_pages == 0:
-        return []
-
-    return dedupe_properties(
-        all_properties
-    )
-
-
-# ============================================================
-# BLUEFIN
-# ============================================================
-
-def scrape_bluefin(source, url):
-    """
-    Bluefin is a consolidated discovery source.
-
-    Scan several listing pages because relying only on the first page
-    can miss newly-added or lower-ranked inventory.
-    """
-
-    properties = []
-    seen_urls = set()
-
-    page_urls = [url]
-    clean_base = url.rstrip("/") + "/"
-
-    for page_number in range(2, 7):
-        page_urls.append(
-            f"{clean_base}page/{page_number}/"
-        )
-
-    for page_url in page_urls:
-        try:
-            html, final_url = get_page(
-                page_url
-            )
-        except Exception:
-            if page_url == url:
-                raise
-            continue
-
-        soup = BeautifulSoup(
-            html,
-            "html.parser",
-        )
-
-        heading_links = []
-
-        for heading in soup.find_all(
-            ["h1", "h2", "h3", "h4", "h5"]
-        ):
-            link = heading.find(
-                "a",
-                href=True,
-            )
-
-            if not link:
-                continue
-
-            title = clean_text(
-                link.get_text(
-                    " ",
-                    strip=True,
-                )
-            )
-
-            if not looks_like_property_title(
-                title
-            ):
-                continue
-
-            href = absolute_url(
-                final_url,
-                link.get("href"),
-            )
-
-            if (
-                not href
-                or href in seen_urls
-            ):
-                continue
-
-            heading_links.append(
-                (
-                    heading,
-                    title,
-                    href,
-                )
-            )
-
-        page_properties = 0
-
-        for heading, title, property_url in heading_links:
-            seen_urls.add(property_url)
-
-            container = heading
-            text = ""
-
-            for _ in range(9):
-                if not container:
-                    break
-
-                candidate_text = clean_text(
-                    container.get_text(
-                        " ",
-                        strip=True,
-                    )
-                )
-
-                price, _ = parse_price_details(
-                    candidate_text
-                )
-
-                if price is not None:
-                    text = candidate_text
-                    break
-
-                container = container.parent
-
-            if not text:
-                continue
-
-            price, price_meta = parse_price_details(
-                text
-            )
-
-            if price is None:
-                continue
-
-            prop = build_property(
-                source=source,
-                title=title,
-                url=property_url,
-                price=price,
-                text=text,
-                image=image_from(
-                    container,
-                    final_url,
-                ),
-                price_meta=price_meta,
-            )
-
-            if prop:
-                properties.append(prop)
-                page_properties += 1
-
-        print(
-            f"  Bluefin page {page_url}: "
-            f"{page_properties} qualifying listings"
-        )
-
-    return dedupe_properties(
-        properties
-    )
-
-
-# ============================================================
-# LINK-DRIVEN SCRAPER
-# ============================================================
-
-def scrape_listing_links(
-    source,
-    url,
-    max_pages=6,
-):
-    """
-    Some broker websites do not use conventional property-card CSS.
-    This parser finds links surrounded by price/property information
-    instead.
-
-    It is intentionally conservative: a link must have a plausible
-    title and nearby dollar price before becoming a listing.
-    """
-
-    all_properties = []
-    seen_urls = set()
-
-    pages = page_candidates(
-        url,
-        max_pages=max_pages,
-    )
-
-    main_success = False
-
-    for index, page_url in enumerate(pages):
-        try:
-            html, final_url = get_page(
-                page_url
-            )
-
-            if index == 0:
-                main_success = True
-
-        except Exception:
-            if index == 0:
-                raise
-            continue
-
-        soup = BeautifulSoup(
-            html,
-            "html.parser",
-        )
-
-        page_count = 0
-
-        for link in soup.find_all(
-            "a",
-            href=True,
-        ):
-            href = absolute_url(
-                final_url,
-                link.get("href"),
-            )
-
-            if (
-                not href
-                or href in seen_urls
-            ):
-                continue
-
-            title = clean_text(
-                link.get_text(
-                    " ",
-                    strip=True,
-                )
-            )
-
-            if not looks_like_property_title(
-                title
-            ):
-                # A linked image can sit inside a property card while
-                # the heading is a sibling. Search a nearby container.
-                parent = link.parent
-
-                if parent:
-                    candidate = best_title_from_node(
-                        parent
-                    )
-
-                    if candidate:
-                        title = candidate
-
-            if not looks_like_property_title(
-                title
-            ):
-                continue
-
-            container = link
-            text = ""
-
-            for _ in range(7):
-                if not container:
-                    break
-
-                candidate_text = clean_text(
-                    container.get_text(
-                        " ",
-                        strip=True,
-                    )
-                )
-
-                price, _ = parse_price_details(
-                    candidate_text
-                )
-
-                if price is not None:
-                    text = candidate_text
-                    break
-
-                container = container.parent
-
-            if not text:
-                continue
-
-            price, price_meta = parse_price_details(
-                text
-            )
-
-            if price is None:
-                continue
-
-            prop = build_property(
-                source=source,
-                title=title,
-                url=href,
-                price=price,
-                text=text,
-                image=image_from(
-                    container,
-                    final_url,
-                ),
-                price_meta=price_meta,
-            )
-
-            if prop:
-                seen_urls.add(href)
-                all_properties.append(prop)
-                page_count += 1
-
-        if page_count:
-            print(
-                f"  Link scan {page_url}: "
-                f"{page_count} qualifying"
-            )
-
-    if not main_success:
-        return []
-
-    return dedupe_properties(
-        all_properties
-    )
-
-
-# ============================================================
-# SOURCE-SPECIFIC ROUTING
-# ============================================================
-
-def combine_scraper_results(*groups):
-    combined = []
-
-    for group in groups:
-        combined.extend(
-            group or []
-        )
-
-    return dedupe_properties(
-        combined
-    )
-
-
-def scrape_robust_direct(
-    source,
-    url,
-    max_pages=6,
-):
-    """
-    Use both card-driven and link-driven extraction. This costs a few
-    extra requests but materially improves coverage across broker
-    websites with different WordPress/themes.
-    """
-
-    card_results = []
-    link_results = []
-    card_error = None
-    link_error = None
-
-    try:
-        card_results = scrape_paginated_generic(
-            source,
-            url,
-            max_pages=max_pages,
-        )
-    except Exception as error:
-        card_error = error
-
-    try:
-        link_results = scrape_listing_links(
-            source,
-            url,
-            max_pages=max_pages,
-        )
-    except Exception as error:
-        link_error = error
-
-    results = combine_scraper_results(
-        card_results,
-        link_results,
-    )
-
-    if results:
-        return results
-
-    # If the site was reachable but no qualifying properties were
-    # extracted, return zero. If both extraction methods could not
-    # reach the source at all, report the failure.
-    if card_error and link_error:
-        raise card_error
-
-    return []
-
-
-def scrape_source(source):
-    name = source["name"]
-    url = source["url"]
-
-    if name == "Bluefin Realtors":
-        return scrape_bluefin(
-            name,
-            url,
-        )
-
-    # Direct brokers get the broader extraction strategy.
-    if source.get("type") == "direct_broker":
-        return scrape_robust_direct(
-            name,
-            url,
-            max_pages=6,
-        )
-
-    # Aggregators other than Bluefin.
-    return scrape_robust_direct(
-        name,
-        url,
-        max_pages=5,
-    )
-
-
-# ============================================================
-# DEDUPLICATION
-# ============================================================
-
 def normalized_title_for_match(title):
     value = normalize(title)
 
@@ -1687,6 +1014,22 @@ def normalized_title_for_match(title):
         " ",
         value,
     ).strip()
+
+
+def address_identity(prop):
+    """Conservative exact street/area + house-number evidence across marketing titles."""
+    title = normalize(prop.get('name', ''))
+    if re.search(r"\b(unit|apt|lot|phase)\s*\d", title):
+        return ''
+    names = ('tanki leendert', 'tanki flip', 'rooi koochi', 'rooi santo', 'alto vista',
+             'pos chiquito', 'sabana basora', 'sabana grandi', 'salina cerca', 'saliña cerca',
+             'pavia', 'ponton', 'paradera', 'papaya', 'bubali', 'calabas', 'calbas', 'moko',
+             'morgenster', 'macuarima', 'wayaca', 'bakval', 'savaneta', 'siribana', 'safir')
+    for name in names:
+        match = re.search(r"\b" + re.escape(name) + r"\s+(\d{1,4}[a-z]?(?:\s+[a-z](?=\s|$))?)\b", title)
+        if match:
+            return name + ':' + match[1].replace(' ', '')
+    return ''
 
 
 def canonical_text(prop):
@@ -1740,6 +1083,8 @@ def stable_identity_text(prop):
 
 
 def property_key(prop):
+    if prop.get("history_key"):
+        return prop["history_key"]
     identity = stable_identity_text(
         prop
     )
@@ -1795,24 +1140,16 @@ def fuzzy_identity(prop):
         prop.get("location", "")
     )
 
-    # Remove common unit/lot numbers for cross-source matching.
-    title = re.sub(
-        r"\b(?:unit|apt|apartment|condo|lot|phase)"
-        r"\s*[-#]?\s*[a-z0-9]+\b",
-        " ",
-        title,
-    )
-
-    title = re.sub(
-        r"\s+",
-        " ",
-        title,
-    ).strip()
-
     return f"{location}|{title}"
 
 
 def development_key(prop):
+    if prop.get("type") != "Development" or not prop.get("project_id"):
+        return ""
+    return normalize(prop["project_id"])
+
+
+def _legacy_development_key(prop):
     title = normalized_title_for_match(
         prop.get("name", "")
     )
@@ -1856,6 +1193,9 @@ def merge_property_data(
     """
 
     result = dict(preferred)
+    result['aliases'] = sorted({canonical_url(u) for u in
+        preferred.get('aliases', []) + alternate.get('aliases', []) +
+        [preferred.get('url', ''), alternate.get('url', '')] if u})
 
     for field in (
         "image",
@@ -1952,6 +1292,7 @@ def cross_source_dedupe(properties):
     identity_indexes = {}
     fuzzy_indexes = {}
     development_indexes = {}
+    address_indexes = {}
 
     ordered = sorted(
         properties,
@@ -1978,6 +1319,15 @@ def cross_source_dedupe(properties):
 
             continue
 
+        address = address_identity(prop)
+        if address and address in address_indexes:
+            index = address_indexes[address]
+            existing = result[index]
+            same_kind = (existing.get('type') == 'Land') == (prop.get('type') == 'Land')
+            same_beds = not existing.get('beds') or not prop.get('beds') or existing['beds'] == prop['beds']
+            if same_kind and same_beds:
+                result[index] = choose_preferred_property(existing, prop)
+                continue
         fuzzy = fuzzy_identity(prop)
 
         if (
@@ -2077,6 +1427,8 @@ def cross_source_dedupe(properties):
                 fuzzy
             ] = len(result)
 
+        if address:
+            address_indexes[address] = len(result)
         result.append(prop)
 
     return result
@@ -2095,25 +1447,17 @@ def load_json(path, default):
         ) as file:
             return json.load(file)
 
-    except (
-        FileNotFoundError,
-        json.JSONDecodeError,
-    ):
+    except FileNotFoundError:
         return default
 
 
 def save_json(path, data):
-    with open(
-        path,
-        "w",
-        encoding="utf-8",
-    ) as file:
-        json.dump(
-            data,
-            file,
-            indent=2,
-            ensure_ascii=False,
-        )
+    temporary = path + '.tmp'
+    with open(temporary, 'w', encoding='utf-8') as file:
+        json.dump(data, file, indent=2, ensure_ascii=False)
+        file.flush()
+        os.fsync(file.fileno())
+    os.replace(temporary, path)
 
 
 def previous_properties(state):
@@ -2153,6 +1497,10 @@ def find_previous_record(
     the previous monitor's key format.
     """
 
+    if prop.get("history_key") in previous:
+        key = prop["history_key"]
+        return key, previous[key]
+
     new_key = property_key(prop)
 
     if new_key in previous:
@@ -2189,6 +1537,11 @@ def find_previous_record(
         ):
             return key, candidate
 
+        address = address_identity(prop)
+        if address and address == address_identity(candidate):
+            same_kind = (candidate.get('type') == 'Land') == (prop.get('type') == 'Land')
+            if same_kind and (not prop.get('beds') or not candidate.get('beds') or prop['beds'] == candidate['beds']):
+                return key, candidate
         candidate_title = (
             normalized_title_for_match(
                 candidate.get(
@@ -2202,6 +1555,7 @@ def find_previous_record(
             title
             and candidate_title
             and title == candidate_title
+            and (not prop.get("location") or not candidate.get("location") or normalize(prop["location"]) == normalize(candidate["location"]))
         ):
             return key, candidate
 
@@ -2215,7 +1569,7 @@ def find_previous_record(
         if (
             url
             and candidate_url
-            and url == candidate_url
+            and canonical_url(url) in {canonical_url(u) for u in candidate.get("aliases", []) + [candidate_url]}
         ):
             return key, candidate
 
@@ -2613,7 +1967,7 @@ def email_footer():
         "<a href='mailto:"
         "guidobrugman@live.nl"
         "?subject=STOP%20ARUBA%20PROPERTY%20ALERTS'>"
-        "request changes or stop alerts"
+        "contact recipient about alert settings"
         "</a>."
         "</div>"
     )
@@ -2634,30 +1988,22 @@ def send_email(
         )
         return False
 
-    response = requests.post(
-        "https://api.resend.com/emails",
-        headers={
-            "Authorization": (
-                f"Bearer {RESEND_API_KEY}"
-            ),
-            "Content-Type": "application/json",
-        },
-        json={
-            "from": SENDER,
-            "to": [RECIPIENT],
-            "subject": subject,
-            "html": html,
-        },
-        timeout=30,
-    )
-
-    response.raise_for_status()
-
-    print(
-        "Email sent successfully."
-    )
-
-    return True
+    if DRY_RUN:
+        return False
+    payload = {'from': SENDER, 'to': [RECIPIENT], 'subject': subject, 'html': html}
+    key = hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest()
+    try:
+        response = requests.post('https://api.resend.com/emails',
+            headers={'Authorization': f'Bearer {RESEND_API_KEY}',
+                     'Content-Type': 'application/json', 'Idempotency-Key': key},
+            json=payload, timeout=(4, 15))
+        response.raise_for_status()
+        print('Email accepted by Resend.')
+        return True
+    except requests.RequestException as exc:
+        # Never include request headers, API key, or provider response body in logs.
+        print(f'Email not confirmed ({type(exc).__name__}); keeping durable outbox for retry.')
+        return False
 
 
 # ============================================================
@@ -2668,6 +2014,7 @@ def send_event_email(
     new_items,
     reductions,
     major_changes,
+    render_only=False,
 ):
     sections = []
 
@@ -2748,10 +2095,9 @@ def send_event_email(
         + ", ".join(subject_parts)
     )
 
-    return send_email(
-        subject,
-        html,
-    )
+    if render_only:
+        return subject, html
+    return send_email(subject, html)
 
 
 # ============================================================
@@ -2762,6 +2108,7 @@ def send_daily_digest(
     activity,
     current_count,
     source_health,
+    render_only=False,
 ):
     new_items = activity.get(
         "new",
@@ -2856,14 +2203,14 @@ def send_daily_digest(
         name
         for name, data
         in source_health.items()
-        if data.get("status") == "ok"
+        if data.get("status") in ("ok", "empty")
     ]
 
     failed = [
         name
         for name, data
         in source_health.items()
-        if data.get("status") == "error"
+        if data.get("status") not in ("ok", "empty")
     ]
 
     html_parts.append(
@@ -2900,15 +2247,14 @@ def send_daily_digest(
     )
 
     subject = (
-        "Aruba Property Daily Digest — "
+        f"Aruba Property Daily Digest — {aruba_now().strftime('%b %d')} — "
         f"{len(new_items)} new, "
         f"{len(reductions)} reductions"
     )
 
-    return send_email(
-        subject,
-        "".join(html_parts),
-    )
+    if render_only:
+        return subject, "".join(html_parts)
+    return send_email(subject, "".join(html_parts))
 
 
 # ============================================================
@@ -2918,7 +2264,7 @@ def send_daily_digest(
 def should_send_daily_digest(state):
     local = aruba_now()
 
-    if local.hour != 8:
+    if local.hour < 8:
         return False
 
     today = local.date().isoformat()
@@ -2980,534 +2326,209 @@ def dedupe_pending_events(
 # MAIN
 # ============================================================
 
-def main():
-    print(
-        "Aruba Property Agent starting..."
-    )
+def event_token(item):
+    return hashlib.sha256(json.dumps(item, sort_keys=True, default=str).encode()).hexdigest()
 
-    source_data = load_json(
-        SOURCES_FILE,
-        {"sources": []},
-    )
 
-    sources = [
-        source
-        for source in source_data.get(
-            "sources",
-            [],
-        )
-        if source.get("enabled")
-    ]
+def queue_message(state, kind, args, snapshot):
+    if any(m['kind'] == kind for m in state.setdefault('outbox', [])):
+        return
+    # Render once. Retries use the exact same persisted payload/idempotency key.
+    subject, html = (send_daily_digest(*args, render_only=True) if kind == 'digest'
+                     else send_event_email(*args, render_only=True))
+    state['outbox'].append({'kind': kind, 'subject': subject, 'html': html,
+                            'snapshot': snapshot, 'created_at': iso_now()})
 
-    state = load_json(
-        STATE_FILE,
-        {
-            "properties": {},
-            "pending_new": [],
-            "pending_reductions": [],
-            "pending_major_changes": [],
-            "daily_activity": (
-                empty_daily_activity()
-            ),
-            "last_digest_date": None,
-            "source_health": {},
-        },
-    )
 
-    previous = previous_properties(
-        state
-    )
-
-    daily_activity = (
-        normalize_daily_activity(
-            state.get(
-                "daily_activity"
-            )
-        )
-    )
-
-    source_health = dict(
-        state.get(
-            "source_health",
-            {}
-        )
-    )
-
-    current = []
-
-    # --------------------------------------------------------
-    # SCRAPE ALL ENABLED SOURCES
-    # --------------------------------------------------------
-
-    for source in sources:
-        name = source["name"]
-        url = source["url"]
-
-        print(
-            f"\nChecking source: {name}"
-        )
-
-        print(
-            f"URL: {url}"
-        )
-
-        try:
-            properties = scrape_source(
-                source
-            )
-
-            print(
-                f"Properties found: "
-                f"{len(properties)}"
-            )
-
-            current.extend(
-                properties
-            )
-
-            source_health[name] = {
-                "status": "ok",
-                "checked_at": iso_now(),
-                "properties_found": len(
-                    properties
-                ),
-                "error": "",
-            }
-
-        except Exception as error:
-            error_text = clean_text(
-                str(error)
-            )
-
-            print(
-                f"ERROR checking {name}: "
-                f"{error_text}"
-            )
-
-            source_health[name] = {
-                "status": "error",
-                "checked_at": iso_now(),
-                "properties_found": 0,
-                "error": error_text[:300],
-            }
-
-    current = cross_source_dedupe(
-        current
-    )
-
-    # --------------------------------------------------------
-    # MATCH CURRENT PROPERTIES TO PERMANENT HISTORY
-    # --------------------------------------------------------
-
-    current_records = []
-    new_items = []
-    reductions = []
-    major_changes = []
-
-    matched_previous_keys = set()
-
-    for prop in current:
-        old_key, old = find_previous_record(
-            previous,
-            prop,
-        )
-
-        if not old:
-            prop["detected_at"] = iso_now()
-
-            new_items.append(
-                prop
-            )
-
-            current_records.append(
-                (
-                    property_key(prop),
-                    prop,
-                )
-            )
-
+def flush_outbox(state):
+    for message in list(state.get('outbox', [])):
+        if not send_email(message['subject'], message['html']):
             continue
-
-        matched_previous_keys.add(
-            old_key
-        )
-
-        prop["detected_at"] = old.get(
-            "detected_at",
-            prop.get(
-                "detected_at",
-                iso_now(),
-            ),
-        )
-
-        old_price = old.get(
-            "price"
-        )
-
-        new_price = prop.get(
-            "price"
-        )
-
-        if (
-            old_price
-            and new_price
-            and new_price < old_price
-        ):
-            reductions.append(
-                (
-                    prop,
-                    old,
-                )
-            )
-
-        changes = field_changes(
-            old,
-            prop,
-        )
-
-        # Type-only changes caused by this improved classifier are not
-        # useful enough to email by themselves. They are simply saved
-        # into state. Other substantive changes still qualify.
-        if (
-            changes
-            and set(
-                changes.keys()
-            ) == {"Property type"}
-        ):
-            changes = {}
-
-        if changes:
-            major_changes.append(
-                (
-                    prop,
-                    changes,
-                )
-            )
-
-        current_records.append(
-            (
-                property_key(prop),
-                prop,
-            )
-        )
-
-    current_by_key = dict(
-        current_records
-    )
-
-    # --------------------------------------------------------
-    # RECORD DAILY ACTIVITY
-    # --------------------------------------------------------
-
-    record_daily_activity(
-        daily_activity,
-        new_items,
-        reductions,
-        major_changes,
-    )
-
-    # --------------------------------------------------------
-    # BATCH QUEUE
-    # --------------------------------------------------------
-
-    pending_new = list(
-        state.get(
-            "pending_new",
-            [],
-        )
-    )
-
-    pending_reductions = list(
-        state.get(
-            "pending_reductions",
-            [],
-        )
-    )
-
-    pending_major = list(
-        state.get(
-            "pending_major_changes",
-            [],
-        )
-    )
-
-    pending_new.extend(
-        new_items
-    )
-
-    pending_new = dedupe_pending_new(
-        pending_new
-    )
-
-    for prop, old in reductions:
-        pending_reductions.append(
-            {
-                "property": prop,
-                "old": old,
-                "queued_at": iso_now(),
-            }
-        )
-
-    pending_reductions = (
-        dedupe_pending_events(
-            pending_reductions
-        )
-    )
-
-    for prop, changes in major_changes:
-        pending_major.append(
-            {
-                "property": prop,
-                "changes": changes,
-                "queued_at": iso_now(),
-            }
-        )
-
-    pending_major = (
-        dedupe_pending_events(
-            pending_major
-        )
-    )
-
-    # New listings use first-detected time as queue time.
-    for prop in pending_new:
-        if not prop.get("queued_at"):
-            prop["queued_at"] = (
-                prop.get(
-                    "detected_at"
-                )
-                or iso_now()
-            )
-
-    cutoff = (
-        now_utc()
-        - timedelta(
-            minutes=BATCH_MINUTES
-        )
-    )
-
-    def is_old_enough(item):
-        queued = parse_datetime(
-            item.get(
-                "queued_at",
-                "",
-            )
-        )
-
-        if not queued:
-            return False
-
-        return queued <= cutoff
-
-    batch_ready = (
-        any(
-            is_old_enough(item)
-            for item in pending_new
-        )
-        or any(
-            is_old_enough(item)
-            for item in pending_reductions
-        )
-        or any(
-            is_old_enough(item)
-            for item in pending_major
-        )
-    )
-
-    if batch_ready:
-        email_sent = send_event_email(
-            pending_new,
-            [
-                (
-                    item["property"],
-                    item["old"],
-                )
-                for item
-                in pending_reductions
-            ],
-            [
-                (
-                    item["property"],
-                    item["changes"],
-                )
-                for item
-                in pending_major
-            ],
-        )
-
-        # Queues are cleared only after Resend confirms delivery.
-        if email_sent:
-            pending_new = []
-            pending_reductions = []
-            pending_major = []
-
-    # --------------------------------------------------------
-    # PERMANENT HISTORY
-    # --------------------------------------------------------
-
-    property_history = dict(
-        previous
-    )
-
-    # Remove legacy-key copies only when we have successfully matched
-    # them and are about to save the same property under the new stable
-    # identity. This gradually migrates state without losing history.
-    for prop in current:
-        old_key, old = find_previous_record(
-            previous,
-            prop,
-        )
-
-        new_key = property_key(prop)
-
-        if (
-            old_key
-            and old_key != new_key
-            and old_key in property_history
-        ):
-            property_history.pop(
-                old_key,
-                None,
-            )
-
-        property_history[
-            new_key
-        ] = prop
-
-    new_state = {
-        "properties": property_history,
-        "pending_new": pending_new,
-        "pending_reductions": (
-            pending_reductions
-        ),
-        "pending_major_changes": (
-            pending_major
-        ),
-        "daily_activity": (
-            daily_activity
-        ),
-        "last_digest_date": state.get(
-            "last_digest_date"
-        ),
-        "source_health": source_health,
-    }
-
-    # --------------------------------------------------------
-    # DAILY ACTIVITY DIGEST
-    # --------------------------------------------------------
-
-    if should_send_daily_digest(
-        new_state
-    ):
-        digest_sent = send_daily_digest(
-            daily_activity,
-            len(current_by_key),
-            source_health,
-        )
-
-        if digest_sent:
-            new_state[
-                "last_digest_date"
-            ] = (
-                aruba_now()
-                .date()
-                .isoformat()
-            )
-
-            # Activity is "since previous digest", so clear it only
-            # after the new digest has successfully been sent.
-            new_state[
-                "daily_activity"
-            ] = empty_daily_activity()
-
-    save_json(
-        STATE_FILE,
-        new_state,
-    )
-
-    # --------------------------------------------------------
-    # SUMMARY
-    # --------------------------------------------------------
-
-    successful_sources = [
-        name
-        for name, data
-        in source_health.items()
-        if data.get("status") == "ok"
-    ]
-
-    failed_sources = [
-        name
-        for name, data
-        in source_health.items()
-        if data.get("status") == "error"
-    ]
-
-    print(
-        "\n============================================================"
-    )
-
-    print(
-        f"CURRENT QUALIFYING PROPERTIES: "
-        f"{len(current_by_key)}"
-    )
-
-    print(
-        f"NEW DETECTED THIS RUN: "
-        f"{len(new_items)}"
-    )
-
-    print(
-        f"PRICE REDUCTIONS THIS RUN: "
-        f"{len(reductions)}"
-    )
-
-    print(
-        f"MAJOR CHANGES THIS RUN: "
-        f"{len(major_changes)}"
-    )
-
-    print(
-        f"PENDING NEW ALERTS: "
-        f"{len(pending_new)}"
-    )
-
-    print(
-        f"PENDING PRICE ALERTS: "
-        f"{len(pending_reductions)}"
-    )
-
-    print(
-        f"PENDING MAJOR CHANGE ALERTS: "
-        f"{len(pending_major)}"
-    )
-
-    print(
-        f"SOURCES OK: "
-        f"{len(successful_sources)}"
-    )
-
-    print(
-        f"SOURCES FAILED: "
-        f"{len(failed_sources)}"
-    )
-
-    if failed_sources:
-        print(
-            "FAILED SOURCES: "
-            + ", ".join(
-                failed_sources
-            )
-        )
-
-    print(
-        "============================================================"
-    )
-
-    print(
-        "Monitor run completed successfully."
-    )
+        snapshot = message['snapshot']
+        if message['kind'] == 'digest':
+            for field, tokens in snapshot['activity'].items():
+                state['daily_activity'][field] = [x for x in state['daily_activity'][field]
+                                                  if event_token(x) not in tokens]
+            state['last_digest_date'] = snapshot['date']
+            state['last_digest_at'] = iso_now()
+        else:
+            for field, tokens in snapshot.items():
+                state[field] = [x for x in state[field] if event_token(x) not in tokens]
+        state['outbox'].remove(message)
+        save_json(STATE_FILE, state)
 
 
-if __name__ == "__main__":
+def comparable_price(old, new):
+    return (old.get('source') == new.get('source')
+            and canonical_url(old.get('url', '')) == canonical_url(new.get('url', ''))
+            and bool(old.get('calculated_price')) == bool(new.get('calculated_price'))
+            and old.get('price_area_m2') == new.get('price_area_m2'))
+
+
+def reconcile(previous, current):
+    history = dict(previous)
+    new_items, reductions, major = [], [], []
+    for observed in current:
+        prop = dict(observed)
+        old_key, old = find_previous_record(history, prop)
+        if old:
+            prop['history_key'] = old_key
+            prop['detected_at'] = old.get('detected_at', iso_now())
+            prop['aliases'] = sorted(set(old.get('aliases', []) + prop.get('aliases', []) +
+                                          [canonical_url(old.get('url', '')), canonical_url(prop['url'])]))
+            changes = field_changes(old, prop)
+            changes.pop('Property type', None)
+            # Source/parser switches cannot be advertised as price reductions or major changes.
+            price_changed = comparable_price(old, prop) and old.get('price') and prop['price'] < old['price'] - 1
+            signature = event_token({'price': prop['price'] if price_changed else None, 'changes': changes})
+            candidate = old.get('change_candidate', {})
+            if comparable_price(old, prop) and (price_changed or changes):
+                if candidate.get('signature') == signature:
+                    if price_changed:
+                        reductions.append((dict(prop), dict(old)))
+                    if changes:
+                        major.append((dict(prop), changes))
+                else:
+                    prop['change_candidate'] = {'signature': signature, 'observed_at': iso_now()}
+                    # Preserve confirmed values until another successful observation agrees.
+                    for field in ('price', 'beds', 'baths', 'size', 'location', 'status'):
+                        if old.get(field):
+                            prop[field] = old[field]
+            for field in ('image', 'description', 'beds', 'baths', 'size', 'location'):
+                if not prop.get(field):
+                    prop[field] = old.get(field, '')
+            key = old_key
+        else:
+            key = property_key(prop)
+            prop['history_key'] = key
+            prop['detected_at'] = iso_now()
+            new_items.append(prop)
+        prop['last_seen_at'] = iso_now()
+        prop['status'] = 'available'
+        history[key] = prop
+    return history, new_items, reductions, major
+
+
+def monitored_count(history):
+    cutoff = now_utc() - timedelta(days=7)
+    return sum(p.get('status') == 'available' and
+               (parse_datetime(p.get('last_seen_at', '')) or datetime.min.replace(tzinfo=timezone.utc)) >= cutoff
+               and p.get('type') not in EXCLUDED_RESIDENTIAL_UNIT_TYPES
+               and p.get('price', PRICE_LIMIT + 1) <= PRICE_LIMIT
+               for p in history.values())
+
+
+def main():
+    started = time.monotonic()
+    if os.environ.get('DELIVER_ONLY') == '1':
+        state = load_json(STATE_FILE, {})
+        flush_outbox(state)
+        return
+    source_data = load_json(SOURCES_FILE, {'sources': []})
+    sources = [s for s in source_data['sources'] if s.get('enabled')]
+    state = load_json(STATE_FILE, {'properties': {}})
+    for key in ('pending_new', 'pending_reductions', 'pending_major_changes', 'outbox'):
+        state.setdefault(key, [])
+    state['daily_activity'] = normalize_daily_activity(state.get('daily_activity'))
+    state.setdefault('source_health', {})
+    previous = previous_properties(state)
+    migration = state.get('schema_version', 1) < 2
+    if migration:
+        # Retain all legacy activity/queues for audit, without resending historical NEWs.
+        state['legacy_queues'] = {k: state[k] for k in ('pending_new', 'pending_reductions', 'pending_major_changes')}
+        state['legacy_daily_activity'] = state['daily_activity']
+        for k in ('pending_new', 'pending_reductions', 'pending_major_changes'):
+            state[k] = []
+        state['schema_version'] = 2
+    last_deep = parse_datetime(state.get('last_deep_at', ''))
+    requested = os.environ.get('SCAN_MODE', 'auto')
+    mode = ('deep' if not last_deep or now_utc() - last_deep >= timedelta(hours=1) else 'fast') if requested == 'auto' else requested
+    if mode not in ('fast', 'deep'):
+        raise ValueError('SCAN_MODE must be auto, fast, or deep')
+    print(f'Aruba Property Agent: {mode} scan')
+    current, observations = [], []
+    results = collectors.scan(sources, mode, state['source_health'], sys.modules[__name__])
+    for source, (items, observed, health) in results:
+        name = source['name']
+        old_health = state['source_health'].get(name, {})
+        if health['status'] not in ('ok', 'empty', 'partial'):
+            failures = old_health.get('consecutive_failures', 0) + 1
+            health['consecutive_failures'] = failures
+            hours = min(24, 2 ** min(failures-1, 5)) if health['status'] in ('blocked', 'url_changed', 'ssl_error', 'parser_failed') else 0.25
+            health['retry_after'] = (now_utc()+timedelta(hours=hours)).isoformat()
+            if old_health.get('last_success_at'):
+                health['last_success_at'] = old_health['last_success_at']
+        else:
+            health['last_success_at'] = iso_now()
+            health['consecutive_failures'] = 0
+        state['source_health'][name] = health
+        print(f"{name}: {health['status']}, {len(items)} qualifying / {health['cards_seen']} cards, {health['pages_fetched']} pages, {health['duration_seconds']}s")
+        current.extend(items)
+        observations.extend((name, x) for x in observed)
+    current = cross_source_dedupe(current)
+    history, new, reductions, major = reconcile(previous, current)
+    # Explicit unavailability updates history; absence on a shallow scan never means sold.
+    for name, observed in observations:
+        if not observed.get('status'):
+            inferred = infer_property_type(observed.get('name', ''), observed.get('type', ''))
+            if inferred in EXCLUDED_RESIDENTIAL_UNIT_TYPES:
+                observed['status'] = 'ineligible'
+            else:
+                continue
+        key, old = find_previous_record(history, observed)
+        if old and (old.get('source') == name or canonical_url(old.get('url', '')) == canonical_url(observed['url'])):
+            history[key] = dict(old, status=observed['status'], last_checked_at=iso_now())
+    state['properties'] = history
+    if migration:
+        for observed in current:
+            key, baseline = find_previous_record(history, observed)
+            if key:
+                baseline.update({k: v for k,v in observed.items() if k not in ('detected_at', 'history_key', 'aliases')})
+                baseline.pop('change_candidate', None)
+        state['migration'] = {'at': iso_now(), 'baseline_discoveries': len(new), 'preserved_history': len(previous)}
+        new, reductions, major = [], [], []
+    record_daily_activity(state['daily_activity'], new, reductions, major)
+    state['pending_new'] = dedupe_pending_new(state['pending_new'] + [dict(p, queued_at=iso_now()) for p in new])
+    for field, events, label in [('pending_reductions', reductions, 'old'), ('pending_major_changes', major, 'changes')]:
+        state[field] = dedupe_pending_events(state[field] + [{'property': p, label: extra, 'queued_at': iso_now()} for p, extra in events])
+    # Revalidate unsent legacy queues against currently confirmed eligibility.
+    eligible = {key: p for key, p in history.items() if p.get('status') == 'available' and p.get('type') not in EXCLUDED_RESIDENTIAL_UNIT_TYPES}
+    def valid(p):
+        key, old = find_previous_record(history, p)
+        return bool(old and key in eligible and p.get('type') not in EXCLUDED_RESIDENTIAL_UNIT_TYPES)
+    state['pending_new'] = [p for p in state['pending_new'] if valid(p)]
+    for field in ('pending_reductions', 'pending_major_changes'):
+        state[field] = [e for e in state[field] if valid(e['property'])]
+    if state['pending_new']:
+        snapshot = {'pending_new': [event_token(x) for x in state['pending_new']]}
+        queue_message(state, 'new', (state['pending_new'], [], []), snapshot)
+    cutoff = now_utc() - timedelta(minutes=BATCH_MINUTES)
+    if any((parse_datetime(x.get('queued_at','')) or now_utc()) <= cutoff for x in state['pending_reductions'] + state['pending_major_changes']):
+        snapshot = {k: [event_token(x) for x in state[k]] for k in ('pending_reductions', 'pending_major_changes')}
+        queue_message(state, 'changes', ([], [(x['property'], x['old']) for x in state['pending_reductions']],
+                                        [(x['property'], x['changes']) for x in state['pending_major_changes']]), snapshot)
+    if should_send_daily_digest(state):
+        snapshot = {'date': aruba_now().date().isoformat(), 'activity': {k: [event_token(x) for x in v] for k,v in state['daily_activity'].items()}}
+        digest_activity = empty_daily_activity()
+        for field, entries in state['daily_activity'].items():
+            for entry in entries:
+                target = entry if field == 'new' else entry.get('property', {})
+                if valid(target):
+                    key, latest = find_previous_record(history, target)
+                    digest_activity[field].append(latest if field == 'new' else dict(entry, property=latest))
+        queue_message(state, 'digest', (digest_activity, monitored_count(history), state['source_health']), snapshot)
+    if mode == 'deep':
+        state['last_deep_at'] = iso_now()
+    state['last_scan'] = {'mode': mode, 'at': iso_now(), 'qualifying_observed': len(current), 'new': len(new),
+                          'reductions': len(reductions), 'major_changes': len(major),
+                          'duration_seconds': round(time.monotonic()-started, 2)}
+    # Persist discovery and frozen messages BEFORE external email side effects.
+    save_json(STATE_FILE, state)
+    if os.environ.get('DEFER_DELIVERY') != '1':
+        flush_outbox(state)
+    print(json.dumps(state['last_scan']))
+    print(f'Known recent qualifying properties: {monitored_count(history)}; durable messages: {len(state["outbox"])}')
+
+
+if __name__ == '__main__':
     main()
