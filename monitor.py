@@ -95,6 +95,12 @@ DIRECT_SOURCE_NAMES = {
     "Aruba Palms Realtors",
     "Home 4 Everyone",
     "Smiley Real Estate",
+    'Berkshire Hathaway Aruba',
+    'Realty ONE Group Aruba',
+    'HKG Real Estate Aruba',
+    'MPG Aruba',
+    'Aruba Happy Homes',
+    'Objective Realty Aruba',
 }
 
 
@@ -457,6 +463,7 @@ def infer_property_type(title, text):
     text_n = normalize(text)
 
     full_home = bool(re.search(r"\b(houses?|homes?|villas?|townhouses?|townhomes?|town houses?)\b", title_n))
+    full_home = full_home or bool(re.search(r"\b(?:house|home) with (?:one |two |three |\d+ )?apartments?\b", text_n))
     complex_signal = bool(re.search(r"\b(apartment complex|apartment building|multi unit|multi family|multifamily|\d+ units)\b", title_n))
     if not full_home and not complex_signal and re.search(r"\b(condos?|condominiums?|apartments?|studio|penthouse)\b", text_n):
         return "Condominium" if re.search(r"\b(condos?|condominiums?)\b", text_n) else "Apartment"
@@ -766,7 +773,7 @@ def area_m2(value):
 
 def explicit_areas(text):
     unit = r"([\d.,]+\s*(?:m²|m2|sqm|sq\s*mt|sq\s*ft|sqft|ft²))"
-    building = first_match([r"\b(?:built[ -]?up(?: area)?|building(?: area| size)?|living(?: area| space)?|interior(?: area)?|construction area)\s*:?\s*" + unit], text)
+    building = first_match([r"\b(?:built[ -]?up(?: area| size)?|building(?: area| size)?|living(?: area| space)?|interior(?: area)?|construction area)\s*:?\s*" + unit], text)
     land = first_match([r"\b(?:lot(?: area| size)?|land(?: area| size)?|plot(?: area| size)?)\s*:?\s*" + unit], text)
     return area_m2(building), area_m2(land)
 
@@ -1520,6 +1527,13 @@ def find_previous_record(
     if prop.get("history_key") in previous:
         key = prop["history_key"]
         return key, previous[key]
+
+    # An established URL/alias is stronger evidence than a shared address/title.
+    url = canonical_url(prop.get('url', ''))
+    if url:
+        for key, candidate in previous.items():
+            if url in {canonical_url(u) for u in candidate.get('aliases', []) + [candidate.get('url', '')] if u}:
+                return key, candidate
 
     new_key = property_key(prop)
 
@@ -2391,10 +2405,22 @@ def comparable_price(old, new):
             and old.get('price_area_m2') == new.get('price_area_m2'))
 
 
+def history_dedupe(previous, current):
+    """One observation per permanent identity, even for conflicting broker cards."""
+    unique = {}
+    for prop in current:
+        old_key, old = find_previous_record(previous, prop)
+        key = ('history', old_key) if old else ('new', property_key(prop))
+        if old:
+            prop = dict(prop, history_key=old_key)
+        unique[key] = choose_preferred_property(unique[key], prop) if key in unique else prop
+    return list(unique.values())
+
+
 def reconcile(previous, current):
     history = dict(previous)
     new_items, reductions, major = [], [], []
-    for observed in current:
+    for observed in history_dedupe(previous, current):
         prop = dict(observed)
         old_key, old = find_previous_record(history, prop)
         if old:
@@ -2493,12 +2519,17 @@ def main():
             health['consecutive_failures'] = 0
         if health['status'] in ('ok', 'empty', 'partial') and name not in baselined:
             newly_baselined.add(name)
-            baselined.add(name)
+            # A shallow first page must not make the rest of an existing broker's
+            # inventory look NEW when the first deep scan discovers it later.
+            if mode == 'deep':
+                baselined.add(name)
         state['source_health'][name] = health
         print(f"{name}: {health['status']}, {len(items)} qualifying / {health['cards_seen']} cards, {health['pages_fetched']} pages, {health['duration_seconds']}s")
         current.extend(items)
         observations.extend((name, x) for x in observed)
     state['baselined_sources'] = sorted(baselined)
+    unavailable_urls = {canonical_url(o['url']) for _, o in observations if o.get('status')}
+    current = [p for p in current if canonical_url(p['url']) not in unavailable_urls]
     current = cross_source_dedupe(current)
     import development
     current = development.enrich(current, previous, mode, sys.modules[__name__])
@@ -2506,6 +2537,7 @@ def main():
         if prop.get('residence_complex'):
             observations.append((prop['source'], dict(prop, status='ineligible')))
     current = [p for p in current if not p.get('residence_complex')]
+    current = history_dedupe(previous, current)
     history, new, reductions, major = reconcile(previous, current)
     # Explicit unavailability updates history; absence on a shallow scan never means sold.
     for name, observed in observations:
@@ -2516,7 +2548,7 @@ def main():
             else:
                 continue
         key, old = find_previous_record(history, observed)
-        if old and (old.get('source') == name or canonical_url(old.get('url', '')) == canonical_url(observed['url'])):
+        if old and canonical_url(old.get('url', '')) == canonical_url(observed['url']):
             history[key] = dict(old, status=observed['status'], last_checked_at=iso_now())
     state['properties'] = history
     if migration:

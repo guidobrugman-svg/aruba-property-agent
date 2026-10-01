@@ -105,21 +105,14 @@
     {
       "name": "Home 4 Everyone",
       "type": "direct_broker",
-      "url": "https://homeforeveryonearuba.com/search-results/",
+      "url": "https://homeforeveryonearuba.com/status/for-sale/",
       "priority": 2,
       "enabled": true,
       "card_selector": ".item-listing-wrap",
       "title_selector": ".item-title",
       "fast_pages": 1,
       "deep_pages": 20,
-      "listing_context": "",
-      "deep_urls": [
-        "https://homeforeveryonearuba.com/search-results/page/2/",
-        "https://homeforeveryonearuba.com/search-results/page/3/",
-        "https://homeforeveryonearuba.com/search-results/page/4/",
-        "https://homeforeveryonearuba.com/search-results/page/5/",
-        "https://homeforeveryonearuba.com/search-results/page/6/"
-      ]
+      "listing_context": ""
     },
     {
       "name": "Smiley Real Estate",
@@ -132,7 +125,23 @@
       "fast_pages": 1,
       "deep_pages": 4,
       "adapter": "myhome",
-      "api_url": "https://smileyaruba.com/wp-json/myhome/v1/estates?currency=price"
+      "api_url": "https://smileyaruba.com/wp-json/myhome/v1/estates?currency=price",
+      "urls": [
+        {
+          "url": "https://smileyaruba.com/wp-json/myhome/v1/estates?currency=price",
+          "data": {
+            "data[offer-type][compare]": "=",
+            "data[offer-type][key]": "offer-type",
+            "data[offer-type][slug]": "offer-type",
+            "data[offer-type][values][0][name]": "Sale Property",
+            "data[offer-type][values][0][value]": "for-sale",
+            "page": "1",
+            "limit": "50",
+            "sortBy": "newest",
+            "currency": "price"
+          }
+        }
+      ]
     },
     {
       "name": "Century 21 Aruba",
@@ -188,6 +197,132 @@
       "fast_pages": 4,
       "deep_pages": 8,
       "enabled": true
+    },
+    {
+      "name": "Berkshire Hathaway Aruba",
+      "url": "https://bhhsaruba.com/for-sale",
+      "card_selector": ".preview-property.preview-properties__item",
+      "title_selector": ".preview-property__name",
+      "price_selector": ".preview-property__price",
+      "type_selector": ".preview-property__details-item",
+      "declared_type_map": {
+        "Property type: Residential": "House",
+        "Property type: Land": "Land",
+        "Property type: Commercial": "Commercial",
+        "Property type: Condominium": "Condominium"
+      },
+      "fast_pages": 1,
+      "deep_pages": 4,
+      "type": "direct_broker",
+      "enabled": true,
+      "priority": 2,
+      "listing_context": "For Sale"
+    },
+    {
+      "name": "Realty ONE Group Aruba",
+      "url": "https://rogaruba.com/listings/for-sale/residential",
+      "urls": [
+        "https://rogaruba.com/listings/for-sale/residential",
+        "https://rogaruba.com/listings/for-sale/land"
+      ],
+      "card_selector": ".js-grid-properties > .grid > div",
+      "title_selector": ".grow > a",
+      "price_selector": ".grow > .text-primary",
+      "address_selector": ".grow > .mb-2",
+      "type_selector": ".listing-type",
+      "url_contexts": {
+        "/for-sale/residential": "House",
+        "/for-sale/land": "Vacant Land"
+      },
+      "fast_pages": 2,
+      "deep_pages": 12,
+      "type": "direct_broker",
+      "enabled": true,
+      "priority": 2,
+      "listing_context": "For Sale"
+    },
+    {
+      "name": "HKG Real Estate Aruba",
+      "url": "https://hkgrealestatearuba.com/property-type/residential/",
+      "urls": [
+        "https://hkgrealestatearuba.com/property-type/residential/",
+        "https://hkgrealestatearuba.com/property-type/land/"
+      ],
+      "card_selector": ".item-listing-wrap",
+      "title_selector": ".item-title",
+      "url_contexts": {
+        "/property-type/residential/": "Residential",
+        "/property-type/land/": "Vacant Land"
+      },
+      "fast_pages": 2,
+      "deep_pages": 12,
+      "type": "direct_broker",
+      "enabled": true,
+      "priority": 2,
+      "listing_context": "For Sale"
+    },
+    {
+      "name": "MPG Aruba",
+      "url": "https://www.mpgaruba.com/houses-for-sale-aruba?maximum_price=650000",
+      "urls": [
+        "https://www.mpgaruba.com/houses-for-sale-aruba?maximum_price=650000",
+        "https://www.mpgaruba.com/land-for-sale-in-aruba?maximum_price=650000",
+        "https://www.mpgaruba.com/lease-land-for-sale-aruba?maximum_price=650000"
+      ],
+      "card_selector": "a.properties-link",
+      "title_selector": "h3",
+      "price_selector": ".prt-price",
+      "type_selector": ".prt-other",
+      "address_selector": ".prt-location",
+      "url_contexts": {
+        "/houses-for-sale-aruba": "House",
+        "/land-for-sale-in-aruba": "Vacant Land",
+        "/lease-land-for-sale-aruba": "Vacant Land"
+      },
+      "fast_pages": 3,
+      "deep_pages": 12,
+      "type": "direct_broker",
+      "enabled": true,
+      "priority": 2,
+      "listing_context": "For Sale"
+    },
+    {
+      "name": "Aruba Happy Homes",
+      "url": "https://arubahappyhomes.com/listings/for-sale/residential",
+      "urls": [
+        "https://arubahappyhomes.com/listings/for-sale/residential",
+        "https://arubahappyhomes.com/listings/for-sale/land"
+      ],
+      "card_selector": ".rent-sec",
+      "title_selector": ".rent-contain > .position-relative",
+      "price_selector": ".price",
+      "link_selector": "a.link-cover",
+      "url_contexts": {
+        "/for-sale/residential": "House",
+        "/for-sale/land": "Vacant Land"
+      },
+      "fast_pages": 2,
+      "deep_pages": 12,
+      "type": "direct_broker",
+      "enabled": true,
+      "priority": 2,
+      "listing_context": "For Sale",
+      "address_selector": ".area"
+    },
+    {
+      "name": "Objective Realty Aruba",
+      "url": "https://www.objective-realty.com/properties",
+      "card_selector": "div.group:has(a[href^=\"/properties/\"])",
+      "title_selector": "h3",
+      "price_selector": "p.text-lg",
+      "address_selector": "p.eyebrow",
+      "type_selector": ".listing-type",
+      "fast_pages": 1,
+      "deep_pages": 4,
+      "type": "direct_broker",
+      "enabled": true,
+      "priority": 2,
+      "listing_context": "For Sale"
     }
   ]
 }

@@ -1,0 +1,1216 @@
+{
+  "results": [
+    {
+      "id": 5201,
+      "name": "LAND IN WASHINGTON - FOR SALE",
+      "slug": "land-in-washington-for-sale",
+      "excerpt": "\ud83c\udf34 Prime Opportunity in Washington, Noord!\r\nLand is the only thing that lasts, Own a piece of the future!\r\nThis expansive ...",
+      "link": "https://smileyaruba.com/properties/land-lot/land-in-washington-for-sale/",
+      "has_price": true,
+      "image_srcset": "https://smileyaruba.com/wp-content/uploads/2025/06/Washington-34A-10-120x75.jpg 120w, https://smileyaruba.com/wp-content/uploads/2025/06/Washington-34A-10-848x530.jpg 848w, https://smileyaruba.com/wp-content/uploads/2025/06/Washington-34A-10-600x375.jpg 600w, https://smileyaruba.com/wp-content/uploads/2025/06/Washington-34A-10-400x250.jpg 400w, https://smileyaruba.com/wp-content/uploads/2025/06/Washington-34A-10-224x140.jpg 224w",
+      "image": "https://smileyaruba.com/wp-content/uploads/2025/06/Washington-34A-10-scaled.jpg",
+      "attributes": [
+        {
+          "name": "Property type",
+          "slug": "property-type",
+          "has_archive": true,
+          "values": [
+            {
+              "name": "Land Lot",
+              "value": "Land Lot",
+              "link": "https://smileyaruba.com/property-type/land-lot/",
+              "slug": "land-lot",
+              "options": []
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Offer type",
+          "slug": "offer-type",
+          "has_archive": true,
+          "values": [
+            {
+              "name": "For Sale",
+              "value": "For Sale",
+              "link": "https://smileyaruba.com/offer-type/sale/",
+              "slug": "sale",
+              "options": {
+                "has_label": true,
+                "bg_color": "#b6a27a",
+                "color": "#fff"
+              }
+            },
+            {
+              "name": "NEW LISTING",
+              "value": "NEW LISTING",
+              "link": "https://smileyaruba.com/offer-type/new-listing/",
+              "slug": "new-listing",
+              "options": {
+                "has_label": true,
+                "bg_color": "#b6a27a",
+                "color": "#fff"
+              }
+            },
+            {
+              "name": "Sale Property",
+              "value": "Sale Property",
+              "link": "https://smileyaruba.com/offer-type/for-sale/",
+              "slug": "for-sale",
+              "options": {
+                "has_label": false,
+                "bg_color": "#b6a27a",
+                "color": "#fff"
+              }
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": true,
+          "icon": ""
+        },
+        {
+          "name": "City",
+          "slug": "city",
+          "has_archive": true,
+          "values": [
+            {
+              "name": "Noord",
+              "value": "Noord",
+              "link": "https://smileyaruba.com/city/noord/",
+              "slug": "noord",
+              "options": []
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Neighborhood",
+          "slug": "neighborhood",
+          "has_archive": true,
+          "values": [
+            {
+              "name": "Washington",
+              "value": "Washington",
+              "link": "https://smileyaruba.com/neighborhood/washington/",
+              "slug": "washington",
+              "options": []
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Bedrooms",
+          "slug": "attribute_22",
+          "has_archive": false,
+          "values": [],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Bathrooms",
+          "slug": "bathrooms",
+          "has_archive": false,
+          "values": [],
+          "display_after": "",
+          "show": true,
+          "card_show": true,
+          "icon": "flaticon-bathtub"
+        },
+        {
+          "name": "Property size ft\u00b2",
+          "slug": "property-size",
+          "has_archive": false,
+          "values": [],
+          "display_after": "ft\u00b2",
+          "show": true,
+          "card_show": true,
+          "icon": ""
+        },
+        {
+          "name": "Property size m\u00b2",
+          "slug": "attribute_19",
+          "has_archive": false,
+          "values": [],
+          "display_after": "m\u00b2",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Lot size ft\u00b2",
+          "slug": "lot-size",
+          "has_archive": false,
+          "values": [],
+          "display_after": "ft\u00b2",
+          "show": true,
+          "card_show": true,
+          "icon": ""
+        },
+        {
+          "name": "Lot size m\u00b2",
+          "slug": "attribute_18",
+          "has_archive": false,
+          "values": [
+            {
+              "name": "4096 m\u00b2",
+              "value": "4096",
+              "link": "",
+              "slug": "attribute_18",
+              "options": []
+            }
+          ],
+          "display_after": "m\u00b2",
+          "show": true,
+          "card_show": true,
+          "icon": ""
+        },
+        {
+          "name": "Year",
+          "slug": "year-built",
+          "has_archive": false,
+          "values": [],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Features",
+          "slug": "features",
+          "has_archive": false,
+          "values": [
+            {
+              "name": "Property Land",
+              "value": "Property Land",
+              "link": "https://smileyaruba.com/features/property-land/",
+              "slug": "property-land",
+              "options": []
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        }
+      ],
+      "address": "",
+      "days_ago": "1 year ago",
+      "is_featured": true,
+      "offer_type": [
+        {
+          "name": "For Sale",
+          "value": "For Sale",
+          "link": "https://smileyaruba.com/offer-type/sale/",
+          "slug": "sale",
+          "options": {
+            "has_label": true,
+            "bg_color": "#b6a27a",
+            "color": "#fff"
+          }
+        },
+        {
+          "name": "NEW LISTING",
+          "value": "NEW LISTING",
+          "link": "https://smileyaruba.com/offer-type/new-listing/",
+          "slug": "new-listing",
+          "options": {
+            "has_label": true,
+            "bg_color": "#b6a27a",
+            "color": "#fff"
+          }
+        },
+        {
+          "name": "Sale Property",
+          "value": "Sale Property",
+          "link": "https://smileyaruba.com/offer-type/for-sale/",
+          "slug": "for-sale",
+          "options": {
+            "has_label": false,
+            "bg_color": "#b6a27a",
+            "color": "#fff"
+          }
+        }
+      ],
+      "status": "publish",
+      "payment_status": "pre_payment",
+      "attribute_classes": " mh-attribute-property-type__land-lot mh-attribute-offer-type__sale mh-attribute-offer-type__new-listing mh-attribute-offer-type__for-sale mh-attribute-city__noord mh-attribute-neighborhood__washington mh-attribute-attribute_18__attribute_18 mh-attribute-features__property-land",
+      "gallery": [
+        {
+          "image": "https://smileyaruba.com/wp-content/uploads/2025/06/Washington-34A-4-600x375.jpg",
+          "alt": ""
+        },
+        {
+          "image": "https://smileyaruba.com/wp-content/uploads/2025/06/Washington-34A-5-600x375.jpg",
+          "alt": ""
+        },
+        {
+          "image": "https://smileyaruba.com/wp-content/uploads/2025/06/Washington-34A-6-600x375.jpg",
+          "alt": ""
+        },
+        {
+          "image": "https://smileyaruba.com/wp-content/uploads/2025/06/Washington-34A-10-600x375.jpg",
+          "alt": ""
+        },
+        {
+          "image": "https://smileyaruba.com/wp-content/uploads/2025/06/Washington-34A-11-600x375.jpg",
+          "alt": ""
+        }
+      ],
+      "date": "June 25, 2025",
+      "price": [
+        {
+          "price": "$819.200",
+          "is_range": false
+        },
+        {
+          "price": "Awg1,433,600",
+          "is_range": false
+        }
+      ]
+    },
+    {
+      "id": 5103,
+      "name": "Boton 5G",
+      "slug": "boton-5g",
+      "excerpt": "SOLD!!\r\n\r\nWelcome to Boton 5G\u00a0\r\n\r\nThis property is located in Santa Cruz, Boton.\r\nThe home consists of 3 bedrooms, 2 bathr...",
+      "link": "https://smileyaruba.com/properties/house/boton-5g/",
+      "has_price": true,
+      "image_srcset": "https://smileyaruba.com/wp-content/uploads/2023/09/IMG_9887-120x75.jpg 120w, https://smileyaruba.com/wp-content/uploads/2023/09/IMG_9887-848x530.jpg 848w, https://smileyaruba.com/wp-content/uploads/2023/09/IMG_9887-600x375.jpg 600w, https://smileyaruba.com/wp-content/uploads/2023/09/IMG_9887-400x250.jpg 400w, https://smileyaruba.com/wp-content/uploads/2023/09/IMG_9887-224x140.jpg 224w",
+      "image": "https://smileyaruba.com/wp-content/uploads/2023/09/IMG_9887-scaled.jpg",
+      "attributes": [
+        {
+          "name": "Property type",
+          "slug": "property-type",
+          "has_archive": true,
+          "values": [
+            {
+              "name": "House",
+              "value": "House",
+              "link": "https://smileyaruba.com/property-type/house/",
+              "slug": "house",
+              "options": []
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Offer type",
+          "slug": "offer-type",
+          "has_archive": true,
+          "values": [
+            {
+              "name": "Sale Property",
+              "value": "Sale Property",
+              "link": "https://smileyaruba.com/offer-type/for-sale/",
+              "slug": "for-sale",
+              "options": {
+                "has_label": false,
+                "bg_color": "#b6a27a",
+                "color": "#fff"
+              }
+            },
+            {
+              "name": "Sold!",
+              "value": "Sold!",
+              "link": "https://smileyaruba.com/offer-type/sold/",
+              "slug": "sold",
+              "options": {
+                "has_label": true,
+                "bg_color": "#222222",
+                "color": "#ffffff"
+              }
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": true,
+          "icon": ""
+        },
+        {
+          "name": "City",
+          "slug": "city",
+          "has_archive": true,
+          "values": [
+            {
+              "name": "Santa Cruz",
+              "value": "Santa Cruz",
+              "link": "https://smileyaruba.com/city/santa-cruz/",
+              "slug": "santa-cruz",
+              "options": []
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Neighborhood",
+          "slug": "neighborhood",
+          "has_archive": true,
+          "values": [
+            {
+              "name": "Boton",
+              "value": "Boton",
+              "link": "https://smileyaruba.com/neighborhood/boton/",
+              "slug": "boton",
+              "options": []
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Bedrooms",
+          "slug": "attribute_22",
+          "has_archive": false,
+          "values": [],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Bathrooms",
+          "slug": "bathrooms",
+          "has_archive": false,
+          "values": [
+            {
+              "name": "2",
+              "value": "2",
+              "link": "",
+              "slug": "bathrooms",
+              "options": []
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": true,
+          "icon": "flaticon-bathtub"
+        },
+        {
+          "name": "Property size ft\u00b2",
+          "slug": "property-size",
+          "has_archive": false,
+          "values": [],
+          "display_after": "ft\u00b2",
+          "show": true,
+          "card_show": true,
+          "icon": ""
+        },
+        {
+          "name": "Property size m\u00b2",
+          "slug": "attribute_19",
+          "has_archive": false,
+          "values": [
+            {
+              "name": "144 m\u00b2",
+              "value": "144",
+              "link": "",
+              "slug": "attribute_19",
+              "options": []
+            }
+          ],
+          "display_after": "m\u00b2",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Lot size ft\u00b2",
+          "slug": "lot-size",
+          "has_archive": false,
+          "values": [],
+          "display_after": "ft\u00b2",
+          "show": true,
+          "card_show": true,
+          "icon": ""
+        },
+        {
+          "name": "Lot size m\u00b2",
+          "slug": "attribute_18",
+          "has_archive": false,
+          "values": [
+            {
+              "name": "650 m\u00b2",
+              "value": "650",
+              "link": "",
+              "slug": "attribute_18",
+              "options": []
+            }
+          ],
+          "display_after": "m\u00b2",
+          "show": true,
+          "card_show": true,
+          "icon": ""
+        },
+        {
+          "name": "Year",
+          "slug": "year-built",
+          "has_archive": false,
+          "values": [
+            {
+              "name": "2015",
+              "value": "2015",
+              "link": "",
+              "slug": "year-built",
+              "options": []
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Features",
+          "slug": "features",
+          "has_archive": false,
+          "values": [],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        }
+      ],
+      "address": "",
+      "days_ago": "3 years ago",
+      "is_featured": false,
+      "offer_type": [
+        {
+          "name": "Sale Property",
+          "value": "Sale Property",
+          "link": "https://smileyaruba.com/offer-type/for-sale/",
+          "slug": "for-sale",
+          "options": {
+            "has_label": false,
+            "bg_color": "#b6a27a",
+            "color": "#fff"
+          }
+        },
+        {
+          "name": "Sold!",
+          "value": "Sold!",
+          "link": "https://smileyaruba.com/offer-type/sold/",
+          "slug": "sold",
+          "options": {
+            "has_label": true,
+            "bg_color": "#222222",
+            "color": "#ffffff"
+          }
+        }
+      ],
+      "status": "publish",
+      "payment_status": "pre_payment",
+      "attribute_classes": " mh-attribute-property-type__house mh-attribute-offer-type__for-sale mh-attribute-offer-type__sold mh-attribute-city__santa-cruz mh-attribute-neighborhood__boton mh-attribute-bathrooms__bathrooms mh-attribute-attribute_19__attribute_19 mh-attribute-attribute_18__attribute_18 mh-attribute-year-built__year-built",
+      "gallery": [
+        {
+          "image": "https://smileyaruba.com/wp-content/uploads/2023/09/IMG_9887-600x375.jpg",
+          "alt": ""
+        },
+        {
+          "image": "https://smileyaruba.com/wp-content/uploads/2023/09/IMG_9901-600x375.jpg",
+          "alt": ""
+        },
+        {
+          "image": "https://smileyaruba.com/wp-content/uploads/2023/09/IMG_9900-600x375.jpg",
+          "alt": ""
+        },
+        {
+          "image": "https://smileyaruba.com/wp-content/uploads/2023/09/IMG_9884-600x375.jpg",
+          "alt": ""
+        },
+        {
+          "image": "https://smileyaruba.com/wp-content/uploads/2023/09/IMG_E9878-600x375.jpg",
+          "alt": ""
+        }
+      ],
+      "date": "September 27, 2023",
+      "price": [
+        {
+          "price": "$242.858",
+          "is_range": false
+        },
+        {
+          "price": "Awg425,000",
+          "is_range": false
+        }
+      ]
+    },
+    {
+      "id": 4735,
+      "name": "Ruby 23",
+      "slug": "new-listing",
+      "excerpt": "House For Sale!",
+      "link": "https://smileyaruba.com/properties/house/new-listing/",
+      "has_price": true,
+      "image_srcset": "https://smileyaruba.com/wp-content/uploads/2022/03/WhatsApp-Image-2022-03-09-at-1.29.49-PM-2-120x75.jpeg 120w, https://smileyaruba.com/wp-content/uploads/2022/03/WhatsApp-Image-2022-03-09-at-1.29.49-PM-2-848x530.jpeg 848w, https://smileyaruba.com/wp-content/uploads/2022/03/WhatsApp-Image-2022-03-09-at-1.29.49-PM-2-600x375.jpeg 600w, https://smileyaruba.com/wp-content/uploads/2022/03/WhatsApp-Image-2022-03-09-at-1.29.49-PM-2-400x250.jpeg 400w, https://smileyaruba.com/wp-content/uploads/2022/03/WhatsApp-Image-2022-03-09-at-1.29.49-PM-2-224x140.jpeg 224w",
+      "image": "https://smileyaruba.com/wp-content/uploads/2022/03/WhatsApp-Image-2022-03-09-at-1.29.49-PM-2.jpeg",
+      "attributes": [
+        {
+          "name": "Property type",
+          "slug": "property-type",
+          "has_archive": true,
+          "values": [
+            {
+              "name": "House",
+              "value": "House",
+              "link": "https://smileyaruba.com/property-type/house/",
+              "slug": "house",
+              "options": []
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Offer type",
+          "slug": "offer-type",
+          "has_archive": true,
+          "values": [
+            {
+              "name": "For Sale",
+              "value": "For Sale",
+              "link": "https://smileyaruba.com/offer-type/sale/",
+              "slug": "sale",
+              "options": {
+                "has_label": true,
+                "bg_color": "#b6a27a",
+                "color": "#fff"
+              }
+            },
+            {
+              "name": "Sale Property",
+              "value": "Sale Property",
+              "link": "https://smileyaruba.com/offer-type/for-sale/",
+              "slug": "for-sale",
+              "options": {
+                "has_label": false,
+                "bg_color": "#b6a27a",
+                "color": "#fff"
+              }
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": true,
+          "icon": ""
+        },
+        {
+          "name": "City",
+          "slug": "city",
+          "has_archive": true,
+          "values": [
+            {
+              "name": "Noord",
+              "value": "Noord",
+              "link": "https://smileyaruba.com/city/noord/",
+              "slug": "noord",
+              "options": []
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Neighborhood",
+          "slug": "neighborhood",
+          "has_archive": true,
+          "values": [
+            {
+              "name": "Ruby",
+              "value": "Ruby",
+              "link": "https://smileyaruba.com/neighborhood/ruby/",
+              "slug": "ruby",
+              "options": []
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Bedrooms",
+          "slug": "attribute_22",
+          "has_archive": false,
+          "values": [],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Bathrooms",
+          "slug": "bathrooms",
+          "has_archive": false,
+          "values": [
+            {
+              "name": "2.5",
+              "value": "2.5",
+              "link": "",
+              "slug": "bathrooms",
+              "options": []
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": true,
+          "icon": "flaticon-bathtub"
+        },
+        {
+          "name": "Property size ft\u00b2",
+          "slug": "property-size",
+          "has_archive": false,
+          "values": [],
+          "display_after": "ft\u00b2",
+          "show": true,
+          "card_show": true,
+          "icon": ""
+        },
+        {
+          "name": "Property size m\u00b2",
+          "slug": "attribute_19",
+          "has_archive": false,
+          "values": [
+            {
+              "name": "243 m\u00b2",
+              "value": "243",
+              "link": "",
+              "slug": "attribute_19",
+              "options": []
+            }
+          ],
+          "display_after": "m\u00b2",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Lot size ft\u00b2",
+          "slug": "lot-size",
+          "has_archive": false,
+          "values": [],
+          "display_after": "ft\u00b2",
+          "show": true,
+          "card_show": true,
+          "icon": ""
+        },
+        {
+          "name": "Lot size m\u00b2",
+          "slug": "attribute_18",
+          "has_archive": false,
+          "values": [
+            {
+              "name": "525 m\u00b2",
+              "value": "525",
+              "link": "",
+              "slug": "attribute_18",
+              "options": []
+            }
+          ],
+          "display_after": "m\u00b2",
+          "show": true,
+          "card_show": true,
+          "icon": ""
+        },
+        {
+          "name": "Year",
+          "slug": "year-built",
+          "has_archive": false,
+          "values": [
+            {
+              "name": "2003",
+              "value": "2003",
+              "link": "",
+              "slug": "year-built",
+              "options": []
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Features",
+          "slug": "features",
+          "has_archive": false,
+          "values": [
+            {
+              "name": "Air Conditioning",
+              "value": "Air Conditioning",
+              "link": "https://smileyaruba.com/features/air-conditioning/",
+              "slug": "air-conditioning",
+              "options": []
+            },
+            {
+              "name": "Bathroom",
+              "value": "Bathroom",
+              "link": "https://smileyaruba.com/features/bathroom/",
+              "slug": "bathroom",
+              "options": []
+            },
+            {
+              "name": "Bedroom",
+              "value": "Bedroom",
+              "link": "https://smileyaruba.com/features/bedroom/",
+              "slug": "bedroom",
+              "options": []
+            },
+            {
+              "name": "Ceiling Fan",
+              "value": "Ceiling Fan",
+              "link": "https://smileyaruba.com/features/ceiling-fan/",
+              "slug": "ceiling-fan",
+              "options": []
+            },
+            {
+              "name": "Fully Fenced",
+              "value": "Fully Fenced",
+              "link": "https://smileyaruba.com/features/fully-fenced/",
+              "slug": "fully-fenced",
+              "options": []
+            },
+            {
+              "name": "Garage",
+              "value": "Garage",
+              "link": "https://smileyaruba.com/features/garage/",
+              "slug": "garage",
+              "options": []
+            },
+            {
+              "name": "laundry room",
+              "value": "laundry room",
+              "link": "https://smileyaruba.com/features/laundry-room/",
+              "slug": "laundry-room",
+              "options": []
+            },
+            {
+              "name": "Livingroom",
+              "value": "Livingroom",
+              "link": "https://smileyaruba.com/features/livingroom/",
+              "slug": "livingroom",
+              "options": []
+            },
+            {
+              "name": "Patio",
+              "value": "Patio",
+              "link": "https://smileyaruba.com/features/patio/",
+              "slug": "patio",
+              "options": []
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        }
+      ],
+      "address": "Ruby, Noord, Aruba",
+      "days_ago": "5 years ago",
+      "is_featured": true,
+      "offer_type": [
+        {
+          "name": "For Sale",
+          "value": "For Sale",
+          "link": "https://smileyaruba.com/offer-type/sale/",
+          "slug": "sale",
+          "options": {
+            "has_label": true,
+            "bg_color": "#b6a27a",
+            "color": "#fff"
+          }
+        },
+        {
+          "name": "Sale Property",
+          "value": "Sale Property",
+          "link": "https://smileyaruba.com/offer-type/for-sale/",
+          "slug": "for-sale",
+          "options": {
+            "has_label": false,
+            "bg_color": "#b6a27a",
+            "color": "#fff"
+          }
+        }
+      ],
+      "status": "publish",
+      "payment_status": "pre_payment",
+      "attribute_classes": " mh-attribute-property-type__house mh-attribute-offer-type__sale mh-attribute-offer-type__for-sale mh-attribute-city__noord mh-attribute-neighborhood__ruby mh-attribute-bathrooms__bathrooms mh-attribute-attribute_19__attribute_19 mh-attribute-attribute_18__attribute_18 mh-attribute-year-built__year-built mh-attribute-features__air-conditioning mh-attribute-features__bathroom mh-attribute-features__bedroom mh-attribute-features__ceiling-fan mh-attribute-features__fully-fenced mh-attribute-features__garage mh-attribute-features__laundry-room mh-attribute-features__livingroom mh-attribute-features__patio",
+      "gallery": [
+        {
+          "image": "https://smileyaruba.com/wp-content/uploads/2022/03/WhatsApp-Image-2022-03-09-at-1.29.49-PM-2-600x375.jpeg",
+          "alt": "House+For+Sale+Aruba+Noord+Ruby"
+        },
+        {
+          "image": "https://smileyaruba.com/wp-content/uploads/2022/03/WhatsApp-Image-2022-03-09-at-1.29.46-PM-4-600x375.jpeg",
+          "alt": "House+For+Sale+Aruba+Noord+Ruby"
+        },
+        {
+          "image": "https://smileyaruba.com/wp-content/uploads/2022/03/WhatsApp-Image-2022-03-09-at-1.29.45-PM-600x375.jpeg",
+          "alt": "House+For+Sale+Aruba+Noord+Ruby"
+        },
+        {
+          "image": "https://smileyaruba.com/wp-content/uploads/2022/03/WhatsApp-Image-2022-03-09-at-1.29.45-PM-3-600x375.jpeg",
+          "alt": "House+For+Sale+Aruba+Noord+Ruby"
+        },
+        {
+          "image": "https://smileyaruba.com/wp-content/uploads/2022/03/WhatsApp-Image-2022-03-09-at-1.29.44-PM-3-600x375.jpeg",
+          "alt": "House+For+Sale+Aruba+Noord+Ruby"
+        }
+      ],
+      "date": "March 16, 2022",
+      "price": [
+        {
+          "price": "$528.089",
+          "is_range": false
+        },
+        {
+          "price": "Awg940,000",
+          "is_range": false
+        }
+      ]
+    },
+    {
+      "id": 3497,
+      "name": "Burubundo 6A",
+      "slug": "burubundo-6a",
+      "excerpt": "\r\nThis is a great property for investment. The house is situated at Burubundo in land. It features 5 bedrooms and 5 bathro...",
+      "link": "https://smileyaruba.com/properties/apartment/burubundo-6a/",
+      "has_price": true,
+      "image_srcset": "https://smileyaruba.com/wp-content/uploads/2019/12/Buy-Real-Estate-Home-Front-Savaneta-Aruba-For-Sale-120x75.jpg 120w, https://smileyaruba.com/wp-content/uploads/2019/12/Buy-Real-Estate-Home-Front-Savaneta-Aruba-For-Sale-300x189.jpg 300w, https://smileyaruba.com/wp-content/uploads/2019/12/Buy-Real-Estate-Home-Front-Savaneta-Aruba-For-Sale-1024x646.jpg 1024w, https://smileyaruba.com/wp-content/uploads/2019/12/Buy-Real-Estate-Home-Front-Savaneta-Aruba-For-Sale-768x484.jpg 768w, https://smileyaruba.com/wp-content/uploads/2019/12/Buy-Real-Estate-Home-Front-Savaneta-Aruba-For-Sale-848x530.jpg 848w, https://smileyaruba.com/wp-content/uploads/2019/12/Buy-Real-Estate-Home-Front-Savaneta-Aruba-For-Sale-600x375.jpg 600w, https://smileyaruba.com/wp-content/uploads/2019/12/Buy-Real-Estate-Home-Front-Savaneta-Aruba-For-Sale-400x250.jpg 400w, https://smileyaruba.com/wp-content/uploads/2019/12/Buy-Real-Estate-Home-Front-Savaneta-Aruba-For-Sale-224x140.jpg 224w, https://smileyaruba.com/wp-content/uploads/2019/12/Buy-Real-Estate-Home-Front-Savaneta-Aruba-For-Sale.jpg 1170w",
+      "image": "https://smileyaruba.com/wp-content/uploads/2019/12/Buy-Real-Estate-Home-Front-Savaneta-Aruba-For-Sale.jpg",
+      "attributes": [
+        {
+          "name": "Property type",
+          "slug": "property-type",
+          "has_archive": true,
+          "values": [
+            {
+              "name": "Apartment",
+              "value": "Apartment",
+              "link": "https://smileyaruba.com/property-type/apartment/",
+              "slug": "apartment",
+              "options": []
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Offer type",
+          "slug": "offer-type",
+          "has_archive": true,
+          "values": [
+            {
+              "name": "For Sale",
+              "value": "For Sale",
+              "link": "https://smileyaruba.com/offer-type/sale/",
+              "slug": "sale",
+              "options": {
+                "has_label": true,
+                "bg_color": "#b6a27a",
+                "color": "#fff"
+              }
+            },
+            {
+              "name": "Reduced Price",
+              "value": "Reduced Price",
+              "link": "https://smileyaruba.com/offer-type/reduced-price/",
+              "slug": "reduced-price",
+              "options": {
+                "has_label": true,
+                "bg_color": "#b6a27a",
+                "color": "#fff"
+              }
+            },
+            {
+              "name": "Sale Property",
+              "value": "Sale Property",
+              "link": "https://smileyaruba.com/offer-type/for-sale/",
+              "slug": "for-sale",
+              "options": {
+                "has_label": false,
+                "bg_color": "#b6a27a",
+                "color": "#fff"
+              }
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": true,
+          "icon": ""
+        },
+        {
+          "name": "City",
+          "slug": "city",
+          "has_archive": true,
+          "values": [
+            {
+              "name": "Savaneta",
+              "value": "Savaneta",
+              "link": "https://smileyaruba.com/city/savaneta/",
+              "slug": "savaneta",
+              "options": []
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Neighborhood",
+          "slug": "neighborhood",
+          "has_archive": true,
+          "values": [
+            {
+              "name": "Burubundo",
+              "value": "Burubundo",
+              "link": "https://smileyaruba.com/neighborhood/burubundo/",
+              "slug": "burubundo",
+              "options": []
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Bedrooms",
+          "slug": "attribute_22",
+          "has_archive": false,
+          "values": [],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Bathrooms",
+          "slug": "bathrooms",
+          "has_archive": false,
+          "values": [
+            {
+              "name": "5",
+              "value": "5",
+              "link": "",
+              "slug": "bathrooms",
+              "options": []
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": true,
+          "icon": "flaticon-bathtub"
+        },
+        {
+          "name": "Property size ft\u00b2",
+          "slug": "property-size",
+          "has_archive": false,
+          "values": [
+            {
+              "name": "3961 ft\u00b2",
+              "value": "3961",
+              "link": "",
+              "slug": "property-size",
+              "options": []
+            }
+          ],
+          "display_after": "ft\u00b2",
+          "show": true,
+          "card_show": true,
+          "icon": ""
+        },
+        {
+          "name": "Property size m\u00b2",
+          "slug": "attribute_19",
+          "has_archive": false,
+          "values": [
+            {
+              "name": "368 m\u00b2",
+              "value": "368",
+              "link": "",
+              "slug": "attribute_19",
+              "options": []
+            }
+          ],
+          "display_after": "m\u00b2",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Lot size ft\u00b2",
+          "slug": "lot-size",
+          "has_archive": false,
+          "values": [
+            {
+              "name": "6297 ft\u00b2",
+              "value": "6297",
+              "link": "",
+              "slug": "lot-size",
+              "options": []
+            }
+          ],
+          "display_after": "ft\u00b2",
+          "show": true,
+          "card_show": true,
+          "icon": ""
+        },
+        {
+          "name": "Lot size m\u00b2",
+          "slug": "attribute_18",
+          "has_archive": false,
+          "values": [
+            {
+              "name": "585 m\u00b2",
+              "value": "585",
+              "link": "",
+              "slug": "attribute_18",
+              "options": []
+            }
+          ],
+          "display_after": "m\u00b2",
+          "show": true,
+          "card_show": true,
+          "icon": ""
+        },
+        {
+          "name": "Year",
+          "slug": "year-built",
+          "has_archive": false,
+          "values": [],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        },
+        {
+          "name": "Features",
+          "slug": "features",
+          "has_archive": false,
+          "values": [
+            {
+              "name": "Garage",
+              "value": "Garage",
+              "link": "https://smileyaruba.com/features/garage/",
+              "slug": "garage",
+              "options": []
+            },
+            {
+              "name": "Storage",
+              "value": "Storage",
+              "link": "https://smileyaruba.com/features/storage/",
+              "slug": "storage",
+              "options": []
+            }
+          ],
+          "display_after": "",
+          "show": true,
+          "card_show": false,
+          "icon": ""
+        }
+      ],
+      "address": "Burubundo 6a, Pos Chikito, Savaneta, Aruba",
+      "days_ago": "7 years ago",
+      "is_featured": true,
+      "offer_type": [
+        {
+          "name": "For Sale",
+          "value": "For Sale",
+          "link": "https://smileyaruba.com/offer-type/sale/",
+          "slug": "sale",
+          "options": {
+            "has_label": true,
+            "bg_color": "#b6a27a",
+            "color": "#fff"
+          }
+        },
+        {
+          "name": "Reduced Price",
+          "value": "Reduced Price",
+          "link": "https://smileyaruba.com/offer-type/reduced-price/",
+          "slug": "reduced-price",
+          "options": {
+            "has_label": true,
+            "bg_color": "#b6a27a",
+            "color": "#fff"
+          }
+        },
+        {
+          "name": "Sale Property",
+          "value": "Sale Property",
+          "link": "https://smileyaruba.com/offer-type/for-sale/",
+          "slug": "for-sale",
+          "options": {
+            "has_label": false,
+            "bg_color": "#b6a27a",
+            "color": "#fff"
+          }
+        }
+      ],
+      "status": "publish",
+      "payment_status": "pre_payment",
+      "attribute_classes": " mh-attribute-property-type__apartment mh-attribute-offer-type__sale mh-attribute-offer-type__reduced-price mh-attribute-offer-type__for-sale mh-attribute-city__savaneta mh-attribute-neighborhood__burubundo mh-attribute-bathrooms__bathrooms mh-attribute-property-size__property-size mh-attribute-attribute_19__attribute_19 mh-attribute-lot-size__lot-size mh-attribute-attribute_18__attribute_18 mh-attribute-features__garage mh-attribute-features__storage",
+      "gallery": [
+        {
+          "image": "https://smileyaruba.com/wp-content/uploads/2019/12/Buy-Real-Estate-Home-Front-Savaneta-Aruba-For-Sale-600x375.jpg",
+          "alt": "Buy Real Estate Home For Sale Savaneta Aruba"
+        },
+        {
+          "image": "https://smileyaruba.com/wp-content/uploads/2019/12/Buy-Real-Estate-Home-Savaneta-Livingroom-Aruba-For-Sale-600x375.jpg",
+          "alt": "Buy Real Estate Home For Sale Savaneta Aruba"
+        },
+        {
+          "image": "https://smileyaruba.com/wp-content/uploads/2019/12/Buy-Real-Estate-Home-Porch-Savaneta-Aruba-For-Sale-600x375.jpg",
+          "alt": "Buy Real Estate Home For Sale Savaneta Aruba"
+        },
+        {
+          "image": "https://smileyaruba.com/wp-content/uploads/2019/12/Buy-Real-Estate-Home-backyard-Savaneta-Aruba-For-Sale-600x375.jpg",
+          "alt": "Buy Real Estate Home For Sale Savaneta Aruba"
+        },
+        {
+          "image": "https://smileyaruba.com/wp-content/uploads/2019/12/Buy-Real-Estate-Home-apartment-kitchen-Savaneta-Aruba-For-Sale-600x375.jpg",
+          "alt": "Buy Real Estate Home For Sale Savaneta Aruba"
+        }
+      ],
+      "date": "December 6, 2019",
+      "price": [
+        {
+          "price": "$113.000",
+          "is_range": false
+        },
+        {
+          "price": "Awg190,000",
+          "is_range": false
+        }
+      ]
+    }
+  ],
+  "found_results": 4
+}

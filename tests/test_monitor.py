@@ -240,7 +240,7 @@ class Rules(unittest.TestCase):
 
     def test_cooldown_skips(self):
         source={'name':'B','type':'direct_broker','url':'https://b.test','card_selector':'article'}
-        health={'B':{'retry_after':(m.now_utc()+timedelta(hours=1)).isoformat()}}
+        health={'B':{'retry_after':(m.now_utc()+timedelta(hours=1)).isoformat(), 'source_revision':c.source_revision(source)}}
         with patch.object(m,'get_page') as get:self.assertEqual(c.scan([source],'fast',health,m),[])
         get.assert_not_called()
 

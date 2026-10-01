@@ -1,0 +1,26 @@
+name: Diagnose public source coverage
+on:
+  workflow_dispatch:
+  push:
+    branches: [expand-source-coverage]
+    paths: [tools/probe_sources.py, .github/workflows/source-probe.yml]
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -u tools/probe_sources.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: source-diagnostics
+          path: source-diagnostics/
+          retention-days: 7
