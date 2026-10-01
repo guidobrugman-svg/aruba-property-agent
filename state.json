@@ -5111,40 +5111,7 @@
       "last_seen_at": "2026-10-01T17:19:59.709401+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Caya Danza 60",
-      "url": "https://bhhsaruba.com/listings/caya-danza-60",
-      "price": 366000.0,
-      "location": "",
-      "type": "House",
-      "beds": "2",
-      "baths": "1",
-      "size": "472 M2",
-      "building_area": "145 m²",
-      "land_area": "472 m²",
-      "image": "https://bhhsaruba.com/storage/app/uploads/public/6ab/af0/2fa/thumb_25494_627_470_0_0_crop.webp",
-      "description": "House For Sale New listing Property type: Residential Lot size: 472 M2 Built up size: 145 M2 Bedrooms: 2 Bathrooms: 1 For Sale USD 366,000",
-      "source": "Berkshire Hathaway Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-01T17:19:59.709391+00:00",
-      "source_type": "direct_broker",
-      "detail_checked_at": "2026-10-01T17:19:58.447172+00:00",
-      "development_evidence": [
-        {
-          "label": "Ownership",
-          "excerpt": "60, just a short walk from Eagle Beach! This charming 2-bedroom, 1-bathroom home sits on 472 m² of long lease land and is less than a mile from one of the world’s most famous and award-winning beaches",
-          "url": "https://bhhsaruba.com/listings/caya-danza-60"
-        }
-      ],
-      "residence_complex": false,
-      "detail_status": "ok",
-      "history_key": "dec775259a18ca192d3f0d801e38e78999860e48",
-      "last_seen_at": "2026-10-01T17:19:59.709401+00:00",
-      "queued_at": "2026-10-01T17:20:06.526508+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
@@ -5570,19 +5537,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 1 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Caya Danza 60</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$366,000</div><div><strong>Location:</strong> Not provided by source</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 145 m²</div><div><strong>Land area:</strong> 472 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> 60, just a short walk from Eagle Beach! This charming 2-bedroom, 1-bathroom home sits on 472 m² of long lease land and is less than a mile from one of the world’s most famous and award-winning beaches</div><div><a href='https://bhhsaruba.com/listings/caya-danza-60'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2 beds · 1 baths</div><p style='margin:12px 0'>House For Sale New listing Property type: Residential Lot size: 472 M2 Built up size: 145 M2 Bedrooms: 2 Bathrooms: 1 For Sale USD 366,000</p><div><strong>Broker/source:</strong> Berkshire Hathaway Aruba (Berkshire Hathaway Aruba)</div><div><strong>First detected:</strong> 2026-10-01</div><div style='margin:15px 0'><img src='https://bhhsaruba.com/storage/app/uploads/public/6ab/af0/2fa/thumb_25494_627_470_0_0_crop.webp' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://bhhsaruba.com/listings/caya-danza-60' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "a33bd12cf2e09243a5ddf6ad5cb3a1eef15b2d2fb6c461174aa063f348be879c"
-        ]
-      },
-      "created_at": "2026-10-01T17:20:06.526748+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
