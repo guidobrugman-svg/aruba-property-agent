@@ -95,6 +95,12 @@ DIRECT_SOURCE_NAMES = {
     "Aruba Palms Realtors",
     "Home 4 Everyone",
     "Smiley Real Estate",
+    'Berkshire Hathaway Aruba',
+    'Realty ONE Group Aruba',
+    'HKG Real Estate Aruba',
+    'MPG Aruba',
+    'Aruba Happy Homes',
+    'Objective Realty Aruba',
 }
 
 
@@ -457,6 +463,7 @@ def infer_property_type(title, text):
     text_n = normalize(text)
 
     full_home = bool(re.search(r"\b(houses?|homes?|villas?|townhouses?|townhomes?|town houses?)\b", title_n))
+    full_home = full_home or bool(re.search(r"\b(?:house|home) with (?:one |two |three |\d+ )?apartments?\b", text_n))
     complex_signal = bool(re.search(r"\b(apartment complex|apartment building|multi unit|multi family|multifamily|\d+ units)\b", title_n))
     if not full_home and not complex_signal and re.search(r"\b(condos?|condominiums?|apartments?|studio|penthouse)\b", text_n):
         return "Condominium" if re.search(r"\b(condos?|condominiums?)\b", text_n) else "Apartment"
@@ -766,7 +773,7 @@ def area_m2(value):
 
 def explicit_areas(text):
     unit = r"([\d.,]+\s*(?:m²|m2|sqm|sq\s*mt|sq\s*ft|sqft|ft²))"
-    building = first_match([r"\b(?:built[ -]?up(?: area)?|building(?: area| size)?|living(?: area| space)?|interior(?: area)?|construction area)\s*:?\s*" + unit], text)
+    building = first_match([r"\b(?:built[ -]?up(?: area| size)?|building(?: area| size)?|living(?: area| space)?|interior(?: area)?|construction area)\s*:?\s*" + unit], text)
     land = first_match([r"\b(?:lot(?: area| size)?|land(?: area| size)?|plot(?: area| size)?)\s*:?\s*" + unit], text)
     return area_m2(building), area_m2(land)
 

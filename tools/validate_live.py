@@ -27,24 +27,37 @@ detail_started=time.monotonic()
 current=development.enrich(current,production['properties'],mode,m)
 current=[p for p in current if not p.get('residence_complex')]
 detail_seconds=round(time.monotonic()-detail_started,2)
-with tempfile.TemporaryDirectory() as folder:
-    path=str(Path(folder)/'state.json')
-    Path(path).write_text(json.dumps(production))
-    with patch.object(m,'STATE_FILE',path),patch.object(m,'DRY_RUN',True),patch.dict(os.environ,{'SCAN_MODE':mode}),patch.object(collectors,'scan',return_value=results),patch.object(development,'enrich',side_effect=lambda *args:copy.deepcopy(current)):
-        m.main()
-        first=json.load(open(path))
-        assert first['last_scan']['new']==0, 'Migration generated NEW alerts'
-        assert first['daily_activity']==production.get('daily_activity',m.empty_daily_activity()), 'Migration discarded digest activity'
-        assert set(production['properties']) <= set(first['properties']), 'History keys were lost'
-        m.main()
-        second=json.load(open(path))
-        assert second['last_scan']['new']==0, 'Replayed inventory generated NEW alerts'
-        assert second['last_scan']['major_changes']==0, 'Replayed inventory generated false major changes'
-        assert second['last_scan']['reductions']==0, 'Replayed inventory generated false reductions'
-        assert first['last_scan']['qualifying_observed']==second['last_scan']['qualifying_observed']
+def replay(seed, passes):
+    with tempfile.TemporaryDirectory() as folder:
+        path=str(Path(folder)/'state.json')
+        Path(path).write_text(json.dumps(seed))
+        states=[]
+        with patch.object(m,'STATE_FILE',path),patch.object(m,'DRY_RUN',True),patch.dict(os.environ,{'SCAN_MODE':mode,'DEFER_DELIVERY':'1'}),patch.object(collectors,'scan',return_value=results),patch.object(development,'enrich',side_effect=lambda *args:copy.deepcopy(current)):
+            for _ in range(passes):
+                m.main()
+                state=json.load(open(path))
+                assert set(production['properties']) <= set(state['properties']), 'History keys were lost'
+                states.append(state)
+        return states
+
+# Exercise legacy migration even when production has already migrated to schema 2.
+legacy=copy.deepcopy(production)
+legacy['schema_version']=1
+first,second=replay(legacy,2)
+assert first['last_scan']['new']==0, 'Migration generated NEW alerts'
+assert first['daily_activity']==production.get('daily_activity',m.empty_daily_activity()), 'Migration discarded digest activity'
+for field in ('new','major_changes','reductions'):
+    assert second['last_scan'][field]==0, 'Migration replay generated false '+field
+
+# Also replay the actual current schema. Live price/metadata changes may correctly
+# confirm on pass two; a third identical observation must generate no new event.
+actual=replay(production,3)
+for field in ('new','major_changes','reductions'):
+    assert actual[-1]['last_scan'][field]==0, 'Settled inventory generated false '+field
+assert len({s['last_scan']['qualifying_observed'] for s in actual})==1
 report={'mode':mode,'duration_seconds':round(time.monotonic()-started,2),'scan_seconds':scan_seconds,'detail_seconds':detail_seconds,'qualifying_count':len(current),
         'sources':{source['name']:health for source,(_,_,health) in results},
-        'migration_false_new':0,'replay_false_new':0,'production_history_preserved':len(production['properties']),
+        'migration_false_new':0,'replay_false_new':0,'production_replay_first':actual[0]['last_scan'],'production_replay_settled':actual[-1]['last_scan'],'production_history_preserved':len(production['properties']),
         'properties':current}
 Path('live-validation.json').write_text(json.dumps(report,indent=2))
 print('VALIDATION SUMMARY',json.dumps({k:v for k,v in report.items() if k not in ('properties','sources')}))

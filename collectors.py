@@ -5,11 +5,15 @@ import re
 import xml.etree.ElementTree as ET
 import time
 from concurrent.futures import ThreadPoolExecutor
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urljoin, urlparse, parse_qsl, urlencode, urlunparse
 from bs4 import BeautifulSoup
 
 
 class ParserError(ValueError):
+    pass
+
+
+class AccessBlocked(ParserError):
     pass
 
 
@@ -28,6 +32,17 @@ def page_links(soup, base, source):
             match = re.search(r'page:\s*(\d+)', a['data-request-data'])
             if match:
                 url = base.split('?')[0] + '?page=' + match[1]
+                if url not in result:
+                    result.append(url)
+    if source.get('name') == 'MPG Aruba':
+        # The public page accepts GET page numbers advertised by changePage controls.
+        for a in soup.select('.pagination a[onclick]'):
+            match = re.fullmatch(r'changePage\((\d+)\)', a['onclick'])
+            if match:
+                parts = urlparse(base)
+                query = dict(parse_qsl(parts.query))
+                query['page'] = match[1]
+                url = urlunparse(parts._replace(query=urlencode(query)))
                 if url not in result:
                     result.append(url)
     return result
@@ -56,12 +71,18 @@ def parse_page(html, url, source, api):
                 items.append(p)
         return items, observations, len(entries), BeautifulSoup('', 'html.parser')
     soup = BeautifulSoup(html, 'html.parser')
+    title = soup.title.get_text(' ', strip=True).lower() if soup.title else ''
+    if title in ('just a moment...', 'attention required! | cloudflare', 'access denied', '403 forbidden'):
+        raise AccessBlocked('Public page returned an access challenge instead of listings')
     if source.get('adapter') == 'myhome':
         match = re.search(r'var MyHomeListing\d+ = (\{.*?\});', html, re.S)
         if match:
             data = json.loads(match[1])
         else:
-            raw = json.loads(html)
+            try:
+                raw = json.loads(html)
+            except ValueError as exc:
+                raise ParserError('Missing MyHome listing records') from exc
             if not isinstance(raw.get('results'), list):
                 raise ParserError('Missing MyHome listing records')
             data = {'results': {'estates': raw['results'], 'totalResults': raw['found_results']}}
@@ -73,11 +94,15 @@ def parse_page(html, url, source, api):
             observations.append({'url': r['link'], 'name': r['name'], 'status': status, 'type': fields.get('Property type', '')})
             dollar = next((x['price'] for x in r.get('price', []) if x['price'].startswith('$')), '')
             price, meta = api.parse_price_details(dollar + ' ' + fields.get('Lot size m²', ''))
-            p = api.build_property(name, r['name'], r['link'], price, text, r.get('image', ''), meta)
+            p = api.build_property(name, r['name'], r['link'], price, text, r.get('image', ''), meta, fields.get('Property type', ''))
             if p:
                 p['source_type'] = source['type']
                 building, land = api.explicit_areas(' '.join(k + ': ' + v for k,v in fields.items()))
+                # These named API fields are the broker's building and lot areas.
+                building = api.area_m2(fields.get('Property size m²', '')) or building
+                land = api.area_m2(fields.get('Lot size m²', '')) or land
                 p.update(building_area=building if p['type'] != 'Land' else '', land_area=land)
+                p['location'] = ', '.join(dict.fromkeys(v for v in (r.get('address', ''), fields.get('Neighborhood', ''), fields.get('City', '')) if v)) or p['location']
                 items.append(p)
         return items, observations, data['results'].get('totalResults', len(records)), soup
 
@@ -128,8 +153,18 @@ def parse_page(html, url, source, api):
         for img in node.select('img[alt]'):
             if img.get('alt', '').lower() in ('beds', 'baths', 'sq mt'):
                 img.insert_after(' ' + img['alt'] + ': ')
+        for sup in node.select('sup'):
+            if sup.get_text(strip=True) == '2' and str(sup.previous_sibling).strip().endswith(('m', 'ft')):
+                sup.previous_sibling.replace_with(str(sup.previous_sibling) + '²')
+                sup.decompose()
+        for icon, label in (('.lucide-bed', 'Beds'), ('.lucide-bath', 'Baths')):
+            for svg in node.select(icon):
+                svg.insert_after(label + ': ')
         text = api.clean_text(node.get_text(' ', strip=True))
         context = source.get('listing_context', '')
+        for fragment, hint in source.get('url_contexts', {}).items():
+            if fragment in url:
+                context += ' ' + hint
         if name == 'Keller Williams Aruba':
             context += ' Vacant Land' if '/land' in url else ' House' if '/residential' in url else ''
         if name == 'RE/MAX Aruba':
@@ -137,6 +172,7 @@ def parse_page(html, url, source, api):
         text = context + ' ' + text
         type_node = node.select_one(source.get('type_selector', '.property-type, .item-type, .h-type'))
         declared = api.clean_text(type_node.get_text(' ', strip=True)) if type_node else ''
+        declared = source.get('declared_type_map', {}).get(declared, declared)
         text = f'{declared} {text}'
         status = api.extract_status(text)
         observations.append({'url': href, 'name': title, 'status': status, 'type': declared})
@@ -150,7 +186,7 @@ def parse_page(html, url, source, api):
             observations[-1]['needs_type_review'] = True
         if p:
             p['source_type'] = source['type']
-            address = node.select_one('.item-address, .property-location, .card__address, address')
+            address = node.select_one(source.get('address_selector', '.item-address, .property-location, .card__address, address'))
             if address:
                 p['location'] = api.clean_text(address.get_text(' ', strip=True)) or p['location']
             # Houzez explicitly separates building and plot areas in its card markup.
@@ -236,6 +272,7 @@ def scrape(source, mode, api):
 
 def failure_status(exc):
     import requests
+    if isinstance(exc, AccessBlocked): return 'blocked'
     if isinstance(exc, requests.exceptions.SSLError): return 'ssl_error'
     if isinstance(exc, requests.exceptions.Timeout): return 'timeout'
     if isinstance(exc, requests.exceptions.HTTPError):

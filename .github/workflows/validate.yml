@@ -1,7 +1,7 @@
 name: Validate Property Monitor
 on:
   push:
-    branches: [improve-monitor-reliability]
+    branches: [improve-monitor-reliability, expand-source-coverage]
   pull_request:
   workflow_dispatch:
 permissions:
