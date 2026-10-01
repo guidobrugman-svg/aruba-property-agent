@@ -1746,7 +1746,7 @@
       "baths": "3",
       "size": "307 m²",
       "image": "",
-      "description": "For Sale $450,000 Moko/ Tanki Flip, 57, Tanki Flip, Aruba, Nederland Beds: 3 Baths: 2 307 m² 620 m² Residential Details Jean Rick Dania 2 years ago",
+      "description": "For Sale $450,000 Moko/ Tanki Flip, 57, Tanki Flip, Aruba, Nederland Beds: 3 Baths: 2 307 m² 620 m² Residential Details Jean Rick Dania 3 years ago",
       "source": "Bluefin Realtors",
       "mls": "",
       "status": "available",
@@ -1786,43 +1786,7 @@
     }
   },
   "pending_new": [],
-  "pending_reductions": [
-    {
-      "property": {
-        "name": "New Construction",
-        "url": "https://www.arubabrokers.com/property-status/for-sale/",
-        "price": 559000.0,
-        "location": "",
-        "type": "Development",
-        "beds": "",
-        "baths": "",
-        "size": "",
-        "image": "https://www.arubabrokers.com/wp-content/uploads/2025/11/IMG-20251112-WA0016-850x550.jpg",
-        "description": "For Sale $ 559,000",
-        "source": "Aruba Brokers",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-09-30T02:27:03.209073+00:00"
-      },
-      "old": {
-        "name": "New Construction",
-        "url": "https://arubapalmsrealtors.com/status/for-sale/",
-        "price": 627949.0,
-        "location": "",
-        "type": "Development",
-        "beds": "",
-        "baths": "",
-        "size": "",
-        "image": "https://arubapalmsrealtors.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-18-at-11.26.25-AM-1-584x438.jpeg",
-        "description": "For Sale New Listing $627,949",
-        "source": "Aruba Palms Realtors",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-09-30T02:27:03.209073+00:00"
-      },
-      "queued_at": "2026-10-01T01:45:58.192367+00:00"
-    }
-  ],
+  "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
     "new": [],
@@ -1868,61 +1832,61 @@
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
-      "checked_at": "2026-10-01T02:11:20.218686+00:00",
+      "checked_at": "2026-10-01T02:28:52.636277+00:00",
       "properties_found": 14,
       "error": ""
     },
     "Ben Real Estate": {
       "status": "ok",
-      "checked_at": "2026-10-01T02:12:16.656095+00:00",
+      "checked_at": "2026-10-01T02:29:50.589171+00:00",
       "properties_found": 7,
       "error": ""
     },
     "Bluefin Realtors": {
       "status": "ok",
-      "checked_at": "2026-10-01T02:12:19.935748+00:00",
+      "checked_at": "2026-10-01T02:29:55.811914+00:00",
       "properties_found": 37,
       "error": ""
     },
     "Aruba Listings": {
       "status": "error",
-      "checked_at": "2026-10-01T02:12:29.533456+00:00",
+      "checked_at": "2026-10-01T02:30:05.161606+00:00",
       "properties_found": 0,
       "error": "403 Client Error: Forbidden for url: https://arubalistings.com/sale/all"
     },
     "RE/MAX Aruba": {
       "status": "error",
-      "checked_at": "2026-10-01T02:12:39.115954+00:00",
+      "checked_at": "2026-10-01T02:30:14.488968+00:00",
       "properties_found": 0,
       "error": "403 Client Error: Forbidden for url: https://remaxaruba.com/listings"
     },
     "RES Aruba Realty": {
       "status": "error",
-      "checked_at": "2026-10-01T02:12:49.118033+00:00",
+      "checked_at": "2026-10-01T02:30:24.232221+00:00",
       "properties_found": 0,
       "error": "403 Client Error: Forbidden for url: https://resarubarealty.com/status/for-sale/"
     },
     "Aruba Happy Realty": {
       "status": "error",
-      "checked_at": "2026-10-01T02:12:52.499172+00:00",
+      "checked_at": "2026-10-01T02:30:26.840727+00:00",
       "properties_found": 0,
       "error": "404 Client Error: Not Found for url: https://www.arubahappyrealty.com/404.html"
     },
     "Aruba Palms Realtors": {
       "status": "ok",
-      "checked_at": "2026-10-01T02:15:38.870432+00:00",
+      "checked_at": "2026-10-01T02:33:02.891782+00:00",
       "properties_found": 15,
       "error": ""
     },
     "Home 4 Everyone": {
       "status": "ok",
-      "checked_at": "2026-10-01T02:15:40.140290+00:00",
-      "properties_found": 0,
+      "checked_at": "2026-10-01T02:33:22.271171+00:00",
+      "properties_found": 31,
       "error": ""
     },
     "Smiley Real Estate": {
       "status": "ok",
-      "checked_at": "2026-10-01T02:15:41.869927+00:00",
+      "checked_at": "2026-10-01T02:35:07.545303+00:00",
       "properties_found": 0,
       "error": ""
     }
