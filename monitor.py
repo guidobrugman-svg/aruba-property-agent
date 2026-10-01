@@ -1528,6 +1528,13 @@ def find_previous_record(
         key = prop["history_key"]
         return key, previous[key]
 
+    # An established URL/alias is stronger evidence than a shared address/title.
+    url = canonical_url(prop.get('url', ''))
+    if url:
+        for key, candidate in previous.items():
+            if url in {canonical_url(u) for u in candidate.get('aliases', []) + [candidate.get('url', '')] if u}:
+                return key, candidate
+
     new_key = property_key(prop)
 
     if new_key in previous:
@@ -2404,6 +2411,8 @@ def history_dedupe(previous, current):
     for prop in current:
         old_key, old = find_previous_record(previous, prop)
         key = ('history', old_key) if old else ('new', property_key(prop))
+        if old:
+            prop = dict(prop, history_key=old_key)
         unique[key] = choose_preferred_property(unique[key], prop) if key in unique else prop
     return list(unique.values())
 
