@@ -69,7 +69,7 @@ class CoverageTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / 'state.json'
             path.write_text(json.dumps(dict(schema_version=2, properties={'legacy': dict(first, name='Unrelated history', url='https://old.test/keep')}, baselined_sources=[])))
-            with patch.object(m, 'STATE_FILE', str(path)), patch.object(m, 'DRY_RUN', True), patch.dict(os.environ, {'SCAN_MODE': 'fast', 'DEFER_DELIVERY': '1'}), patch.object(m, 'should_send_daily_digest', return_value=False), patch('development.enrich', side_effect=lambda items, *args: items):
+            with patch.object(m, 'STATE_FILE', str(path)), patch.object(m, 'DRY_RUN', True), patch.dict(os.environ, {'SCAN_MODE': 'deep', 'DEFER_DELIVERY': '1'}), patch.object(m, 'should_send_daily_digest', return_value=False), patch('development.enrich', side_effect=lambda items, *args: items):
                 for items, expected in [([first], 0), ([first], 0), ([first, fresh], 1)]:
                     with patch.object(c, 'scan', return_value=result(items)):
                         m.main()
@@ -77,3 +77,31 @@ class CoverageTests(unittest.TestCase):
                     self.assertEqual(state['last_scan']['new'], expected)
                     self.assertIn('legacy', state['properties'])
 
+    def test_conflicting_aliases_cannot_confirm_twice_in_one_scan(self):
+        a = self.case('objective_all_coverage.html')[0]
+        b = dict(a, name='Alternate broker title', url='https://www.objective-realty.com/properties/alternate', beds='3', baths='3')
+        original = dict(a, beds='4', baths='4', aliases=[a['url'], b['url']])
+        history = {'permanent': original}
+        for expected in (0, 1, 0):
+            history, new, reductions, major = m.reconcile(history, [a, b])
+            self.assertEqual(len(major), expected)
+            self.assertEqual(new, [])
+            self.assertEqual(reductions, [])
+            self.assertEqual(set(history), {'permanent'})
+
+    def test_shallow_baseline_waits_for_deep_inventory(self):
+        source = dict(name='Objective Realty Aruba', type='direct_broker')
+        first = self.case('objective_all_coverage.html')[0]
+        deeper = dict(first, name='Existing standalone house 99', url='https://www.objective-realty.com/properties/old-house-99')
+        fresh = dict(first, name='New standalone house 77', url='https://www.objective-realty.com/properties/new-house-77')
+        health = dict(status='partial', checked_at=m.iso_now(), properties_found=1, cards_seen=1, pages_fetched=1, duration_seconds=0, coverage_limited=True)
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'state.json'
+            path.write_text(json.dumps(dict(schema_version=2, properties={})))
+            with patch.object(m, 'STATE_FILE', str(path)), patch.object(m, 'DRY_RUN', True), patch.dict(os.environ, {'DEFER_DELIVERY': '1'}), patch.object(m, 'should_send_daily_digest', return_value=False), patch('development.enrich', side_effect=lambda items, *args: items):
+                for mode, items, expected in [('fast', [first], 0), ('deep', [first, deeper], 0), ('fast', [first, deeper, fresh], 1)]:
+                    with patch.dict(os.environ, {'SCAN_MODE': mode}), patch.object(c, 'scan', return_value=[(source, (items, [], health))]):
+                        m.main()
+                    state = json.loads(path.read_text())
+                    self.assertEqual(state['last_scan']['new'], expected)
+                    self.assertEqual(source['name'] in state['baselined_sources'], mode != 'fast' or expected == 1)

@@ -2398,10 +2398,20 @@ def comparable_price(old, new):
             and old.get('price_area_m2') == new.get('price_area_m2'))
 
 
+def history_dedupe(previous, current):
+    """One observation per permanent identity, even for conflicting broker cards."""
+    unique = {}
+    for prop in current:
+        old_key, old = find_previous_record(previous, prop)
+        key = ('history', old_key) if old else ('new', property_key(prop))
+        unique[key] = choose_preferred_property(unique[key], prop) if key in unique else prop
+    return list(unique.values())
+
+
 def reconcile(previous, current):
     history = dict(previous)
     new_items, reductions, major = [], [], []
-    for observed in current:
+    for observed in history_dedupe(previous, current):
         prop = dict(observed)
         old_key, old = find_previous_record(history, prop)
         if old:
@@ -2500,7 +2510,10 @@ def main():
             health['consecutive_failures'] = 0
         if health['status'] in ('ok', 'empty', 'partial') and name not in baselined:
             newly_baselined.add(name)
-            baselined.add(name)
+            # A shallow first page must not make the rest of an existing broker's
+            # inventory look NEW when the first deep scan discovers it later.
+            if mode == 'deep':
+                baselined.add(name)
         state['source_health'][name] = health
         print(f"{name}: {health['status']}, {len(items)} qualifying / {health['cards_seen']} cards, {health['pages_fetched']} pages, {health['duration_seconds']}s")
         current.extend(items)
@@ -2513,6 +2526,7 @@ def main():
         if prop.get('residence_complex'):
             observations.append((prop['source'], dict(prop, status='ineligible')))
     current = [p for p in current if not p.get('residence_complex')]
+    current = history_dedupe(previous, current)
     history, new, reductions, major = reconcile(previous, current)
     # Explicit unavailability updates history; absence on a shallow scan never means sold.
     for name, observed in observations:

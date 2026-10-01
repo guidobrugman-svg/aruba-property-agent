@@ -26,6 +26,7 @@ production=json.load(open('state.json'))
 detail_started=time.monotonic()
 current=development.enrich(current,production['properties'],mode,m)
 current=[p for p in current if not p.get('residence_complex')]
+current=m.history_dedupe(production['properties'],current)
 detail_seconds=round(time.monotonic()-detail_started,2)
 def replay(seed, passes):
     with tempfile.TemporaryDirectory() as folder:

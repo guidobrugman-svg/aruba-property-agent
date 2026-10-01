@@ -259,7 +259,7 @@ def scrape(source, mode, api):
     unclassified = sum(bool(o.get('needs_type_review')) for o in observations)
     if errors and not pages:
         status = errors[0]['status']
-    elif errors or repeated or unclassified or (source.get('adapter') == 'myhome' and truncated):
+    elif errors or repeated or unclassified or truncated:
         status = 'partial'
     else:
         status = 'ok' if items else 'empty'
