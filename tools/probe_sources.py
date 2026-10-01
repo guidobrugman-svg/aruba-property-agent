@@ -68,3 +68,16 @@ try:
 except Exception as exc:
     print('SMILEY_API_ERROR',str(exc)[:200],flush=True)
 (ROOT/'report.json').write_text(json.dumps(results,indent=2))
+
+# Compare ordinary public request headers with the monitor's headers.
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+import monitor
+for label, headers in [('monitor',monitor.HEADERS),('cache_default',{k:v for k,v in monitor.HEADERS.items() if k not in ('Cache-Control','Pragma')}),('identified',{'User-Agent':'ArubaPropertyMonitor/2.0 (+https://github.com/guidobrugman-svg/aruba-property-agent)'})]:
+    for name,url in [('home',URLS['home_sale']),('smiley','https://smileyaruba.com/wp-json/myhome/v1/estates?currency=price')]:
+        try:
+            r=requests.post(url,data=data,headers=headers,timeout=(5,10)) if name=='smiley' else requests.get(url,headers=headers,timeout=(5,10))
+            (ROOT/(name+'_'+label+'.html')).write_text(r.text)
+            print('HEADER_CHECK',name,label,r.status_code,len(r.content),r.text[:180],flush=True)
+        except Exception as exc:
+            print('HEADER_CHECK_ERROR',name,label,str(exc)[:180],flush=True)

@@ -52,12 +52,14 @@ for field in ('new','major_changes','reductions'):
 # Also replay the actual current schema. Live price/metadata changes may correctly
 # confirm on pass two; a third identical observation must generate no new event.
 actual=replay(production,3)
+print('REPLAY_CHANGE_FIELDS',json.dumps([{label:sum(label in e.get('changes',{}) for e in s.get('pending_major_changes',[])) for label in ('Bedrooms','Bathrooms','Size','Location','Status')} for s in actual]))
+Path('live-validation.json').write_text(json.dumps({'sources':{source['name']:health for source,(_,_,health) in results}},indent=2))
 for field in ('new','major_changes','reductions'):
     assert actual[-1]['last_scan'][field]==0, 'Settled inventory generated false '+field
 assert len({s['last_scan']['qualifying_observed'] for s in actual})==1
 report={'mode':mode,'duration_seconds':round(time.monotonic()-started,2),'scan_seconds':scan_seconds,'detail_seconds':detail_seconds,'qualifying_count':len(current),
         'sources':{source['name']:health for source,(_,_,health) in results},
         'migration_false_new':0,'replay_false_new':0,'production_replay_first':actual[0]['last_scan'],'production_replay_settled':actual[-1]['last_scan'],'production_history_preserved':len(production['properties']),
-        'properties':current}
+        'replay_change_fields':[{label:sum(label in e.get('changes',{}) for e in s.get('pending_major_changes',[])) for label in ('Bedrooms','Bathrooms','Size','Location','Status')} for s in actual]}
 Path('live-validation.json').write_text(json.dumps(report,indent=2))
 print('VALIDATION SUMMARY',json.dumps({k:v for k,v in report.items() if k not in ('properties','sources')}))
