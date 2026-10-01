@@ -4992,143 +4992,10 @@
   "pending_major_changes": [],
   "daily_activity": {
     "new": [],
-    "reductions": [
-      {
-        "property": {
-          "name": "New Construction",
-          "url": "https://www.arubabrokers.com/property-status/for-sale/",
-          "price": 559000.0,
-          "location": "",
-          "type": "Development",
-          "beds": "",
-          "baths": "",
-          "size": "",
-          "image": "https://www.arubabrokers.com/wp-content/uploads/2025/11/IMG-20251112-WA0016-850x550.jpg",
-          "description": "For Sale $ 559,000",
-          "source": "Aruba Brokers",
-          "mls": "",
-          "status": "available",
-          "detected_at": "2026-09-30T02:27:03.209073+00:00"
-        },
-        "old": {
-          "name": "New Construction",
-          "url": "https://arubapalmsrealtors.com/status/for-sale/",
-          "price": 627949.0,
-          "location": "",
-          "type": "Development",
-          "beds": "",
-          "baths": "",
-          "size": "",
-          "image": "https://arubapalmsrealtors.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-18-at-11.26.25-AM-1-584x438.jpeg",
-          "description": "For Sale New Listing $627,949",
-          "source": "Aruba Palms Realtors",
-          "mls": "",
-          "status": "available",
-          "detected_at": "2026-09-30T02:27:03.209073+00:00"
-        }
-      }
-    ],
-    "major_changes": [
-      {
-        "property": {
-          "name": "Fixer Upper Home in Belgiëstraat",
-          "url": "https://www.coldwellbanker.aw/listing-fixer-upper-home-in-belgi%C3%ABstraat-1802.html",
-          "price": 278200.0,
-          "location": "Oranjestad",
-          "type": "House",
-          "beds": "3",
-          "baths": "3",
-          "size": "",
-          "building_area": "",
-          "land_area": "",
-          "image": "https://www.coldwellbanker.aw/addons/watermarkimg/watermark_img.php?photo=https://www.coldwellbanker.aw/images/listing_photos/1802_1.jpg&img=sip.png",
-          "description": "For Sale Oranjestad 278200 Price : $278,200 Beds : 3 Baths : 3 Square Feet : 2,873 ID: 1802 View Listing Details > Discover a property filled with endless possibilities, perfectly suited for a growing family, a... More Info",
-          "source": "Coldwell Banker Aruba",
-          "mls": "",
-          "status": "available",
-          "detected_at": "2026-10-01T03:13:54.415644+00:00",
-          "source_type": "direct_broker",
-          "history_key": "f8468b050012fb3fbad85d4b1abb64f37283d558",
-          "aliases": [
-            "https://www.coldwellbanker.aw/listing-fixer-upper-home-in-belgi%C3%ABstraat-1802.html"
-          ]
-        },
-        "changes": {
-          "Status": {
-            "old": "for rent",
-            "new": "available"
-          }
-        }
-      },
-      {
-        "property": {
-          "name": "Ruby 23",
-          "url": "https://smileyaruba.com/properties/house/new-listing/",
-          "price": 528089.0,
-          "location": "Ruby, Noord, Aruba, Ruby, Noord",
-          "type": "House",
-          "beds": "",
-          "baths": "2.5",
-          "size": "243 m²",
-          "building_area": "243 m²",
-          "land_area": "525 m²",
-          "image": "https://smileyaruba.com/wp-content/uploads/2022/03/WhatsApp-Image-2022-03-09-at-1.29.49-PM-2.jpeg",
-          "description": "Property type: House Offer type: For Sale Sale Property City: Noord Neighborhood: Ruby Bedrooms: Bathrooms: 2.5 Property size ft²: Property size m²: 243 m² Lot size ft²: Lot size m²: 525 m² Year: 2003 Features: Air Conditioning Bathroom Bedroom Ceiling Fan Fully Fenced Garage laundry room Livingroom Patio House For Sale!",
-          "source": "Smiley Real Estate",
-          "mls": "",
-          "status": "available",
-          "detected_at": "2026-10-01T04:23:16.432673+00:00",
-          "source_type": "direct_broker",
-          "history_key": "1f47a3ba804903204cc7091e21488707a120919d",
-          "aliases": [
-            "https://smileyaruba.com/properties/house/new-listing"
-          ]
-        },
-        "changes": {
-          "Location": {
-            "old": "Ruby Bedrooms: Bathrooms: 2.5 Property size ft²: Property size m²: 243 m² Lot size ft²: Lot size m²: 525 m² Year: 2003 Features: Air Conditioning Bathroom Bedroom Ceiling Fan Fully Fenced Garage laundry room Livingroom Patio House For Sale!",
-            "new": "Ruby, Noord, Aruba, Ruby, Noord"
-          }
-        }
-      },
-      {
-        "property": {
-          "name": "Ultimate Guide: Alto Vista for Sale with Expert Insights",
-          "url": "https://homeforeveryonearuba.com/property/alto-vista-for-sale/",
-          "price": 615000.0,
-          "location": "Alto Vista",
-          "type": "House",
-          "beds": "6",
-          "baths": "5",
-          "size": "",
-          "building_area": "",
-          "land_area": "",
-          "image": "https://homeforeveryonearuba.com/wp-content/uploads/2026/04/3-2-584x438.jpg",
-          "description": "House, Residential Featured For Sale Best Deals New Homes $615,000 Beds: 6 Baths: 5 House, Residential Details Yoel Robbins 5 months ago",
-          "source": "Home 4 Everyone",
-          "mls": "",
-          "status": "available",
-          "detected_at": "2026-09-30T02:27:03.225763+00:00",
-          "source_type": "direct_broker",
-          "aliases": [
-            "https://homeforeveryonearuba.com/property/alto-vista-for-sale"
-          ],
-          "history_key": "8a6d8a787925f57cfd91928442a1c923de6b6ae0"
-        },
-        "changes": {
-          "Bedrooms": {
-            "old": "000",
-            "new": "6"
-          },
-          "Bathrooms": {
-            "old": "6",
-            "new": "5"
-          }
-        }
-      }
-    ]
+    "reductions": [],
+    "major_changes": []
   },
-  "last_digest_date": "2026-09-30",
+  "last_digest_date": "2026-10-01",
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
@@ -5490,28 +5357,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "digest",
-      "subject": "Aruba Property Daily Digest — Oct 01 — 0 new, 1 reductions",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Daily Digest</h1><p style='font-size:16px'><strong>0 new properties</strong><br><strong>1 price reductions</strong><br><strong>3 major changes</strong><br>143 qualifying properties currently detected across available sources.</p><h2>PRICE REDUCTIONS SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><h2 style='margin:0 0 8px;font-size:22px'>New Construction</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$559,000</div><div style='margin-bottom:8px'><strong>PRICE REDUCTION:</strong> $627,949 → $559,000 (11.0% reduction)</div><div><strong>Location:</strong> Not provided by source</div><div><strong>Property type:</strong> Development</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale $ 559,000</p><div><strong>Broker/source:</strong> Aruba Brokers (Aruba Brokers)</div><div><strong>First detected:</strong> 2026-09-30</div><div style='margin:15px 0'><img src='https://www.arubabrokers.com/wp-content/uploads/2025/11/IMG-20251112-WA0016-850x550.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.arubabrokers.com/property-status/for-sale/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><h2>MAJOR CHANGES SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><h2 style='margin:0 0 8px;font-size:22px'>Fixer Upper Home in Belgiëstraat</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$278,200</div><div><strong>Location:</strong> Oranjestad</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 3 beds · 3 baths</div><div style='margin-top:8px'><strong>Major changes:</strong> Status: for rent → available</div><p style='margin:12px 0'>For Sale Oranjestad 278200 Price : $278,200 Beds : 3 Baths : 3 Square Feet : 2,873 ID: 1802 View Listing Details &gt; Discover a property filled with endless possibilities, perfectly suited for a growing family, a... More Info</p><div><strong>Broker/source:</strong> Coldwell Banker Aruba (Coldwell Banker Aruba)</div><div><strong>First detected:</strong> 2026-10-01</div><div style='margin:15px 0'><img src='https://www.coldwellbanker.aw/addons/watermarkimg/watermark_img.php?photo=https://www.coldwellbanker.aw/images/listing_photos/1802_1.jpg&amp;img=sip.png' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.coldwellbanker.aw/listing-fixer-upper-home-in-belgi%C3%ABstraat-1802.html' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><h2 style='margin:0 0 8px;font-size:22px'>Ruby 23</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$528,089</div><div><strong>Location:</strong> Ruby, Noord, Aruba, Ruby, Noord</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 243 m²</div><div><strong>Land area:</strong> 525 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2.5 baths</div><div style='margin-top:8px'><strong>Major changes:</strong> Location: Ruby Bedrooms: Bathrooms: 2.5 Property size ft²: Property size m²: 243 m² Lot size ft²: Lot size m²: 525 m² Year: 2003 Features: Air Conditioning Bathroom Bedroom Ceiling Fan Fully Fenced Garage laundry room Livingroom Patio House For Sale! → Ruby, Noord, Aruba, Ruby, Noord</div><p style='margin:12px 0'>Property type: House Offer type: For Sale Sale Property City: Noord Neighborhood: Ruby Bedrooms: Bathrooms: 2.5 Property size ft²: Property size m²: 243 m² Lot size ft²: Lot size m²: 525 m² Year: 2003 Features: Air Conditioning Bathroom Bedroom Ceiling Fan Fully Fenced Garage laundry room Livingroom Patio House For Sale!</p><div><strong>Broker/source:</strong> Smiley Real Estate (Smiley Real Estate)</div><div><strong>First detected:</strong> 2026-10-01</div><div style='margin:15px 0'><img src='https://smileyaruba.com/wp-content/uploads/2022/03/WhatsApp-Image-2022-03-09-at-1.29.49-PM-2.jpeg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://smileyaruba.com/properties/house/new-listing/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><h2 style='margin:0 0 8px;font-size:22px'>Ultimate Guide: Alto Vista for Sale with Expert Insights</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$615,000</div><div><strong>Location:</strong> Alto Vista</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 6 beds · 5 baths</div><div style='margin-top:8px'><strong>Major changes:</strong> Bedrooms: 000 → 6 · Bathrooms: 6 → 5</div><p style='margin:12px 0'>House, Residential Featured For Sale Best Deals New Homes $615,000 Beds: 6 Baths: 5 House, Residential Details Yoel Robbins 5 months ago</p><div><strong>Broker/source:</strong> Home 4 Everyone (Home 4 Everyone)</div><div><strong>First detected:</strong> 2026-09-30</div><div style='margin:15px 0'><img src='https://homeforeveryonearuba.com/wp-content/uploads/2026/04/3-2-584x438.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://homeforeveryonearuba.com/property/alto-vista-for-sale/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding:14px;background:#f5f5f5;border-radius:6px;font-size:13px'><strong>Source coverage:</strong> 6 sources checked successfully; 13 sources could not be checked during the latest run.</div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "date": "2026-10-01",
-        "activity": {
-          "new": [],
-          "reductions": [
-            "b4efcff94b725f2ea4b195f7040694765342ec6ff51b82bf4948e4339d092d77"
-          ],
-          "major_changes": [
-            "ed93130ebcc08c36024de084ebb16ddb5dcd15306a1d0d15965aa40d5706ed92",
-            "52d488a808c7c36eb1837c284898be1257fd016cef438773e9a7056900e9a5e2",
-            "627134ea8d0ca67dc42da3c257c78a39105744537f56ea7ca96f7d6a2240a533"
-          ]
-        }
-      },
-      "created_at": "2026-10-01T12:04:08.322698+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
@@ -5826,5 +5672,6 @@
       "at": "2026-10-01T05:33:11.767003+00:00",
       "source": "HKG Real Estate Aruba"
     }
-  ]
+  ],
+  "last_digest_at": "2026-10-01T12:04:10.059781+00:00"
 }
