@@ -516,16 +516,16 @@
     },
     "167621d311fc35d2cd6d88ccc764a16375fc4f6b": {
       "name": "New Construction",
-      "url": "https://www.arubabrokers.com/property-status/for-sale/",
-      "price": 559000.0,
+      "url": "https://arubapalmsrealtors.com/status/for-sale/",
+      "price": 627949.0,
       "location": "",
       "type": "Development",
       "beds": "",
       "baths": "",
       "size": "",
-      "image": "https://www.arubabrokers.com/wp-content/uploads/2025/11/IMG-20251112-WA0016-850x550.jpg",
-      "description": "For Sale $ 559,000",
-      "source": "Aruba Brokers",
+      "image": "https://arubapalmsrealtors.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-18-at-11.26.25-AM-1-584x438.jpeg",
+      "description": "For Sale New Listing $627,949",
+      "source": "Aruba Palms Realtors",
       "mls": "",
       "status": "available",
       "detected_at": "2026-09-30T02:27:03.209073+00:00"
@@ -1535,7 +1535,7 @@
       "baths": "6",
       "size": "300 m²",
       "image": "",
-      "description": "For Sale $463,483 Noord/ Tanki Leendert, 7E, Paraguana, Soledad, Catiri, Aruba, Nederland Beds: 6 Baths: 6 300 m² 1145 m² Residential Details Yoel Robbins 2 years ago",
+      "description": "For Sale $463,483 Noord/ Tanki Leendert, 7E, Paraguana, Soledad, Catiri, Aruba, Nederland Beds: 6 Baths: 6 300 m² 1145 m² Residential Details Yoel Robbins 3 years ago",
       "source": "Bluefin Realtors",
       "mls": "",
       "status": "available",
@@ -1832,61 +1832,61 @@
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
-      "checked_at": "2026-10-01T01:07:52.793932+00:00",
-      "properties_found": 14,
+      "checked_at": "2026-10-01T01:23:27.010886+00:00",
+      "properties_found": 0,
       "error": ""
     },
     "Ben Real Estate": {
       "status": "ok",
-      "checked_at": "2026-10-01T01:08:59.236556+00:00",
+      "checked_at": "2026-10-01T01:24:24.247201+00:00",
       "properties_found": 7,
       "error": ""
     },
     "Bluefin Realtors": {
       "status": "ok",
-      "checked_at": "2026-10-01T01:09:02.276513+00:00",
+      "checked_at": "2026-10-01T01:24:27.134655+00:00",
       "properties_found": 37,
       "error": ""
     },
     "Aruba Listings": {
       "status": "error",
-      "checked_at": "2026-10-01T01:09:11.741739+00:00",
+      "checked_at": "2026-10-01T01:24:36.686659+00:00",
       "properties_found": 0,
       "error": "403 Client Error: Forbidden for url: https://arubalistings.com/sale/all"
     },
     "RE/MAX Aruba": {
       "status": "error",
-      "checked_at": "2026-10-01T01:09:21.191736+00:00",
+      "checked_at": "2026-10-01T01:24:46.245344+00:00",
       "properties_found": 0,
       "error": "403 Client Error: Forbidden for url: https://remaxaruba.com/listings"
     },
     "RES Aruba Realty": {
       "status": "error",
-      "checked_at": "2026-10-01T01:09:30.817151+00:00",
+      "checked_at": "2026-10-01T01:24:56.184803+00:00",
       "properties_found": 0,
       "error": "403 Client Error: Forbidden for url: https://resarubarealty.com/status/for-sale/"
     },
     "Aruba Happy Realty": {
       "status": "error",
-      "checked_at": "2026-10-01T01:09:34.353416+00:00",
+      "checked_at": "2026-10-01T01:24:58.065502+00:00",
       "properties_found": 0,
       "error": "404 Client Error: Not Found for url: https://www.arubahappyrealty.com/404.html"
     },
     "Aruba Palms Realtors": {
       "status": "ok",
-      "checked_at": "2026-10-01T01:12:25.096526+00:00",
+      "checked_at": "2026-10-01T01:27:39.728765+00:00",
       "properties_found": 15,
       "error": ""
     },
     "Home 4 Everyone": {
       "status": "ok",
-      "checked_at": "2026-10-01T01:12:31.946204+00:00",
+      "checked_at": "2026-10-01T01:27:41.109554+00:00",
       "properties_found": 0,
       "error": ""
     },
     "Smiley Real Estate": {
       "status": "ok",
-      "checked_at": "2026-10-01T01:12:32.623846+00:00",
+      "checked_at": "2026-10-01T01:27:42.627767+00:00",
       "properties_found": 0,
       "error": ""
     }
