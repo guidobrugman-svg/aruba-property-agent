@@ -1,6 +1,7 @@
-{
-  "sources": [
-    {
+[
+  {
+    "file": "Aruba_Brokers.html",
+    "source": {
       "name": "Aruba Brokers",
       "type": "direct_broker",
       "url": "https://www.arubabrokers.com/property-status/for-sale/",
@@ -12,7 +13,18 @@
       "deep_pages": 3,
       "type_selector": ".property-type"
     },
-    {
+    "expected": [
+      [
+        "Summerside III \u2013 Townhomes in Noord",
+        "Townhouse",
+        559000.0
+      ]
+    ],
+    "cards": 3
+  },
+  {
+    "file": "Ben_Real_Estate.html",
+    "source": {
       "name": "Ben Real Estate",
       "type": "direct_broker",
       "url": "https://benarubarealestate.com/sale",
@@ -24,7 +36,18 @@
       "deep_pages": 4,
       "type_selector": ".property-labels"
     },
-    {
+    "expected": [
+      [
+        "Ponton | Fixer-Upper House",
+        "House",
+        385000.0
+      ]
+    ],
+    "cards": 3
+  },
+  {
+    "file": "Bluefin_Realtors.html",
+    "source": {
       "name": "Bluefin Realtors",
       "type": "aggregator",
       "url": "https://bluefinrealtors.com/property/",
@@ -35,19 +58,28 @@
       "fast_pages": 3,
       "deep_pages": 6
     },
-    {
-      "name": "Aruba Listings",
-      "type": "aggregator",
-      "url": "https://arubalistings.com/listings",
-      "priority": 1,
-      "enabled": true,
-      "card_selector": ".item-listing-wrap",
-      "title_selector": ".item-title",
-      "fast_pages": 1,
-      "deep_pages": 1,
-      "adapter": "aruba_listings"
-    },
-    {
+    "expected": [
+      [
+        "House for Sale in Pos Chiquito, Aruba \u2013 Pos Chiquito 19F",
+        "House",
+        435000.0
+      ],
+      [
+        "Prime Property Land \u2013 1466 m\u00b2 in Paraguan\u00e1, Noord Aruba",
+        "Land",
+        306178.0
+      ],
+      [
+        "Coming Soon: Affordable Fixer-Upper in Good Condition (Rooi Bosal Santa Cruz)",
+        "House",
+        171348.0
+      ]
+    ],
+    "cards": 5
+  },
+  {
+    "file": "remax_sale.html",
+    "source": {
       "name": "RE/MAX Aruba",
       "type": "direct_broker",
       "url": "https://remaxaruba.com/property/residential-for-sale",
@@ -55,7 +87,7 @@
       "enabled": true,
       "card_selector": "div.grid > div.relative:has(a[href*=\"/property/details/\"])",
       "title_selector": "a[href*=\"/property/details/\"]:not(:has(img))",
-      "fast_pages": 2,
+      "fast_pages": 4,
       "deep_pages": 15,
       "urls": [
         "https://remaxaruba.com/property/residential-for-sale",
@@ -65,29 +97,12 @@
       "pagination_selector": "a[href*=\"/property/residential-for-sale/\"],a[href*=\"/property/land-for-sale/\"]",
       "listing_context": "For Sale Residential"
     },
-    {
-      "name": "RES Aruba Realty",
-      "type": "direct_broker",
-      "url": "https://resarubarealty.com/status/for-sale/",
-      "priority": 1,
-      "enabled": true,
-      "card_selector": ".item-listing-wrap",
-      "title_selector": ".item-title",
-      "fast_pages": 1,
-      "deep_pages": 15
-    },
-    {
-      "name": "Aruba Happy Realty",
-      "type": "direct_broker",
-      "url": "https://www.arubahappyrealty.com/status/for-sale/",
-      "priority": 1,
-      "enabled": true,
-      "card_selector": ".item-listing-wrap",
-      "title_selector": ".item-title",
-      "fast_pages": 1,
-      "deep_pages": 15
-    },
-    {
+    "expected": [],
+    "cards": 2
+  },
+  {
+    "file": "Aruba_Palms_Realtors.html",
+    "source": {
       "name": "Aruba Palms Realtors",
       "type": "direct_broker",
       "url": "https://arubapalmsrealtors.com/property-type/houses/",
@@ -102,7 +117,18 @@
         "https://arubapalmsrealtors.com/property-type/land-for-sale/"
       ]
     },
-    {
+    "expected": [
+      [
+        "Modern New Homes for Sale in the Heart of Paradera",
+        "House",
+        628077.0
+      ]
+    ],
+    "cards": 5
+  },
+  {
+    "file": "home_retry.html",
+    "source": {
       "name": "Home 4 Everyone",
       "type": "direct_broker",
       "url": "https://homeforeveryonearuba.com/search-results/",
@@ -121,20 +147,18 @@
         "https://homeforeveryonearuba.com/search-results/page/6/"
       ]
     },
-    {
-      "name": "Smiley Real Estate",
-      "type": "direct_broker",
-      "url": "https://smileyaruba.com/offer-type/for-sale/",
-      "priority": 2,
-      "enabled": true,
-      "card_selector": ".item-listing-wrap",
-      "title_selector": ".item-title",
-      "fast_pages": 1,
-      "deep_pages": 4,
-      "adapter": "myhome",
-      "api_url": "https://smileyaruba.com/wp-json/myhome/v1/estates?currency=price"
-    },
-    {
+    "expected": [
+      [
+        "Ultimate Guide: Alto Vista for Sale with Expert Insights",
+        "House",
+        615000.0
+      ]
+    ],
+    "cards": 2
+  },
+  {
+    "file": "c21_land.html",
+    "source": {
       "name": "Century 21 Aruba",
       "type": "direct_broker",
       "url": "https://century21aruba.com/en/s/for-sale/single-family-homes/oga",
@@ -150,7 +174,28 @@
       "deep_pages": 16,
       "enabled": true
     },
-    {
+    "expected": [
+      [
+        "Kamay Full Ownership Land Kamay (Noord) Vacant Land",
+        "Land",
+        625000.0
+      ],
+      [
+        "Full Ownership Land Seroe Blanco Sero Blanco (Oranjestad West) Vacant Land",
+        "Land",
+        590000.0
+      ],
+      [
+        "Bona Vista Hills Full Ownership Land With Distant Ocean Views Alto Vista (Noord) Vacant Land",
+        "Land",
+        525000.0
+      ]
+    ],
+    "cards": 5
+  },
+  {
+    "file": "coldwell_sale.html",
+    "source": {
       "name": "Coldwell Banker Aruba",
       "type": "direct_broker",
       "url": "https://www.coldwellbanker.aw/index.php?action=searchresults&pclass[]=1&pclass[]=2&sortby=listingsdb_id&sorttype=DESC",
@@ -160,17 +205,25 @@
       "listing_context": "For Sale",
       "fast_pages": 2,
       "deep_pages": 15,
-      "enabled": true,
-      "fast_urls": [
-        "https://moonraker.cbislands.com/rss.php?affiliate=aruba&class=res&type=updated",
-        "https://moonraker.cbislands.com/rss.php?affiliate=aruba&class=raw&type=updated"
-      ],
-      "deep_urls": [
-        "https://moonraker.cbislands.com/rss.php?affiliate=aruba&class=res&type=updated",
-        "https://moonraker.cbislands.com/rss.php?affiliate=aruba&class=raw&type=updated"
-      ]
+      "enabled": true
     },
-    {
+    "expected": [
+      [
+        "Seroe Janchi Lot",
+        "Land",
+        211000.0
+      ],
+      [
+        "Fixer Upper Home in Belgi\u00ebstraat",
+        "House",
+        278200.0
+      ]
+    ],
+    "cards": 5
+  },
+  {
+    "file": "kw_sale.html",
+    "source": {
       "name": "Keller Williams Aruba",
       "type": "direct_broker",
       "url": "https://kw-aruba.com/listings/for-sale/residential",
@@ -188,6 +241,24 @@
       "fast_pages": 4,
       "deep_pages": 8,
       "enabled": true
-    }
-  ]
-}
+    },
+    "expected": [
+      [
+        "Pavia 12-D",
+        "House",
+        647000.0
+      ],
+      [
+        "Siribana - Santa Cruz 360",
+        "House",
+        645000.0
+      ],
+      [
+        "Calabas 9c Noord",
+        "House",
+        590000.0
+      ]
+    ],
+    "cards": 5
+  }
+]
