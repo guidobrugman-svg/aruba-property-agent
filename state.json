@@ -16,7 +16,7 @@
       "status": "ineligible",
       "detected_at": "2026-09-22T23:32:21.791238+00:00",
       "queued_at": "2026-09-22T23:32:21.791238+00:00",
-      "last_checked_at": "2026-10-01T14:46:41.213064+00:00"
+      "last_checked_at": "2026-10-01T14:59:59.925487+00:00"
     },
     "6445e2941ebe2530d3a2563021fc0379defba41d": {
       "name": "Aruba’s Life Garden Condo",
@@ -34,7 +34,7 @@
       "status": "ineligible",
       "detected_at": "2026-09-22T23:32:21.791259+00:00",
       "queued_at": "2026-09-22T23:32:21.791259+00:00",
-      "last_checked_at": "2026-10-01T14:46:41.212273+00:00"
+      "last_checked_at": "2026-10-01T14:59:59.924824+00:00"
     },
     "b3713273102973351f4c228757020c01a05da1b5": {
       "name": "Casa Playa Residences Aruba",
@@ -51,7 +51,7 @@
       "mls": "",
       "status": "ineligible",
       "detected_at": "2026-09-21T00:39:53.473439+00:00",
-      "last_checked_at": "2026-10-01T14:46:41.505506+00:00"
+      "last_checked_at": "2026-10-01T15:00:00.157258+00:00"
     },
     "f25813d139932fcc3fa1cc49a5593480c1ed557e": {
       "name": "Caya Maguey 29",
@@ -68,7 +68,7 @@
       "mls": "",
       "status": "for rent",
       "detected_at": "2026-09-21T00:39:53.473442+00:00",
-      "last_checked_at": "2026-10-01T14:46:41.604440+00:00"
+      "last_checked_at": "2026-10-01T15:00:00.235090+00:00"
     },
     "e6cadd3eff8531374816aa0cc9ed87f5126fad2c": {
       "name": "Caya Soeur Nicephora 23",
@@ -85,7 +85,7 @@
       "mls": "",
       "status": "for rent",
       "detected_at": "2026-09-21T00:39:53.473444+00:00",
-      "last_checked_at": "2026-10-01T14:46:41.604481+00:00"
+      "last_checked_at": "2026-10-01T15:00:00.235121+00:00"
     },
     "271db40148426388f38afb984c9bd32e11b22bcd": {
       "name": "For sale Bubali 73 unit 5",
@@ -102,7 +102,7 @@
       "mls": "",
       "status": "ineligible",
       "detected_at": "2026-09-21T00:39:53.473452+00:00",
-      "last_checked_at": "2026-10-01T14:46:41.394633+00:00"
+      "last_checked_at": "2026-10-01T15:00:00.069942+00:00"
     },
     "47e1f8bc336789b41563369ec61801551140c422": {
       "name": "Paradera area",
@@ -119,7 +119,7 @@
       "mls": "",
       "status": "for rent",
       "detected_at": "2026-09-21T00:39:53.473466+00:00",
-      "last_checked_at": "2026-10-01T14:46:41.604559+00:00"
+      "last_checked_at": "2026-10-01T15:00:00.235178+00:00"
     },
     "59f0d18174c708afad83e053409ed94849a30fef": {
       "name": "Tierra del Sol, Mesa Vista",
@@ -136,7 +136,7 @@
       "mls": "",
       "status": "for rent",
       "detected_at": "2026-09-21T00:39:53.473484+00:00",
-      "last_checked_at": "2026-10-01T14:46:41.604361+00:00"
+      "last_checked_at": "2026-10-01T15:00:00.235029+00:00"
     },
     "700a7385c2e1dcacf70f5d24ce810978dc018325": {
       "name": "12C, Rooi Santo, West Punt, Aruba, Netherlands",
@@ -185,7 +185,7 @@
       "mls": "",
       "status": "ineligible",
       "detected_at": "2026-09-30T02:27:03.199149+00:00",
-      "last_checked_at": "2026-10-01T14:46:41.781719+00:00"
+      "last_checked_at": "2026-10-01T15:00:00.373565+00:00"
     },
     "f4d0a70acaa310671edda3e34c08de63eb893606": {
       "name": "Apartment Complex for Sale",
@@ -235,7 +235,7 @@
       "mls": "",
       "status": "ineligible",
       "detected_at": "2026-09-22T23:32:21.791255+00:00",
-      "last_checked_at": "2026-10-01T14:46:41.237206+00:00"
+      "last_checked_at": "2026-10-01T14:59:59.944477+00:00"
     },
     "d7aa2cadf74366ae71f5bce242182db8fe950e30": {
       "name": "Avenida Nelson O. Oduber, Bushiri, Oranjestad West, Bubali, Oranjestad (city), Aruba, Netherlands",
@@ -465,7 +465,7 @@
       "mls": "",
       "status": "ineligible",
       "detected_at": "2026-09-30T02:27:03.206714+00:00",
-      "last_checked_at": "2026-10-01T14:46:41.701092+00:00"
+      "last_checked_at": "2026-10-01T15:00:00.311550+00:00"
     },
     "09d95efb972c4c73d05daf0ad3e4f9a8fad5f8e0": {
       "name": "Modern New Homes for Sale in the Heart of Paradera",
@@ -491,7 +491,7 @@
       "aliases": [
         "https://arubapalmsrealtors.com/properties/for-sale-in-the-heart-of-paradera"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.184954+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903540+00:00"
     },
     "4c5cedb98ce1b474bea91499b53c5803df3cc645": {
       "name": "Modular Homes",
@@ -652,7 +652,7 @@
       "mls": "",
       "status": "ineligible",
       "detected_at": "2026-09-30T02:27:03.211828+00:00",
-      "last_checked_at": "2026-10-01T14:46:41.744458+00:00"
+      "last_checked_at": "2026-10-01T15:00:00.344921+00:00"
     },
     "fafa976e221f5dee32da6a0f8b943c7f1b62d7ca": {
       "name": "Oranjestad – Modern Gated Community Inspired by Aruba’s Culture and Global Living",
@@ -669,7 +669,7 @@
       "mls": "",
       "status": "ineligible",
       "detected_at": "2026-09-30T02:27:03.212328+00:00",
-      "last_checked_at": "2026-10-01T14:46:41.700836+00:00"
+      "last_checked_at": "2026-10-01T15:00:00.311327+00:00"
     },
     "8cca20e461329361ff349a048a7ddb40d6ac9275": {
       "name": "Other Features",
@@ -843,7 +843,7 @@
       "aliases": [
         "https://benarubarealestate.com/sale/ponton-fixer-upper-house"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.185778+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.904166+00:00"
     },
     "fda444f2848323b93624cae5cf5c1adad6a34965": {
       "name": "Price Reduced",
@@ -943,7 +943,7 @@
       "mls": "",
       "status": "ineligible",
       "detected_at": "2026-09-22T23:32:21.791261+00:00",
-      "last_checked_at": "2026-10-01T14:46:41.212988+00:00"
+      "last_checked_at": "2026-10-01T14:59:59.925415+00:00"
     },
     "5d591898cc17db3b6722d1107bcb2fca57f95890": {
       "name": "Rooi Santo, West Punt, Aruba, Netherlands",
@@ -1124,7 +1124,7 @@
       "aliases": [
         "https://www.arubabrokers.com/property/summerside-iii-townhomes-in-noord"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.187456+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905477+00:00"
     },
     "5acc2fcc80aa5188dcab19861aaecc76833f8225": {
       "name": "Tanki Leendert Cozy Home",
@@ -1174,7 +1174,7 @@
       "mls": "",
       "status": "ineligible",
       "detected_at": "2026-09-22T23:32:21.791266+00:00",
-      "last_checked_at": "2026-10-01T14:46:41.237039+00:00"
+      "last_checked_at": "2026-10-01T14:59:59.944344+00:00"
     },
     "b65740da07ba59e562ccb38ae4abbdedec13b637": {
       "name": "Tierra del sol",
@@ -1256,7 +1256,7 @@
       "aliases": [
         "https://benarubarealestate.com/sale/washington-gardens-new-development"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.187725+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905687+00:00"
     },
     "c735864dfe455ac4647c6b023bde4f7506b7d4e9": {
       "name": "best deals",
@@ -1289,7 +1289,7 @@
       "mls": "",
       "status": "ineligible",
       "detected_at": "2026-09-30T02:27:03.227631+00:00",
-      "last_checked_at": "2026-10-01T14:46:41.603839+00:00"
+      "last_checked_at": "2026-10-01T15:00:00.234629+00:00"
     },
     "136410ace7382aeaf7f6b59e09336a91ff146d56": {
       "name": "Bakval 3-P",
@@ -1313,7 +1313,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/bakval-3-p"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.187899+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905820+00:00"
     },
     "96a22a1dd698fe4f092c84fc6409156fb44827dd": {
       "name": "Balorian 2, Jaburibari",
@@ -1353,7 +1353,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/beautiful-home-in-papaya-paradera"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.187961+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905865+00:00"
     },
     "2d35cba114bbe8d2a2fa67e0908b90f55b3b52ac": {
       "name": "Boegoeroei 73-A",
@@ -1377,7 +1377,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/boegoeroei-73-a"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.188017+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905908+00:00"
     },
     "f6af1a5891205a5e04d2959e3fbcadea6de1d627": {
       "name": "Catashi Land",
@@ -1404,7 +1404,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/catashi-land"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.188074+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905954+00:00"
     },
     "a5be898ea84938d89fd70845ab2d480e93871b43": {
       "name": "Coming Soon: Affordable Fixer-Upper in Good Condition (Rooi Bosal Santa Cruz)",
@@ -1428,7 +1428,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/asdfsaf"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.188130+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905998+00:00"
     },
     "aec51f11241d4273d988c7065e330755daafad2c": {
       "name": "Cunucu Abao 112",
@@ -1452,7 +1452,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/cunucu-abao-112"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.188203+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.906044+00:00"
     },
     "54ffc7bba5aa3b0e466ef232fe76c5a2196aab2e": {
       "name": "DE VEERSTRAAT 3",
@@ -1476,7 +1476,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/de-veerstraat-3"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.188265+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.906092+00:00"
     },
     "0b42c968327d3720c54c770252be3bb333925732": {
       "name": "Family House Wayaca Residence 497",
@@ -1500,7 +1500,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/family-house-wayaca-residence-497"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.188317+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.906132+00:00"
     },
     "f65d72c6b48b9869659643dd741db75c55609105": {
       "name": "Guido Gazellestraat 4-A, Klip",
@@ -1524,7 +1524,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/guido-gazellestraat-4-a-klip"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.188377+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.906177+00:00"
     },
     "2b74b03233372fc2f3e27b6b50529278fce14ea6": {
       "name": "Guido Gezellestraat 6, Klip",
@@ -1541,7 +1541,7 @@
       "mls": "",
       "status": "ineligible",
       "detected_at": "2026-09-30T02:27:03.229484+00:00",
-      "last_checked_at": "2026-10-01T14:46:41.675101+00:00"
+      "last_checked_at": "2026-10-01T15:00:00.290633+00:00"
     },
     "94ab8c66babce5f8d936b042c6f592ced7899b52": {
       "name": "House for Sale in Pos Chiquito, Aruba – Pos Chiquito 19F",
@@ -1565,7 +1565,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/house-for-sale-in-pos-chiquito-aruba-pos-chiquito-19f"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.188435+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.906223+00:00"
     },
     "abafd65205a82b07c58e59fcba8ebd8845670b94": {
       "name": "Jacob Thielenstraat 11-A",
@@ -1589,7 +1589,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/jacob-thielenstraat-11-a"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.188493+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.906267+00:00"
     },
     "f4ce8245daca6f10c64b8d4ed481fa3624d69728": {
       "name": "Kurimiauw 5-A",
@@ -1613,7 +1613,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/kurimiauw-5-a"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.188550+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.906311+00:00"
     },
     "dc61be067ef91208dd8b9b9861a171ea8f9ff71d": {
       "name": "LAND LOT IN PAVIA COUNTRY CLUB RESIDENCE FOR SALE!!",
@@ -1637,7 +1637,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/land-lot-in-pavia-country-club-residence-for-sale"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.188613+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.906359+00:00"
     },
     "1e2418e428039f9304f177264e6e6196e687a8cb": {
       "name": "Mabon 9M Savaneta",
@@ -1661,7 +1661,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/mabon-9m-savaneta"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.188670+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.906403+00:00"
     },
     "2135f435c5521b5795d640307bad63beba34d37b": {
       "name": "Marvelous villa Pavia 25",
@@ -1685,7 +1685,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/marvelous-villa-pavia-25"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.188726+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.906461+00:00"
     },
     "e042546354cdf850c04fbadd09e940e68b91fbcf": {
       "name": "Nuñe 74-A",
@@ -1709,7 +1709,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/nune-74-a"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.188782+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.906508+00:00"
     },
     "866f45bc5165b5461ba90dd343e6c52b795cba3e": {
       "name": "Palm Beach 34-D",
@@ -1733,7 +1733,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/palm-beach-34-d"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.188839+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.906550+00:00"
     },
     "3fe570ea1080186aad8770dbaa49ea40adfacbd1": {
       "name": "Paradera 179-G",
@@ -1757,7 +1757,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/paradera-179-g"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.188890+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.906591+00:00"
     },
     "4f102a1dc3e345104bcadc38cb5076e201038645": {
       "name": "Paraguana 7-E",
@@ -1781,7 +1781,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/paraguana-7-e"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.188942+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.906632+00:00"
     },
     "39ebc4e6195cf7de6d55a3ed8e0039f307455a7b": {
       "name": "Prime Property Land – 1466 m² in Paraguaná, Noord Aruba",
@@ -1805,7 +1805,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/prime-property-land-1466-m%c2%b2-in-paraguana-noord-aruba"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.188996+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.906674+00:00"
     },
     "89b6b62910358d8ebf71bf0905fefa4f635f46ad": {
       "name": "Primely Located Lot in Tierra del Sol’s community| Lighthouse view | Exclusive Development",
@@ -1829,7 +1829,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/primely-located-lot-in-tierra-del-sols-community-lighthouse-view-exclusive-development"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.189051+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.906718+00:00"
     },
     "768349c4de70f6079e1e9761f4f59a0080e12871": {
       "name": "RUBY 23",
@@ -1853,7 +1853,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/ruby-23"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.189103+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.906757+00:00"
     },
     "a097b75f81f81b5634834ae01240dc176699bd09": {
       "name": "Rooi Kooshi",
@@ -1877,7 +1877,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/rooi-kooshi"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.189167+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.906796+00:00"
     },
     "a20edef08d27c81181f1e3caebb27c847486bc19": {
       "name": "Rooi Kooshi 62-G",
@@ -1901,7 +1901,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/rooi-kooshi-62-g"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.189219+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.906836+00:00"
     },
     "12392a77dce1ef5f54598efe0f6cad0b6ea6d759": {
       "name": "Sabana Basora/Rooi Taki",
@@ -1925,7 +1925,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/sabana-basora-rooi-taki"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.189271+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.906878+00:00"
     },
     "38f80874b9ce18931a49af4de394f68969af7a54": {
       "name": "Safir 5, Noord, Aruba",
@@ -1949,7 +1949,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/safir-5-noord-aruba"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.189323+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.906918+00:00"
     },
     "bc8a5bb127644d8922dedf3c2b245d00bc21fe21": {
       "name": "Savaneta 228",
@@ -1973,7 +1973,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/savaneta-228"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.189374+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.906958+00:00"
     },
     "f80b9106562c3064e744b919903fe1594641c1a4": {
       "name": "Savaneta Commercial Land",
@@ -2016,7 +2016,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/seroe-blanco-163-c"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.189429+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.907000+00:00"
     },
     "f449dc96274ff929d8bc0db64515d3310d582dc0": {
       "name": "Seroe Pita 48-B",
@@ -2040,7 +2040,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/seroe-pita-48-b"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.189480+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.907039+00:00"
     },
     "519efb191403d4f49046a8ea3e7789b9cd45e98a": {
       "name": "Tanki Leendert 92",
@@ -2064,7 +2064,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/tanki-leendert-92"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.189530+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.907079+00:00"
     },
     "b31013705c8ce0795682def846de050e3c1bf136": {
       "name": "Tankiflip 57, a charming residence nestled in the serene Noord area of Aruba.",
@@ -2088,7 +2088,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/tankiflip-57-a-charming-residence-nestled-in-the-serene-noord-area-of-aruba"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.189585+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.907122+00:00"
     },
     "fc0c0173721184f9c5ed6fcdf8255b6385d50c5e": {
       "name": "Tarabana Private Property Land",
@@ -2112,7 +2112,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/tarabana-private-property-land"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.189639+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.907164+00:00"
     },
     "180128fa654235d2651e25411fbec68bceca4577": {
       "name": "Wayaca 12",
@@ -2136,7 +2136,7 @@
       "aliases": [
         "https://bluefinrealtors.com/property/wayaca-12"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.189692+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.907203+00:00"
     },
     "214601bffe916aef6976d6d8c02f6c9eaabb84f2": {
       "name": "Alto Vista 1,234 M2 Land Alto Vista (Noord) Vacant Land",
@@ -2162,7 +2162,7 @@
       "aliases": [
         "https://century21aruba.com/en/d/alto-vista-1-234-m2-land-vacant-land-for-sale-alto-vista-noord-1165703"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.183194+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.902144+00:00"
     },
     "dcb19ee33af3a08e028c9e058bf2a30c3e8a8b88": {
       "name": "Bona Vista Hills Full Ownership Land With Distant Ocean Views Alto Vista (Noord) Vacant Land",
@@ -2214,7 +2214,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/bucutu-property-land"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.183397+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.902303+00:00"
     },
     "bebde81d513e9430861ca433dcf9e4a2546d1791": {
       "name": "Calabas 9c Noord",
@@ -2240,7 +2240,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/calabas-9c-noord"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.183457+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.902347+00:00"
     },
     "8192601e65e5614540cd7ee164b52ed06829a23d": {
       "name": "Caribbean Town - Villa Nausau",
@@ -2266,7 +2266,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/caribbean-town-villa-nausau"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.183514+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.902390+00:00"
     },
     "cfcd942de46d13a8348b766847f2c27e97200a5c": {
       "name": "Caribbean Town - Villa Nevis",
@@ -2292,7 +2292,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/caribbean-town-villa-nevis"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.183570+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.902434+00:00"
     },
     "b89875f332e55f1466f6f51e73255ef35a4038e8": {
       "name": "Cas Ariba 37C",
@@ -2318,7 +2318,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/cas-aruba-37c-new-2-2"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.183676+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.902555+00:00"
     },
     "77fce5b3979cfc3241a4156697346c148199cccc": {
       "name": "Commercial or Residential Property Land in Tanki Leendert",
@@ -2352,7 +2352,7 @@
       "aliases": [
         "https://www.coldwellbanker.aw/index.php?action=listingview&listingID=1704"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.183853+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.902683+00:00"
     },
     "b55ddb3fa158abc4cefca657bf4808141907221c": {
       "name": "Commercial or Residential Property Land in Tanki Leendert",
@@ -2515,7 +2515,7 @@
       "aliases": [
         "https://century21aruba.com/en/d/full-ownership-land-seroe-blanco-vacant-land-for-sale-sero-blanco-oranjestad-west-1165656"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.184136+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.902904+00:00"
     },
     "0d0218604fa63f2624fe0c735f14dc147f50f564": {
       "name": "Gold Coast Aruba Turn-Key Townhouse | 2BR | 3BA | Resort Amenities",
@@ -2542,7 +2542,7 @@
       "aliases": [
         "https://www.coldwellbanker.aw/index.php?action=listingview&listingID=1794"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.184247+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.902978+00:00"
     },
     "d84d4d94b51e526ee73bce0ce23fa1d732586d03": {
       "name": "Harbour House 401",
@@ -2568,7 +2568,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/harbour-house-401"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.184301+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903019+00:00"
     },
     "d9f9f12231eb2c52e5b1209a80721431762ce8ab": {
       "name": "Hooiberg 14 - A Hooiberg (Santa Cruz) Single Family Homes",
@@ -2620,7 +2620,7 @@
       "aliases": [
         "https://century21aruba.com/en/d/kamay-full-ownership-land-vacant-land-for-sale-kamay-noord-1160933"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.184528+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903195+00:00"
     },
     "446902ffb9bba898fcdfe366d5fc05507af99895": {
       "name": "Marawiel 1000m2 Full Ownership Land Marawiel (Paradera) Vacant Land",
@@ -2646,7 +2646,7 @@
       "aliases": [
         "https://century21aruba.com/en/d/marawiel-1000m2-full-ownership-land-vacant-land-for-sale-marawiel-paradera-1161588"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.184692+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903323+00:00"
     },
     "93753a50ee2490a2688a2f24cca643848f45f562": {
       "name": "Marawiel 1294m2 Full Ownership Land Marawiel (Paradera) Vacant Land",
@@ -2672,7 +2672,7 @@
       "aliases": [
         "https://century21aruba.com/en/d/marawiel-1294m2-full-ownership-land-vacant-land-for-sale-marawiel-paradera-1161589"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.184749+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903367+00:00"
     },
     "b3cda575f67a8397e9667ce72dc50c54d7ee4681": {
       "name": "Modanza Villa Park",
@@ -2725,7 +2725,7 @@
       "aliases": [
         "https://www.coldwellbanker.aw/index.php?action=listingview&listingID=1798"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.184898+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903496+00:00"
     },
     "2efefb646362c9f6aab9792728da63355a4783ee": {
       "name": "Mount Scenerystraat 17",
@@ -2751,7 +2751,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/mount-scenerystraat-17"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.185062+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903625+00:00"
     },
     "50b4accc60ccb34d88d9fd8568a542e76b9cb12e": {
       "name": "New Built Duplex Unit",
@@ -2777,7 +2777,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/new-built"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.185119+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903667+00:00"
     },
     "8eaaf7329f0fc77249665ac40b998d08c16503e1": {
       "name": "Noord Cura Cabai 45C",
@@ -2803,7 +2803,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/noord-cura-cabai-45c"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.185185+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903707+00:00"
     },
     "43df17638e33d594f5281ae61b063a23b71cea61": {
       "name": "Noord Cura Cabai 49J",
@@ -2829,7 +2829,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/noord-cura-cabai-49j"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.185239+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903748+00:00"
     },
     "a1d4b6eef8cf9f8215834b8756a2898f88da4ecf": {
       "name": "Orcuyo 24 – Tranquility, Views and Future Potential",
@@ -2855,7 +2855,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/orcuyo-24-tranquility-views-and-future-potential"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.185295+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903792+00:00"
     },
     "0670826345ed838f0880e7b2fa7b4a71793fa5b4": {
       "name": "Paraguana 14 Seroe Janchi (Noord) Single Family Homes",
@@ -2907,7 +2907,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/paseo-di-playa-lot-38"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.185401+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903875+00:00"
     },
     "d285b11ce96d13250cbf72968457d376bd99fceb": {
       "name": "Pastoor Hendrikstraat 1691m2 Property Land",
@@ -2933,7 +2933,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/patoor-hendrikstraat"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.185455+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903917+00:00"
     },
     "c74a716741af1deab50d28a529bfee9ec170616a": {
       "name": "Pavia 12-D",
@@ -2959,7 +2959,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/pavia-12-d"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.185563+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903999+00:00"
     },
     "76ca9b35a6268e5040f338d7bf164ae7e58813c7": {
       "name": "Primavera 85",
@@ -2985,7 +2985,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/primavera-85"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.185883+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.904249+00:00"
     },
     "446fecfc9d52474e915270f29410ca47412ebea3": {
       "name": "Primavera 86",
@@ -3011,7 +3011,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/Primavera-86"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.185937+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.904290+00:00"
     },
     "cfb38877e17a64066b46b6a2c55eb23e10e6d969": {
       "name": "Prime Land for Sale in Bona Vista Hills â€“ Ocean & City Views | 1106 mÂ² with B",
@@ -3048,7 +3048,7 @@
       "detail_checked_at": "2026-10-01T14:26:59.741922+00:00",
       "detail_status": "unavailable",
       "history_key": "cfb38877e17a64066b46b6a2c55eb23e10e6d969",
-      "last_seen_at": "2026-10-01T14:46:41.186095+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.904410+00:00"
     },
     "0d37f9c97ffe2934dc791e050f5dfeb8cd6368d3": {
       "name": "Property Owned Land in Schelpstraat Oranjestad",
@@ -3074,7 +3074,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/property-owned-land-schelpstraat-oranjestad"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.186150+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.904461+00:00"
     },
     "7b4a84706502407ef90881d3d3bff990190e9a5f": {
       "name": "Quaststraat Corner Lot- 522m2",
@@ -3109,7 +3109,7 @@
         "https://www.coldwellbanker.aw/index.php?action=listingview&listingID=1747",
         "https://www.coldwellbanker.aw/listing-quaststraat-corner-lot--522m2-1747.html"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.186314+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.904581+00:00"
     },
     "ed99ab413a5a473d25678a97f3cd4004c8e200f3": {
       "name": "Rooi Koochi 3A",
@@ -3135,7 +3135,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/rooi-koochi-3a"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.186421+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.904665+00:00"
     },
     "39c0b048d6511c6e88716bfd78aa66a71e07ffa5": {
       "name": "Sabania Abow",
@@ -3161,7 +3161,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/sabania-abow"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.186582+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.904792+00:00"
     },
     "55e5420c9bd9a51d7642d78d23751489e95a6312": {
       "name": "Saliña Property Land",
@@ -3187,7 +3187,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/salina-property-land"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.186636+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.904834+00:00"
     },
     "35419a6c35ca9ef1c0043cb05f32d6e870890dce": {
       "name": "San Fuego Full Ownership Land 1348m2 Santa Cruz (Santa Cruz) Vacant Land",
@@ -3213,7 +3213,7 @@
       "aliases": [
         "https://century21aruba.com/en/d/san-fuego-full-ownership-land-1348m2-vacant-land-for-sale-santa-cruz-santa-cruz-1166777"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.186694+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.904880+00:00"
     },
     "c1955039e01e893fe60006b980d39ed6abff133e": {
       "name": "Savaneta 39 - C Pos Chiquito (Savaneta) Single Family Homes",
@@ -3266,7 +3266,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/sero-pita-45b-ocean-view"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.186907+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905046+00:00"
     },
     "4e69fa37212f80d7f791ffe2aeae1bc20089c5a5": {
       "name": "Seroe Alejandro 37",
@@ -3292,7 +3292,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/seroe-alejandro-37"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.186960+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905087+00:00"
     },
     "1a025f21bbeb2c1ab235f9cd4667c7e29b207101": {
       "name": "Seroe Janchi 52 - C Full Ownership Land Seroe Janchi (Noord) Vacant Land",
@@ -3318,7 +3318,7 @@
       "aliases": [
         "https://century21aruba.com/en/d/seroe-janchi-52-c-full-ownership-land-vacant-land-for-sale-seroe-janchi-noord-1160927"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.187074+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905177+00:00"
     },
     "c6e38f9ce50a1a2077212dca55d3cdd1d6a08976": {
       "name": "Seroe Janchi Lot",
@@ -3380,12 +3380,11 @@
       ],
       "detail_checked_at": "2026-10-01T14:46:38.753796+00:00",
       "detail_status": "unavailable",
-      "detail_error": "No recognized property-detail sections",
       "history_key": "5e773f36f3ea62a79109b8f7cc7cd547aa80a478",
       "aliases": [
         "https://www.coldwellbanker.aw/index.php?action=listingview&listingID=1803"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.187177+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905252+00:00"
     },
     "abd3fa2f35919d77816a3b1a869311a1a7e64112": {
       "name": "Siribana - Santa Cruz 360",
@@ -3405,11 +3404,14 @@
       "status": "available",
       "detected_at": "2026-10-01T03:13:54.949529+00:00",
       "source_type": "direct_broker",
+      "detail_checked_at": "2026-10-01T14:59:59.079865+00:00",
+      "detail_status": "unavailable",
+      "detail_error": "No recognized property-detail sections",
       "history_key": "abd3fa2f35919d77816a3b1a869311a1a7e64112",
       "aliases": [
         "https://kw-aruba.com/listings/santa-cruz-360"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.187285+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905337+00:00"
     },
     "a219a0769ceb0009ae2fe37e96ce16bac532d650": {
       "name": "Tamarijn Land - Lot 1",
@@ -3464,7 +3466,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/tanki-leendert-201d"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.187511+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905519+00:00"
     },
     "2a664f3dc351c51f047ff813780016d412218153": {
       "name": "Townhouse Napa Valley",
@@ -3488,7 +3490,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/townhouse-Napa Valley"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.187565+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905562+00:00"
     },
     "b0ef2d9c7e167a2c1c661c6b868daf84b25edba0": {
       "name": "Turibana Dreams - Lot 1 Full Ownership Land Alto Vista (Noord) Vacant Land",
@@ -3608,7 +3610,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/pre-construction-duplex-homes-sale-san-nicholaas"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.187620+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905605+00:00"
     },
     "15306a8cce97331b6c24b0ab3c5e285410eb6e4e": {
       "name": "Unit 2 - Pre-Construction Duplex Home for Sale",
@@ -3632,7 +3634,7 @@
       "aliases": [
         "https://kw-aruba.com/listings/unit-2-pre-construction-duplex-homes-sale"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.187674+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905646+00:00"
     },
     "58f8602261146f8eae56cf9aa5f886efe2b37dc6": {
       "name": "Washington 50 - A Washington (Noord) Single Family Homes",
@@ -3680,7 +3682,7 @@
       "aliases": [
         "https://century21aruba.com/en/d/zumbo-full-ownership-land-vacant-land-for-sale-cashero-santa-cruz-1164651"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.187842+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905776+00:00"
     },
     "1f47a3ba804903204cc7091e21488707a120919d": {
       "name": "Ruby 23",
@@ -3732,7 +3734,7 @@
       "aliases": [
         "https://bhhsaruba.com/listings/home-barcadera"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.183271+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.902205+00:00"
     },
     "37ddffaf26cf7b1d28803093c67007fd37ac9a82": {
       "name": "Brazil 5980 m2",
@@ -3770,7 +3772,7 @@
       "aliases": [
         "https://bhhsaruba.com/listings/5980m2-property-land-brazil"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.183337+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.902256+00:00"
     },
     "b542527c6684c53e2ab3a23115be5cb3e2c04d4a": {
       "name": "Caribbean Town Project",
@@ -3796,7 +3798,7 @@
       "aliases": [
         "https://bhhsaruba.com/listings/caribbean-town-project"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.183622+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.902508+00:00"
     },
     "504fd391337d26c6ae79a6a7b711ae6ea3160c52": {
       "name": "Casa Hato",
@@ -3822,7 +3824,7 @@
       "aliases": [
         "https://bhhsaruba.com/listings/hato-property"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.183730+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.902598+00:00"
     },
     "7cce5df3a94c0b32cf5f78db5efcc80108bafeb3": {
       "name": "Cuquisastraat 22-A",
@@ -3855,7 +3857,7 @@
       "aliases": [
         "https://bhhsaruba.com/listings/cuquisastraat-22-"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.183910+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.902727+00:00"
     },
     "94402ac06fa551cb6940a772c0f681b1d170d87f": {
       "name": "Dominicanessenstraat 30",
@@ -3881,7 +3883,7 @@
       "aliases": [
         "https://bhhsaruba.com/listings/Villa-Dominicanessenstraat"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.183965+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.902769+00:00"
     },
     "6729a8a717262ebc6246fbcb6255544578413ca9": {
       "name": "Fahrenheitstraat 2",
@@ -3907,7 +3909,7 @@
       "aliases": [
         "https://rogaruba.com/listings/fahrenheitstraat-2"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.184019+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.902811+00:00"
     },
     "03d59db589e3f9697b373365436c083cac8c1216": {
       "name": "Fixer-Upper Opportunity in Esso Heights",
@@ -3933,7 +3935,7 @@
       "aliases": [
         "https://rogaruba.com/listings/fixer-upper-opportunity-esso-heights"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.184078+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.902857+00:00"
     },
     "43697ffa4417f25589c74e9e435dac95d60a10d1": {
       "name": "Home at Tanki Leendert",
@@ -3966,7 +3968,7 @@
       "aliases": [
         "https://bhhsaruba.com/listings/home-tanki-leendert-8"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.184359+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903063+00:00"
     },
     "bb99879258f9c30c2b54b8157ebdb055b868f2df": {
       "name": "House For Sale - Rooi Taki 3",
@@ -3992,7 +3994,7 @@
       "aliases": [
         "https://www.objective-realty.com/properties/house-for-sale-rooi-taki-3"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.184414+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903106+00:00"
     },
     "b5603bae981ac37cc883fa5e196871cfa08ddb3c": {
       "name": "Jamanota 18",
@@ -4018,7 +4020,7 @@
       "aliases": [
         "https://rogaruba.com/listings/jamanota-18"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.184470+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903149+00:00"
     },
     "e7d36a67c751fcd112acc0690ff2af9e1615cc1e": {
       "name": "Kolibristraat 14",
@@ -4051,7 +4053,7 @@
       "aliases": [
         "https://bhhsaruba.com/listings/kolibristraat-14"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.184582+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903237+00:00"
     },
     "9837f23ebe21685a78b99180305ba7750b0ee411": {
       "name": "Land for Sale | Mon Pos",
@@ -4077,7 +4079,7 @@
       "aliases": [
         "https://hkgrealestatearuba.com/property/land-for-sale-mabon"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.184634+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903278+00:00"
     },
     "f664fc82f4e3771b5c30db9c9a20c39ff990c578": {
       "name": "Matadera 9-U",
@@ -4103,7 +4105,7 @@
       "aliases": [
         "https://arubahappyhomes.com/listings/matadera-9-u"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.184803+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903410+00:00"
     },
     "48ba79e3833023d1dee73d4036d274809b3eb5a9": {
       "name": "Moko 1.726 m²",
@@ -4161,7 +4163,7 @@
       "aliases": [
         "https://bhhsaruba.com/listings/1726-m-property-land-eigendom-moko-aruba"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.185008+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903583+00:00"
     },
     "393961edce12378dd85cba34bf6649c1391999e5": {
       "name": "Papilon 32",
@@ -4199,7 +4201,7 @@
       "aliases": [
         "https://bhhsaruba.com/listings/papilon-32"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.185347+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903833+00:00"
     },
     "661521d7b1fb8a54bd94e199ae3f9b0b8da54e39": {
       "name": "Pavia 1155 m2",
@@ -4237,7 +4239,7 @@
       "aliases": [
         "https://bhhsaruba.com/listings/pavia-country-club-land"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.185511+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.903959+00:00"
     },
     "1568786070e8bdb703711aaa65d206c2d97b8142": {
       "name": "Pavia 15-G",
@@ -4263,7 +4265,7 @@
       "aliases": [
         "https://rogaruba.com/listings/pavia-15-g"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.185617+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.904042+00:00"
     },
     "88a11e53e9696cbdb38b10a755110a5b5e6597d5": {
       "name": "Pavia 181",
@@ -4289,7 +4291,7 @@
       "aliases": [
         "https://bhhsaruba.com/listings/pavia-181"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.185670+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.904084+00:00"
     },
     "3c3261215fe2f9aa5d63b0f0125f187ae2b94973": {
       "name": "Pavia 182",
@@ -4315,7 +4317,7 @@
       "aliases": [
         "https://bhhsaruba.com/listings/pavia-182"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.185724+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.904125+00:00"
     },
     "223286cde43fc8ef58920f3b8da680fbc25fd310": {
       "name": "Pos Chikito 263 L",
@@ -4353,7 +4355,7 @@
       "aliases": [
         "https://bhhsaruba.com/listings/pos-chikito-263-l"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.185831+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.904208+00:00"
     },
     "b506ae793c42faa7843b694be1656a66ab72ff13": {
       "name": "Pos Chikito 69B",
@@ -4387,7 +4389,7 @@
         "https://bhhsaruba.com/listings/pos-chikito-69"
       ],
       "last_seen_at": "2026-10-01T13:10:44.600327+00:00",
-      "last_checked_at": "2026-10-01T14:46:46.603814+00:00"
+      "last_checked_at": "2026-10-01T15:00:04.134221+00:00"
     },
     "3abf40d199321685d7140066ab9f793136767794": {
       "name": "Prime 2.128m² Property Land in Tanki Leendert",
@@ -4413,7 +4415,7 @@
       "aliases": [
         "https://rogaruba.com/listings/Prime-2.128m%C2%B2-Property-Land-in-Tanki-Leendert"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.185997+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.904336+00:00"
     },
     "6fd438bedb3844c9a2cfede9e53364a3e9133c01": {
       "name": "Purun Oasis",
@@ -4439,7 +4441,7 @@
       "aliases": [
         "https://rogaruba.com/listings/purun-oasis-2"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.186218+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.904506+00:00"
     },
     "a9b85857fe22bc634063d317bcc3e42e281e380c": {
       "name": "Reina Sophia Residence",
@@ -4465,7 +4467,7 @@
       "aliases": [
         "https://bhhsaruba.com/listings/reina-sophia-residence"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.186367+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.904623+00:00"
     },
     "3ee6a7a0b88cf5521ffa4b498f9b3c399583cb20": {
       "name": "Sabana Basora 89",
@@ -4491,7 +4493,7 @@
       "aliases": [
         "https://bhhsaruba.com/listings/sabana-basora-89"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.186475+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.904708+00:00"
     },
     "5bf7f730f7e722937a01af3e46bba7d33c2f13b0": {
       "name": "Sabana Basora Noord 148",
@@ -4517,7 +4519,7 @@
       "aliases": [
         "https://bhhsaruba.com/listings/sabana-basora-noord-148"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.186529+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.904750+00:00"
     },
     "f46ff018ff8d31f2843b953fd840cb589774a8a4": {
       "name": "San Nicolas Villa",
@@ -4543,7 +4545,7 @@
       "aliases": [
         "https://bhhsaruba.com/listings/san-nicolas-villa"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.186748+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.904922+00:00"
     },
     "86bbd913b3a27dab10aa15e6aa6e1eca2a175400": {
       "name": "Santa Cruz 230",
@@ -4581,7 +4583,7 @@
       "aliases": [
         "https://bhhsaruba.com/listings/santa-cruz-230"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.186800+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.904963+00:00"
     },
     "dc874c61b08eb622d121043dd525884f7fbf7178": {
       "name": "Santa Helenastraat 13",
@@ -4619,7 +4621,7 @@
       "aliases": [
         "https://bhhsaruba.com/listings/santa-helenastraat-13"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.186853+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905005+00:00"
     },
     "40d8e4e80cbb61b44d6f84828a6c5558b63fd5d9": {
       "name": "Seroe Janchi 120—Modern Property",
@@ -4645,7 +4647,7 @@
       "aliases": [
         "https://hkgrealestatearuba.com/property/seroe-janchi-120-modern-property"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.187016+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905132+00:00"
     },
     "6824860aa9ecc20493472baecead2c967ceb7dfd": {
       "name": "Shete 19",
@@ -4665,7 +4667,6 @@
       "status": "available",
       "detected_at": "2026-10-01T04:55:29.452744+00:00",
       "source_type": "direct_broker",
-      "detail_checked_at": "2026-10-01T14:46:38.754057+00:00",
       "development_evidence": [
         {
           "label": "Ownership",
@@ -4673,13 +4674,13 @@
           "url": "https://bhhsaruba.com/listings/shete-19"
         }
       ],
-      "residence_complex": false,
+      "detail_checked_at": "2026-10-01T14:46:38.754057+00:00",
       "detail_status": "ok",
       "history_key": "6824860aa9ecc20493472baecead2c967ceb7dfd",
       "aliases": [
         "https://bhhsaruba.com/listings/shete-19"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.187231+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905294+00:00"
     },
     "8ab64085763567d1d4b97cb643a3c57d1128eab6": {
       "name": "Spacious Family Home - Hooiberg 18",
@@ -4699,11 +4700,14 @@
       "status": "available",
       "detected_at": "2026-10-01T04:55:29.479155+00:00",
       "source_type": "direct_broker",
+      "detail_checked_at": "2026-10-01T14:59:59.080100+00:00",
+      "detail_status": "unavailable",
+      "detail_error": "No recognized property-detail sections",
       "history_key": "8ab64085763567d1d4b97cb643a3c57d1128eab6",
       "aliases": [
         "https://www.objective-realty.com/properties/spacious-family-home-hooiberg-18"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.187339+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905379+00:00"
     },
     "2e8e0384653a27cba57cc3c3dd564cf4d11e5a64": {
       "name": "Spacious Family Retreat with Gazebo & Outdoor Living in Oranjestad",
@@ -4727,7 +4731,7 @@
       "aliases": [
         "https://rogaruba.com/listings/Spacious-Family-Retreat-with-Gazebo-&-Outdoor-Living-in-Oranjestad"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.187401+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905425+00:00"
     },
     "48a04edada97cf6f0a97ab5618bdb1674e63bb29": {
       "name": "Wayaca Duplex Property – For Sale",
@@ -4751,7 +4755,7 @@
       "aliases": [
         "https://hkgrealestatearuba.com/property/wayaca-duplex-property-for-sale"
       ],
-      "last_seen_at": "2026-10-01T14:46:41.187780+00:00"
+      "last_seen_at": "2026-10-01T14:59:59.905731+00:00"
     },
     "cb2ec16468e8bea6e8a4d561de96d28dde0d9e74": {
       "name": "2 Bedroom Townhouse for Sale in Noord, Aruba – $299,000",
@@ -5058,7 +5062,7 @@
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
-      "checked_at": "2026-10-01T14:46:03.220038+00:00",
+      "checked_at": "2026-10-01T14:59:54.951521+00:00",
       "properties_found": 1,
       "source_revision": "02236456b457fa6d",
       "cards_seen": 15,
@@ -5066,15 +5070,15 @@
       "pages_fetched": 1,
       "mode": "fast",
       "coverage_limited": false,
-      "duration_seconds": 0.44,
+      "duration_seconds": 0.37,
       "repeated_pages": 0,
       "errors": [],
-      "last_success_at": "2026-10-01T14:46:38.529217+00:00",
+      "last_success_at": "2026-10-01T14:59:58.908690+00:00",
       "consecutive_failures": 0
     },
     "Ben Real Estate": {
       "status": "partial",
-      "checked_at": "2026-10-01T14:46:03.735242+00:00",
+      "checked_at": "2026-10-01T14:59:55.625903+00:00",
       "properties_found": 2,
       "source_revision": "34512c460ec37a9f",
       "cards_seen": 24,
@@ -5082,15 +5086,15 @@
       "pages_fetched": 2,
       "mode": "fast",
       "coverage_limited": true,
-      "duration_seconds": 0.96,
+      "duration_seconds": 1.05,
       "repeated_pages": 0,
       "errors": [],
-      "last_success_at": "2026-10-01T14:46:38.529273+00:00",
+      "last_success_at": "2026-10-01T14:59:58.908745+00:00",
       "consecutive_failures": 0
     },
     "Bluefin Realtors": {
       "status": "partial",
-      "checked_at": "2026-10-01T14:46:05.988354+00:00",
+      "checked_at": "2026-10-01T14:59:57.239685+00:00",
       "properties_found": 33,
       "source_revision": "b709b99b48e2c84c",
       "cards_seen": 69,
@@ -5098,10 +5102,10 @@
       "pages_fetched": 3,
       "mode": "fast",
       "coverage_limited": false,
-      "duration_seconds": 3.21,
+      "duration_seconds": 2.66,
       "repeated_pages": 0,
       "errors": [],
-      "last_success_at": "2026-10-01T14:46:38.529293+00:00",
+      "last_success_at": "2026-10-01T14:59:58.908761+00:00",
       "consecutive_failures": 0
     },
     "Aruba Listings": {
@@ -5199,7 +5203,7 @@
     },
     "Aruba Palms Realtors": {
       "status": "ok",
-      "checked_at": "2026-10-01T14:46:03.287897+00:00",
+      "checked_at": "2026-10-01T14:59:55.011081+00:00",
       "properties_found": 1,
       "source_revision": "45440d73feecce79",
       "cards_seen": 26,
@@ -5207,10 +5211,10 @@
       "pages_fetched": 2,
       "mode": "fast",
       "coverage_limited": false,
-      "duration_seconds": 0.51,
+      "duration_seconds": 0.43,
       "repeated_pages": 0,
       "errors": [],
-      "last_success_at": "2026-10-01T14:46:38.529327+00:00",
+      "last_success_at": "2026-10-01T14:59:58.908790+00:00",
       "consecutive_failures": 0
     },
     "Home 4 Everyone": {
@@ -5261,7 +5265,7 @@
     },
     "Century 21 Aruba": {
       "status": "partial",
-      "checked_at": "2026-10-01T14:46:04.239371+00:00",
+      "checked_at": "2026-10-01T14:59:55.153112+00:00",
       "properties_found": 8,
       "source_revision": "f1b0720a4d8ded84",
       "cards_seen": 24,
@@ -5269,15 +5273,15 @@
       "pages_fetched": 2,
       "mode": "fast",
       "coverage_limited": true,
-      "duration_seconds": 1.02,
+      "duration_seconds": 0.2,
       "repeated_pages": 0,
       "errors": [],
-      "last_success_at": "2026-10-01T14:46:38.529352+00:00",
+      "last_success_at": "2026-10-01T14:59:58.908809+00:00",
       "consecutive_failures": 0
     },
     "Coldwell Banker Aruba": {
       "status": "ok",
-      "checked_at": "2026-10-01T14:46:03.452945+00:00",
+      "checked_at": "2026-10-01T14:59:55.146901+00:00",
       "properties_found": 6,
       "source_revision": "52e13c6003f737d9",
       "cards_seen": 18,
@@ -5285,15 +5289,15 @@
       "pages_fetched": 2,
       "mode": "fast",
       "coverage_limited": false,
-      "duration_seconds": 0.17,
+      "duration_seconds": 0.14,
       "repeated_pages": 0,
       "errors": [],
-      "last_success_at": "2026-10-01T14:46:38.529370+00:00",
+      "last_success_at": "2026-10-01T14:59:58.908826+00:00",
       "consecutive_failures": 0
     },
     "Keller Williams Aruba": {
       "status": "partial",
-      "checked_at": "2026-10-01T14:46:06.508468+00:00",
+      "checked_at": "2026-10-01T14:59:57.801629+00:00",
       "properties_found": 27,
       "source_revision": "35e3a5a3b19cb433",
       "cards_seen": 163,
@@ -5301,15 +5305,15 @@
       "pages_fetched": 4,
       "mode": "fast",
       "coverage_limited": false,
-      "duration_seconds": 3.06,
+      "duration_seconds": 2.65,
       "repeated_pages": 0,
       "errors": [],
-      "last_success_at": "2026-10-01T14:46:38.529387+00:00",
+      "last_success_at": "2026-10-01T14:59:58.908842+00:00",
       "consecutive_failures": 0
     },
     "Berkshire Hathaway Aruba": {
       "status": "partial",
-      "checked_at": "2026-10-01T14:46:05.288310+00:00",
+      "checked_at": "2026-10-01T14:59:56.332383+00:00",
       "properties_found": 21,
       "source_revision": "688f00bf07c4a434",
       "cards_seen": 246,
@@ -5317,15 +5321,15 @@
       "pages_fetched": 1,
       "mode": "fast",
       "coverage_limited": false,
-      "duration_seconds": 1.55,
+      "duration_seconds": 1.18,
       "repeated_pages": 0,
       "errors": [],
-      "last_success_at": "2026-10-01T14:46:38.529443+00:00",
+      "last_success_at": "2026-10-01T14:59:58.908890+00:00",
       "consecutive_failures": 0
     },
     "Realty ONE Group Aruba": {
       "status": "ok",
-      "checked_at": "2026-10-01T14:46:05.354190+00:00",
+      "checked_at": "2026-10-01T14:59:57.004493+00:00",
       "properties_found": 7,
       "source_revision": "71bb04520853fb9c",
       "cards_seen": 28,
@@ -5333,15 +5337,15 @@
       "pages_fetched": 2,
       "mode": "fast",
       "coverage_limited": false,
-      "duration_seconds": 1.11,
+      "duration_seconds": 1.38,
       "repeated_pages": 0,
       "errors": [],
-      "last_success_at": "2026-10-01T14:46:38.529519+00:00",
+      "last_success_at": "2026-10-01T14:59:58.908951+00:00",
       "consecutive_failures": 0
     },
     "HKG Real Estate Aruba": {
       "status": "partial",
-      "checked_at": "2026-10-01T14:46:06.911331+00:00",
+      "checked_at": "2026-10-01T14:59:57.845976+00:00",
       "properties_found": 3,
       "source_revision": "f86a6a00ecacdbef",
       "cards_seen": 20,
@@ -5349,10 +5353,10 @@
       "pages_fetched": 2,
       "mode": "fast",
       "coverage_limited": true,
-      "duration_seconds": 1.62,
+      "duration_seconds": 1.51,
       "repeated_pages": 0,
       "errors": [],
-      "last_success_at": "2026-10-01T14:46:38.529539+00:00",
+      "last_success_at": "2026-10-01T14:59:58.908968+00:00",
       "consecutive_failures": 0
     },
     "MPG Aruba": {
@@ -5385,7 +5389,7 @@
     },
     "Aruba Happy Homes": {
       "status": "ok",
-      "checked_at": "2026-10-01T14:46:06.778506+00:00",
+      "checked_at": "2026-10-01T14:59:58.570054+00:00",
       "properties_found": 1,
       "source_revision": "f8fbed5dce5a84d5",
       "cards_seen": 25,
@@ -5393,15 +5397,15 @@
       "pages_fetched": 2,
       "mode": "fast",
       "coverage_limited": false,
-      "duration_seconds": 0.79,
+      "duration_seconds": 1.57,
       "repeated_pages": 0,
       "errors": [],
-      "last_success_at": "2026-10-01T14:46:38.529583+00:00",
+      "last_success_at": "2026-10-01T14:59:58.908982+00:00",
       "consecutive_failures": 0
     },
     "Objective Realty Aruba": {
       "status": "ok",
-      "checked_at": "2026-10-01T14:46:07.983652+00:00",
+      "checked_at": "2026-10-01T14:59:58.899600+00:00",
       "properties_found": 2,
       "source_revision": "c3038246417355f5",
       "cards_seen": 17,
@@ -5409,10 +5413,10 @@
       "pages_fetched": 1,
       "mode": "fast",
       "coverage_limited": false,
-      "duration_seconds": 1.47,
+      "duration_seconds": 1.66,
       "repeated_pages": 0,
       "errors": [],
-      "last_success_at": "2026-10-01T14:46:38.529600+00:00",
+      "last_success_at": "2026-10-01T14:59:58.908998+00:00",
       "consecutive_failures": 0
     }
   },
@@ -5488,12 +5492,12 @@
   "last_deep_at": "2026-10-01T14:05:23.767659+00:00",
   "last_scan": {
     "mode": "fast",
-    "at": "2026-10-01T14:46:48.926873+00:00",
+    "at": "2026-10-01T15:00:05.944118+00:00",
     "qualifying_observed": 112,
     "new": 0,
     "reductions": 0,
     "major_changes": 0,
-    "duration_seconds": 46.15
+    "duration_seconds": 11.37
   },
   "coverage_discoveries": [
     {
