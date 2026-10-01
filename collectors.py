@@ -17,6 +17,10 @@ class AccessBlocked(ParserError):
     pass
 
 
+def source_revision(source):
+    return hashlib.sha256(json.dumps(source, sort_keys=True).encode()).hexdigest()[:16]
+
+
 def page_links(soup, base, source):
     selector = source.get('pagination_selector', '.pagination a[href], a.next[href], a[rel="next"]')
     result = []
@@ -265,6 +269,7 @@ def scrape(source, mode, api):
         status = 'ok' if items else 'empty'
     return api.dedupe_properties(items), observations, {
         'status': status, 'checked_at': api.iso_now(), 'properties_found': len(api.dedupe_properties(items)),
+        'source_revision': source_revision(source),
         'cards_seen': cards, 'unclassified_cards': unclassified, 'pages_fetched': pages, 'mode': mode, 'coverage_limited': truncated,
         'duration_seconds': round(time.monotonic()-start, 2), 'repeated_pages': repeated, 'errors': errors,
     }
@@ -290,7 +295,7 @@ def scan(sources, mode, health, api):
     for source in sources:
         old = health.get(source['name'], {})
         retry = api.parse_datetime(old.get('retry_after', ''))
-        if retry and retry > api.now_utc():
+        if retry and retry > api.now_utc() and old.get('source_revision') == source_revision(source):
             continue
         due.append(source)
     results = []

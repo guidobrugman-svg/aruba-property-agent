@@ -60,6 +60,18 @@ class CoverageTests(unittest.TestCase):
         links = c.page_links(soup, 'https://www.mpgaruba.com/houses-for-sale-aruba', {'name': 'MPG Aruba'})
         self.assertEqual(links, ['https://www.mpgaruba.com/houses-for-sale-aruba?page=2', 'https://www.mpgaruba.com/houses-for-sale-aruba?page=17'])
 
+    def test_changed_source_retries_without_waiting_for_old_cooldown(self):
+        from datetime import timedelta
+        import requests
+        source = dict(name='B', type='direct_broker', url='https://b.test/new', card_selector='article')
+        old = dict(source, url='https://b.test/old')
+        health = {'B': dict(retry_after=(m.now_utc()+timedelta(hours=2)).isoformat(), source_revision=c.source_revision(old))}
+        with patch.object(m, 'get_page', side_effect=requests.Timeout()) as get:
+            result = c.scan([source], 'fast', health, m)
+        get.assert_called_once()
+        self.assertEqual(result[0][1][2]['status'], 'timeout')
+        self.assertEqual(result[0][1][2]['source_revision'], c.source_revision(source))
+
     def test_added_source_baseline_then_real_new_listing(self):
         source = dict(name='Objective Realty Aruba', type='direct_broker')
         first = self.case('objective_all_coverage.html')[0]
