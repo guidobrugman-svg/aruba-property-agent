@@ -76,6 +76,8 @@ def parse_page(html, url, source, api):
             p = api.build_property(name, r['name'], r['link'], price, text, r.get('image', ''), meta)
             if p:
                 p['source_type'] = source['type']
+                building, land = api.explicit_areas(' '.join(k + ': ' + v for k,v in fields.items()))
+                p.update(building_area=building if p['type'] != 'Land' else '', land_area=land)
                 items.append(p)
         return items, observations, data['results'].get('totalResults', len(records)), soup
 
@@ -100,6 +102,8 @@ def parse_page(html, url, source, api):
                          baths=str(r.get('baths') or ''), size=f"{r['size']} m²" if r.get('size') else '',
                          description=api.clean_text(BeautifulSoup(r.get('desc', ''), 'html.parser').get_text())[:300],
                          broker=r.get('broker', ''), source_type=source['type'])
+                if p['type'] == 'Land':
+                    p.update(beds='', baths='', building_area='', land_area=api.area_m2(p['size']))
                 # Aggregator AW reference is its own ID, not the direct broker's MLS.
                 items.append(p)
         return items, observations, len(records), soup
@@ -146,6 +150,18 @@ def parse_page(html, url, source, api):
             observations[-1]['needs_type_review'] = True
         if p:
             p['source_type'] = source['type']
+            address = node.select_one('.item-address, .property-location, .card__address, address')
+            if address:
+                p['location'] = api.clean_text(address.get_text(' ', strip=True)) or p['location']
+            # Houzez explicitly separates building and plot areas in its card markup.
+            building = node.select_one('.h-area')
+            land = node.select_one('.h-land-area')
+            if building and p['type'] != 'Land':
+                p['building_area'] = api.area_m2(building.get_text(' ', strip=True))
+            if land:
+                p['land_area'] = api.area_m2(land.get_text(' ', strip=True))
+            elif building and p['type'] == 'Land':
+                p['land_area'] = api.area_m2(building.get_text(' ', strip=True))
             items.append(p)
     return api.dedupe_properties(items), observations, len(nodes), soup
 

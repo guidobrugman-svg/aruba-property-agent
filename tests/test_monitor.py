@@ -166,6 +166,42 @@ class Rules(unittest.TestCase):
     def test_one_image(self):
         self.assertEqual(m.property_block(prop(image='https://b.test/a.jpg'),'new').count('<img'),1)
 
+    def test_residence_projects_excluded_standalone_new_build_retained(self):
+        for title in ('Paradera Private Residences', 'Reina Sophia Residences', 'New residence complex'):
+            self.assertIsNone(self.build(title, 'For Sale New Construction Houses 2 bedrooms'))
+        self.assertIsNotNone(self.build('Modern New Homes in Paradera', 'For Sale New Construction House 3 bedrooms'))
+        self.assertIsNotNone(self.build('Standalone residential development', 'For Sale New Development'))
+        self.assertIsNotNone(self.build('Charming residence in Noord', 'For Sale House 3 bedrooms'))
+        self.assertEqual(m.property_block(prop(name='Paradera Private Residences'),'new'), '')
+
+    def test_attached_email_bedroom_regressions(self):
+        self.assertEqual(m.extract_details('Noord 40', '$559,000 Noord 40 Beds: 2 Baths: 2')[0:2], ('2','2'))
+        self.assertEqual(m.extract_details('Caya Juan Pablo II No 61', '$178,850 Beds: 4 Baths: 2')[0], '4')
+        land = self.build('Eigendom Land Ponton', '$142,040 Bed: 0 Bath: 0 Land 1000 m²')
+        self.assertEqual((land['beds'], land['baths'], land['building_area']), ('','',''))
+        old = dict(land, beds='40', baths='1')
+        history, _, _, _ = m.reconcile({'existing':old}, [land])
+        self.assertEqual(history['existing']['beds'], '')
+        self.assertNotIn('40 beds', m.property_block(old, 'new'))
+
+    def test_lazy_image_skips_data_placeholder(self):
+        from bs4 import BeautifulSoup
+        node = BeautifulSoup('<div><img alt="Beds" src="/bed.svg"><img src="data:image/svg+xml,blank" data-src="/house.jpg"></div>', 'html.parser')
+        self.assertEqual(m.image_from(node,'https://b.test/'), 'https://b.test/house.jpg')
+
+    def test_building_and_land_areas_remain_distinct(self):
+        self.assertEqual(m.explicit_areas('Building area: 167 m² Lot size: 630 m²'), ('167 m²','630 m²'))
+        self.assertEqual(m.area_m2('1 m²'), '')
+        self.assertEqual(m.area_m2('1000 sqft'), '92.9 m²')
+        html = m.property_block(prop(building_area='167 m²',land_area='630 m²'), 'new')
+        self.assertIn('Building / built-up area:', html)
+        self.assertIn('Land area:', html)
+        missing = m.property_block(prop(location='', image='',size='422 m²'), 'new')
+        self.assertIn('Location:</strong> Not provided', missing)
+        self.assertIn('Building / built-up area:</strong> Not provided', missing)
+        self.assertIn('scope unspecified', missing)
+        self.assertIn('Image:</strong> Not provided', missing)
+
     def test_corrupt_state_fails_closed(self):
         with tempfile.TemporaryDirectory() as d:
             p=Path(d)/'state.json';p.write_text('{bad')

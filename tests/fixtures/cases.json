@@ -119,24 +119,9 @@
     },
     "expected": [
       [
-        "Paradera \u2013 2-Bedroom, 2-Bathroom Modern Residences",
-        "House",
-        627949.0
-      ],
-      [
         "Modern New Homes for Sale in the Heart of Paradera",
         "House",
         628077.0
-      ],
-      [
-        "Paradera \u2013 Brand New Private Residences",
-        "House",
-        525000.0
-      ],
-      [
-        "Paradera Private Residences",
-        "House",
-        594364.0
       ]
     ],
     "cards": 5
@@ -223,11 +208,6 @@
       "enabled": true
     },
     "expected": [
-      [
-        "L\u2019Aquila Residences - New pre-construction project at walking distance to Eagle",
-        "Development",
-        645700.0
-      ],
       [
         "Seroe Janchi Lot",
         "Land",

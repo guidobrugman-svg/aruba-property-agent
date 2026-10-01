@@ -732,6 +732,13 @@ def extract_details(title, text):
             "Sabana Liber",
             "Balashi",
             "Barcadera",
+            "Salina Cerca",
+            "Ruby",
+            "Safir",
+            "Madiki",
+            "Koyari",
+            "Bushiri",
+            "Caya Juan Pablo II",
         ]
 
         combined = f"{title} {text}".lower()
@@ -744,43 +751,42 @@ def extract_details(title, text):
     return beds, baths, size, location
 
 
+def area_m2(value):
+    """Only parse a source area field, never a price or an arbitrary card number."""
+    match = re.search(r"([\d.,]+)\s*(m²|m2|sqm|sq\s*mt|sq\s*ft|sqft|ft²)", str(value), re.I)
+    if not match:
+        return ""
+    number = parse_number(match.group(1))
+    if not number or number <= 1:
+        return ""  # Known source placeholder: 1 m².
+    if re.search(r"ft", match.group(2), re.I):
+        number *= 0.09290304
+    return f"{number:,.2f}".rstrip('0').rstrip('.') + " m²"
+
+
+def explicit_areas(text):
+    unit = r"([\d.,]+\s*(?:m²|m2|sqm|sq\s*mt|sq\s*ft|sqft|ft²))"
+    building = first_match([r"\b(?:built[ -]?up(?: area)?|building(?: area| size)?|living(?: area| space)?|interior(?: area)?|construction area)\s*:?\s*" + unit], text)
+    land = first_match([r"\b(?:lot(?: area| size)?|land(?: area| size)?|plot(?: area| size)?)\s*:?\s*" + unit], text)
+    return area_m2(building), area_m2(land)
+
+
 def image_from(node, base_url):
     if not node:
         return ""
 
-    image = node.find("img")
-
-    if not image:
-        return ""
-
-    for attribute in (
-        "src",
-        "data-src",
-        "data-lazy-src",
-        "data-original",
-    ):
-        value = image.get(attribute)
-
-        if value:
-            return absolute_url(
-                base_url,
-                value,
-            )
-
-    srcset = image.get("srcset")
-
-    if srcset:
-        first = (
-            srcset
-            .split(",")[0]
-            .strip()
-            .split(" ")[0]
-        )
-
-        return absolute_url(
-            base_url,
-            first,
-        )
+    for image in node.find_all("img"):
+        if image.get('alt', '').lower() in ('beds', 'baths', 'sq mt'):
+            continue
+        for attribute in ('data-src', 'data-lazy-src', 'data-original', 'src', 'data-srcset', 'srcset'):
+            value = image.get(attribute, '').strip()
+            if not value or value.startswith('data:'):
+                continue
+            if 'srcset' in attribute:
+                value = value.split(',')[0].strip().split(' ')[0]
+            result = absolute_url(base_url, value)
+            if looks_like_url(result) and not re.search(r'(?:placeholder|spacer|blank)\.', result, re.I):
+                return result
 
     return ""
 
@@ -920,6 +926,15 @@ def build_property(
     if not property_type or property_type in EXCLUDED_RESIDENTIAL_UNIT_TYPES:
         return None
 
+    # Standalone new builds remain eligible; residence-complex offerings do not.
+    if re.search(r"\bresidences\b|\bresidence (?:complex|development|project)\b", normalize(f'{title} {text}')):
+        return None
+    if property_type == 'Land':
+        beds = baths = ''
+    building_area, land_area = explicit_areas(text)
+    if property_type == 'Land':
+        building_area = ''
+
     combined = normalize(
         f"{title} {property_type} {text}"
     )
@@ -968,6 +983,8 @@ def build_property(
         "beds": beds,
         "baths": baths,
         "size": size,
+        "building_area": building_area,
+        "land_area": land_area or (area_m2(size) if property_type == 'Land' else ''),
         "image": image if looks_like_url(image) else "",
         "description": make_description(
             text,
@@ -1205,6 +1222,8 @@ def merge_property_data(
         "beds",
         "baths",
         "size",
+        "building_area",
+        "land_area",
         "mls",
         "type",
     ):
@@ -1771,6 +1790,9 @@ def property_block(
     old=None,
     changes=None,
 ):
+    # Apply the latest residence preference to retained activity as well as new scans.
+    if re.search(r"\bresidences\b|\bresidence (?:complex|development|project)\b", normalize(f"{prop.get('name', '')} {prop.get('description', '')}")):
+        return ''
     name = html_escape(
         prop.get("name")
         or "Unnamed property"
@@ -1847,12 +1869,7 @@ def property_block(
             f"</div>"
         )
 
-    if prop.get("location"):
-        html.append(
-            f"<div><strong>Location:</strong> "
-            f"{html_escape(prop['location'])}"
-            f"</div>"
-        )
+    html.append(f"<div><strong>Location:</strong> {html_escape(prop.get('location') or 'Not provided by source')}</div>")
 
     if prop.get("type"):
         html.append(
@@ -1863,22 +1880,24 @@ def property_block(
 
     facts = []
 
-    if prop.get("beds"):
+    if prop.get("beds") and prop.get('type') != 'Land':
         facts.append(
             f"{html_escape(prop['beds'])} beds"
         )
 
-    if prop.get("baths"):
+    if prop.get("baths") and prop.get('type') != 'Land':
         facts.append(
             f"{html_escape(prop['baths'])} baths"
         )
 
-    if prop.get("size"):
-        facts.append(
-            html_escape(
-                prop["size"]
-            )
-        )
+    if prop.get('type') == 'Land':
+        html.append(f"<div><strong>Building area:</strong> Not applicable — land-only listing</div>")
+    else:
+        html.append(f"<div><strong>Building / built-up area:</strong> {html_escape(prop.get('building_area') or 'Not provided by source')}</div>")
+    if prop.get('land_area'):
+        html.append(f"<div><strong>Land area:</strong> {html_escape(prop['land_area'])}</div>")
+    if prop.get('size') and not prop.get('building_area') and not prop.get('land_area'):
+        html.append(f"<div><strong>Source area (scope unspecified):</strong> {html_escape(prop['size'])}</div>")
 
     if facts:
         html.append(
@@ -1937,6 +1956,8 @@ def property_block(
             "alt='Property image'>"
             "</div>"
         )
+    else:
+        html.append("<div><strong>Image:</strong> Not provided by source; view the property page.</div>")
 
     if prop.get("url"):
         html.append(
@@ -2386,9 +2407,11 @@ def reconcile(previous, current):
                     for field in ('price', 'beds', 'baths', 'size', 'location', 'status'):
                         if old.get(field):
                             prop[field] = old[field]
-            for field in ('image', 'description', 'beds', 'baths', 'size', 'location'):
+            for field in ('image', 'description', 'size', 'location', 'building_area', 'land_area'):
                 if not prop.get(field):
                     prop[field] = old.get(field, '')
+            if prop.get('type') == 'Land':
+                prop.update(beds='', baths='', building_area='')
             key = old_key
         else:
             key = property_key(prop)
