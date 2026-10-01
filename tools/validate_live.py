@@ -20,6 +20,8 @@ current=[]
 for source,(items,observations,health) in results:
     current.extend(items)
     print(source['name'],json.dumps(health),flush=True)
+unavailable_urls={m.canonical_url(o['url']) for _,(_,observations,_) in results for o in observations if o.get('status')}
+current=[p for p in current if m.canonical_url(p['url']) not in unavailable_urls]
 current=m.cross_source_dedupe(current)
 scan_seconds=round(time.monotonic()-started,2)
 production=json.load(open('state.json'))

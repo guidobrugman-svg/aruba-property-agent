@@ -101,6 +101,30 @@ class CoverageTests(unittest.TestCase):
             self.assertEqual(reductions, [])
             self.assertEqual(set(history), {'permanent'})
 
+    def test_sold_alternate_url_does_not_toggle_active_listing(self):
+        source = dict(name='Objective Realty Aruba', type='direct_broker')
+        house = self.case('objective_all_coverage.html')[0]
+        alternate = 'https://www.objective-realty.com/properties/old-alternate'
+        original = dict(house, aliases=[house['url'], alternate], status='available')
+        health = dict(status='ok', checked_at=m.iso_now(), properties_found=1, cards_seen=2, pages_fetched=1, duration_seconds=0)
+        sold = dict(name=house['name'], url=alternate, status='sold')
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'state.json'
+            path.write_text(json.dumps(dict(schema_version=2, properties={'permanent': original}, baselined_sources=[source['name']])))
+            with patch.object(m, 'STATE_FILE', str(path)), patch.object(m, 'DRY_RUN', True), patch.dict(os.environ, {'SCAN_MODE': 'deep', 'DEFER_DELIVERY': '1'}), patch.object(m, 'should_send_daily_digest', return_value=False), patch('development.enrich', side_effect=lambda items, *args: items):
+                for _ in range(3):
+                    with patch.object(c, 'scan', return_value=[(source, ([house], [sold], health))]):
+                        m.main()
+                    state = json.loads(path.read_text())
+                    self.assertEqual(state['properties']['permanent']['status'], 'available')
+                    self.assertEqual(state['last_scan']['major_changes'], 0)
+                sold['url'] = house['url']
+                with patch.object(c, 'scan', return_value=[(source, ([house], [sold], health))]):
+                    m.main()
+                state = json.loads(path.read_text())
+                self.assertEqual(state['properties']['permanent']['status'], 'sold')
+                self.assertEqual(state['last_scan']['qualifying_observed'], 0)
+
     def test_shallow_baseline_waits_for_deep_inventory(self):
         source = dict(name='Objective Realty Aruba', type='direct_broker')
         first = self.case('objective_all_coverage.html')[0]

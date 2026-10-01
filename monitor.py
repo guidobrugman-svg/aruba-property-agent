@@ -2528,6 +2528,8 @@ def main():
         current.extend(items)
         observations.extend((name, x) for x in observed)
     state['baselined_sources'] = sorted(baselined)
+    unavailable_urls = {canonical_url(o['url']) for _, o in observations if o.get('status')}
+    current = [p for p in current if canonical_url(p['url']) not in unavailable_urls]
     current = cross_source_dedupe(current)
     import development
     current = development.enrich(current, previous, mode, sys.modules[__name__])
@@ -2546,7 +2548,7 @@ def main():
             else:
                 continue
         key, old = find_previous_record(history, observed)
-        if old and (old.get('source') == name or canonical_url(old.get('url', '')) == canonical_url(observed['url'])):
+        if old and canonical_url(old.get('url', '')) == canonical_url(observed['url']):
             history[key] = dict(old, status=observed['status'], last_checked_at=iso_now())
     state['properties'] = history
     if migration:
