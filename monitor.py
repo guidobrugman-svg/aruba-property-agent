@@ -1899,6 +1899,19 @@ def property_block(
     if prop.get('size') and not prop.get('building_area') and not prop.get('land_area'):
         html.append(f"<div><strong>Source area (scope unspecified):</strong> {html_escape(prop['size'])}</div>")
 
+    evidence = prop.get('development_evidence', [])
+    html.append("<div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div>")
+    for label in ('Ownership', 'Zoning', 'Building restrictions', 'Apartment construction'):
+        claims = [x for x in evidence if x.get('label') == label]
+        if not claims:
+            html.append(f"<div><strong>{label}:</strong> Unknown — not stated in collected source information</div>")
+        else:
+            html.append(f"<div><strong>{label}:</strong> " + ' · '.join(html_escape(x.get('excerpt', '')) for x in claims) + '</div>')
+            for claim in claims:
+                if looks_like_url(claim.get('url', '')):
+                    html.append(f"<div><a href='{html_escape(claim['url'])}'>Source evidence</a></div>")
+    html.append("<div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div>")
+
     if facts:
         html.append(
             "<div><strong>Details:</strong> "
@@ -2487,6 +2500,12 @@ def main():
         observations.extend((name, x) for x in observed)
     state['baselined_sources'] = sorted(baselined)
     current = cross_source_dedupe(current)
+    import development
+    current = development.enrich(current, previous, mode, sys.modules[__name__])
+    for prop in current:
+        if prop.get('residence_complex'):
+            observations.append((prop['source'], dict(prop, status='ineligible')))
+    current = [p for p in current if not p.get('residence_complex')]
     history, new, reductions, major = reconcile(previous, current)
     # Explicit unavailability updates history; absence on a shallow scan never means sold.
     for name, observed in observations:
