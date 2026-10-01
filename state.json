@@ -1471,7 +1471,7 @@
       "baths": "5",
       "size": "300 m²",
       "image": "",
-      "description": "For Sale $344,900 25, Hooiberg, Piedra Plat, Aruba, Nederland Beds: 5 Baths: 3 300 m² 663 m² Residential Details Yoel Robbins 2 years ago",
+      "description": "For Sale $344,900 25, Hooiberg, Piedra Plat, Aruba, Nederland Beds: 5 Baths: 3 300 m² 663 m² Residential Details Yoel Robbins 3 years ago",
       "source": "Bluefin Realtors",
       "mls": "",
       "status": "available",
@@ -1832,61 +1832,61 @@
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
-      "checked_at": "2026-10-01T00:52:10.490358+00:00",
+      "checked_at": "2026-10-01T01:07:52.793932+00:00",
       "properties_found": 14,
       "error": ""
     },
     "Ben Real Estate": {
       "status": "ok",
-      "checked_at": "2026-10-01T00:53:06.278099+00:00",
+      "checked_at": "2026-10-01T01:08:59.236556+00:00",
       "properties_found": 7,
       "error": ""
     },
     "Bluefin Realtors": {
       "status": "ok",
-      "checked_at": "2026-10-01T00:53:08.904149+00:00",
+      "checked_at": "2026-10-01T01:09:02.276513+00:00",
       "properties_found": 37,
       "error": ""
     },
     "Aruba Listings": {
       "status": "error",
-      "checked_at": "2026-10-01T00:53:18.196240+00:00",
+      "checked_at": "2026-10-01T01:09:11.741739+00:00",
       "properties_found": 0,
       "error": "403 Client Error: Forbidden for url: https://arubalistings.com/sale/all"
     },
     "RE/MAX Aruba": {
       "status": "error",
-      "checked_at": "2026-10-01T00:53:27.479167+00:00",
+      "checked_at": "2026-10-01T01:09:21.191736+00:00",
       "properties_found": 0,
       "error": "403 Client Error: Forbidden for url: https://remaxaruba.com/listings"
     },
     "RES Aruba Realty": {
       "status": "error",
-      "checked_at": "2026-10-01T00:53:37.003479+00:00",
+      "checked_at": "2026-10-01T01:09:30.817151+00:00",
       "properties_found": 0,
       "error": "403 Client Error: Forbidden for url: https://resarubarealty.com/status/for-sale/"
     },
     "Aruba Happy Realty": {
       "status": "error",
-      "checked_at": "2026-10-01T00:53:38.892968+00:00",
+      "checked_at": "2026-10-01T01:09:34.353416+00:00",
       "properties_found": 0,
       "error": "404 Client Error: Not Found for url: https://www.arubahappyrealty.com/404.html"
     },
     "Aruba Palms Realtors": {
       "status": "ok",
-      "checked_at": "2026-10-01T00:56:29.381397+00:00",
+      "checked_at": "2026-10-01T01:12:25.096526+00:00",
       "properties_found": 15,
       "error": ""
     },
     "Home 4 Everyone": {
       "status": "ok",
-      "checked_at": "2026-10-01T00:56:29.938269+00:00",
+      "checked_at": "2026-10-01T01:12:31.946204+00:00",
       "properties_found": 0,
       "error": ""
     },
     "Smiley Real Estate": {
       "status": "ok",
-      "checked_at": "2026-10-01T00:56:32.361837+00:00",
+      "checked_at": "2026-10-01T01:12:32.623846+00:00",
       "properties_found": 0,
       "error": ""
     }
