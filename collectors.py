@@ -76,6 +76,14 @@ def parse_page(html, url, source, api):
         return items, observations, len(entries), BeautifulSoup('', 'html.parser')
     soup = BeautifulSoup(html, 'html.parser')
     title = soup.title.get_text(' ', strip=True).lower() if soup.title else ''
+    for meta in soup.select('meta[http-equiv]'):
+        if meta.get('http-equiv', '').lower() == 'refresh':
+            parts = meta.get('content', '').split(';', 1)
+            if len(parts) == 2:
+                target = re.sub(r'^url\s*=\s*', '', parts[1].strip(), flags=re.I).strip('"\x27 ')
+                path = urlparse(urljoin(url, target)).path
+                if path.startswith('/.well-known/sgcaptcha/'):
+                    raise AccessBlocked('Public page returned a SiteGround access challenge instead of listings')
     if title in ('just a moment...', 'attention required! | cloudflare', 'access denied', '403 forbidden'):
         raise AccessBlocked('Public page returned an access challenge instead of listings')
     if source.get('adapter') == 'myhome':
@@ -288,6 +296,16 @@ def failure_status(exc):
         return 'http_error'
     if isinstance(exc, (ParserError, ValueError)): return 'parser_failed'
     return 'connection_error'
+
+
+def retry_delay_minutes(source, status, failures):
+    # Some brokers' hosts intermittently challenge shared runner IPs. Recheck on
+    # the ordinary schedule without attempting the challenge or changing identity.
+    if status == 'blocked' and source.get('blocked_retry_minutes'):
+        return max(15, min(60, int(source['blocked_retry_minutes'])))
+    if status in ('blocked', 'url_changed', 'ssl_error', 'parser_failed'):
+        return 60 * min(24, 2 ** min(failures - 1, 5))
+    return 15
 
 
 def scan(sources, mode, health, api):
