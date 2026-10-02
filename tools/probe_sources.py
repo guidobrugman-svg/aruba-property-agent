@@ -1,83 +1,48 @@
-"""Read-only source diagnostics. Never uses email credentials or production state."""
-import json
-import time
+"""Public response diagnostics; no production state or email credentials."""
+import sys,json,time
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 import requests
 from bs4 import BeautifulSoup
-
-URLS = {
-    'home_root': 'https://homeforeveryonearuba.com/',
-    'home_sale': 'https://homeforeveryonearuba.com/status/for-sale/',
-    'home_search': 'https://homeforeveryonearuba.com/search-results/',
-    'smiley_root': 'https://smileyaruba.com/',
-    'smiley_sale': 'https://smileyaruba.com/offer-type/for-sale/',
-    'smiley_house': 'https://smileyaruba.com/property-type/house/',
-    'remax_root': 'https://remaxaruba.com/',
-    'remax_residential': 'https://remaxaruba.com/property/residential-for-sale',
-    'remax_www': 'https://www.remaxaruba.com/',
-    'res_root': 'https://resarubarealty.com/',
-    'res_land': 'https://resarubarealty.com/property-type/land/',
-    'happy_root': 'https://arubahappyrealty.com/',
-    'happy_www': 'https://www.arubahappyrealty.com/',
-    'listings_root': 'https://arubalistings.com/',
-    'listings_sale': 'https://arubalistings.com/sale/all',
-    'able': 'https://ablerealtyaruba.com/',
-    'prima': 'https://aruba-realty.com/listings',
-    'bhhs': 'https://bhhsaruba.com/for-sale',
-    'rog': 'https://rogaruba.com/listings/for-sale',
-    'realestate': 'https://www.arubarealestate.com/aruba-houses-for-sale/',
-    'objective': 'https://www.objective-realty.com/',
-    'hkg': 'https://hkgrealestatearuba.com/search/',
-    'cc': 'https://www.ccrealestatearuba.com/',
-    'bold': 'https://bold.realestate/',
-    'mpg': 'https://www.mpgaruba.com/',
-    'allproperty': 'https://www.allpropertyaruba.com/',
-    'happyhomes': 'https://arubahappyhomes.com/',
-    'elixir': 'https://elixirrealtyaruba.com/properties/for-sale',
-    'solito': 'https://solitogroup.com/index.php',
-}
-ROOT=Path('source-diagnostics')
-ROOT.mkdir(exist_ok=True)
-
-def probe(pair):
-    name,url=pair
-    start=time.monotonic()
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+import monitor,collectors
+ROOT=Path('source-diagnostics'); ROOT.mkdir(exist_ok=True)
+sources=json.loads(Path('SOURCES.json').read_text())['sources']
+names={'Home 4 Everyone','Smiley Real Estate','Aruba Happy Realty','Aruba Listings','RE/MAX Aruba','RES Aruba Realty'}
+def probe(source):
+    out=[]
+    entries=source.get('urls',[source['url']])
+    for turn in range(2 if source['name'] in ('Home 4 Everyone','Smiley Real Estate') else 1):
+        for i,entry in enumerate(entries):
+            url=entry['url'] if isinstance(entry,dict) else entry
+            data=entry.get('data') if isinstance(entry,dict) else None
+            result={'name':source['name'],'url':url,'turn':turn}
+            started=time.monotonic()
+            try:
+                session=requests.Session();session.headers.update(monitor.HEADERS)
+                r=session.post(url,data=data,timeout=(5,12)) if data else session.get(url,timeout=(5,12))
+                result.update(status=r.status_code,final=r.url,bytes=len(r.content),content_type=r.headers.get('Content-Type'))
+                soup=BeautifulSoup(r.text,'html.parser')
+                result['title']=soup.title.get_text(' ',strip=True) if soup.title else ''
+                filename=source['name'].replace(' ','_').replace('/','_')+f'_{turn}_{i}.html'
+                (ROOT/filename).write_text(r.text)
+                r.raise_for_status()
+                batch,observations,count,_=collectors.parse_page(r.text,r.url,source,monitor)
+                result.update(qualifying=len(batch),observations=len(observations),cards=count)
+            except Exception as exc: result['error']=str(exc)[:350]
+            result['seconds']=round(time.monotonic()-started,2)
+            print(json.dumps(result),flush=True);out.append(result)
+    return out
+with ThreadPoolExecutor(max_workers=4) as pool:
+    results=[r for group in pool.map(probe,[s for s in sources if s['name'] in names]) for r in group]
+# Alternate inventory routes linked by the brokers' public websites.
+alternates={'remax_listings':'https://remaxaruba.com/listings','res_residential':'https://resarubarealty.com/residential/','res_properties':'https://resarubarealty.com/property/','happy_objects':'https://www.arubahappyrealty.com/objects/','happy_apex':'https://arubahappyrealty.com/status/for-sale/','home_search':'https://homeforeveryonearuba.com/search-results/','smiley_sale':'https://smileyaruba.com/offer-type/for-sale/'}
+for name,url in alternates.items():
     result={'name':name,'url':url}
     try:
-        r=requests.get(url,timeout=(5,10),headers={'User-Agent':'Mozilla/5.0'})
+        r=requests.get(url,headers=monitor.HEADERS,timeout=(5,12));soup=BeautifulSoup(r.text,'html.parser')
+        result.update(status=r.status_code,final=r.url,bytes=len(r.content),title=soup.title.get_text(' ',strip=True) if soup.title else '',cards=len(soup.select('.item-listing-wrap')),myhome=bool('MyHomeListing' in r.text))
         (ROOT/(name+'.html')).write_text(r.text)
-        soup=BeautifulSoup(r.text,'html.parser')
-        result.update(status=r.status_code,final=r.url,bytes=len(r.content),title=soup.title.get_text() if soup.title else '',preview=soup.get_text(' ',strip=True)[:280])
-        result['links']=[{'text':a.get_text(' ',strip=True)[:90],'href':a['href']} for a in soup.select('a[href]') if any(x in a['href'].lower() for x in ('sale','listing','property','properties','land','feed','sitemap','buy'))][:80]
-        result['cards']={sel:len(soup.select(sel)) for sel in ('.item-listing-wrap','.property-item','.properties-grid > .card','article','[class*=property-card]','.search_result_row','.w-dyn-item')}
-    except Exception as exc:
-        result['error']=str(exc)[:250]
-    result['seconds']=round(time.monotonic()-start,2)
-    print(json.dumps({k:v for k,v in result.items() if k!='links'}),flush=True)
-    return result
-
-with ThreadPoolExecutor(max_workers=4) as pool:
-    results=list(pool.map(probe,URLS.items()))
-# Public front-end listing query (read-only POST), already advertised by Smiley.
-data={'data[offer-type][compare]':'=','data[offer-type][key]':'offer-type','data[offer-type][slug]':'offer-type','data[offer-type][values][0][name]':'Sale Property','data[offer-type][values][0][value]':'for-sale','page':'1','limit':'50','sortBy':'newest','currency':'price'}
-try:
-    r=requests.post('https://smileyaruba.com/wp-json/myhome/v1/estates?currency=price',data=data,timeout=(5,10),headers={'User-Agent':'Mozilla/5.0'})
-    (ROOT/'smiley_api.json').write_text(r.text)
-    print('SMILEY_API',r.status_code,len(r.content),r.text[:120],flush=True)
-except Exception as exc:
-    print('SMILEY_API_ERROR',str(exc)[:200],flush=True)
+    except Exception as exc:result['error']=str(exc)[:350]
+    print(json.dumps(result),flush=True);results.append(result)
 (ROOT/'report.json').write_text(json.dumps(results,indent=2))
-
-# Compare ordinary public request headers with the monitor's headers.
-import sys
-sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-import monitor
-for label, headers in [('monitor',monitor.HEADERS),('cache_default',{k:v for k,v in monitor.HEADERS.items() if k not in ('Cache-Control','Pragma')}),('identified',{'User-Agent':'ArubaPropertyMonitor/2.0 (+https://github.com/guidobrugman-svg/aruba-property-agent)'})]:
-    for name,url in [('home',URLS['home_sale']),('smiley','https://smileyaruba.com/wp-json/myhome/v1/estates?currency=price')]:
-        try:
-            r=requests.post(url,data=data,headers=headers,timeout=(5,10)) if name=='smiley' else requests.get(url,headers=headers,timeout=(5,10))
-            (ROOT/(name+'_'+label+'.html')).write_text(r.text)
-            print('HEADER_CHECK',name,label,r.status_code,len(r.content),r.text[:180],flush=True)
-        except Exception as exc:
-            print('HEADER_CHECK_ERROR',name,label,str(exc)[:180],flush=True)
