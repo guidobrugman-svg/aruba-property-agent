@@ -2,7 +2,7 @@ name: Diagnose public source coverage
 on:
   workflow_dispatch:
   push:
-    branches: [expand-source-coverage]
+    branches: [repair-unavailable-sources]
     paths: [tools/probe_sources.py, .github/workflows/source-probe.yml]
 permissions:
   contents: read

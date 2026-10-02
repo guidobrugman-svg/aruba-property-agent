@@ -2510,8 +2510,8 @@ def main():
         if health['status'] not in ('ok', 'empty', 'partial'):
             failures = old_health.get('consecutive_failures', 0) + 1
             health['consecutive_failures'] = failures
-            hours = min(24, 2 ** min(failures-1, 5)) if health['status'] in ('blocked', 'url_changed', 'ssl_error', 'parser_failed') else 0.25
-            health['retry_after'] = (now_utc()+timedelta(hours=hours)).isoformat()
+            minutes = collectors.retry_delay_minutes(source, health['status'], failures)
+            health['retry_after'] = (now_utc()+timedelta(minutes=minutes)).isoformat()
             if old_health.get('last_success_at'):
                 health['last_success_at'] = old_health['last_success_at']
         else:

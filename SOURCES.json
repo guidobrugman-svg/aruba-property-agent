@@ -112,7 +112,8 @@
       "title_selector": ".item-title",
       "fast_pages": 1,
       "deep_pages": 20,
-      "listing_context": ""
+      "listing_context": "",
+      "blocked_retry_minutes": 15
     },
     {
       "name": "Smiley Real Estate",
@@ -141,7 +142,8 @@
             "currency": "price"
           }
         }
-      ]
+      ],
+      "blocked_retry_minutes": 15
     },
     {
       "name": "Century 21 Aruba",
