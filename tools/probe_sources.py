@@ -46,3 +46,19 @@ for name,url in alternates.items():
     except Exception as exc:result['error']=str(exc)[:350]
     print(json.dumps(result),flush=True);results.append(result)
 (ROOT/'report.json').write_text(json.dumps(results,indent=2))
+
+# Exercise the real shared-session collector, capturing public responses before parsing.
+real_get_page=monitor.get_page
+tracked={entry['url'] if isinstance(entry,dict) else entry for s in sources if s['name'] in names for entry in s.get('urls',[s['url']])}
+def captured_get(url,request_data=None):
+    html,final=real_get_page(url,request_data)
+    if url in tracked:
+        soup=BeautifulSoup(html,'html.parser')
+        title=soup.title.get_text(' ',strip=True) if soup.title else ''
+        filename='collector_'+str(abs(hash(url)))+'.html'
+        (ROOT/filename).write_text(html)
+        print('REAL_RESPONSE',json.dumps({'url':url,'final':final,'bytes':len(html),'title':title,'filename':filename,'preview':soup.get_text(' ',strip=True)[:250]}),flush=True)
+    return html,final
+monitor.get_page=captured_get
+for source,(_,_,health) in collectors.scan(sources,'fast',{},monitor):
+    if source['name'] in names:print('REAL_COLLECTOR',source['name'],json.dumps(health),flush=True)
