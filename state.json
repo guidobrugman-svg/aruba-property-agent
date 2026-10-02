@@ -5239,66 +5239,7 @@
     }
   },
   "pending_new": [],
-  "pending_reductions": [
-    {
-      "property": {
-        "name": "Seroe Janchi 52 - C Full Ownership Land Seroe Janchi (Noord) Vacant Land",
-        "url": "https://century21aruba.com/en/d/seroe-janchi-52-c-full-ownership-land-vacant-land-for-sale-seroe-janchi-noord-1160927",
-        "price": 300000.0,
-        "location": "Noord",
-        "type": "Land",
-        "beds": "",
-        "baths": "",
-        "size": "937 m²",
-        "building_area": "",
-        "land_area": "937 m²",
-        "image": "https://static.century21aruba.com/images/udx/1160927/w470/1773434350528103.jpg?vno=1788957486",
-        "description": "For Sale US$ 300,000 Garden View · 937 m² 11/35",
-        "source": "Century 21 Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-01T03:13:54.903207+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-10-02T13:58:12.755439+00:00",
-        "detail_status": "unavailable",
-        "history_key": "1a025f21bbeb2c1ab235f9cd4667c7e29b207101",
-        "aliases": [
-          "https://century21aruba.com/en/d/seroe-janchi-52-c-full-ownership-land-vacant-land-for-sale-seroe-janchi-noord-1160927"
-        ]
-      },
-      "old": {
-        "name": "Seroe Janchi 52 - C Full Ownership Land Seroe Janchi (Noord) Vacant Land",
-        "url": "https://century21aruba.com/en/d/seroe-janchi-52-c-full-ownership-land-vacant-land-for-sale-seroe-janchi-noord-1160927",
-        "price": 305000.0,
-        "location": "Noord",
-        "type": "Land",
-        "beds": "",
-        "baths": "",
-        "size": "937 m²",
-        "building_area": "",
-        "land_area": "937 m²",
-        "image": "https://static.century21aruba.com/images/udx/1160927/w470/1773434350528103.jpg?vno=1788957486",
-        "description": "For Sale US$ 300,000 Garden View · 937 m² 11/35",
-        "source": "Century 21 Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-01T03:13:54.903207+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-10-02T13:58:12.755439+00:00",
-        "detail_status": "unavailable",
-        "history_key": "1a025f21bbeb2c1ab235f9cd4667c7e29b207101",
-        "aliases": [
-          "https://century21aruba.com/en/d/seroe-janchi-52-c-full-ownership-land-vacant-land-for-sale-seroe-janchi-noord-1160927"
-        ],
-        "change_candidate": {
-          "signature": "43a8020220c8167e2392ac219bffdff726ee01322ca6d5855af496091c74db8b",
-          "observed_at": "2026-10-02T14:37:54.826816+00:00"
-        },
-        "last_seen_at": "2026-10-02T14:37:54.826822+00:00"
-      },
-      "queued_at": "2026-10-02T14:55:46.392129+00:00"
-    }
-  ],
+  "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
     "new": [
@@ -5762,20 +5703,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "changes",
-      "subject": "Aruba Property Alert — 1 price reduction",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>PRICE REDUCTIONS</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><h2 style='margin:0 0 8px;font-size:22px'>Seroe Janchi 52 - C Full Ownership Land Seroe Janchi (Noord) Vacant Land</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$300,000</div><div style='margin-bottom:8px'><strong>PRICE REDUCTION:</strong> $305,000 → $300,000 (1.6% reduction)</div><div><strong>Location:</strong> Noord</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 937 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale US$ 300,000 Garden View · 937 m² 11/35</p><div><strong>Broker/source:</strong> Century 21 Aruba (Century 21 Aruba)</div><div><strong>First detected:</strong> 2026-10-01</div><div style='margin:15px 0'><img src='https://static.century21aruba.com/images/udx/1160927/w470/1773434350528103.jpg?vno=1788957486' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://century21aruba.com/en/d/seroe-janchi-52-c-full-ownership-land-vacant-land-for-sale-seroe-janchi-noord-1160927' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_reductions": [
-          "8500fdc80086a2e19892d3e47b9f7e571387b09d10a775154da26c2b5bce2a83"
-        ],
-        "pending_major_changes": []
-      },
-      "created_at": "2026-10-02T15:32:58.794758+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
