@@ -5238,118 +5238,8 @@
       "last_seen_at": "2026-10-02T13:58:13.510842+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Bushiri Dreams - Full Ownership Lots Madiki (Oranjestad West) Vacant Land",
-      "url": "https://century21aruba.com/en/d/bushiri-dreams-full-ownership-lots-vacant-land-for-sale-madiki-oranjestad-west-1160334",
-      "price": 96522.0,
-      "location": "Oranjestad",
-      "type": "Land",
-      "beds": "",
-      "baths": "",
-      "size": "249 m²",
-      "building_area": "",
-      "land_area": "249 m²",
-      "image": "https://static.century21aruba.com/images/udx/1160334/w470/1773233269321951.jpg?vno=1790946601",
-      "description": "For Sale US$ 96,522 Garden View · 249 m² 25/35",
-      "source": "Century 21 Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-02T13:58:13.497778+00:00",
-      "source_type": "direct_broker",
-      "detail_checked_at": "2026-10-02T13:58:12.751706+00:00",
-      "detail_status": "unavailable",
-      "detail_error": "403 Client Error: Forbidden for url: https://century21aruba.com/en/d/bushiri-dreams-full-ownership-lots-vacant-land-for-sale-madiki-oranjestad-west-1160334",
-      "history_key": "85b3334f0c31c8a9847ac8e1787e2b232636e321",
-      "last_seen_at": "2026-10-02T13:58:13.497789+00:00",
-      "queued_at": "2026-10-02T13:58:22.573584+00:00"
-    },
-    {
-      "name": "Curiburi Estates Full Ownership Land Lot 6 Babijn (Paradera) Vacant Land",
-      "url": "https://century21aruba.com/en/d/curiburi-estates-full-ownership-land-lot-6-vacant-land-for-sale-babijn-paradera-1158919",
-      "price": 291760.0,
-      "location": "Paradera",
-      "type": "Land",
-      "beds": "",
-      "baths": "",
-      "size": "1,042 m²",
-      "building_area": "",
-      "land_area": "1,042 m²",
-      "image": "https://static.century21aruba.com/images/udx/1158919/w470/1749758253620821.jpg?vno=1749825887",
-      "description": "For Sale US$ 291,760 Inland View · 1,042 m² 31/35",
-      "source": "Century 21 Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-02T13:58:13.510834+00:00",
-      "source_type": "direct_broker",
-      "detail_checked_at": "2026-10-02T13:58:12.752532+00:00",
-      "detail_status": "unavailable",
-      "detail_error": "403 Client Error: Forbidden for url: https://century21aruba.com/en/d/curiburi-estates-full-ownership-land-lot-6-vacant-land-for-sale-babijn-paradera-1158919",
-      "history_key": "7c682df6704c60646601b19235550e04ff1e8596",
-      "last_seen_at": "2026-10-02T13:58:13.510842+00:00",
-      "queued_at": "2026-10-02T13:58:22.573608+00:00"
-    }
-  ],
-  "pending_reductions": [
-    {
-      "property": {
-        "name": "Seroe Janchi 52 - C Full Ownership Land Seroe Janchi (Noord) Vacant Land",
-        "url": "https://century21aruba.com/en/d/seroe-janchi-52-c-full-ownership-land-vacant-land-for-sale-seroe-janchi-noord-1160927",
-        "price": 300000.0,
-        "location": "Noord",
-        "type": "Land",
-        "beds": "",
-        "baths": "",
-        "size": "937 m²",
-        "building_area": "",
-        "land_area": "937 m²",
-        "image": "https://static.century21aruba.com/images/udx/1160927/w470/1773434350528103.jpg?vno=1788957486",
-        "description": "For Sale US$ 300,000 Garden View · 937 m² 11/35",
-        "source": "Century 21 Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-01T03:13:54.903207+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-10-01T13:51:27.034620+00:00",
-        "detail_status": "unavailable",
-        "history_key": "1a025f21bbeb2c1ab235f9cd4667c7e29b207101",
-        "aliases": [
-          "https://century21aruba.com/en/d/seroe-janchi-52-c-full-ownership-land-vacant-land-for-sale-seroe-janchi-noord-1160927"
-        ]
-      },
-      "old": {
-        "name": "Seroe Janchi 52 - C Full Ownership Land Seroe Janchi (Noord) Vacant Land",
-        "url": "https://century21aruba.com/en/d/seroe-janchi-52-c-full-ownership-land-vacant-land-for-sale-seroe-janchi-noord-1160927",
-        "price": 305000.0,
-        "location": "Noord",
-        "type": "Land",
-        "beds": "",
-        "baths": "",
-        "size": "937 m²",
-        "building_area": "",
-        "land_area": "937 m²",
-        "image": "https://static.century21aruba.com/images/udx/1160927/w470/1773434350528103.jpg?vno=1788957486",
-        "description": "For Sale US$ 300,000 Garden View · 937 m² 11/35",
-        "source": "Century 21 Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-01T03:13:54.903207+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-10-01T13:51:27.034620+00:00",
-        "detail_status": "unavailable",
-        "history_key": "1a025f21bbeb2c1ab235f9cd4667c7e29b207101",
-        "aliases": [
-          "https://century21aruba.com/en/d/seroe-janchi-52-c-full-ownership-land-vacant-land-for-sale-seroe-janchi-noord-1160927"
-        ],
-        "change_candidate": {
-          "signature": "43a8020220c8167e2392ac219bffdff726ee01322ca6d5855af496091c74db8b",
-          "observed_at": "2026-10-02T13:02:58.018348+00:00"
-        },
-        "last_seen_at": "2026-10-02T13:02:58.018353+00:00"
-      },
-      "queued_at": "2026-10-02T13:24:43.465184+00:00"
-    }
-  ],
+  "pending_new": [],
+  "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
     "new": [
@@ -5838,32 +5728,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 2 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Bushiri Dreams - Full Ownership Lots Madiki (Oranjestad West) Vacant Land</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$96,522</div><div><strong>Location:</strong> Oranjestad</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 249 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale US$ 96,522 Garden View · 249 m² 25/35</p><div><strong>Broker/source:</strong> Century 21 Aruba (Century 21 Aruba)</div><div><strong>First detected:</strong> 2026-10-02</div><div style='margin:15px 0'><img src='https://static.century21aruba.com/images/udx/1160334/w470/1773233269321951.jpg?vno=1790946601' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://century21aruba.com/en/d/bushiri-dreams-full-ownership-lots-vacant-land-for-sale-madiki-oranjestad-west-1160334' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Curiburi Estates Full Ownership Land Lot 6 Babijn (Paradera) Vacant Land</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$291,760</div><div><strong>Location:</strong> Paradera</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 1,042 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale US$ 291,760 Inland View · 1,042 m² 31/35</p><div><strong>Broker/source:</strong> Century 21 Aruba (Century 21 Aruba)</div><div><strong>First detected:</strong> 2026-10-02</div><div style='margin:15px 0'><img src='https://static.century21aruba.com/images/udx/1158919/w470/1749758253620821.jpg?vno=1749825887' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://century21aruba.com/en/d/curiburi-estates-full-ownership-land-lot-6-vacant-land-for-sale-babijn-paradera-1158919' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "f1fb7e7ce226339d7d1cbffcbcf5e9c1f14c0c50fa98fa4f254647b1ad0d5fd9",
-          "2953861378949491469672cc8badcf49248a7cec3de5afbaf14538873ddbd269"
-        ]
-      },
-      "created_at": "2026-10-02T13:58:22.573892+00:00"
-    },
-    {
-      "kind": "changes",
-      "subject": "Aruba Property Alert — 1 price reduction",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>PRICE REDUCTIONS</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><h2 style='margin:0 0 8px;font-size:22px'>Seroe Janchi 52 - C Full Ownership Land Seroe Janchi (Noord) Vacant Land</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$300,000</div><div style='margin-bottom:8px'><strong>PRICE REDUCTION:</strong> $305,000 → $300,000 (1.6% reduction)</div><div><strong>Location:</strong> Noord</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 937 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale US$ 300,000 Garden View · 937 m² 11/35</p><div><strong>Broker/source:</strong> Century 21 Aruba (Century 21 Aruba)</div><div><strong>First detected:</strong> 2026-10-01</div><div style='margin:15px 0'><img src='https://static.century21aruba.com/images/udx/1160927/w470/1773434350528103.jpg?vno=1788957486' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://century21aruba.com/en/d/seroe-janchi-52-c-full-ownership-land-vacant-land-for-sale-seroe-janchi-noord-1160927' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_reductions": [
-          "1cfbbed738d6dff17b97e43f773f8e2a07e5d09f2389cdcc1c94ec47cad273f0"
-        ],
-        "pending_major_changes": []
-      },
-      "created_at": "2026-10-02T13:58:22.574012+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
