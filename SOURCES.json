@@ -20,7 +20,7 @@
       "enabled": true,
       "card_selector": "a.property-card",
       "title_selector": ".property-title",
-      "fast_pages": 2,
+      "fast_pages": 3,
       "deep_pages": 4,
       "type_selector": ".property-labels"
     },
@@ -33,7 +33,8 @@
       "card_selector": ".item-listing-wrap",
       "title_selector": ".item-title",
       "fast_pages": 3,
-      "deep_pages": 6
+      "deep_pages": 6,
+      "detail_description_selector": ".property-description-wrap .block-content-wrap"
     },
     {
       "name": "Aruba Listings",
@@ -110,10 +111,17 @@
       "enabled": true,
       "card_selector": ".item-listing-wrap",
       "title_selector": ".item-title",
-      "fast_pages": 1,
+      "fast_pages": 6,
       "deep_pages": 20,
       "listing_context": "",
-      "blocked_retry_minutes": 15
+      "blocked_retry_minutes": 15,
+      "request_timeout": [
+        8,
+        12
+      ],
+      "fast_seconds": 45,
+      "deep_seconds": 90,
+      "detail_description_selector": ".property-description-wrap .block-content-wrap"
     },
     {
       "name": "Smiley Real Estate",
@@ -157,7 +165,7 @@
       "title_selector": "h2",
       "price_selector": ".card-price",
       "listing_context": "For Sale",
-      "fast_pages": 2,
+      "fast_pages": 6,
       "deep_pages": 16,
       "enabled": true
     },
@@ -198,7 +206,8 @@
       "listing_context": "For Sale",
       "fast_pages": 4,
       "deep_pages": 8,
-      "enabled": true
+      "enabled": true,
+      "detail_description_selector": "#description .wysiwyg"
     },
     {
       "name": "Berkshire Hathaway Aruba",
@@ -256,7 +265,7 @@
         "/property-type/residential/": "Residential",
         "/property-type/land/": "Vacant Land"
       },
-      "fast_pages": 2,
+      "fast_pages": 6,
       "deep_pages": 12,
       "type": "direct_broker",
       "enabled": true,
@@ -281,8 +290,8 @@
         "/land-for-sale-in-aruba": "Vacant Land",
         "/lease-land-for-sale-aruba": "Vacant Land"
       },
-      "fast_pages": 3,
-      "deep_pages": 12,
+      "fast_pages": 24,
+      "deep_pages": 24,
       "type": "direct_broker",
       "enabled": true,
       "priority": 2,
