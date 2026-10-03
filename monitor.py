@@ -170,7 +170,7 @@ def looks_like_url(value):
 # HTTP / SOURCE ACCESS
 # ============================================================
 
-def get_page(url, request_data=None):
+def get_page(url, request_data=None, timeout=(4, 8)):
     """One bounded retry for transient failures; TLS verification stays enabled."""
     if not hasattr(_local, "session"):
         _local.session = requests.Session()
@@ -178,9 +178,9 @@ def get_page(url, request_data=None):
     for attempt in range(2):
         try:
             if request_data is None:
-                response = _local.session.get(url, timeout=(4, 8), allow_redirects=True)
+                response = _local.session.get(url, timeout=timeout, allow_redirects=True)
             else:
-                response = _local.session.post(url, data=request_data, timeout=(4, 8), allow_redirects=True)
+                response = _local.session.post(url, data=request_data, timeout=timeout, allow_redirects=True)
             response.raise_for_status()
             return response.text, response.url
         except requests.exceptions.SSLError:
@@ -2507,6 +2507,17 @@ def main():
     for source, (items, observed, health) in results:
         name = source['name']
         old_health = state['source_health'].get(name, {})
+        if health.get('source_revision'):
+            coverage_revision = old_health.get('coverage_revision', old_health.get('source_revision'))
+            if coverage_revision != health['source_revision']:
+                newly_baselined.add(name)
+            if mode == 'deep' and health['status'] in ('ok', 'empty', 'partial') and not health.get('coverage_limited'):
+                coverage_revision = health['source_revision']
+            health['coverage_revision'] = coverage_revision
+        if source.get('detail_description_selector'):
+            if not old_health.get('type_review_initialized'):
+                newly_baselined.add(name)
+            health['type_review_initialized'] = old_health.get('type_review_initialized', False) or (mode == 'deep' and health['status'] in ('ok', 'empty', 'partial') and not health.get('unclassified_cards'))
         if health['status'] not in ('ok', 'empty', 'partial'):
             failures = old_health.get('consecutive_failures', 0) + 1
             health['consecutive_failures'] = failures

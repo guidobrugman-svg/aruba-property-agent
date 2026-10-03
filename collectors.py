@@ -35,6 +35,8 @@ def page_links(soup, base, source):
         for a in soup.select('[data-request-data]'):
             match = re.search(r'page:\s*(\d+)', a['data-request-data'])
             if match:
+                if match[1] == '1':
+                    continue
                 url = base.split('?')[0] + '?page=' + match[1]
                 if url not in result:
                     result.append(url)
@@ -43,6 +45,8 @@ def page_links(soup, base, source):
         for a in soup.select('.pagination a[onclick]'):
             match = re.fullmatch(r'changePage\((\d+)\)', a['onclick'])
             if match:
+                if match[1] == '1':
+                    continue
                 parts = urlparse(base)
                 query = dict(parse_qsl(parts.query))
                 query['page'] = match[1]
@@ -194,8 +198,18 @@ def parse_page(html, url, source, api):
         if api.extract_per_m2_rate(price_text):
             price, meta = api.parse_price_details(price_text + ' ' + text)
         p = api.build_property(name, title, href, price, text, api.image_from(node, url), meta, declared)
-        if not p and price is not None and 0 < price <= api.PRICE_LIMIT and not status and not api.infer_property_type(title, text):
+        excluded = bool(re.search(r'\bresidences\b|\bresidence (?:complex|development|project)\b', api.normalize(title + ' ' + text)))
+        excluded = excluded or api.normalize(declared) in ('commercial', 'commercial building')
+        if excluded:
+            observations[-1].update(excluded=True, status='ineligible')
+        if not p and not excluded and price is not None and 0 < price <= api.PRICE_LIMIT and not status and not api.infer_property_type(title, text):
             observations[-1]['needs_type_review'] = True
+            observations[-1]['_candidate'] = dict(price=price, text=text, image=api.image_from(node, url), meta=meta, declared=declared)
+            address = node.select_one(source.get('address_selector', '.item-address, .property-location, .card__address, address'))
+            observations[-1]['_candidate']['location'] = api.clean_text(address.get_text(' ', strip=True)) if address else ''
+            for key, selector in (('building_area', '.h-area'), ('land_area', '.h-land-area')):
+                area = node.select_one(selector)
+                observations[-1]['_candidate'][key] = api.area_m2(area.get_text(' ', strip=True)) if area else ''
         if p:
             p['source_type'] = source['type']
             address = node.select_one(source.get('address_selector', '.item-address, .property-location, .card__address, address'))
@@ -214,7 +228,61 @@ def parse_page(html, url, source, api):
     return api.dedupe_properties(items), observations, len(nodes), soup
 
 
-def scrape(source, mode, api):
+def resolve_types(source, mode, api, observations, items, old_health, start, budget):
+    """Resolve ambiguous cards from scoped public descriptions, with durable caching."""
+    selector = source.get('detail_description_selector')
+    old_cache = old_health.get('type_review_cache', {})
+    cache, reads = {}, 0
+    limit = source.get('deep_type_reviews', 12) if mode == 'deep' else source.get('fast_type_reviews', 2)
+    for obs in observations:
+        candidate = obs.pop('_candidate', None)
+        if not candidate or not selector:
+            continue
+        key = hashlib.sha256(json.dumps([obs['url'], obs['name'], candidate['text'], selector], sort_keys=True).encode()).hexdigest()[:24]
+        result = old_cache.get(key)
+        checked = api.parse_datetime(result.get('checked_at', '')) if result else None
+        if not checked or (api.now_utc()-checked).total_seconds() > (604800 if result.get('type') or result.get('excluded') else 3600):
+            result = None
+        if not result and reads < limit and time.monotonic()-start < budget:
+            reads += 1
+            result = {'checked_at': api.iso_now()}
+            try:
+                kwargs = {'timeout': tuple(source['request_timeout'])} if source.get('request_timeout') else {}
+                html, final = api.get_page(obs['url'], **kwargs)
+                if api.canonical_url(final) != api.canonical_url(obs['url']):
+                    raise ParserError('Type detail redirected away from listing')
+                soup = BeautifulSoup(html, 'html.parser')
+                nodes = soup.select(selector)
+                if not nodes:
+                    raise ParserError('No recognized listing description for type review')
+                for node in nodes:
+                    for unrelated in node.select('nav, form, script, style, .related-properties, .item-listing-wrap, .card'):
+                        unrelated.decompose()
+                text = api.clean_text(' '.join(n.get_text(' ', strip=True) for n in nodes))
+                inferred = api.infer_property_type(obs['name'], text)
+                result.update(type=inferred, excluded=bool(re.search(r'\bresidences\b|\bresidence (?:complex|development|project)\b', api.normalize(text))) or inferred in api.EXCLUDED_RESIDENTIAL_UNIT_TYPES)
+            except Exception as exc:
+                result['error'] = str(exc)[:160]
+        if not result:
+            continue
+        cache[key] = result
+        if result.get('excluded'):
+            obs.pop('needs_type_review', None)
+            obs.update(type=result.get('type', ''), status='ineligible', excluded=True)
+        elif result.get('type'):
+            prop = api.build_property(source['name'], obs['name'], obs['url'], candidate['price'], candidate['text'], candidate['image'], candidate['meta'], result['type'])
+            if prop:
+                prop['source_type'] = source['type']
+                for field in ('location', 'building_area', 'land_area'):
+                    if candidate.get(field) and not (field == 'building_area' and prop['type'] == 'Land'):
+                        prop[field] = candidate[field]
+                items.append(prop)
+                obs.pop('needs_type_review', None)
+                obs['type'] = result['type']
+    return cache, reads
+
+
+def scrape(source, mode, api, old_health=None):
     start = time.monotonic()
     budget = source.get('deep_seconds', 65) if mode == 'deep' else source.get('fast_seconds', 30)
     limit = source.get('deep_pages', 12) if mode == 'deep' else source.get('fast_pages', 1)
@@ -237,7 +305,8 @@ def scrape(source, mode, api):
             continue
         seen.add(marker)
         try:
-            html, final = api.get_page(url, request_data) if request_data else api.get_page(url)
+            kwargs = {'timeout': tuple(source['request_timeout'])} if source.get('request_timeout') else {}
+            html, final = api.get_page(url, request_data, **kwargs) if request_data else api.get_page(url, **kwargs)
             batch, observed, count, soup = parse_page(html, final, source, api)
             pages += 1
             fingerprint = hashlib.sha256(json.dumps(sorted(x['url'] for x in observed)).encode()).hexdigest()
@@ -268,6 +337,7 @@ def scrape(source, mode, api):
     if source.get('adapter') == 'myhome':
         # Each API response reports the same total; use the observed distinct rows.
         truncated = truncated or count > len({o['url'] for o in observations})
+    cache, review_reads = resolve_types(source, mode, api, observations, items, old_health or {}, start, budget)
     unclassified = sum(bool(o.get('needs_type_review')) for o in observations)
     if errors and not pages:
         status = errors[0]['status']
@@ -280,6 +350,7 @@ def scrape(source, mode, api):
         'source_revision': source_revision(source),
         'cards_seen': cards, 'unclassified_cards': unclassified, 'pages_fetched': pages, 'mode': mode, 'coverage_limited': truncated,
         'duration_seconds': round(time.monotonic()-start, 2), 'repeated_pages': repeated, 'errors': errors,
+        'type_review_cache': cache, 'type_review_reads': review_reads,
     }
 
 
@@ -318,6 +389,6 @@ def scan(sources, mode, health, api):
         due.append(source)
     results = []
     with ThreadPoolExecutor(max_workers=4) as pool:
-        for source, result in zip(due, pool.map(lambda s: scrape(s, mode, api), due)):
+        for source, result in zip(due, pool.map(lambda s: scrape(s, mode, api, health.get(s['name'], {})), due)):
             results.append((source, result))
     return results
