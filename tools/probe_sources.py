@@ -31,3 +31,9 @@ def detail(pair):
         print('DETAIL',source['name'],o['url'],json.dumps({'title':soup.title.get_text(' ',strip=True) if soup.title else '', 'headings':[x.get_text(' ',strip=True) for x in soup.select('h1,h2,h3')][:20]}),flush=True)
     except Exception as exc:print('DETAIL_ERROR',o['url'],str(exc)[:150],flush=True)
 with ThreadPoolExecutor(max_workers=4) as pool:list(pool.map(detail,unknown))
+
+# Confirm ordinary fast scans reuse verified type results and cover advertised pages.
+health={s['name']:h for s,(_,_,h) in results}
+fast_results=collectors.scan(sources,'fast',health,monitor)
+for source,(_,_,h) in fast_results:print('FAST_RESULT',source['name'],json.dumps(h),flush=True)
+(ROOT/'report.json').write_text(json.dumps({'deep':{s['name']:h for s,(_,_,h) in results},'fast':{s['name']:h for s,(_,_,h) in fast_results}},indent=2))
