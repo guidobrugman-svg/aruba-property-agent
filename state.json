@@ -5261,189 +5261,11 @@
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
-    "new": [
-      {
-        "name": "Bushiri Dreams - Full Ownership Lots Madiki (Oranjestad West) Vacant Land",
-        "url": "https://century21aruba.com/en/d/bushiri-dreams-full-ownership-lots-vacant-land-for-sale-madiki-oranjestad-west-1160334",
-        "price": 96522.0,
-        "location": "Oranjestad",
-        "type": "Land",
-        "beds": "",
-        "baths": "",
-        "size": "249 m²",
-        "building_area": "",
-        "land_area": "249 m²",
-        "image": "https://static.century21aruba.com/images/udx/1160334/w470/1773233269321951.jpg?vno=1790946601",
-        "description": "For Sale US$ 96,522 Garden View · 249 m² 25/35",
-        "source": "Century 21 Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-02T13:58:13.497778+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-10-02T13:58:12.751706+00:00",
-        "detail_status": "unavailable",
-        "detail_error": "403 Client Error: Forbidden for url: https://century21aruba.com/en/d/bushiri-dreams-full-ownership-lots-vacant-land-for-sale-madiki-oranjestad-west-1160334",
-        "history_key": "85b3334f0c31c8a9847ac8e1787e2b232636e321",
-        "last_seen_at": "2026-10-02T13:58:13.497789+00:00"
-      },
-      {
-        "name": "Curiburi Estates Full Ownership Land Lot 6 Babijn (Paradera) Vacant Land",
-        "url": "https://century21aruba.com/en/d/curiburi-estates-full-ownership-land-lot-6-vacant-land-for-sale-babijn-paradera-1158919",
-        "price": 291760.0,
-        "location": "Paradera",
-        "type": "Land",
-        "beds": "",
-        "baths": "",
-        "size": "1,042 m²",
-        "building_area": "",
-        "land_area": "1,042 m²",
-        "image": "https://static.century21aruba.com/images/udx/1158919/w470/1749758253620821.jpg?vno=1749825887",
-        "description": "For Sale US$ 291,760 Inland View · 1,042 m² 31/35",
-        "source": "Century 21 Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-02T13:58:13.510834+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-10-02T13:58:12.752532+00:00",
-        "detail_status": "unavailable",
-        "detail_error": "403 Client Error: Forbidden for url: https://century21aruba.com/en/d/curiburi-estates-full-ownership-land-lot-6-vacant-land-for-sale-babijn-paradera-1158919",
-        "history_key": "7c682df6704c60646601b19235550e04ff1e8596",
-        "last_seen_at": "2026-10-02T13:58:13.510842+00:00"
-      }
-    ],
-    "reductions": [
-      {
-        "property": {
-          "name": "Seroe Janchi 52 - C Full Ownership Land Seroe Janchi (Noord) Vacant Land",
-          "url": "https://century21aruba.com/en/d/seroe-janchi-52-c-full-ownership-land-vacant-land-for-sale-seroe-janchi-noord-1160927",
-          "price": 300000.0,
-          "location": "Noord",
-          "type": "Land",
-          "beds": "",
-          "baths": "",
-          "size": "937 m²",
-          "building_area": "",
-          "land_area": "937 m²",
-          "image": "https://static.century21aruba.com/images/udx/1160927/w470/1773434350528103.jpg?vno=1788957486",
-          "description": "For Sale US$ 300,000 Garden View · 937 m² 11/35",
-          "source": "Century 21 Aruba",
-          "mls": "",
-          "status": "available",
-          "detected_at": "2026-10-01T03:13:54.903207+00:00",
-          "source_type": "direct_broker",
-          "detail_checked_at": "2026-10-02T13:58:12.755439+00:00",
-          "detail_status": "unavailable",
-          "history_key": "1a025f21bbeb2c1ab235f9cd4667c7e29b207101",
-          "aliases": [
-            "https://century21aruba.com/en/d/seroe-janchi-52-c-full-ownership-land-vacant-land-for-sale-seroe-janchi-noord-1160927"
-          ]
-        },
-        "old": {
-          "name": "Seroe Janchi 52 - C Full Ownership Land Seroe Janchi (Noord) Vacant Land",
-          "url": "https://century21aruba.com/en/d/seroe-janchi-52-c-full-ownership-land-vacant-land-for-sale-seroe-janchi-noord-1160927",
-          "price": 305000.0,
-          "location": "Noord",
-          "type": "Land",
-          "beds": "",
-          "baths": "",
-          "size": "937 m²",
-          "building_area": "",
-          "land_area": "937 m²",
-          "image": "https://static.century21aruba.com/images/udx/1160927/w470/1773434350528103.jpg?vno=1788957486",
-          "description": "For Sale US$ 300,000 Garden View · 937 m² 11/35",
-          "source": "Century 21 Aruba",
-          "mls": "",
-          "status": "available",
-          "detected_at": "2026-10-01T03:13:54.903207+00:00",
-          "source_type": "direct_broker",
-          "detail_checked_at": "2026-10-01T13:51:27.034620+00:00",
-          "detail_status": "unavailable",
-          "history_key": "1a025f21bbeb2c1ab235f9cd4667c7e29b207101",
-          "aliases": [
-            "https://century21aruba.com/en/d/seroe-janchi-52-c-full-ownership-land-vacant-land-for-sale-seroe-janchi-noord-1160927"
-          ],
-          "change_candidate": {
-            "signature": "43a8020220c8167e2392ac219bffdff726ee01322ca6d5855af496091c74db8b",
-            "observed_at": "2026-10-02T13:02:58.018348+00:00"
-          },
-          "last_seen_at": "2026-10-02T13:02:58.018353+00:00"
-        }
-      },
-      {
-        "property": {
-          "name": "Cuquisastraat 22-A",
-          "url": "https://bhhsaruba.com/listings/cuquisastraat-22-",
-          "price": 395000.0,
-          "location": "",
-          "type": "House",
-          "beds": "4",
-          "baths": "2",
-          "size": "209 M2",
-          "building_area": "201 m²",
-          "land_area": "209 m²",
-          "image": "https://bhhsaruba.com/storage/app/uploads/public/65c/4ff/966/thumb_16874_627_470_0_0_crop.webp",
-          "description": "House For Sale New listing Property type: Residential Lot size: 209 M2 Built up size: 201 M2 Bedrooms: 4 Bathrooms: 2 For Sale USD 395,000",
-          "source": "Berkshire Hathaway Aruba",
-          "mls": "",
-          "status": "available",
-          "detected_at": "2026-10-01T04:55:28.841970+00:00",
-          "source_type": "direct_broker",
-          "development_evidence": [
-            {
-              "label": "Ownership",
-              "excerpt": "The 2-story house stands on a 209m² of property land, with a built area of 200m², thoughtfully designed to maximize both space and functionality",
-              "url": "https://bhhsaruba.com/listings/cuquisastraat-22-"
-            }
-          ],
-          "detail_checked_at": "2026-10-01T05:14:23.872400+00:00",
-          "detail_status": "ok",
-          "history_key": "7cce5df3a94c0b32cf5f78db5efcc80108bafeb3",
-          "aliases": [
-            "https://bhhsaruba.com/listings/cuquisastraat-22-"
-          ]
-        },
-        "old": {
-          "name": "Cuquisastraat 22-A",
-          "url": "https://bhhsaruba.com/listings/cuquisastraat-22-",
-          "price": 450000.0,
-          "location": "",
-          "type": "House",
-          "beds": "4",
-          "baths": "2",
-          "size": "209 M2",
-          "building_area": "201 m²",
-          "land_area": "209 m²",
-          "image": "https://bhhsaruba.com/storage/app/uploads/public/65c/4ff/966/thumb_16874_627_470_0_0_crop.webp",
-          "description": "House For Sale New listing Property type: Residential Lot size: 209 M2 Built up size: 201 M2 Bedrooms: 4 Bathrooms: 2 For Sale USD 395,000",
-          "source": "Berkshire Hathaway Aruba",
-          "mls": "",
-          "status": "available",
-          "detected_at": "2026-10-01T04:55:28.841970+00:00",
-          "source_type": "direct_broker",
-          "development_evidence": [
-            {
-              "label": "Ownership",
-              "excerpt": "The 2-story house stands on a 209m² of property land, with a built area of 200m², thoughtfully designed to maximize both space and functionality",
-              "url": "https://bhhsaruba.com/listings/cuquisastraat-22-"
-            }
-          ],
-          "detail_checked_at": "2026-10-01T05:14:23.872400+00:00",
-          "detail_status": "ok",
-          "history_key": "7cce5df3a94c0b32cf5f78db5efcc80108bafeb3",
-          "aliases": [
-            "https://bhhsaruba.com/listings/cuquisastraat-22-"
-          ],
-          "change_candidate": {
-            "signature": "58ae165868a5ab80d0ae5daeda5a1b6c22584c7a0317633d9cf75b2f5f6e8eed",
-            "observed_at": "2026-10-02T17:47:10.741932+00:00"
-          },
-          "last_seen_at": "2026-10-02T17:47:10.741939+00:00"
-        }
-      }
-    ],
+    "new": [],
+    "reductions": [],
     "major_changes": []
   },
-  "last_digest_date": "2026-10-02",
+  "last_digest_date": "2026-10-03",
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
@@ -5903,28 +5725,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "digest",
-      "subject": "Aruba Property Daily Digest — Oct 03 — 2 new, 2 reductions",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Daily Digest</h1><p style='font-size:16px'><strong>2 new properties</strong><br><strong>2 price reductions</strong><br><strong>0 major changes</strong><br>146 qualifying properties currently detected across available sources.</p><h2>NEW SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Bushiri Dreams - Full Ownership Lots Madiki (Oranjestad West) Vacant Land</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$96,522</div><div><strong>Location:</strong> Oranjestad</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 249 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale US$ 96,522 Garden View · 249 m² 21/31</p><div><strong>Broker/source:</strong> Century 21 Aruba (Century 21 Aruba)</div><div><strong>First detected:</strong> 2026-10-02</div><div style='margin:15px 0'><img src='https://static.century21aruba.com/images/udx/1160334/w470/1790946522394949.jpg?vno=1790946601' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://century21aruba.com/en/d/bushiri-dreams-full-ownership-lots-vacant-land-for-sale-madiki-oranjestad-west-1160334' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Curiburi Estates Full Ownership Land Lot 6 Babijn (Paradera) Vacant Land</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$291,760</div><div><strong>Location:</strong> Paradera</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 1,042 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale US$ 291,760 Inland View · 1,042 m² 27/31</p><div><strong>Broker/source:</strong> Century 21 Aruba (Century 21 Aruba)</div><div><strong>First detected:</strong> 2026-10-02</div><div style='margin:15px 0'><img src='https://static.century21aruba.com/images/udx/1158919/w470/1749758253620821.jpg?vno=1749825887' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://century21aruba.com/en/d/curiburi-estates-full-ownership-land-lot-6-vacant-land-for-sale-babijn-paradera-1158919' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><h2>PRICE REDUCTIONS SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><h2 style='margin:0 0 8px;font-size:22px'>Seroe Janchi 52 - C Full Ownership Land Seroe Janchi (Noord) Vacant Land</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$300,000</div><div style='margin-bottom:8px'><strong>PRICE REDUCTION:</strong> $305,000 → $300,000 (1.6% reduction)</div><div><strong>Location:</strong> Noord</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 937 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale US$ 300,000 Garden View · 937 m² 11/31</p><div><strong>Broker/source:</strong> Century 21 Aruba (Century 21 Aruba)</div><div><strong>First detected:</strong> 2026-10-01</div><div style='margin:15px 0'><img src='https://static.century21aruba.com/images/udx/1160927/w470/1773434350528103.jpg?vno=1788957486' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://century21aruba.com/en/d/seroe-janchi-52-c-full-ownership-land-vacant-land-for-sale-seroe-janchi-noord-1160927' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><h2 style='margin:0 0 8px;font-size:22px'>Cuquisastraat 22-A</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$395,000</div><div style='margin-bottom:8px'><strong>PRICE REDUCTION:</strong> $450,000 → $395,000 (12.2% reduction)</div><div><strong>Location:</strong> Not provided by source</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 201 m²</div><div><strong>Land area:</strong> 209 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> The 2-story house stands on a 209m² of property land, with a built area of 200m², thoughtfully designed to maximize both space and functionality</div><div><a href='https://bhhsaruba.com/listings/cuquisastraat-22-'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 4 beds · 2 baths</div><p style='margin:12px 0'>House For Sale New listing Property type: Residential Lot size: 209 M2 Built up size: 201 M2 Bedrooms: 4 Bathrooms: 2 For Sale USD 395,000</p><div><strong>Broker/source:</strong> Berkshire Hathaway Aruba (Berkshire Hathaway Aruba)</div><div><strong>First detected:</strong> 2026-10-01</div><div style='margin:15px 0'><img src='https://bhhsaruba.com/storage/app/uploads/public/65c/4ff/966/thumb_16874_627_470_0_0_crop.webp' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://bhhsaruba.com/listings/cuquisastraat-22-' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding:14px;background:#f5f5f5;border-radius:6px;font-size:13px'><strong>Source coverage:</strong> 12 sources checked successfully; 7 sources could not be checked during the latest run.</div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "date": "2026-10-03",
-        "activity": {
-          "new": [
-            "4dccfa7af7b094f971770d9b9e85c6295864665689516e75fe35e7f18303a10f",
-            "c6763da8529e399ad36523aae5c4b7f0516c4b46c6d7752cbd9c5c2f63848ec5"
-          ],
-          "reductions": [
-            "bf9f114b212521d5161f0124759526a65e5a0f95cea17d6358b3579fd5eb913d",
-            "c292b7091a0bce5dc48f1f1e7310ba45d48808b8cf894e0ad6a7ba0bb772e600"
-          ],
-          "major_changes": []
-        }
-      },
-      "created_at": "2026-10-03T14:33:51.296248+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
@@ -6240,5 +6041,5 @@
       "source": "HKG Real Estate Aruba"
     }
   ],
-  "last_digest_at": "2026-10-02T12:00:53.240300+00:00"
+  "last_digest_at": "2026-10-03T14:33:53.050606+00:00"
 }
