@@ -9,8 +9,10 @@ ROOT=Path('source-diagnostics');ROOT.mkdir(exist_ok=True)
 names={'Ben Real Estate','Bluefin Realtors','Century 21 Aruba','Keller Williams Aruba','Berkshire Hathaway Aruba','HKG Real Estate Aruba','MPG Aruba','Home 4 Everyone'}
 sources=[s for s in json.loads(Path('SOURCES.json').read_text())['sources'] if s['name'] in names]
 real_get=monitor.get_page
-def save_get(url,request_data=None):
-    html,final=real_get(url,request_data)
+saved_pages={}
+def save_get(url,request_data=None,**kwargs):
+    html,final=real_get(url,request_data,**kwargs)
+    saved_pages[url]=(html,final)
     (ROOT/('page_'+str(abs(hash(url)))+'.html')).write_text(html)
     print('PAGE',json.dumps({'url':url,'file':'page_'+str(abs(hash(url)))+'.html','bytes':len(html)}),flush=True)
     return html,final
@@ -32,8 +34,11 @@ def detail(pair):
     except Exception as exc:print('DETAIL_ERROR',o['url'],str(exc)[:150],flush=True)
 with ThreadPoolExecutor(max_workers=4) as pool:list(pool.map(detail,unknown))
 
-# Confirm ordinary fast scans reuse verified type results and cover advertised pages.
+# Replay fast logic against the same live public snapshot without a second request burst.
+# Blocked inventories stay recorded as blocked; no invented snapshot is supplied.
 health={s['name']:h for s,(_,_,h) in results}
-fast_results=collectors.scan(sources,'fast',health,monitor)
-for source,(_,_,h) in fast_results:print('FAST_RESULT',source['name'],json.dumps(h),flush=True)
-(ROOT/'report.json').write_text(json.dumps({'deep':{s['name']:h for s,(_,_,h) in results},'fast':{s['name']:h for s,(_,_,h) in fast_results}},indent=2))
+monitor.get_page=lambda url,request_data=None,**kwargs:saved_pages[url]
+usable=[s for s in sources if health[s['name']]['status'] in ('ok','empty','partial')]
+fast_results=collectors.scan(usable,'fast',health,monitor)
+for source,(_,_,h) in fast_results:print('FAST_REPLAY',source['name'],json.dumps(h),flush=True)
+(ROOT/'report.json').write_text(json.dumps({'deep':{s['name']:h for s,(_,_,h) in results},'fast_snapshot_replay':{s['name']:h for s,(_,_,h) in fast_results}},indent=2))
