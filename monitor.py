@@ -451,6 +451,21 @@ def extract_status(text):
 # PROPERTY TYPE INFERENCE
 # ============================================================
 
+def whole_apartment_offer(title, text):
+    """Explicit multi-apartment sale offers; unit numbers and per-unit projects fail closed."""
+    title_n, text_n = normalize(title), normalize(text)
+    combined = title_n + ' ' + text_n
+    if re.search(r'\b(?:apartments?|units?) (?:remaining|left|available)\b|\b(?:starting (?:at|from)|price per (?:unit|apartment)|priced per (?:unit|apartment)|per unit|per apartment)\b', combined):
+        return False
+    if re.search(r'\b(?:apartment|studio|condo|condominium|unit)\s+(?:unit\s+|number\s+|no\s+)?\d+\b', title_n):
+        return False
+    count = r'(?:[2-9]|[1-9]\d+|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)'
+    apartments = r'(?:studio\s+)?apartments'
+    if re.search(r'^' + count + r'\s+' + apartments + r'\b', title_n):
+        return True
+    return bool(re.search(r'\b(?:entire|whole)\s+(?:apartment (?:building|complex)|building (?:with|of) ' + count + r'\s+' + apartments + r')\b|\b(?:property|building|complex)\s+(?:consists of|comprises|contains|includes)\s+' + count + r'\s+' + apartments + r'\b', text_n))
+
+
 def infer_property_type(title, text):
     """
     Title-first classification.
@@ -461,6 +476,11 @@ def infer_property_type(title, text):
 
     title_n = normalize(title)
     text_n = normalize(text)
+
+    if whole_apartment_offer(title, text):
+        return 'Apartment Complex'
+    if re.match(r'^(?:apartment|studio|condo|condominium)\s+(?:unit\s+|number\s+|no\s+)?\d+\b', title_n):
+        return 'Condominium' if re.match(r'^condo', title_n) else 'Apartment'
 
     full_home = bool(re.search(r"\b(houses?|homes?|villas?|townhouses?|townhomes?|town houses?)\b", title_n))
     full_home = full_home or bool(re.search(r"\b(?:house|home) with (?:one |two |three |\d+ )?apartments?\b", text_n))
