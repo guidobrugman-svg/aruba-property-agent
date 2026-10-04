@@ -5259,43 +5259,9 @@
   "daily_activity": {
     "new": [],
     "reductions": [],
-    "major_changes": [
-      {
-        "property": {
-          "name": "Balorian 2, Jaburibari",
-          "url": "https://bluefinrealtors.com/property/balorian-2-jaburibari/",
-          "price": 252808.0,
-          "location": "Noord Other, Jaburibari, Catiri, Aruba, Nederland",
-          "type": "House",
-          "beds": "",
-          "baths": "",
-          "size": "52,2 m²",
-          "building_area": "52.2 m²",
-          "land_area": "285 m²",
-          "image": "https://bluefinrealtors.com/wp-content/uploads/2023/11/image-1-592x444.jpeg",
-          "description": "Residential For Sale $252,808 For Sale $252,808 Noord Other, Jaburibari, Catiri, Aruba, Nederland 52,2 m² 285 m² Residential Details Emir Flanegin 3 years ago Emir Flanegin 3 years ago",
-          "source": "Bluefin Realtors",
-          "mls": "",
-          "status": "available",
-          "detected_at": "2026-09-21T00:39:53.473434+00:00",
-          "source_type": "aggregator",
-          "detail_checked_at": "2026-10-03T14:33:35.365699+00:00",
-          "detail_status": "unavailable",
-          "history_key": "96a22a1dd698fe4f092c84fc6409156fb44827dd",
-          "aliases": [
-            "https://bluefinrealtors.com/property/balorian-2-jaburibari"
-          ]
-        },
-        "changes": {
-          "Location": {
-            "old": "Noord",
-            "new": "Noord Other, Jaburibari, Catiri, Aruba, Nederland"
-          }
-        }
-      }
-    ]
+    "major_changes": []
   },
-  "last_digest_date": "2026-10-03",
+  "last_digest_date": "2026-10-04",
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
@@ -5767,24 +5733,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "digest",
-      "subject": "Aruba Property Daily Digest — Oct 04 — 0 new, 0 reductions",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Daily Digest</h1><p style='font-size:16px'><strong>0 new properties</strong><br><strong>0 price reductions</strong><br><strong>1 major changes</strong><br>145 qualifying properties currently detected across available sources.</p><h2>MAJOR CHANGES SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><h2 style='margin:0 0 8px;font-size:22px'>Balorian 2, Jaburibari</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$252,808</div><div><strong>Location:</strong> Noord Other, Jaburibari, Catiri, Aruba, Nederland</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 52.2 m²</div><div><strong>Land area:</strong> 285 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div style='margin-top:8px'><strong>Major changes:</strong> Location: Noord → Noord Other, Jaburibari, Catiri, Aruba, Nederland</div><p style='margin:12px 0'>Residential For Sale $252,808 For Sale $252,808 Noord Other, Jaburibari, Catiri, Aruba, Nederland 52,2 m² 285 m² Residential Details Emir Flanegin 3 years ago Emir Flanegin 3 years ago</p><div><strong>Broker/source:</strong> Bluefin Realtors (Bluefin Realtors)</div><div><strong>First detected:</strong> 2026-09-21</div><div style='margin:15px 0'><img src='https://bluefinrealtors.com/wp-content/uploads/2023/11/image-1-592x444.jpeg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://bluefinrealtors.com/property/balorian-2-jaburibari/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding:14px;background:#f5f5f5;border-radius:6px;font-size:13px'><strong>Source coverage:</strong> 12 sources checked successfully; 7 sources could not be checked during the latest run.</div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "date": "2026-10-04",
-        "activity": {
-          "new": [],
-          "reductions": [],
-          "major_changes": [
-            "88250a92a6f663d65e842429307065d7de6878b8998fc5f06ddd3da3a96c94a4"
-          ]
-        }
-      },
-      "created_at": "2026-10-04T12:09:01.910967+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
@@ -6100,5 +6049,5 @@
       "source": "HKG Real Estate Aruba"
     }
   ],
-  "last_digest_at": "2026-10-03T14:33:53.050606+00:00"
+  "last_digest_at": "2026-10-04T12:09:03.991383+00:00"
 }
