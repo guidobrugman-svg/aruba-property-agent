@@ -2495,7 +2495,10 @@ def reconcile(previous, current):
             prop['detected_at'] = iso_now()
             new_items.append(prop)
         prop['last_seen_at'] = iso_now()
-        prop['status'] = 'available'
+        # Pending changes retain every confirmed field, including availability.
+        # Overwriting status here changes the candidate signature on the next
+        # scan and delays confirmation of simultaneous metadata changes.
+        prop.setdefault('status', 'available')
         history[key] = prop
     return history, new_items, reductions, major
 

@@ -98,6 +98,18 @@ class Rules(unittest.TestCase):
         h,n,r,ch=m.reconcile({'old':prop()},[prop(beds='4')]);self.assertEqual(ch,[])
         h,n,r,ch=m.reconcile(h,[prop(beds='4')]);self.assertEqual(len(ch),1)
 
+    def test_availability_and_location_confirm_together(self):
+        old=prop(status='ineligible',location='Old address')
+        observed=prop(location='Correct address')
+        history,_,_,changes=m.reconcile({'old':old},[observed])
+        self.assertEqual(changes,[])
+        self.assertEqual(history['old']['status'],'ineligible')
+        history,_,_,changes=m.reconcile(history,[observed])
+        self.assertEqual(set(changes[0][1]),{'Status','Location'})
+        self.assertEqual(history['old']['status'],'available')
+        self.assertEqual(history['old']['location'],'Correct address')
+        self.assertEqual(m.reconcile(history,[observed])[3],[])
+
     def test_failure_classification(self):
         for code,expected in [(403,'blocked'),(404,'url_changed'),(429,'rate_limited')]:
             response=requests.Response();response.status_code=code
