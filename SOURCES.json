@@ -275,11 +275,11 @@
     },
     {
       "name": "MPG Aruba",
-      "url": "https://www.mpgaruba.com/houses-for-sale-aruba?maximum_price=650000",
+      "url": "https://www.mpgaruba.com/houses-for-sale-aruba?maximum_price=800000",
       "urls": [
-        "https://www.mpgaruba.com/houses-for-sale-aruba?maximum_price=650000",
-        "https://www.mpgaruba.com/land-for-sale-in-aruba?maximum_price=650000",
-        "https://www.mpgaruba.com/lease-land-for-sale-aruba?maximum_price=650000"
+        "https://www.mpgaruba.com/houses-for-sale-aruba?maximum_price=800000",
+        "https://www.mpgaruba.com/land-for-sale-in-aruba?maximum_price=800000",
+        "https://www.mpgaruba.com/lease-land-for-sale-aruba?maximum_price=800000"
       ],
       "card_selector": "a.properties-link",
       "title_selector": "h3",

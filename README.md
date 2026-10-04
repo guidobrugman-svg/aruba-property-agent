@@ -1,6 +1,6 @@
 # Aruba Property Agent
 
-Monitors publicly advertised Aruba homes, villas, townhouses, land, and whole multi-unit residential properties offered for sale at no more than USD 650,000. Individual apartments/condos, rentals, unavailable listings, commercial buildings, timeshares, and construction-only modular-home offers are excluded.
+Monitors publicly advertised Aruba homes, villas, townhouses, land, and whole multi-unit residential properties offered for sale at no more than USD 800,000. Individual apartments/condos, rentals, unavailable listings, commercial buildings, timeshares, and construction-only modular-home offers are excluded.
 
 ## Monitoring
 

@@ -15,9 +15,9 @@
     },
     "expected": [
       [
-        "Summerside III \u2013 Townhomes in Noord",
+        "Summerside III – Townhomes in Noord",
         "Townhouse",
-        559000.0
+        559000
       ]
     ],
     "cards": 3
@@ -40,7 +40,7 @@
       [
         "Ponton | Fixer-Upper House",
         "House",
-        385000.0
+        385000
       ]
     ],
     "cards": 3
@@ -60,19 +60,19 @@
     },
     "expected": [
       [
-        "House for Sale in Pos Chiquito, Aruba \u2013 Pos Chiquito 19F",
+        "House for Sale in Pos Chiquito, Aruba – Pos Chiquito 19F",
         "House",
-        435000.0
+        435000
       ],
       [
-        "Prime Property Land \u2013 1466 m\u00b2 in Paraguan\u00e1, Noord Aruba",
+        "Prime Property Land – 1466 m² in Paraguaná, Noord Aruba",
         "Land",
-        306178.0
+        306178
       ],
       [
         "Coming Soon: Affordable Fixer-Upper in Good Condition (Rooi Bosal Santa Cruz)",
         "House",
-        171348.0
+        171348
       ]
     ],
     "cards": 5
@@ -121,7 +121,7 @@
       [
         "Modern New Homes for Sale in the Heart of Paradera",
         "House",
-        628077.0
+        628077
       ]
     ],
     "cards": 5
@@ -151,7 +151,7 @@
       [
         "Ultimate Guide: Alto Vista for Sale with Expert Insights",
         "House",
-        615000.0
+        615000
       ]
     ],
     "cards": 2
@@ -178,17 +178,17 @@
       [
         "Kamay Full Ownership Land Kamay (Noord) Vacant Land",
         "Land",
-        625000.0
+        625000
       ],
       [
         "Full Ownership Land Seroe Blanco Sero Blanco (Oranjestad West) Vacant Land",
         "Land",
-        590000.0
+        590000
       ],
       [
         "Bona Vista Hills Full Ownership Land With Distant Ocean Views Alto Vista (Noord) Vacant Land",
         "Land",
-        525000.0
+        525000
       ]
     ],
     "cards": 5
@@ -211,12 +211,12 @@
       [
         "Seroe Janchi Lot",
         "Land",
-        211000.0
+        211000
       ],
       [
-        "Fixer Upper Home in Belgi\u00ebstraat",
+        "Fixer Upper Home in Belgiëstraat",
         "House",
-        278200.0
+        278200
       ]
     ],
     "cards": 5
@@ -246,17 +246,17 @@
       [
         "Pavia 12-D",
         "House",
-        647000.0
+        647000
       ],
       [
         "Siribana - Santa Cruz 360",
         "House",
-        645000.0
+        645000
       ],
       [
         "Calabas 9c Noord",
         "House",
-        590000.0
+        590000
       ]
     ],
     "cards": 5
@@ -288,22 +288,22 @@
       [
         "Brazil 5980 m2",
         "Land",
-        646100.0
+        646100
       ],
       [
         "Pavia 182",
         "House",
-        640449.0
+        640449
       ],
       [
         "Pavia 181",
         "House",
-        632022.0
+        632022
       ],
       [
         "Papilon 32",
         "House",
-        617977.0
+        617977
       ]
     ]
   },
@@ -337,22 +337,22 @@
       [
         "Purun Oasis",
         "House",
-        550000.0
+        550000
       ],
       [
         "Pavia 15-G",
         "House",
-        540000.0
+        540000
       ],
       [
         "Spacious Family Retreat with Gazebo & Outdoor Living in Oranjestad",
         "House",
-        421349.0
+        421349
       ],
       [
         "Jamanota 18",
         "House",
-        421348.0
+        421348
       ]
     ]
   },
@@ -384,14 +384,14 @@
     "cards": 5,
     "expected": [
       [
-        "Prime 2.128m\u00b2 Property Land in Tanki Leendert",
+        "Prime 2.128m² Property Land in Tanki Leendert",
         "Land",
-        578090.0
+        578090
       ],
       [
         "Fahrenheitstraat 2",
         "Land",
-        182585.0
+        182585
       ]
     ]
   },
@@ -420,14 +420,14 @@
     "cards": 5,
     "expected": [
       [
-        "Seroe Janchi 120\u2014Modern Property",
+        "Seroe Janchi 120—Modern Property",
         "House",
-        470000.0
+        470000
       ],
       [
-        "Wayaca Duplex Property \u2013 For Sale",
+        "Wayaca Duplex Property – For Sale",
         "House",
-        625000.0
+        625000
       ]
     ]
   },
@@ -458,7 +458,7 @@
       [
         "Land for Sale | Mon Pos",
         "Land",
-        290000.0
+        290000
       ]
     ]
   },
@@ -494,22 +494,27 @@
       [
         "Villa Baranca 19",
         "Villa",
-        450000.0
+        450000
       ],
       [
         "Stylish Duplex Home in Noord",
         "House",
-        389500.0
+        389500
       ],
       [
-        "2 Bedroom Townhouse for Sale in Noord, Aruba \u2013 $299,000",
+        "2 Bedroom Townhouse for Sale in Noord, Aruba – $299,000",
         "Townhouse",
-        299000.0
+        299000
       ],
       [
         "Fixer upper for sale with appartment in San Nicolas",
         "House",
-        125000.0
+        125000
+      ],
+      [
+        "Kas Paloma",
+        "House",
+        695000
       ]
     ]
   },
@@ -573,7 +578,7 @@
       [
         "Matadera 9-U",
         "House",
-        435000.0
+        435000
       ]
     ]
   },
@@ -599,12 +604,12 @@
       [
         "House For Sale - Rooi Taki 3",
         "House",
-        440000.0
+        440000
       ],
       [
         "Spacious Family Home - Hooiberg 18",
         "House",
-        514045.0
+        514045
       ]
     ]
   },
@@ -627,7 +632,7 @@
       [
         "Ultimate Guide: Alto Vista for Sale with Expert Insights",
         "House",
-        615000.0
+        615000
       ]
     ]
   }
