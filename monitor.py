@@ -30,7 +30,7 @@ SENDER = "Aruba Property Agent <alerts@arubapropertywatch.com>"
 STATE_FILE = os.environ.get("STATE_FILE", "state.json")
 SOURCES_FILE = "SOURCES.json"
 
-PRICE_LIMIT = 650000
+PRICE_LIMIT = 800000
 BATCH_MINUTES = 30
 DRY_RUN = os.environ.get("DRY_RUN", "0") == "1"
 _local = threading.local()

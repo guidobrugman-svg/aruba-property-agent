@@ -21,7 +21,8 @@ class WholeApartments(unittest.TestCase):
                 self.assertIsNone(m.build_property('B',title,'https://b.test/unit',250000,text))
 
     def test_price_limit_and_unavailable_status_still_apply(self):
-        self.assertIsNone(m.build_property('B','7 Studio Apartments in Moko','https://b.test/complex',695000,'For Sale'))
+        self.assertIsNotNone(m.build_property('B','7 Studio Apartments in Moko','https://b.test/complex',695000,'For Sale'))
+        self.assertIsNone(m.build_property('B','7 Studio Apartments in Moko','https://b.test/complex',800001,'For Sale'))
         self.assertIsNone(m.build_property('B','7 Studio Apartments in Moko','https://b.test/complex',600000,'Sold'))
 
     def test_aggregator_apartment_label_preserves_whole_complex(self):

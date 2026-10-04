@@ -39,7 +39,8 @@ class Rules(unittest.TestCase):
     def test_exclusions(self):
         for title,text in [('Condo 14','For Sale'),('Apartment 4','For Sale'),('Generic residence','For Sale Condominium'),('Commercial building','For Sale'),('House 14','For Rent $2000 per month'),('House 14','For Sale Sold'),('House 14','Under Contract'),('House 14','Sale in Progress'),('House 14','Withdrawn'),('House 14','On Hold'),('Timeshare villa','For Sale $14000 each week'),('L’Aquila | 1 Bedroom','New Development For Sale')]:
             with self.subTest(title=title,text=text):self.assertIsNone(self.build(title,text))
-        self.assertIsNone(self.build('House 14','For Sale',650001))
+        self.assertIsNotNone(self.build('House 14','For Sale',800000))
+        self.assertIsNone(self.build('House 14','For Sale',800001))
 
     def test_broad_hint_cannot_promote_condo(self):
         self.assertIsNone(m.build_property('B','Gated Community Living','https://b.test/unit',463000,'For Sale Houses in Aruba Condominiums in Aruba 3 Bedrooms 2 Bathrooms',type_hint='Houses in Aruba, Condominiums in Aruba'))

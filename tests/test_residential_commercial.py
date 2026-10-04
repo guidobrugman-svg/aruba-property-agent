@@ -18,7 +18,8 @@ class ResidentialCommercial(unittest.TestCase):
                 self.assertIsNone(m.build_property('B',title,'https://b.test/unit',400000,text,type_hint='Commercial'))
 
     def test_budget_and_sold_filters_remain(self):
-        self.assertIsNone(m.build_property('B','House with 3 Apartments','https://b.test/mixed',695000,'For Sale Commercial property'))
+        self.assertIsNotNone(m.build_property('B','House with 3 Apartments','https://b.test/mixed',695000,'For Sale Commercial property'))
+        self.assertIsNone(m.build_property('B','House with 3 Apartments','https://b.test/mixed',800001,'For Sale Commercial property'))
         self.assertIsNone(m.build_property('B','House with 3 Apartments','https://b.test/mixed',600000,'Sold Commercial property'))
 
     def test_commercial_card_does_not_override_residential_income_evidence(self):
