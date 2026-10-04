@@ -451,6 +451,18 @@ def extract_status(text):
 # PROPERTY TYPE INFERENCE
 # ============================================================
 
+def house_with_apartments(title, text):
+    combined = normalize(title + ' ' + text)
+    count = r'(?:a|an|one|two|three|four|five|six|seven|eight|nine|ten|\d+)'
+    if re.search(r'\b(?:the |this )?property consists of (?:a |the )?main house\b.{0,180}\b(?:there are|and|plus|with)\s+' + count + r'\s+(?:studio\s+)?apartments?\b', combined):
+        return True
+    return bool(re.search(r'\b(?:house|home|villa)\s+(?:with|and|plus|including)\s+(?:' + count + r'\s+)?(?:studio\s+)?apartments?\b|\bapartments?\s+(?:with|and|plus)\s+(?:a\s+|an\s+)?(?:main\s+)?(?:house|home|villa)\b', combined))
+
+
+def residential_income_offer(title, text, property_type=''):
+    return property_type == 'Apartment Complex' or house_with_apartments(title, text)
+
+
 def whole_apartment_offer(title, text):
     """Explicit multi-apartment sale offers; unit numbers and per-unit projects fail closed."""
     title_n, text_n = normalize(title), normalize(text)
@@ -483,7 +495,7 @@ def infer_property_type(title, text):
         return 'Condominium' if re.match(r'^condo', title_n) else 'Apartment'
 
     full_home = bool(re.search(r"\b(houses?|homes?|villas?|townhouses?|townhomes?|town houses?)\b", title_n))
-    full_home = full_home or bool(re.search(r"\b(?:house|home) with (?:one |two |three |\d+ )?apartments?\b", text_n))
+    full_home = full_home or house_with_apartments(title, text)
     complex_signal = bool(re.search(r"\b(apartment complex|apartment building|multi unit|multi family|multifamily|\d+ units)\b", title_n))
     if not full_home and not complex_signal and re.search(r"\b(condos?|condominiums?|apartments?|studio|penthouse)\b", text_n):
         return "Condominium" if re.search(r"\b(condos?|condominiums?)\b", text_n) else "Apartment"
@@ -901,6 +913,7 @@ def build_property(
     image="",
     price_meta=None,
     type_hint="",
+    residential_income_evidence=False,
 ):
     title = clean_text(title)
     text = clean_text(text)
@@ -991,7 +1004,11 @@ def build_property(
         strong_commercial = True
 
     if strong_commercial:
-        return None
+        income = residential_income_evidence or residential_income_offer(title, text, property_type)
+        business = bool(re.search(r'\b(warehouse|office|retail|hotel|restaurant|shop|store)\b', normalize(title)))
+        business = business or any(re.search(rf'\b{re.escape(excluded)}\s+(?:building|property|space|unit|for sale)\b', combined) for excluded in EXCLUDED_TYPES if excluded != 'commercial')
+        if not income or business:
+            return None
 
     mls = first_match(
         [
@@ -2478,7 +2495,10 @@ def reconcile(previous, current):
             prop['detected_at'] = iso_now()
             new_items.append(prop)
         prop['last_seen_at'] = iso_now()
-        prop['status'] = 'available'
+        # Pending changes retain every confirmed field, including availability.
+        # Overwriting status here changes the candidate signature on the next
+        # scan and delays confirmation of simultaneous metadata changes.
+        prop.setdefault('status', 'available')
         history[key] = prop
     return history, new_items, reductions, major
 
