@@ -197,14 +197,15 @@
         "https://kw-aruba.com/listings/for-sale/residential",
         "https://kw-aruba.com/listings/for-sale/land",
         "https://kw-aruba.com/listings/for-sale/condominium-townhouse",
-        "https://kw-aruba.com/listings/for-sale/new-development"
+        "https://kw-aruba.com/listings/for-sale/new-development",
+        "https://kw-aruba.com/listings/for-sale/commercial"
       ],
       "card_selector": ".properties-grid > .card",
       "title_selector": ".card__heading",
       "price_selector": ".card__price",
       "link_selector": ".card__overlay",
       "listing_context": "For Sale",
-      "fast_pages": 4,
+      "fast_pages": 5,
       "deep_pages": 8,
       "enabled": true,
       "detail_description_selector": "#description .wysiwyg"
@@ -302,7 +303,8 @@
       "url": "https://arubahappyhomes.com/listings/for-sale/residential",
       "urls": [
         "https://arubahappyhomes.com/listings/for-sale/residential",
-        "https://arubahappyhomes.com/listings/for-sale/land"
+        "https://arubahappyhomes.com/listings/for-sale/land",
+        "https://arubahappyhomes.com/listings/for-sale/commercial"
       ],
       "card_selector": ".rent-sec",
       "title_selector": ".rent-contain > .position-relative",
@@ -312,13 +314,14 @@
         "/for-sale/residential": "House",
         "/for-sale/land": "Vacant Land"
       },
-      "fast_pages": 2,
+      "fast_pages": 4,
       "deep_pages": 12,
       "type": "direct_broker",
       "enabled": true,
       "priority": 2,
       "listing_context": "For Sale",
-      "address_selector": ".area"
+      "address_selector": ".area",
+      "detail_description_selector": ".property-d-contain .richeditor"
     },
     {
       "name": "Objective Realty Aruba",

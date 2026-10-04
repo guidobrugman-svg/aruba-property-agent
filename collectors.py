@@ -199,12 +199,15 @@ def parse_page(html, url, source, api):
             price, meta = api.parse_price_details(price_text + ' ' + text)
         p = api.build_property(name, title, href, price, text, api.image_from(node, url), meta, declared)
         excluded = bool(re.search(r'\bresidences\b|\bresidence (?:complex|development|project)\b', api.normalize(title + ' ' + text)))
-        excluded = excluded or api.normalize(declared) in ('commercial', 'commercial building')
+        commercial = api.normalize(declared) in ('commercial', 'commercial building') or '/for-sale/commercial' in url
+        income = api.residential_income_offer(title, text, api.infer_property_type(title, text))
+        review_commercial = commercial and not income and bool(source.get('detail_description_selector'))
+        excluded = excluded or (commercial and not income and not review_commercial)
         if excluded:
             observations[-1].update(excluded=True, status='ineligible')
-        if not p and not excluded and price is not None and 0 < price <= api.PRICE_LIMIT and not status and not api.infer_property_type(title, text):
+        if not p and not excluded and price is not None and 0 < price <= api.PRICE_LIMIT and not status and (not api.infer_property_type(title, text) or review_commercial):
             observations[-1]['needs_type_review'] = True
-            observations[-1]['_candidate'] = dict(price=price, text=text, image=api.image_from(node, url), meta=meta, declared=declared)
+            observations[-1]['_candidate'] = dict(price=price, text=text, image=api.image_from(node, url), meta=meta, declared=declared, commercial=commercial)
             address = node.select_one(source.get('address_selector', '.item-address, .property-location, .card__address, address'))
             observations[-1]['_candidate']['location'] = api.clean_text(address.get_text(' ', strip=True)) if address else ''
             for key, selector in (('building_area', '.h-area'), ('land_area', '.h-land-area')):
@@ -238,7 +241,7 @@ def resolve_types(source, mode, api, observations, items, old_health, start, bud
         candidate = obs.pop('_candidate', None)
         if not candidate or not selector:
             continue
-        key = hashlib.sha256(json.dumps([obs['url'], obs['name'], candidate['text'], selector], sort_keys=True).encode()).hexdigest()[:24]
+        key = hashlib.sha256(json.dumps(['residential-income-v1', obs['url'], obs['name'], candidate['text'], selector], sort_keys=True).encode()).hexdigest()[:24]
         result = old_cache.get(key)
         checked = api.parse_datetime(result.get('checked_at', '')) if result else None
         if not checked or (api.now_utc()-checked).total_seconds() > (604800 if result.get('type') or result.get('excluded') else 3600):
@@ -261,6 +264,9 @@ def resolve_types(source, mode, api, observations, items, old_health, start, bud
                 text = api.clean_text(' '.join(n.get_text(' ', strip=True) for n in nodes))
                 inferred = api.infer_property_type(obs['name'], text)
                 result.update(type=inferred, excluded=bool(re.search(r'\bresidences\b|\bresidence (?:complex|development|project)\b', api.normalize(text))) or inferred in api.EXCLUDED_RESIDENTIAL_UNIT_TYPES)
+                result['residential_income'] = api.residential_income_offer(obs['name'], text, inferred)
+                if candidate.get('commercial') and not result['residential_income']:
+                    result['excluded'] = True
             except Exception as exc:
                 result['error'] = str(exc)[:160]
         if not result:
@@ -270,7 +276,7 @@ def resolve_types(source, mode, api, observations, items, old_health, start, bud
             obs.pop('needs_type_review', None)
             obs.update(type=result.get('type', ''), status='ineligible', excluded=True)
         elif result.get('type'):
-            prop = api.build_property(source['name'], obs['name'], obs['url'], candidate['price'], candidate['text'], candidate['image'], candidate['meta'], result['type'])
+            prop = api.build_property(source['name'], obs['name'], obs['url'], candidate['price'], candidate['text'], candidate['image'], candidate['meta'], result['type'], residential_income_evidence=result.get('residential_income', False))
             if prop:
                 prop['source_type'] = source['type']
                 for field in ('location', 'building_area', 'land_area'):
