@@ -6199,33 +6199,7 @@
       "last_seen_at": "2026-10-05T16:24:10.800179+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Harbour House 613S",
-      "url": "https://kw-aruba.com/listings/harbour-house-613s",
-      "price": 389000.0,
-      "location": "Oranjestad",
-      "type": "House",
-      "beds": "1",
-      "baths": "",
-      "size": "",
-      "building_area": "",
-      "land_area": "",
-      "image": "https://kw-aruba.com/storage/app/uploads/public/6ab/c0d/c61/thumb_69223_500_400_0_0_crop.jpg",
-      "description": "For Sale New Listing Oranjestad USD 389.000 (AWG 692.420) m² 1 bedroom(s)",
-      "source": "Keller Williams Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-05T16:24:10.800168+00:00",
-      "source_type": "direct_broker",
-      "detail_checked_at": "2026-10-05T16:24:08.005106+00:00",
-      "detail_status": "unavailable",
-      "detail_error": "No recognized property-detail sections",
-      "history_key": "0b2c4598784c28e82dab2a1401b3b79179104c21",
-      "last_seen_at": "2026-10-05T16:24:10.800179+00:00",
-      "queued_at": "2026-10-05T16:24:20.997441+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
@@ -6765,19 +6739,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 1 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Harbour House 613S</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$389,000</div><div><strong>Location:</strong> Oranjestad</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 1 beds</div><p style='margin:12px 0'>For Sale New Listing Oranjestad USD 389.000 (AWG 692.420) m² 1 bedroom(s)</p><div><strong>Broker/source:</strong> Keller Williams Aruba (Keller Williams Aruba)</div><div><strong>First detected:</strong> 2026-10-05</div><div style='margin:15px 0'><img src='https://kw-aruba.com/storage/app/uploads/public/6ab/c0d/c61/thumb_69223_500_400_0_0_crop.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://kw-aruba.com/listings/harbour-house-613s' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "99ba00f9d523876ba870224099c737b9b4e9a8bde85d83b232a08d38d6a2f3d0"
-        ]
-      },
-      "created_at": "2026-10-05T16:24:20.997620+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
