@@ -22,7 +22,7 @@ urls=[
 'https://arubalistings.com/']
 def check(url):
  try:
-  response=m.session().get(url,timeout=(5,10))
+  response=m.requests.get(url,headers=m.HEADERS,timeout=(5,10))
   soup=BeautifulSoup(response.text,'html.parser')
   title=soup.title.get_text(' ',strip=True) if soup.title else ''
   data=dict(url=url,final=response.url,status=response.status_code,title=title,bytes=len(response.content),cards=len(soup.select('.item-listing-wrap,article.card-listing')),listing_links=len({a.get('href') for a in soup.select('a[href]') if any(p in a['href'] for p in ('/property/','/sale/','/listing','/objects/'))}))
