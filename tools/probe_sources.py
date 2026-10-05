@@ -35,5 +35,22 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
  for result in pool.map(check,urls):print('ACCESS',json.dumps(result),flush=True)
 for source in sources:
  if source['name'] in ('Home 4 Everyone','Smiley Real Estate'):
+  original=m.get_page
+  captured={}
+  def capture(url,*args,**kwargs):
+   html,final=original(url,*args,**kwargs)
+   if 'homeforeveryonearuba.com' in final:
+    captured[url]=html
+   return html,final
+  m.get_page=capture
   items,obs,health=c.scrape(source,'deep',m,{})
+  m.get_page=original
+  for observed in obs:
+   if observed.get('needs_type_review'):
+    print('UNKNOWN',observed,flush=True)
+    html=captured.get(observed['url'],'')
+    (root/'home_unknown.html').write_text(html)
+    soup=BeautifulSoup(html,'html.parser')
+    print('UNKNOWN_DOM',[(n.name,n.get('class'),[(a.name,a.get('class'),a.get('id')) for a in list(n.parents)[:3]]) for n in soup.select('h1,h2,h3')],flush=True)
+    print('UNKNOWN_TITLE',soup.title.get_text(' ',strip=True) if soup.title else '',flush=True)
   print('COVERAGE',source['name'],json.dumps(health),flush=True)
