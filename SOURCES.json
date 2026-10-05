@@ -121,7 +121,7 @@
       ],
       "fast_seconds": 45,
       "deep_seconds": 90,
-      "detail_description_selector": ".property-description-wrap .block-content-wrap"
+      "detail_description_selector": ".property-description-wrap .block-content-wrap, .elementor-widget-houzez-property-content"
     },
     {
       "name": "Smiley Real Estate",
