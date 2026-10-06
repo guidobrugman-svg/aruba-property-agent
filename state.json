@@ -8538,82 +8538,7 @@
       "last_seen_at": "2026-10-06T17:16:52.208475+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "40 Caya Luna, Oranjestad, Oranjestad",
-      "url": "https://www.realtor.com/international/aw/40-caya-luna-oranjestad-oranjestad-310110410606/",
-      "price": 365168.0,
-      "location": "40 Caya Luna, Oranjestad, Oranjestad",
-      "type": "House",
-      "beds": "4",
-      "baths": "3",
-      "size": "",
-      "building_area": "121 m²",
-      "land_area": "600 m²",
-      "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/597d3ca2314a71d2eddc051ceea902cb.jpg",
-      "description": "House",
-      "source": "Realtor International Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-06T17:16:52.185762+00:00",
-      "source_type": "aggregator",
-      "detail_checked_at": "2026-10-06T17:16:50.817709+00:00",
-      "development_evidence": [
-        {
-          "label": "Ownership",
-          "excerpt": "The property is built on 600 m² of property land and features a main house with 3 bedrooms and 2 bathrooms , together with an additional studio apartment with its own bathroom",
-          "url": "https://www.realtor.com/international/aw/40-caya-luna-oranjestad-oranjestad-310110410606/"
-        },
-        {
-          "label": "Ownership",
-          "excerpt": "Property Details: 600 m² property land 3 bedrooms in the main house 2 bathrooms in the main house Additional studio apartment with private bathroom 4 additional rooms outside Property requires TLC and renovat",
-          "url": "https://www.realtor.com/international/aw/40-caya-luna-oranjestad-oranjestad-310110410606/"
-        }
-      ],
-      "residence_complex": false,
-      "detail_status": "ok",
-      "history_key": "834208167439bfe4021bbd2b274e2c1b99fe63c4",
-      "last_seen_at": "2026-10-06T17:16:52.185767+00:00",
-      "queued_at": "2026-10-06T17:17:08.939507+00:00"
-    },
-    {
-      "name": "56 Sabana Grandi, Oranjestad, Oranjestad",
-      "url": "https://www.realtor.com/international/aw/56-sabana-grandi-oranjestad-oranjestad-310110409168/",
-      "price": 786516.0,
-      "location": "56 Sabana Grandi, Oranjestad, Oranjestad",
-      "type": "House",
-      "beds": "4",
-      "baths": "2",
-      "size": "",
-      "building_area": "349 m²",
-      "land_area": "997 m²",
-      "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/f3aa6514958816a786a73de2d71c4484.jpg",
-      "description": "House",
-      "source": "Realtor International Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-06T17:16:52.208473+00:00",
-      "source_type": "aggregator",
-      "detail_checked_at": "2026-10-06T17:16:50.819866+00:00",
-      "development_evidence": [
-        {
-          "label": "Ownership",
-          "excerpt": "Set on an impressive 997 m² of property land with approximately 349 m² of built-up area , this move-in-ready home was tastefully renovated in 2023 and is designed for those who appreciate indoor-outdoor living",
-          "url": "https://www.realtor.com/international/aw/56-sabana-grandi-oranjestad-oranjestad-310110409168/"
-        },
-        {
-          "label": "Ownership",
-          "excerpt": "Property Highlights 997 m² Property Land Approx",
-          "url": "https://www.realtor.com/international/aw/56-sabana-grandi-oranjestad-oranjestad-310110409168/"
-        }
-      ],
-      "residence_complex": false,
-      "detail_status": "ok",
-      "history_key": "01184330a822011280b3f70078d964b8a1dac06c",
-      "last_seen_at": "2026-10-06T17:16:52.208475+00:00",
-      "queued_at": "2026-10-06T17:17:08.939526+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
@@ -10549,20 +10474,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 2 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>40 Caya Luna, Oranjestad, Oranjestad</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$365,168</div><div><strong>Location:</strong> 40 Caya Luna, Oranjestad, Oranjestad</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 121 m²</div><div><strong>Land area:</strong> 600 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> The property is built on 600 m² of property land and features a main house with 3 bedrooms and 2 bathrooms , together with an additional studio apartment with its own bathroom · Property Details: 600 m² property land 3 bedrooms in the main house 2 bathrooms in the main house Additional studio apartment with private bathroom 4 additional rooms outside Property requires TLC and renovat</div><div><a href='https://www.realtor.com/international/aw/40-caya-luna-oranjestad-oranjestad-310110410606/'>Source evidence</a></div><div><a href='https://www.realtor.com/international/aw/40-caya-luna-oranjestad-oranjestad-310110410606/'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 4 beds · 3 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-06</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/597d3ca2314a71d2eddc051ceea902cb.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/40-caya-luna-oranjestad-oranjestad-310110410606/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>56 Sabana Grandi, Oranjestad, Oranjestad</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$786,516</div><div><strong>Location:</strong> 56 Sabana Grandi, Oranjestad, Oranjestad</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 349 m²</div><div><strong>Land area:</strong> 997 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Set on an impressive 997 m² of property land with approximately 349 m² of built-up area , this move-in-ready home was tastefully renovated in 2023 and is designed for those who appreciate indoor-outdoor living · Property Highlights 997 m² Property Land Approx</div><div><a href='https://www.realtor.com/international/aw/56-sabana-grandi-oranjestad-oranjestad-310110409168/'>Source evidence</a></div><div><a href='https://www.realtor.com/international/aw/56-sabana-grandi-oranjestad-oranjestad-310110409168/'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 4 beds · 2 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-06</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/f3aa6514958816a786a73de2d71c4484.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/56-sabana-grandi-oranjestad-oranjestad-310110409168/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "6c105990f29791e0f82db4befd7ea36f7fb0f6b482b4183a55f7908813bc36b7",
-          "c1630b59cb16e995f0f4c1e6a7a730b4d4e6b0eca5e4d96b79b5105400133e44"
-        ]
-      },
-      "created_at": "2026-10-06T17:17:08.939859+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
