@@ -11,7 +11,7 @@ selectors=['.item-listing-wrap','article.property-item','a.property-card','.list
 def check(source):
  url=source['url'];result=dict(source)
  try:
-  r=m.requests.get(url,headers=m.HEADERS,timeout=(4,8))
+  r=m.requests.request("POST" if source.get("data") else "GET",url,headers={**m.HEADERS,**source.get("headers",{})},data=source.get("data"),timeout=(5,12))
   result.update(status=r.status_code,final=r.url,bytes=len(r.content))
   soup=BeautifulSoup(r.text,'html.parser')
   result['title']=soup.title.get_text(' ',strip=True) if soup.title else ''
