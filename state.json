@@ -8617,45 +8617,7 @@
       "last_seen_at": "2026-10-06T18:01:35.594932+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "63 Weststraat, Oranjestad, Oranjestad",
-      "url": "https://www.realtor.com/international/aw/63-weststraat-oranjestad-oranjestad-310110409240/",
-      "price": 446630.0,
-      "location": "63 Weststraat, Oranjestad, Oranjestad",
-      "type": "House",
-      "beds": "2",
-      "baths": "2",
-      "size": "",
-      "building_area": "160 m²",
-      "land_area": "504 m²",
-      "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/0faf5208adbe21273bb33ae7cfc9f97f.jpg",
-      "description": "House",
-      "source": "Realtor International Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-06T18:01:35.594920+00:00",
-      "source_type": "aggregator",
-      "detail_checked_at": "2026-10-06T18:01:33.860976+00:00",
-      "development_evidence": [
-        {
-          "label": "Ownership",
-          "excerpt": "Set on 504 m² of full ownership land , the property features a 160 m² built-up home thoughtfully designed for practical and flexible living",
-          "url": "https://www.realtor.com/international/aw/63-weststraat-oranjestad-oranjestad-310110409240/"
-        },
-        {
-          "label": "Ownership",
-          "excerpt": "Set on 504 m² of full ownership land , the property features a 160 m² built-up home thoughtfully designed for practical and flexible living",
-          "url": "https://www.realtor.com/international/aw/63-weststraat-oranjestad-oranjestad-310110409240/"
-        }
-      ],
-      "residence_complex": false,
-      "detail_status": "ok",
-      "history_key": "4bb89a3ad94790312e886a9e2195addf90fb875f",
-      "last_seen_at": "2026-10-06T18:01:35.594932+00:00",
-      "queued_at": "2026-10-06T18:02:01.718545+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
@@ -10650,19 +10612,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 1 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>63 Weststraat, Oranjestad, Oranjestad</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$446,630</div><div><strong>Location:</strong> 63 Weststraat, Oranjestad, Oranjestad</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 160 m²</div><div><strong>Land area:</strong> 504 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Set on 504 m² of full ownership land , the property features a 160 m² built-up home thoughtfully designed for practical and flexible living · Set on 504 m² of full ownership land , the property features a 160 m² built-up home thoughtfully designed for practical and flexible living</div><div><a href='https://www.realtor.com/international/aw/63-weststraat-oranjestad-oranjestad-310110409240/'>Source evidence</a></div><div><a href='https://www.realtor.com/international/aw/63-weststraat-oranjestad-oranjestad-310110409240/'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2 beds · 2 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-06</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/0faf5208adbe21273bb33ae7cfc9f97f.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/63-weststraat-oranjestad-oranjestad-310110409240/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "e31b7af4cc9526e6707321f6a5c21e94cc4be2284ec56fe5a914eb46aec811d0"
-        ]
-      },
-      "created_at": "2026-10-06T18:02:01.718954+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
