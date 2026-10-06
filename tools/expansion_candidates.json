@@ -1,39 +1,30 @@
 [
   {
-    "name": "Prima Casa AJAX sale",
-    "url": "https://aruba-realty.com/listings/active-sales",
-    "data": {
-      "page": "1",
-      "category_id": "1",
-      "status_id": "",
-      "status_id_exclude": "",
-      "type_id": "",
-      "keyword": "",
-      "sortby": "created_at-desc"
-    },
-    "headers": {
-      "X-OCTOBER-REQUEST-HANDLER": "Listings::onFilter",
-      "X-Requested-With": "XMLHttpRequest"
-    }
+    "name": "Prima house detail",
+    "url": "https://aruba-realty.com/property/casa-verde"
   },
   {
-    "name": "Alto Vista page 2",
-    "url": "https://altovistarealestate.com/house-for-sale/?wplpage=2"
+    "name": "Prima new condo detail",
+    "url": "https://aruba-realty.com/property/casa-yoo-2-2"
   },
   {
-    "name": "North Side sale",
-    "url": "https://northsiderealtyaruba.com/status/for-sale/"
+    "name": "Casnan house detail",
+    "url": "https://casnan.com/property/house-for-sale-marawiel/"
   },
   {
-    "name": "Casnan sale retry",
-    "url": "https://casnan.com/property-status/for-sale/"
+    "name": "Cas y Estilo house detail",
+    "url": "https://www.casyestilo.com/properties-1/kanarie-straat-6"
   },
   {
-    "name": "Bon Choice detail",
-    "url": "https://bcarubarealty.com/properties/tanki-leendert-house/"
+    "name": "Aruba Real Estate Brokers detail",
+    "url": "https://arubarealestatebrokers.com/property/for-sale-fuerte-3"
   },
   {
-    "name": "Maurer detail",
-    "url": "https://www.maurer-real-estate.com/residential/655-house-with-1-apartment-in-cumana"
+    "name": "CC house detail",
+    "url": "https://www.ccrealestatearuba.com/properties-1/washington-43-in-noord-"
+  },
+  {
+    "name": "ID house detail",
+    "url": "https://id297.com/property/caya-luna-40-san-barbola-2-2-3-2/"
   }
 ]
