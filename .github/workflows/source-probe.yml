@@ -2,8 +2,8 @@ name: Diagnose public source coverage
 on:
   workflow_dispatch:
   push:
-    branches: [expand-requested-broker-coverage]
-    paths: [tools/probe_sources.py, tools/expansion_candidates.json, .github/workflows/source-probe.yml]
+    branches: [repair-public-source-access]
+    paths: [tools/probe_sources.py, .github/workflows/source-probe.yml]
 permissions:
   contents: read
 jobs:

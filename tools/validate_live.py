@@ -14,7 +14,7 @@ import development
 
 mode = sys.argv[1] if len(sys.argv)>1 else 'fast'
 started=time.monotonic()
-sources=json.load(open(m.SOURCES_FILE))['sources']
+sources=[s for s in json.load(open(m.SOURCES_FILE))['sources'] if s.get('enabled')]
 results=collectors.scan(sources,mode,{},m)
 current=[]
 for source,(items,observations,health) in results:
