@@ -8400,81 +8400,11 @@
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
-    "new": [
-      {
-        "name": "Harbour House 613S",
-        "url": "https://kw-aruba.com/listings/harbour-house-613s",
-        "price": 389000.0,
-        "location": "Oranjestad",
-        "type": "House",
-        "beds": "1",
-        "baths": "",
-        "size": "",
-        "building_area": "",
-        "land_area": "",
-        "image": "https://kw-aruba.com/storage/app/uploads/public/6ab/c0d/c61/thumb_69223_500_400_0_0_crop.jpg",
-        "description": "For Sale New Listing Oranjestad USD 389.000 (AWG 692.420) m² 1 bedroom(s)",
-        "source": "Keller Williams Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-05T16:24:10.800168+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-10-05T16:24:08.005106+00:00",
-        "detail_status": "unavailable",
-        "detail_error": "No recognized property-detail sections",
-        "history_key": "0b2c4598784c28e82dab2a1401b3b79179104c21",
-        "last_seen_at": "2026-10-05T16:24:10.800179+00:00"
-      },
-      {
-        "name": "Sero Preto 8 - B Other (San Nicolas) Single Family Homes",
-        "url": "https://century21aruba.com/en/d/sero-preto-8-b-single-family-homes-for-sale-other-san-nicolas-1166932",
-        "price": 503000.0,
-        "location": "San Nicolas",
-        "type": "House",
-        "beds": "",
-        "baths": "",
-        "size": "1,203 m²",
-        "building_area": "",
-        "land_area": "",
-        "image": "https://static.century21aruba.com/images/udx/1166932/w470/1790971248855513.jpg?vno=1790973942",
-        "description": "For Sale New Listing US$ 503,000 3 · 2 · Ocean View · 1,203 m² 2/37",
-        "source": "Century 21 Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-05T21:34:14.629917+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-10-05T21:34:11.332603+00:00",
-        "detail_status": "unavailable",
-        "detail_error": "403 Client Error: Forbidden for url: https://century21aruba.com/en/d/sero-preto-8-b-single-family-homes-for-sale-other-san-nicolas-1166932",
-        "history_key": "b5718329fa4cc9d514dc61e442ce6dfcbeca9272",
-        "last_seen_at": "2026-10-05T21:34:14.629927+00:00"
-      },
-      {
-        "name": "Seroe Noka, Santa Cruz, Aruba, Santa Cruz, Aruba",
-        "url": "https://www.realtor.com/international/aw/seroe-noka-santa-cruz-aruba-santa-cruz-aruba-310120102643/",
-        "price": 793260.0,
-        "location": "Seroe Noka, Santa Cruz, Aruba, Santa Cruz, Aruba",
-        "type": "Land",
-        "beds": "",
-        "baths": "",
-        "size": "",
-        "building_area": "",
-        "land_area": "4,068 m²",
-        "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/eba183dfd01a2df58c21f7ce5c236498.jpg",
-        "description": "Land",
-        "source": "Realtor International Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-06T09:44:09.366010+00:00",
-        "source_type": "aggregator",
-        "history_key": "63a0b6a57a268adcdb4dd82a946856edfc7a394d",
-        "last_seen_at": "2026-10-06T09:44:09.366017+00:00"
-      }
-    ],
+    "new": [],
     "reductions": [],
     "major_changes": []
   },
-  "last_digest_date": "2026-10-05",
+  "last_digest_date": "2026-10-06",
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
@@ -10181,26 +10111,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "digest",
-      "subject": "Aruba Property Daily Digest — Oct 06 — 3 new, 0 reductions",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Daily Digest</h1><p style='font-size:16px'><strong>3 new properties</strong><br><strong>0 price reductions</strong><br><strong>0 major changes</strong><br>253 qualifying properties currently detected across available sources.</p><h2>NEW SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Harbour House 613S</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$389,000</div><div><strong>Location:</strong> Oranjestad</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 1 beds</div><p style='margin:12px 0'>For Sale New Listing Oranjestad USD 389.000 (AWG 692.420) m² 1 bedroom(s)</p><div><strong>Broker/source:</strong> Keller Williams Aruba (Keller Williams Aruba)</div><div><strong>First detected:</strong> 2026-10-05</div><div style='margin:15px 0'><img src='https://kw-aruba.com/storage/app/uploads/public/6ab/c0d/c61/thumb_69223_500_400_0_0_crop.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://kw-aruba.com/listings/harbour-house-613s' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Sero Preto 8 - B Other (San Nicolas) Single Family Homes</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$503,000</div><div><strong>Location:</strong> San Nicolas</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div><strong>Source area (scope unspecified):</strong> 1,203 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale New Listing US$ 503,000 3 · 2 · Ocean View · 1,203 m² 2/37</p><div><strong>Broker/source:</strong> Century 21 Aruba (Century 21 Aruba)</div><div><strong>First detected:</strong> 2026-10-05</div><div style='margin:15px 0'><img src='https://static.century21aruba.com/images/udx/1166932/w470/1790971248855513.jpg?vno=1790973942' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://century21aruba.com/en/d/sero-preto-8-b-single-family-homes-for-sale-other-san-nicolas-1166932' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Seroe Noka, Santa Cruz, Aruba, Santa Cruz, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$793,260</div><div><strong>Location:</strong> Seroe Noka, Santa Cruz, Aruba, Santa Cruz, Aruba</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 4,068 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>Land</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-06</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/eba183dfd01a2df58c21f7ce5c236498.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/seroe-noka-santa-cruz-aruba-santa-cruz-aruba-310120102643/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding:14px;background:#f5f5f5;border-radius:6px;font-size:13px'><strong>Source coverage:</strong> 15 sources checked successfully; 23 sources could not be checked during the latest run.</div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "date": "2026-10-06",
-        "activity": {
-          "new": [
-            "a2feb3896fa121a1b612d3a9322eb0698430231e6b9cdfa6325c4a21415664b5",
-            "b5e4241ff46103f3bfc9a137915c3ede743691830f54ae4f2151b21d2fdab555",
-            "c8710436621f9bb38b6f499de14e71c300d8042a4e84b2facc18735c540e41df"
-          ],
-          "reductions": [],
-          "major_changes": []
-        }
-      },
-      "created_at": "2026-10-06T12:03:58.292841+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
@@ -10970,5 +10881,5 @@
       "source": "Capital Reliance Aruba"
     }
   ],
-  "last_digest_at": "2026-10-05T12:03:55.712181+00:00"
+  "last_digest_at": "2026-10-06T12:04:00.189654+00:00"
 }
