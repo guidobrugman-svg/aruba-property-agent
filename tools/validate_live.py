@@ -14,7 +14,7 @@ import development
 
 mode = sys.argv[1] if len(sys.argv)>1 else 'fast'
 started=time.monotonic()
-sources=json.load(open(m.SOURCES_FILE))['sources']
+sources=[s for s in json.load(open(m.SOURCES_FILE))['sources'] if s.get('enabled')]
 results=collectors.scan(sources,mode,{},m)
 current=[]
 for source,(items,observations,health) in results:
@@ -35,7 +35,13 @@ def replay(seed, passes):
         path=str(Path(folder)/'state.json')
         Path(path).write_text(json.dumps(seed))
         states=[]
-        with patch.object(m,'STATE_FILE',path),patch.object(m,'DRY_RUN',True),patch.dict(os.environ,{'SCAN_MODE':mode,'DEFER_DELIVERY':'1'}),patch.object(collectors,'scan',return_value=results),patch.object(development,'enrich',side_effect=lambda *args:copy.deepcopy(current)):
+        real_reconcile=m.reconcile
+        def traced_reconcile(*args):
+            result=real_reconcile(*args)
+            if result[3]:
+                print('REPLAY_MAJOR_DETAILS',json.dumps([{'name':p['name'],'source':p['source'],'url':p['url'],'changes':changes} for p,changes in result[3]]),flush=True)
+            return result
+        with patch.object(m,'STATE_FILE',path),patch.object(m,'DRY_RUN',True),patch.dict(os.environ,{'SCAN_MODE':mode,'DEFER_DELIVERY':'1'}),patch.object(collectors,'scan',return_value=results),patch.object(development,'enrich',side_effect=lambda *args:copy.deepcopy(current)),patch.object(m,'reconcile',side_effect=traced_reconcile):
             for _ in range(passes):
                 m.main()
                 state=json.load(open(path))

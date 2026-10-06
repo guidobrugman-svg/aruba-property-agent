@@ -68,6 +68,7 @@ EXCLUDED_STATUS = (
     "pending",
     "on hold",
     "reserved",
+    "in process",
 )
 
 EXCLUDED_TYPES = (
@@ -87,6 +88,7 @@ EXCLUDED_RESIDENTIAL_UNIT_TYPES = (
 )
 
 DIRECT_SOURCE_NAMES = {
+    "XCLSV Aruba Realty",
     "Aruba Brokers",
     "Ben Real Estate",
     "RE/MAX Aruba",
@@ -101,6 +103,23 @@ DIRECT_SOURCE_NAMES = {
     'MPG Aruba',
     'Aruba Happy Homes',
     'Objective Realty Aruba',
+    'Alto Vista Real Estate',
+    'Kermit Real Estate',
+    'C & C Real Estate',
+    'Cas y Estilo',
+    'ID Realty Group',
+    'ABLE Realty',
+    'JZ Realty Aruba',
+    'Bold Properties Aruba',
+    'All Property Aruba',
+    'AJ Real Estate Aruba',
+    'Prima Casa Real Estate',
+    'Casnan Real Estate',
+    'Maurer Real Estate',
+    'Bon Choice Aruba Realty',
+    'Aruba Home Minders',
+    'Aruba Real Estate Brokers',
+    'Capital Reliance Aruba',
 }
 
 
@@ -170,7 +189,7 @@ def looks_like_url(value):
 # HTTP / SOURCE ACCESS
 # ============================================================
 
-def get_page(url, request_data=None, timeout=(4, 8)):
+def get_page(url, request_data=None, timeout=(4, 8), request_headers=None):
     """One bounded retry for transient failures; TLS verification stays enabled."""
     if not hasattr(_local, "session"):
         _local.session = requests.Session()
@@ -178,9 +197,9 @@ def get_page(url, request_data=None, timeout=(4, 8)):
     for attempt in range(2):
         try:
             if request_data is None:
-                response = _local.session.get(url, timeout=timeout, allow_redirects=True)
+                response = _local.session.get(url, headers=request_headers, timeout=timeout, allow_redirects=True)
             else:
-                response = _local.session.post(url, data=request_data, timeout=timeout, allow_redirects=True)
+                response = _local.session.post(url, data=request_data, headers=request_headers, timeout=timeout, allow_redirects=True)
             response.raise_for_status()
             return response.text, response.url
         except requests.exceptions.SSLError:
@@ -213,7 +232,10 @@ def parse_number(value):
     if not value:
         return None
     # Aruba brokers use both 650,000 and 650.000 (and decimal rates).
-    if re.fullmatch(r"\d{1,3}(?:[.,]\d{3})+", value):
+    if re.fullmatch(r"\d{1,3}(?:\.\d{3})+\.\d{2}", value):
+        groups = value.split('.')
+        value = ''.join(groups[:-1]) + '.' + groups[-1]
+    elif re.fullmatch(r"\d{1,3}(?:[.,]\d{3})+", value):
         value = value.replace(',', '').replace('.', '')
     elif ',' in value and '.' in value:
         value = value.replace(',', '') if value.rfind('.') > value.rfind(',') else value.replace('.', '').replace(',', '.')
@@ -321,9 +343,10 @@ def parse_price_details(text):
         }
 
     patterns = [
-        r"(?:USD|US\$)\s*([\d,.]+)",
+        r"(?:USD|US\$|U\$D)\s*:?\s*([\d,.]+)",
         r"\$\s*([\d,.]+)",
         r"([\d,.]+)\s*(?:USD|US\$)",
+        r"(\d[\d,.]*(?:\s\d{3})*)\s*\$",
     ]
 
     for pattern in patterns:
@@ -453,6 +476,8 @@ def extract_status(text):
 
 def house_with_apartments(title, text):
     combined = normalize(title + ' ' + text)
+    if re.search(r'\bmain house\b.{0,40}\bseparate (?:apartment|studio unit)\b', combined):
+        return True
     count = r'(?:a|an|one|two|three|four|five|six|seven|eight|nine|ten|\d+)'
     if re.search(r'\b(?:the |this )?property consists of (?:a |the )?main house\b.{0,180}\b(?:there are|and|plus|with)\s+' + count + r'\s+(?:studio\s+)?apartments?\b', combined):
         return True
@@ -463,11 +488,24 @@ def residential_income_offer(title, text, property_type=''):
     return property_type == 'Apartment Complex' or house_with_apartments(title, text)
 
 
+def residence_unit_offer(title, text):
+    title_n, combined = normalize(title), normalize(title + ' ' + text)
+    if re.search(r'\bresidences\b|\bresidence (?:complex|development|project|pools)\b', combined):
+        return True
+    if re.search(r'\b(?:monte verde|wayaca|reina sophia|ora|orquidea|napa valley|harbou?r|mikassa|solarium) residence\b', combined):
+        return True
+    if re.search(r'\b(?:model|unit)\b.{0,60}\bresidence\b|\bresidence\b.{0,60}\b(?:model|unit|\d+ bedroom)\b', title_n):
+        return True
+    return bool(re.search(r'\bharbou?r house\b.*\bunit\b', title_n))
+
+
 def whole_apartment_offer(title, text):
     """Explicit multi-apartment sale offers; unit numbers and per-unit projects fail closed."""
     title_n, text_n = normalize(title), normalize(text)
     combined = title_n + ' ' + text_n
-    if re.search(r'\b(?:apartments?|units?) (?:remaining|left|available)\b|\b(?:starting (?:at|from)|price per (?:unit|apartment)|priced per (?:unit|apartment)|per unit|per apartment)\b', combined):
+    if re.search(r'\b(?:apartments?|units?) (?:remaining|left|available)\b|\b(?:starting (?:at|from)|price per (?:unit|apartment)|priced per (?:unit|apartment))\b', combined):
+        return False
+    if re.search(r'(?:USD|US\$|\$)[\s\d.,]{1,25}\s*(?:per|/)\s*(?:unit|apartment)\b', title + ' ' + text, re.I):
         return False
     if re.search(r'\b(?:apartment|studio|condo|condominium|unit)\s+(?:unit\s+|number\s+|no\s+)?\d+\b', title_n):
         return False
@@ -493,6 +531,12 @@ def infer_property_type(title, text):
         return 'Apartment Complex'
     if re.match(r'^(?:apartment|studio|condo|condominium)\s+(?:unit\s+|number\s+|no\s+)?\d+\b', title_n):
         return 'Condominium' if re.match(r'^condo', title_n) else 'Apartment'
+    if re.match(r'^(?:apartment|studio|condo|condominium|penthouse|unit)\b', title_n) and not re.search(r'\bapartment (?:building|complex)\b', title_n):
+        return 'Condominium' if re.match(r'^condo', title_n) else 'Apartment'
+    if house_with_apartments(title, text):
+        return 'House'
+    if re.search(r'\b(?:house|home|villa)\b.{0,35}\bon property land\b', title_n):
+        return 'House'
 
     full_home = bool(re.search(r"\b(houses?|homes?|villas?|townhouses?|townhomes?|town houses?)\b", title_n))
     full_home = full_home or house_with_apartments(title, text)
@@ -794,6 +838,10 @@ def area_m2(value):
     """Only parse a source area field, never a price or an arbitrary card number."""
     match = re.search(r"([\d.,]+)\s*(m²|m2|sqm|sq\s*mt|sq\s*ft|sqft|ft²)", str(value), re.I)
     if not match:
+        prefix = re.fullmatch(r'\s*(?:m²|m2|sqm)\s*:\s*([\d.,]+)\s*', str(value), re.I)
+        if prefix:
+            match = re.search(r'([\d.,]+)\s*(m2)', prefix[1] + ' m2')
+    if not match:
         return ""
     number = parse_number(match.group(1))
     if not number or number <= 1:
@@ -805,8 +853,8 @@ def area_m2(value):
 
 def explicit_areas(text):
     unit = r"([\d.,]+\s*(?:m²|m2|sqm|sq\s*mt|sq\s*ft|sqft|ft²))"
-    building = first_match([r"\b(?:built[ -]?up(?: area| size)?|building(?: area| size)?|living(?: area| space)?|interior(?: area)?|construction area)\s*:?\s*" + unit], text)
-    land = first_match([r"\b(?:lot(?: area| size)?|land(?: area| size)?|plot(?: area| size)?)\s*:?\s*" + unit], text)
+    building = first_match([r"\b(?:built[ -]?up(?: area| size)?|build up(?: area| size)?|building(?: area| size)?|living(?: area| space)?|interior(?: area)?|construction area)\s*:?\s*" + unit], text)
+    land = first_match([r"\b(?:lot(?: area| size)?|land(?: area| size| space)?|plot(?: area| size)?)\s*:?\s*" + unit], text)
     return area_m2(building), area_m2(land)
 
 
@@ -957,6 +1005,8 @@ def build_property(
 
     if type_hint:
         hinted = infer_property_type(type_hint, '')
+        if hinted == 'Apartment Complex' and residential_income_evidence and not re.search(r'\b(?:apartment|studio|condo|condominium|unit)\s+(?:unit\s+|number\s+|no\s+)?\d+\b', normalize(title)):
+            property_type = hinted
         if hinted and property_type not in ('House', 'Villa', 'Townhouse', 'Apartment Complex', 'Condominium', 'Apartment'):
             property_type = hinted
 
@@ -967,7 +1017,7 @@ def build_property(
         return None
 
     # Standalone new builds remain eligible; residence-complex offerings do not.
-    if re.search(r"\bresidences\b|\bresidence (?:complex|development|project)\b", normalize(f'{title} {text}')):
+    if residence_unit_offer(title, text):
         return None
     if property_type == 'Land':
         beds = baths = ''
@@ -2543,6 +2593,7 @@ def main():
     print(f'Aruba Property Agent: {mode} scan')
     current, observations = [], []
     newly_baselined = set()
+    previously_unclassified = set()
     results = collectors.scan(sources, mode, state['source_health'], sys.modules[__name__])
     for source, (items, observed, health) in results:
         name = source['name']
@@ -2551,13 +2602,16 @@ def main():
             coverage_revision = old_health.get('coverage_revision', old_health.get('source_revision'))
             if coverage_revision != health['source_revision']:
                 newly_baselined.add(name)
-            if mode == 'deep' and health['status'] in ('ok', 'empty', 'partial') and not health.get('coverage_limited'):
+            if mode == 'deep' and health['status'] in ('ok', 'empty', 'partial') and not health.get('pagination_limited', health.get('coverage_limited')):
                 coverage_revision = health['source_revision']
             health['coverage_revision'] = coverage_revision
         if source.get('detail_description_selector'):
+            previous_review_urls = set(old_health.get('review_observed_urls', []))
+            previously_unclassified.update((name, url) for url in previous_review_urls)
+            health['review_observed_urls'] = sorted(previous_review_urls | {canonical_url(o['url']) for o in observed if o.get('needs_type_review')})
             if not old_health.get('type_review_initialized'):
                 newly_baselined.add(name)
-            health['type_review_initialized'] = old_health.get('type_review_initialized', False) or (mode == 'deep' and health['status'] in ('ok', 'empty', 'partial') and not health.get('unclassified_cards'))
+            health['type_review_initialized'] = old_health.get('type_review_initialized', False) or (mode == 'deep' and health['status'] in ('ok', 'empty', 'partial'))
         if health['status'] not in ('ok', 'empty', 'partial'):
             failures = old_health.get('consecutive_failures', 0) + 1
             health['consecutive_failures'] = failures
@@ -2590,9 +2644,14 @@ def main():
     current = [p for p in current if not p.get('residence_complex')]
     current = history_dedupe(previous, current)
     history, new, reductions, major = reconcile(previous, current)
+    confirmed_urls = {canonical_url(p['url']) for p in current}
     # Explicit unavailability updates history; absence on a shallow scan never means sold.
     for name, observed in observations:
         if not observed.get('status'):
+            # Scoped descriptions can establish a whole-property sale that a
+            # shorter inventory title alone would classify as an apartment.
+            if canonical_url(observed['url']) in confirmed_urls:
+                continue
             inferred = infer_property_type(observed.get('name', ''), observed.get('type', ''))
             if inferred in EXCLUDED_RESIDENTIAL_UNIT_TYPES:
                 observed['status'] = 'ineligible'
@@ -2610,10 +2669,12 @@ def main():
                 baseline.pop('change_candidate', None)
         state['migration'] = {'at': iso_now(), 'baseline_discoveries': len(new), 'preserved_history': len(previous)}
         new, reductions, major = [], [], []
-    if not migration and newly_baselined:
-        discoveries = [p for p in new if p['source'] in newly_baselined]
+    if not migration:
+        def coverage_discovery(p):
+            return p['source'] in newly_baselined or (p['source'], canonical_url(p['url'])) in previously_unclassified
+        discoveries = [p for p in new if coverage_discovery(p)]
         state.setdefault('coverage_discoveries', []).extend({'key':property_key(p), 'at':iso_now(), 'source':p['source']} for p in discoveries)
-        new = [p for p in new if p['source'] not in newly_baselined]
+        new = [p for p in new if not coverage_discovery(p)]
     record_daily_activity(state['daily_activity'], new, reductions, major)
     state['pending_new'] = dedupe_pending_new(state['pending_new'] + [dict(p, queued_at=iso_now()) for p in new])
     for field, events, label in [('pending_reductions', reductions, 'old'), ('pending_major_changes', major, 'changes')]:

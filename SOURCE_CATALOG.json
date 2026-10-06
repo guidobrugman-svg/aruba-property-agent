@@ -1,0 +1,640 @@
+{
+  "verified_at": "2026-10-06",
+  "price_limit_usd": 800000,
+  "sources": [
+    {
+      "name": "Aruba Brokers",
+      "aliases": [
+        "Aruba Brokers Real Estate"
+      ],
+      "official_or_inventory_url": "https://www.arubabrokers.com/property-status/for-sale/",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Aruba Brokers"
+    },
+    {
+      "name": "Ben Real Estate",
+      "aliases": [],
+      "official_or_inventory_url": "https://benarubarealestate.com/sale",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Ben Real Estate"
+    },
+    {
+      "name": "Bluefin Realtors",
+      "aliases": [],
+      "official_or_inventory_url": "https://bluefinrealtors.com/property/",
+      "source_type": "aggregator",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Bluefin Realtors"
+    },
+    {
+      "name": "Aruba Listings",
+      "aliases": [],
+      "official_or_inventory_url": "https://arubalistings.com/listings",
+      "source_type": "aggregator",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Aruba Listings"
+    },
+    {
+      "name": "RE/MAX Aruba",
+      "aliases": [],
+      "official_or_inventory_url": "https://remaxaruba.com/property/residential-for-sale",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "RE/MAX Aruba"
+    },
+    {
+      "name": "RES Aruba Realty",
+      "aliases": [
+        "RES Aruba Realty"
+      ],
+      "official_or_inventory_url": "https://resarubarealty.com/status/for-sale/",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "RES Aruba Realty"
+    },
+    {
+      "name": "Aruba Happy Realty",
+      "aliases": [],
+      "official_or_inventory_url": "https://www.arubahappyrealty.com/status/for-sale/",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Aruba Happy Realty"
+    },
+    {
+      "name": "Aruba Palms Realtors",
+      "aliases": [],
+      "official_or_inventory_url": "https://arubapalmsrealtors.com/property-type/houses/",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Aruba Palms Realtors"
+    },
+    {
+      "name": "Home 4 Everyone",
+      "aliases": [
+        "Home 4 Everyone Aruba",
+        "Homeforeveryonearuba"
+      ],
+      "official_or_inventory_url": "https://homeforeveryonearuba.com/status/for-sale/",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Home 4 Everyone"
+    },
+    {
+      "name": "Smiley Real Estate",
+      "aliases": [
+        "Smiley Real Estate Aruba",
+        "smileyaruba"
+      ],
+      "official_or_inventory_url": "https://smileyaruba.com/offer-type/for-sale/",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Smiley Real Estate"
+    },
+    {
+      "name": "Century 21 Aruba",
+      "aliases": [
+        "CENTURY 21 Aruba Real Estate"
+      ],
+      "official_or_inventory_url": "https://century21aruba.com/en/s/for-sale/single-family-homes/oga",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Century 21 Aruba"
+    },
+    {
+      "name": "Coldwell Banker Aruba",
+      "aliases": [
+        "Coldwell Banker Aruba Realty"
+      ],
+      "official_or_inventory_url": "https://www.coldwellbanker.aw/index.php?action=searchresults&pclass[]=1&pclass[]=2&sortby=listingsdb_id&sorttype=DESC",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Coldwell Banker Aruba"
+    },
+    {
+      "name": "Keller Williams Aruba",
+      "aliases": [],
+      "official_or_inventory_url": "https://kw-aruba.com/listings/for-sale/residential",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Keller Williams Aruba"
+    },
+    {
+      "name": "Berkshire Hathaway Aruba",
+      "aliases": [
+        "Berkshire Hathaway HomeServices Aruba Realty",
+        "Berkshire Hathaway HomeServices Aruba",
+        "bhhscaribbean.com/aruba"
+      ],
+      "official_or_inventory_url": "https://bhhsaruba.com/for-sale",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage. Supplied Caribbean domain does not resolve; existing bhhsaruba.com inventory is used. Elixir also identifies itself as Berkshire Hathaway Aruba.",
+      "source_name": "Berkshire Hathaway Aruba"
+    },
+    {
+      "name": "Realty ONE Group Aruba",
+      "aliases": [
+        "ROG Aruba"
+      ],
+      "official_or_inventory_url": "https://rogaruba.com/listings/for-sale/residential",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Realty ONE Group Aruba"
+    },
+    {
+      "name": "HKG Real Estate Aruba",
+      "aliases": [
+        "Jax Simons Aruba Luxury Realty",
+        "arubaluxuryrealty.com"
+      ],
+      "official_or_inventory_url": "https://hkgrealestatearuba.com/property-type/residential/",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage. Jax Simons is currently listed on HKG property pages; the legacy independent domain does not resolve.",
+      "source_name": "HKG Real Estate Aruba"
+    },
+    {
+      "name": "MPG Aruba",
+      "aliases": [
+        "MPG Real Estate Aruba",
+        "MP Group Aruba"
+      ],
+      "official_or_inventory_url": "https://www.mpgaruba.com/houses-for-sale-aruba?maximum_price=800000",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "MPG Aruba"
+    },
+    {
+      "name": "Aruba Happy Homes",
+      "aliases": [
+        "Aruba Happy Rentals"
+      ],
+      "official_or_inventory_url": "https://arubahappyhomes.com/listings/for-sale/residential",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage. Aruba Happy Rentals links to this sale site; rental-only inventories remain excluded.",
+      "source_name": "Aruba Happy Homes"
+    },
+    {
+      "name": "Objective Realty Aruba",
+      "aliases": [],
+      "official_or_inventory_url": "https://www.objective-realty.com/properties",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Objective Realty Aruba"
+    },
+    {
+      "name": "Alto Vista Real Estate",
+      "aliases": [
+        "Alto Vista Real Estate"
+      ],
+      "official_or_inventory_url": "https://altovistarealestate.com/house-for-sale/",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Alto Vista Real Estate"
+    },
+    {
+      "name": "Kermit Real Estate",
+      "aliases": [
+        "Kermit Aruba Real Estate"
+      ],
+      "official_or_inventory_url": "https://kermitaruba.com/properties/?status=sale",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Kermit Real Estate"
+    },
+    {
+      "name": "C & C Real Estate",
+      "aliases": [
+        "C & C Real Estate Aruba",
+        "CC Real Estate Aruba"
+      ],
+      "official_or_inventory_url": "https://www.ccrealestatearuba.com/properties-1",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "C & C Real Estate"
+    },
+    {
+      "name": "Cas y Estilo",
+      "aliases": [
+        "Cas y Estilo Real Estate"
+      ],
+      "official_or_inventory_url": "https://www.casyestilo.com/properties-1",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Cas y Estilo"
+    },
+    {
+      "name": "ID Realty Group",
+      "aliases": [
+        "ID Realty Group Aruba",
+        "ID297 Real Estate"
+      ],
+      "official_or_inventory_url": "https://www.id297.com/status/for-sale/",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "ID Realty Group"
+    },
+    {
+      "name": "ABLE Realty",
+      "aliases": [
+        "ABLE Real Estate Aruba",
+        "Able Realty Aruba"
+      ],
+      "official_or_inventory_url": "https://www.ablerealtyaruba.com/status/for-sale/",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "ABLE Realty"
+    },
+    {
+      "name": "JZ Realty Aruba",
+      "aliases": [],
+      "official_or_inventory_url": "https://jzrealtyaruba.com/houses-for-sale-in-aruba/",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "JZ Realty Aruba"
+    },
+    {
+      "name": "Bold Properties Aruba",
+      "aliases": [
+        "Bold Properties Aruba Real Estate / Christie\u2019s International Real Estate",
+        "Bold Real Estate Aruba",
+        "boldpropertiesaruba.com"
+      ],
+      "official_or_inventory_url": "https://bold.realestate/properties/sale",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Bold Properties Aruba"
+    },
+    {
+      "name": "All Property Aruba",
+      "aliases": [
+        "All Property Real Estate Aruba"
+      ],
+      "official_or_inventory_url": "https://www.allpropertyaruba.com/properties",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "All Property Aruba"
+    },
+    {
+      "name": "AJ Real Estate Aruba",
+      "aliases": [],
+      "official_or_inventory_url": "https://ajrealestatearuba.com/properties/?offer-type=sale",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "AJ Real Estate Aruba"
+    },
+    {
+      "name": "Prima Casa Real Estate",
+      "aliases": [
+        "Prima Casa Real Estate Group",
+        "aruba-realty.com"
+      ],
+      "official_or_inventory_url": "https://aruba-realty.com/listings/active-sales",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Prima Casa Real Estate"
+    },
+    {
+      "name": "Casnan Real Estate",
+      "aliases": [],
+      "official_or_inventory_url": "https://casnan.com/property-status/for-sale/",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Casnan Real Estate"
+    },
+    {
+      "name": "Maurer Real Estate",
+      "aliases": [
+        "Maurer Real Estate Aruba",
+        "maurer.com"
+      ],
+      "official_or_inventory_url": "https://www.maurer-real-estate.com/residential",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Maurer Real Estate"
+    },
+    {
+      "name": "Bon Choice Aruba Realty",
+      "aliases": [
+        "bonchoicearubarealty.com"
+      ],
+      "official_or_inventory_url": "https://bcarubarealty.com/property-list/",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Bon Choice Aruba Realty"
+    },
+    {
+      "name": "Aruba Home Minders",
+      "aliases": [
+        "Aruba Homeminders"
+      ],
+      "official_or_inventory_url": "https://arubahomeminders.com/residential-for-sale",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Aruba Home Minders"
+    },
+    {
+      "name": "Aruba Real Estate Brokers",
+      "aliases": [],
+      "official_or_inventory_url": "https://arubarealestatebrokers.com/buy",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Aruba Real Estate Brokers"
+    },
+    {
+      "name": "Realtor International Aruba",
+      "aliases": [
+        "Realtor.com International \u2013 Aruba"
+      ],
+      "official_or_inventory_url": "https://www.realtor.com/international/aw/",
+      "source_type": "aggregator",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Realtor International Aruba"
+    },
+    {
+      "name": "Capital Reliance Aruba",
+      "aliases": [],
+      "official_or_inventory_url": "https://www.capitalreliancearuba.com/property/",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "Capital Reliance Aruba"
+    },
+    {
+      "name": "XCLSV Aruba Realty",
+      "aliases": [
+        "Xclusive Aruba Realty"
+      ],
+      "official_or_inventory_url": "https://xclsvarubarealty.com/properties/?sale_rent=for_sale&sort_by=website_listing_date&sort_direction=desc",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
+      "source_name": "XCLSV Aruba Realty"
+    },
+    {
+      "name": "Aruba Sotheby\u2019s International Realty",
+      "aliases": [
+        "Aruba Sotheby\u2019s International Realty",
+        "Sotheby\u2019s International Realty Aruba",
+        "arubasothebysrealty.com"
+      ],
+      "official_or_inventory_url": "https://www.sir-abcislands.com/",
+      "source_type": "direct_broker",
+      "enabled": false,
+      "status": "blocked",
+      "note": "The tourism authority links this official domain. It redirects to Sothebys Aruba sales, which returns a CloudFront 403. The supplied arubasothebysrealty.com does not resolve."
+    },
+    {
+      "name": "Riva Real Estate Aruba",
+      "aliases": [
+        "Riva Real Estate"
+      ],
+      "official_or_inventory_url": "https://riva-realestate.com/",
+      "source_type": "direct_broker",
+      "enabled": false,
+      "status": "no_public_inventory",
+      "note": "Official site has service/contact pages, but no public property inventory or sale detail links were found."
+    },
+    {
+      "name": "North Side Realty Aruba",
+      "aliases": [
+        "North Side Realty"
+      ],
+      "official_or_inventory_url": "https://northsiderealtyaruba.com/status/for-sale/",
+      "source_type": "direct_broker",
+      "enabled": false,
+      "status": "unavailable_inventory",
+      "note": "Search indexes show a broker sale archive, but the runner receives a parking/consent page; www also has a TLS hostname error."
+    },
+    {
+      "name": "Clearly Realty Aruba",
+      "aliases": [
+        "Clearly Realty",
+        "clearlyrealty.com"
+      ],
+      "official_or_inventory_url": "https://www.clearlyrealty.aw/",
+      "source_type": "direct_broker",
+      "enabled": false,
+      "status": "indirect_blocked",
+      "note": "Official sale link points to Aruba Listings, which is blocked on the runner. clearlyrealty.com is a California agency and is excluded."
+    },
+    {
+      "name": "Spazio Realty",
+      "aliases": [],
+      "official_or_inventory_url": "https://www.spazioaruba.com/",
+      "source_type": "direct_broker",
+      "enabled": false,
+      "status": "blocked",
+      "note": "Verified official site returns a Cloudflare access challenge."
+    },
+    {
+      "name": "Real Estate Aruba",
+      "aliases": [],
+      "official_or_inventory_url": "https://www.arubarealestate.com/",
+      "source_type": "direct_broker",
+      "enabled": false,
+      "status": "blocked",
+      "note": "Verified official broker site returns a Cloudflare access challenge."
+    },
+    {
+      "name": "Realteza / Aruba Properties",
+      "aliases": [],
+      "official_or_inventory_url": "https://www.realteza.com/",
+      "source_type": "direct_broker",
+      "enabled": false,
+      "status": "expired_domain",
+      "note": "realteza.com does not resolve; supplied arubaproperties.com redirects to a domain sale/parking service."
+    },
+    {
+      "name": "Absolute Aruba",
+      "aliases": [],
+      "official_or_inventory_url": "https://www.absolutearuba.com/",
+      "source_type": "direct_broker",
+      "enabled": false,
+      "status": "no_public_inventory",
+      "note": "Current page has placeholder property links (# and the homepage), with no reliable listing identities or sale inventory."
+    },
+    {
+      "name": "One Search Aruba",
+      "aliases": [],
+      "official_or_inventory_url": "https://www.onesearcharuba.com/",
+      "source_type": "aggregator",
+      "enabled": false,
+      "status": "subscription_required",
+      "note": "Public page advertises a subscription/trial. No public sale inventory was available without signing up."
+    },
+    {
+      "name": "RealLinkr / Aruba MLS",
+      "aliases": [],
+      "official_or_inventory_url": "https://test-mls.com/",
+      "source_type": "aggregator",
+      "enabled": false,
+      "status": "client_rendered_inventory",
+      "note": "Public sale route renders an empty search shell with no property records. This is unavailable coverage, not proof of zero listings."
+    },
+    {
+      "name": "Point2Homes Aruba",
+      "aliases": [],
+      "official_or_inventory_url": "https://www.point2homes.com/AW/Real-Estate-Listings.html",
+      "source_type": "aggregator",
+      "enabled": false,
+      "status": "blocked",
+      "note": "Supplied Aruba sale route returns a Cloudflare access challenge."
+    },
+    {
+      "name": "Properstar Aruba",
+      "aliases": [],
+      "official_or_inventory_url": "https://www.properstar.com/aruba/buy",
+      "source_type": "aggregator",
+      "enabled": false,
+      "status": "blocked",
+      "note": "Public Aruba sale route returns Azure WAF 403."
+    },
+    {
+      "name": "JamesEdition Aruba",
+      "aliases": [],
+      "official_or_inventory_url": "https://www.jamesedition.com/real_estate/aruba",
+      "source_type": "aggregator",
+      "enabled": false,
+      "status": "blocked",
+      "note": "Public Aruba route returns a Cloudflare access challenge."
+    },
+    {
+      "name": "LuxuryEstate Aruba",
+      "aliases": [],
+      "official_or_inventory_url": "https://www.luxuryestate.com/aruba",
+      "source_type": "aggregator",
+      "enabled": false,
+      "status": "currency_unverified",
+      "note": "Public inventory is accessible, but the returned asking prices are EUR. No original USD asking price was verified; no currency conversion is inferred."
+    },
+    {
+      "name": "One Caribbean Estates",
+      "aliases": [],
+      "official_or_inventory_url": "https://www.onecaribbeanestates.com/",
+      "source_type": "aggregator",
+      "enabled": false,
+      "status": "unverified_aruba_inventory",
+      "note": "www is reachable but no public Aruba property inventory was verified. The apex domain has a TLS hostname mismatch."
+    },
+    {
+      "name": "Blue Aruba Realty",
+      "aliases": [],
+      "official_or_inventory_url": "https://bluerealty.hotoffwordpress.com/",
+      "source_type": "direct_broker",
+      "enabled": false,
+      "status": "blocked",
+      "note": "Broker-owned profile identifies this site; its public page returns a Cloudflare challenge. BlueAruba vacation rentals are not a sale substitute."
+    },
+    {
+      "name": "Evertsz Real Estate",
+      "aliases": [],
+      "official_or_inventory_url": "https://www.evertszrealestate.com/the-stork-club-aruba/",
+      "source_type": "direct_broker",
+      "enabled": false,
+      "status": "under_construction",
+      "note": "The official Listings link leads to a page under construction; no sale inventory is published there."
+    },
+    {
+      "name": "Aruba Realty",
+      "aliases": [],
+      "official_or_inventory_url": "https://www.findhomesaruba.com/",
+      "source_type": "direct_broker",
+      "enabled": false,
+      "status": "no_property_permalinks",
+      "note": "Official site has property descriptions but only shared contact/#projects links, with no stable property permalinks or scoped inventory feed."
+    },
+    {
+      "name": "Aruba Real Estate (ME)",
+      "aliases": [],
+      "official_or_inventory_url": null,
+      "source_type": "direct_broker",
+      "enabled": false,
+      "status": "identity_unverified",
+      "note": "The name alone could not be tied to a distinct official Aruban broker. No domain or alias is guessed."
+    },
+    {
+      "name": "Real Estate in Aruba",
+      "aliases": [],
+      "official_or_inventory_url": null,
+      "source_type": "direct_broker",
+      "enabled": false,
+      "status": "identity_unverified",
+      "note": "Generic name could not be tied to a distinct official broker; no domain or alias is guessed."
+    }
+  ]
+}

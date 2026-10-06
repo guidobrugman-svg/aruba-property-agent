@@ -337,6 +337,676 @@
       "enabled": true,
       "priority": 2,
       "listing_context": "For Sale"
+    },
+    {
+      "name": "Alto Vista Real Estate",
+      "type": "direct_broker",
+      "url": "https://altovistarealestate.com/house-for-sale/",
+      "enabled": true,
+      "priority": 2,
+      "card_selector": ".wpl_prp_cont",
+      "title_selector": ".wpl_prp_title",
+      "listing_context": "For Sale",
+      "same_host_links": true,
+      "fast_pages": 3,
+      "deep_pages": 12,
+      "fast_seconds": 25,
+      "deep_seconds": 55,
+      "request_timeout": [
+        4,
+        8
+      ],
+      "review_missing_price": true,
+      "price_selector": ".price_box",
+      "address_selector": ".wpl_prp_listing_location",
+      "link_selector": "a.view_detail",
+      "urls": [
+        "https://altovistarealestate.com/house-for-sale/",
+        "https://altovistarealestate.com/land-for-sale/",
+        "https://altovistarealestate.com/commercial-for-sale/"
+      ],
+      "pagination_adapter": "wpl",
+      "url_contexts": {
+        "/house-for-sale/": "House",
+        "/land-for-sale/": "Vacant Land"
+      },
+      "area_selectors": {
+        "building_area": ".built_up_area"
+      },
+      "known_coverage_limit": true
+    },
+    {
+      "name": "Kermit Real Estate",
+      "type": "direct_broker",
+      "url": "https://kermitaruba.com/properties/?status=sale",
+      "enabled": true,
+      "priority": 2,
+      "card_selector": ".propertieBox",
+      "title_selector": "h2",
+      "listing_context": "For Sale",
+      "same_host_links": true,
+      "fast_pages": 1,
+      "deep_pages": 8,
+      "fast_seconds": 25,
+      "deep_seconds": 55,
+      "request_timeout": [
+        4,
+        8
+      ],
+      "review_missing_price": true,
+      "price_selector": ".pb_price",
+      "address_selector": ".pb_text > p",
+      "card_contexts": {
+        ".residential": "House",
+        ".land": "Vacant Land",
+        ".commercial": "Commercial"
+      },
+      "area_selectors": {
+        "building_area": ".pb_meta_second"
+      }
+    },
+    {
+      "name": "C & C Real Estate",
+      "type": "direct_broker",
+      "url": "https://www.ccrealestatearuba.com/properties-1",
+      "enabled": true,
+      "priority": 2,
+      "card_selector": ".wixui-repeater__item:has(a[href*=\"/properties-1/\"])",
+      "title_selector": "h2",
+      "listing_context": "For Sale",
+      "same_host_links": true,
+      "fast_pages": 1,
+      "deep_pages": 1,
+      "fast_seconds": 25,
+      "deep_seconds": 55,
+      "request_timeout": [
+        4,
+        8
+      ],
+      "review_missing_price": true,
+      "link_selector": "a[href*=\"/properties-1/\"]",
+      "detail_description_selector": "[data-hook=\"ricosviewer-wrapper\"]"
+    },
+    {
+      "name": "Cas y Estilo",
+      "type": "direct_broker",
+      "url": "https://www.casyestilo.com/properties-1",
+      "enabled": true,
+      "priority": 2,
+      "card_selector": ".wixui-repeater__item:has(a[href*=\"/properties-1/\"])",
+      "title_selector": "h2",
+      "listing_context": "For Sale",
+      "same_host_links": true,
+      "fast_pages": 1,
+      "deep_pages": 1,
+      "fast_seconds": 25,
+      "deep_seconds": 55,
+      "request_timeout": [
+        4,
+        8
+      ],
+      "review_missing_price": true,
+      "link_selector": "a[href*=\"/properties-1/\"]",
+      "detail_description_selector": ".wixui-rich-content-viewer"
+    },
+    {
+      "name": "ID Realty Group",
+      "type": "direct_broker",
+      "url": "https://www.id297.com/status/for-sale/",
+      "enabled": true,
+      "priority": 2,
+      "card_selector": ".item-listing-wrap",
+      "title_selector": ".item-title",
+      "listing_context": "For Sale",
+      "same_host_links": true,
+      "fast_pages": 2,
+      "deep_pages": 8,
+      "fast_seconds": 25,
+      "deep_seconds": 55,
+      "request_timeout": [
+        4,
+        8
+      ],
+      "review_missing_price": true,
+      "price_selector": ".item-v5-price, .item-price",
+      "declared_type_map": {
+        "For sale Residential": "House",
+        "For Sale Residential": "House",
+        "For Sale Commercial": "Commercial",
+        "For sale Commercial": "Commercial"
+      },
+      "detail_description_selector": ".property-description-wrap .block-content-wrap",
+      "type_selector": ".item-v5-type, .item-type",
+      "address_selector": ".item-address"
+    },
+    {
+      "name": "ABLE Realty",
+      "type": "direct_broker",
+      "url": "https://www.ablerealtyaruba.com/status/for-sale/",
+      "enabled": true,
+      "priority": 2,
+      "card_selector": ".property-item",
+      "title_selector": ".property-title",
+      "listing_context": "For Sale",
+      "same_host_links": true,
+      "fast_pages": 2,
+      "deep_pages": 8,
+      "fast_seconds": 25,
+      "deep_seconds": 55,
+      "request_timeout": [
+        4,
+        8
+      ],
+      "review_missing_price": true,
+      "price_selector": ".item-price",
+      "type_selector": ".amenities p:last-child",
+      "detail_description_selector": ".property-description .block-content-wrap, .property-description-wrap .block-content-wrap",
+      "declared_type_map": {
+        "House with 2 apartments": "House",
+        "House with Apartment": "House",
+        "Land, Single Family Home": "House"
+      }
+    },
+    {
+      "name": "JZ Realty Aruba",
+      "type": "direct_broker",
+      "url": "https://jzrealtyaruba.com/houses-for-sale-in-aruba/",
+      "enabled": true,
+      "priority": 2,
+      "card_selector": ".item-listing-wrap",
+      "title_selector": ".item-title",
+      "listing_context": "For Sale",
+      "same_host_links": true,
+      "fast_pages": 3,
+      "deep_pages": 8,
+      "fast_seconds": 25,
+      "deep_seconds": 55,
+      "request_timeout": [
+        4,
+        8
+      ],
+      "review_missing_price": true,
+      "price_selector": ".item-price",
+      "urls": [
+        "https://jzrealtyaruba.com/houses-for-sale-in-aruba/",
+        "https://jzrealtyaruba.com/land-for-sale-aruba/",
+        "https://jzrealtyaruba.com/commercial-for-sale-in-aruba/"
+      ],
+      "url_contexts": {
+        "/land-for-sale-aruba/": "Vacant Land"
+      },
+      "detail_description_selector": ".property-description-wrap .block-content-wrap",
+      "known_coverage_limit": true
+    },
+    {
+      "name": "Bold Properties Aruba",
+      "type": "direct_broker",
+      "url": "https://bold.realestate/properties/sale",
+      "enabled": true,
+      "priority": 2,
+      "card_selector": ".property-list__item",
+      "title_selector": "h4",
+      "listing_context": "For Sale",
+      "same_host_links": true,
+      "fast_pages": 2,
+      "deep_pages": 8,
+      "fast_seconds": 25,
+      "deep_seconds": 55,
+      "request_timeout": [
+        4,
+        8
+      ],
+      "review_missing_price": true,
+      "price_selector": "h5",
+      "address_selector": ".property-list__text > p",
+      "link_selector": "a.property-list__item-link",
+      "urls": [
+        "https://bold.realestate/properties/sale",
+        "https://bold.realestate/commercial"
+      ],
+      "known_coverage_limit": true
+    },
+    {
+      "name": "All Property Aruba",
+      "type": "direct_broker",
+      "url": "https://www.allpropertyaruba.com/properties",
+      "enabled": true,
+      "priority": 2,
+      "card_selector": "a[data-framer-name=\"Card\"]",
+      "title_selector": "p.framer-styles-preset-kacie1",
+      "listing_context": "For Sale",
+      "same_host_links": true,
+      "fast_pages": 1,
+      "deep_pages": 1,
+      "fast_seconds": 25,
+      "deep_seconds": 55,
+      "request_timeout": [
+        4,
+        8
+      ],
+      "review_missing_price": true,
+      "price_selector": ".framer-bz0169",
+      "address_selector": ".framer-14j4gp9",
+      "detail_description_selector": "[data-framer-name=\"Description\"]",
+      "known_coverage_limit": true
+    },
+    {
+      "name": "AJ Real Estate Aruba",
+      "type": "direct_broker",
+      "url": "https://ajrealestatearuba.com/properties/?offer-type=sale",
+      "enabled": true,
+      "priority": 2,
+      "card_selector": ".item-listing-wrap",
+      "title_selector": ".item-title",
+      "listing_context": "For Sale",
+      "same_host_links": true,
+      "fast_pages": 1,
+      "deep_pages": 8,
+      "fast_seconds": 25,
+      "deep_seconds": 55,
+      "request_timeout": [
+        4,
+        8
+      ],
+      "review_missing_price": true,
+      "adapter": "myhome",
+      "api_url": "https://ajrealestatearuba.com/wp-json/myhome/v1/estates",
+      "myhome_sale_slug": "sale",
+      "known_coverage_limit": true
+    },
+    {
+      "name": "Prima Casa Real Estate",
+      "type": "direct_broker",
+      "url": "https://aruba-realty.com/listings/active-sales",
+      "enabled": true,
+      "priority": 2,
+      "card_selector": "a.property",
+      "title_selector": ".title",
+      "listing_context": "For Sale",
+      "same_host_links": true,
+      "fast_pages": 2,
+      "deep_pages": 12,
+      "fast_seconds": 25,
+      "deep_seconds": 55,
+      "request_timeout": [
+        4,
+        8
+      ],
+      "review_missing_price": true,
+      "adapter": "october",
+      "fragment_key": "#partial-properties",
+      "request_headers": {
+        "X-OCTOBER-REQUEST-HANDLER": "Listings::onFilter",
+        "X-Requested-With": "XMLHttpRequest"
+      },
+      "urls": [
+        {
+          "url": "https://aruba-realty.com/listings/active-sales",
+          "data": {
+            "page": "1",
+            "category_id": "1",
+            "status_id": "",
+            "status_id_exclude": "",
+            "type_id": "",
+            "keyword": "",
+            "sortby": "created_at-desc"
+          }
+        }
+      ],
+      "price_selector": ".price",
+      "address_selector": ".location",
+      "known_coverage_limit": true,
+      "detail_description_selector": ".property-col-1 .content"
+    },
+    {
+      "name": "Casnan Real Estate",
+      "type": "direct_broker",
+      "url": "https://casnan.com/property-status/for-sale/",
+      "enabled": true,
+      "priority": 2,
+      "card_selector": "article.g5ere__property-item",
+      "title_selector": ".g5ere__loop-property-title",
+      "listing_context": "For Sale",
+      "same_host_links": true,
+      "fast_pages": 2,
+      "deep_pages": 8,
+      "fast_seconds": 25,
+      "deep_seconds": 55,
+      "request_timeout": [
+        4,
+        8
+      ],
+      "review_missing_price": true,
+      "price_selector": ".g5ere__loop-property-price",
+      "address_selector": ".g5ere__loop-property-address",
+      "detail_description_selector": "#description",
+      "known_coverage_limit": true
+    },
+    {
+      "name": "Maurer Real Estate",
+      "type": "direct_broker",
+      "url": "https://www.maurer-real-estate.com/residential",
+      "enabled": true,
+      "priority": 2,
+      "card_selector": "dl.jea_item",
+      "title_selector": "dt.title",
+      "listing_context": "For Sale",
+      "same_host_links": true,
+      "fast_pages": 2,
+      "deep_pages": 8,
+      "fast_seconds": 25,
+      "deep_seconds": 55,
+      "request_timeout": [
+        4,
+        8
+      ],
+      "review_missing_price": true,
+      "price_selector": ".price",
+      "urls": [
+        "https://www.maurer-real-estate.com/residential",
+        "https://www.maurer-real-estate.com/property-land"
+      ],
+      "pagination_selector": ".pagination a[href], a[href*=\"?start=\"]",
+      "detail_description_selector": ".property-description"
+    },
+    {
+      "name": "Bon Choice Aruba Realty",
+      "type": "direct_broker",
+      "url": "https://bcarubarealty.com/property-list/",
+      "enabled": true,
+      "priority": 2,
+      "card_selector": ".property_listing",
+      "title_selector": "h4",
+      "listing_context": "For Sale",
+      "same_host_links": true,
+      "fast_pages": 2,
+      "deep_pages": 8,
+      "fast_seconds": 25,
+      "deep_seconds": 55,
+      "request_timeout": [
+        4,
+        8
+      ],
+      "review_missing_price": true,
+      "price_selector": ".listing_unit_price_wrapper",
+      "detail_description_selector": ".wpestate_property_description"
+    },
+    {
+      "name": "Aruba Home Minders",
+      "type": "direct_broker",
+      "url": "https://arubahomeminders.com/residential-for-sale",
+      "enabled": true,
+      "priority": 2,
+      "card_selector": ".property-card",
+      "title_selector": "h2",
+      "listing_context": "For Sale",
+      "same_host_links": true,
+      "fast_pages": 1,
+      "deep_pages": 2,
+      "fast_seconds": 25,
+      "deep_seconds": 55,
+      "request_timeout": [
+        4,
+        8
+      ],
+      "review_missing_price": true,
+      "link_selector": ".property-card__overlay",
+      "price_selector": ".p-3 > p"
+    },
+    {
+      "name": "Aruba Real Estate Brokers",
+      "type": "direct_broker",
+      "url": "https://arubarealestatebrokers.com/buy",
+      "enabled": true,
+      "priority": 2,
+      "card_selector": "a.group[href^=\"/property/\"]",
+      "title_selector": "img[alt]",
+      "listing_context": "For Sale",
+      "same_host_links": true,
+      "fast_pages": 1,
+      "deep_pages": 2,
+      "fast_seconds": 25,
+      "deep_seconds": 55,
+      "request_timeout": [
+        4,
+        8
+      ],
+      "review_missing_price": true,
+      "price_selector": ".currency-usd",
+      "address_selector": "p.type-body",
+      "known_coverage_limit": true,
+      "detail_description_selector": ".type-copy",
+      "title_attribute": "alt",
+      "title_suffix_pattern": " \u2014 photo \\d+$"
+    },
+    {
+      "name": "Realtor International Aruba",
+      "type": "aggregator",
+      "url": "https://www.realtor.com/international/aw/",
+      "enabled": true,
+      "priority": 2,
+      "card_selector": ".listing-split-view-wrapper > div",
+      "title_selector": ".address",
+      "listing_context": "For Sale",
+      "same_host_links": true,
+      "fast_pages": 1,
+      "deep_pages": 3,
+      "fast_seconds": 25,
+      "deep_seconds": 55,
+      "request_timeout": [
+        4,
+        8
+      ],
+      "review_missing_price": true,
+      "adapter": "realtor",
+      "pagination_selector": "a[href^=\"/international/aw/p\"]",
+      "known_coverage_limit": true
+    },
+    {
+      "name": "Capital Reliance Aruba",
+      "type": "direct_broker",
+      "url": "https://www.capitalreliancearuba.com/property/",
+      "enabled": true,
+      "priority": 2,
+      "card_selector": "article.type-property",
+      "title_selector": ".entry-title",
+      "listing_context": "For Sale",
+      "same_host_links": true,
+      "fast_pages": 2,
+      "deep_pages": 6,
+      "fast_seconds": 25,
+      "deep_seconds": 55,
+      "request_timeout": [
+        4,
+        8
+      ],
+      "review_missing_price": true,
+      "detail_description_selector": ".elementor-widget-theme-post-content",
+      "pagination_selector": "a.page-numbers[href]",
+      "deep_type_reviews": 12,
+      "fast_type_reviews": 2,
+      "known_coverage_limit": true
+    },
+    {
+      "name": "XCLSV Aruba Realty",
+      "type": "direct_broker",
+      "url": "https://xclsvarubarealty.com/properties/?sale_rent=for_sale&sort_by=website_listing_date&sort_direction=desc",
+      "enabled": true,
+      "priority": 2,
+      "adapter": "qobrix",
+      "card_selector": ".qobrix-property.property-item",
+      "title_selector": ".property-title",
+      "price_selector": ".property-price",
+      "address_selector": ".property-location",
+      "link_selector": "a.qobrix-property-link",
+      "pagination_selector": ".pagination a[href], a[data-page][href]",
+      "listing_context": "For Sale",
+      "same_host_links": true,
+      "fast_pages": 1,
+      "deep_pages": 5,
+      "fast_seconds": 25,
+      "deep_seconds": 45,
+      "review_missing_price": true
+    },
+    {
+      "name": "Aruba Sotheby\u2019s International Realty",
+      "type": "direct_broker",
+      "url": "https://www.sir-abcislands.com/",
+      "enabled": false,
+      "disabled_reason": "The tourism authority links this official domain. It redirects to Sothebys Aruba sales, which returns a CloudFront 403. The supplied arubasothebysrealty.com does not resolve.",
+      "coverage_status": "blocked"
+    },
+    {
+      "name": "Riva Real Estate Aruba",
+      "type": "direct_broker",
+      "url": "https://riva-realestate.com/",
+      "enabled": false,
+      "disabled_reason": "Official site has service/contact pages, but no public property inventory or sale detail links were found.",
+      "coverage_status": "no_public_inventory"
+    },
+    {
+      "name": "North Side Realty Aruba",
+      "type": "direct_broker",
+      "url": "https://northsiderealtyaruba.com/status/for-sale/",
+      "enabled": false,
+      "disabled_reason": "Search indexes show a broker sale archive, but the runner receives a parking/consent page; www also has a TLS hostname error.",
+      "coverage_status": "unavailable_inventory"
+    },
+    {
+      "name": "Clearly Realty Aruba",
+      "type": "direct_broker",
+      "url": "https://www.clearlyrealty.aw/",
+      "enabled": false,
+      "disabled_reason": "Official sale link points to Aruba Listings, which is blocked on the runner. clearlyrealty.com is a California agency and is excluded.",
+      "coverage_status": "indirect_blocked"
+    },
+    {
+      "name": "Spazio Realty",
+      "type": "direct_broker",
+      "url": "https://www.spazioaruba.com/",
+      "enabled": false,
+      "disabled_reason": "Verified official site returns a Cloudflare access challenge.",
+      "coverage_status": "blocked"
+    },
+    {
+      "name": "Real Estate Aruba",
+      "type": "direct_broker",
+      "url": "https://www.arubarealestate.com/",
+      "enabled": false,
+      "disabled_reason": "Verified official broker site returns a Cloudflare access challenge.",
+      "coverage_status": "blocked"
+    },
+    {
+      "name": "Realteza / Aruba Properties",
+      "type": "direct_broker",
+      "url": "https://www.realteza.com/",
+      "enabled": false,
+      "disabled_reason": "realteza.com does not resolve; supplied arubaproperties.com redirects to a domain sale/parking service.",
+      "coverage_status": "expired_domain"
+    },
+    {
+      "name": "Absolute Aruba",
+      "type": "direct_broker",
+      "url": "https://www.absolutearuba.com/",
+      "enabled": false,
+      "disabled_reason": "Current page has placeholder property links (# and the homepage), with no reliable listing identities or sale inventory.",
+      "coverage_status": "no_public_inventory"
+    },
+    {
+      "name": "One Search Aruba",
+      "type": "aggregator",
+      "url": "https://www.onesearcharuba.com/",
+      "enabled": false,
+      "disabled_reason": "Public page advertises a subscription/trial. No public sale inventory was available without signing up.",
+      "coverage_status": "subscription_required"
+    },
+    {
+      "name": "RealLinkr / Aruba MLS",
+      "type": "aggregator",
+      "url": "https://test-mls.com/",
+      "enabled": false,
+      "disabled_reason": "Public sale route renders an empty search shell with no property records. This is unavailable coverage, not proof of zero listings.",
+      "coverage_status": "client_rendered_inventory"
+    },
+    {
+      "name": "Point2Homes Aruba",
+      "type": "aggregator",
+      "url": "https://www.point2homes.com/AW/Real-Estate-Listings.html",
+      "enabled": false,
+      "disabled_reason": "Supplied Aruba sale route returns a Cloudflare access challenge.",
+      "coverage_status": "blocked"
+    },
+    {
+      "name": "Properstar Aruba",
+      "type": "aggregator",
+      "url": "https://www.properstar.com/aruba/buy",
+      "enabled": false,
+      "disabled_reason": "Public Aruba sale route returns Azure WAF 403.",
+      "coverage_status": "blocked"
+    },
+    {
+      "name": "JamesEdition Aruba",
+      "type": "aggregator",
+      "url": "https://www.jamesedition.com/real_estate/aruba",
+      "enabled": false,
+      "disabled_reason": "Public Aruba route returns a Cloudflare access challenge.",
+      "coverage_status": "blocked"
+    },
+    {
+      "name": "LuxuryEstate Aruba",
+      "type": "aggregator",
+      "url": "https://www.luxuryestate.com/aruba",
+      "enabled": false,
+      "disabled_reason": "Public inventory is accessible, but the returned asking prices are EUR. No original USD asking price was verified; no currency conversion is inferred.",
+      "coverage_status": "currency_unverified"
+    },
+    {
+      "name": "One Caribbean Estates",
+      "type": "aggregator",
+      "url": "https://www.onecaribbeanestates.com/",
+      "enabled": false,
+      "disabled_reason": "www is reachable but no public Aruba property inventory was verified. The apex domain has a TLS hostname mismatch.",
+      "coverage_status": "unverified_aruba_inventory"
+    },
+    {
+      "name": "Blue Aruba Realty",
+      "type": "direct_broker",
+      "url": "https://bluerealty.hotoffwordpress.com/",
+      "enabled": false,
+      "disabled_reason": "Broker-owned profile identifies this site; its public page returns a Cloudflare challenge. BlueAruba vacation rentals are not a sale substitute.",
+      "coverage_status": "blocked"
+    },
+    {
+      "name": "Evertsz Real Estate",
+      "type": "direct_broker",
+      "url": "https://www.evertszrealestate.com/the-stork-club-aruba/",
+      "enabled": false,
+      "disabled_reason": "The official Listings link leads to a page under construction; no sale inventory is published there.",
+      "coverage_status": "under_construction"
+    },
+    {
+      "name": "Aruba Realty",
+      "type": "direct_broker",
+      "url": "https://www.findhomesaruba.com/",
+      "enabled": false,
+      "disabled_reason": "Official site has property descriptions but only shared contact/#projects links, with no stable property permalinks or scoped inventory feed.",
+      "coverage_status": "no_property_permalinks"
+    },
+    {
+      "name": "Aruba Real Estate (ME)",
+      "type": "direct_broker",
+      "url": null,
+      "enabled": false,
+      "disabled_reason": "The name alone could not be tied to a distinct official Aruban broker. No domain or alias is guessed.",
+      "coverage_status": "identity_unverified"
+    },
+    {
+      "name": "Real Estate in Aruba",
+      "type": "direct_broker",
+      "url": null,
+      "enabled": false,
+      "disabled_reason": "Generic name could not be tied to a distinct official broker; no domain or alias is guessed.",
+      "coverage_status": "identity_unverified"
     }
   ]
 }
