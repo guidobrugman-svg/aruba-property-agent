@@ -1,110 +1,90 @@
 [
   {
-    "name": "Alto Vista Real Estate",
-    "url": "https://altovistarealestate.com/for-sale/"
+    "name": "Alto Vista houses",
+    "url": "https://altovistarealestate.com/house-for-sale/"
   },
   {
-    "name": "All Property Aruba",
-    "url": "https://www.allpropertyaruba.com/properties"
+    "name": "Alto Vista land",
+    "url": "https://altovistarealestate.com/land-for-sale/"
   },
   {
-    "name": "Prima Casa Real Estate",
-    "url": "https://aruba-realty.com/listings/active-sales"
+    "name": "XCLSV sale",
+    "url": "https://xclsvarubarealty.com/properties/?sale_rent=for_sale&sort_by=website_listing_date&sort_direction=desc"
   },
   {
-    "name": "XCLSV Aruba Realty",
-    "url": "https://xclsvarubarealty.com/properties/for_sale/"
+    "name": "JZ Aruba sale",
+    "url": "https://jzrealtyaruba.com/houses-for-sale-in-aruba/"
   },
   {
-    "name": "Kermit Real Estate",
-    "url": "https://kermitaruba.com/properties/?status=sale"
+    "name": "JZ Aruba land",
+    "url": "https://jzrealtyaruba.com/land-for-sale-aruba/"
   },
   {
-    "name": "Bon Choice Aruba Realty",
-    "url": "https://bcarubarealty.com/property-list/"
+    "name": "JZ Aruba commercial",
+    "url": "https://jzrealtyaruba.com/commercial-for-sale-in-aruba/"
   },
   {
-    "name": "C & C Real Estate",
-    "url": "https://www.ccrealestatearuba.com/properties-1"
+    "name": "ID sale",
+    "url": "https://www.id297.com/status/for-sale/"
   },
   {
-    "name": "Bold Properties Aruba",
-    "url": "https://bold.realestate/"
+    "name": "Home Minders sale",
+    "url": "https://arubahomeminders.com/residential-for-sale"
   },
   {
-    "name": "Maurer Real Estate",
-    "url": "https://www.maurer-real-estate.com/"
+    "name": "Casnan sale",
+    "url": "https://casnan.com/property-status/for-sale/"
   },
   {
-    "name": "Capital Reliance Aruba",
-    "url": "https://www.capitalreliancearuba.com/property/"
+    "name": "Cas y Estilo sale",
+    "url": "https://www.casyestilo.com/properties-1"
   },
   {
-    "name": "Cas y Estilo",
-    "url": "https://www.casyestilo.com/"
+    "name": "Bold Aruba sale",
+    "url": "https://bold.realestate/properties/sale"
   },
   {
-    "name": "Evertsz Real Estate",
-    "url": "https://www.evertszrealestate.com/"
+    "name": "Bold commercial",
+    "url": "https://bold.realestate/commercial"
   },
   {
-    "name": "JZ Realty Aruba",
-    "url": "https://jzrealtyaruba.com/"
+    "name": "Maurer houses",
+    "url": "https://www.maurer-real-estate.com/residential"
   },
   {
-    "name": "AJ Real Estate Aruba",
-    "url": "https://ajrealestatearuba.com/properties/?offer-type=sale"
+    "name": "Maurer land",
+    "url": "https://www.maurer-real-estate.com/property-land"
   },
   {
-    "name": "Casnan Real Estate",
-    "url": "https://casnan.com/"
+    "name": "Evertsz listing",
+    "url": "https://www.evertszrealestate.com/the-stork-club-aruba/"
   },
   {
-    "name": "Aruba Happy Rentals",
-    "url": "https://arubahappyrentals.com/"
+    "name": "Aruba Real Estate Brokers sale",
+    "url": "https://arubarealestatebrokers.com/buy"
   },
   {
-    "name": "Aruba Home Minders",
-    "url": "https://arubahomeminders.com/"
+    "name": "RealLinkr sale",
+    "url": "https://test-mls.com/listings?listing_category=FOR_SALE&property_type_parent=residentials"
   },
   {
-    "name": "ABLE Realty",
-    "url": "https://www.ablerealtyaruba.com/status/for-sale/"
+    "name": "Prima Casa public listings script",
+    "url": "https://aruba-realty.com/themes/primacasa/assets/js/listings.js"
   },
   {
-    "name": "ID Realty Group",
-    "url": "https://www.id297.com/"
+    "name": "Capital apartment detail",
+    "url": "https://www.capitalreliancearuba.com/property/commercial-property-with-apartments-in-san-nicolas-new-listing26/"
   },
   {
-    "name": "Clearly Realty",
-    "url": "https://www.clearlyrealty.aw/"
+    "name": "AllProperty house detail",
+    "url": "https://www.allpropertyaruba.com/properties/boylestraat-1"
   },
   {
-    "name": "Realteza Aruba Properties",
-    "url": "https://www.realteza.com/"
+    "name": "CC apartment complex",
+    "url": "https://www.ccrealestatearuba.com/properties-1/turnkey-4-unit-apartment-complex-in-bubali%2C-noord"
   },
   {
-    "name": "Blue Aruba Realty",
-    "url": "https://bluerealty.hotoffwordpress.com/"
-  },
-  {
-    "name": "Aruba Realty",
-    "url": "https://www.findhomesaruba.com/"
-  },
-  {
-    "name": "Aruba Real Estate Brokers",
-    "url": "https://arubarealestatebrokers.com/"
-  },
-  {
-    "name": "One Caribbean Estates",
-    "url": "https://www.onecaribbeanestates.com/"
-  },
-  {
-    "name": "Aruba Sotheby's International Realty",
-    "url": "https://sothebysrealty-aruba.com/"
-  },
-  {
-    "name": "Sotheby ABC Islands",
-    "url": "https://www.sir-abcislands.com/"
+    "name": "NorthSide retry",
+    "url": "https://www.northsiderealtyaruba.com/"
   }
 ]
