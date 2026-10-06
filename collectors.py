@@ -471,10 +471,12 @@ def scrape(source, mode, api, old_health=None):
             errors.append({'url': url, 'status': failure_status(exc), 'error': str(exc)[:220]})
             if not pages and not queue:
                 break
-    truncated = truncated or bool(queue) or source.get('known_coverage_limit', False)
+    pagination_limited = truncated or bool(queue)
+    truncated = pagination_limited or source.get('known_coverage_limit', False)
     if source.get('adapter') == 'myhome':
         # Each API response reports the same total; use the observed distinct rows.
-        truncated = truncated or count > len({o['url'] for o in observations})
+        pagination_limited = pagination_limited or count > len({o['url'] for o in observations})
+        truncated = truncated or pagination_limited
     cache, review_reads = resolve_types(source, mode, api, observations, items, old_health or {}, start, budget)
     unclassified = sum(bool(o.get('needs_type_review')) for o in observations)
     if errors and not pages:
@@ -486,7 +488,7 @@ def scrape(source, mode, api, old_health=None):
     return api.dedupe_properties(items), observations, {
         'status': status, 'checked_at': api.iso_now(), 'properties_found': len(api.dedupe_properties(items)),
         'source_revision': source_revision(source),
-        'cards_seen': cards, 'unclassified_cards': unclassified, 'pages_fetched': pages, 'mode': mode, 'coverage_limited': truncated,
+        'cards_seen': cards, 'unclassified_cards': unclassified, 'pages_fetched': pages, 'mode': mode, 'coverage_limited': truncated, 'pagination_limited': pagination_limited,
         'duration_seconds': round(time.monotonic()-start, 2), 'repeated_pages': repeated, 'errors': errors,
         'type_review_cache': cache, 'type_review_reads': review_reads,
     }

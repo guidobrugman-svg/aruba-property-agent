@@ -2593,6 +2593,7 @@ def main():
     print(f'Aruba Property Agent: {mode} scan')
     current, observations = [], []
     newly_baselined = set()
+    previously_unclassified = set()
     results = collectors.scan(sources, mode, state['source_health'], sys.modules[__name__])
     for source, (items, observed, health) in results:
         name = source['name']
@@ -2601,13 +2602,16 @@ def main():
             coverage_revision = old_health.get('coverage_revision', old_health.get('source_revision'))
             if coverage_revision != health['source_revision']:
                 newly_baselined.add(name)
-            if mode == 'deep' and health['status'] in ('ok', 'empty', 'partial') and not health.get('coverage_limited'):
+            if mode == 'deep' and health['status'] in ('ok', 'empty', 'partial') and not health.get('pagination_limited', health.get('coverage_limited')):
                 coverage_revision = health['source_revision']
             health['coverage_revision'] = coverage_revision
         if source.get('detail_description_selector'):
+            previous_review_urls = set(old_health.get('review_observed_urls', []))
+            previously_unclassified.update((name, url) for url in previous_review_urls)
+            health['review_observed_urls'] = sorted(previous_review_urls | {canonical_url(o['url']) for o in observed if o.get('needs_type_review')})
             if not old_health.get('type_review_initialized'):
                 newly_baselined.add(name)
-            health['type_review_initialized'] = old_health.get('type_review_initialized', False) or (mode == 'deep' and health['status'] in ('ok', 'empty', 'partial') and not health.get('unclassified_cards'))
+            health['type_review_initialized'] = old_health.get('type_review_initialized', False) or (mode == 'deep' and health['status'] in ('ok', 'empty', 'partial'))
         if health['status'] not in ('ok', 'empty', 'partial'):
             failures = old_health.get('consecutive_failures', 0) + 1
             health['consecutive_failures'] = failures
@@ -2640,9 +2644,14 @@ def main():
     current = [p for p in current if not p.get('residence_complex')]
     current = history_dedupe(previous, current)
     history, new, reductions, major = reconcile(previous, current)
+    confirmed_urls = {canonical_url(p['url']) for p in current}
     # Explicit unavailability updates history; absence on a shallow scan never means sold.
     for name, observed in observations:
         if not observed.get('status'):
+            # Scoped descriptions can establish a whole-property sale that a
+            # shorter inventory title alone would classify as an apartment.
+            if canonical_url(observed['url']) in confirmed_urls:
+                continue
             inferred = infer_property_type(observed.get('name', ''), observed.get('type', ''))
             if inferred in EXCLUDED_RESIDENTIAL_UNIT_TYPES:
                 observed['status'] = 'ineligible'
@@ -2660,10 +2669,12 @@ def main():
                 baseline.pop('change_candidate', None)
         state['migration'] = {'at': iso_now(), 'baseline_discoveries': len(new), 'preserved_history': len(previous)}
         new, reductions, major = [], [], []
-    if not migration and newly_baselined:
-        discoveries = [p for p in new if p['source'] in newly_baselined]
+    if not migration:
+        def coverage_discovery(p):
+            return p['source'] in newly_baselined or (p['source'], canonical_url(p['url'])) in previously_unclassified
+        discoveries = [p for p in new if coverage_discovery(p)]
         state.setdefault('coverage_discoveries', []).extend({'key':property_key(p), 'at':iso_now(), 'source':p['source']} for p in discoveries)
-        new = [p for p in new if p['source'] not in newly_baselined]
+        new = [p for p in new if not coverage_discovery(p)]
     record_daily_activity(state['daily_activity'], new, reductions, major)
     state['pending_new'] = dedupe_pending_new(state['pending_new'] + [dict(p, queued_at=iso_now()) for p in new])
     for field, events, label in [('pending_reductions', reductions, 'old'), ('pending_major_changes', major, 'changes')]:

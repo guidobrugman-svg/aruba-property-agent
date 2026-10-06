@@ -78,6 +78,6 @@ USD 800,000 is inclusive. Whole houses, villas, townhouses, land, whole apartmen
 
 Original USD asking prices are required. Florin-only and EUR-only offers are unconfirmed review candidates; no exchange rate is guessed. Unknown bedrooms, photos and areas stay unknown, and land has no bedrooms or building area. Listing language does not establish zoning or permission to build apartments.
 
-Collectors follow only advertised public pagination and have page, time and detail-reading limits. Dynamic search shells and unrecognized cards are failures or partial coverage, never evidence of an empty market. New sources are baselined before NEW alerts resume, and cross-broker aliases retain the existing duplicate protections.
+Collectors follow only advertised public pagination and have page, time and detail-reading limits. Dynamic search shells and unrecognized cards are failures or partial coverage, never evidence of an empty market. New sources are baselined before NEW alerts resume, and cross-broker aliases retain the existing duplicate protections. A permanently limited public subset can finish its baseline without claiming full coverage. Previously seen ambiguous cards are retained as coverage discoveries when later resolved, rather than advertised as new listings. Realtor's countryless pagination links return 404 and are excluded; its available first-page Aruba subset remains partial.
 
 Facebook discovery remains a separate supplementary public-search task; these website additions do not enable Facebook email delivery.

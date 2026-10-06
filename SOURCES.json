@@ -799,7 +799,7 @@
       ],
       "review_missing_price": true,
       "adapter": "realtor",
-      "pagination_selector": "a[href^=\"/international/p\"]",
+      "pagination_selector": "a[href^=\"/international/aw/p\"]",
       "known_coverage_limit": true
     },
     {

@@ -1,5 +1,7 @@
 import copy
 import json
+import os
+import tempfile
 import time
 import unittest
 from pathlib import Path
@@ -86,6 +88,43 @@ class ExpansionTests(unittest.TestCase):
         # An explicitly numbered individual unit cannot be promoted by a hint.
         self.assertIsNone(m.build_property('B','Apartment 12','https://b.test/12',300000,'Commercial','',{},'Apartment Complex',residential_income_evidence=True))
         self.assertIsNone(m.build_property('B','Apartment in Noord','https://b.test/apartment',300000,'Family home with two apartments'))
+
+    def test_verified_whole_complex_stays_available_across_history_scans(self):
+        source=SOURCES['Capital Reliance Aruba']
+        items,obs,_,_=self.parse(source['name'])
+        target=copy.deepcopy(obs[:1])
+        with patch.object(m,'get_page',return_value=(CASES['Capital Reliance Aruba detail']['html'],target[0]['url'])):
+            c.resolve_types(source,'deep',m,target,items,{},time.monotonic(),55)
+        health=dict(status='partial',cards_seen=1,pages_fetched=1,duration_seconds=0,pagination_limited=False,coverage_limited=True,source_revision=c.source_revision(source))
+        with tempfile.TemporaryDirectory() as folder:
+            path=Path(folder)/'state.json';path.write_text(json.dumps(dict(schema_version=2,properties={})))
+            with patch.object(m,'STATE_FILE',str(path)),patch.object(m,'DRY_RUN',True),patch.dict(os.environ,{'SCAN_MODE':'deep','DEFER_DELIVERY':'1'}),patch.object(m,'should_send_daily_digest',return_value=False),patch('development.enrich',side_effect=lambda rows,*args:rows):
+                for _ in range(4):
+                    with patch.object(c,'scan',return_value=[(source,(copy.deepcopy(items),copy.deepcopy(target),copy.deepcopy(health)))]):m.main()
+                    state=json.loads(path.read_text())
+                    self.assertEqual(state['last_scan']['major_changes'],0)
+                    self.assertEqual(state['last_scan']['new'],0)
+                    self.assertTrue(all(p['status']=='available' for p in state['properties'].values()))
+
+    def test_partial_public_subset_alerts_fresh_listings_without_review_backfill(self):
+        source=SOURCES['All Property Aruba']
+        house=m.build_property(source['name'],'Standalone house 1','https://www.allpropertyaruba.com/house-1',400000,'For Sale House')
+        old_lead=dict(house,name='Standalone house 2',url='https://www.allpropertyaruba.com/house-2')
+        fresh=dict(house,name='Standalone house 3',url='https://www.allpropertyaruba.com/house-3')
+        unresolved=dict(name=old_lead['name'],url=old_lead['url'],status='',needs_type_review=True)
+        health=dict(status='partial',cards_seen=2,pages_fetched=1,duration_seconds=0,pagination_limited=False,coverage_limited=True,unclassified_cards=1,source_revision=c.source_revision(source))
+        with tempfile.TemporaryDirectory() as folder:
+            path=Path(folder)/'state.json';path.write_text(json.dumps(dict(schema_version=2,properties={})))
+            with patch.object(m,'STATE_FILE',str(path)),patch.object(m,'DRY_RUN',True),patch.dict(os.environ,{'SCAN_MODE':'deep','DEFER_DELIVERY':'1'}),patch.object(m,'should_send_daily_digest',return_value=False),patch('development.enrich',side_effect=lambda rows,*args:rows):
+                for rows,observed,expected in [([house],[unresolved],0),([house],[unresolved],0),([house,old_lead],[],0),([house,old_lead,fresh],[],1)]:
+                    with patch.object(c,'scan',return_value=[(source,(copy.deepcopy(rows),copy.deepcopy(observed),copy.deepcopy(health)))]):m.main()
+                    state=json.loads(path.read_text())
+                    self.assertEqual(state['last_scan']['new'],expected)
+
+    def test_realtor_does_not_follow_countryless_pagination(self):
+        source=SOURCES['Realtor International Aruba']
+        soup=BeautifulSoup('<a href="/international/p2">2</a>','html.parser')
+        self.assertEqual(c.page_links(soup,source['url'],source),[])
 
     def test_ambiguous_card_detail_excludes_prima_residence(self):
         source=SOURCES['Prima Casa Real Estate'];items,obs,_,_=self.parse(source['name'])
