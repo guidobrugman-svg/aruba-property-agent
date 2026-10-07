@@ -459,11 +459,17 @@
         "Sotheby\u2019s International Realty Aruba",
         "arubasothebysrealty.com"
       ],
-      "official_or_inventory_url": "https://www.sir-abcislands.com/",
-      "source_type": "direct_broker",
-      "enabled": false,
-      "status": "blocked",
-      "note": "The tourism authority links this official domain. It redirects to Sothebys Aruba sales, which returns a CloudFront 403. The supplied arubasothebysrealty.com does not resolve."
+      "official_or_inventory_url": "https://api.test-mls.com/api/v1/organizations/sothebys-international-realty/listings/?page=1&page_size=100",
+      "source_type": "aggregator",
+      "enabled": true,
+      "status": "partial_portal",
+      "note": "Verified broker-specific public RealLinkr feed only; standalone site remains unavailable. Portal inventory can be incomplete or delayed.",
+      "source_name": "Aruba Sotheby\u2019s International Realty",
+      "direct_inventory_url": "https://www.sir-abcislands.com/",
+      "identity_evidence_urls": [
+        "https://api.test-mls.com/api/v1/organizations/sothebys-international-realty/",
+        "https://www.sir-abcislands.com/"
+      ]
     },
     {
       "name": "Riva Real Estate Aruba",
@@ -481,11 +487,17 @@
       "aliases": [
         "North Side Realty"
       ],
-      "official_or_inventory_url": "https://northsiderealtyaruba.com/status/for-sale/",
-      "source_type": "direct_broker",
-      "enabled": false,
-      "status": "unavailable_inventory",
-      "note": "The official public sale archive currently times out on GitHub. Earlier root checks returned a parking/consent page and www had a TLS hostname error."
+      "official_or_inventory_url": "https://bluefinrealtors.com/agency/north/",
+      "source_type": "aggregator",
+      "enabled": true,
+      "status": "partial_portal",
+      "note": "Verified North Side broker page on Bluefin only; original site is parked/unavailable and this page currently has two older offers.",
+      "source_name": "North Side Realty Aruba",
+      "direct_inventory_url": "https://northsiderealtyaruba.com/status/for-sale/",
+      "identity_evidence_urls": [
+        "https://bluefinrealtors.com/agent/jacky/",
+        "https://northsiderealtyaruba.com/status/for-sale/"
+      ]
     },
     {
       "name": "Clearly Realty Aruba",
@@ -602,20 +614,32 @@
     {
       "name": "Blue Aruba Realty",
       "aliases": [],
-      "official_or_inventory_url": "https://bluerealty.hotoffwordpress.com/",
-      "source_type": "direct_broker",
-      "enabled": false,
-      "status": "blocked",
-      "note": "Broker-owned profile identifies this site; its public page returns a Cloudflare challenge. BlueAruba vacation rentals are not a sale substitute."
+      "official_or_inventory_url": "https://api.test-mls.com/api/v1/organizations/blue-aruba-realty/listings/?page=1&page_size=100",
+      "source_type": "aggregator",
+      "enabled": true,
+      "status": "partial_portal",
+      "note": "Verified broker-specific public RealLinkr feed only; standalone site remains unavailable. Portal inventory can be incomplete or delayed.",
+      "source_name": "Blue Aruba Realty",
+      "direct_inventory_url": "https://bluerealty.hotoffwordpress.com/",
+      "identity_evidence_urls": [
+        "https://api.test-mls.com/api/v1/organizations/blue-aruba-realty/",
+        "https://bluerealty.hotoffwordpress.com/"
+      ]
     },
     {
       "name": "Evertsz Real Estate",
       "aliases": [],
-      "official_or_inventory_url": "https://www.evertszrealestate.com/the-stork-club-aruba/",
-      "source_type": "direct_broker",
-      "enabled": false,
-      "status": "under_construction",
-      "note": "The official Listings link leads to a page under construction; no sale inventory is published there."
+      "official_or_inventory_url": "https://api.test-mls.com/api/v1/organizations/evertsz-real-estate/listings/?page=1&page_size=100",
+      "source_type": "aggregator",
+      "enabled": true,
+      "status": "partial_portal",
+      "note": "Verified broker-specific public RealLinkr feed only; standalone site remains unavailable. Portal inventory can be incomplete or delayed.",
+      "source_name": "Evertsz Real Estate",
+      "direct_inventory_url": "https://www.evertszrealestate.com/the-stork-club-aruba/",
+      "identity_evidence_urls": [
+        "https://api.test-mls.com/api/v1/organizations/evertsz-real-estate/",
+        "https://www.evertszrealestate.com/the-stork-club-aruba/"
+      ]
     },
     {
       "name": "Aruba Realty",
@@ -624,7 +648,7 @@
       "source_type": "direct_broker",
       "enabled": false,
       "status": "no_property_permalinks",
-      "note": "Official findhomesaruba.com identifies Coldwell Banker agents. Coldwell Banker is configured; exact cross-post coverage and standalone property permalinks remain unverified.",
+      "note": "Official Coldwell Banker agents verified, but the only potentially eligible standalone home card is hidden for every device and has no property permalink; exact live cross-post remains unverified.",
       "related_source_name": "Coldwell Banker Aruba",
       "identity_evidence_urls": [
         "https://www.findhomesaruba.com/",

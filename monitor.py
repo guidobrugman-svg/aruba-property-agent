@@ -1006,6 +1006,8 @@ def build_property(
 
     if type_hint:
         hinted = infer_property_type(type_hint, '')
+        if hinted == 'Land' and infer_property_type(title, '') == 'Land':
+            property_type = 'Land'
         if hinted == 'Apartment Complex' and residential_income_evidence and not re.search(r'\b(?:apartment|studio|condo|condominium|unit)\s+(?:unit\s+|number\s+|no\s+)?\d+\b', normalize(title)):
             property_type = hinted
         if hinted and property_type not in ('House', 'Villa', 'Townhouse', 'Apartment Complex', 'Condominium', 'Apartment'):

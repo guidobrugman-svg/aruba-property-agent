@@ -850,11 +850,31 @@
     },
     {
       "name": "Aruba Sotheby\u2019s International Realty",
-      "type": "direct_broker",
-      "url": "https://www.sir-abcislands.com/",
-      "enabled": false,
-      "disabled_reason": "The tourism authority links this official domain. It redirects to Sothebys Aruba sales, which returns a CloudFront 403. The supplied arubasothebysrealty.com does not resolve.",
-      "coverage_status": "blocked"
+      "type": "aggregator",
+      "url": "https://api.test-mls.com/api/v1/organizations/sothebys-international-realty/listings/?page=1&page_size=100",
+      "enabled": true,
+      "adapter": "reallinkr",
+      "detail_api_url": "https://api.test-mls.com/api/v1/listings/by-slug/",
+      "fast_pages": 1,
+      "deep_pages": 2,
+      "fast_seconds": 30,
+      "deep_seconds": 65,
+      "fast_type_reviews": 4,
+      "deep_type_reviews": 8,
+      "request_timeout": [
+        4,
+        8
+      ],
+      "known_coverage_limit": true,
+      "organization_url": "https://api.test-mls.com/api/v1/organizations/sothebys-international-realty/",
+      "organization_scope": {
+        "id": 48,
+        "slug": "sothebys-international-realty",
+        "website": "https://www.sir-abcislands.com"
+      },
+      "direct_inventory_url": "https://www.sir-abcislands.com/",
+      "coverage_status": "partial_portal",
+      "coverage_note": "Verified broker-specific public RealLinkr feed only; standalone site remains unavailable. Portal inventory can be incomplete or delayed."
     },
     {
       "name": "Riva Real Estate Aruba",
@@ -866,11 +886,20 @@
     },
     {
       "name": "North Side Realty Aruba",
-      "type": "direct_broker",
-      "url": "https://northsiderealtyaruba.com/status/for-sale/",
-      "enabled": false,
-      "disabled_reason": "The official public sale archive currently times out on GitHub. Earlier root checks returned a parking/consent page and www had a TLS hostname error.",
-      "coverage_status": "unavailable_inventory"
+      "type": "aggregator",
+      "url": "https://bluefinrealtors.com/agency/north/",
+      "priority": 1,
+      "enabled": true,
+      "card_selector": "#tab-properties .item-listing-wrap",
+      "title_selector": ".item-title",
+      "fast_pages": 1,
+      "deep_pages": 2,
+      "detail_description_selector": ".property-description-wrap .block-content-wrap",
+      "direct_inventory_url": "https://northsiderealtyaruba.com/status/for-sale/",
+      "pagination_selector": "#tab-properties a[href*=\"/agency/north/page/\"]",
+      "known_coverage_limit": true,
+      "coverage_status": "partial_portal",
+      "coverage_note": "Verified North Side broker page on Bluefin only; original site is parked/unavailable and this page currently has two older offers."
     },
     {
       "name": "Clearly Realty Aruba",
@@ -981,19 +1010,59 @@
     },
     {
       "name": "Blue Aruba Realty",
-      "type": "direct_broker",
-      "url": "https://bluerealty.hotoffwordpress.com/",
-      "enabled": false,
-      "disabled_reason": "Broker-owned profile identifies this site; its public page returns a Cloudflare challenge. BlueAruba vacation rentals are not a sale substitute.",
-      "coverage_status": "blocked"
+      "type": "aggregator",
+      "url": "https://api.test-mls.com/api/v1/organizations/blue-aruba-realty/listings/?page=1&page_size=100",
+      "enabled": true,
+      "adapter": "reallinkr",
+      "detail_api_url": "https://api.test-mls.com/api/v1/listings/by-slug/",
+      "fast_pages": 1,
+      "deep_pages": 2,
+      "fast_seconds": 30,
+      "deep_seconds": 65,
+      "fast_type_reviews": 4,
+      "deep_type_reviews": 8,
+      "request_timeout": [
+        4,
+        8
+      ],
+      "known_coverage_limit": true,
+      "organization_url": "https://api.test-mls.com/api/v1/organizations/blue-aruba-realty/",
+      "organization_scope": {
+        "id": 14,
+        "slug": "blue-aruba-realty",
+        "website": "https://www.bluearuba.com"
+      },
+      "direct_inventory_url": "https://bluerealty.hotoffwordpress.com/",
+      "coverage_status": "partial_portal",
+      "coverage_note": "Verified broker-specific public RealLinkr feed only; standalone site remains unavailable. Portal inventory can be incomplete or delayed."
     },
     {
       "name": "Evertsz Real Estate",
-      "type": "direct_broker",
-      "url": "https://www.evertszrealestate.com/the-stork-club-aruba/",
-      "enabled": false,
-      "disabled_reason": "The official Listings link leads to a page under construction; no sale inventory is published there.",
-      "coverage_status": "under_construction"
+      "type": "aggregator",
+      "url": "https://api.test-mls.com/api/v1/organizations/evertsz-real-estate/listings/?page=1&page_size=100",
+      "enabled": true,
+      "adapter": "reallinkr",
+      "detail_api_url": "https://api.test-mls.com/api/v1/listings/by-slug/",
+      "fast_pages": 1,
+      "deep_pages": 2,
+      "fast_seconds": 30,
+      "deep_seconds": 65,
+      "fast_type_reviews": 4,
+      "deep_type_reviews": 8,
+      "request_timeout": [
+        4,
+        8
+      ],
+      "known_coverage_limit": true,
+      "organization_url": "https://api.test-mls.com/api/v1/organizations/evertsz-real-estate/",
+      "organization_scope": {
+        "id": 24,
+        "slug": "evertsz-real-estate",
+        "website": "https://www.evertszrealestate.com"
+      },
+      "direct_inventory_url": "https://www.evertszrealestate.com/the-stork-club-aruba/",
+      "coverage_status": "partial_portal",
+      "coverage_note": "Verified broker-specific public RealLinkr feed only; standalone site remains unavailable. Portal inventory can be incomplete or delayed."
     },
     {
       "name": "Aruba Realty",
