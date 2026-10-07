@@ -9202,46 +9202,7 @@
   },
   "pending_new": [],
   "pending_reductions": [],
-  "pending_major_changes": [
-    {
-      "property": {
-        "name": "Harbour House 610",
-        "url": "https://arubalistings.com/sale/oranjestad/condominium-2251-harbour-house-610",
-        "price": 605000.0,
-        "location": "Weststraat 2, Eagle / Paardenbaai",
-        "type": "House",
-        "beds": "2",
-        "baths": "",
-        "size": "86 m²",
-        "building_area": "86 m²",
-        "land_area": "197 m²",
-        "image": "https://reallinkr-test-bucket.nyc3.cdn.digitaloceanspaces.com/listing/804-weststraat-2/thumbs/listing-image-17100_thumb.jpg",
-        "description": "For Sale USD 605000 Harbour House Aruba – Luxury Oceanfront Living in the Heart of Oranjestad Experience the perfect blend of island tranquility and modern urban living at Harbour House Aruba, a state-of-the-art residential and commercial development designed to offer an exceptional Caribbean lifestyle. Wake up to breathtaking ocean views and enjoy...",
-        "source": "RealLinkr / Aruba MLS",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-07T00:31:39.269204+00:00",
-        "source_type": "aggregator",
-        "broker": "All Property Aruba",
-        "listing_api_url": "https://api.test-mls.com/api/v1/listings/by-slug/harbour-house-610-rl260000804/",
-        "published_or_updated_at": "2026-07-27T06:00:00+02:00",
-        "detail_checked_at": "2026-10-07T03:11:29.499367+00:00",
-        "detail_status": "unavailable",
-        "detail_error": "403 Client Error: Forbidden for url: https://arubalistings.com/sale/oranjestad/condominium-2251-harbour-house-610",
-        "history_key": "f8f912c48e17d0a3e4ae8efca9182416b5b294dc",
-        "aliases": [
-          "https://arubalistings.com/sale/oranjestad/condominium-2251-harbour-house-610"
-        ]
-      },
-      "changes": {
-        "Bedrooms": {
-          "old": "3",
-          "new": "2"
-        }
-      },
-      "queued_at": "2026-10-07T03:11:48.805593+00:00"
-    }
-  ],
+  "pending_major_changes": [],
   "daily_activity": {
     "new": [
       {
@@ -12473,20 +12434,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "changes",
-      "subject": "Aruba Property Alert — 1 major change",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>MAJOR CHANGES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><h2 style='margin:0 0 8px;font-size:22px'>Harbour House 610</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$605,000</div><div><strong>Location:</strong> Weststraat 2, Eagle / Paardenbaai</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 86 m²</div><div><strong>Land area:</strong> 197 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2 beds</div><div style='margin-top:8px'><strong>Major changes:</strong> Bedrooms: 3 → 2</div><p style='margin:12px 0'>For Sale USD 605000 Harbour House Aruba – Luxury Oceanfront Living in the Heart of Oranjestad Experience the perfect blend of island tranquility and modern urban living at Harbour House Aruba, a state-of-the-art residential and commercial development designed to offer an exceptional Caribbean lifestyle. Wake up to breathtaking ocean views and enjoy...</p><div><strong>Broker/source:</strong> All Property Aruba (RealLinkr / Aruba MLS)</div><div><strong>First detected:</strong> 2026-10-07</div><div style='margin:15px 0'><img src='https://reallinkr-test-bucket.nyc3.cdn.digitaloceanspaces.com/listing/804-weststraat-2/thumbs/listing-image-17100_thumb.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://arubalistings.com/sale/oranjestad/condominium-2251-harbour-house-610' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_reductions": [],
-        "pending_major_changes": [
-          "3151b0e03157f417003fabe572ca9e00f31e8b7e88904ea8700770246195188a"
-        ]
-      },
-      "created_at": "2026-10-07T03:51:44.394450+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
