@@ -525,6 +525,9 @@ def reallinkr_property(source, row, detail, api):
     text = api.clean_text(BeautifulSoup(detail.get('description') or '', 'html.parser').get_text(' ', strip=True))
     title = detail.get('title', '')
     inferred = api.infer_property_type(title, text)
+    if row.get('property_type') == 'Residential Land' and re.search(r'\bland\b', title, re.I):
+        # Future-use suggestions do not turn the land being sold into apartments.
+        inferred = 'Land'
     income = api.residential_income_offer(title, text, inferred)
     if row.get('search_project_id') is not None:
         return None
@@ -574,8 +577,29 @@ def scrape_reallinkr(source, mode, api, old_health):
         query = dict(parse_qsl(parts.query)); query['page'] = str(page)
         url = urlunparse(parts._replace(query=urlencode(query)))
         try:
+            organization = source.get('organization_scope')
+            if organization and page == 1:
+                body, final = api.get_page(source['organization_url'], timeout=tuple(source['request_timeout']))
+                identity = json.loads(body)
+                if (identity.get('id') != organization['id'] or identity.get('slug') != organization['slug']
+                        or identity.get('country_name') != 'Aruba' or not identity.get('is_active')
+                        or api.canonical_url(identity.get('website', '')) != api.canonical_url(organization['website'])):
+                    raise ParserError('Public broker identity changed')
             html, final = api.get_page(url, timeout=tuple(source['request_timeout']))
             data = json.loads(html)
+            if organization:
+                if not isinstance(data.get('results'), list) or not isinstance(data.get('count'), int) or 'next' not in data:
+                    raise ParserError('Public broker pagination/schema changed')
+                if data['next']:
+                    advertised = urlparse(data['next'])
+                    if (advertised.scheme, advertised.netloc, advertised.path) != (parts.scheme, parts.netloc, parts.path) or dict(parse_qsl(advertised.query)).get('page') != str(page + 1):
+                        raise ParserError('Public broker pagination escaped its verified scope')
+                data['page'] = page
+                data['num_pages'] = page + 1 if data['next'] else page
+                data['results'] = [dict(r, country_display=r.get('country'), search_listing_category=r.get('listing_category'),
+                    listing_type='listing', search_slug=r.get('slug'), search_title=r.get('title'), search_price=r.get('price'),
+                    search_currency=r.get('currency'), search_status=r.get('status'), primary_image_url=r.get('primary_image'),
+                    region_display=r.get('region'), search_bedrooms=r.get('bedrooms'), search_bathrooms=r.get('bathrooms')) for r in data['results']]
             if not isinstance(data.get('results'), list) or data.get('page') != page or not isinstance(data.get('num_pages'), int):
                 raise ParserError('Public search pagination/schema changed')
             total = data['count']; pages += 1
@@ -611,10 +635,18 @@ def scrape_reallinkr(source, mode, api, old_health):
                         if api.canonical_url(final) != api.canonical_url(detail_url):
                             raise ParserError('Public detail redirected away from listing API')
                         detail = json.loads(body)
+                        if organization:
+                            # The broker feed has no project field; use the public
+                            # detail's explicit project identity before eligibility.
+                            row['search_project_id'] = detail.get('project') or detail.get('project_id')
+                            if row.get('property_type') in ('Apartment', 'Condominium'):
+                                row['search_project_id'] = row['search_project_id'] or 'individual-unit'
                         result['property'] = reallinkr_property(source, row, detail, api)
                         result['status'] = api.extract_status(str(detail.get('status', '')).replace('_', ' '))
                         description = BeautifulSoup(detail.get('description') or '', 'html.parser').get_text(' ', strip=True)
                         inferred = api.infer_property_type(detail.get('title', ''), description)
+                        if row.get('property_type') == 'Residential Land' and re.search(r'\bland\b', detail.get('title', ''), re.I):
+                            inferred = 'Land'
                         income = api.residential_income_offer(detail.get('title', ''), description, inferred)
                         result['excluded'] = bool(row.get('search_project_id') is not None or inferred in api.EXCLUDED_RESIDENTIAL_UNIT_TYPES or api.residence_unit_offer(detail.get('title', ''), description) or row.get('is_commercial') and not income or re.search(r'\bcondo(?:minium)?s?\b', description, re.I) and not income)
                         if api.looks_like_url(detail.get('external_listing_url', '')):
@@ -642,10 +674,11 @@ def scrape_reallinkr(source, mode, api, old_health):
             break
     unclassified = sum(bool(o.get('needs_type_review')) for o in observations)
     limited = total > len(observations)
-    health = dict(status=errors[0]['status'] if errors and not pages else 'partial' if errors or limited or unclassified else 'ok' if items else 'empty',
+    coverage_limited = bool(limited or unclassified or source.get('known_coverage_limit'))
+    health = dict(status=errors[0]['status'] if errors and not pages else 'partial' if errors or coverage_limited else 'ok' if items else 'empty',
                   checked_at=api.iso_now(), source_revision=source_revision(source), properties_found=len(api.dedupe_properties(items)),
                   cards_seen=len(observations), reported_records=total, pages_fetched=pages, mode=mode,
-                  unclassified_cards=unclassified, coverage_limited=bool(limited or unclassified), pagination_limited=limited,
+                  unclassified_cards=unclassified, coverage_limited=coverage_limited, pagination_limited=limited,
                   duration_seconds=round(time.monotonic()-start,2), repeated_pages=0, errors=errors,
                   type_review_reads=reads, public_listing_cache=dict(sorted(cache.items(), key=lambda kv:kv[1].get('checked_at',''), reverse=True)[:400]))
     return api.dedupe_properties(items), observations, health

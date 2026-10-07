@@ -1,6 +1,6 @@
 # Requested source coverage
 
-Verified on 7 October 2026 using public broker pages and read-only GitHub runner diagnostics. 40 collector sources are enabled. This is configuration, not a claim that every source works or that the whole Aruba market is covered.
+Verified on 7 October 2026 using public broker pages and read-only GitHub runner diagnostics. 44 collector sources are enabled. This is configuration, not a claim that every source works or that the whole Aruba market is covered.
 
 Aliases below account for the overlapping requested names. Incorrect/expired supplied URLs were corrected only where an official identity could be verified. Disabled entries remain in SOURCES.json and SOURCE_CATALOG.json with explicit reasons; they do not collect properties. No logins, paid signups, challenge bypasses, TLS bypasses or broker outreach are used.
 
@@ -46,18 +46,18 @@ Aliases below account for the overlapping requested names. Incorrect/expired sup
 | Realtor International Aruba | Realtor.com International – Aruba | [Inventory](https://www.realtor.com/international/aw/) | Bounded; partial coverage possible |
 | Capital Reliance Aruba |  | [Inventory](https://www.capitalreliancearuba.com/property/) | Bounded; partial coverage possible |
 | XCLSV Aruba Realty | Xclusive Aruba Realty | [Inventory](https://xclsvarubarealty.com/properties/?sale_rent=for_sale&sort_by=website_listing_date&sort_direction=desc) | Bounded; partial coverage possible |
-
 | Real Estate Aruba | realestatearuba.com | [Inventory](https://realestatearuba.com/properties-for-sale) | Public sale records and visible USD asking prices; no advertised pagination |
-
 | RealLinkr / Aruba MLS | test-mls.com | [Public API](https://api.test-mls.com/api/v1/search/?country_slug=aruba&listing_category=FOR_SALE&page=1&page_size=24) | Bounded public search/detail API; original listing URLs; partial coverage |
+| Aruba Sotheby’s International Realty |  | [Public broker feed](https://api.test-mls.com/api/v1/organizations/sothebys-international-realty/listings/?page=1&page_size=100) | Broker-specific portal subset; direct site remains unavailable |
+| North Side Realty Aruba |  | [Public broker feed](https://bluefinrealtors.com/agency/north/) | Broker-specific portal subset; direct site remains unavailable |
+| Blue Aruba Realty |  | [Public broker feed](https://api.test-mls.com/api/v1/organizations/blue-aruba-realty/listings/?page=1&page_size=100) | Broker-specific portal subset; direct site remains unavailable |
+| Evertsz Real Estate |  | [Public broker feed](https://api.test-mls.com/api/v1/organizations/evertsz-real-estate/listings/?page=1&page_size=100) | Broker-specific portal subset; direct site remains unavailable |
 
-## Unavailable or unverified sources
+## Unavailable or unverified sources (14 disabled entries)
 
 | Broker/platform | Status | Reason |
 |---|---|---|
-| Aruba Sotheby’s International Realty | blocked | The tourism authority links this official domain. It redirects to Sothebys Aruba sales, which returns a CloudFront 403. The supplied arubasothebysrealty.com does not resolve. |
 | Riva Real Estate Aruba | no public inventory | Official site has service/contact pages, but no public property inventory or sale detail links were found. |
-| North Side Realty Aruba | unavailable inventory | The official public sale archive currently times out on GitHub. Earlier root checks returned a parking/consent page and www had a TLS hostname error. |
 | Clearly Realty Aruba | indirect blocked | Official sale link points to Aruba Listings, which is blocked on the runner. clearlyrealty.com is a California agency and is excluded. |
 | Spazio Realty | blocked | Verified official site returns a Cloudflare access challenge. |
 | Caribmedia Property Assistant | blocked | arubarealestate.com belongs to the property assistant, distinct from broker realestatearuba.com. The public root and house archive return a Cloudflare challenge. |
@@ -69,10 +69,18 @@ Aliases below account for the overlapping requested names. Incorrect/expired sup
 | JamesEdition Aruba | blocked | Public Aruba route returns a Cloudflare access challenge. |
 | LuxuryEstate Aruba | currency unverified | Public inventory is accessible, but displayed prices are converted EUR. Some descriptions have explicit USD prices above budget; the affordable displayed offers reviewed are residence/condo units. No reliable inventory-wide original USD asking-price field was verified. |
 | One Caribbean Estates | unverified aruba inventory | www is reachable but no public Aruba property inventory was verified. The apex domain has a TLS hostname mismatch. |
-| Blue Aruba Realty | blocked | Broker-owned profile identifies this site; its public page returns a Cloudflare challenge. BlueAruba vacation rentals are not a sale substitute. |
-| Evertsz Real Estate | under construction | The official Listings link leads to a page under construction; no sale inventory is published there. |
 | Aruba Realty | no property permalinks | Official site identifies Coldwell Banker agents; Coldwell Banker is configured. Exact standalone cross-post coverage and property permalinks remain unverified. |
 | Real Estate in Aruba | identity unverified | Generic name could not be tied to a distinct official broker; no domain or alias is guessed. |
+
+## Public fallback recovery
+
+All 18 previously disabled entries were rechecked on 7 October 2026. Four now have verified public portal scopes: North Side Realty on Bluefin, and Evertsz, Sotheby’s and Blue Aruba Realty through RealLinkr’s advertised organization/listing APIs. This restores partial portal monitoring only; it does not restore their standalone sites or prove complete broker coverage.
+
+RealLinkr organization records identify the Aruban brokers and link their official sites. Each scan rechecks the configured organization ID, slug, Aruba country and website before reading listings. Broker pages use a different public pagination schema from general search; both are bounded, and pagination cannot escape its verified broker path. Original USD prices and explicit original listing URLs remain mandatory. Under-contract records, individual condo units and over-budget offers are excluded. A land description suggesting future rental apartments remains land, with no bedrooms, building area or inferred building permission.
+
+The verified Evertsz feed has four records, including Purun land at USD 220,000, 416 m², published in July 2025. Sotheby’s six records are currently above budget. Blue Aruba’s two records are an under-contract house and an individual condo. North Side’s two broker-tab records are an USD 820,000 house and an individual condo; both are excluded. These are initial coverage observations, not fresh NEW alerts. North Side parsing excludes unrelated recommended properties outside its broker tab.
+
+The other 14 entries remain disabled for the documented access, identity, currency or inventory limitations. Fresh tests still found challenges on Spazio’s root, property archive and land archive; a service brochure or a search-index result does not establish runnable inventory. Clearly and Riva’s public portal directory profiles advertise rental coverage and their RealLinkr directory records have zero active listings; neither establishes a usable sale feed. LuxuryEstate details confirm converted EUR display prices and individual condo descriptions behind some “Detached House” headings, so those prices/types are not promoted into matches. Aruba Realty’s potential house card is hidden for every device and lacks a stable property permalink.
 
 ## Identity corrections
 
