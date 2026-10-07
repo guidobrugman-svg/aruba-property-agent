@@ -1,86 +1,34 @@
 [
   {
-    "name": "Aruba Sotheby’s International Realty",
-    "url": "https://www.sir-abcislands.com/"
+    "name": "https://test-mls.com/listings?listing_category=FOR_SALE&property_type_parent=residentials",
+    "url": "https://test-mls.com/listings?listing_category=FOR_SALE&property_type_parent=residentials"
   },
   {
-    "name": "Riva Real Estate Aruba",
-    "url": "https://riva-realestate.com/"
+    "name": "https://test-mls.com/_nuxt/BtzvctO7.js",
+    "url": "https://test-mls.com/_nuxt/BtzvctO7.js"
   },
   {
-    "name": "North Side Realty Aruba",
-    "url": "https://northsiderealtyaruba.com/status/for-sale/"
+    "name": "https://realestatearuba.com/properties-for-sale",
+    "url": "https://realestatearuba.com/properties-for-sale"
   },
   {
-    "name": "Clearly Realty Aruba",
-    "url": "https://www.clearlyrealty.aw/"
+    "name": "https://realestatearuba.com/properties-for-sale/land",
+    "url": "https://realestatearuba.com/properties-for-sale/land"
   },
   {
-    "name": "Spazio Realty",
-    "url": "https://www.spazioaruba.com/"
+    "name": "https://realestatearuba.com/properties-for-sale/commercial",
+    "url": "https://realestatearuba.com/properties-for-sale/commercial"
   },
   {
-    "name": "Real Estate Aruba",
-    "url": "https://www.arubarealestate.com/"
+    "name": "https://realestatearuba.com/property-details/230281VM",
+    "url": "https://realestatearuba.com/property-details/230281VM"
   },
   {
-    "name": "Realteza / Aruba Properties",
-    "url": "https://www.realteza.com/"
+    "name": "https://arubarealestate.me/",
+    "url": "https://arubarealestate.me/"
   },
   {
-    "name": "Absolute Aruba",
-    "url": "https://www.absolutearuba.com/"
-  },
-  {
-    "name": "One Search Aruba",
-    "url": "https://www.onesearcharuba.com/"
-  },
-  {
-    "name": "RealLinkr / Aruba MLS",
-    "url": "https://test-mls.com/"
-  },
-  {
-    "name": "Point2Homes Aruba",
-    "url": "https://www.point2homes.com/AW/Real-Estate-Listings.html"
-  },
-  {
-    "name": "Properstar Aruba",
-    "url": "https://www.properstar.com/aruba/buy"
-  },
-  {
-    "name": "JamesEdition Aruba",
-    "url": "https://www.jamesedition.com/real_estate/aruba"
-  },
-  {
-    "name": "LuxuryEstate Aruba",
-    "url": "https://www.luxuryestate.com/aruba"
-  },
-  {
-    "name": "One Caribbean Estates",
-    "url": "https://www.onecaribbeanestates.com/"
-  },
-  {
-    "name": "Blue Aruba Realty",
-    "url": "https://bluerealty.hotoffwordpress.com/"
-  },
-  {
-    "name": "Evertsz Real Estate",
-    "url": "https://www.evertszrealestate.com/the-stork-club-aruba/"
-  },
-  {
-    "name": "Aruba Realty",
-    "url": "https://www.findhomesaruba.com/"
-  },
-  {
-    "name": "Real Estate Aruba distinct broker",
-    "url": "https://realestatearuba.com/"
-  },
-  {
-    "name": "Real Estate Aruba sale archive",
-    "url": "https://www.arubarealestate.com/aruba-houses-for-sale/"
-  },
-  {
-    "name": "Clearly Realty indexed sale route",
-    "url": "https://www.clearlyrealty.aw/"
+    "name": "https://arubalistings.com/sale/all?broker=clearly-realty",
+    "url": "https://arubalistings.com/sale/all?broker=clearly-realty"
   }
 ]
