@@ -29,6 +29,7 @@ class BrokerPortalTests(unittest.TestCase):
         land = items[0]
         self.assertEqual((land['price'], land['type'], land['land_area']), (220000, 'Land', '416 m²'))
         self.assertEqual((land['beds'], land['baths'], land['building_area']), ('', '', ''))
+        self.assertEqual(land['location'], '') # Purun prose conflicts with imported address/region.
         self.assertTrue(land['url'].startswith('https://arubalistings.com/sale/'))
         self.assertTrue(any(o['status'] == 'under contract' for o in observations))
 

@@ -543,6 +543,15 @@ def reallinkr_property(source, row, detail, api):
                 listing_api_url=source['detail_api_url'] + row['search_slug'] + '/',
                 location=', '.join(dict.fromkeys(str(v) for v in (detail.get('address'), row.get('city_display'), row.get('region_display')) if v)),
                 published_or_updated_at=detail.get('published_public_at') or '')
+    for node in BeautifulSoup(detail.get('description') or '', 'html.parser').select('p, li'):
+        claim = re.match(r'^Location\s*:\s*(.+)', node.get_text(' ', strip=True), re.I)
+        if claim and prop['location']:
+            place = re.split(r'[,;]|\s+[–—-]\s+', claim[1], maxsplit=1)[0].strip()
+            if place and api.normalize(place) not in api.normalize(prop['location']):
+                # Imported address/region fields can contradict the original
+                # broker description. Keep the reported location unknown.
+                prop['location'] = ''
+                break
     descriptive = dict(zip(('building_area','land_area'), api.explicit_areas(text)))
     area_claim = re.search(r'\b(?:total\s+)?(?:built[ -]up|building|living)\s+(?:area|size)\s+(?:of\s+)?([\d,.]+)\s*m²', text, re.I)
     if area_claim:
