@@ -112,6 +112,8 @@ def parse_page(html, url, source, api):
         soup = BeautifulSoup(html, 'html.parser')
     if source.get('adapter') == 'realtor':
         return parse_realtor(soup, url, source, api)
+    if source.get('adapter') == 'realestatearuba':
+        return parse_realestatearuba(soup, url, source, api)
     if source.get('adapter') == 'qobrix':
         for card in soup.select(source['card_selector']):
             fields = card.select('.et_pb_text')
@@ -331,6 +333,103 @@ def parse_realtor(soup, url, source, api):
     return api.dedupe_properties(items), observations, len(records), soup
 
 
+def parse_realestatearuba(soup, url, source, api):
+    """Read the sale page's public server-rendered records and visible USD prices."""
+    chunks = []
+    for script in soup.select('script'):
+        raw = script.get_text().strip()
+        if not raw.startswith('self.__next_f.push(') or not raw.endswith(')'):
+            continue
+        try:
+            chunk = json.loads(raw[len('self.__next_f.push('):-1])
+        except ValueError as exc:
+            raise ParserError('Invalid public listing stream') from exc
+        if isinstance(chunk, list) and len(chunk) > 1 and isinstance(chunk[1], str):
+            chunks.append(chunk[1])
+    stream = ''.join(chunks)
+    match = re.search(r'"items":\s*(?=\[)', stream)
+    if not match:
+        raise ParserError('Missing public sale records; a loading shell is not empty inventory')
+    try:
+        records, _ = json.JSONDecoder().raw_decode(stream[match.end():])
+    except ValueError as exc:
+        raise ParserError('Invalid public sale records') from exc
+    if not records:
+        raise ParserError('No recognized public sale records')
+    # React publishes long descriptions as length-prefixed UTF-8 text chunks.
+    # Resolve only these explicit text references, never executable JS or requests.
+    encoded = stream.encode('utf-8')
+    texts = {}
+    for ref in re.finditer(rb'([0-9a-f]+):T([0-9a-f]+),', encoded):
+        length = int(ref[2], 16)
+        try:
+            texts['$' + ref[1].decode()] = encoded[ref.end():ref.end()+length].decode('utf-8')
+        except UnicodeError as exc:
+            raise ParserError('Invalid public description text') from exc
+    cards = {urljoin(url, a['href']): a for a in soup.select('a[href*="/property-details/"]') if a.select_one('article h3')}
+    items, observations = [], []
+    for r in records:
+        if not isinstance(r, dict) or not r.get('id') or not r.get('name'):
+            raise ParserError('Public listing schema changed')
+        link = urljoin(url, '/property-details/' + str(r['id']))
+        card = cards.get(link)
+        if card is None:
+            raise ParserError('Public record has no corresponding visible property card')
+        declared = str(r.get('type', ''))
+        descriptions = []
+        for key in ('description', 'description2', 'description3'):
+            value = str(r.get(key) or '')
+            if re.fullmatch(r'\$[0-9a-f]+', value):
+                if value not in texts:
+                    raise ParserError('Unresolved public property description')
+                value = texts[value]
+            descriptions.append(value)
+        text = api.clean_text(' '.join(descriptions))
+        status = api.extract_status(str(r.get('status', '')))
+        if r.get('category') != 'forsale':
+            status = 'for rent'
+        obs = dict(url=link, name=r['name'], status=status, type=declared)
+        observations.append(obs)
+        if status:
+            continue
+        visible = [p.get_text(' ', strip=True) for p in card.select('p')]
+        asking = next((p for p in visible if re.match(r'^USD\s+[\d,.]+$', p)), '')
+        price, meta = api.parse_price_details(asking)
+        if price is None:
+            obs['needs_type_review'] = True
+            continue
+        if price != r.get('price'):
+            raise ParserError('Visible USD price disagrees with public listing record')
+        if declared == 'Condo' or str(r.get('status', '')).lower() == 'condominium':
+            obs.update(status='ineligible', excluded=True)
+            continue
+        inferred = api.infer_property_type(r['name'], text)
+        income = api.residential_income_offer(r['name'], text, inferred)
+        if declared in ('Commercial', 'Commercial Unit') and not income:
+            obs.update(status='ineligible', excluded=True)
+            continue
+        # A generic "Complex" label does not establish sale of a whole building.
+        if declared == 'Complex' and inferred != 'Apartment Complex':
+            obs.update(status='ineligible', excluded=True)
+            continue
+        image = api.image_from(card, url)
+        sale_text = f'For Sale USD {price:g} {declared} {text}'
+        prop = api.build_property(source['name'], r['name'], link, price, sale_text, image, meta, declared, residential_income_evidence=income)
+        if not prop:
+            continue
+        prop.update(source_type=source['type'], location=', '.join(dict.fromkeys(str(r[k]) for k in ('address','country') if r.get(k))))
+        prop['land_area'] = api.area_m2(str(r.get('surface') or '') + ' m²')
+        if prop['type'] == 'Land':
+            prop.update(beds='', baths='', building_area='')
+        else:
+            prop['building_area'] = api.area_m2(str(r.get('surfacehouse') or '') + ' m²')
+            for key, field in [('beds','bedrooms'),('baths','bathrooms')]:
+                value = str(r.get(field) or '')
+                prop[key] = value if re.fullmatch(r'\d+(?:\.\d+)?', value) else ''
+        items.append(prop)
+    return items, observations, len(records), soup
+
+
 def resolve_types(source, mode, api, observations, items, old_health, start, budget):
     """Resolve ambiguous cards from scoped public descriptions, with durable caching."""
     selector = source.get('detail_description_selector')
@@ -409,7 +508,152 @@ def resolve_types(source, mode, api, observations, items, old_health, start, bud
     return cache, reads
 
 
+def reallinkr_property(source, row, detail, api):
+    """Public API asking currency is binding; preferred-currency conversions are unused."""
+    if detail.get('id') != row.get('id'):
+        raise ParserError('Public detail identity disagrees with search record')
+    if row.get('country_display') != 'Aruba' or detail.get('listing_category') != 'FOR_SALE' or detail.get('status') != 'PUBLISHED_PUBLIC':
+        return None
+    if detail.get('currency') != 'USD' or detail.get('price_period') or detail.get('is_price_on_request'):
+        return None
+    price, meta = api.parse_price_details('USD ' + str(detail.get('price') or ''))
+    if price != api.parse_price('USD ' + str(row.get('search_price') or '')):
+        raise ParserError('Public asking price disagrees between search and detail')
+    link = detail.get('external_listing_url', '')
+    if not api.looks_like_url(link):
+        return None
+    text = api.clean_text(BeautifulSoup(detail.get('description') or '', 'html.parser').get_text(' ', strip=True))
+    title = detail.get('title', '')
+    inferred = api.infer_property_type(title, text)
+    income = api.residential_income_offer(title, text, inferred)
+    if row.get('search_project_id') is not None:
+        return None
+    if re.search(r'\bcondo(?:minium)?s?\b', text, re.I) and not income:
+        return None
+    if row.get('is_commercial') and not income:
+        return None
+    sale_text = f'For Sale USD {price:g} {text}' if price is not None else text
+    prop = api.build_property(source['name'], title, link, price, sale_text, row.get('primary_image_url', ''), meta, inferred, residential_income_evidence=income)
+    if not prop:
+        return None
+    prop.update(source_type=source['type'], broker=detail.get('broker') or '',
+                listing_api_url=source['detail_api_url'] + row['search_slug'] + '/',
+                location=', '.join(dict.fromkeys(str(v) for v in (detail.get('address'), row.get('city_display'), row.get('region_display')) if v)),
+                published_or_updated_at=detail.get('published_public_at') or '')
+    descriptive = dict(zip(('building_area','land_area'), api.explicit_areas(text)))
+    area_claim = re.search(r'\b(?:total\s+)?(?:built[ -]up|building|living)\s+(?:area|size)\s+(?:of\s+)?([\d,.]+)\s*m²', text, re.I)
+    if area_claim:
+        descriptive['building_area'] = api.area_m2(area_claim[1] + ' m²')
+    for key, field in [('building_area','build_up_size_m2'),('land_area','lot_size_m2')]:
+        numeric = api.area_m2(str(detail.get(field) or '') + ' m²')
+        # Conflicting explicit source values stay unknown rather than choosing one.
+        prop[key] = '' if numeric and descriptive[key] and numeric != descriptive[key] else numeric or descriptive[key]
+    for key, fields in [('beds',('beds','bedrooms')),('baths',('baths','bathrooms'))]:
+        values = {str(detail[f]) for f in fields if detail.get(f) is not None}
+        index_value = row.get('search_bedrooms' if key == 'beds' else 'search_bathrooms')
+        if index_value is not None:
+            values.add(str(index_value))
+        prop[key] = next(iter(values)) if len(values) == 1 and all(re.fullmatch(r'\d+(?:\.\d+)?', v) for v in values) else ''
+    if prop['type'] == 'Land':
+        prop.update(beds='', baths='', building_area='')
+    return prop
+
+
+def scrape_reallinkr(source, mode, api, old_health):
+    """Bounded anonymous search and detail reads advertised by the public frontend."""
+    start = time.monotonic()
+    limit = source['deep_pages'] if mode == 'deep' else source['fast_pages']
+    budget = source['deep_seconds'] if mode == 'deep' else source['fast_seconds']
+    review_limit = source['deep_type_reviews'] if mode == 'deep' else source['fast_type_reviews']
+    cache = dict(old_health.get('public_listing_cache', {}))
+    items, observations, errors, pages, reads, total = [], [], [], 0, 0, 0
+    for page in range(1, limit + 1):
+        if time.monotonic() - start >= budget:
+            break
+        parts = urlparse(source['url'])
+        query = dict(parse_qsl(parts.query)); query['page'] = str(page)
+        url = urlunparse(parts._replace(query=urlencode(query)))
+        try:
+            html, final = api.get_page(url, timeout=tuple(source['request_timeout']))
+            data = json.loads(html)
+            if not isinstance(data.get('results'), list) or data.get('page') != page or not isinstance(data.get('num_pages'), int):
+                raise ParserError('Public search pagination/schema changed')
+            total = data['count']; pages += 1
+            for row in data['results']:
+                if row.get('country_display') != 'Aruba' or row.get('search_listing_category') != 'FOR_SALE' or row.get('listing_type') != 'listing':
+                    continue
+                slug = row.get('search_slug', '')
+                if not re.fullmatch(r'[a-z0-9-]+', slug):
+                    raise ParserError('Invalid public listing slug')
+                key = str(row['id'])
+                old = cache.get(key, {})
+                link = old.get('url') or source['detail_api_url'] + slug + '/'
+                status = api.extract_status(str(row.get('search_status', '')).replace('_', ' '))
+                if row.get('search_status') != 'PUBLISHED_PUBLIC' and not status:
+                    status = 'unavailable'
+                obs = dict(url=link, name=row['search_title'], status=status)
+                observations.append(obs)
+                price = api.parse_price('USD ' + str(row.get('search_price') or '')) if row.get('search_currency') == 'USD' else None
+                if status or price is not None and (price <= 0 or price > api.PRICE_LIMIT):
+                    continue
+                if price is None:
+                    obs['needs_type_review'] = True
+                    continue
+                fingerprint = hashlib.sha256(json.dumps(row, sort_keys=True).encode()).hexdigest()[:24]
+                checked = api.parse_datetime(old.get('checked_at', ''))
+                result = old if old.get('fingerprint') == fingerprint and checked and (api.now_utc()-checked).total_seconds() < (3600 if old.get('error') else 86400) else None
+                if result is None and reads < review_limit and time.monotonic()-start < budget:
+                    reads += 1
+                    result = dict(checked_at=api.iso_now(), fingerprint=fingerprint)
+                    try:
+                        detail_url = source['detail_api_url'] + slug + '/'
+                        body, final = api.get_page(detail_url, timeout=tuple(source['request_timeout']))
+                        if api.canonical_url(final) != api.canonical_url(detail_url):
+                            raise ParserError('Public detail redirected away from listing API')
+                        detail = json.loads(body)
+                        result['property'] = reallinkr_property(source, row, detail, api)
+                        result['status'] = api.extract_status(str(detail.get('status', '')).replace('_', ' '))
+                        description = BeautifulSoup(detail.get('description') or '', 'html.parser').get_text(' ', strip=True)
+                        inferred = api.infer_property_type(detail.get('title', ''), description)
+                        income = api.residential_income_offer(detail.get('title', ''), description, inferred)
+                        result['excluded'] = bool(row.get('search_project_id') is not None or inferred in api.EXCLUDED_RESIDENTIAL_UNIT_TYPES or api.residence_unit_offer(detail.get('title', ''), description) or row.get('is_commercial') and not income or re.search(r'\bcondo(?:minium)?s?\b', description, re.I) and not income)
+                        if api.looks_like_url(detail.get('external_listing_url', '')):
+                            result['url'] = detail['external_listing_url']
+                    except Exception as exc:
+                        result['error'] = str(exc)[:160]
+                    cache[key] = result
+                if result:
+                    obs['url'] = result.get('url') or link
+                    if result.get('property'):
+                        items.append(dict(result['property']))
+                        obs['type'] = result['property']['type']
+                    elif result.get('status'):
+                        obs['status'] = result['status']
+                    elif result.get('excluded'):
+                        obs.update(status='ineligible', excluded=True)
+                    else:
+                        obs['needs_type_review'] = True
+                else:
+                    obs['needs_type_review'] = True
+            if page >= data['num_pages']:
+                break
+        except Exception as exc:
+            errors.append(dict(url=url, status=failure_status(exc), error=str(exc)[:220]))
+            break
+    unclassified = sum(bool(o.get('needs_type_review')) for o in observations)
+    limited = total > len(observations)
+    health = dict(status=errors[0]['status'] if errors and not pages else 'partial' if errors or limited or unclassified else 'ok' if items else 'empty',
+                  checked_at=api.iso_now(), source_revision=source_revision(source), properties_found=len(api.dedupe_properties(items)),
+                  cards_seen=len(observations), reported_records=total, pages_fetched=pages, mode=mode,
+                  unclassified_cards=unclassified, coverage_limited=bool(limited or unclassified), pagination_limited=limited,
+                  duration_seconds=round(time.monotonic()-start,2), repeated_pages=0, errors=errors,
+                  type_review_reads=reads, public_listing_cache=dict(sorted(cache.items(), key=lambda kv:kv[1].get('checked_at',''), reverse=True)[:400]))
+    return api.dedupe_properties(items), observations, health
+
+
 def scrape(source, mode, api, old_health=None):
+    if source.get('adapter') == 'reallinkr':
+        return scrape_reallinkr(source, mode, api, old_health or {})
     start = time.monotonic()
     budget = source.get('deep_seconds', 65) if mode == 'deep' else source.get('fast_seconds', 30)
     limit = source.get('deep_pages', 12) if mode == 'deep' else source.get('fast_pages', 1)

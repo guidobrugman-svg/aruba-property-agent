@@ -120,6 +120,7 @@ DIRECT_SOURCE_NAMES = {
     'Aruba Home Minders',
     'Aruba Real Estate Brokers',
     'Capital Reliance Aruba',
+    'Real Estate Aruba',
 }
 
 
@@ -2602,10 +2603,10 @@ def main():
             coverage_revision = old_health.get('coverage_revision', old_health.get('source_revision'))
             if coverage_revision != health['source_revision']:
                 newly_baselined.add(name)
-            if mode == 'deep' and health['status'] in ('ok', 'empty', 'partial') and not health.get('pagination_limited', health.get('coverage_limited')):
+            if mode == 'deep' and health['status'] in ('ok', 'empty', 'partial') and (not health.get('pagination_limited', health.get('coverage_limited')) or source.get('adapter') == 'reallinkr'):
                 coverage_revision = health['source_revision']
             health['coverage_revision'] = coverage_revision
-        if source.get('detail_description_selector'):
+        if source.get('detail_description_selector') or source.get('adapter') == 'reallinkr':
             previous_review_urls = set(old_health.get('review_observed_urls', []))
             previously_unclassified.update((name, url) for url in previous_review_urls)
             health['review_observed_urls'] = sorted(previous_review_urls | {canonical_url(o['url']) for o in observed if o.get('needs_type_review')})
@@ -2671,7 +2672,7 @@ def main():
         new, reductions, major = [], [], []
     if not migration:
         def coverage_discovery(p):
-            return p['source'] in newly_baselined or (p['source'], canonical_url(p['url'])) in previously_unclassified
+            return p['source'] in newly_baselined or (p['source'], canonical_url(p['url'])) in previously_unclassified or (p['source'], canonical_url(p.get('listing_api_url', ''))) in previously_unclassified
         discoveries = [p for p in new if coverage_discovery(p)]
         state.setdefault('coverage_discoveries', []).extend({'key':property_key(p), 'at':iso_now(), 'source':p['source']} for p in discoveries)
         new = [p for p in new if not coverage_discovery(p)]

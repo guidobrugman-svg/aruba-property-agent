@@ -1,5 +1,5 @@
 {
-  "verified_at": "2026-10-06",
+  "verified_at": "2026-10-07",
   "price_limit_usd": 800000,
   "sources": [
     {
@@ -16,13 +16,20 @@
     },
     {
       "name": "Ben Real Estate",
-      "aliases": [],
+      "aliases": [
+        "Aruba Real Estate (ME)",
+        "arubarealestate.me"
+      ],
       "official_or_inventory_url": "https://benarubarealestate.com/sale",
       "source_type": "direct_broker",
       "enabled": true,
       "status": "configured",
-      "note": "Bounded public collector configured. Live source health, not this flag, determines usable coverage.",
-      "source_name": "Ben Real Estate"
+      "note": "The broker-owned old domain arubarealestate.me redirects to Ben Real Estate\u2019s current site; covered by the existing Ben collector.",
+      "source_name": "Ben Real Estate",
+      "identity_evidence_urls": [
+        "https://arubarealestate.me/",
+        "https://aw.linkedin.com/company/ben-real-estate-aruba"
+      ]
     },
     {
       "name": "Bluefin Realtors",
@@ -478,7 +485,7 @@
       "source_type": "direct_broker",
       "enabled": false,
       "status": "unavailable_inventory",
-      "note": "Search indexes show a broker sale archive, but the runner receives a parking/consent page; www also has a TLS hostname error."
+      "note": "The official public sale archive currently times out on GitHub. Earlier root checks returned a parking/consent page and www had a TLS hostname error."
     },
     {
       "name": "Clearly Realty Aruba",
@@ -502,13 +509,13 @@
       "note": "Verified official site returns a Cloudflare access challenge."
     },
     {
-      "name": "Real Estate Aruba",
+      "name": "Caribmedia Property Assistant",
       "aliases": [],
       "official_or_inventory_url": "https://www.arubarealestate.com/",
-      "source_type": "direct_broker",
+      "source_type": "aggregator",
       "enabled": false,
       "status": "blocked",
-      "note": "Verified official broker site returns a Cloudflare access challenge."
+      "note": "arubarealestate.com is Caribmedia\u2019s property assistant, distinct from broker realestatearuba.com. Public root and house archive return a Cloudflare challenge."
     },
     {
       "name": "Realteza / Aruba Properties",
@@ -542,9 +549,10 @@
       "aliases": [],
       "official_or_inventory_url": "https://test-mls.com/",
       "source_type": "aggregator",
-      "enabled": false,
-      "status": "client_rendered_inventory",
-      "note": "Public sale route renders an empty search shell with no property records. This is unavailable coverage, not proof of zero listings."
+      "enabled": true,
+      "status": "configured_partial",
+      "note": "The public frontend advertises anonymous Aruba search and by-slug detail APIs. These work from GitHub. Public detail webpages returned 404; the collector uses the API\u2019s explicit original listing URLs, with bounded pages/detail reads and cached verification. Imported inventory dates are not treated as new publication dates.",
+      "source_name": "RealLinkr / Aruba MLS"
     },
     {
       "name": "Point2Homes Aruba",
@@ -580,7 +588,7 @@
       "source_type": "aggregator",
       "enabled": false,
       "status": "currency_unverified",
-      "note": "Public inventory is accessible, but the returned asking prices are EUR. No original USD asking price was verified; no currency conversion is inferred."
+      "note": "Public inventory is accessible, but displayed prices are converted EUR. Some descriptions have explicit USD prices above budget; the affordable displayed offers reviewed are residence/condo units. No reliable inventory-wide original USD asking-price field was verified."
     },
     {
       "name": "One Caribbean Estates",
@@ -616,16 +624,12 @@
       "source_type": "direct_broker",
       "enabled": false,
       "status": "no_property_permalinks",
-      "note": "Official site has property descriptions but only shared contact/#projects links, with no stable property permalinks or scoped inventory feed."
-    },
-    {
-      "name": "Aruba Real Estate (ME)",
-      "aliases": [],
-      "official_or_inventory_url": null,
-      "source_type": "direct_broker",
-      "enabled": false,
-      "status": "identity_unverified",
-      "note": "The name alone could not be tied to a distinct official Aruban broker. No domain or alias is guessed."
+      "note": "Official findhomesaruba.com identifies Coldwell Banker agents. Coldwell Banker is configured; exact cross-post coverage and standalone property permalinks remain unverified.",
+      "related_source_name": "Coldwell Banker Aruba",
+      "identity_evidence_urls": [
+        "https://www.findhomesaruba.com/",
+        "https://www.coldwellbanker.aw/index.php?action=view_user&user=347"
+      ]
     },
     {
       "name": "Real Estate in Aruba",
@@ -635,6 +639,18 @@
       "enabled": false,
       "status": "identity_unverified",
       "note": "Generic name could not be tied to a distinct official broker; no domain or alias is guessed."
+    },
+    {
+      "name": "Real Estate Aruba",
+      "aliases": [
+        "realestatearuba.com"
+      ],
+      "official_or_inventory_url": "https://realestatearuba.com/properties-for-sale",
+      "source_type": "direct_broker",
+      "enabled": true,
+      "status": "configured",
+      "source_name": "Real Estate Aruba",
+      "note": "Public sale page and server-rendered record collection verified from GitHub on 7 October 2026. Distinct from blocked arubarealestate.com; current public page has no advertised pagination."
     }
   ]
 }

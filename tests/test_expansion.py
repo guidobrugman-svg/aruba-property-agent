@@ -186,7 +186,7 @@ class ExpansionTests(unittest.TestCase):
 
     def test_catalog_unavailable_entries_never_make_network_requests(self):
         disabled=[s for s in SOURCES.values() if s.get('enabled') is False]
-        self.assertEqual(len(disabled),20)
+        self.assertEqual(len(disabled),18)
         with patch.object(m,'get_page') as get:
             self.assertEqual(c.scan(disabled,'deep',{},m),[])
         get.assert_not_called()
