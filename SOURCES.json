@@ -869,7 +869,7 @@
       "type": "direct_broker",
       "url": "https://northsiderealtyaruba.com/status/for-sale/",
       "enabled": false,
-      "disabled_reason": "Search indexes show a broker sale archive, but the runner receives a parking/consent page; www also has a TLS hostname error.",
+      "disabled_reason": "The official public sale archive currently times out on GitHub. Earlier root checks returned a parking/consent page and www had a TLS hostname error.",
       "coverage_status": "unavailable_inventory"
     },
     {
@@ -889,11 +889,11 @@
       "coverage_status": "blocked"
     },
     {
-      "name": "Real Estate Aruba",
-      "type": "direct_broker",
+      "name": "Caribmedia Property Assistant",
+      "type": "aggregator",
       "url": "https://www.arubarealestate.com/",
       "enabled": false,
-      "disabled_reason": "Verified official broker site returns a Cloudflare access challenge.",
+      "disabled_reason": "arubarealestate.com is Caribmedia\u2019s property assistant, distinct from broker realestatearuba.com. The public root and house archive return a Cloudflare challenge.",
       "coverage_status": "blocked"
     },
     {
@@ -923,10 +923,21 @@
     {
       "name": "RealLinkr / Aruba MLS",
       "type": "aggregator",
-      "url": "https://test-mls.com/",
-      "enabled": false,
-      "disabled_reason": "Public sale route renders an empty search shell with no property records. This is unavailable coverage, not proof of zero listings.",
-      "coverage_status": "client_rendered_inventory"
+      "url": "https://api.test-mls.com/api/v1/search/?country_slug=aruba&listing_category=FOR_SALE&page=1&page_size=24",
+      "enabled": true,
+      "adapter": "reallinkr",
+      "detail_api_url": "https://api.test-mls.com/api/v1/listings/by-slug/",
+      "fast_pages": 1,
+      "deep_pages": 8,
+      "fast_seconds": 30,
+      "deep_seconds": 65,
+      "fast_type_reviews": 4,
+      "deep_type_reviews": 12,
+      "request_timeout": [
+        4,
+        8
+      ],
+      "known_coverage_limit": true
     },
     {
       "name": "Point2Homes Aruba",
@@ -957,7 +968,7 @@
       "type": "aggregator",
       "url": "https://www.luxuryestate.com/aruba",
       "enabled": false,
-      "disabled_reason": "Public inventory is accessible, but the returned asking prices are EUR. No original USD asking price was verified; no currency conversion is inferred.",
+      "disabled_reason": "Public inventory is accessible, but displayed prices are converted EUR. Some descriptions have explicit USD prices above budget; the affordable displayed offers reviewed are residence/condo units. No reliable inventory-wide original USD asking-price field was verified.",
       "coverage_status": "currency_unverified"
     },
     {
@@ -989,16 +1000,8 @@
       "type": "direct_broker",
       "url": "https://www.findhomesaruba.com/",
       "enabled": false,
-      "disabled_reason": "Official site has property descriptions but only shared contact/#projects links, with no stable property permalinks or scoped inventory feed.",
+      "disabled_reason": "Official site identifies Coldwell Banker agents; that broker is already configured. Standalone site has no stable property permalinks, and exact cross-post coverage has not been established.",
       "coverage_status": "no_property_permalinks"
-    },
-    {
-      "name": "Aruba Real Estate (ME)",
-      "type": "direct_broker",
-      "url": null,
-      "enabled": false,
-      "disabled_reason": "The name alone could not be tied to a distinct official Aruban broker. No domain or alias is guessed.",
-      "coverage_status": "identity_unverified"
     },
     {
       "name": "Real Estate in Aruba",
@@ -1007,6 +1010,21 @@
       "enabled": false,
       "disabled_reason": "Generic name could not be tied to a distinct official broker; no domain or alias is guessed.",
       "coverage_status": "identity_unverified"
+    },
+    {
+      "name": "Real Estate Aruba",
+      "type": "direct_broker",
+      "url": "https://realestatearuba.com/properties-for-sale",
+      "enabled": true,
+      "adapter": "realestatearuba",
+      "fast_pages": 1,
+      "deep_pages": 1,
+      "fast_seconds": 20,
+      "deep_seconds": 25,
+      "request_timeout": [
+        5,
+        12
+      ]
     }
   ]
 }

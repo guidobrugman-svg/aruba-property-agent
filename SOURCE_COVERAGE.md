@@ -1,6 +1,6 @@
 # Requested source coverage
 
-Verified on 6 October 2026 using public broker pages and read-only GitHub runner diagnostics. 38 collector sources are enabled. This is configuration, not a claim that every source works or that the whole Aruba market is covered.
+Verified on 7 October 2026 using public broker pages and read-only GitHub runner diagnostics. 40 collector sources are enabled. This is configuration, not a claim that every source works or that the whole Aruba market is covered.
 
 Aliases below account for the overlapping requested names. Incorrect/expired supplied URLs were corrected only where an official identity could be verified. Disabled entries remain in SOURCES.json and SOURCE_CATALOG.json with explicit reasons; they do not collect properties. No logins, paid signups, challenge bypasses, TLS bypasses or broker outreach are used.
 
@@ -9,7 +9,7 @@ Aliases below account for the overlapping requested names. Incorrect/expired sup
 | Broker/platform | Aliases and requested variants | Public inventory | Scope |
 |---|---|---|---|
 | Aruba Brokers | Aruba Brokers Real Estate | [Inventory](https://www.arubabrokers.com/property-status/for-sale/) | Bounded; partial coverage possible |
-| Ben Real Estate |  | [Inventory](https://benarubarealestate.com/sale) | Bounded; partial coverage possible |
+| Ben Real Estate | Aruba Real Estate (ME), arubarealestate.me | [Inventory](https://benarubarealestate.com/sale) | Bounded; partial coverage possible |
 | Bluefin Realtors |  | [Inventory](https://bluefinrealtors.com/property/) | Bounded; partial coverage possible |
 | Aruba Listings |  | [Inventory](https://arubalistings.com/listings) | Configured; access challenge on runner |
 | RE/MAX Aruba |  | [Inventory](https://remaxaruba.com/property/residential-for-sale) | Configured; access challenge on runner |
@@ -47,30 +47,40 @@ Aliases below account for the overlapping requested names. Incorrect/expired sup
 | Capital Reliance Aruba |  | [Inventory](https://www.capitalreliancearuba.com/property/) | Bounded; partial coverage possible |
 | XCLSV Aruba Realty | Xclusive Aruba Realty | [Inventory](https://xclsvarubarealty.com/properties/?sale_rent=for_sale&sort_by=website_listing_date&sort_direction=desc) | Bounded; partial coverage possible |
 
+| Real Estate Aruba | realestatearuba.com | [Inventory](https://realestatearuba.com/properties-for-sale) | Public sale records and visible USD asking prices; no advertised pagination |
+
+| RealLinkr / Aruba MLS | test-mls.com | [Public API](https://api.test-mls.com/api/v1/search/?country_slug=aruba&listing_category=FOR_SALE&page=1&page_size=24) | Bounded public search/detail API; original listing URLs; partial coverage |
+
 ## Unavailable or unverified sources
 
 | Broker/platform | Status | Reason |
 |---|---|---|
 | Aruba Sotheby’s International Realty | blocked | The tourism authority links this official domain. It redirects to Sothebys Aruba sales, which returns a CloudFront 403. The supplied arubasothebysrealty.com does not resolve. |
 | Riva Real Estate Aruba | no public inventory | Official site has service/contact pages, but no public property inventory or sale detail links were found. |
-| North Side Realty Aruba | unavailable inventory | Search indexes show a broker sale archive, but the runner receives a parking/consent page; www also has a TLS hostname error. |
+| North Side Realty Aruba | unavailable inventory | The official public sale archive currently times out on GitHub. Earlier root checks returned a parking/consent page and www had a TLS hostname error. |
 | Clearly Realty Aruba | indirect blocked | Official sale link points to Aruba Listings, which is blocked on the runner. clearlyrealty.com is a California agency and is excluded. |
 | Spazio Realty | blocked | Verified official site returns a Cloudflare access challenge. |
-| Real Estate Aruba | blocked | Verified official broker site returns a Cloudflare access challenge. |
+| Caribmedia Property Assistant | blocked | arubarealestate.com belongs to the property assistant, distinct from broker realestatearuba.com. The public root and house archive return a Cloudflare challenge. |
 | Realteza / Aruba Properties | expired domain | realteza.com does not resolve; supplied arubaproperties.com redirects to a domain sale/parking service. |
 | Absolute Aruba | no public inventory | Current page has placeholder property links (# and the homepage), with no reliable listing identities or sale inventory. |
 | One Search Aruba | subscription required | Public page advertises a subscription/trial. No public sale inventory was available without signing up. |
-| RealLinkr / Aruba MLS | client rendered inventory | Public sale route renders an empty search shell with no property records. This is unavailable coverage, not proof of zero listings. |
 | Point2Homes Aruba | blocked | Supplied Aruba sale route returns a Cloudflare access challenge. |
 | Properstar Aruba | blocked | Public Aruba sale route returns Azure WAF 403. |
 | JamesEdition Aruba | blocked | Public Aruba route returns a Cloudflare access challenge. |
-| LuxuryEstate Aruba | currency unverified | Public inventory is accessible, but the returned asking prices are EUR. No original USD asking price was verified; no currency conversion is inferred. |
+| LuxuryEstate Aruba | currency unverified | Public inventory is accessible, but displayed prices are converted EUR. Some descriptions have explicit USD prices above budget; the affordable displayed offers reviewed are residence/condo units. No reliable inventory-wide original USD asking-price field was verified. |
 | One Caribbean Estates | unverified aruba inventory | www is reachable but no public Aruba property inventory was verified. The apex domain has a TLS hostname mismatch. |
 | Blue Aruba Realty | blocked | Broker-owned profile identifies this site; its public page returns a Cloudflare challenge. BlueAruba vacation rentals are not a sale substitute. |
 | Evertsz Real Estate | under construction | The official Listings link leads to a page under construction; no sale inventory is published there. |
-| Aruba Realty | no property permalinks | Official site has property descriptions but only shared contact/#projects links, with no stable property permalinks or scoped inventory feed. |
-| Aruba Real Estate (ME) | identity unverified | The name alone could not be tied to a distinct official Aruban broker. No domain or alias is guessed. |
+| Aruba Realty | no property permalinks | Official site identifies Coldwell Banker agents; Coldwell Banker is configured. Exact standalone cross-post coverage and property permalinks remain unverified. |
 | Real Estate in Aruba | identity unverified | Generic name could not be tied to a distinct official broker; no domain or alias is guessed. |
+
+## Identity corrections
+
+The broker-owned [arubarealestate.me](https://arubarealestate.me/) now redirects to Ben Real Estate’s current site. Its requested ME name is an alias of the existing collector, not a separate inventory or a second scan. The new Real Estate Aruba collector uses realestatearuba.com; arubarealestate.com is a distinct blocked Caribmedia property assistant. Aruba Realty’s affiliation with Coldwell Banker is verified by its own website and Coldwell Banker’s agent profile, but this does not establish that every standalone-site offer is cross-posted.
+
+The Real Estate Aruba collector parses only the public sale page’s server-rendered records, checks asking prices against each visible USD card, and fails closed on loading shells, changed schemas or mismatched prices. House-with-apartments sale descriptions retain their income context; individual development units, sold, under-contract and on-hold properties remain excluded.
+
+RealLinkr’s public frontend advertises anonymous search and by-slug detail APIs. The Aruba sale search reports 720 records, while tested frontend property permalinks return 404. The collector verifies property details through the advertised API and uses its explicit original listing URLs. It reads one search page/four details per fast scan or up to eight pages/twelve details per deep scan, caches detail verification and reports partial coverage. Original publication dates survive imports; import dates are not listing publication dates. Conflicting source areas or bedroom/bathroom counts remain unknown. Initial and previously seen unresolved discoveries are baselined to prevent false NEW alerts. This is supplementary portal inventory, not restored direct access to blocked broker sites.
 
 ## Selection and limitations
 
