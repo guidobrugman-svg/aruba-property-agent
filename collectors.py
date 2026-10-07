@@ -639,7 +639,10 @@ def scrape_reallinkr(source, mode, api, old_health):
                             # The broker feed has no project field; use the public
                             # detail's explicit project identity before eligibility.
                             row['search_project_id'] = detail.get('project') or detail.get('project_id')
-                            if row.get('property_type') in ('Apartment', 'Condominium'):
+                            whole_income = api.residential_income_offer(detail.get('title', ''),
+                                BeautifulSoup(detail.get('description') or '', 'html.parser').get_text(' ', strip=True),
+                                api.infer_property_type(detail.get('title', ''), detail.get('description') or ''))
+                            if row.get('property_type') in ('Apartment', 'Condominium') and not whole_income:
                                 row['search_project_id'] = row['search_project_id'] or 'individual-unit'
                         result['property'] = reallinkr_property(source, row, detail, api)
                         result['status'] = api.extract_status(str(detail.get('status', '')).replace('_', ' '))

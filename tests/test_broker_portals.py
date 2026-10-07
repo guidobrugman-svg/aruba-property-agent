@@ -60,6 +60,18 @@ class BrokerPortalTests(unittest.TestCase):
         self.assertEqual(items, [])
         self.assertEqual(reads, 2)
 
+    def test_whole_apartment_complex_is_not_rejected_by_portal_unit_category(self):
+        s = SOURCES['Blue Aruba Realty']
+        feed = copy.deepcopy(FIXTURE[s['url']])
+        row = feed['results'][1]
+        detail_url = s['detail_api_url'] + row['slug'] + '/'
+        detail = dict(FIXTURE[detail_url], title='Whole 7 apartment complex',
+            description='Entire apartment building for sale with seven apartments, no separate house. USD 515000.')
+        row['title'] = detail['title']
+        (items, _, _), _ = self.scan(s['name'], {s['url']: feed, detail_url: detail})
+        self.assertEqual(len(items), 1)
+        self.assertEqual(items[0]['type'], 'Apartment Complex')
+
     def test_broker_pagination_is_bounded(self):
         s = dict(SOURCES['Evertsz Real Estate'], deep_pages=1)
         feed = dict(FIXTURE[s['url']], count=200, next=s['url'].replace('page=1', 'page=2'))
