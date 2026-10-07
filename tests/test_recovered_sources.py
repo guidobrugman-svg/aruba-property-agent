@@ -122,7 +122,7 @@ class RecoveredSourceTests(unittest.TestCase):
         unknown = dict(url=recovered['listing_api_url'], name=recovered['name'], status='', needs_type_review=True)
         observed = dict(url=recovered['url'], name=recovered['name'], status='', type=recovered['type'])
         fresh = m.build_property(source['name'],'New house in Rooi Koochi 99','https://broker.test/rooi-koochi-99',400000,'For Sale')
-        with tempfile.TemporaryDirectory(dir=ROOT/'research') as folder:
+        with tempfile.TemporaryDirectory(dir=ROOT) as folder:
             state = Path(folder)/'state.json'; sources = Path(folder)/'sources.json'
             state.write_text(json.dumps(dict(schema_version=2,properties={})))
             sources.write_text(json.dumps({'sources':[source]}))
