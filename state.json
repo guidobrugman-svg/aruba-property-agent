@@ -9849,45 +9849,7 @@
       "last_seen_at": "2026-10-07T18:24:11.571821+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Seroe Biento, Oranjestad, Oranjestad",
-      "url": "https://www.realtor.com/international/aw/seroe-biento-oranjestad-oranjestad-310110419208/",
-      "price": 795000.0,
-      "location": "Seroe Biento, Oranjestad, Oranjestad",
-      "type": "House",
-      "beds": "4",
-      "baths": "4",
-      "size": "",
-      "building_area": "280 m²",
-      "land_area": "751 m²",
-      "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/fda825dc5c25b62301be6ab9b41ceed6.jpg",
-      "description": "House",
-      "source": "Realtor International Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-07T18:24:11.571814+00:00",
-      "source_type": "aggregator",
-      "detail_checked_at": "2026-10-07T18:24:10.439150+00:00",
-      "development_evidence": [
-        {
-          "label": "Ownership",
-          "excerpt": "Set on 749 m² of leasehold land , the home makes a lovely first impression with its crisp white exterior, tropical palms, and vibrant flowering borders",
-          "url": "https://www.realtor.com/international/aw/seroe-biento-oranjestad-oranjestad-310110419208/"
-        },
-        {
-          "label": "Ownership",
-          "excerpt": "conditioning, ceiling fans, and indoor laundry Solar panels and separate outdoor storage 749 m² of leasehold land Central location near everyday amenities, beaches and attractions Schedule your private viewing and picture your next chapter at Seroe Biento 2",
-          "url": "https://www.realtor.com/international/aw/seroe-biento-oranjestad-oranjestad-310110419208/"
-        }
-      ],
-      "residence_complex": false,
-      "detail_status": "ok",
-      "history_key": "eee3488ba957e70c3ffbeed9a26c2e6d03ed3129",
-      "last_seen_at": "2026-10-07T18:24:11.571821+00:00",
-      "queued_at": "2026-10-07T18:24:33.990183+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [
     {
       "property": {
@@ -13967,19 +13929,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 1 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Seroe Biento, Oranjestad, Oranjestad</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$795,000</div><div><strong>Location:</strong> Seroe Biento, Oranjestad, Oranjestad</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 280 m²</div><div><strong>Land area:</strong> 751 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Set on 749 m² of leasehold land , the home makes a lovely first impression with its crisp white exterior, tropical palms, and vibrant flowering borders · conditioning, ceiling fans, and indoor laundry Solar panels and separate outdoor storage 749 m² of leasehold land Central location near everyday amenities, beaches and attractions Schedule your private viewing and picture your next chapter at Seroe Biento 2</div><div><a href='https://www.realtor.com/international/aw/seroe-biento-oranjestad-oranjestad-310110419208/'>Source evidence</a></div><div><a href='https://www.realtor.com/international/aw/seroe-biento-oranjestad-oranjestad-310110419208/'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 4 beds · 4 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-07</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/fda825dc5c25b62301be6ab9b41ceed6.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/seroe-biento-oranjestad-oranjestad-310110419208/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "adfc5be7209ed2b45993a4318d68c6d2760afe91ad95afdfd336fda7e6c342e2"
-        ]
-      },
-      "created_at": "2026-10-07T18:24:33.990493+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
