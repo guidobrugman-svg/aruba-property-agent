@@ -9913,30 +9913,7 @@
       "last_seen_at": "2026-10-08T16:02:49.239886+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Turibana 35c, Noord, Aruba, Noord, Noord",
-      "url": "https://www.realtor.com/international/aw/turibana-35c-noord-aruba-noord-noord-310110424749/",
-      "price": 599000.0,
-      "location": "Turibana 35c, Noord, Aruba, Noord, Noord",
-      "type": "Townhouse",
-      "beds": "2",
-      "baths": "2",
-      "size": "",
-      "building_area": "101 m²",
-      "land_area": "123 m²",
-      "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/8bb7c66a13157272ae143a2831ab77cf.jpg",
-      "description": "Townhouse",
-      "source": "Realtor International Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-08T16:02:49.239871+00:00",
-      "source_type": "aggregator",
-      "history_key": "655cae3faea32c27f996649a7fb1c54a4f204258",
-      "last_seen_at": "2026-10-08T16:02:49.239886+00:00",
-      "queued_at": "2026-10-08T16:03:35.468512+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
@@ -14005,19 +13982,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 1 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Turibana 35c, Noord, Aruba, Noord, Noord</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$599,000</div><div><strong>Location:</strong> Turibana 35c, Noord, Aruba, Noord, Noord</div><div><strong>Property type:</strong> Townhouse</div><div><strong>Building / built-up area:</strong> 101 m²</div><div><strong>Land area:</strong> 123 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2 beds · 2 baths</div><p style='margin:12px 0'>Townhouse</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-08</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/8bb7c66a13157272ae143a2831ab77cf.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/turibana-35c-noord-aruba-noord-noord-310110424749/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "b021ea153cd42f22911de11c1b466c14b27d52d4e43d262738c12aa530565163"
-        ]
-      },
-      "created_at": "2026-10-08T16:03:35.468926+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
