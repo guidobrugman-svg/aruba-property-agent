@@ -10023,40 +10023,7 @@
   },
   "pending_new": [],
   "pending_reductions": [],
-  "pending_major_changes": [
-    {
-      "property": {
-        "name": "Turibana 35c, Noord, Aruba, Noord, Noord",
-        "url": "https://www.realtor.com/international/aw/turibana-35c-noord-aruba-noord-noord-310110424749/",
-        "price": 599000.0,
-        "location": "Turibana 35c, Noord, Aruba, Noord, Noord",
-        "type": "Townhouse",
-        "beds": "2",
-        "baths": "2",
-        "size": "",
-        "building_area": "101 m²",
-        "land_area": "123 m²",
-        "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/8bb7c66a13157272ae143a2831ab77cf.jpg",
-        "description": "Townhouse",
-        "source": "Realtor International Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-08T16:02:49.239871+00:00",
-        "source_type": "aggregator",
-        "history_key": "655cae3faea32c27f996649a7fb1c54a4f204258",
-        "aliases": [
-          "https://www.realtor.com/international/aw/turibana-35c-noord-aruba-noord-noord-310110424749"
-        ]
-      },
-      "changes": {
-        "Status": {
-          "old": "ineligible",
-          "new": "available"
-        }
-      },
-      "queued_at": "2026-10-09T13:07:21.508685+00:00"
-    }
-  ],
+  "pending_major_changes": [],
   "daily_activity": {
     "new": [
       {
@@ -13983,20 +13950,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "changes",
-      "subject": "Aruba Property Alert — 1 major change",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>MAJOR CHANGES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><h2 style='margin:0 0 8px;font-size:22px'>Turibana 35c, Noord, Aruba, Noord, Noord</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$599,000</div><div><strong>Location:</strong> Turibana 35c, Noord, Aruba, Noord, Noord</div><div><strong>Property type:</strong> Townhouse</div><div><strong>Building / built-up area:</strong> 101 m²</div><div><strong>Land area:</strong> 123 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2 beds · 2 baths</div><div style='margin-top:8px'><strong>Major changes:</strong> Status: ineligible → available</div><p style='margin:12px 0'>Townhouse</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-08</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/8bb7c66a13157272ae143a2831ab77cf.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/turibana-35c-noord-aruba-noord-noord-310110424749/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_reductions": [],
-        "pending_major_changes": [
-          "375f64dc134f1aeef1c5562fcf3f9d3da6e1c382c7bd4c10ada13681549dc7bc"
-        ]
-      },
-      "created_at": "2026-10-09T13:51:41.441972+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
