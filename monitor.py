@@ -1711,6 +1711,8 @@ def field_changes(old, new):
         ("beds", "Bedrooms"),
         ("baths", "Bathrooms"),
         ("size", "Size"),
+        ("building_area", "Building / built-up area"),
+        ("land_area", "Land area"),
         ("location", "Location"),
         ("type", "Property type"),
         ("status", "Status"),
@@ -1867,9 +1869,12 @@ def record_daily_activity(
                 )
             ) == key:
                 item["property"] = prop
-                item["changes"].update(
-                    changes
-                )
+                for label, values in changes.items():
+                    earliest = item["changes"].get(label, {}).get("old", values["old"])
+                    if earliest == values["new"]:
+                        item["changes"].pop(label, None)
+                    else:
+                        item["changes"][label] = {"old": earliest, "new": values["new"]}
                 found = True
                 break
 
@@ -1882,11 +1887,34 @@ def record_daily_activity(
                     "changes": changes,
                 }
             )
+    activity["major_changes"] = [item for item in activity["major_changes"] if item.get("changes")]
 
 
 # ============================================================
 # EMAIL HTML
 # ============================================================
+
+def change_details_html(changes):
+    """Keep the reason for a change alert above the property's general details."""
+    if not changes:
+        return "<div style='margin-bottom:12px'><strong>What changed:</strong> Previous values were not retained for this older alert; exact changes are unavailable.</div>"
+    rows = []
+    for label, values in changes.items():
+        rows.append(
+            "<tr>"
+            f"<th scope='row' style='text-align:left;padding:6px;border-bottom:1px solid #ddd'>{html_escape(label)}</th>"
+            f"<td style='padding:6px;border-bottom:1px solid #ddd'>{html_escape(values.get('old') or 'Not provided by source')}</td>"
+            f"<td style='padding:6px;border-bottom:1px solid #ddd'>{html_escape(values.get('new') or 'Not provided by source')}</td>"
+            "</tr>"
+        )
+    return (
+        "<div style='margin-bottom:16px'><strong>What changed:</strong>"
+        "<table style='width:100%;border-collapse:collapse;font-size:14px;margin-top:8px'>"
+        "<thead><tr><th scope='col' style='text-align:left;padding:6px'>Detail</th>"
+        "<th scope='col' style='text-align:left;padding:6px'>Previous</th>"
+        "<th scope='col' style='text-align:left;padding:6px'>Current</th></tr></thead>"
+        "<tbody>" + "".join(rows) + "</tbody></table></div>"
+    )
 
 def property_block(
     prop,
@@ -1917,6 +1945,8 @@ def property_block(
 
     if event_type == "new":
         html.append("<div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div>")
+    elif event_type == "major":
+        html.append("<div style='font-weight:700;margin-bottom:8px'>MAJOR CHANGES</div>")
     html.append(
         f"<h2 style='margin:0 0 8px;"
         f"font-size:22px'>{name}</h2>"
@@ -1928,6 +1958,9 @@ def property_block(
         f"margin-bottom:12px'>"
         f"{price_text}</div>"
     )
+
+    if event_type == "major" or changes:
+        html.append(change_details_html(changes))
 
     if prop.get(
         "calculated_price"
@@ -2020,23 +2053,6 @@ def property_block(
         html.append(
             "<div><strong>Details:</strong> "
             + " · ".join(facts)
-            + "</div>"
-        )
-
-    if changes:
-        change_items = []
-
-        for label, values in changes.items():
-            change_items.append(
-                f"{html_escape(label)}: "
-                f"{html_escape(values['old'])} → "
-                f"{html_escape(values['new'])}"
-            )
-
-        html.append(
-            "<div style='margin-top:8px'>"
-            "<strong>Major changes:</strong> "
-            + " · ".join(change_items)
             + "</div>"
         )
 
@@ -2533,7 +2549,7 @@ def reconcile(previous, current):
                 else:
                     prop['change_candidate'] = {'signature': signature, 'observed_at': iso_now()}
                     # Preserve confirmed values until another successful observation agrees.
-                    for field in ('price', 'beds', 'baths', 'size', 'location', 'status'):
+                    for field in ('price', 'beds', 'baths', 'size', 'building_area', 'land_area', 'location', 'status'):
                         if old.get(field):
                             prop[field] = old[field]
             for field in ('image', 'description', 'size', 'location', 'building_area', 'land_area'):
@@ -2723,3 +2739,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
