@@ -10157,33 +10157,7 @@
       "last_seen_at": "2026-10-12T17:22:37.482286+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Property Land - Savaneta | 937m²",
-      "url": "https://www.objective-realty.com/properties/property-land-savaneta-937m2",
-      "price": 308989.0,
-      "location": "Savaneta",
-      "type": "Land",
-      "beds": "",
-      "baths": "",
-      "size": "937 m²",
-      "building_area": "",
-      "land_area": "937 m²",
-      "image": "https://www.objective-realty.com/_next/image?url=https%3A%2F%2Fleoysfeogfyahvvrweec.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fproperty-photos%2Flistings%2F1791825472303-1791825470502-5lr8qy.png&w=3840&q=75",
-      "description": "For Sale For Sale Savaneta $308,989 AWG 550,000 Beds: 3 Baths: 2 View Property",
-      "source": "Objective Realty Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-12T17:22:37.482271+00:00",
-      "source_type": "direct_broker",
-      "detail_checked_at": "2026-10-12T17:22:33.490642+00:00",
-      "detail_status": "unavailable",
-      "detail_error": "No recognized property-detail sections",
-      "history_key": "b17ecc6e7ae7f6833639004049b6d7148b228eb4",
-      "last_seen_at": "2026-10-12T17:22:37.482286+00:00",
-      "queued_at": "2026-10-12T17:23:11.120420+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [
     {
@@ -14358,19 +14332,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 1 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Property Land - Savaneta | 937m²</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$308,989</div><div><strong>Location:</strong> Savaneta</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 937 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale For Sale Savaneta $308,989 AWG 550,000 Beds: 3 Baths: 2 View Property</p><div><strong>Broker/source:</strong> Objective Realty Aruba (Objective Realty Aruba)</div><div><strong>First detected:</strong> 2026-10-12</div><div style='margin:15px 0'><img src='https://www.objective-realty.com/_next/image?url=https%3A%2F%2Fleoysfeogfyahvvrweec.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fproperty-photos%2Flistings%2F1791825472303-1791825470502-5lr8qy.png&amp;w=3840&amp;q=75' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.objective-realty.com/properties/property-land-savaneta-937m2' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "31ab9c8e1848649d4e9cb9e9c5010e54ec70144cb2bb52c2601e700581db80d7"
-        ]
-      },
-      "created_at": "2026-10-12T17:23:11.120822+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
