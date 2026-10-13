@@ -100,11 +100,11 @@ class Rules(unittest.TestCase):
         h,n,r,ch=m.reconcile(h,[prop(beds='4')]);self.assertEqual(len(ch),1)
 
     def test_availability_and_location_confirm_together(self):
-        old=prop(status='ineligible',location='Old address')
+        old=prop(status='sold',location='Old address')
         observed=prop(location='Correct address')
         history,_,_,changes=m.reconcile({'old':old},[observed])
         self.assertEqual(changes,[])
-        self.assertEqual(history['old']['status'],'ineligible')
+        self.assertEqual(history['old']['status'],'sold')
         history,_,_,changes=m.reconcile(history,[observed])
         self.assertEqual(set(changes[0][1]),{'Status','Location'})
         self.assertEqual(history['old']['status'],'available')
