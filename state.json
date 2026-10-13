@@ -10261,80 +10261,7 @@
     }
   },
   "pending_new": [],
-  "pending_reductions": [
-    {
-      "property": {
-        "name": "Summerside III – Townhomes in Noord",
-        "url": "https://www.arubabrokers.com/property/summerside-iii-townhomes-in-noord/",
-        "price": 539000.0,
-        "location": "Noord 40",
-        "type": "Townhouse",
-        "beds": "2",
-        "baths": "2",
-        "size": "",
-        "building_area": "",
-        "land_area": "",
-        "image": "https://www.arubabrokers.com/wp-content/uploads/2025/11/IMG-20251112-WA0016-850x550.jpg",
-        "description": "Condos/Apartments , Single Family Home For Sale New Construction $ 539,000 Condos/Apartments , Single Family Home Noord 40 Beds: 2 Baths: 2 Juan Sonensein 11 months ago",
-        "source": "Aruba Brokers",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-09-22T23:32:21.791263+00:00",
-        "source_type": "direct_broker",
-        "development_evidence": [
-          {
-            "label": "Apartment construction",
-            "excerpt": "ondos/Apartments , Single Family Home For Sale New Construction $ 559,000 Condos/Apartments , Single Family Home Noord 40 Beds: 2 Baths: 2 Juan Sonensein 11 months ago",
-            "url": "https://www.arubabrokers.com/property/summerside-iii-townhomes-in-noord/"
-          }
-        ],
-        "detail_checked_at": "2026-10-07T05:38:44.255399+00:00",
-        "detail_status": "unavailable",
-        "history_key": "e835fced4d5c54ccbc76351305c2130e897aeebc",
-        "aliases": [
-          "https://www.arubabrokers.com/property/summerside-iii-townhomes-in-noord"
-        ]
-      },
-      "old": {
-        "name": "Summerside III – Townhomes in Noord",
-        "url": "https://www.arubabrokers.com/property/summerside-iii-townhomes-in-noord/",
-        "price": 559000.0,
-        "location": "Noord 40",
-        "type": "Townhouse",
-        "beds": "2",
-        "baths": "2",
-        "size": "",
-        "building_area": "",
-        "land_area": "",
-        "image": "https://www.arubabrokers.com/wp-content/uploads/2025/11/IMG-20251112-WA0016-850x550.jpg",
-        "description": "Condos/Apartments , Single Family Home For Sale New Construction $ 539,000 Condos/Apartments , Single Family Home Noord 40 Beds: 2 Baths: 2 Juan Sonensein 11 months ago",
-        "source": "Aruba Brokers",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-09-22T23:32:21.791263+00:00",
-        "source_type": "direct_broker",
-        "development_evidence": [
-          {
-            "label": "Apartment construction",
-            "excerpt": "ondos/Apartments , Single Family Home For Sale New Construction $ 559,000 Condos/Apartments , Single Family Home Noord 40 Beds: 2 Baths: 2 Juan Sonensein 11 months ago",
-            "url": "https://www.arubabrokers.com/property/summerside-iii-townhomes-in-noord/"
-          }
-        ],
-        "detail_checked_at": "2026-10-07T05:38:44.255399+00:00",
-        "detail_status": "unavailable",
-        "history_key": "e835fced4d5c54ccbc76351305c2130e897aeebc",
-        "aliases": [
-          "https://www.arubabrokers.com/property/summerside-iii-townhomes-in-noord"
-        ],
-        "change_candidate": {
-          "signature": "319bd3115f1e8d633f16c1e9eeaddc222a7765cbafc506b3aca07ff72d94c16b",
-          "observed_at": "2026-10-13T13:42:55.357788+00:00"
-        },
-        "last_seen_at": "2026-10-13T13:42:55.357792+00:00"
-      },
-      "queued_at": "2026-10-13T14:06:55.128336+00:00"
-    }
-  ],
+  "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
     "new": [],
@@ -14249,20 +14176,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "changes",
-      "subject": "Aruba Property Alert — 1 price reduction",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>PRICE REDUCTIONS</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><h2 style='margin:0 0 8px;font-size:22px'>Summerside III – Townhomes in Noord</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$539,000</div><div style='margin-bottom:8px'><strong>PRICE REDUCTION:</strong> $559,000 → $539,000 (3.6% reduction)</div><div><strong>Location:</strong> Noord 40</div><div><strong>Property type:</strong> Townhouse</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> ondos/Apartments , Single Family Home For Sale New Construction $ 559,000 Condos/Apartments , Single Family Home Noord 40 Beds: 2 Baths: 2 Juan Sonensein 11 months ago</div><div><a href='https://www.arubabrokers.com/property/summerside-iii-townhomes-in-noord/'>Source evidence</a></div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2 beds · 2 baths</div><p style='margin:12px 0'>Condos/Apartments , Single Family Home For Sale New Construction $ 539,000 Condos/Apartments , Single Family Home Noord 40 Beds: 2 Baths: 2 Juan Sonensein 11 months ago</p><div><strong>Broker/source:</strong> Aruba Brokers (Aruba Brokers)</div><div><strong>First detected:</strong> 2026-09-22</div><div style='margin:15px 0'><img src='https://www.arubabrokers.com/wp-content/uploads/2025/11/IMG-20251112-WA0016-850x550.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.arubabrokers.com/property/summerside-iii-townhomes-in-noord/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_reductions": [
-          "29b0cea884e15d4c38cb1aa3fc9858488c519e331994daf9c16d071bcae4a4fd"
-        ],
-        "pending_major_changes": []
-      },
-      "created_at": "2026-10-13T14:56:09.875481+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
