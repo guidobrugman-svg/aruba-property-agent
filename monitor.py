@@ -1704,6 +1704,15 @@ def find_previous_record(
 # CHANGE DETECTION
 # ============================================================
 
+def market_changes(changes):
+    """Internal filter decisions are not changes to broker availability."""
+    result = dict(changes)
+    status = result.get('Status', {})
+    if any(normalize(status.get(side, '')) == 'ineligible' for side in ('old', 'new')):
+        result.pop('Status', None)
+    return result
+
+
 def field_changes(old, new):
     changes = {}
 
@@ -1737,7 +1746,7 @@ def field_changes(old, new):
                 "new": after,
             }
 
-    return changes
+    return market_changes(changes)
 
 
 def reduction_percent(
@@ -2476,6 +2485,34 @@ def event_token(item):
     return hashlib.sha256(json.dumps(item, sort_keys=True, default=str).encode()).hexdigest()
 
 
+def prune_internal_change_alerts(state):
+    """Clean retained events before rendering or retrying old frozen emails."""
+    replaced_tokens = set()
+    for container, field in ((state, 'pending_major_changes'),
+                             (state.get('daily_activity', {}), 'major_changes')):
+        kept = []
+        for event in container.get(field, []):
+            filtered = market_changes(event.get('changes', {}))
+            if filtered != event.get('changes', {}):
+                replaced_tokens.add(event_token(event))
+                if filtered:
+                    kept.append(dict(event, changes=filtered))
+            else:
+                kept.append(event)
+        container[field] = kept
+    def stale(message):
+        snapshot = message.get('snapshot', {})
+        if message.get('kind') == 'digest':
+            tokens = snapshot.get('activity', {}).get('major_changes', [])
+        elif message.get('kind') == 'changes':
+            tokens = snapshot.get('pending_major_changes', [])
+        else:
+            return False
+        return bool(replaced_tokens.intersection(tokens))
+    # Re-render affected batches from the surviving queues; new/price events stay intact.
+    state['outbox'] = [message for message in state.get('outbox', []) if not stale(message)]
+
+
 def queue_message(state, kind, args, snapshot):
     if any(m['kind'] == kind for m in state.setdefault('outbox', [])):
         return
@@ -2593,6 +2630,7 @@ def main():
     for key in ('pending_new', 'pending_reductions', 'pending_major_changes', 'outbox'):
         state.setdefault(key, [])
     state['daily_activity'] = normalize_daily_activity(state.get('daily_activity'))
+    prune_internal_change_alerts(state)
     baselined = set(state.get('baselined_sources', []))
     state.setdefault('source_health', {})
     previous = previous_properties(state)
@@ -2739,4 +2777,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
