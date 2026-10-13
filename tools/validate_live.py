@@ -54,7 +54,19 @@ legacy=copy.deepcopy(production)
 legacy['schema_version']=1
 first,second=replay(legacy,2)
 assert first['last_scan']['new']==0, 'Migration generated NEW alerts'
-assert first['daily_activity']==production.get('daily_activity',m.empty_daily_activity()), 'Migration discarded digest activity'
+# Internal eligibility corrections are deliberately removed by PR #14.
+# Preserve every other field and event; do not weaken migration history checks.
+expected_activity=copy.deepcopy(production.get('daily_activity',m.empty_daily_activity()))
+retained=[]
+for event in expected_activity.get('major_changes',[]):
+    status=event.get('changes',{}).get('Status',{})
+    if 'ineligible' in (status.get('old'),status.get('new')):
+        event['changes'].pop('Status',None)
+        if not event['changes']:
+            continue
+    retained.append(event)
+expected_activity['major_changes']=retained
+assert first['daily_activity']==expected_activity, 'Migration discarded genuine digest activity'
 for field in ('new','major_changes','reductions'):
     assert second['last_scan'][field]==0, 'Migration replay generated false '+field
 
