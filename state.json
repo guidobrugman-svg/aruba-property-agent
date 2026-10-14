@@ -10313,30 +10313,7 @@
       "last_seen_at": "2026-10-14T11:54:47.362208+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "✨ Affordable Luxury Awaits – Modern Townhouses for Sale! ✨",
-      "url": "https://arubarealestatebrokers.com/property/affordable-luxury-awaits-modern-townhouses-for-sale",
-      "price": 224.0,
-      "location": "Hooiberg, Paradera",
-      "type": "Townhouse",
-      "beds": "3",
-      "baths": "3",
-      "size": "",
-      "building_area": "",
-      "land_area": "",
-      "image": "https://arubarealestatebrokers.com/_next/image?url=https%3A%2F%2Fwwvgkdbddlvqlwpkycuf.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Flisting-photos%2F59f06013-15cb-4280-b572-d11a6b376e39%2F1791978386299-0-1.jpeg&w=3840&q=60",
-      "description": "For Sale For sale Hooiberg $224 Afl. 392 Hooiberg, Paradera 3 beds • 3 baths",
-      "source": "Aruba Real Estate Brokers",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-14T11:54:47.362201+00:00",
-      "source_type": "direct_broker",
-      "history_key": "e69efec9e210f1f7c75c5b8ca8da1c7baedb6434",
-      "last_seen_at": "2026-10-14T11:54:47.362208+00:00",
-      "queued_at": "2026-10-14T11:55:24.987492+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
@@ -14517,19 +14494,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 1 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>✨ Affordable Luxury Awaits – Modern Townhouses for Sale! ✨</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$224</div><div><strong>Location:</strong> Hooiberg, Paradera</div><div><strong>Property type:</strong> Townhouse</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 3 beds · 3 baths</div><p style='margin:12px 0'>For Sale For sale Hooiberg $224 Afl. 392 Hooiberg, Paradera 3 beds • 3 baths</p><div><strong>Broker/source:</strong> Aruba Real Estate Brokers (Aruba Real Estate Brokers)</div><div><strong>First detected:</strong> 2026-10-14</div><div style='margin:15px 0'><img src='https://arubarealestatebrokers.com/_next/image?url=https%3A%2F%2Fwwvgkdbddlvqlwpkycuf.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Flisting-photos%2F59f06013-15cb-4280-b572-d11a6b376e39%2F1791978386299-0-1.jpeg&amp;w=3840&amp;q=60' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://arubarealestatebrokers.com/property/affordable-luxury-awaits-modern-townhouses-for-sale' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "99a2d5817039a5d8a04c9e96723e57655a60d86a6507b1fc528876a85ba52980"
-        ]
-      },
-      "created_at": "2026-10-14T11:55:24.987868+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
