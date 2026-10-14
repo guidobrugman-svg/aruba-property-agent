@@ -10285,72 +10285,7 @@
     }
   },
   "pending_new": [],
-  "pending_reductions": [
-    {
-      "property": {
-        "name": "For Sale | Charming 2-Story Home in Turibana",
-        "url": "https://arubalistings.com/sale/noord/house-3655-for-sale-charming-2-story-home-in-turibana",
-        "price": 675000.0,
-        "location": "Turibana 38O, Alto Vista",
-        "type": "House",
-        "beds": "2",
-        "baths": "",
-        "size": "440 m²",
-        "building_area": "140 m²",
-        "land_area": "440 m²",
-        "image": "https://reallinkr-test-bucket.nyc3.cdn.digitaloceanspaces.com/listing/690-turibana-38o/thumbs/listing-image-15439_thumb.jpg",
-        "description": "For Sale USD 675000 Asking Price: US$675.000 / 1,201.500 - AWG Turibana 38 O | 7-Minute Drive to Arashi Beach Lot Size: 440 m² Built-Up Area: 140 m² Built in 2020 This charming 2-story home is located in the desirable Turibana area and offers comfortable living spaces, a private outdoor area, and a convenient location just a short drive from Aruba’s...",
-        "source": "RealLinkr / Aruba MLS",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-07T03:51:01.392541+00:00",
-        "source_type": "aggregator",
-        "broker": "HKG Real Estate Aruba",
-        "listing_api_url": "https://api.test-mls.com/api/v1/listings/by-slug/for-sale-charming-2-story-home-in-turibana-rl260000690/",
-        "published_or_updated_at": "2026-09-24T06:00:00+02:00",
-        "detail_checked_at": "2026-10-07T05:00:51.227075+00:00",
-        "detail_status": "unavailable",
-        "history_key": "6f205f70a909213d00219c8b81b703c3850bab44",
-        "aliases": [
-          "https://arubalistings.com/sale/noord/house-3655-for-sale-charming-2-story-home-in-turibana"
-        ]
-      },
-      "old": {
-        "name": "For Sale | Charming 2-Story Home in Turibana",
-        "url": "https://arubalistings.com/sale/noord/house-3655-for-sale-charming-2-story-home-in-turibana",
-        "price": 695000.0,
-        "location": "Turibana 38O, Alto Vista",
-        "type": "House",
-        "beds": "2",
-        "baths": "",
-        "size": "440 m²",
-        "building_area": "140 m²",
-        "land_area": "440 m²",
-        "image": "https://reallinkr-test-bucket.nyc3.cdn.digitaloceanspaces.com/listing/690-turibana-38o/thumbs/listing-image-15439_thumb.jpg",
-        "description": "For Sale USD 675000 Asking Price: US$675.000 / 1,201.500 - AWG Turibana 38 O | 7-Minute Drive to Arashi Beach Lot Size: 440 m² Built-Up Area: 140 m² Built in 2020 This charming 2-story home is located in the desirable Turibana area and offers comfortable living spaces, a private outdoor area, and a convenient location just a short drive from Aruba’s...",
-        "source": "RealLinkr / Aruba MLS",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-07T03:51:01.392541+00:00",
-        "source_type": "aggregator",
-        "broker": "HKG Real Estate Aruba",
-        "listing_api_url": "https://api.test-mls.com/api/v1/listings/by-slug/for-sale-charming-2-story-home-in-turibana-rl260000690/",
-        "published_or_updated_at": "2026-09-24T06:00:00+02:00",
-        "detail_checked_at": "2026-10-07T05:00:51.227075+00:00",
-        "detail_status": "unavailable",
-        "history_key": "6f205f70a909213d00219c8b81b703c3850bab44",
-        "aliases": [
-          "https://arubalistings.com/sale/noord/house-3655-for-sale-charming-2-story-home-in-turibana"
-        ],
-        "change_candidate": {
-          "signature": "523735d263d9009ecaa8ce3fc72e2854ab268c8b310363785a8f61f00008e727",
-          "observed_at": "2026-10-14T02:37:34.490997+00:00"
-        },
-        "last_seen_at": "2026-10-14T02:37:34.491002+00:00"
-      },
-      "queued_at": "2026-10-14T04:09:39.498008+00:00"
-    }
-  ],
+  "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
     "new": [
@@ -14509,20 +14444,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "changes",
-      "subject": "Aruba Property Alert — 1 price reduction",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>PRICE REDUCTIONS</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><h2 style='margin:0 0 8px;font-size:22px'>For Sale | Charming 2-Story Home in Turibana</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$675,000</div><div style='margin-bottom:8px'><strong>PRICE REDUCTION:</strong> $695,000 → $675,000 (2.9% reduction)</div><div><strong>Location:</strong> Turibana 38O, Alto Vista</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 140 m²</div><div><strong>Land area:</strong> 440 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2 beds</div><p style='margin:12px 0'>For Sale USD 675000 Asking Price: US$675.000 / 1,201.500 - AWG Turibana 38 O | 7-Minute Drive to Arashi Beach Lot Size: 440 m² Built-Up Area: 140 m² Built in 2020 This charming 2-story home is located in the desirable Turibana area and offers comfortable living spaces, a private outdoor area, and a convenient location just a short drive from Aruba’s...</p><div><strong>Broker/source:</strong> HKG Real Estate Aruba (RealLinkr / Aruba MLS)</div><div><strong>First detected:</strong> 2026-10-07</div><div style='margin:15px 0'><img src='https://reallinkr-test-bucket.nyc3.cdn.digitaloceanspaces.com/listing/690-turibana-38o/thumbs/listing-image-15439_thumb.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://arubalistings.com/sale/noord/house-3655-for-sale-charming-2-story-home-in-turibana' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_reductions": [
-          "f93f5ce7320c4ecbcd48faf7126a0e2b62b81acdc0c54d4620f69091baf95843"
-        ],
-        "pending_major_changes": []
-      },
-      "created_at": "2026-10-14T04:42:24.780452+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
