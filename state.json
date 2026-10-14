@@ -10401,33 +10401,7 @@
       "last_seen_at": "2026-10-14T17:07:27.393046+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Savaneta Land",
-      "url": "https://kw-aruba.com/listings/savaneta-land",
-      "price": 126404.0,
-      "location": "Savaneta",
-      "type": "Land",
-      "beds": "",
-      "baths": "",
-      "size": "1318 m²",
-      "building_area": "",
-      "land_area": "1,318 m²",
-      "image": "https://kw-aruba.com/storage/app/uploads/public/670/03e/bce/thumb_43894_500_400_0_0_crop.jpg",
-      "description": "For Sale Vacant Land Savaneta USD 126.404 (AWG 224.999) 1318 m² 0 bedroom(s)",
-      "source": "Keller Williams Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-14T17:07:27.393034+00:00",
-      "source_type": "direct_broker",
-      "detail_checked_at": "2026-10-14T17:07:23.746698+00:00",
-      "detail_status": "unavailable",
-      "detail_error": "No recognized property-detail sections",
-      "history_key": "a946e4879db720b2431de87ebeee002ce2ce2993",
-      "last_seen_at": "2026-10-14T17:07:27.393046+00:00",
-      "queued_at": "2026-10-14T17:08:11.868666+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
@@ -14324,19 +14298,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 1 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Savaneta Land</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$126,404</div><div><strong>Location:</strong> Savaneta</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 1,318 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale Vacant Land Savaneta USD 126.404 (AWG 224.999) 1318 m² 0 bedroom(s)</p><div><strong>Broker/source:</strong> Keller Williams Aruba (Keller Williams Aruba)</div><div><strong>First detected:</strong> 2026-10-14</div><div style='margin:15px 0'><img src='https://kw-aruba.com/storage/app/uploads/public/670/03e/bce/thumb_43894_500_400_0_0_crop.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://kw-aruba.com/listings/savaneta-land' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "3e9e67c86fe217ae54cebf2a7603e5f8a242ba7c12444f416ce9610fcc896626"
-        ]
-      },
-      "created_at": "2026-10-14T17:08:11.869070+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
