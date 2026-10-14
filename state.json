@@ -10291,111 +10291,9 @@
       "last_seen_at": "2026-10-14T02:37:34.536101+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Modanza Villa Park 119",
-      "url": "https://arubalistings.com/sale/paradera/villa-2788-modanza-villa-park-119",
-      "price": 649000.0,
-      "location": "Modanza 119, Shiribana",
-      "type": "Villa",
-      "beds": "3",
-      "baths": "",
-      "size": "656 m²",
-      "building_area": "152 m²",
-      "land_area": "656 m²",
-      "image": "https://reallinkr-test-bucket.nyc3.cdn.digitaloceanspaces.com/listing/853-modanza-119/thumbs/listing-image-18325_thumb.jpg",
-      "description": "For Sale USD 649000 Located in the peaceful residential community of Modanza Villa Park, this well-maintained single-family villa combines comfortable indoor living with a spacious private outdoor area, complete with a swimming pool and covered porch. Set on 656 m² of property land (full ownership), the villa occupies a generous corner lot in a...",
-      "source": "RealLinkr / Aruba MLS",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-14T02:37:34.536086+00:00",
-      "source_type": "aggregator",
-      "broker": "RE/MAX Aruba",
-      "listing_api_url": "https://api.test-mls.com/api/v1/listings/by-slug/modanza-villa-park-119-rl260000853/",
-      "published_or_updated_at": "2026-08-11T06:00:00+02:00",
-      "development_evidence": [
-        {
-          "label": "Ownership",
-          "excerpt": "Set on 656 m² of property land (full ownership), the villa occupies a generous corner lot in a...",
-          "url": "https://arubalistings.com/sale/paradera/villa-2788-modanza-villa-park-119"
-        }
-      ],
-      "history_key": "5c2a7ac57354a94122320470af53bb885a0b4e01",
-      "last_seen_at": "2026-10-14T02:37:34.536101+00:00",
-      "queued_at": "2026-10-14T02:38:19.462643+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
-  "pending_major_changes": [
-    {
-      "property": {
-        "name": "Ponton | Fixer-Upper House",
-        "url": "https://benarubarealestate.com/sale/ponton-fixer-upper-house",
-        "price": 385000.0,
-        "location": "Ponton",
-        "type": "House",
-        "beds": "3",
-        "baths": "2",
-        "size": "",
-        "building_area": "",
-        "land_area": "",
-        "image": "https://benarubarealestate.com/storage/app/uploads/public/6a9/3d0/b2d/thumb_5175_900_0_auto.webp",
-        "description": "Residential For Sale Residential For Sale Ponton AWG 685,300 | $385,000 Sq Mt: 422 Sq Mt Beds: 3 Baths: 2 Natalia Sanchez",
-        "source": "Ben Real Estate",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-09-30T02:27:03.216981+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-10-12T20:14:38.403533+00:00",
-        "detail_status": "unavailable",
-        "history_key": "d5b5c436850525addb7a1c810a29baeaa52d74c1",
-        "aliases": [
-          "https://benarubarealestate.com/sale/ponton-fixer-upper-house"
-        ]
-      },
-      "changes": {
-        "Location": {
-          "old": "Oranjestad",
-          "new": "Ponton"
-        }
-      },
-      "queued_at": "2026-10-14T01:41:20.594438+00:00"
-    },
-    {
-      "property": {
-        "name": "Washington Gardens | New Development",
-        "url": "https://benarubarealestate.com/sale/washington-gardens-new-development",
-        "price": 349000.0,
-        "location": "Bubali",
-        "type": "Development",
-        "beds": "",
-        "baths": "",
-        "size": "",
-        "building_area": "",
-        "land_area": "",
-        "image": "https://benarubarealestate.com/storage/app/uploads/public/6a9/3ce/ff7/thumb_4670_900_0_auto.webp",
-        "description": "New Development For Sale New Development For Sale Bubali AWG 621,220 | $349,000 Sq Mt: 190 Sq Mt Ben Real Estate",
-        "source": "Ben Real Estate",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-09-30T02:27:03.226704+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-10-10T02:52:53.935048+00:00",
-        "detail_status": "ok",
-        "history_key": "80ca8ef4558b5cc2eb65371f8f69607ac20fc6df",
-        "aliases": [
-          "https://benarubarealestate.com/sale/washington-gardens-new-development"
-        ]
-      },
-      "changes": {
-        "Location": {
-          "old": "Noord",
-          "new": "Bubali"
-        }
-      },
-      "queued_at": "2026-10-14T02:08:18.015407+00:00"
-    }
-  ],
+  "pending_major_changes": [],
   "daily_activity": {
     "new": [
       {
@@ -14448,32 +14346,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 1 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Modanza Villa Park 119</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$649,000</div><div><strong>Location:</strong> Modanza 119, Shiribana</div><div><strong>Property type:</strong> Villa</div><div><strong>Building / built-up area:</strong> 152 m²</div><div><strong>Land area:</strong> 656 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Set on 656 m² of property land (full ownership), the villa occupies a generous corner lot in a...</div><div><a href='https://arubalistings.com/sale/paradera/villa-2788-modanza-villa-park-119'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 3 beds</div><p style='margin:12px 0'>For Sale USD 649000 Located in the peaceful residential community of Modanza Villa Park, this well-maintained single-family villa combines comfortable indoor living with a spacious private outdoor area, complete with a swimming pool and covered porch. Set on 656 m² of property land (full ownership), the villa occupies a generous corner lot in a...</p><div><strong>Broker/source:</strong> RE/MAX Aruba (RealLinkr / Aruba MLS)</div><div><strong>First detected:</strong> 2026-10-14</div><div style='margin:15px 0'><img src='https://reallinkr-test-bucket.nyc3.cdn.digitaloceanspaces.com/listing/853-modanza-119/thumbs/listing-image-18325_thumb.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://arubalistings.com/sale/paradera/villa-2788-modanza-villa-park-119' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "d7baa6c6c8640ddb318be93962065e89c1bfdcc3729b1689ae6624fea5df2fd5"
-        ]
-      },
-      "created_at": "2026-10-14T02:38:19.463258+00:00"
-    },
-    {
-      "kind": "changes",
-      "subject": "Aruba Property Alert — 2 major change",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>MAJOR CHANGES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;margin-bottom:8px'>MAJOR CHANGES</div><h2 style='margin:0 0 8px;font-size:22px'>Ponton | Fixer-Upper House</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$385,000</div><div style='margin-bottom:16px'><strong>What changed:</strong><table style='width:100%;border-collapse:collapse;font-size:14px;margin-top:8px'><thead><tr><th scope='col' style='text-align:left;padding:6px'>Detail</th><th scope='col' style='text-align:left;padding:6px'>Previous</th><th scope='col' style='text-align:left;padding:6px'>Current</th></tr></thead><tbody><tr><th scope='row' style='text-align:left;padding:6px;border-bottom:1px solid #ddd'>Location</th><td style='padding:6px;border-bottom:1px solid #ddd'>Oranjestad</td><td style='padding:6px;border-bottom:1px solid #ddd'>Ponton</td></tr></tbody></table></div><div><strong>Location:</strong> Ponton</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 3 beds · 2 baths</div><p style='margin:12px 0'>Residential For Sale Residential For Sale Ponton AWG 685,300 | $385,000 Sq Mt: 422 Sq Mt Beds: 3 Baths: 2 Natalia Sanchez</p><div><strong>Broker/source:</strong> Ben Real Estate (Ben Real Estate)</div><div><strong>First detected:</strong> 2026-09-30</div><div style='margin:15px 0'><img src='https://benarubarealestate.com/storage/app/uploads/public/6a9/3d0/b2d/thumb_5175_900_0_auto.webp' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://benarubarealestate.com/sale/ponton-fixer-upper-house' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;margin-bottom:8px'>MAJOR CHANGES</div><h2 style='margin:0 0 8px;font-size:22px'>Washington Gardens | New Development</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$349,000</div><div style='margin-bottom:16px'><strong>What changed:</strong><table style='width:100%;border-collapse:collapse;font-size:14px;margin-top:8px'><thead><tr><th scope='col' style='text-align:left;padding:6px'>Detail</th><th scope='col' style='text-align:left;padding:6px'>Previous</th><th scope='col' style='text-align:left;padding:6px'>Current</th></tr></thead><tbody><tr><th scope='row' style='text-align:left;padding:6px;border-bottom:1px solid #ddd'>Location</th><td style='padding:6px;border-bottom:1px solid #ddd'>Noord</td><td style='padding:6px;border-bottom:1px solid #ddd'>Bubali</td></tr></tbody></table></div><div><strong>Location:</strong> Bubali</div><div><strong>Property type:</strong> Development</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>New Development For Sale New Development For Sale Bubali AWG 621,220 | $349,000 Sq Mt: 190 Sq Mt Ben Real Estate</p><div><strong>Broker/source:</strong> Ben Real Estate (Ben Real Estate)</div><div><strong>First detected:</strong> 2026-09-30</div><div style='margin:15px 0'><img src='https://benarubarealestate.com/storage/app/uploads/public/6a9/3ce/ff7/thumb_4670_900_0_auto.webp' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://benarubarealestate.com/sale/washington-gardens-new-development' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_reductions": [],
-        "pending_major_changes": [
-          "2fdc71d274dd542058f6dae0bbf46c7e5956a8691f83eb1725a9ca41eeb22594",
-          "b722a5ac3d9bc92afc8fcf7f94d17c48109b46e540b3c30cfb4ec28f8b3d8b79"
-        ]
-      },
-      "created_at": "2026-10-14T02:38:19.463940+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
