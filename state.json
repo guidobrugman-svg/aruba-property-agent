@@ -10577,136 +10577,11 @@
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
-    "new": [
-      {
-        "name": "Savaneta Home with 2 Apartments Steps from Savaneta Beach",
-        "url": "https://www.coldwellbanker.aw/listing-savaneta-home-with-2-apartments-steps-from-savaneta-beach-1750.html",
-        "price": 419900.0,
-        "location": "Savaneta",
-        "type": "House",
-        "beds": "6",
-        "baths": "4",
-        "size": "",
-        "building_area": "",
-        "land_area": "",
-        "image": "https://www.coldwellbanker.aw/addons/watermarkimg/watermark_img.php?photo=https://www.coldwellbanker.aw/images/listing_photos/1750_savanetaaerialcopy.jpg&img=sold.png",
-        "description": "For Sale Savaneta 419900 Price : $419,900 Beds : 6 Baths : 4 ID: 1750 View Listing Details > Discover the potential in this spacious family home with two additional apartments, just a short... More Info",
-        "source": "Coldwell Banker Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-15T13:24:29.638427+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-10-15T13:24:26.444168+00:00",
-        "detail_status": "unavailable",
-        "detail_error": "No recognized property-detail sections",
-        "history_key": "f96cbac25a389cd38cb700deb612a37e871b463b",
-        "last_seen_at": "2026-10-15T13:24:29.638444+00:00"
-      },
-      {
-        "name": "Pos Abao 34, Noord, Aruba, Noord, Aruba",
-        "url": "https://www.realtor.com/international/aw/pos-abao-34-noord-aruba-noord-aruba-310120574784/",
-        "price": 650000.0,
-        "location": "Pos Abao 34, Noord, Aruba, Noord, Aruba",
-        "type": "House",
-        "beds": "5",
-        "baths": "5",
-        "size": "",
-        "building_area": "358 m²",
-        "land_area": "720 m²",
-        "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/96659a4aacfe73efd97425498d3a25e7.jpg",
-        "description": "House",
-        "source": "Realtor International Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-16T09:17:35.338411+00:00",
-        "source_type": "aggregator",
-        "history_key": "10f48163b722a368a049b40605be2c3e5b917cb0",
-        "last_seen_at": "2026-10-16T09:17:35.338425+00:00"
-      },
-      {
-        "name": "Seroe Alejandro 18-D, Savaneta, Aruba, Savaneta, Aruba",
-        "url": "https://www.realtor.com/international/aw/seroe-alejandro-18-d-savaneta-aruba-savaneta-aruba-310120574791/",
-        "price": 756000.0,
-        "location": "Seroe Alejandro 18-D, Savaneta, Aruba, Savaneta, Aruba",
-        "type": "House",
-        "beds": "4",
-        "baths": "3",
-        "size": "",
-        "building_area": "246 m²",
-        "land_area": "560 m²",
-        "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/065dbdf472a062b5271efa5e7a776cbb.jpg",
-        "description": "House",
-        "source": "Realtor International Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-16T09:17:35.390819+00:00",
-        "source_type": "aggregator",
-        "history_key": "742b5b48bf5a8362bea954e0adb176a1223e7002",
-        "last_seen_at": "2026-10-16T09:17:35.390835+00:00"
-      }
-    ],
-    "reductions": [
-      {
-        "property": {
-          "name": "Seroe Alejandro 37",
-          "url": "https://kw-aruba.com/listings/seroe-alejandro-37",
-          "price": 384800.0,
-          "location": "Savaneta",
-          "type": "House",
-          "beds": "3",
-          "baths": "",
-          "size": "828 m²",
-          "building_area": "",
-          "land_area": "",
-          "image": "https://kw-aruba.com/storage/app/uploads/public/6a9/ee1/edb/thumb_68650_500_400_0_0_crop.jpg",
-          "description": "For Sale House New Listing Savaneta USD 384.800 (AWG 684.944) 828 m² 3 bedroom(s)",
-          "source": "Keller Williams Aruba",
-          "mls": "",
-          "status": "available",
-          "detected_at": "2026-10-01T03:13:54.884244+00:00",
-          "source_type": "direct_broker",
-          "detail_checked_at": "2026-10-06T21:53:30.818076+00:00",
-          "detail_status": "unavailable",
-          "history_key": "4e69fa37212f80d7f791ffe2aeae1bc20089c5a5",
-          "aliases": [
-            "https://kw-aruba.com/listings/seroe-alejandro-37"
-          ]
-        },
-        "old": {
-          "name": "Seroe Alejandro 37",
-          "url": "https://kw-aruba.com/listings/seroe-alejandro-37",
-          "price": 421000.0,
-          "location": "Savaneta",
-          "type": "House",
-          "beds": "3",
-          "baths": "",
-          "size": "828 m²",
-          "building_area": "",
-          "land_area": "",
-          "image": "https://kw-aruba.com/storage/app/uploads/public/6a9/ee1/edb/thumb_68650_500_400_0_0_crop.jpg",
-          "description": "For Sale House New Listing Savaneta USD 384.800 (AWG 684.944) 828 m² 3 bedroom(s)",
-          "source": "Keller Williams Aruba",
-          "mls": "",
-          "status": "available",
-          "detected_at": "2026-10-01T03:13:54.884244+00:00",
-          "source_type": "direct_broker",
-          "detail_checked_at": "2026-10-06T21:53:30.818076+00:00",
-          "detail_status": "unavailable",
-          "history_key": "4e69fa37212f80d7f791ffe2aeae1bc20089c5a5",
-          "aliases": [
-            "https://kw-aruba.com/listings/seroe-alejandro-37"
-          ],
-          "change_candidate": {
-            "signature": "30f4b6695d69cfd27ec3266daf593ab84471900e0f314f1063fbd449aee46ada",
-            "observed_at": "2026-10-15T19:35:59.574859+00:00"
-          },
-          "last_seen_at": "2026-10-15T19:35:59.574867+00:00"
-        }
-      }
-    ],
+    "new": [],
+    "reductions": [],
     "major_changes": []
   },
-  "last_digest_date": "2026-10-15",
+  "last_digest_date": "2026-10-16",
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
@@ -14602,28 +14477,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "digest",
-      "subject": "Aruba Property Daily Digest — Oct 16 — 3 new, 1 reductions",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Daily Digest</h1><p style='font-size:16px'><strong>3 new properties</strong><br><strong>1 price reductions</strong><br><strong>0 major changes</strong><br>303 qualifying properties currently detected across available sources.</p><h2>NEW SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Savaneta Home with 2 Apartments Steps from Savaneta Beach</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$419,900</div><div><strong>Location:</strong> Savaneta</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 6 beds · 4 baths</div><p style='margin:12px 0'>For Sale Savaneta 419900 Price : $419,900 Beds : 6 Baths : 4 ID: 1750 View Listing Details &gt; Discover the potential in this spacious family home with two additional apartments, just a short... More Info</p><div><strong>Broker/source:</strong> Coldwell Banker Aruba (Coldwell Banker Aruba)</div><div><strong>First detected:</strong> 2026-10-15</div><div style='margin:15px 0'><img src='https://www.coldwellbanker.aw/addons/watermarkimg/watermark_img.php?photo=https://www.coldwellbanker.aw/images/listing_photos/1750_savanetaaerialcopy.jpg&amp;img=sold.png' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.coldwellbanker.aw/listing-savaneta-home-with-2-apartments-steps-from-savaneta-beach-1750.html' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Pos Abao 34, Noord, Aruba, Noord, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$650,000</div><div><strong>Location:</strong> Pos Abao 34, Noord, Aruba, Noord, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 358 m²</div><div><strong>Land area:</strong> 720 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 5 beds · 5 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-16</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/96659a4aacfe73efd97425498d3a25e7.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/pos-abao-34-noord-aruba-noord-aruba-310120574784/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Seroe Alejandro 18-D, Savaneta, Aruba, Savaneta, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$756,000</div><div><strong>Location:</strong> Seroe Alejandro 18-D, Savaneta, Aruba, Savaneta, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 246 m²</div><div><strong>Land area:</strong> 560 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 4 beds · 3 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-16</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/065dbdf472a062b5271efa5e7a776cbb.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/seroe-alejandro-18-d-savaneta-aruba-savaneta-aruba-310120574791/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><h2>PRICE REDUCTIONS SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><h2 style='margin:0 0 8px;font-size:22px'>Seroe Alejandro 37</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$384,800</div><div style='margin-bottom:8px'><strong>PRICE REDUCTION:</strong> $421,000 → $384,800 (8.6% reduction)</div><div><strong>Location:</strong> Savaneta</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div><strong>Source area (scope unspecified):</strong> 828 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 3 beds</div><p style='margin:12px 0'>For Sale House New Listing Savaneta USD 384.800 (AWG 684.944) 828 m² 3 bedroom(s)</p><div><strong>Broker/source:</strong> Keller Williams Aruba (Keller Williams Aruba)</div><div><strong>First detected:</strong> 2026-10-01</div><div style='margin:15px 0'><img src='https://kw-aruba.com/storage/app/uploads/public/6a9/ee1/edb/thumb_68650_500_400_0_0_crop.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://kw-aruba.com/listings/seroe-alejandro-37' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding:14px;background:#f5f5f5;border-radius:6px;font-size:13px'><strong>Source coverage:</strong> 19 sources checked successfully; 25 sources could not be checked during the latest run.</div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "date": "2026-10-16",
-        "activity": {
-          "new": [
-            "a9639a4ca3eaae0eeaa935290370ba2a67779d41388474e05b950258ea791fc7",
-            "b021378d05f37b5907695846eadb67abbc65fcaabf2ff34b851194b253648a79",
-            "13f8e61b296a0b184152c1ff5a08d2ec7f38f0bc24ec1a974315f49e521a47d7"
-          ],
-          "reductions": [
-            "d0258b8e8eb87b03168fda83eb1b9441dfa5f7d271ff1be5f1c3dc7470582df0"
-          ],
-          "major_changes": []
-        }
-      },
-      "created_at": "2026-10-16T12:16:08.171463+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
@@ -15554,5 +15408,5 @@
       "source": "RealLinkr / Aruba MLS"
     }
   ],
-  "last_digest_at": "2026-10-15T12:03:56.334008+00:00"
+  "last_digest_at": "2026-10-16T12:16:10.122070+00:00"
 }
