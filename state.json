@@ -10656,55 +10656,7 @@
       "last_seen_at": "2026-10-16T23:46:55.259859+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Oranjestad",
-      "url": "https://www.ccrealestatearuba.com/properties-1/nevis-3-bedroom-unit-caribbean-town",
-      "price": 463000.0,
-      "location": "Oranjestad",
-      "type": "Development",
-      "beds": "3",
-      "baths": "",
-      "size": "",
-      "building_area": "",
-      "land_area": "",
-      "image": "https://static.wixstatic.com/media/8095d5_bade41b6f12a47ef9391d5a0456e7640~mv2.jpg/v1/fill/w_63,h_36,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/Image-empty-state.jpg",
-      "description": "For Sale FOR SALE Nevis 3 Bedroom Unit - Caribbean Town ​ $463,000 AWG 824,140 3 2 ​",
-      "source": "C & C Real Estate",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-16T23:46:55.213856+00:00",
-      "source_type": "direct_broker",
-      "detail_checked_at": "2026-10-16T23:46:51.780807+00:00",
-      "detail_status": "unavailable",
-      "detail_error": "No recognized property-detail sections",
-      "history_key": "306b62d99e7972c59b263acfe33cdd11527003e0",
-      "last_seen_at": "2026-10-16T23:46:55.213863+00:00",
-      "queued_at": "2026-10-16T23:47:33.845943+00:00"
-    },
-    {
-      "name": "Savaneta",
-      "url": "https://www.ccrealestatearuba.com/properties-1/noord-cura-cabai-52-savaneta",
-      "price": 420789.0,
-      "location": "Noord",
-      "type": "House",
-      "beds": "",
-      "baths": "",
-      "size": "1365 m²",
-      "building_area": "256 m²",
-      "land_area": "",
-      "image": "https://static.wixstatic.com/media/32209a_194c70ba951f4f9fa0d2a492b221a0f9~mv2.jpg/v1/fill/w_59,h_45,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/Image-empty-state.jpg",
-      "description": "For Sale FOR SALE Noord Cura Cabai 52, Savaneta ​ $420,789 AWG 749,004 ​ ​ 1365 m²",
-      "source": "C & C Real Estate",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-16T23:46:55.259853+00:00",
-      "source_type": "direct_broker",
-      "history_key": "43f6b4bced888d29f04a47bd2cf3000a47c43f4e",
-      "last_seen_at": "2026-10-16T23:46:55.259859+00:00",
-      "queued_at": "2026-10-16T23:47:33.845955+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
@@ -14572,20 +14524,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 2 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Oranjestad</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$463,000</div><div><strong>Location:</strong> Oranjestad</div><div><strong>Property type:</strong> Development</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 3 beds</div><p style='margin:12px 0'>For Sale FOR SALE Nevis 3 Bedroom Unit - Caribbean Town ​ $463,000 AWG 824,140 3 2 ​</p><div><strong>Broker/source:</strong> C &amp; C Real Estate (C &amp; C Real Estate)</div><div><strong>First detected:</strong> 2026-10-16</div><div style='margin:15px 0'><img src='https://static.wixstatic.com/media/8095d5_bade41b6f12a47ef9391d5a0456e7640~mv2.jpg/v1/fill/w_63,h_36,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/Image-empty-state.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.ccrealestatearuba.com/properties-1/nevis-3-bedroom-unit-caribbean-town' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Savaneta</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$420,789</div><div><strong>Location:</strong> Noord</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 256 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale FOR SALE Noord Cura Cabai 52, Savaneta ​ $420,789 AWG 749,004 ​ ​ 1365 m²</p><div><strong>Broker/source:</strong> C &amp; C Real Estate (C &amp; C Real Estate)</div><div><strong>First detected:</strong> 2026-10-16</div><div style='margin:15px 0'><img src='https://static.wixstatic.com/media/32209a_194c70ba951f4f9fa0d2a492b221a0f9~mv2.jpg/v1/fill/w_59,h_45,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/Image-empty-state.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.ccrealestatearuba.com/properties-1/noord-cura-cabai-52-savaneta' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "995ea14b3d5cc4eeced953aa94f8d8a199845f978f818471ecab86e7d6e22f75",
-          "e980911300a5e1154c146c35a9d857430e95b815e4e1551350e3da4bab11e93c"
-        ]
-      },
-      "created_at": "2026-10-16T23:47:33.846368+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
