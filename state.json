@@ -10611,45 +10611,7 @@
       "last_seen_at": "2026-10-16T15:19:29.014119+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "23-A Sabana Grandi, Santa Cruz, Santa Cruz",
-      "url": "https://www.realtor.com/international/aw/23-a-sabana-grandi-santa-cruz-santa-cruz-310120591912/",
-      "price": 617977.0,
-      "location": "23-A Sabana Grandi, Santa Cruz, Santa Cruz",
-      "type": "Land",
-      "beds": "",
-      "baths": "",
-      "size": "",
-      "building_area": "",
-      "land_area": "4,697 m²",
-      "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/4c9076de544cfce2ca2573c893705b0f.jpg",
-      "description": "Land/Development",
-      "source": "Realtor International Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-16T15:19:29.014103+00:00",
-      "source_type": "aggregator",
-      "detail_checked_at": "2026-10-16T15:19:25.783018+00:00",
-      "development_evidence": [
-        {
-          "label": "Ownership",
-          "excerpt": "3-A Sabana Grandi, Santa Cruz, Santa Cruz Exciting new Opportunity: A Massive 4697 M² Private Property land in Papilon, Santa Cruz! This fixer-upper at Papilon 32 sits on expansive 4697 M² \"Eigendom\" land in a serene neighborhood surrounded by nature",
-          "url": "https://www.realtor.com/international/aw/23-a-sabana-grandi-santa-cruz-santa-cruz-310120591912/"
-        },
-        {
-          "label": "Ownership",
-          "excerpt": "ate Property land in Papilon, Santa Cruz! This fixer-upper at Papilon 32 sits on expansive 4697 M² \"Eigendom\" land in a serene neighborhood surrounded by nature",
-          "url": "https://www.realtor.com/international/aw/23-a-sabana-grandi-santa-cruz-santa-cruz-310120591912/"
-        }
-      ],
-      "residence_complex": false,
-      "detail_status": "ok",
-      "history_key": "9ede86b7eea6c4ba3dd5f2636929314975d492ee",
-      "last_seen_at": "2026-10-16T15:19:29.014119+00:00",
-      "queued_at": "2026-10-16T15:20:09.828630+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
@@ -14624,19 +14586,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 1 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>23-A Sabana Grandi, Santa Cruz, Santa Cruz</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$617,977</div><div><strong>Location:</strong> 23-A Sabana Grandi, Santa Cruz, Santa Cruz</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 4,697 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> 3-A Sabana Grandi, Santa Cruz, Santa Cruz Exciting new Opportunity: A Massive 4697 M² Private Property land in Papilon, Santa Cruz! This fixer-upper at Papilon 32 sits on expansive 4697 M² &quot;Eigendom&quot; land in a serene neighborhood surrounded by nature · ate Property land in Papilon, Santa Cruz! This fixer-upper at Papilon 32 sits on expansive 4697 M² &quot;Eigendom&quot; land in a serene neighborhood surrounded by nature</div><div><a href='https://www.realtor.com/international/aw/23-a-sabana-grandi-santa-cruz-santa-cruz-310120591912/'>Source evidence</a></div><div><a href='https://www.realtor.com/international/aw/23-a-sabana-grandi-santa-cruz-santa-cruz-310120591912/'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>Land/Development</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-16</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/4c9076de544cfce2ca2573c893705b0f.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/23-a-sabana-grandi-santa-cruz-santa-cruz-310120591912/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "c3456bd9c9fa3d36d91a52b553d30329bc7c41a6eb5895e84365d300545feb63"
-        ]
-      },
-      "created_at": "2026-10-16T15:20:09.829044+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
