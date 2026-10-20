@@ -10758,66 +10758,7 @@
     }
   },
   "pending_new": [],
-  "pending_reductions": [
-    {
-      "property": {
-        "name": "Seroe Blanco 165 - A Sero Blanco (Oranjestad West) Single Family Homes",
-        "url": "https://century21aruba.com/en/d/seroe-blanco-165-a-single-family-homes-for-sale-sero-blanco-oranjestad-west-1161379",
-        "price": 695000.0,
-        "location": "Oranjestad",
-        "type": "House",
-        "beds": "",
-        "baths": "",
-        "size": "781 m²",
-        "building_area": "",
-        "land_area": "",
-        "image": "https://static.century21aruba.com/images/udx/1161379/w470/1789674023585382.jpg?vno=1789674307",
-        "description": "For Sale Motivated Seller US$ 695,000 4 · 3 · Garden View · 781 m² 12/35",
-        "source": "Century 21 Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-04T22:33:04.483621+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-10-14T12:17:06.628796+00:00",
-        "detail_status": "unavailable",
-        "history_key": "d719da90cc0401546284d5208f5ce72eb2667c58",
-        "aliases": [
-          "https://century21aruba.com/en/d/seroe-blanco-165-a-single-family-homes-for-sale-sero-blanco-oranjestad-west-1161379"
-        ]
-      },
-      "old": {
-        "name": "Seroe Blanco 165 - A Sero Blanco (Oranjestad West) Single Family Homes",
-        "url": "https://century21aruba.com/en/d/seroe-blanco-165-a-single-family-homes-for-sale-sero-blanco-oranjestad-west-1161379",
-        "price": 730000.0,
-        "location": "Oranjestad",
-        "type": "House",
-        "beds": "",
-        "baths": "",
-        "size": "781 m²",
-        "building_area": "",
-        "land_area": "",
-        "image": "https://static.century21aruba.com/images/udx/1161379/w470/1789674023585382.jpg?vno=1789674307",
-        "description": "For Sale Motivated Seller US$ 695,000 4 · 3 · Garden View · 781 m² 12/35",
-        "source": "Century 21 Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-04T22:33:04.483621+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-10-14T12:17:06.628796+00:00",
-        "detail_status": "unavailable",
-        "history_key": "d719da90cc0401546284d5208f5ce72eb2667c58",
-        "aliases": [
-          "https://century21aruba.com/en/d/seroe-blanco-165-a-single-family-homes-for-sale-sero-blanco-oranjestad-west-1161379"
-        ],
-        "change_candidate": {
-          "signature": "a46fc101cee2791a707b5553617a7331cc1f2a0f6796e6501b2dcbf43acd4f35",
-          "observed_at": "2026-10-20T13:53:38.812405+00:00"
-        },
-        "last_seen_at": "2026-10-20T13:53:38.812411+00:00"
-      },
-      "queued_at": "2026-10-20T18:14:01.478017+00:00"
-    }
-  ],
+  "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
     "new": [],
@@ -14826,20 +14767,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "changes",
-      "subject": "Aruba Property Alert — 1 price reduction",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>PRICE REDUCTIONS</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><h2 style='margin:0 0 8px;font-size:22px'>Seroe Blanco 165 - A Sero Blanco (Oranjestad West) Single Family Homes</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$695,000</div><div style='margin-bottom:8px'><strong>PRICE REDUCTION:</strong> $730,000 → $695,000 (4.8% reduction)</div><div><strong>Location:</strong> Oranjestad</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div><strong>Source area (scope unspecified):</strong> 781 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale Motivated Seller US$ 695,000 4 · 3 · Garden View · 781 m² 12/35</p><div><strong>Broker/source:</strong> Century 21 Aruba (Century 21 Aruba)</div><div><strong>First detected:</strong> 2026-10-04</div><div style='margin:15px 0'><img src='https://static.century21aruba.com/images/udx/1161379/w470/1789674023585382.jpg?vno=1789674307' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://century21aruba.com/en/d/seroe-blanco-165-a-single-family-homes-for-sale-sero-blanco-oranjestad-west-1161379' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_reductions": [
-          "061b43a3d51ed4ee02c938589f133d7bc5e410564f84b3f0b0d17cf61f0c324d"
-        ],
-        "pending_major_changes": []
-      },
-      "created_at": "2026-10-20T21:40:02.667273+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
