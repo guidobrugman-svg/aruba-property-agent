@@ -10808,7 +10808,7 @@
     "reductions": [],
     "major_changes": []
   },
-  "last_digest_date": "2026-10-21",
+  "last_digest_date": "2026-10-22",
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
@@ -14804,22 +14804,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "digest",
-      "subject": "Aruba Property Daily Digest — Oct 22 — 0 new, 0 reductions",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Daily Digest</h1><p style='font-size:16px'><strong>0 new properties</strong><br><strong>0 price reductions</strong><br><strong>0 major changes</strong><br>283 qualifying properties currently detected across available sources.</p><p><strong>No new opportunities or meaningful listing changes were detected since the previous daily digest.</strong></p><div style='margin-top:25px;padding:14px;background:#f5f5f5;border-radius:6px;font-size:13px'><strong>Source coverage:</strong> 18 sources checked successfully; 26 sources could not be checked during the latest run.</div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "date": "2026-10-22",
-        "activity": {
-          "new": [],
-          "reductions": [],
-          "major_changes": []
-        }
-      },
-      "created_at": "2026-10-22T15:26:40.239556+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
@@ -15765,5 +15750,5 @@
       "source": "RealLinkr / Aruba MLS"
     }
   ],
-  "last_digest_at": "2026-10-21T14:41:47.640015+00:00"
+  "last_digest_at": "2026-10-22T15:26:42.872332+00:00"
 }
