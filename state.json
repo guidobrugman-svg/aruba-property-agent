@@ -10888,99 +10888,7 @@
       "last_seen_at": "2026-10-22T19:21:29.241650+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "🌴 An Aruba Oasis Fully Renovated| $265K – No HOA",
-      "url": "https://homeforeveryonearuba.com/property/house-for-sale/",
-      "price": 265000.0,
-      "location": "",
-      "type": "House",
-      "beds": "2",
-      "baths": "1",
-      "size": "",
-      "building_area": "",
-      "land_area": "",
-      "image": "https://homeforeveryonearuba.com/wp-content/uploads/2026/10/2a-584x438.jpg",
-      "description": "House, Residential For Sale Best Deals $265,000 Beds: 2 Bath: 1 House, Residential Details Yoel Robbins 43 minutes ago",
-      "source": "Home 4 Everyone",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-22T19:21:29.100673+00:00",
-      "source_type": "direct_broker",
-      "detail_checked_at": "2026-10-22T19:21:25.795348+00:00",
-      "detail_status": "unavailable",
-      "detail_error": "No recognized property-detail sections",
-      "history_key": "866071faa2dd04378cd2201e89e3660c6b9f7787",
-      "last_seen_at": "2026-10-22T19:21:29.100696+00:00",
-      "queued_at": "2026-10-22T19:22:10.913665+00:00"
-    },
-    {
-      "name": "Rooi Master Z/N, Savaneta, Aruba, Savaneta, Aruba",
-      "url": "https://www.realtor.com/international/aw/rooi-master-z-n-savaneta-aruba-savaneta-aruba-310120701961/",
-      "price": 182584.0,
-      "location": "Rooi Master Z/N, Savaneta, Aruba, Savaneta, Aruba",
-      "type": "Land",
-      "beds": "",
-      "baths": "",
-      "size": "",
-      "building_area": "",
-      "land_area": "658 m²",
-      "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/6deea5a93c7dfb54b0e36c636c95e8af.jpg",
-      "description": "Land",
-      "source": "Realtor International Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-22T19:21:29.149310+00:00",
-      "source_type": "aggregator",
-      "history_key": "eb22cc73dd831a47c16f496a2805639b3dc9ff4b",
-      "last_seen_at": "2026-10-22T19:21:29.149325+00:00",
-      "queued_at": "2026-10-22T19:22:10.913688+00:00"
-    },
-    {
-      "name": "San Barbola 275, Oranjestad, Aruba, Oranjestad, Aruba",
-      "url": "https://www.realtor.com/international/aw/san-barbola-275-oranjestad-aruba-oranjestad-aruba-310120702021/",
-      "price": 250000.0,
-      "location": "San Barbola 275, Oranjestad, Aruba, Oranjestad, Aruba",
-      "type": "Land",
-      "beds": "",
-      "baths": "",
-      "size": "",
-      "building_area": "",
-      "land_area": "491 m²",
-      "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/b6a29d17b1b39780748559964a05bacf.jpg",
-      "description": "Land",
-      "source": "Realtor International Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-22T19:21:29.194325+00:00",
-      "source_type": "aggregator",
-      "history_key": "a7e1e8bd7ee47667dafd0d6ef71893f241747e29",
-      "last_seen_at": "2026-10-22T19:21:29.194341+00:00",
-      "queued_at": "2026-10-22T19:22:10.913692+00:00"
-    },
-    {
-      "name": "Tanki Flip 58-L, Noord, Aruba, Noord, Aruba",
-      "url": "https://www.realtor.com/international/aw/tanki-flip-58-l-noord-aruba-noord-aruba-310120701958/",
-      "price": 224719.0,
-      "location": "Tanki Flip 58-L, Noord, Aruba, Noord, Aruba",
-      "type": "House",
-      "beds": "2",
-      "baths": "1",
-      "size": "",
-      "building_area": "109 m²",
-      "land_area": "353 m²",
-      "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/d985e3b37eb0ac9c1de8b1cc132f2968.jpg",
-      "description": "House",
-      "source": "Realtor International Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-22T19:21:29.241636+00:00",
-      "source_type": "aggregator",
-      "history_key": "cf54a031b3a0b2f14bc48b444a966638e02e097e",
-      "last_seen_at": "2026-10-22T19:21:29.241650+00:00",
-      "queued_at": "2026-10-22T19:22:10.913694+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
@@ -15049,22 +14957,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 4 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>🌴 An Aruba Oasis Fully Renovated| $265K – No HOA</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$265,000</div><div><strong>Location:</strong> Not provided by source</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2 beds · 1 baths</div><p style='margin:12px 0'>House, Residential For Sale Best Deals $265,000 Beds: 2 Bath: 1 House, Residential Details Yoel Robbins 43 minutes ago</p><div><strong>Broker/source:</strong> Home 4 Everyone (Home 4 Everyone)</div><div><strong>First detected:</strong> 2026-10-22</div><div style='margin:15px 0'><img src='https://homeforeveryonearuba.com/wp-content/uploads/2026/10/2a-584x438.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://homeforeveryonearuba.com/property/house-for-sale/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Rooi Master Z/N, Savaneta, Aruba, Savaneta, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$182,584</div><div><strong>Location:</strong> Rooi Master Z/N, Savaneta, Aruba, Savaneta, Aruba</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 658 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>Land</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-22</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/6deea5a93c7dfb54b0e36c636c95e8af.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/rooi-master-z-n-savaneta-aruba-savaneta-aruba-310120701961/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>San Barbola 275, Oranjestad, Aruba, Oranjestad, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$250,000</div><div><strong>Location:</strong> San Barbola 275, Oranjestad, Aruba, Oranjestad, Aruba</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 491 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>Land</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-22</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/b6a29d17b1b39780748559964a05bacf.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/san-barbola-275-oranjestad-aruba-oranjestad-aruba-310120702021/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Tanki Flip 58-L, Noord, Aruba, Noord, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$224,719</div><div><strong>Location:</strong> Tanki Flip 58-L, Noord, Aruba, Noord, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 109 m²</div><div><strong>Land area:</strong> 353 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2 beds · 1 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-22</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/d985e3b37eb0ac9c1de8b1cc132f2968.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/tanki-flip-58-l-noord-aruba-noord-aruba-310120701958/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "a494e254690552a5ff924d0b968506021c66447aa8b7d794c256708e3cfd131f",
-          "da946b26847aec0e47cdaf11e51e793d0cc59996f89efe91246eca3c7e80d815",
-          "206b57dfc7a6e7d49b6dbd94366ee7f40641ccaf9a057c166b40fc3dc2a1c950",
-          "acda9f56748807f9435ac8dbc0b0018a6d34a44777a321a15a9480cabab95d2f"
-        ]
-      },
-      "created_at": "2026-10-22T19:22:10.914279+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
