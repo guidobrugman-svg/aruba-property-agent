@@ -10995,206 +10995,15 @@
       "last_seen_at": "2026-10-25T12:19:58.847521+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Amsterdamstraat 3, Sint Nicolaas, Aruba, Sint Nicolaas, Aruba",
-      "url": "https://www.realtor.com/international/aw/amsterdamstraat-3-sint-nicolaas-aruba-sint-nicolaas-aruba-310120765159/",
-      "price": 281000.0,
-      "location": "Amsterdamstraat 3, Sint Nicolaas, Aruba, Sint Nicolaas, Aruba",
-      "type": "House",
-      "beds": "3",
-      "baths": "2",
-      "size": "",
-      "building_area": "160 m²",
-      "land_area": "1,181 m²",
-      "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/4afc10bdeb66eb086824e047c7753810.jpg",
-      "description": "House",
-      "source": "Realtor International Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-25T12:19:58.740976+00:00",
-      "source_type": "aggregator",
-      "detail_checked_at": "2026-10-25T12:19:55.811076+00:00",
-      "development_evidence": [
-        {
-          "label": "Ownership",
-          "excerpt": "per on 1181m2 lease land with Exceptional Investment / ResidentialPotential.PROPERTY FEATURES1181m2 long lease land3 bedrooms2 bathroomsKitchen areaDining & Living areaPatioStorageClosetPROPERTY CONDITIONThe home is a full fixer-upper and requires complete renovation, an ideal bl",
-          "url": "https://www.realtor.com/international/aw/amsterdamstraat-3-sint-nicolaas-aruba-sint-nicolaas-aruba-310120765159/"
-        },
-        {
-          "label": "Ownership",
-          "excerpt": "per on 1181m2 lease land with Exceptional Investment / ResidentialPotential.PROPERTY FEATURES1181m2 long lease land3 bedrooms2 bathroomsKitchen areaDining & Living areaPatioStorageClosetPROPERTY CONDITIONThe home is a full fixer-upper and requires complete renovation, an ideal bl",
-          "url": "https://www.realtor.com/international/aw/amsterdamstraat-3-sint-nicolaas-aruba-sint-nicolaas-aruba-310120765159/"
-        }
-      ],
-      "residence_complex": false,
-      "detail_status": "ok",
-      "history_key": "85943e4b4d3752c53096d07325269b30f433d8b0",
-      "last_seen_at": "2026-10-25T12:19:58.740983+00:00",
-      "queued_at": "2026-10-25T12:20:46.509014+00:00"
-    },
-    {
-      "name": "Celciusstraat 20, Oranjestad, Aruba, Oranjestad, Aruba",
-      "url": "https://www.realtor.com/international/aw/celciusstraat-20-oranjestad-aruba-oranjestad-aruba-310120765178/",
-      "price": 350000.0,
-      "location": "Celciusstraat 20, Oranjestad, Aruba, Oranjestad, Aruba",
-      "type": "House",
-      "beds": "2",
-      "baths": "1",
-      "size": "",
-      "building_area": "105 m²",
-      "land_area": "440 m²",
-      "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/d44fb512838e30dcd62c6de15f64b330.jpg",
-      "description": "House",
-      "source": "Realtor International Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-25T12:19:58.793510+00:00",
-      "source_type": "aggregator",
-      "detail_checked_at": "2026-10-25T12:19:55.812102+00:00",
-      "development_evidence": [
-        {
-          "label": "Ownership",
-          "excerpt": "d fully refreshed!Discover this beautifully renovated 2-bedroom home, situated on a generous 440 m² property land with approximately 105 m² of built-up area.The property has undergone extensive improvements, making it an excellent opportunity for anyone looking for a comfortable hom",
-          "url": "https://www.realtor.com/international/aw/celciusstraat-20-oranjestad-aruba-oranjestad-aruba-310120765178/"
-        },
-        {
-          "label": "Ownership",
-          "excerpt": "ooking for a comfortable home, investment property, or Caribbean getaway.Property Features:- 440 m² property land- 105 m² built-up area- 2 bedrooms- 1 brand-new bathroom- All windows replaced- New water pipes & electrical wiring- Fresh interior & exterior paint- Roof completely seal",
-          "url": "https://www.realtor.com/international/aw/celciusstraat-20-oranjestad-aruba-oranjestad-aruba-310120765178/"
-        }
-      ],
-      "residence_complex": false,
-      "detail_status": "ok",
-      "history_key": "562af656efaa7eda568de2afa48dc867ca83d1b5",
-      "last_seen_at": "2026-10-25T12:19:58.793518+00:00",
-      "queued_at": "2026-10-25T12:20:46.509026+00:00"
-    },
-    {
-      "name": "Verano 17, Santa Cruz, Aruba, Santa Cruz, Aruba",
-      "url": "https://www.realtor.com/international/aw/verano-17-santa-cruz-aruba-santa-cruz-aruba-310120765166/",
-      "price": 500000.0,
-      "location": "Verano 17, Santa Cruz, Aruba, Santa Cruz, Aruba",
-      "type": "House",
-      "beds": "4",
-      "baths": "3",
-      "size": "",
-      "building_area": "209 m²",
-      "land_area": "642 m²",
-      "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/568629e4ae8fd238cb8a7a941474c43a.jpg",
-      "description": "House",
-      "source": "Realtor International Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-25T12:19:58.847514+00:00",
-      "source_type": "aggregator",
-      "history_key": "b5573f251443160c1a796409a3c629c27e6b206e",
-      "last_seen_at": "2026-10-25T12:19:58.847521+00:00",
-      "queued_at": "2026-10-25T12:20:46.509029+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
-    "new": [
-      {
-        "name": "Amsterdamstraat 3, Sint Nicolaas, Aruba, Sint Nicolaas, Aruba",
-        "url": "https://www.realtor.com/international/aw/amsterdamstraat-3-sint-nicolaas-aruba-sint-nicolaas-aruba-310120765159/",
-        "price": 281000.0,
-        "location": "Amsterdamstraat 3, Sint Nicolaas, Aruba, Sint Nicolaas, Aruba",
-        "type": "House",
-        "beds": "3",
-        "baths": "2",
-        "size": "",
-        "building_area": "160 m²",
-        "land_area": "1,181 m²",
-        "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/4afc10bdeb66eb086824e047c7753810.jpg",
-        "description": "House",
-        "source": "Realtor International Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-25T12:19:58.740976+00:00",
-        "source_type": "aggregator",
-        "detail_checked_at": "2026-10-25T12:19:55.811076+00:00",
-        "development_evidence": [
-          {
-            "label": "Ownership",
-            "excerpt": "per on 1181m2 lease land with Exceptional Investment / ResidentialPotential.PROPERTY FEATURES1181m2 long lease land3 bedrooms2 bathroomsKitchen areaDining & Living areaPatioStorageClosetPROPERTY CONDITIONThe home is a full fixer-upper and requires complete renovation, an ideal bl",
-            "url": "https://www.realtor.com/international/aw/amsterdamstraat-3-sint-nicolaas-aruba-sint-nicolaas-aruba-310120765159/"
-          },
-          {
-            "label": "Ownership",
-            "excerpt": "per on 1181m2 lease land with Exceptional Investment / ResidentialPotential.PROPERTY FEATURES1181m2 long lease land3 bedrooms2 bathroomsKitchen areaDining & Living areaPatioStorageClosetPROPERTY CONDITIONThe home is a full fixer-upper and requires complete renovation, an ideal bl",
-            "url": "https://www.realtor.com/international/aw/amsterdamstraat-3-sint-nicolaas-aruba-sint-nicolaas-aruba-310120765159/"
-          }
-        ],
-        "residence_complex": false,
-        "detail_status": "ok",
-        "history_key": "85943e4b4d3752c53096d07325269b30f433d8b0",
-        "last_seen_at": "2026-10-25T12:19:58.740983+00:00"
-      },
-      {
-        "name": "Celciusstraat 20, Oranjestad, Aruba, Oranjestad, Aruba",
-        "url": "https://www.realtor.com/international/aw/celciusstraat-20-oranjestad-aruba-oranjestad-aruba-310120765178/",
-        "price": 350000.0,
-        "location": "Celciusstraat 20, Oranjestad, Aruba, Oranjestad, Aruba",
-        "type": "House",
-        "beds": "2",
-        "baths": "1",
-        "size": "",
-        "building_area": "105 m²",
-        "land_area": "440 m²",
-        "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/d44fb512838e30dcd62c6de15f64b330.jpg",
-        "description": "House",
-        "source": "Realtor International Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-25T12:19:58.793510+00:00",
-        "source_type": "aggregator",
-        "detail_checked_at": "2026-10-25T12:19:55.812102+00:00",
-        "development_evidence": [
-          {
-            "label": "Ownership",
-            "excerpt": "d fully refreshed!Discover this beautifully renovated 2-bedroom home, situated on a generous 440 m² property land with approximately 105 m² of built-up area.The property has undergone extensive improvements, making it an excellent opportunity for anyone looking for a comfortable hom",
-            "url": "https://www.realtor.com/international/aw/celciusstraat-20-oranjestad-aruba-oranjestad-aruba-310120765178/"
-          },
-          {
-            "label": "Ownership",
-            "excerpt": "ooking for a comfortable home, investment property, or Caribbean getaway.Property Features:- 440 m² property land- 105 m² built-up area- 2 bedrooms- 1 brand-new bathroom- All windows replaced- New water pipes & electrical wiring- Fresh interior & exterior paint- Roof completely seal",
-            "url": "https://www.realtor.com/international/aw/celciusstraat-20-oranjestad-aruba-oranjestad-aruba-310120765178/"
-          }
-        ],
-        "residence_complex": false,
-        "detail_status": "ok",
-        "history_key": "562af656efaa7eda568de2afa48dc867ca83d1b5",
-        "last_seen_at": "2026-10-25T12:19:58.793518+00:00"
-      },
-      {
-        "name": "Verano 17, Santa Cruz, Aruba, Santa Cruz, Aruba",
-        "url": "https://www.realtor.com/international/aw/verano-17-santa-cruz-aruba-santa-cruz-aruba-310120765166/",
-        "price": 500000.0,
-        "location": "Verano 17, Santa Cruz, Aruba, Santa Cruz, Aruba",
-        "type": "House",
-        "beds": "4",
-        "baths": "3",
-        "size": "",
-        "building_area": "209 m²",
-        "land_area": "642 m²",
-        "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/568629e4ae8fd238cb8a7a941474c43a.jpg",
-        "description": "House",
-        "source": "Realtor International Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-25T12:19:58.847514+00:00",
-        "source_type": "aggregator",
-        "history_key": "b5573f251443160c1a796409a3c629c27e6b206e",
-        "last_seen_at": "2026-10-25T12:19:58.847521+00:00"
-      }
-    ],
+    "new": [],
     "reductions": [],
     "major_changes": []
   },
-  "last_digest_date": "2026-10-24",
+  "last_digest_date": "2026-10-25",
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
@@ -15169,39 +14978,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 3 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Amsterdamstraat 3, Sint Nicolaas, Aruba, Sint Nicolaas, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$281,000</div><div><strong>Location:</strong> Amsterdamstraat 3, Sint Nicolaas, Aruba, Sint Nicolaas, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 160 m²</div><div><strong>Land area:</strong> 1,181 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> per on 1181m2 lease land with Exceptional Investment / ResidentialPotential.PROPERTY FEATURES1181m2 long lease land3 bedrooms2 bathroomsKitchen areaDining &amp; Living areaPatioStorageClosetPROPERTY CONDITIONThe home is a full fixer-upper and requires complete renovation, an ideal bl · per on 1181m2 lease land with Exceptional Investment / ResidentialPotential.PROPERTY FEATURES1181m2 long lease land3 bedrooms2 bathroomsKitchen areaDining &amp; Living areaPatioStorageClosetPROPERTY CONDITIONThe home is a full fixer-upper and requires complete renovation, an ideal bl</div><div><a href='https://www.realtor.com/international/aw/amsterdamstraat-3-sint-nicolaas-aruba-sint-nicolaas-aruba-310120765159/'>Source evidence</a></div><div><a href='https://www.realtor.com/international/aw/amsterdamstraat-3-sint-nicolaas-aruba-sint-nicolaas-aruba-310120765159/'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 3 beds · 2 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-25</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/4afc10bdeb66eb086824e047c7753810.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/amsterdamstraat-3-sint-nicolaas-aruba-sint-nicolaas-aruba-310120765159/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Celciusstraat 20, Oranjestad, Aruba, Oranjestad, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$350,000</div><div><strong>Location:</strong> Celciusstraat 20, Oranjestad, Aruba, Oranjestad, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 105 m²</div><div><strong>Land area:</strong> 440 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> d fully refreshed!Discover this beautifully renovated 2-bedroom home, situated on a generous 440 m² property land with approximately 105 m² of built-up area.The property has undergone extensive improvements, making it an excellent opportunity for anyone looking for a comfortable hom · ooking for a comfortable home, investment property, or Caribbean getaway.Property Features:- 440 m² property land- 105 m² built-up area- 2 bedrooms- 1 brand-new bathroom- All windows replaced- New water pipes &amp; electrical wiring- Fresh interior &amp; exterior paint- Roof completely seal</div><div><a href='https://www.realtor.com/international/aw/celciusstraat-20-oranjestad-aruba-oranjestad-aruba-310120765178/'>Source evidence</a></div><div><a href='https://www.realtor.com/international/aw/celciusstraat-20-oranjestad-aruba-oranjestad-aruba-310120765178/'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2 beds · 1 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-25</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/d44fb512838e30dcd62c6de15f64b330.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/celciusstraat-20-oranjestad-aruba-oranjestad-aruba-310120765178/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Verano 17, Santa Cruz, Aruba, Santa Cruz, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$500,000</div><div><strong>Location:</strong> Verano 17, Santa Cruz, Aruba, Santa Cruz, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 209 m²</div><div><strong>Land area:</strong> 642 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 4 beds · 3 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-25</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/568629e4ae8fd238cb8a7a941474c43a.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/verano-17-santa-cruz-aruba-santa-cruz-aruba-310120765166/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "90e001ba92932afaf3dcdaeecf9de0a7499a5d4c544d40e8cb16a77db1b012d9",
-          "e8f9690dcce3eb89bbb09e7ee2a4ccb06830b01db16c422673b79a5ab8b34b12",
-          "ad25a1d54299c1aebefacee0f9cd8e159eb791c2508e11a3d71acf1749be33a8"
-        ]
-      },
-      "created_at": "2026-10-25T12:20:46.509604+00:00"
-    },
-    {
-      "kind": "digest",
-      "subject": "Aruba Property Daily Digest — Oct 25 — 3 new, 0 reductions",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Daily Digest</h1><p style='font-size:16px'><strong>3 new properties</strong><br><strong>0 price reductions</strong><br><strong>0 major changes</strong><br>275 qualifying properties currently detected across available sources.</p><h2>NEW SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Amsterdamstraat 3, Sint Nicolaas, Aruba, Sint Nicolaas, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$281,000</div><div><strong>Location:</strong> Amsterdamstraat 3, Sint Nicolaas, Aruba, Sint Nicolaas, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 160 m²</div><div><strong>Land area:</strong> 1,181 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> per on 1181m2 lease land with Exceptional Investment / ResidentialPotential.PROPERTY FEATURES1181m2 long lease land3 bedrooms2 bathroomsKitchen areaDining &amp; Living areaPatioStorageClosetPROPERTY CONDITIONThe home is a full fixer-upper and requires complete renovation, an ideal bl · per on 1181m2 lease land with Exceptional Investment / ResidentialPotential.PROPERTY FEATURES1181m2 long lease land3 bedrooms2 bathroomsKitchen areaDining &amp; Living areaPatioStorageClosetPROPERTY CONDITIONThe home is a full fixer-upper and requires complete renovation, an ideal bl</div><div><a href='https://www.realtor.com/international/aw/amsterdamstraat-3-sint-nicolaas-aruba-sint-nicolaas-aruba-310120765159/'>Source evidence</a></div><div><a href='https://www.realtor.com/international/aw/amsterdamstraat-3-sint-nicolaas-aruba-sint-nicolaas-aruba-310120765159/'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 3 beds · 2 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-25</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/4afc10bdeb66eb086824e047c7753810.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/amsterdamstraat-3-sint-nicolaas-aruba-sint-nicolaas-aruba-310120765159/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Celciusstraat 20, Oranjestad, Aruba, Oranjestad, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$350,000</div><div><strong>Location:</strong> Celciusstraat 20, Oranjestad, Aruba, Oranjestad, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 105 m²</div><div><strong>Land area:</strong> 440 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> d fully refreshed!Discover this beautifully renovated 2-bedroom home, situated on a generous 440 m² property land with approximately 105 m² of built-up area.The property has undergone extensive improvements, making it an excellent opportunity for anyone looking for a comfortable hom · ooking for a comfortable home, investment property, or Caribbean getaway.Property Features:- 440 m² property land- 105 m² built-up area- 2 bedrooms- 1 brand-new bathroom- All windows replaced- New water pipes &amp; electrical wiring- Fresh interior &amp; exterior paint- Roof completely seal</div><div><a href='https://www.realtor.com/international/aw/celciusstraat-20-oranjestad-aruba-oranjestad-aruba-310120765178/'>Source evidence</a></div><div><a href='https://www.realtor.com/international/aw/celciusstraat-20-oranjestad-aruba-oranjestad-aruba-310120765178/'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2 beds · 1 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-25</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/d44fb512838e30dcd62c6de15f64b330.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/celciusstraat-20-oranjestad-aruba-oranjestad-aruba-310120765178/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Verano 17, Santa Cruz, Aruba, Santa Cruz, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$500,000</div><div><strong>Location:</strong> Verano 17, Santa Cruz, Aruba, Santa Cruz, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 209 m²</div><div><strong>Land area:</strong> 642 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 4 beds · 3 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-25</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/568629e4ae8fd238cb8a7a941474c43a.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/verano-17-santa-cruz-aruba-santa-cruz-aruba-310120765166/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding:14px;background:#f5f5f5;border-radius:6px;font-size:13px'><strong>Source coverage:</strong> 18 sources checked successfully; 26 sources could not be checked during the latest run.</div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "date": "2026-10-25",
-        "activity": {
-          "new": [
-            "9cd733eb6250b07b767a0a623809cf2b43875614898801912c7a6330bea5985f",
-            "88e4f12e6330e287aa8eed9e0a7557f12d4522e91fd2bb8ec37de1e4b3fc4b68",
-            "b69d7d5f19ed5cf84bef874cb54a8ed832e3b5ada69465a43bc3a460e9a806e6"
-          ],
-          "reductions": [],
-          "major_changes": []
-        }
-      },
-      "created_at": "2026-10-25T12:20:46.510182+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
@@ -16147,5 +15924,5 @@
       "source": "RealLinkr / Aruba MLS"
     }
   ],
-  "last_digest_at": "2026-10-24T13:40:41.473842+00:00"
+  "last_digest_at": "2026-10-25T12:20:48.408134+00:00"
 }
