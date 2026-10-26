@@ -11051,58 +11051,7 @@
       "last_seen_at": "2026-10-26T19:54:42.122442+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Alto Vista 120 - E Alto Vista (Noord) Single Family Homes",
-      "url": "https://century21aruba.com/en/d/alto-vista-120-e-single-family-homes-for-sale-alto-vista-noord-1160600",
-      "price": 775000.0,
-      "location": "Noord",
-      "type": "House",
-      "beds": "",
-      "baths": "",
-      "size": "750 m²",
-      "building_area": "",
-      "land_area": "",
-      "image": "https://static.century21aruba.com/images/udx/1160600/w470/1769535272390238.jpg?vno=1787755309",
-      "description": "For Sale Price Reduced US$ 775,000 4 · 2½+ · Ocean View - Partial · 750 m² 21/35",
-      "source": "Century 21 Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-26T19:54:42.063562+00:00",
-      "source_type": "direct_broker",
-      "detail_checked_at": "2026-10-26T19:54:38.932999+00:00",
-      "detail_status": "unavailable",
-      "detail_error": "403 Client Error: Forbidden for url: https://century21aruba.com/en/d/alto-vista-120-e-single-family-homes-for-sale-alto-vista-noord-1160600",
-      "history_key": "97cee075ca45061ff92d0f75a42d43a41f20f269",
-      "last_seen_at": "2026-10-26T19:54:42.063570+00:00",
-      "queued_at": "2026-10-26T19:55:29.447013+00:00"
-    },
-    {
-      "name": "Rooi Prikichi Fixer Upper",
-      "url": "https://rogaruba.com/listings/rooi-prikichi-fixer-upper",
-      "price": 280899.0,
-      "location": "Rooi Prikichi 15, Paradera",
-      "type": "House",
-      "beds": "4",
-      "baths": "",
-      "size": "1,362 Sq Ft",
-      "building_area": "",
-      "land_area": "",
-      "image": "https://rogaruba.com/storage/app/uploads/public/6ad/f94/287/thumb_7262_600_400_0_0_crop.jpg",
-      "description": "For Sale House New Listing Rooi Prikichi 15, Paradera $280,899 1,362 Sq Ft 4 bedroom(s)",
-      "source": "Realty ONE Group Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-26T19:54:42.122435+00:00",
-      "source_type": "direct_broker",
-      "detail_checked_at": "2026-10-26T19:54:38.935829+00:00",
-      "detail_status": "unavailable",
-      "detail_error": "No recognized property-detail sections",
-      "history_key": "6c61df75fa8016d274ef1537f7166bdef6634651",
-      "last_seen_at": "2026-10-26T19:54:42.122442+00:00",
-      "queued_at": "2026-10-26T19:55:29.447029+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
@@ -15141,20 +15090,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 2 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Alto Vista 120 - E Alto Vista (Noord) Single Family Homes</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$775,000</div><div><strong>Location:</strong> Noord</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div><strong>Source area (scope unspecified):</strong> 750 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale Price Reduced US$ 775,000 4 · 2½+ · Ocean View - Partial · 750 m² 21/35</p><div><strong>Broker/source:</strong> Century 21 Aruba (Century 21 Aruba)</div><div><strong>First detected:</strong> 2026-10-26</div><div style='margin:15px 0'><img src='https://static.century21aruba.com/images/udx/1160600/w470/1769535272390238.jpg?vno=1787755309' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://century21aruba.com/en/d/alto-vista-120-e-single-family-homes-for-sale-alto-vista-noord-1160600' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Rooi Prikichi Fixer Upper</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$280,899</div><div><strong>Location:</strong> Rooi Prikichi 15, Paradera</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div><strong>Source area (scope unspecified):</strong> 1,362 Sq Ft</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 4 beds</div><p style='margin:12px 0'>For Sale House New Listing Rooi Prikichi 15, Paradera $280,899 1,362 Sq Ft 4 bedroom(s)</p><div><strong>Broker/source:</strong> Realty ONE Group Aruba (Realty ONE Group Aruba)</div><div><strong>First detected:</strong> 2026-10-26</div><div style='margin:15px 0'><img src='https://rogaruba.com/storage/app/uploads/public/6ad/f94/287/thumb_7262_600_400_0_0_crop.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://rogaruba.com/listings/rooi-prikichi-fixer-upper' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "20f4821a9e114579e0fb04214823ac9981f5156c06bd139264ea21f31a560bdf",
-          "33acca91d356d2c86c8b79d87b3c70e027df0e43adf8e4f0ff262b7ef98fc4e7"
-        ]
-      },
-      "created_at": "2026-10-26T19:55:29.447490+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
