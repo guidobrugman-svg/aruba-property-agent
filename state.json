@@ -11116,33 +11116,7 @@
       "last_seen_at": "2026-10-27T16:55:34.210309+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Seroe Patrishi 36 - Z Paradera (Paradera) Single Family Homes",
-      "url": "https://century21aruba.com/en/d/seroe-patrishi-36-z-single-family-homes-for-sale-paradera-paradera-1167446",
-      "price": 495000.0,
-      "location": "Paradera",
-      "type": "House",
-      "beds": "",
-      "baths": "",
-      "size": "325 m²",
-      "building_area": "",
-      "land_area": "",
-      "image": "https://static.century21aruba.com/images/udx/1167446/w470/1792528033199395.jpg?vno=1793110429",
-      "description": "For Sale New Listing US$ 495,000 3 · 2 · Inland View · 325 m² 1/36",
-      "source": "Century 21 Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-27T16:55:34.210301+00:00",
-      "source_type": "direct_broker",
-      "detail_checked_at": "2026-10-27T16:55:30.506807+00:00",
-      "detail_status": "unavailable",
-      "detail_error": "403 Client Error: Forbidden for url: https://century21aruba.com/en/d/seroe-patrishi-36-z-single-family-homes-for-sale-paradera-paradera-1167446",
-      "history_key": "4d647d54aebe3e1bda3e670e30a97731ced7fa8c",
-      "last_seen_at": "2026-10-27T16:55:34.210309+00:00",
-      "queued_at": "2026-10-27T16:56:20.636196+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
@@ -15205,19 +15179,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 1 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Seroe Patrishi 36 - Z Paradera (Paradera) Single Family Homes</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$495,000</div><div><strong>Location:</strong> Paradera</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div><strong>Source area (scope unspecified):</strong> 325 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale New Listing US$ 495,000 3 · 2 · Inland View · 325 m² 1/36</p><div><strong>Broker/source:</strong> Century 21 Aruba (Century 21 Aruba)</div><div><strong>First detected:</strong> 2026-10-27</div><div style='margin:15px 0'><img src='https://static.century21aruba.com/images/udx/1167446/w470/1792528033199395.jpg?vno=1793110429' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://century21aruba.com/en/d/seroe-patrishi-36-z-single-family-homes-for-sale-paradera-paradera-1167446' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "f1bc0ba04c907cd3c8ca68087bad4f1b5253eb18e1203e17e56ede0387438c47"
-        ]
-      },
-      "created_at": "2026-10-27T16:56:20.636621+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
