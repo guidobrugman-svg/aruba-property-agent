@@ -11143,34 +11143,7 @@
       "last_seen_at": "2026-10-27T23:07:12.511512+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Constantijn Huygenstraat 13",
-      "url": "https://bhhsaruba.com/listings/constantijn-huygenstraat-13",
-      "price": 3500.0,
-      "location": "",
-      "type": "House",
-      "beds": "4",
-      "baths": "3",
-      "size": "628 M2",
-      "building_area": "170 m²",
-      "land_area": "628 m²",
-      "image": "https://bhhsaruba.com/storage/app/uploads/public/665/899/ff6/thumb_18105_627_470_0_0_crop.webp",
-      "description": "House For Sale New listing Property type: Residential Lot size: 628 M2 Built up size: 170 M2 Bedrooms: 4 Bathrooms: 3 For Sale USD 3,500",
-      "source": "Berkshire Hathaway Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-27T23:07:12.511504+00:00",
-      "source_type": "direct_broker",
-      "detail_checked_at": "2026-10-27T23:07:09.128383+00:00",
-      "development_evidence": [],
-      "residence_complex": false,
-      "detail_status": "ok",
-      "history_key": "efc79e3608e4ef8f484add471a4a97a0a4f8f214",
-      "last_seen_at": "2026-10-27T23:07:12.511512+00:00",
-      "queued_at": "2026-10-27T23:08:01.035420+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
@@ -15247,19 +15220,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 1 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Constantijn Huygenstraat 13</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$3,500</div><div><strong>Location:</strong> Not provided by source</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 170 m²</div><div><strong>Land area:</strong> 628 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 4 beds · 3 baths</div><p style='margin:12px 0'>House For Sale New listing Property type: Residential Lot size: 628 M2 Built up size: 170 M2 Bedrooms: 4 Bathrooms: 3 For Sale USD 3,500</p><div><strong>Broker/source:</strong> Berkshire Hathaway Aruba (Berkshire Hathaway Aruba)</div><div><strong>First detected:</strong> 2026-10-27</div><div style='margin:15px 0'><img src='https://bhhsaruba.com/storage/app/uploads/public/665/899/ff6/thumb_18105_627_470_0_0_crop.webp' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://bhhsaruba.com/listings/constantijn-huygenstraat-13' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "f2a8417febaecf50d56d2d95b42180f88cd942916bd2f5fac05498376c14f0c7"
-        ]
-      },
-      "created_at": "2026-10-27T23:08:01.035847+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
