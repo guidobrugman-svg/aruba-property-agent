@@ -11096,94 +11096,11 @@
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
-    "new": [
-      {
-        "name": "Alto Vista 120 - E Alto Vista (Noord) Single Family Homes",
-        "url": "https://century21aruba.com/en/d/alto-vista-120-e-single-family-homes-for-sale-alto-vista-noord-1160600",
-        "price": 775000.0,
-        "location": "Noord",
-        "type": "House",
-        "beds": "",
-        "baths": "",
-        "size": "750 m²",
-        "building_area": "",
-        "land_area": "",
-        "image": "https://static.century21aruba.com/images/udx/1160600/w470/1769535272390238.jpg?vno=1787755309",
-        "description": "For Sale Price Reduced US$ 775,000 4 · 2½+ · Ocean View - Partial · 750 m² 21/35",
-        "source": "Century 21 Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-26T19:54:42.063562+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-10-26T19:54:38.932999+00:00",
-        "detail_status": "unavailable",
-        "detail_error": "403 Client Error: Forbidden for url: https://century21aruba.com/en/d/alto-vista-120-e-single-family-homes-for-sale-alto-vista-noord-1160600",
-        "history_key": "97cee075ca45061ff92d0f75a42d43a41f20f269",
-        "last_seen_at": "2026-10-26T19:54:42.063570+00:00"
-      },
-      {
-        "name": "Rooi Prikichi Fixer Upper",
-        "url": "https://rogaruba.com/listings/rooi-prikichi-fixer-upper",
-        "price": 280899.0,
-        "location": "Rooi Prikichi 15, Paradera",
-        "type": "House",
-        "beds": "4",
-        "baths": "",
-        "size": "1,362 Sq Ft",
-        "building_area": "",
-        "land_area": "",
-        "image": "https://rogaruba.com/storage/app/uploads/public/6ad/f94/287/thumb_7262_600_400_0_0_crop.jpg",
-        "description": "For Sale House New Listing Rooi Prikichi 15, Paradera $280,899 1,362 Sq Ft 4 bedroom(s)",
-        "source": "Realty ONE Group Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-26T19:54:42.122435+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-10-26T19:54:38.935829+00:00",
-        "detail_status": "unavailable",
-        "detail_error": "No recognized property-detail sections",
-        "history_key": "6c61df75fa8016d274ef1537f7166bdef6634651",
-        "last_seen_at": "2026-10-26T19:54:42.122442+00:00"
-      },
-      {
-        "name": "3,746 m² Property Land with Authentic Cunucu House in Tanki Leendert",
-        "url": "https://arubalistings.com/sale/tanki-leendert/land-freehold-3760-3746-m2-property-land-with-authentic-cunucu-house-in-tanki-leendert",
-        "price": 575000.0,
-        "location": "Tanki Leendert 149, Tanki Leendert",
-        "type": "Land",
-        "beds": "",
-        "baths": "",
-        "size": "3,746 m²",
-        "building_area": "",
-        "land_area": "3,746 m²",
-        "image": "https://reallinkr-test-bucket.nyc3.cdn.digitaloceanspaces.com/listing/911-tanki-leendert-149/thumbs/listing-image-19238_thumb.jpg",
-        "description": "For Sale USD 575000 This is an extraordinary opportunity to own a piece of Aruba's heritage on a vast property land spanning 3,746 m² in the desirable Tanki Leendert area. Located just 2 kilometers from Oranjestad and bordered by an asphalt road, this parcel is not only accessible but offers convenience and charm in equal measure. The property boasts an...",
-        "source": "RealLinkr / Aruba MLS",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-27T02:23:05.360468+00:00",
-        "source_type": "aggregator",
-        "broker": "XSLSV Real Estate",
-        "listing_api_url": "https://api.test-mls.com/api/v1/listings/by-slug/3746-m2-property-land-with-authentic-cunucu-house-in-tanki-leendert-rl260000911/",
-        "published_or_updated_at": "2026-10-26T05:00:00+01:00",
-        "development_evidence": [
-          {
-            "label": "Ownership",
-            "excerpt": "r Sale USD 575000 This is an extraordinary opportunity to own a piece of Aruba's heritage on a vast property land spanning 3,746 m² in the desirable Tanki Leendert area",
-            "url": "https://arubalistings.com/sale/tanki-leendert/land-freehold-3760-3746-m2-property-land-with-authentic-cunucu-house-in-tanki-leendert"
-          }
-        ],
-        "detail_checked_at": "2026-10-27T02:23:02.899063+00:00",
-        "detail_status": "unavailable",
-        "detail_error": "403 Client Error: Forbidden for url: https://arubalistings.com/sale/tanki-leendert/land-freehold-3760-3746-m2-property-land-with-authentic-cunucu-house-in-tanki-leendert",
-        "history_key": "2d60618a24a7ee687f169d74d8af83d435fb7a4e",
-        "last_seen_at": "2026-10-27T02:23:05.360472+00:00"
-      }
-    ],
+    "new": [],
     "reductions": [],
     "major_changes": []
   },
-  "last_digest_date": "2026-10-26",
+  "last_digest_date": "2026-10-27",
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
@@ -15202,26 +15119,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "digest",
-      "subject": "Aruba Property Daily Digest — Oct 27 — 3 new, 0 reductions",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Daily Digest</h1><p style='font-size:16px'><strong>3 new properties</strong><br><strong>0 price reductions</strong><br><strong>0 major changes</strong><br>275 qualifying properties currently detected across available sources.</p><h2>NEW SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Alto Vista 120 - E Alto Vista (Noord) Single Family Homes</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$775,000</div><div><strong>Location:</strong> Noord</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div><strong>Source area (scope unspecified):</strong> 750 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale Price Reduced US$ 775,000 4 · 2½+ · Ocean View - Partial · 750 m² 21/35</p><div><strong>Broker/source:</strong> Century 21 Aruba (Century 21 Aruba)</div><div><strong>First detected:</strong> 2026-10-26</div><div style='margin:15px 0'><img src='https://static.century21aruba.com/images/udx/1160600/w470/1769535272390238.jpg?vno=1787755309' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://century21aruba.com/en/d/alto-vista-120-e-single-family-homes-for-sale-alto-vista-noord-1160600' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Rooi Prikichi Fixer Upper</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$280,899</div><div><strong>Location:</strong> Rooi Prikichi 15, Paradera</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div><strong>Source area (scope unspecified):</strong> 1,362 Sq Ft</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 4 beds</div><p style='margin:12px 0'>For Sale House New Listing Rooi Prikichi 15, Paradera $280,899 1,362 Sq Ft 4 bedroom(s)</p><div><strong>Broker/source:</strong> Realty ONE Group Aruba (Realty ONE Group Aruba)</div><div><strong>First detected:</strong> 2026-10-26</div><div style='margin:15px 0'><img src='https://rogaruba.com/storage/app/uploads/public/6ad/f94/287/thumb_7262_600_400_0_0_crop.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://rogaruba.com/listings/rooi-prikichi-fixer-upper' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>3,746 m² Property Land with Authentic Cunucu House in Tanki Leendert</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$575,000</div><div><strong>Location:</strong> Tanki Leendert 149, Tanki Leendert</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 3,746 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> r Sale USD 575000 This is an extraordinary opportunity to own a piece of Aruba&#x27;s heritage on a vast property land spanning 3,746 m² in the desirable Tanki Leendert area</div><div><a href='https://arubalistings.com/sale/tanki-leendert/land-freehold-3760-3746-m2-property-land-with-authentic-cunucu-house-in-tanki-leendert'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale USD 575000 This is an extraordinary opportunity to own a piece of Aruba&#x27;s heritage on a vast property land spanning 3,746 m² in the desirable Tanki Leendert area. Located just 2 kilometers from Oranjestad and bordered by an asphalt road, this parcel is not only accessible but offers convenience and charm in equal measure. The property boasts an...</p><div><strong>Broker/source:</strong> XSLSV Real Estate (RealLinkr / Aruba MLS)</div><div><strong>First detected:</strong> 2026-10-27</div><div style='margin:15px 0'><img src='https://reallinkr-test-bucket.nyc3.cdn.digitaloceanspaces.com/listing/911-tanki-leendert-149/thumbs/listing-image-19238_thumb.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://arubalistings.com/sale/tanki-leendert/land-freehold-3760-3746-m2-property-land-with-authentic-cunucu-house-in-tanki-leendert' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding:14px;background:#f5f5f5;border-radius:6px;font-size:13px'><strong>Source coverage:</strong> 18 sources checked successfully; 26 sources could not be checked during the latest run.</div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "date": "2026-10-27",
-        "activity": {
-          "new": [
-            "fc95182917e4790886e6592e36ad1b1a3ebe6ce0abb0e8c086dd0d568c5dfed6",
-            "666b34878876d434323ad7e932f9f55cf55b667ac2194cba9fcfaf11acbfaa71",
-            "09543470ce06b667033882b80fafc15664aade445705ff32c34fd9edc5f71512"
-          ],
-          "reductions": [],
-          "major_changes": []
-        }
-      },
-      "created_at": "2026-10-27T14:24:40.593103+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
@@ -16167,5 +16065,5 @@
       "source": "RealLinkr / Aruba MLS"
     }
   ],
-  "last_digest_at": "2026-10-26T14:08:20.115444+00:00"
+  "last_digest_at": "2026-10-27T14:24:44.014488+00:00"
 }
