@@ -11210,33 +11210,7 @@
       "last_seen_at": "2026-10-28T08:27:38.294525+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Matadera 9-U | Fixer-Upper Property for Sale in Aruba",
-      "url": "https://arubalistings.com/sale/sabana-liber/house-632-matadera-9-u-fixer-upper-property-for-sale-in-aruba",
-      "price": 435000.0,
-      "location": "Matadera 9U, Moko / Tanki Flip",
-      "type": "House",
-      "beds": "5",
-      "baths": "",
-      "size": "",
-      "building_area": "248 m²",
-      "land_area": "496 m²",
-      "image": "https://reallinkr-test-bucket.nyc3.cdn.digitaloceanspaces.com/listing/917-matadera-9u/thumbs/listing-image-19402_thumb.jpg",
-      "description": "For Sale USD 435000 FIXER-UPPER FOR SALE IN ARUBA – MATADERA 9-U Centrally Located Family Home with Two Apartments | Excellent Investment Opportunity Looking for a fixer-upper property in Aruba with excellent investment potential? Discover Matadera 9-U, a centrally located residential property offering a unique opportunity for homeowners, investors, and...",
-      "source": "RealLinkr / Aruba MLS",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-28T08:27:38.294513+00:00",
-      "source_type": "aggregator",
-      "broker": "Aruba Happy Homes",
-      "listing_api_url": "https://api.test-mls.com/api/v1/listings/by-slug/matadera-9-u-fixer-upper-property-for-sale-in-aruba-rl260000917/",
-      "published_or_updated_at": "2026-01-12T05:00:00+01:00",
-      "history_key": "7dc123e35e66e9e9f5d4776d6792c3759571d81c",
-      "last_seen_at": "2026-10-28T08:27:38.294525+00:00",
-      "queued_at": "2026-10-28T08:28:05.284946+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
@@ -15498,19 +15472,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 1 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Matadera 9-U | Fixer-Upper Property for Sale in Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$435,000</div><div><strong>Location:</strong> Matadera 9U, Moko / Tanki Flip</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 248 m²</div><div><strong>Land area:</strong> 496 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 5 beds</div><p style='margin:12px 0'>For Sale USD 435000 FIXER-UPPER FOR SALE IN ARUBA – MATADERA 9-U Centrally Located Family Home with Two Apartments | Excellent Investment Opportunity Looking for a fixer-upper property in Aruba with excellent investment potential? Discover Matadera 9-U, a centrally located residential property offering a unique opportunity for homeowners, investors, and...</p><div><strong>Broker/source:</strong> Aruba Happy Homes (RealLinkr / Aruba MLS)</div><div><strong>First detected:</strong> 2026-10-28</div><div style='margin:15px 0'><img src='https://reallinkr-test-bucket.nyc3.cdn.digitaloceanspaces.com/listing/917-matadera-9u/thumbs/listing-image-19402_thumb.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://arubalistings.com/sale/sabana-liber/house-632-matadera-9-u-fixer-upper-property-for-sale-in-aruba' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "65626af45d533518860d41abc3bb7e1c04a51c1888fc4983c9552bbfb61e4733"
-        ]
-      },
-      "created_at": "2026-10-28T08:28:05.285725+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
