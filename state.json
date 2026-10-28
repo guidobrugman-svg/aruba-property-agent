@@ -11181,45 +11181,7 @@
       "last_seen_at": "2026-10-28T02:10:33.691857+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Property Land with Permits at Zuidstraat 34",
-      "url": "https://www.mpgaruba.com/property/property-land-670-property-land-with-permits-at-zuidstraat-34",
-      "price": 400000.0,
-      "location": "Oranjestad, Aruba",
-      "type": "Land",
-      "beds": "",
-      "baths": "",
-      "size": "540 m²",
-      "building_area": "",
-      "land_area": "540 m²",
-      "image": "https://www.mpgaruba.com/storage/app/uploads/public/6ae/14c/da1/thumb_19787_1200_900_0_0_crop.webp",
-      "description": "Property Land For Sale Vacant Land New Listing Property Land 1 / 8 Oranjestad, Aruba Beds: - Baths: - Lot size: 540 m² | 5,813 ft² for sale $ 400,000",
-      "source": "MPG Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-28T02:10:33.691841+00:00",
-      "source_type": "direct_broker",
-      "development_evidence": [
-        {
-          "label": "Ownership",
-          "excerpt": "roperty Land For Sale Vacant Land New Listing Property Land 1 / 8 Oranjestad, Aruba Beds: - Baths: - Lot size: 540 m² | 5,813 ft² for sale $ 400,000",
-          "url": "https://www.mpgaruba.com/property/property-land-670-property-land-with-permits-at-zuidstraat-34"
-        },
-        {
-          "label": "Ownership",
-          "excerpt": "roperty Land For Sale Vacant Land New Listing Property Land 1 / 8 Oranjestad, Aruba Beds: - Baths: - Lot size: 540 m² | 5,813 ft² for sale $ 400,000",
-          "url": "https://www.mpgaruba.com/property/property-land-670-property-land-with-permits-at-zuidstraat-34"
-        }
-      ],
-      "detail_checked_at": "2026-10-28T02:10:30.207585+00:00",
-      "detail_status": "unavailable",
-      "detail_error": "No recognized property-detail sections",
-      "history_key": "13f904d73f92ce84f4552464405264e3e0e60abd",
-      "last_seen_at": "2026-10-28T02:10:33.691857+00:00",
-      "queued_at": "2026-10-28T02:11:21.115649+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
@@ -15349,19 +15311,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 1 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Property Land with Permits at Zuidstraat 34</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$400,000</div><div><strong>Location:</strong> Oranjestad, Aruba</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 540 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> roperty Land For Sale Vacant Land New Listing Property Land 1 / 8 Oranjestad, Aruba Beds: - Baths: - Lot size: 540 m² | 5,813 ft² for sale $ 400,000 · roperty Land For Sale Vacant Land New Listing Property Land 1 / 8 Oranjestad, Aruba Beds: - Baths: - Lot size: 540 m² | 5,813 ft² for sale $ 400,000</div><div><a href='https://www.mpgaruba.com/property/property-land-670-property-land-with-permits-at-zuidstraat-34'>Source evidence</a></div><div><a href='https://www.mpgaruba.com/property/property-land-670-property-land-with-permits-at-zuidstraat-34'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>Property Land For Sale Vacant Land New Listing Property Land 1 / 8 Oranjestad, Aruba Beds: - Baths: - Lot size: 540 m² | 5,813 ft² for sale $ 400,000</p><div><strong>Broker/source:</strong> MPG Aruba (MPG Aruba)</div><div><strong>First detected:</strong> 2026-10-28</div><div style='margin:15px 0'><img src='https://www.mpgaruba.com/storage/app/uploads/public/6ae/14c/da1/thumb_19787_1200_900_0_0_crop.webp' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.mpgaruba.com/property/property-land-670-property-land-with-permits-at-zuidstraat-34' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "984319e47e70bf251f7a5e407f28b162b1a207e88d65e98dfe0ad3e442b02bf6"
-        ]
-      },
-      "created_at": "2026-10-28T02:11:21.116490+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
