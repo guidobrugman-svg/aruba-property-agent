@@ -11216,121 +11216,11 @@
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
-    "new": [
-      {
-        "name": "Seroe Patrishi 36 - Z Paradera (Paradera) Single Family Homes",
-        "url": "https://century21aruba.com/en/d/seroe-patrishi-36-z-single-family-homes-for-sale-paradera-paradera-1167446",
-        "price": 495000.0,
-        "location": "Paradera",
-        "type": "House",
-        "beds": "",
-        "baths": "",
-        "size": "325 m²",
-        "building_area": "",
-        "land_area": "",
-        "image": "https://static.century21aruba.com/images/udx/1167446/w470/1792528033199395.jpg?vno=1793110429",
-        "description": "For Sale New Listing US$ 495,000 3 · 2 · Inland View · 325 m² 1/36",
-        "source": "Century 21 Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-27T16:55:34.210301+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-10-27T16:55:30.506807+00:00",
-        "detail_status": "unavailable",
-        "detail_error": "403 Client Error: Forbidden for url: https://century21aruba.com/en/d/seroe-patrishi-36-z-single-family-homes-for-sale-paradera-paradera-1167446",
-        "history_key": "4d647d54aebe3e1bda3e670e30a97731ced7fa8c",
-        "last_seen_at": "2026-10-27T16:55:34.210309+00:00"
-      },
-      {
-        "name": "Constantijn Huygenstraat 13",
-        "url": "https://bhhsaruba.com/listings/constantijn-huygenstraat-13",
-        "price": 3500.0,
-        "location": "",
-        "type": "House",
-        "beds": "4",
-        "baths": "3",
-        "size": "628 M2",
-        "building_area": "170 m²",
-        "land_area": "628 m²",
-        "image": "https://bhhsaruba.com/storage/app/uploads/public/665/899/ff6/thumb_18105_627_470_0_0_crop.webp",
-        "description": "House For Sale New listing Property type: Residential Lot size: 628 M2 Built up size: 170 M2 Bedrooms: 4 Bathrooms: 3 For Sale USD 3,500",
-        "source": "Berkshire Hathaway Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-27T23:07:12.511504+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-10-27T23:07:09.128383+00:00",
-        "development_evidence": [],
-        "residence_complex": false,
-        "detail_status": "ok",
-        "history_key": "efc79e3608e4ef8f484add471a4a97a0a4f8f214",
-        "last_seen_at": "2026-10-27T23:07:12.511512+00:00"
-      },
-      {
-        "name": "Property Land with Permits at Zuidstraat 34",
-        "url": "https://www.mpgaruba.com/property/property-land-670-property-land-with-permits-at-zuidstraat-34",
-        "price": 400000.0,
-        "location": "Oranjestad, Aruba",
-        "type": "Land",
-        "beds": "",
-        "baths": "",
-        "size": "540 m²",
-        "building_area": "",
-        "land_area": "540 m²",
-        "image": "https://www.mpgaruba.com/storage/app/uploads/public/6ae/14c/da1/thumb_19787_1200_900_0_0_crop.webp",
-        "description": "Property Land For Sale Vacant Land New Listing Property Land 1 / 8 Oranjestad, Aruba Beds: - Baths: - Lot size: 540 m² | 5,813 ft² for sale $ 400,000",
-        "source": "MPG Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-28T02:10:33.691841+00:00",
-        "source_type": "direct_broker",
-        "development_evidence": [
-          {
-            "label": "Ownership",
-            "excerpt": "roperty Land For Sale Vacant Land New Listing Property Land 1 / 8 Oranjestad, Aruba Beds: - Baths: - Lot size: 540 m² | 5,813 ft² for sale $ 400,000",
-            "url": "https://www.mpgaruba.com/property/property-land-670-property-land-with-permits-at-zuidstraat-34"
-          },
-          {
-            "label": "Ownership",
-            "excerpt": "roperty Land For Sale Vacant Land New Listing Property Land 1 / 8 Oranjestad, Aruba Beds: - Baths: - Lot size: 540 m² | 5,813 ft² for sale $ 400,000",
-            "url": "https://www.mpgaruba.com/property/property-land-670-property-land-with-permits-at-zuidstraat-34"
-          }
-        ],
-        "detail_checked_at": "2026-10-28T02:10:30.207585+00:00",
-        "detail_status": "unavailable",
-        "detail_error": "No recognized property-detail sections",
-        "history_key": "13f904d73f92ce84f4552464405264e3e0e60abd",
-        "last_seen_at": "2026-10-28T02:10:33.691857+00:00"
-      },
-      {
-        "name": "Matadera 9-U | Fixer-Upper Property for Sale in Aruba",
-        "url": "https://arubalistings.com/sale/sabana-liber/house-632-matadera-9-u-fixer-upper-property-for-sale-in-aruba",
-        "price": 435000.0,
-        "location": "Matadera 9U, Moko / Tanki Flip",
-        "type": "House",
-        "beds": "5",
-        "baths": "",
-        "size": "",
-        "building_area": "248 m²",
-        "land_area": "496 m²",
-        "image": "https://reallinkr-test-bucket.nyc3.cdn.digitaloceanspaces.com/listing/917-matadera-9u/thumbs/listing-image-19402_thumb.jpg",
-        "description": "For Sale USD 435000 FIXER-UPPER FOR SALE IN ARUBA – MATADERA 9-U Centrally Located Family Home with Two Apartments | Excellent Investment Opportunity Looking for a fixer-upper property in Aruba with excellent investment potential? Discover Matadera 9-U, a centrally located residential property offering a unique opportunity for homeowners, investors, and...",
-        "source": "RealLinkr / Aruba MLS",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-28T08:27:38.294513+00:00",
-        "source_type": "aggregator",
-        "broker": "Aruba Happy Homes",
-        "listing_api_url": "https://api.test-mls.com/api/v1/listings/by-slug/matadera-9-u-fixer-upper-property-for-sale-in-aruba-rl260000917/",
-        "published_or_updated_at": "2026-01-12T05:00:00+01:00",
-        "history_key": "7dc123e35e66e9e9f5d4776d6792c3759571d81c",
-        "last_seen_at": "2026-10-28T08:27:38.294525+00:00"
-      }
-    ],
+    "new": [],
     "reductions": [],
     "major_changes": []
   },
-  "last_digest_date": "2026-10-27",
+  "last_digest_date": "2026-10-28",
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
@@ -15485,27 +15375,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "digest",
-      "subject": "Aruba Property Daily Digest — Oct 28 — 4 new, 0 reductions",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Daily Digest</h1><p style='font-size:16px'><strong>4 new properties</strong><br><strong>0 price reductions</strong><br><strong>0 major changes</strong><br>275 qualifying properties currently detected across available sources.</p><h2>NEW SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Seroe Patrishi 36 - Z Paradera (Paradera) Single Family Homes</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$495,000</div><div><strong>Location:</strong> Paradera</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div><strong>Source area (scope unspecified):</strong> 325 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale New Listing US$ 495,000 3 · 2 · Inland View · 325 m² 1/36</p><div><strong>Broker/source:</strong> Century 21 Aruba (Century 21 Aruba)</div><div><strong>First detected:</strong> 2026-10-27</div><div style='margin:15px 0'><img src='https://static.century21aruba.com/images/udx/1167446/w470/1792528033199395.jpg?vno=1793110429' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://century21aruba.com/en/d/seroe-patrishi-36-z-single-family-homes-for-sale-paradera-paradera-1167446' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Constantijn Huygenstraat 13</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$3,500</div><div><strong>Location:</strong> Not provided by source</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 170 m²</div><div><strong>Land area:</strong> 628 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 4 beds · 3 baths</div><p style='margin:12px 0'>House For Sale New listing Property type: Residential Lot size: 628 M2 Built up size: 170 M2 Bedrooms: 4 Bathrooms: 3 For Sale USD 3,500</p><div><strong>Broker/source:</strong> Berkshire Hathaway Aruba (Berkshire Hathaway Aruba)</div><div><strong>First detected:</strong> 2026-10-27</div><div style='margin:15px 0'><img src='https://bhhsaruba.com/storage/app/uploads/public/665/899/ff6/thumb_18105_627_470_0_0_crop.webp' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://bhhsaruba.com/listings/constantijn-huygenstraat-13' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Property Land with Permits at Zuidstraat 34</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$400,000</div><div><strong>Location:</strong> Oranjestad, Aruba</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 540 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> roperty Land For Sale Vacant Land New Listing Property Land 1 / 8 Oranjestad, Aruba Beds: - Baths: - Lot size: 540 m² | 5,813 ft² for sale $ 400,000 · roperty Land For Sale Vacant Land New Listing Property Land 1 / 8 Oranjestad, Aruba Beds: - Baths: - Lot size: 540 m² | 5,813 ft² for sale $ 400,000</div><div><a href='https://www.mpgaruba.com/property/property-land-670-property-land-with-permits-at-zuidstraat-34'>Source evidence</a></div><div><a href='https://www.mpgaruba.com/property/property-land-670-property-land-with-permits-at-zuidstraat-34'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>Property Land For Sale Vacant Land New Listing Property Land 1 / 8 Oranjestad, Aruba Beds: - Baths: - Lot size: 540 m² | 5,813 ft² for sale $ 400,000</p><div><strong>Broker/source:</strong> MPG Aruba (MPG Aruba)</div><div><strong>First detected:</strong> 2026-10-28</div><div style='margin:15px 0'><img src='https://www.mpgaruba.com/storage/app/uploads/public/6ae/14c/da1/thumb_19787_1200_900_0_0_crop.webp' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.mpgaruba.com/property/property-land-670-property-land-with-permits-at-zuidstraat-34' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Matadera 9-U | Fixer-Upper Property for Sale in Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$435,000</div><div><strong>Location:</strong> Matadera 9U, Moko / Tanki Flip</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 248 m²</div><div><strong>Land area:</strong> 496 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 5 beds</div><p style='margin:12px 0'>For Sale USD 435000 FIXER-UPPER FOR SALE IN ARUBA – MATADERA 9-U Centrally Located Family Home with Two Apartments | Excellent Investment Opportunity Looking for a fixer-upper property in Aruba with excellent investment potential? Discover Matadera 9-U, a centrally located residential property offering a unique opportunity for homeowners, investors, and...</p><div><strong>Broker/source:</strong> Aruba Happy Homes (RealLinkr / Aruba MLS)</div><div><strong>First detected:</strong> 2026-10-28</div><div style='margin:15px 0'><img src='https://reallinkr-test-bucket.nyc3.cdn.digitaloceanspaces.com/listing/917-matadera-9u/thumbs/listing-image-19402_thumb.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://arubalistings.com/sale/sabana-liber/house-632-matadera-9-u-fixer-upper-property-for-sale-in-aruba' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding:14px;background:#f5f5f5;border-radius:6px;font-size:13px'><strong>Source coverage:</strong> 16 sources checked successfully; 28 sources could not be checked during the latest run.</div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "date": "2026-10-28",
-        "activity": {
-          "new": [
-            "26be04f2b14561c03065aff5f1517b1169778000d3e715d1335cef7cc5f824e6",
-            "3fc41e5ef710de09c380cd00897621464d4e78200d55a507249cfcbc7b70786b",
-            "e865aae437d760a463c00a581543d9d799ce0863e41fab10e9c9628134174e69",
-            "b0ab463c157a973e455cc959215fcbefe3561678cf8260fb4330a50e4ffa510b"
-          ],
-          "reductions": [],
-          "major_changes": []
-        }
-      },
-      "created_at": "2026-10-28T15:21:55.176192+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
@@ -16451,5 +16321,5 @@
       "source": "RealLinkr / Aruba MLS"
     }
   ],
-  "last_digest_at": "2026-10-27T14:24:44.014488+00:00"
+  "last_digest_at": "2026-10-28T15:21:57.835271+00:00"
 }
