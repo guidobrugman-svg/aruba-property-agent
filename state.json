@@ -11336,81 +11336,11 @@
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
-    "new": [
-      {
-        "name": "Noord, Napa Valley – Exquisite 2-Bedroom Duplex for Sale",
-        "url": "https://arubapalmsrealtors.com/properties/napa-valley-exquisite-2-bedroom-duplex-for-sale/",
-        "price": 390000.0,
-        "location": "Napa Valley, Noord Aruba",
-        "type": "House",
-        "beds": "2",
-        "baths": "2",
-        "size": "",
-        "building_area": "",
-        "land_area": "",
-        "image": "https://arubapalmsrealtors.com/wp-content/uploads/2024/02/Napa-Valley-–-Exquisite-2-Bedroom-Duplex-for-Sale-1-584x438.jpeg",
-        "description": "*Houses For Sale in Aruba For Sale $390,000 Napa Valley, Noord Aruba *Houses For Sale in Aruba 2 Bedrooms 2 Bathrooms No Pool",
-        "source": "Aruba Palms Realtors",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-28T20:24:26.600895+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-10-28T20:24:23.599304+00:00",
-        "detail_status": "unavailable",
-        "detail_error": "No recognized property-detail sections",
-        "history_key": "f3d8591ea70edbbe2619ebbe8062388be82f2895",
-        "last_seen_at": "2026-10-28T20:24:26.600910+00:00"
-      },
-      {
-        "name": "Noord, Napa Valley – Exquisite 2-Bedroom Duplex with Pool",
-        "url": "https://arubapalmsrealtors.com/properties/napa-valley-exquisite-2-bedroom-duplex-for-sale-2/",
-        "price": 459000.0,
-        "location": "Napa Valley, Noord Aruba",
-        "type": "House",
-        "beds": "2",
-        "baths": "2",
-        "size": "",
-        "building_area": "",
-        "land_area": "",
-        "image": "https://arubapalmsrealtors.com/wp-content/uploads/2024/02/Napa-Valley-–-Exquisite-2-Bedroom-Duplex-for-Sale-1-584x438.jpeg",
-        "description": "*Houses For Sale in Aruba For Sale $459,000 Napa Valley, Noord Aruba *Houses For Sale in Aruba 2 Bedrooms 2 Bathrooms Yes Pool",
-        "source": "Aruba Palms Realtors",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-28T20:24:26.649378+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-10-28T20:24:23.600361+00:00",
-        "detail_status": "unavailable",
-        "detail_error": "No recognized property-detail sections",
-        "history_key": "09bc64355c721e2521d5e9dde0cc3f92970320a9",
-        "last_seen_at": "2026-10-28T20:24:26.649394+00:00"
-      },
-      {
-        "name": "Kerkstraat 6, Oranjestad, Aruba, Oranjestad, Aruba",
-        "url": "https://www.realtor.com/international/aw/kerkstraat-6-oranjestad-aruba-oranjestad-aruba-310120840086/",
-        "price": 625000.0,
-        "location": "Kerkstraat 6, Oranjestad, Aruba, Oranjestad, Aruba",
-        "type": "House",
-        "beds": "4",
-        "baths": "2",
-        "size": "",
-        "building_area": "464 m²",
-        "land_area": "464 m²",
-        "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/3cf0817a72759233c6b09fa603fd748b.jpg",
-        "description": "House",
-        "source": "Realtor International Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-28T20:24:26.705558+00:00",
-        "source_type": "aggregator",
-        "history_key": "c188769e1210f6dbeb2ab93b8cf3879364b09fe4",
-        "last_seen_at": "2026-10-28T20:24:26.705574+00:00"
-      }
-    ],
+    "new": [],
     "reductions": [],
     "major_changes": []
   },
-  "last_digest_date": "2026-10-28",
+  "last_digest_date": "2026-10-29",
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
@@ -15451,26 +15381,7 @@
       "last_success_at": "2026-10-28T15:21:12.180945+00:00"
     }
   },
-  "outbox": [
-    {
-      "kind": "digest",
-      "subject": "Aruba Property Daily Digest — Oct 29 — 3 new, 0 reductions",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Daily Digest</h1><p style='font-size:16px'><strong>3 new properties</strong><br><strong>0 price reductions</strong><br><strong>0 major changes</strong><br>277 qualifying properties currently detected across available sources.</p><h2>NEW SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Noord, Napa Valley – Exquisite 2-Bedroom Duplex for Sale</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$390,000</div><div><strong>Location:</strong> Napa Valley, Noord Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2 beds · 2 baths</div><p style='margin:12px 0'>*Houses For Sale in Aruba For Sale $390,000 Napa Valley, Noord Aruba *Houses For Sale in Aruba 2 Bedrooms 2 Bathrooms No Pool</p><div><strong>Broker/source:</strong> Aruba Palms Realtors (Aruba Palms Realtors)</div><div><strong>First detected:</strong> 2026-10-28</div><div style='margin:15px 0'><img src='https://arubapalmsrealtors.com/wp-content/uploads/2024/02/Napa-Valley-–-Exquisite-2-Bedroom-Duplex-for-Sale-1-584x438.jpeg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://arubapalmsrealtors.com/properties/napa-valley-exquisite-2-bedroom-duplex-for-sale/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Noord, Napa Valley – Exquisite 2-Bedroom Duplex with Pool</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$459,000</div><div><strong>Location:</strong> Napa Valley, Noord Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2 beds · 2 baths</div><p style='margin:12px 0'>*Houses For Sale in Aruba For Sale $459,000 Napa Valley, Noord Aruba *Houses For Sale in Aruba 2 Bedrooms 2 Bathrooms Yes Pool</p><div><strong>Broker/source:</strong> Aruba Palms Realtors (Aruba Palms Realtors)</div><div><strong>First detected:</strong> 2026-10-28</div><div style='margin:15px 0'><img src='https://arubapalmsrealtors.com/wp-content/uploads/2024/02/Napa-Valley-–-Exquisite-2-Bedroom-Duplex-for-Sale-1-584x438.jpeg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://arubapalmsrealtors.com/properties/napa-valley-exquisite-2-bedroom-duplex-for-sale-2/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Kerkstraat 6, Oranjestad, Aruba, Oranjestad, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$625,000</div><div><strong>Location:</strong> Kerkstraat 6, Oranjestad, Aruba, Oranjestad, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 464 m²</div><div><strong>Land area:</strong> 464 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 4 beds · 2 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-28</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/3cf0817a72759233c6b09fa603fd748b.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/kerkstraat-6-oranjestad-aruba-oranjestad-aruba-310120840086/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding:14px;background:#f5f5f5;border-radius:6px;font-size:13px'><strong>Source coverage:</strong> 18 sources checked successfully; 26 sources could not be checked during the latest run.</div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "date": "2026-10-29",
-        "activity": {
-          "new": [
-            "0551755a8551b079c831337223bcbe6ca2cdc9f2d880f663df2dff1474409b35",
-            "80b65a82f51a4799d950ff96df7d087069ba0b3fb1c8487c21ffe8fe4be157da",
-            "7ce0eb1e1951d0c130e440627e4d1f07d3ac6786a6458d87a48aaec4b0b4480b"
-          ],
-          "reductions": [],
-          "major_changes": []
-        }
-      },
-      "created_at": "2026-10-29T17:36:44.183907+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
@@ -16416,5 +16327,5 @@
       "source": "RealLinkr / Aruba MLS"
     }
   ],
-  "last_digest_at": "2026-10-28T15:21:57.835271+00:00"
+  "last_digest_at": "2026-10-29T17:36:46.407017+00:00"
 }
