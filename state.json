@@ -11424,77 +11424,7 @@
       "last_seen_at": "2026-10-30T01:50:37.047786+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Turibana 13E",
-      "url": "https://bhhsaruba.com/listings/turibana13e",
-      "price": 390450.0,
-      "location": "",
-      "type": "House",
-      "beds": "2",
-      "baths": "2",
-      "size": "528 M2",
-      "building_area": "117 m²",
-      "land_area": "528 m²",
-      "image": "https://bhhsaruba.com/storage/app/uploads/public/6a4/e8a/0f7/thumb_24702_627_470_0_0_crop.webp",
-      "description": "House For Sale Hot deal Property type: Residential Lot size: 528 M2 Built up size: 117 M2 Bedrooms: 2 Bathrooms: 2 For Sale USD 390,450",
-      "source": "Berkshire Hathaway Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-30T01:50:36.984652+00:00",
-      "source_type": "direct_broker",
-      "detail_checked_at": "2026-10-30T01:50:34.031610+00:00",
-      "development_evidence": [
-        {
-          "label": "Ownership",
-          "excerpt": "y awaits in Noord at Turibana 13-E! This charming home offers 2 bedrooms and 2 bathrooms on a 528m² long lease lot",
-          "url": "https://bhhsaruba.com/listings/turibana13e"
-        }
-      ],
-      "residence_complex": false,
-      "detail_status": "ok",
-      "history_key": "fd25d6e5cb22bbc3be569c3b390f643eb6e2bb31",
-      "last_seen_at": "2026-10-30T01:50:36.984664+00:00",
-      "queued_at": "2026-10-30T01:51:18.615780+00:00"
-    },
-    {
-      "name": "San Barbola 160, Oranjestad, Aruba, Oranjestad, Aruba",
-      "url": "https://www.realtor.com/international/aw/san-barbola-160-oranjestad-aruba-oranjestad-aruba-310120879986/",
-      "price": 479000.0,
-      "location": "San Barbola 160, Oranjestad, Aruba, Oranjestad, Aruba",
-      "type": "House",
-      "beds": "3",
-      "baths": "2",
-      "size": "",
-      "building_area": "234 m²",
-      "land_area": "504 m²",
-      "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/1ea3b61a5bbfde5674a5abddcaf8f0ff.jpg",
-      "description": "House",
-      "source": "Realtor International Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-10-30T01:50:37.047773+00:00",
-      "source_type": "aggregator",
-      "detail_checked_at": "2026-10-30T01:50:34.032514+00:00",
-      "development_evidence": [
-        {
-          "label": "Ownership",
-          "excerpt": "Built on 504 m² of property land, the home offers approximately 165 m² of interior space, complemented by a spacious 35 m² covered porch, a separate covered patio with a bar and outdoor kitchen.Inside,",
-          "url": "https://www.realtor.com/international/aw/san-barbola-160-oranjestad-aruba-oranjestad-aruba-310120879986/"
-        },
-        {
-          "label": "Ownership",
-          "excerpt": "Built on 504 m² of property land, the home offers approximately 165 m² of interior space, complemented by a spacious 35 m² covered porch, a separate covered patio with a bar and outdoor kitchen.Inside,",
-          "url": "https://www.realtor.com/international/aw/san-barbola-160-oranjestad-aruba-oranjestad-aruba-310120879986/"
-        }
-      ],
-      "residence_complex": false,
-      "detail_status": "ok",
-      "history_key": "c2cdfd169817703326c8d310616495a9b0094829",
-      "last_seen_at": "2026-10-30T01:50:37.047786+00:00",
-      "queued_at": "2026-10-30T01:51:18.615797+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [
     {
@@ -15693,20 +15623,7 @@
       "last_success_at": "2026-10-28T15:21:12.180945+00:00"
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 2 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Turibana 13E</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$390,450</div><div><strong>Location:</strong> Not provided by source</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 117 m²</div><div><strong>Land area:</strong> 528 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> y awaits in Noord at Turibana 13-E! This charming home offers 2 bedrooms and 2 bathrooms on a 528m² long lease lot</div><div><a href='https://bhhsaruba.com/listings/turibana13e'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2 beds · 2 baths</div><p style='margin:12px 0'>House For Sale Hot deal Property type: Residential Lot size: 528 M2 Built up size: 117 M2 Bedrooms: 2 Bathrooms: 2 For Sale USD 390,450</p><div><strong>Broker/source:</strong> Berkshire Hathaway Aruba (Berkshire Hathaway Aruba)</div><div><strong>First detected:</strong> 2026-10-30</div><div style='margin:15px 0'><img src='https://bhhsaruba.com/storage/app/uploads/public/6a4/e8a/0f7/thumb_24702_627_470_0_0_crop.webp' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://bhhsaruba.com/listings/turibana13e' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>San Barbola 160, Oranjestad, Aruba, Oranjestad, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$479,000</div><div><strong>Location:</strong> San Barbola 160, Oranjestad, Aruba, Oranjestad, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 234 m²</div><div><strong>Land area:</strong> 504 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Built on 504 m² of property land, the home offers approximately 165 m² of interior space, complemented by a spacious 35 m² covered porch, a separate covered patio with a bar and outdoor kitchen.Inside, · Built on 504 m² of property land, the home offers approximately 165 m² of interior space, complemented by a spacious 35 m² covered porch, a separate covered patio with a bar and outdoor kitchen.Inside,</div><div><a href='https://www.realtor.com/international/aw/san-barbola-160-oranjestad-aruba-oranjestad-aruba-310120879986/'>Source evidence</a></div><div><a href='https://www.realtor.com/international/aw/san-barbola-160-oranjestad-aruba-oranjestad-aruba-310120879986/'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 3 beds · 2 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-30</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/1ea3b61a5bbfde5674a5abddcaf8f0ff.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/san-barbola-160-oranjestad-aruba-oranjestad-aruba-310120879986/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "92a8bf6fb47c78ec31544a698c74e3872403491ff00236b43969e43b665ba94a",
-          "7c052b1e07025f7e1fa41669b05b0e34101ac9eb6edc908d763ea40283f7acde"
-        ]
-      },
-      "created_at": "2026-10-30T01:51:18.616337+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
