@@ -11612,108 +11612,11 @@
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
-    "new": [
-      {
-        "name": "Obelisco Residence San Barbola (Oranjestad East) Single Family Homes",
-        "url": "https://century21aruba.com/en/d/obelisco-residence-single-family-homes-for-sale-san-barbola-oranjestad-east-1167446",
-        "price": 495000.0,
-        "location": "Oranjestad",
-        "type": "House",
-        "beds": "",
-        "baths": "",
-        "size": "325 m²",
-        "building_area": "",
-        "land_area": "",
-        "image": "https://static.century21aruba.com/images/udx/1167446/w470/1792528033199395.jpg?vno=1793376020",
-        "description": "For Sale New Listing US$ 495,000 3 · 2 · Inland View · 325 m² 1/36",
-        "source": "Century 21 Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-30T17:18:15.794416+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-10-30T17:18:11.762394+00:00",
-        "detail_status": "unavailable",
-        "detail_error": "403 Client Error: Forbidden for url: https://century21aruba.com/en/d/obelisco-residence-single-family-homes-for-sale-san-barbola-oranjestad-east-1167446",
-        "history_key": "2a8c1e0c1bb409ceaec457bf75c2be634ee39e7a",
-        "last_seen_at": "2026-10-30T17:18:15.794433+00:00"
-      },
-      {
-        "name": "34 Zuidstraat, Oranjestad, Oranjestad",
-        "url": "https://www.realtor.com/international/aw/34-zuidstraat-oranjestad-oranjestad-310120901848/",
-        "price": 400000.0,
-        "location": "34 Zuidstraat, Oranjestad, Oranjestad",
-        "type": "Land",
-        "beds": "",
-        "baths": "",
-        "size": "",
-        "building_area": "",
-        "land_area": "540 m²",
-        "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/6562d4d55ae3acb47624468cad313e31.jpg",
-        "description": "Land/Development",
-        "source": "Realtor International Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-30T19:40:43.126083+00:00",
-        "source_type": "aggregator",
-        "detail_checked_at": "2026-10-30T19:40:40.382977+00:00",
-        "development_evidence": [
-          {
-            "label": "Apartment construction",
-            "excerpt": "The lot comes with DOW approval, approved building permits, and architectural plans for a two-story apartment complex with 10 units , potentially saving valuable time before construction, subject to the validity and transferability of the approvals",
-            "url": "https://www.realtor.com/international/aw/34-zuidstraat-oranjestad-oranjestad-310120901848/"
-          },
-          {
-            "label": "Apartment construction",
-            "excerpt": "The lot comes with DOW approval, approved building permits, and architectural plans for a two-story apartment complex with 10 units , potentially saving valuable time before construction, subject to the validity and transferability of the approvals",
-            "url": "https://www.realtor.com/international/aw/34-zuidstraat-oranjestad-oranjestad-310120901848/"
-          }
-        ],
-        "residence_complex": false,
-        "detail_status": "ok",
-        "history_key": "a11ff0151a20de9204784b1a15c6cf1eb46926d2",
-        "last_seen_at": "2026-10-30T19:40:43.126094+00:00"
-      },
-      {
-        "name": "71 Weststraat, Oranjestad, Oranjestad",
-        "url": "https://www.realtor.com/international/aw/71-weststraat-oranjestad-oranjestad-310120902973/",
-        "price": 250000.0,
-        "location": "71 Weststraat, Oranjestad, Oranjestad",
-        "type": "Land",
-        "beds": "",
-        "baths": "",
-        "size": "",
-        "building_area": "",
-        "land_area": "496 m²",
-        "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/7c42f0ef05681d70a50658e1decf80eb.jpg",
-        "description": "Land/Development",
-        "source": "Realtor International Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-30T19:40:43.161111+00:00",
-        "source_type": "aggregator",
-        "detail_checked_at": "2026-10-30T19:40:40.383619+00:00",
-        "development_evidence": [
-          {
-            "label": "Ownership",
-            "excerpt": "1 Weststraat, Oranjestad, Oranjestad Eigendom (Freehold) Land in Oranjestad-West, Aruba This residential plot sits on an asphalt road, Williamstraat, in Oranjestad-West, only minutes from downtown and a short drive",
-            "url": "https://www.realtor.com/international/aw/71-weststraat-oranjestad-oranjestad-310120902973/"
-          },
-          {
-            "label": "Ownership",
-            "excerpt": "1 Weststraat, Oranjestad, Oranjestad Eigendom (Freehold) Land in Oranjestad-West, Aruba This residential plot sits on an asphalt road, Williamstraat, in Oranjestad-West, only minutes from downtown and a short drive to the Eag",
-            "url": "https://www.realtor.com/international/aw/71-weststraat-oranjestad-oranjestad-310120902973/"
-          }
-        ],
-        "residence_complex": false,
-        "detail_status": "ok",
-        "history_key": "a55f8247d4371b8310717829a285bc4eb6423c97",
-        "last_seen_at": "2026-10-30T19:40:43.161120+00:00"
-      }
-    ],
+    "new": [],
     "reductions": [],
     "major_changes": []
   },
-  "last_digest_date": "2026-10-30",
+  "last_digest_date": "2026-10-31",
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
@@ -15754,26 +15657,7 @@
       "last_success_at": "2026-10-28T15:21:12.180945+00:00"
     }
   },
-  "outbox": [
-    {
-      "kind": "digest",
-      "subject": "Aruba Property Daily Digest — Oct 31 — 3 new, 0 reductions",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Daily Digest</h1><p style='font-size:16px'><strong>3 new properties</strong><br><strong>0 price reductions</strong><br><strong>0 major changes</strong><br>284 qualifying properties currently detected across available sources.</p><h2>NEW SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Obelisco Residence San Barbola (Oranjestad East) Single Family Homes</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$495,000</div><div><strong>Location:</strong> Oranjestad</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div><strong>Source area (scope unspecified):</strong> 325 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale New Listing US$ 495,000 3 · 2 · Inland View · 325 m² 1/36</p><div><strong>Broker/source:</strong> Century 21 Aruba (Century 21 Aruba)</div><div><strong>First detected:</strong> 2026-10-30</div><div style='margin:15px 0'><img src='https://static.century21aruba.com/images/udx/1167446/w470/1792528684778612.jpg?vno=1793376020' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://century21aruba.com/en/d/obelisco-residence-single-family-homes-for-sale-san-barbola-oranjestad-east-1167446' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>34 Zuidstraat, Oranjestad, Oranjestad</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$400,000</div><div><strong>Location:</strong> 34 Zuidstraat, Oranjestad, Oranjestad</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 540 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> The lot comes with DOW approval, approved building permits, and architectural plans for a two-story apartment complex with 10 units , potentially saving valuable time before construction, subject to the validity and transferability of the approvals · The lot comes with DOW approval, approved building permits, and architectural plans for a two-story apartment complex with 10 units , potentially saving valuable time before construction, subject to the validity and transferability of the approvals</div><div><a href='https://www.realtor.com/international/aw/34-zuidstraat-oranjestad-oranjestad-310120901848/'>Source evidence</a></div><div><a href='https://www.realtor.com/international/aw/34-zuidstraat-oranjestad-oranjestad-310120901848/'>Source evidence</a></div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>Land/Development</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-30</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/6562d4d55ae3acb47624468cad313e31.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/34-zuidstraat-oranjestad-oranjestad-310120901848/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>71 Weststraat, Oranjestad, Oranjestad</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$250,000</div><div><strong>Location:</strong> 71 Weststraat, Oranjestad, Oranjestad</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 496 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> 1 Weststraat, Oranjestad, Oranjestad Eigendom (Freehold) Land in Oranjestad-West, Aruba This residential plot sits on an asphalt road, Williamstraat, in Oranjestad-West, only minutes from downtown and a short drive · 1 Weststraat, Oranjestad, Oranjestad Eigendom (Freehold) Land in Oranjestad-West, Aruba This residential plot sits on an asphalt road, Williamstraat, in Oranjestad-West, only minutes from downtown and a short drive to the Eag</div><div><a href='https://www.realtor.com/international/aw/71-weststraat-oranjestad-oranjestad-310120902973/'>Source evidence</a></div><div><a href='https://www.realtor.com/international/aw/71-weststraat-oranjestad-oranjestad-310120902973/'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>Land/Development</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-10-30</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/7c42f0ef05681d70a50658e1decf80eb.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/71-weststraat-oranjestad-oranjestad-310120902973/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding:14px;background:#f5f5f5;border-radius:6px;font-size:13px'><strong>Source coverage:</strong> 18 sources checked successfully; 26 sources could not be checked during the latest run.</div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "date": "2026-10-31",
-        "activity": {
-          "new": [
-            "13c15bbc542b0786a8987900a2eb1ee6a6158c12bbfd61dc88c84d3c399c524c",
-            "d6b21696a4923b86bfccb40519090d8459c0bd3e7518875f75628e5d69041714",
-            "a9e0b9eb2e0fab0a3e73a859bdafa36afe6f0c7ee0a156da973f7efb1d0ec1b8"
-          ],
-          "reductions": [],
-          "major_changes": []
-        }
-      },
-      "created_at": "2026-10-31T14:49:25.650685+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
@@ -16724,5 +16608,5 @@
       "source": "ID Realty Group"
     }
   ],
-  "last_digest_at": "2026-10-30T14:36:48.029860+00:00"
+  "last_digest_at": "2026-10-31T14:49:28.277595+00:00"
 }
