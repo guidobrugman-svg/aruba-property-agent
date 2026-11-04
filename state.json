@@ -11720,80 +11720,7 @@
     }
   },
   "pending_new": [],
-  "pending_reductions": [
-    {
-      "property": {
-        "name": "Matadera 19 J",
-        "url": "https://bhhsaruba.com/listings/matadera-19-j",
-        "price": 617977.0,
-        "location": "Matadera",
-        "type": "House",
-        "beds": "4",
-        "baths": "2",
-        "size": "907 M2",
-        "building_area": "645 m²",
-        "land_area": "907 m²",
-        "image": "https://bhhsaruba.com/storage/app/uploads/public/69e/400/df6/thumb_24115_627_470_0_0_crop.webp",
-        "description": "House For Sale New listing Property type: Residential Lot size: 907 M2 Built up size: 645 M2 Bedrooms: 4 Bathrooms: 2 For Sale USD 617,977",
-        "source": "Berkshire Hathaway Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-04T22:33:04.042547+00:00",
-        "source_type": "direct_broker",
-        "development_evidence": [
-          {
-            "label": "Ownership",
-            "excerpt": "Total 645 m² of construction built on a 907 m² Private Property Land , for true comfort and privacy",
-            "url": "https://bhhsaruba.com/listings/matadera-19-j"
-          }
-        ],
-        "detail_checked_at": "2026-10-12T01:43:37.697225+00:00",
-        "detail_status": "ok",
-        "history_key": "69c034eea7615e4b0aa3e97c973fbddbeea5862c",
-        "aliases": [
-          "https://bhhsaruba.com/listings/matadera-19-j"
-        ]
-      },
-      "old": {
-        "name": "Matadera 19 J",
-        "url": "https://bhhsaruba.com/listings/matadera-19-j",
-        "price": 758500.0,
-        "location": "Matadera",
-        "type": "House",
-        "beds": "4",
-        "baths": "2",
-        "size": "907 M2",
-        "building_area": "645 m²",
-        "land_area": "907 m²",
-        "image": "https://bhhsaruba.com/storage/app/uploads/public/69e/400/df6/thumb_24115_627_470_0_0_crop.webp",
-        "description": "House For Sale New listing Property type: Residential Lot size: 907 M2 Built up size: 645 M2 Bedrooms: 4 Bathrooms: 2 For Sale USD 617,977",
-        "source": "Berkshire Hathaway Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-04T22:33:04.042547+00:00",
-        "source_type": "direct_broker",
-        "development_evidence": [
-          {
-            "label": "Ownership",
-            "excerpt": "Total 645 m² of construction built on a 907 m² Private Property Land , for true comfort and privacy",
-            "url": "https://bhhsaruba.com/listings/matadera-19-j"
-          }
-        ],
-        "detail_checked_at": "2026-10-12T01:43:37.697225+00:00",
-        "detail_status": "ok",
-        "history_key": "69c034eea7615e4b0aa3e97c973fbddbeea5862c",
-        "aliases": [
-          "https://bhhsaruba.com/listings/matadera-19-j"
-        ],
-        "change_candidate": {
-          "signature": "898016e7674a417e77f25ef49c369d0429a12ff036f6c315f60610a7bae2d720",
-          "observed_at": "2026-11-03T21:36:46.910715+00:00"
-        },
-        "last_seen_at": "2026-11-03T21:36:46.910721+00:00"
-      },
-      "queued_at": "2026-11-04T01:40:14.094546+00:00"
-    }
-  ],
+  "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
     "new": [
@@ -15956,20 +15883,7 @@
       "last_success_at": "2026-10-28T15:21:12.180945+00:00"
     }
   },
-  "outbox": [
-    {
-      "kind": "changes",
-      "subject": "Aruba Property Alert — 1 price reduction",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>PRICE REDUCTIONS</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><h2 style='margin:0 0 8px;font-size:22px'>Matadera 19 J</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$617,977</div><div style='margin-bottom:8px'><strong>PRICE REDUCTION:</strong> $758,500 → $617,977 (18.5% reduction)</div><div><strong>Location:</strong> Matadera</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 645 m²</div><div><strong>Land area:</strong> 907 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Total 645 m² of construction built on a 907 m² Private Property Land , for true comfort and privacy</div><div><a href='https://bhhsaruba.com/listings/matadera-19-j'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 4 beds · 2 baths</div><p style='margin:12px 0'>House For Sale New listing Property type: Residential Lot size: 907 M2 Built up size: 645 M2 Bedrooms: 4 Bathrooms: 2 For Sale USD 617,977</p><div><strong>Broker/source:</strong> Berkshire Hathaway Aruba (Berkshire Hathaway Aruba)</div><div><strong>First detected:</strong> 2026-10-04</div><div style='margin:15px 0'><img src='https://bhhsaruba.com/storage/app/uploads/public/69e/400/df6/thumb_24115_627_470_0_0_crop.webp' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://bhhsaruba.com/listings/matadera-19-j' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_reductions": [
-          "83229e4ae522b9256b335e1e1a2a73c200e7c7052c45eda65b3d08618ec01eb6"
-        ],
-        "pending_major_changes": []
-      },
-      "created_at": "2026-11-04T08:01:22.649006+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
