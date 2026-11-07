@@ -12002,90 +12002,15 @@
       "last_seen_at": "2026-11-07T14:38:39.035404+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Westpunt 19-A, West Punt, Aruba, West Punt, Aruba",
-      "url": "https://www.realtor.com/international/aw/westpunt-19-a-west-punt-aruba-west-punt-aruba-310121064895/",
-      "price": 499000.0,
-      "location": "Westpunt 19-A, West Punt, Aruba, West Punt, Aruba",
-      "type": "House",
-      "beds": "3",
-      "baths": "1",
-      "size": "",
-      "building_area": "195 m²",
-      "land_area": "536 m²",
-      "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/49f834cd5398b1a4d0871d5687da8d29.jpg",
-      "description": "House",
-      "source": "Realtor International Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-11-07T14:38:39.035390+00:00",
-      "source_type": "aggregator",
-      "detail_checked_at": "2026-11-07T14:38:35.543935+00:00",
-      "development_evidence": [
-        {
-          "label": "Ownership",
-          "excerpt": "Situated on approximately 536 m² of leasehold land in Westpunt, Noord, the property features a three-bedroom home, generous covered outdoor areas and the option to acquire an additional adjacent plot.The existing ho",
-          "url": "https://www.realtor.com/international/aw/westpunt-19-a-west-punt-aruba-west-punt-aruba-310121064895/"
-        },
-        {
-          "label": "Ownership",
-          "excerpt": "to also acquire the adjacent Westpunt 19B.Westpunt 19B comprises approximately 286 m² of additional leasehold land and is available as an optional separate purchase, subject to agreement on price and terms.Purchasing both Westpunt 19A and Westpunt 19B would result in a combined",
-          "url": "https://www.realtor.com/international/aw/westpunt-19-a-west-punt-aruba-west-punt-aruba-310121064895/"
-        }
-      ],
-      "residence_complex": false,
-      "detail_status": "ok",
-      "history_key": "854157a0583c9f39ebfdc7a89d8d85ab89b90b66",
-      "last_seen_at": "2026-11-07T14:38:39.035404+00:00",
-      "queued_at": "2026-11-07T14:39:19.228398+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
-    "new": [
-      {
-        "name": "Westpunt 19-A, West Punt, Aruba, West Punt, Aruba",
-        "url": "https://www.realtor.com/international/aw/westpunt-19-a-west-punt-aruba-west-punt-aruba-310121064895/",
-        "price": 499000.0,
-        "location": "Westpunt 19-A, West Punt, Aruba, West Punt, Aruba",
-        "type": "House",
-        "beds": "3",
-        "baths": "1",
-        "size": "",
-        "building_area": "195 m²",
-        "land_area": "536 m²",
-        "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/49f834cd5398b1a4d0871d5687da8d29.jpg",
-        "description": "House",
-        "source": "Realtor International Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-11-07T14:38:39.035390+00:00",
-        "source_type": "aggregator",
-        "detail_checked_at": "2026-11-07T14:38:35.543935+00:00",
-        "development_evidence": [
-          {
-            "label": "Ownership",
-            "excerpt": "Situated on approximately 536 m² of leasehold land in Westpunt, Noord, the property features a three-bedroom home, generous covered outdoor areas and the option to acquire an additional adjacent plot.The existing ho",
-            "url": "https://www.realtor.com/international/aw/westpunt-19-a-west-punt-aruba-west-punt-aruba-310121064895/"
-          },
-          {
-            "label": "Ownership",
-            "excerpt": "to also acquire the adjacent Westpunt 19B.Westpunt 19B comprises approximately 286 m² of additional leasehold land and is available as an optional separate purchase, subject to agreement on price and terms.Purchasing both Westpunt 19A and Westpunt 19B would result in a combined",
-            "url": "https://www.realtor.com/international/aw/westpunt-19-a-west-punt-aruba-west-punt-aruba-310121064895/"
-          }
-        ],
-        "residence_complex": false,
-        "detail_status": "ok",
-        "history_key": "854157a0583c9f39ebfdc7a89d8d85ab89b90b66",
-        "last_seen_at": "2026-11-07T14:38:39.035404+00:00"
-      }
-    ],
+    "new": [],
     "reductions": [],
     "major_changes": []
   },
-  "last_digest_date": "2026-11-06",
+  "last_digest_date": "2026-11-07",
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
@@ -16130,35 +16055,7 @@
       "last_success_at": "2026-10-28T15:21:12.180945+00:00"
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 1 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Westpunt 19-A, West Punt, Aruba, West Punt, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$499,000</div><div><strong>Location:</strong> Westpunt 19-A, West Punt, Aruba, West Punt, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 195 m²</div><div><strong>Land area:</strong> 536 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Situated on approximately 536 m² of leasehold land in Westpunt, Noord, the property features a three-bedroom home, generous covered outdoor areas and the option to acquire an additional adjacent plot.The existing ho · to also acquire the adjacent Westpunt 19B.Westpunt 19B comprises approximately 286 m² of additional leasehold land and is available as an optional separate purchase, subject to agreement on price and terms.Purchasing both Westpunt 19A and Westpunt 19B would result in a combined</div><div><a href='https://www.realtor.com/international/aw/westpunt-19-a-west-punt-aruba-west-punt-aruba-310121064895/'>Source evidence</a></div><div><a href='https://www.realtor.com/international/aw/westpunt-19-a-west-punt-aruba-west-punt-aruba-310121064895/'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 3 beds · 1 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-11-07</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/49f834cd5398b1a4d0871d5687da8d29.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/westpunt-19-a-west-punt-aruba-west-punt-aruba-310121064895/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "beb7951e9fe644a8042981f012515cefbbf0175d40f6828d688fa0cec0d4359d"
-        ]
-      },
-      "created_at": "2026-11-07T14:39:19.228895+00:00"
-    },
-    {
-      "kind": "digest",
-      "subject": "Aruba Property Daily Digest — Nov 07 — 1 new, 0 reductions",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Daily Digest</h1><p style='font-size:16px'><strong>1 new properties</strong><br><strong>0 price reductions</strong><br><strong>0 major changes</strong><br>255 qualifying properties currently detected across available sources.</p><h2>NEW SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Westpunt 19-A, West Punt, Aruba, West Punt, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$499,000</div><div><strong>Location:</strong> Westpunt 19-A, West Punt, Aruba, West Punt, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 195 m²</div><div><strong>Land area:</strong> 536 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Situated on approximately 536 m² of leasehold land in Westpunt, Noord, the property features a three-bedroom home, generous covered outdoor areas and the option to acquire an additional adjacent plot.The existing ho · to also acquire the adjacent Westpunt 19B.Westpunt 19B comprises approximately 286 m² of additional leasehold land and is available as an optional separate purchase, subject to agreement on price and terms.Purchasing both Westpunt 19A and Westpunt 19B would result in a combined</div><div><a href='https://www.realtor.com/international/aw/westpunt-19-a-west-punt-aruba-west-punt-aruba-310121064895/'>Source evidence</a></div><div><a href='https://www.realtor.com/international/aw/westpunt-19-a-west-punt-aruba-west-punt-aruba-310121064895/'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 3 beds · 1 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-11-07</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/49f834cd5398b1a4d0871d5687da8d29.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/westpunt-19-a-west-punt-aruba-west-punt-aruba-310121064895/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding:14px;background:#f5f5f5;border-radius:6px;font-size:13px'><strong>Source coverage:</strong> 17 sources checked successfully; 27 sources could not be checked during the latest run.</div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "date": "2026-11-07",
-        "activity": {
-          "new": [
-            "42bec041b0d5c9fc5c465c479c91e77118299e1df2a0e5e885df0289bb5dcbe9"
-          ],
-          "reductions": [],
-          "major_changes": []
-        }
-      },
-      "created_at": "2026-11-07T14:39:19.229383+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
@@ -17119,5 +17016,5 @@
       "source": "ID Realty Group"
     }
   ],
-  "last_digest_at": "2026-11-06T17:10:01.271259+00:00"
+  "last_digest_at": "2026-11-07T14:39:21.297203+00:00"
 }
