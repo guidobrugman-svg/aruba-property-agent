@@ -12037,37 +12037,11 @@
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
-    "new": [
-      {
-        "name": "Alto Vista 53 B",
-        "url": "https://bhhsaruba.com/listings/alto-vista-53-b",
-        "price": 548000.0,
-        "location": "Alto Vista",
-        "type": "House",
-        "beds": "4",
-        "baths": "3",
-        "size": "659 M2",
-        "building_area": "241 m²",
-        "land_area": "659 m²",
-        "image": "https://bhhsaruba.com/storage/app/uploads/public/6ae/d4d/55c/thumb_25670_627_470_0_0_crop.webp",
-        "description": "House For Sale New listing Property type: Residential Lot size: 659 M2 Built up size: 241 M2 Bedrooms: 4 Bathrooms: 3 For Sale USD 548,000",
-        "source": "Berkshire Hathaway Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-11-07T17:03:25.586752+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-11-07T17:03:08.115874+00:00",
-        "development_evidence": [],
-        "residence_complex": false,
-        "detail_status": "ok",
-        "history_key": "28d113d5230e8cefebfb443f52b94d0e5b833a34",
-        "last_seen_at": "2026-11-07T17:03:25.586768+00:00"
-      }
-    ],
+    "new": [],
     "reductions": [],
     "major_changes": []
   },
-  "last_digest_date": "2026-11-07",
+  "last_digest_date": "2026-11-08",
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
@@ -16101,24 +16075,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "digest",
-      "subject": "Aruba Property Daily Digest — Nov 08 — 1 new, 0 reductions",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Daily Digest</h1><p style='font-size:16px'><strong>1 new properties</strong><br><strong>0 price reductions</strong><br><strong>0 major changes</strong><br>256 qualifying properties currently detected across available sources.</p><h2>NEW SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Alto Vista 53 B</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$548,000</div><div><strong>Location:</strong> Alto Vista</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 241 m²</div><div><strong>Land area:</strong> 659 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 4 beds · 3 baths</div><p style='margin:12px 0'>House For Sale New listing Property type: Residential Lot size: 659 M2 Built up size: 241 M2 Bedrooms: 4 Bathrooms: 3 For Sale USD 548,000</p><div><strong>Broker/source:</strong> Berkshire Hathaway Aruba (Berkshire Hathaway Aruba)</div><div><strong>First detected:</strong> 2026-11-07</div><div style='margin:15px 0'><img src='https://bhhsaruba.com/storage/app/uploads/public/6ae/d4d/55c/thumb_25670_627_470_0_0_crop.webp' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://bhhsaruba.com/listings/alto-vista-53-b' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding:14px;background:#f5f5f5;border-radius:6px;font-size:13px'><strong>Source coverage:</strong> 17 sources checked successfully; 27 sources could not be checked during the latest run.</div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "date": "2026-11-08",
-        "activity": {
-          "new": [
-            "1add089ae497bcaa14a21c9bbcd86bd166cbb0530e393408bdf2c2c8af5be29b"
-          ],
-          "reductions": [],
-          "major_changes": []
-        }
-      },
-      "created_at": "2026-11-08T15:07:15.779036+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
@@ -17079,5 +17036,5 @@
       "source": "ID Realty Group"
     }
   ],
-  "last_digest_at": "2026-11-07T14:39:21.297203+00:00"
+  "last_digest_at": "2026-11-08T15:07:18.143202+00:00"
 }
