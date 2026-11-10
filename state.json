@@ -15217,31 +15217,7 @@
       "last_seen_at": "2026-11-10T18:36:52.178291+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Walishali 14",
-      "url": "https://arubalistings.com/sale/ponton/house-3794-walishali-14",
-      "price": 675000.0,
-      "location": "Ponton",
-      "type": "House",
-      "beds": "5",
-      "baths": "3",
-      "size": "201 m²",
-      "building_area": "",
-      "land_area": "",
-      "image": "https://arubalistings.com/storage/app/uploads/public/6af/319/54e/6af31954e703a700915679.webp",
-      "description": "Spacious Family Home with Pool & Separate Studio Apartment in Ponton, WalishaliDiscover a welcoming property in Ponton, Walishali, Aruba, offering space, comfort, and",
-      "source": "Aruba Listings",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-11-10T18:36:52.178275+00:00",
-      "broker": "Bold Properties Aruba",
-      "source_type": "aggregator",
-      "history_key": "f88829cbd2c575cfccd01ef547d0a47c66da6f0d",
-      "last_seen_at": "2026-11-10T18:36:52.178291+00:00",
-      "queued_at": "2026-11-10T18:38:15.859751+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [
     {
@@ -15280,122 +15256,11 @@
     }
   ],
   "daily_activity": {
-    "new": [
-      {
-        "name": "Fort Heuvelstraat 51, Sint Nicolaas, Aruba, Sint Nicolaas, Aruba",
-        "url": "https://www.realtor.com/international/aw/fort-heuvelstraat-51-sint-nicolaas-aruba-sint-nicolaas-aruba-310121111469/",
-        "price": 298500.0,
-        "location": "Fort Heuvelstraat 51, Sint Nicolaas, Aruba, Sint Nicolaas, Aruba",
-        "type": "House",
-        "beds": "2",
-        "baths": "1",
-        "size": "",
-        "building_area": "125 m²",
-        "land_area": "727 m²",
-        "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/9fe53cb0ab1cdb971833c2a2de14a7b1.jpg",
-        "description": "House",
-        "source": "Realtor International Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-11-10T11:01:09.181790+00:00",
-        "source_type": "aggregator",
-        "history_key": "7438ae4fdda7a62cf2aaa158ed6919ad7a082990",
-        "last_seen_at": "2026-11-10T11:01:09.181802+00:00"
-      },
-      {
-        "name": "Walishali 14",
-        "url": "https://arubalistings.com/sale/ponton/house-3794-walishali-14",
-        "price": 675000.0,
-        "location": "Ponton",
-        "type": "House",
-        "beds": "5",
-        "baths": "3",
-        "size": "201 m²",
-        "building_area": "",
-        "land_area": "",
-        "image": "https://arubalistings.com/storage/app/uploads/public/6af/319/54e/6af31954e703a700915679.webp",
-        "description": "Spacious Family Home with Pool & Separate Studio Apartment in Ponton, WalishaliDiscover a welcoming property in Ponton, Walishali, Aruba, offering space, comfort, and",
-        "source": "Aruba Listings",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-11-10T18:36:52.178275+00:00",
-        "broker": "Bold Properties Aruba",
-        "source_type": "aggregator",
-        "history_key": "f88829cbd2c575cfccd01ef547d0a47c66da6f0d",
-        "last_seen_at": "2026-11-10T18:36:52.178291+00:00"
-      }
-    ],
+    "new": [],
     "reductions": [],
-    "major_changes": [
-      {
-        "property": {
-          "name": "Property Land - Savaneta | 937m²",
-          "url": "https://www.objective-realty.com/properties/property-land-savaneta-937m2",
-          "price": 308989.0,
-          "location": "Savaneta",
-          "type": "Land",
-          "beds": "",
-          "baths": "",
-          "size": "937 m²",
-          "building_area": "",
-          "land_area": "937 m²",
-          "image": "https://www.objective-realty.com/_next/image?url=https%3A%2F%2Fleoysfeogfyahvvrweec.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fproperty-photos%2Flistings%2F1792029049244-property-land-savaneta-937m2-1792029035767-5-wnglvn.jpg&w=3840&q=75",
-          "description": "For Sale For Sale Savaneta $308,989 AWG 550,000 Beds: 4 Baths: 2 View Property",
-          "source": "Objective Realty Aruba",
-          "mls": "",
-          "status": "available",
-          "detected_at": "2026-10-12T17:22:37.482271+00:00",
-          "source_type": "direct_broker",
-          "detail_checked_at": "2026-10-12T17:22:33.490642+00:00",
-          "detail_status": "unavailable",
-          "history_key": "b17ecc6e7ae7f6833639004049b6d7148b228eb4",
-          "aliases": [
-            "https://www.objective-realty.com/properties/property-land-savaneta-937m2"
-          ]
-        },
-        "changes": {
-          "Status": {
-            "old": "under contract",
-            "new": "available"
-          }
-        }
-      },
-      {
-        "property": {
-          "name": "Wayaca 151",
-          "url": "https://id297.com/property/wayaca-151-2/",
-          "price": 441011.0,
-          "location": "Wayaca",
-          "type": "House",
-          "beds": "3",
-          "baths": "2",
-          "size": "",
-          "building_area": "",
-          "land_area": "",
-          "image": "https://id297.com/wp-content/uploads/2026/07/DSC08317-2-584x438.jpg",
-          "description": "House For Sale For Sale New $441,011 For sale Residential Beds: 3 Baths: 2 216.50",
-          "source": "ID Realty Group",
-          "mls": "",
-          "status": "available",
-          "detected_at": "2026-10-06T04:38:24.946615+00:00",
-          "source_type": "direct_broker",
-          "detail_checked_at": "2026-10-31T08:43:46.916959+00:00",
-          "detail_status": "unavailable",
-          "history_key": "ade272c511d82e7cce9618381e6b4aa66cc05957",
-          "aliases": [
-            "https://id297.com/property/wayaca-151-2"
-          ]
-        },
-        "changes": {
-          "Status": {
-            "old": "sale in progress",
-            "new": "available"
-          }
-        }
-      }
-    ]
+    "major_changes": []
   },
-  "last_digest_date": "2026-11-09",
+  "last_digest_date": "2026-11-10",
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
@@ -20510,39 +20375,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 1 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Walishali 14</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$675,000</div><div><strong>Location:</strong> Ponton</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div><strong>Source area (scope unspecified):</strong> 201 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 5 beds · 3 baths</div><p style='margin:12px 0'>Spacious Family Home with Pool &amp; Separate Studio Apartment in Ponton, WalishaliDiscover a welcoming property in Ponton, Walishali, Aruba, offering space, comfort, and</p><div><strong>Broker/source:</strong> Bold Properties Aruba (Aruba Listings)</div><div><strong>First detected:</strong> 2026-11-10</div><div style='margin:15px 0'><img src='https://arubalistings.com/storage/app/uploads/public/6af/319/54e/6af31954e703a700915679.webp' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://arubalistings.com/sale/ponton/house-3794-walishali-14' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "016cb5335cf41dba1e43e25023bd9bad28670c7ac8cbece1bcf20a36f0233ff1"
-        ]
-      },
-      "created_at": "2026-11-10T18:38:15.860307+00:00"
-    },
-    {
-      "kind": "digest",
-      "subject": "Aruba Property Daily Digest — Nov 10 — 2 new, 0 reductions",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Daily Digest</h1><p style='font-size:16px'><strong>2 new properties</strong><br><strong>0 price reductions</strong><br><strong>2 major changes</strong><br>387 qualifying properties currently detected across available sources.</p><h2>NEW SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Fort Heuvelstraat 51, Sint Nicolaas, Aruba, Sint Nicolaas, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$298,500</div><div><strong>Location:</strong> Fort Heuvelstraat 51, Sint Nicolaas, Aruba, Sint Nicolaas, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 125 m²</div><div><strong>Land area:</strong> 727 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2 beds · 1 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-11-10</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/9fe53cb0ab1cdb971833c2a2de14a7b1.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/fort-heuvelstraat-51-sint-nicolaas-aruba-sint-nicolaas-aruba-310121111469/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Walishali 14</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$675,000</div><div><strong>Location:</strong> Ponton</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div><strong>Source area (scope unspecified):</strong> 201 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 5 beds · 3 baths</div><p style='margin:12px 0'>Spacious Family Home with Pool &amp; Separate Studio Apartment in Ponton, WalishaliDiscover a welcoming property in Ponton, Walishali, Aruba, offering space, comfort, and</p><div><strong>Broker/source:</strong> Bold Properties Aruba (Aruba Listings)</div><div><strong>First detected:</strong> 2026-11-10</div><div style='margin:15px 0'><img src='https://arubalistings.com/storage/app/uploads/public/6af/319/54e/6af31954e703a700915679.webp' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://arubalistings.com/sale/ponton/house-3794-walishali-14' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><h2>MAJOR CHANGES SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;margin-bottom:8px'>MAJOR CHANGES</div><h2 style='margin:0 0 8px;font-size:22px'>Property Land - Savaneta | 937m²</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$308,989</div><div style='margin-bottom:16px'><strong>What changed:</strong><table style='width:100%;border-collapse:collapse;font-size:14px;margin-top:8px'><thead><tr><th scope='col' style='text-align:left;padding:6px'>Detail</th><th scope='col' style='text-align:left;padding:6px'>Previous</th><th scope='col' style='text-align:left;padding:6px'>Current</th></tr></thead><tbody><tr><th scope='row' style='text-align:left;padding:6px;border-bottom:1px solid #ddd'>Status</th><td style='padding:6px;border-bottom:1px solid #ddd'>under contract</td><td style='padding:6px;border-bottom:1px solid #ddd'>available</td></tr></tbody></table></div><div><strong>Location:</strong> Savaneta</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 937 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale For Sale Savaneta $308,989 AWG 550,000 Beds: 4 Baths: 2 View Property</p><div><strong>Broker/source:</strong> Objective Realty Aruba (Objective Realty Aruba)</div><div><strong>First detected:</strong> 2026-10-12</div><div style='margin:15px 0'><img src='https://www.objective-realty.com/_next/image?url=https%3A%2F%2Fleoysfeogfyahvvrweec.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fproperty-photos%2Flistings%2F1792029049244-property-land-savaneta-937m2-1792029035767-5-wnglvn.jpg&amp;w=3840&amp;q=75' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.objective-realty.com/properties/property-land-savaneta-937m2' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;margin-bottom:8px'>MAJOR CHANGES</div><h2 style='margin:0 0 8px;font-size:22px'>Wayaca 151</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$441,011</div><div style='margin-bottom:16px'><strong>What changed:</strong><table style='width:100%;border-collapse:collapse;font-size:14px;margin-top:8px'><thead><tr><th scope='col' style='text-align:left;padding:6px'>Detail</th><th scope='col' style='text-align:left;padding:6px'>Previous</th><th scope='col' style='text-align:left;padding:6px'>Current</th></tr></thead><tbody><tr><th scope='row' style='text-align:left;padding:6px;border-bottom:1px solid #ddd'>Status</th><td style='padding:6px;border-bottom:1px solid #ddd'>sale in progress</td><td style='padding:6px;border-bottom:1px solid #ddd'>available</td></tr></tbody></table></div><div><strong>Location:</strong> Wayaca</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 3 beds · 2 baths</div><p style='margin:12px 0'>House For Sale For Sale New $441,011 For sale Residential Beds: 3 Baths: 2 216.50</p><div><strong>Broker/source:</strong> ID Realty Group (ID Realty Group)</div><div><strong>First detected:</strong> 2026-10-06</div><div style='margin:15px 0'><img src='https://id297.com/wp-content/uploads/2026/07/DSC08317-2-584x438.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://id297.com/property/wayaca-151-2/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding:14px;background:#f5f5f5;border-radius:6px;font-size:13px'><strong>Source coverage:</strong> 18 sources checked successfully; 26 sources could not be checked during the latest run.</div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "date": "2026-11-10",
-        "activity": {
-          "new": [
-            "4657a49aa8565c14d6ffe869df7b3fbe69f5786daa0d077793f2c5113a88b2fa",
-            "d424df3180f4fc5514c230703bfc989f1de8aca6b738d9006a0ceec451416bc3"
-          ],
-          "reductions": [],
-          "major_changes": [
-            "8697c3448af5aef22df20a9176e645d0eececce258b88298d137e404e1796a4f",
-            "c3c65954c94170f5b1be04fb685cd0a738120e118285a5f19e58277deaceec03"
-          ]
-        }
-      },
-      "created_at": "2026-11-10T18:38:15.861104+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
@@ -22065,5 +21898,5 @@
       "source": "RealLinkr / Aruba MLS"
     }
   ],
-  "last_digest_at": "2026-11-09T20:53:55.196216+00:00"
+  "last_digest_at": "2026-11-10T18:38:18.205131+00:00"
 }
