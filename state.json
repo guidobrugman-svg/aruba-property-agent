@@ -15433,98 +15433,8 @@
       "last_seen_at": "2026-11-13T22:52:33.134217+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "LAND SERO PITA 2356 M2",
-      "url": "https://arubalistings.com/sale/piedra-plat/land-freehold-3808-land-sero-pita-2356-m2",
-      "price": 294944.0,
-      "location": "Piedra Plat",
-      "type": "Land",
-      "beds": "",
-      "baths": "",
-      "size": "",
-      "building_area": "",
-      "land_area": "",
-      "image": "https://arubalistings.com/storage/app/uploads/public/6af/75c/6ce/6af75c6ce9457573857120.webp",
-      "description": "An exceptional opportunity to own a massive 2,356 m² parcel of property land (eigendomsgrond) nestled in a private valley setting directly between two picturesque hillsides. O",
-      "source": "Aruba Listings",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-11-13T22:52:33.134202+00:00",
-      "broker": "All Property Real Estate Aruba",
-      "source_type": "aggregator",
-      "development_evidence": [
-        {
-          "label": "Ownership",
-          "excerpt": "n exceptional opportunity to own a massive 2,356 m² parcel of property land (eigendomsgrond) nestled in a private valley setting directly between two picturesque hillsides",
-          "url": "https://arubalistings.com/sale/piedra-plat/land-freehold-3808-land-sero-pita-2356-m2"
-        }
-      ],
-      "history_key": "19c5c98a4aae80b1676668582c23c88e38785ce1",
-      "last_seen_at": "2026-11-13T22:52:33.134217+00:00",
-      "queued_at": "2026-11-13T22:53:34.598890+00:00"
-    }
-  ],
-  "pending_reductions": [
-    {
-      "property": {
-        "name": "Property Land - Savaneta | 937m²",
-        "url": "https://www.objective-realty.com/properties/property-land-savaneta-937m2",
-        "price": 280899.0,
-        "location": "Savaneta",
-        "type": "Land",
-        "beds": "",
-        "baths": "",
-        "size": "937 m²",
-        "building_area": "",
-        "land_area": "937 m²",
-        "image": "https://www.objective-realty.com/_next/image?url=https%3A%2F%2Fleoysfeogfyahvvrweec.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fproperty-photos%2Flistings%2F1792029049244-property-land-savaneta-937m2-1792029035767-5-wnglvn.jpg&w=3840&q=75",
-        "description": "For Sale For Sale Savaneta $280,899 AWG 500,000 Beds: 4 Baths: 2 View Property",
-        "source": "Objective Realty Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-12T17:22:37.482271+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-10-12T17:22:33.490642+00:00",
-        "detail_status": "unavailable",
-        "history_key": "b17ecc6e7ae7f6833639004049b6d7148b228eb4",
-        "aliases": [
-          "https://www.objective-realty.com/properties/property-land-savaneta-937m2"
-        ]
-      },
-      "old": {
-        "name": "Property Land - Savaneta | 937m²",
-        "url": "https://www.objective-realty.com/properties/property-land-savaneta-937m2",
-        "price": 308989.0,
-        "location": "Savaneta",
-        "type": "Land",
-        "beds": "",
-        "baths": "",
-        "size": "937 m²",
-        "building_area": "",
-        "land_area": "937 m²",
-        "image": "https://www.objective-realty.com/_next/image?url=https%3A%2F%2Fleoysfeogfyahvvrweec.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fproperty-photos%2Flistings%2F1792029049244-property-land-savaneta-937m2-1792029035767-5-wnglvn.jpg&w=3840&q=75",
-        "description": "For Sale For Sale Savaneta $280,899 AWG 500,000 Beds: 4 Baths: 2 View Property",
-        "source": "Objective Realty Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-10-12T17:22:37.482271+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-10-12T17:22:33.490642+00:00",
-        "detail_status": "unavailable",
-        "history_key": "b17ecc6e7ae7f6833639004049b6d7148b228eb4",
-        "aliases": [
-          "https://www.objective-realty.com/properties/property-land-savaneta-937m2"
-        ],
-        "change_candidate": {
-          "signature": "f6f2671dbb556dc8e74174ba6da933f77e700993c2a64083334e2a8e029a3e95",
-          "observed_at": "2026-11-13T17:38:29.455620+00:00"
-        },
-        "last_seen_at": "2026-11-13T17:38:29.455623+00:00"
-      },
-      "queued_at": "2026-11-13T18:51:58.634849+00:00"
-    }
-  ],
+  "pending_new": [],
+  "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
     "new": [
@@ -21013,31 +20923,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 1 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>LAND SERO PITA 2356 M2</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$294,944</div><div><strong>Location:</strong> Piedra Plat</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> n exceptional opportunity to own a massive 2,356 m² parcel of property land (eigendomsgrond) nestled in a private valley setting directly between two picturesque hillsides</div><div><a href='https://arubalistings.com/sale/piedra-plat/land-freehold-3808-land-sero-pita-2356-m2'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>An exceptional opportunity to own a massive 2,356 m² parcel of property land (eigendomsgrond) nestled in a private valley setting directly between two picturesque hillsides. O</p><div><strong>Broker/source:</strong> All Property Real Estate Aruba (Aruba Listings)</div><div><strong>First detected:</strong> 2026-11-13</div><div style='margin:15px 0'><img src='https://arubalistings.com/storage/app/uploads/public/6af/75c/6ce/6af75c6ce9457573857120.webp' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://arubalistings.com/sale/piedra-plat/land-freehold-3808-land-sero-pita-2356-m2' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "79083d417378a456c3db56cc6844df2276566363c0e0157a8b5af260080e8c1c"
-        ]
-      },
-      "created_at": "2026-11-13T22:53:34.599423+00:00"
-    },
-    {
-      "kind": "changes",
-      "subject": "Aruba Property Alert — 1 price reduction",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>PRICE REDUCTIONS</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><h2 style='margin:0 0 8px;font-size:22px'>Property Land - Savaneta | 937m²</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$280,899</div><div style='margin-bottom:8px'><strong>PRICE REDUCTION:</strong> $308,989 → $280,899 (9.1% reduction)</div><div><strong>Location:</strong> Savaneta</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 937 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale For Sale Savaneta $280,899 AWG 500,000 Beds: 4 Baths: 2 View Property</p><div><strong>Broker/source:</strong> Objective Realty Aruba (Objective Realty Aruba)</div><div><strong>First detected:</strong> 2026-10-12</div><div style='margin:15px 0'><img src='https://www.objective-realty.com/_next/image?url=https%3A%2F%2Fleoysfeogfyahvvrweec.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fproperty-photos%2Flistings%2F1792029049244-property-land-savaneta-937m2-1792029035767-5-wnglvn.jpg&amp;w=3840&amp;q=75' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.objective-realty.com/properties/property-land-savaneta-937m2' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_reductions": [
-          "d13040eade16d807f29f71954b8fb7369d19f161041b54e812f816141ae20b26"
-        ],
-        "pending_major_changes": []
-      },
-      "created_at": "2026-11-13T22:53:34.599522+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
