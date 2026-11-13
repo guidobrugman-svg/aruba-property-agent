@@ -15405,62 +15405,7 @@
       "last_seen_at": "2026-11-13T18:50:48.189676+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Land SERO PITA 2356m2",
-      "url": "https://www.allpropertyaruba.com/properties/land-sero-pita-2356m2",
-      "price": 294944.0,
-      "location": "SERO PITA Z/N",
-      "type": "Land",
-      "beds": "",
-      "baths": "",
-      "size": "2356 m2",
-      "building_area": "",
-      "land_area": "2,356 m²",
-      "image": "https://framerusercontent.com/images/4J5Cr7LakozhZE8eBlRIRoziZ0.jpg?width=1600&height=1200",
-      "description": "For Sale For Sale SERO PITA Z/N $ 294,944/ AWG 525,000 1 0 sq.ft",
-      "source": "All Property Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-11-13T18:50:48.112545+00:00",
-      "source_type": "direct_broker",
-      "aliases": [
-        "https://www.allpropertyaruba.com/properties/land-sero-pita-2356m2"
-      ],
-      "detail_checked_at": "2026-11-13T18:50:43.119569+00:00",
-      "detail_status": "unavailable",
-      "detail_error": "No recognized property-detail sections",
-      "history_key": "1850b564af1f4dcf23d42750111ee391e853faf8",
-      "last_seen_at": "2026-11-13T18:50:48.112563+00:00",
-      "queued_at": "2026-11-13T18:51:58.634819+00:00"
-    },
-    {
-      "name": "Alto Vista 146 – Two-Bedroom Home with Pool & Expansion Potential",
-      "url": "https://arubalistings.com/sale/noord/house-3807-alto-vista-146-two-bedroom-home-with-pool-expansion-potential",
-      "price": 410113.0,
-      "location": "Noord",
-      "type": "House",
-      "beds": "2",
-      "baths": "2",
-      "size": "80 m²",
-      "building_area": "",
-      "land_area": "",
-      "image": "https://arubalistings.com/storage/app/uploads/public/6af/757/a8e/6af757a8e26e5692065143.webp",
-      "description": "Expansion Potential in Noord – Alto Vista 146Situated in a quiet pocket of the sought-after Alto Vista neighborhood, this well-maintained property operates as a successful sho",
-      "source": "Aruba Listings",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-11-13T18:50:48.189657+00:00",
-      "broker": "RE/MAX Aruba",
-      "source_type": "aggregator",
-      "detail_checked_at": "2026-11-13T18:50:43.121581+00:00",
-      "detail_status": "unavailable",
-      "detail_error": "No recognized property-detail sections",
-      "history_key": "a84504577b13e3f2c74bf2de09d6e7305c1986f3",
-      "last_seen_at": "2026-11-13T18:50:48.189676+00:00",
-      "queued_at": "2026-11-13T18:51:58.634839+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [
     {
       "property": {
@@ -21000,20 +20945,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 2 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Land SERO PITA 2356m2</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$294,944</div><div><strong>Location:</strong> SERO PITA Z/N</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 2,356 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale For Sale SERO PITA Z/N $ 294,944/ AWG 525,000 1 0 sq.ft</p><div><strong>Broker/source:</strong> All Property Aruba (All Property Aruba)</div><div><strong>First detected:</strong> 2026-11-13</div><div style='margin:15px 0'><img src='https://framerusercontent.com/images/4J5Cr7LakozhZE8eBlRIRoziZ0.jpg?width=1600&amp;height=1200' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.allpropertyaruba.com/properties/land-sero-pita-2356m2' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Alto Vista 146 – Two-Bedroom Home with Pool &amp; Expansion Potential</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$410,113</div><div><strong>Location:</strong> Noord</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div><strong>Source area (scope unspecified):</strong> 80 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2 beds · 2 baths</div><p style='margin:12px 0'>Expansion Potential in Noord – Alto Vista 146Situated in a quiet pocket of the sought-after Alto Vista neighborhood, this well-maintained property operates as a successful sho</p><div><strong>Broker/source:</strong> RE/MAX Aruba (Aruba Listings)</div><div><strong>First detected:</strong> 2026-11-13</div><div style='margin:15px 0'><img src='https://arubalistings.com/storage/app/uploads/public/6af/757/a8e/6af757a8e26e5692065143.webp' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://arubalistings.com/sale/noord/house-3807-alto-vista-146-two-bedroom-home-with-pool-expansion-potential' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "6c35e5e7e48e42ec7d7aa4aaee817b716643512e8fd24945ff3c22fbf9709ba4",
-          "b831f3d3a09dbfba0db41aa9e4e77a8c33880217a337bb29ea313372ddb0baa9"
-        ]
-      },
-      "created_at": "2026-11-13T18:51:58.635366+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
