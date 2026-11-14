@@ -15490,226 +15490,15 @@
       "last_seen_at": "2026-11-14T16:02:40.913171+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Noord, Napa Valley – Exquisite 2-Bedroom Duplex for Sale",
-      "url": "https://arubarealestatebrokers.com/property/noord-napa-valley-exquisite-2-bedroom-duplex-for-sale",
-      "price": 390000.0,
-      "location": "Noord",
-      "type": "House",
-      "beds": "2",
-      "baths": "2",
-      "size": "",
-      "building_area": "",
-      "land_area": "",
-      "image": "https://arubarealestatebrokers.com/_next/image?url=https%3A%2F%2Fwwvgkdbddlvqlwpkycuf.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Flisting-photos%2F637f558c-27bf-48ca-8531-00b7beb25568%2F1794662463294-0-0.jpg&w=3840&q=60",
-      "description": "For Sale For sale Noord $390,000 Afl. 682,500 Noord 2 beds • 2 baths",
-      "source": "Aruba Real Estate Brokers",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-11-14T16:02:40.913154+00:00",
-      "source_type": "direct_broker",
-      "detail_checked_at": "2026-11-14T16:02:36.808983+00:00",
-      "detail_status": "unavailable",
-      "detail_error": "No recognized property-detail sections",
-      "history_key": "1f2c092e8550d0a1650a4a6b0711fa788d2031ba",
-      "last_seen_at": "2026-11-14T16:02:40.913171+00:00",
-      "queued_at": "2026-11-14T16:04:05.934904+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
-    "new": [
-      {
-        "name": "Land SERO PITA 2356m2",
-        "url": "https://www.allpropertyaruba.com/properties/land-sero-pita-2356m2",
-        "price": 294944.0,
-        "location": "SERO PITA Z/N",
-        "type": "Land",
-        "beds": "",
-        "baths": "",
-        "size": "2356 m2",
-        "building_area": "",
-        "land_area": "2,356 m²",
-        "image": "https://framerusercontent.com/images/4J5Cr7LakozhZE8eBlRIRoziZ0.jpg?width=1600&height=1200",
-        "description": "For Sale For Sale SERO PITA Z/N $ 294,944/ AWG 525,000 1 0 sq.ft",
-        "source": "All Property Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-11-13T18:50:48.112545+00:00",
-        "source_type": "direct_broker",
-        "aliases": [
-          "https://www.allpropertyaruba.com/properties/land-sero-pita-2356m2"
-        ],
-        "detail_checked_at": "2026-11-13T18:50:43.119569+00:00",
-        "detail_status": "unavailable",
-        "detail_error": "No recognized property-detail sections",
-        "history_key": "1850b564af1f4dcf23d42750111ee391e853faf8",
-        "last_seen_at": "2026-11-13T18:50:48.112563+00:00"
-      },
-      {
-        "name": "Alto Vista 146 – Two-Bedroom Home with Pool & Expansion Potential",
-        "url": "https://arubalistings.com/sale/noord/house-3807-alto-vista-146-two-bedroom-home-with-pool-expansion-potential",
-        "price": 410113.0,
-        "location": "Noord",
-        "type": "House",
-        "beds": "2",
-        "baths": "2",
-        "size": "80 m²",
-        "building_area": "",
-        "land_area": "",
-        "image": "https://arubalistings.com/storage/app/uploads/public/6af/757/a8e/6af757a8e26e5692065143.webp",
-        "description": "Expansion Potential in Noord – Alto Vista 146Situated in a quiet pocket of the sought-after Alto Vista neighborhood, this well-maintained property operates as a successful sho",
-        "source": "Aruba Listings",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-11-13T18:50:48.189657+00:00",
-        "broker": "RE/MAX Aruba",
-        "source_type": "aggregator",
-        "detail_checked_at": "2026-11-13T18:50:43.121581+00:00",
-        "detail_status": "unavailable",
-        "detail_error": "No recognized property-detail sections",
-        "history_key": "a84504577b13e3f2c74bf2de09d6e7305c1986f3",
-        "last_seen_at": "2026-11-13T18:50:48.189676+00:00"
-      },
-      {
-        "name": "LAND SERO PITA 2356 M2",
-        "url": "https://arubalistings.com/sale/piedra-plat/land-freehold-3808-land-sero-pita-2356-m2",
-        "price": 294944.0,
-        "location": "Piedra Plat",
-        "type": "Land",
-        "beds": "",
-        "baths": "",
-        "size": "",
-        "building_area": "",
-        "land_area": "",
-        "image": "https://arubalistings.com/storage/app/uploads/public/6af/75c/6ce/6af75c6ce9457573857120.webp",
-        "description": "An exceptional opportunity to own a massive 2,356 m² parcel of property land (eigendomsgrond) nestled in a private valley setting directly between two picturesque hillsides. O",
-        "source": "Aruba Listings",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-11-13T22:52:33.134202+00:00",
-        "broker": "All Property Real Estate Aruba",
-        "source_type": "aggregator",
-        "development_evidence": [
-          {
-            "label": "Ownership",
-            "excerpt": "n exceptional opportunity to own a massive 2,356 m² parcel of property land (eigendomsgrond) nestled in a private valley setting directly between two picturesque hillsides",
-            "url": "https://arubalistings.com/sale/piedra-plat/land-freehold-3808-land-sero-pita-2356-m2"
-          }
-        ],
-        "history_key": "19c5c98a4aae80b1676668582c23c88e38785ce1",
-        "last_seen_at": "2026-11-13T22:52:33.134217+00:00"
-      },
-      {
-        "name": "Tuscany Residence Aruba, Noord, Aruba, Noord, Aruba",
-        "url": "https://www.realtor.com/international/aw/tuscany-residence-aruba-noord-aruba-noord-aruba-310121223410/",
-        "price": 725750.0,
-        "location": "Tuscany Residence Aruba, Noord, Aruba, Noord, Aruba",
-        "type": "House",
-        "beds": "2",
-        "baths": "2",
-        "size": "",
-        "building_area": "198 m²",
-        "land_area": "103 m²",
-        "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/19a2dbd91b134c40a644db6f73e83450.jpg",
-        "description": "House",
-        "source": "Realtor International Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-11-14T09:31:47.300856+00:00",
-        "source_type": "aggregator",
-        "history_key": "93eced0b2739e1e01a50589dcd49d0780cea5c60",
-        "last_seen_at": "2026-11-14T09:31:47.300874+00:00"
-      },
-      {
-        "name": "Noord, Napa Valley – Exquisite 2-Bedroom Duplex for Sale",
-        "url": "https://arubarealestatebrokers.com/property/noord-napa-valley-exquisite-2-bedroom-duplex-for-sale",
-        "price": 390000.0,
-        "location": "Noord",
-        "type": "House",
-        "beds": "2",
-        "baths": "2",
-        "size": "",
-        "building_area": "",
-        "land_area": "",
-        "image": "https://arubarealestatebrokers.com/_next/image?url=https%3A%2F%2Fwwvgkdbddlvqlwpkycuf.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Flisting-photos%2F637f558c-27bf-48ca-8531-00b7beb25568%2F1794662463294-0-0.jpg&w=3840&q=60",
-        "description": "For Sale For sale Noord $390,000 Afl. 682,500 Noord 2 beds • 2 baths",
-        "source": "Aruba Real Estate Brokers",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-11-14T16:02:40.913154+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-11-14T16:02:36.808983+00:00",
-        "detail_status": "unavailable",
-        "detail_error": "No recognized property-detail sections",
-        "history_key": "1f2c092e8550d0a1650a4a6b0711fa788d2031ba",
-        "last_seen_at": "2026-11-14T16:02:40.913171+00:00"
-      }
-    ],
-    "reductions": [
-      {
-        "property": {
-          "name": "Property Land - Savaneta | 937m²",
-          "url": "https://www.objective-realty.com/properties/property-land-savaneta-937m2",
-          "price": 280899.0,
-          "location": "Savaneta",
-          "type": "Land",
-          "beds": "",
-          "baths": "",
-          "size": "937 m²",
-          "building_area": "",
-          "land_area": "937 m²",
-          "image": "https://www.objective-realty.com/_next/image?url=https%3A%2F%2Fleoysfeogfyahvvrweec.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fproperty-photos%2Flistings%2F1792029049244-property-land-savaneta-937m2-1792029035767-5-wnglvn.jpg&w=3840&q=75",
-          "description": "For Sale For Sale Savaneta $280,899 AWG 500,000 Beds: 4 Baths: 2 View Property",
-          "source": "Objective Realty Aruba",
-          "mls": "",
-          "status": "available",
-          "detected_at": "2026-10-12T17:22:37.482271+00:00",
-          "source_type": "direct_broker",
-          "detail_checked_at": "2026-10-12T17:22:33.490642+00:00",
-          "detail_status": "unavailable",
-          "history_key": "b17ecc6e7ae7f6833639004049b6d7148b228eb4",
-          "aliases": [
-            "https://www.objective-realty.com/properties/property-land-savaneta-937m2"
-          ]
-        },
-        "old": {
-          "name": "Property Land - Savaneta | 937m²",
-          "url": "https://www.objective-realty.com/properties/property-land-savaneta-937m2",
-          "price": 308989.0,
-          "location": "Savaneta",
-          "type": "Land",
-          "beds": "",
-          "baths": "",
-          "size": "937 m²",
-          "building_area": "",
-          "land_area": "937 m²",
-          "image": "https://www.objective-realty.com/_next/image?url=https%3A%2F%2Fleoysfeogfyahvvrweec.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fproperty-photos%2Flistings%2F1792029049244-property-land-savaneta-937m2-1792029035767-5-wnglvn.jpg&w=3840&q=75",
-          "description": "For Sale For Sale Savaneta $280,899 AWG 500,000 Beds: 4 Baths: 2 View Property",
-          "source": "Objective Realty Aruba",
-          "mls": "",
-          "status": "available",
-          "detected_at": "2026-10-12T17:22:37.482271+00:00",
-          "source_type": "direct_broker",
-          "detail_checked_at": "2026-10-12T17:22:33.490642+00:00",
-          "detail_status": "unavailable",
-          "history_key": "b17ecc6e7ae7f6833639004049b6d7148b228eb4",
-          "aliases": [
-            "https://www.objective-realty.com/properties/property-land-savaneta-937m2"
-          ],
-          "change_candidate": {
-            "signature": "f6f2671dbb556dc8e74174ba6da933f77e700993c2a64083334e2a8e029a3e95",
-            "observed_at": "2026-11-13T17:38:29.455620+00:00"
-          },
-          "last_seen_at": "2026-11-13T17:38:29.455623+00:00"
-        }
-      }
-    ],
+    "new": [],
+    "reductions": [],
     "major_changes": []
   },
-  "last_digest_date": "2026-11-13",
+  "last_digest_date": "2026-11-14",
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
@@ -21131,41 +20920,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 1 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Noord, Napa Valley – Exquisite 2-Bedroom Duplex for Sale</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$390,000</div><div><strong>Location:</strong> Noord</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2 beds · 2 baths</div><p style='margin:12px 0'>For Sale For sale Noord $390,000 Afl. 682,500 Noord 2 beds • 2 baths</p><div><strong>Broker/source:</strong> Aruba Real Estate Brokers (Aruba Real Estate Brokers)</div><div><strong>First detected:</strong> 2026-11-14</div><div style='margin:15px 0'><img src='https://arubarealestatebrokers.com/_next/image?url=https%3A%2F%2Fwwvgkdbddlvqlwpkycuf.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Flisting-photos%2F637f558c-27bf-48ca-8531-00b7beb25568%2F1794662463294-0-0.jpg&amp;w=3840&amp;q=60' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://arubarealestatebrokers.com/property/noord-napa-valley-exquisite-2-bedroom-duplex-for-sale' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "cb1643ff96afde341ffcaece61e7a5b575ac4f85788d8fc6a9de7a1afbe323f8"
-        ]
-      },
-      "created_at": "2026-11-14T16:04:05.935415+00:00"
-    },
-    {
-      "kind": "digest",
-      "subject": "Aruba Property Daily Digest — Nov 14 — 5 new, 1 reductions",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Daily Digest</h1><p style='font-size:16px'><strong>5 new properties</strong><br><strong>1 price reductions</strong><br><strong>0 major changes</strong><br>365 qualifying properties currently detected across available sources.</p><h2>NEW SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Land SERO PITA 2356m2</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$294,944</div><div><strong>Location:</strong> SERO PITA Z/N</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 2,356 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale For Sale SERO PITA Z/N $ 294,944/ AWG 525,000 1 0 sq.ft</p><div><strong>Broker/source:</strong> All Property Aruba (All Property Aruba)</div><div><strong>First detected:</strong> 2026-11-13</div><div style='margin:15px 0'><img src='https://framerusercontent.com/images/4J5Cr7LakozhZE8eBlRIRoziZ0.jpg?width=1600&amp;height=1200' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.allpropertyaruba.com/properties/land-sero-pita-2356m2' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Alto Vista 146 – Two-Bedroom Home with Pool &amp; Expansion Potential</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$410,113</div><div><strong>Location:</strong> Noord</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 80 m²</div><div><strong>Land area:</strong> 400 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2 beds · 2 baths</div><p style='margin:12px 0'>Expansion Potential in Noord – Alto Vista 146Situated in a quiet pocket of the sought-after Alto Vista neighborhood, this well-maintained property operates as a successful sho</p><div><strong>Broker/source:</strong> RE/MAX Aruba (Aruba Listings)</div><div><strong>First detected:</strong> 2026-11-13</div><div style='margin:15px 0'><img src='https://arubalistings.com/storage/app/uploads/public/6af/757/a8e/6af757a8e26e5692065143.webp' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://arubalistings.com/sale/noord/house-3807-alto-vista-146-two-bedroom-home-with-pool-expansion-potential' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>LAND SERO PITA 2356 M2</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$294,944</div><div><strong>Location:</strong> Seroe Pita 54D, Ayo</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 2,356 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> n exceptional opportunity to own a massive 2,356 m² parcel of property land (eigendomsgrond) nestled in a private valley setting directly between two picturesque hillsides</div><div><a href='https://arubalistings.com/sale/piedra-plat/land-freehold-3808-land-sero-pita-2356-m2'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale USD 294944 An exceptional opportunity to own a massive 2,356 m² parcel of property land (eigendomsgrond) nestled in a private valley setting directly between two picturesque hillsides. Offering ultimate tranquility, privacy, and incredible development flexibility. Key Features &amp; Potential • Subdivision Potential: Large footprint allows the...</p><div><strong>Broker/source:</strong> All Property Aruba (RealLinkr / Aruba MLS)</div><div><strong>First detected:</strong> 2026-11-13</div><div style='margin:15px 0'><img src='https://reallinkr-ct-public.nyc3.cdn.digitaloceanspaces.com/listing/837-seroe-pita-54d/thumbs/listing-image-19344_thumb.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://arubalistings.com/sale/piedra-plat/land-freehold-3808-land-sero-pita-2356-m2' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Tuscany Residence Aruba, Noord, Aruba, Noord, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$725,750</div><div><strong>Location:</strong> Tuscany Residence Aruba, Noord, Aruba, Noord, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 198 m²</div><div><strong>Land area:</strong> 103 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2 beds · 2 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-11-14</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/19a2dbd91b134c40a644db6f73e83450.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/tuscany-residence-aruba-noord-aruba-noord-aruba-310121223410/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Noord, Napa Valley – Exquisite 2-Bedroom Duplex for Sale</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$390,000</div><div><strong>Location:</strong> Noord</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2 beds · 2 baths</div><p style='margin:12px 0'>For Sale For sale Noord $390,000 Afl. 682,500 Noord 2 beds • 2 baths</p><div><strong>Broker/source:</strong> Aruba Real Estate Brokers (Aruba Real Estate Brokers)</div><div><strong>First detected:</strong> 2026-11-14</div><div style='margin:15px 0'><img src='https://arubarealestatebrokers.com/_next/image?url=https%3A%2F%2Fwwvgkdbddlvqlwpkycuf.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Flisting-photos%2F637f558c-27bf-48ca-8531-00b7beb25568%2F1794662463294-0-0.jpg&amp;w=3840&amp;q=60' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://arubarealestatebrokers.com/property/noord-napa-valley-exquisite-2-bedroom-duplex-for-sale' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><h2>PRICE REDUCTIONS SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><h2 style='margin:0 0 8px;font-size:22px'>Property Land - Savaneta | 937m²</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$280,899</div><div style='margin-bottom:8px'><strong>PRICE REDUCTION:</strong> $308,989 → $280,899 (9.1% reduction)</div><div><strong>Location:</strong> Savaneta</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 937 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale For Sale Savaneta $280,899 AWG 500,000 Beds: 4 Baths: 2 View Property</p><div><strong>Broker/source:</strong> Objective Realty Aruba (Objective Realty Aruba)</div><div><strong>First detected:</strong> 2026-10-12</div><div style='margin:15px 0'><img src='https://www.objective-realty.com/_next/image?url=https%3A%2F%2Fleoysfeogfyahvvrweec.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fproperty-photos%2Flistings%2F1792029049244-property-land-savaneta-937m2-1792029035767-5-wnglvn.jpg&amp;w=3840&amp;q=75' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.objective-realty.com/properties/property-land-savaneta-937m2' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding:14px;background:#f5f5f5;border-radius:6px;font-size:13px'><strong>Source coverage:</strong> 18 sources checked successfully; 26 sources could not be checked during the latest run.</div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "date": "2026-11-14",
-        "activity": {
-          "new": [
-            "0d4f73ac500b044517080d369683080a96c90c2da2dcd3aaebe92a92cd6b2087",
-            "a0e651aa5f2fe7b2493a6e6555325d2b6d4a539c56f462a960b6e3eb77bf548b",
-            "8939018fd2378aa8d84563504f34f93a64920205740487d555807607d8b49d4f",
-            "18ad6797e10832e8e285195699a2e09d307f57eca925b7b643451b0207de27fd",
-            "a9c59ea5c9941485f46a3913bccef7b73d3eaf69edf9235bd5465bfc58daf50c"
-          ],
-          "reductions": [
-            "229ca8d981f7f1cfd969603e61bca3416f726d4bfdb50dbf7bc67994ae0e54cc"
-          ],
-          "major_changes": []
-        }
-      },
-      "created_at": "2026-11-14T16:04:05.936381+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
@@ -22688,5 +22443,5 @@
       "source": "RealLinkr / Aruba MLS"
     }
   ],
-  "last_digest_at": "2026-11-13T17:39:14.226375+00:00"
+  "last_digest_at": "2026-11-14T16:04:07.897604+00:00"
 }
