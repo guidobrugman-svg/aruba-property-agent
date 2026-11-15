@@ -15525,90 +15525,15 @@
       "last_seen_at": "2026-11-15T14:21:46.842130+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Address not available, Noord, Aruba, Noord, Aruba",
-      "url": "https://www.realtor.com/international/aw/address-not-available-noord-aruba-noord-aruba-310121243636/",
-      "price": 410113.0,
-      "location": "Address not available, Noord, Aruba, Noord, Aruba",
-      "type": "House",
-      "beds": "2",
-      "baths": "2",
-      "size": "",
-      "building_area": "80 m²",
-      "land_area": "400 m²",
-      "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/15fa508dd3c000d2306e7349c37a35d5.jpg",
-      "description": "House",
-      "source": "Realtor International Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-11-15T14:21:46.842115+00:00",
-      "source_type": "aggregator",
-      "detail_checked_at": "2026-11-15T14:21:42.550760+00:00",
-      "development_evidence": [
-        {
-          "label": "Ownership",
-          "excerpt": "Set on 400 m² of government long lease land (valid through October 10, 2044), the property combines a move-in-ready island home with a major value-add opportunity.The Main Residence (79.50 m²)- Interior Layou",
-          "url": "https://www.realtor.com/international/aw/address-not-available-noord-aruba-noord-aruba-310121243636/"
-        },
-        {
-          "label": "Ownership",
-          "excerpt": "Set on 400 m² of government long lease land (valid through October 10, 2044), the property combines a move-in-ready island home with a major value-add opportunity.The Main Residence (79.50 m²)- Interior Layou",
-          "url": "https://www.realtor.com/international/aw/address-not-available-noord-aruba-noord-aruba-310121243636/"
-        }
-      ],
-      "residence_complex": false,
-      "detail_status": "ok",
-      "history_key": "5cdc54f35dfa79a74a7a34fe1f03668eae05b85a",
-      "last_seen_at": "2026-11-15T14:21:46.842130+00:00",
-      "queued_at": "2026-11-15T14:22:48.359419+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
-    "new": [
-      {
-        "name": "Address not available, Noord, Aruba, Noord, Aruba",
-        "url": "https://www.realtor.com/international/aw/address-not-available-noord-aruba-noord-aruba-310121243636/",
-        "price": 410113.0,
-        "location": "Address not available, Noord, Aruba, Noord, Aruba",
-        "type": "House",
-        "beds": "2",
-        "baths": "2",
-        "size": "",
-        "building_area": "80 m²",
-        "land_area": "400 m²",
-        "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/15fa508dd3c000d2306e7349c37a35d5.jpg",
-        "description": "House",
-        "source": "Realtor International Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-11-15T14:21:46.842115+00:00",
-        "source_type": "aggregator",
-        "detail_checked_at": "2026-11-15T14:21:42.550760+00:00",
-        "development_evidence": [
-          {
-            "label": "Ownership",
-            "excerpt": "Set on 400 m² of government long lease land (valid through October 10, 2044), the property combines a move-in-ready island home with a major value-add opportunity.The Main Residence (79.50 m²)- Interior Layou",
-            "url": "https://www.realtor.com/international/aw/address-not-available-noord-aruba-noord-aruba-310121243636/"
-          },
-          {
-            "label": "Ownership",
-            "excerpt": "Set on 400 m² of government long lease land (valid through October 10, 2044), the property combines a move-in-ready island home with a major value-add opportunity.The Main Residence (79.50 m²)- Interior Layou",
-            "url": "https://www.realtor.com/international/aw/address-not-available-noord-aruba-noord-aruba-310121243636/"
-          }
-        ],
-        "residence_complex": false,
-        "detail_status": "ok",
-        "history_key": "5cdc54f35dfa79a74a7a34fe1f03668eae05b85a",
-        "last_seen_at": "2026-11-15T14:21:46.842130+00:00"
-      }
-    ],
+    "new": [],
     "reductions": [],
     "major_changes": []
   },
-  "last_digest_date": "2026-11-14",
+  "last_digest_date": "2026-11-15",
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
@@ -21026,35 +20951,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 1 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Address not available, Noord, Aruba, Noord, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$410,113</div><div><strong>Location:</strong> Address not available, Noord, Aruba, Noord, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 80 m²</div><div><strong>Land area:</strong> 400 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Set on 400 m² of government long lease land (valid through October 10, 2044), the property combines a move-in-ready island home with a major value-add opportunity.The Main Residence (79.50 m²)- Interior Layou · Set on 400 m² of government long lease land (valid through October 10, 2044), the property combines a move-in-ready island home with a major value-add opportunity.The Main Residence (79.50 m²)- Interior Layou</div><div><a href='https://www.realtor.com/international/aw/address-not-available-noord-aruba-noord-aruba-310121243636/'>Source evidence</a></div><div><a href='https://www.realtor.com/international/aw/address-not-available-noord-aruba-noord-aruba-310121243636/'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2 beds · 2 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-11-15</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/15fa508dd3c000d2306e7349c37a35d5.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/address-not-available-noord-aruba-noord-aruba-310121243636/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "bf825d25f4570ae0729dcafd7c6ef7f508e43f1f351b77ca53d3abcc1e688785"
-        ]
-      },
-      "created_at": "2026-11-15T14:22:48.359869+00:00"
-    },
-    {
-      "kind": "digest",
-      "subject": "Aruba Property Daily Digest — Nov 15 — 1 new, 0 reductions",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Daily Digest</h1><p style='font-size:16px'><strong>1 new properties</strong><br><strong>0 price reductions</strong><br><strong>0 major changes</strong><br>364 qualifying properties currently detected across available sources.</p><h2>NEW SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Address not available, Noord, Aruba, Noord, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$410,113</div><div><strong>Location:</strong> Address not available, Noord, Aruba, Noord, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 80 m²</div><div><strong>Land area:</strong> 400 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Set on 400 m² of government long lease land (valid through October 10, 2044), the property combines a move-in-ready island home with a major value-add opportunity.The Main Residence (79.50 m²)- Interior Layou · Set on 400 m² of government long lease land (valid through October 10, 2044), the property combines a move-in-ready island home with a major value-add opportunity.The Main Residence (79.50 m²)- Interior Layou</div><div><a href='https://www.realtor.com/international/aw/address-not-available-noord-aruba-noord-aruba-310121243636/'>Source evidence</a></div><div><a href='https://www.realtor.com/international/aw/address-not-available-noord-aruba-noord-aruba-310121243636/'>Source evidence</a></div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 2 beds · 2 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-11-15</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/15fa508dd3c000d2306e7349c37a35d5.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/address-not-available-noord-aruba-noord-aruba-310121243636/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding:14px;background:#f5f5f5;border-radius:6px;font-size:13px'><strong>Source coverage:</strong> 18 sources checked successfully; 26 sources could not be checked during the latest run.</div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "date": "2026-11-15",
-        "activity": {
-          "new": [
-            "302756d78a1f39ff10951e7120c34078c47cf323be43fd9cafa772726fce2394"
-          ],
-          "reductions": [],
-          "major_changes": []
-        }
-      },
-      "created_at": "2026-11-15T14:22:48.360318+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
@@ -22577,5 +22474,5 @@
       "source": "RealLinkr / Aruba MLS"
     }
   ],
-  "last_digest_at": "2026-11-14T16:04:07.897604+00:00"
+  "last_digest_at": "2026-11-15T14:22:50.482109+00:00"
 }
