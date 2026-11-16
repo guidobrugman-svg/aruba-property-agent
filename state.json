@@ -15570,109 +15570,15 @@
       "last_seen_at": "2026-11-16T20:56:41.943324+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Caya Ernesto O Petronia 50",
-      "url": "https://rogaruba.com/listings/caya-ernesto-o-petronia-50",
-      "price": 393259.0,
-      "location": "Caya Ernesto O Petronia 50, Oranjestad",
-      "type": "House",
-      "beds": "3",
-      "baths": "",
-      "size": "2,056 Sq Ft",
-      "building_area": "",
-      "land_area": "",
-      "image": "https://rogaruba.com/storage/app/uploads/public/6af/b1e/af0/thumb_7285_600_400_0_0_crop.jpg",
-      "description": "For Sale House New Listing Caya Ernesto O Petronia 50, Oranjestad $393,259 2,056 Sq Ft 3 bedroom(s)",
-      "source": "Realty ONE Group Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-11-16T20:56:41.835218+00:00",
-      "source_type": "direct_broker",
-      "detail_checked_at": "2026-11-16T20:56:37.326368+00:00",
-      "detail_status": "unavailable",
-      "detail_error": "No recognized property-detail sections",
-      "history_key": "e2f4bfb557ce15c0e0454558d169e7e2a23bb35e",
-      "last_seen_at": "2026-11-16T20:56:41.835234+00:00",
-      "queued_at": "2026-11-16T20:58:07.004715+00:00"
-    },
-    {
-      "name": "Sabana Basora 154-D, Pos Chikito, Aruba, Pos Chikito, Aruba",
-      "url": "https://www.realtor.com/international/aw/sabana-basora-154-d-pos-chikito-aruba-pos-chikito-aruba-310121258431/",
-      "price": 621491.0,
-      "location": "Sabana Basora 154-D, Pos Chikito, Aruba, Pos Chikito, Aruba",
-      "type": "House",
-      "beds": "11",
-      "baths": "7",
-      "size": "",
-      "building_area": "470 m²",
-      "land_area": "604 m²",
-      "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/d4fa82ab623c7398c7e17b729a84d2f9.jpg",
-      "description": "House",
-      "source": "Realtor International Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-11-16T20:56:41.943309+00:00",
-      "source_type": "aggregator",
-      "history_key": "e18c90a3df28d3f2a4d81a6d8e0846564bc3f5e2",
-      "last_seen_at": "2026-11-16T20:56:41.943324+00:00",
-      "queued_at": "2026-11-16T20:58:07.004727+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
-    "new": [
-      {
-        "name": "Caya Ernesto O Petronia 50",
-        "url": "https://rogaruba.com/listings/caya-ernesto-o-petronia-50",
-        "price": 393259.0,
-        "location": "Caya Ernesto O Petronia 50, Oranjestad",
-        "type": "House",
-        "beds": "3",
-        "baths": "",
-        "size": "2,056 Sq Ft",
-        "building_area": "",
-        "land_area": "",
-        "image": "https://rogaruba.com/storage/app/uploads/public/6af/b1e/af0/thumb_7285_600_400_0_0_crop.jpg",
-        "description": "For Sale House New Listing Caya Ernesto O Petronia 50, Oranjestad $393,259 2,056 Sq Ft 3 bedroom(s)",
-        "source": "Realty ONE Group Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-11-16T20:56:41.835218+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-11-16T20:56:37.326368+00:00",
-        "detail_status": "unavailable",
-        "detail_error": "No recognized property-detail sections",
-        "history_key": "e2f4bfb557ce15c0e0454558d169e7e2a23bb35e",
-        "last_seen_at": "2026-11-16T20:56:41.835234+00:00"
-      },
-      {
-        "name": "Sabana Basora 154-D, Pos Chikito, Aruba, Pos Chikito, Aruba",
-        "url": "https://www.realtor.com/international/aw/sabana-basora-154-d-pos-chikito-aruba-pos-chikito-aruba-310121258431/",
-        "price": 621491.0,
-        "location": "Sabana Basora 154-D, Pos Chikito, Aruba, Pos Chikito, Aruba",
-        "type": "House",
-        "beds": "11",
-        "baths": "7",
-        "size": "",
-        "building_area": "470 m²",
-        "land_area": "604 m²",
-        "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/d4fa82ab623c7398c7e17b729a84d2f9.jpg",
-        "description": "House",
-        "source": "Realtor International Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-11-16T20:56:41.943309+00:00",
-        "source_type": "aggregator",
-        "history_key": "e18c90a3df28d3f2a4d81a6d8e0846564bc3f5e2",
-        "last_seen_at": "2026-11-16T20:56:41.943324+00:00"
-      }
-    ],
+    "new": [],
     "reductions": [],
     "major_changes": []
   },
-  "last_digest_date": "2026-11-15",
+  "last_digest_date": "2026-11-16",
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
@@ -21088,37 +20994,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 2 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Caya Ernesto O Petronia 50</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$393,259</div><div><strong>Location:</strong> Caya Ernesto O Petronia 50, Oranjestad</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div><strong>Source area (scope unspecified):</strong> 2,056 Sq Ft</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 3 beds</div><p style='margin:12px 0'>For Sale House New Listing Caya Ernesto O Petronia 50, Oranjestad $393,259 2,056 Sq Ft 3 bedroom(s)</p><div><strong>Broker/source:</strong> Realty ONE Group Aruba (Realty ONE Group Aruba)</div><div><strong>First detected:</strong> 2026-11-16</div><div style='margin:15px 0'><img src='https://rogaruba.com/storage/app/uploads/public/6af/b1e/af0/thumb_7285_600_400_0_0_crop.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://rogaruba.com/listings/caya-ernesto-o-petronia-50' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Sabana Basora 154-D, Pos Chikito, Aruba, Pos Chikito, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$621,491</div><div><strong>Location:</strong> Sabana Basora 154-D, Pos Chikito, Aruba, Pos Chikito, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 470 m²</div><div><strong>Land area:</strong> 604 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 11 beds · 7 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-11-16</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/d4fa82ab623c7398c7e17b729a84d2f9.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/sabana-basora-154-d-pos-chikito-aruba-pos-chikito-aruba-310121258431/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "12aa771701932e2c7fa3a9c344b4fb8a87141960078e2e9b6a6b234af60e9544",
-          "64d13e0cadf36a9730635932278a36e7f5bd8a62246884bb9865380692fde276"
-        ]
-      },
-      "created_at": "2026-11-16T20:58:07.005190+00:00"
-    },
-    {
-      "kind": "digest",
-      "subject": "Aruba Property Daily Digest — Nov 16 — 2 new, 0 reductions",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Daily Digest</h1><p style='font-size:16px'><strong>2 new properties</strong><br><strong>0 price reductions</strong><br><strong>0 major changes</strong><br>372 qualifying properties currently detected across available sources.</p><h2>NEW SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Caya Ernesto O Petronia 50</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$393,259</div><div><strong>Location:</strong> Caya Ernesto O Petronia 50, Oranjestad</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div><strong>Source area (scope unspecified):</strong> 2,056 Sq Ft</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 3 beds</div><p style='margin:12px 0'>For Sale House New Listing Caya Ernesto O Petronia 50, Oranjestad $393,259 2,056 Sq Ft 3 bedroom(s)</p><div><strong>Broker/source:</strong> Realty ONE Group Aruba (Realty ONE Group Aruba)</div><div><strong>First detected:</strong> 2026-11-16</div><div style='margin:15px 0'><img src='https://rogaruba.com/storage/app/uploads/public/6af/b1e/af0/thumb_7285_600_400_0_0_crop.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://rogaruba.com/listings/caya-ernesto-o-petronia-50' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Sabana Basora 154-D, Pos Chikito, Aruba, Pos Chikito, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$621,491</div><div><strong>Location:</strong> Sabana Basora 154-D, Pos Chikito, Aruba, Pos Chikito, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 470 m²</div><div><strong>Land area:</strong> 604 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 11 beds · 7 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-11-16</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/d4fa82ab623c7398c7e17b729a84d2f9.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/sabana-basora-154-d-pos-chikito-aruba-pos-chikito-aruba-310121258431/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding:14px;background:#f5f5f5;border-radius:6px;font-size:13px'><strong>Source coverage:</strong> 18 sources checked successfully; 26 sources could not be checked during the latest run.</div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "date": "2026-11-16",
-        "activity": {
-          "new": [
-            "ccc0c34bc8f78701891761e10af9c980094a0ce43792bcf25108aa23121044e6",
-            "9352c8df424907c3658222247c3c1d4297380c090e0a6fe1e4d254e5bbcb2b02"
-          ],
-          "reductions": [],
-          "major_changes": []
-        }
-      },
-      "created_at": "2026-11-16T20:58:07.005775+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
@@ -22641,5 +22517,5 @@
       "source": "RealLinkr / Aruba MLS"
     }
   ],
-  "last_digest_at": "2026-11-15T14:22:50.482109+00:00"
+  "last_digest_at": "2026-11-16T20:58:09.509611+00:00"
 }
