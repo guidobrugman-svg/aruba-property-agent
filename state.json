@@ -15788,109 +15788,15 @@
       "last_seen_at": "2026-11-20T13:58:11.909461+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Property at Sabana Basora for sale",
-      "url": "https://remaxaruba.com/property/details/property-at-sabana-basora-for-sale",
-      "price": 134000.0,
-      "location": "Pos Chiquito",
-      "type": "Land",
-      "beds": "",
-      "baths": "",
-      "size": "766 m²",
-      "building_area": "",
-      "land_area": "766 m²",
-      "image": "https://remaxaruba.com/storage/app/resources/resize/640_480_crop/img_641c1595f8b2977b9ae1b88f6491e9d6.jpeg",
-      "description": "For Sale Residential Vacant Land New Listing Pos Chiquito USD 134,000 766 m² 2 2 View",
-      "source": "RE/MAX Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-11-20T13:58:11.831366+00:00",
-      "source_type": "direct_broker",
-      "detail_checked_at": "2026-11-20T13:57:53.121764+00:00",
-      "detail_status": "unavailable",
-      "detail_error": "No recognized property-detail sections",
-      "history_key": "886a174e1fd1d63d41cc51bf1d98a7b7f1e80419",
-      "last_seen_at": "2026-11-20T13:58:11.831382+00:00",
-      "queued_at": "2026-11-20T13:59:30.059352+00:00"
-    },
-    {
-      "name": "Pavia Country Club, Oranjestad, Aruba, Oranjestad, Aruba",
-      "url": "https://www.realtor.com/international/aw/pavia-country-club-oranjestad-aruba-oranjestad-aruba-310121333822/",
-      "price": 252808.0,
-      "location": "Pavia Country Club, Oranjestad, Aruba, Oranjestad, Aruba",
-      "type": "Land",
-      "beds": "",
-      "baths": "",
-      "size": "",
-      "building_area": "",
-      "land_area": "700 m²",
-      "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/195ac9df99b987bc6f0d541c1a73295e.jpg",
-      "description": "Land",
-      "source": "Realtor International Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-11-20T13:58:11.909446+00:00",
-      "source_type": "aggregator",
-      "history_key": "928d879eea8a4ebced82e4e60961cbfba2e8b2b4",
-      "last_seen_at": "2026-11-20T13:58:11.909461+00:00",
-      "queued_at": "2026-11-20T13:59:30.059373+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
-    "new": [
-      {
-        "name": "Property at Sabana Basora for sale",
-        "url": "https://remaxaruba.com/property/details/property-at-sabana-basora-for-sale",
-        "price": 134000.0,
-        "location": "Pos Chiquito",
-        "type": "Land",
-        "beds": "",
-        "baths": "",
-        "size": "766 m²",
-        "building_area": "",
-        "land_area": "766 m²",
-        "image": "https://remaxaruba.com/storage/app/resources/resize/640_480_crop/img_641c1595f8b2977b9ae1b88f6491e9d6.jpeg",
-        "description": "For Sale Residential Vacant Land New Listing Pos Chiquito USD 134,000 766 m² 2 2 View",
-        "source": "RE/MAX Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-11-20T13:58:11.831366+00:00",
-        "source_type": "direct_broker",
-        "detail_checked_at": "2026-11-20T13:57:53.121764+00:00",
-        "detail_status": "unavailable",
-        "detail_error": "No recognized property-detail sections",
-        "history_key": "886a174e1fd1d63d41cc51bf1d98a7b7f1e80419",
-        "last_seen_at": "2026-11-20T13:58:11.831382+00:00"
-      },
-      {
-        "name": "Pavia Country Club, Oranjestad, Aruba, Oranjestad, Aruba",
-        "url": "https://www.realtor.com/international/aw/pavia-country-club-oranjestad-aruba-oranjestad-aruba-310121333822/",
-        "price": 252808.0,
-        "location": "Pavia Country Club, Oranjestad, Aruba, Oranjestad, Aruba",
-        "type": "Land",
-        "beds": "",
-        "baths": "",
-        "size": "",
-        "building_area": "",
-        "land_area": "700 m²",
-        "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/195ac9df99b987bc6f0d541c1a73295e.jpg",
-        "description": "Land",
-        "source": "Realtor International Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-11-20T13:58:11.909446+00:00",
-        "source_type": "aggregator",
-        "history_key": "928d879eea8a4ebced82e4e60961cbfba2e8b2b4",
-        "last_seen_at": "2026-11-20T13:58:11.909461+00:00"
-      }
-    ],
+    "new": [],
     "reductions": [],
     "major_changes": []
   },
-  "last_digest_date": "2026-11-19",
+  "last_digest_date": "2026-11-20",
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
@@ -21489,37 +21395,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 2 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Property at Sabana Basora for sale</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$134,000</div><div><strong>Location:</strong> Pos Chiquito</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 766 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale Residential Vacant Land New Listing Pos Chiquito USD 134,000 766 m² 2 2 View</p><div><strong>Broker/source:</strong> RE/MAX Aruba (RE/MAX Aruba)</div><div><strong>First detected:</strong> 2026-11-20</div><div style='margin:15px 0'><img src='https://remaxaruba.com/storage/app/resources/resize/640_480_crop/img_641c1595f8b2977b9ae1b88f6491e9d6.jpeg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://remaxaruba.com/property/details/property-at-sabana-basora-for-sale' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Pavia Country Club, Oranjestad, Aruba, Oranjestad, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$252,808</div><div><strong>Location:</strong> Pavia Country Club, Oranjestad, Aruba, Oranjestad, Aruba</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 700 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>Land</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-11-20</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/195ac9df99b987bc6f0d541c1a73295e.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/pavia-country-club-oranjestad-aruba-oranjestad-aruba-310121333822/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "c660ce809283d74eefbeefab9d0f962f04dae88eb2cf0f8c7442185b6a0e1222",
-          "a2416c13062fac101cca9b33a8e80a2cb2b48521d884be01534ae1b3b1291ab6"
-        ]
-      },
-      "created_at": "2026-11-20T13:59:30.060005+00:00"
-    },
-    {
-      "kind": "digest",
-      "subject": "Aruba Property Daily Digest — Nov 20 — 2 new, 0 reductions",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Daily Digest</h1><p style='font-size:16px'><strong>2 new properties</strong><br><strong>0 price reductions</strong><br><strong>0 major changes</strong><br>350 qualifying properties currently detected across available sources.</p><h2>NEW SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Property at Sabana Basora for sale</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$134,000</div><div><strong>Location:</strong> Pos Chiquito</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 766 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>For Sale Residential Vacant Land New Listing Pos Chiquito USD 134,000 766 m² 2 2 View</p><div><strong>Broker/source:</strong> RE/MAX Aruba (RE/MAX Aruba)</div><div><strong>First detected:</strong> 2026-11-20</div><div style='margin:15px 0'><img src='https://remaxaruba.com/storage/app/resources/resize/640_480_crop/img_641c1595f8b2977b9ae1b88f6491e9d6.jpeg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://remaxaruba.com/property/details/property-at-sabana-basora-for-sale' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Pavia Country Club, Oranjestad, Aruba, Oranjestad, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$252,808</div><div><strong>Location:</strong> Pavia Country Club, Oranjestad, Aruba, Oranjestad, Aruba</div><div><strong>Property type:</strong> Land</div><div><strong>Building area:</strong> Not applicable — land-only listing</div><div><strong>Land area:</strong> 700 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><p style='margin:12px 0'>Land</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-11-20</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/195ac9df99b987bc6f0d541c1a73295e.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/pavia-country-club-oranjestad-aruba-oranjestad-aruba-310121333822/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding:14px;background:#f5f5f5;border-radius:6px;font-size:13px'><strong>Source coverage:</strong> 17 sources checked successfully; 27 sources could not be checked during the latest run.</div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "date": "2026-11-20",
-        "activity": {
-          "new": [
-            "c4e79059af3963c3332f0f297bbafc05463b9e07b5041f682165c922b2913361",
-            "ca3fc1601c0bf5c9d15ab4919b04db8bb5e5bd4fb15087cb7808742f23197749"
-          ],
-          "reductions": [],
-          "major_changes": []
-        }
-      },
-      "created_at": "2026-11-20T13:59:30.060682+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
@@ -23042,5 +22918,5 @@
       "source": "RealLinkr / Aruba MLS"
     }
   ],
-  "last_digest_at": "2026-11-19T17:46:12.411039+00:00"
+  "last_digest_at": "2026-11-20T13:59:32.356739+00:00"
 }
