@@ -15843,125 +15843,7 @@
     }
   },
   "pending_new": [],
-  "pending_reductions": [
-    {
-      "property": {
-        "name": "Alto Vista 53 B",
-        "url": "https://bhhsaruba.com/listings/alto-vista-53-b",
-        "price": 505000.0,
-        "location": "Alto Vista",
-        "type": "House",
-        "beds": "4",
-        "baths": "3",
-        "size": "659 M2",
-        "building_area": "241 m²",
-        "land_area": "659 m²",
-        "image": "https://bhhsaruba.com/storage/app/uploads/public/6ae/d4d/55c/thumb_25670_627_470_0_0_crop.webp",
-        "description": "House For Sale New listing Property type: Residential Lot size: 659 M2 Built up size: 241 M2 Bedrooms: 4 Bathrooms: 3 For Sale | Maid Room USD 505,000",
-        "source": "Berkshire Hathaway Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-11-07T17:03:25.586752+00:00",
-        "source_type": "direct_broker",
-        "aliases": [
-          "https://arubalistings.com/sale/noord/house-3786-alto-vista-53-b",
-          "https://bhhsaruba.com/listings/alto-vista-53-b"
-        ],
-        "detail_checked_at": "2026-11-07T17:03:08.115874+00:00",
-        "detail_status": "ok",
-        "history_key": "28d113d5230e8cefebfb443f52b94d0e5b833a34"
-      },
-      "old": {
-        "name": "Alto Vista 53 B",
-        "url": "https://bhhsaruba.com/listings/alto-vista-53-b",
-        "price": 548000.0,
-        "location": "Alto Vista",
-        "type": "House",
-        "beds": "4",
-        "baths": "3",
-        "size": "659 M2",
-        "building_area": "241 m²",
-        "land_area": "659 m²",
-        "image": "https://bhhsaruba.com/storage/app/uploads/public/6ae/d4d/55c/thumb_25670_627_470_0_0_crop.webp",
-        "description": "House For Sale New listing Property type: Residential Lot size: 659 M2 Built up size: 241 M2 Bedrooms: 4 Bathrooms: 3 For Sale | Maid Room USD 505,000",
-        "source": "Berkshire Hathaway Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-11-07T17:03:25.586752+00:00",
-        "source_type": "direct_broker",
-        "aliases": [
-          "https://arubalistings.com/sale/noord/house-3786-alto-vista-53-b",
-          "https://bhhsaruba.com/listings/alto-vista-53-b"
-        ],
-        "detail_checked_at": "2026-11-07T17:03:08.115874+00:00",
-        "detail_status": "ok",
-        "history_key": "28d113d5230e8cefebfb443f52b94d0e5b833a34",
-        "change_candidate": {
-          "signature": "567470b7e093d5e500b863ee86c1985048d5ef4f65a0f3cbf25512792923fd5c",
-          "observed_at": "2026-11-22T10:06:34.123128+00:00"
-        },
-        "last_seen_at": "2026-11-22T10:06:34.123135+00:00"
-      },
-      "queued_at": "2026-11-22T17:48:28.962844+00:00"
-    },
-    {
-      "property": {
-        "name": "Walishali 14",
-        "url": "https://arubalistings.com/sale/ponton/house-3794-walishali-14",
-        "price": 655000.0,
-        "location": "Ponton",
-        "type": "House",
-        "beds": "5",
-        "baths": "3",
-        "size": "201 m²",
-        "building_area": "",
-        "land_area": "",
-        "image": "https://arubalistings.com/storage/app/uploads/public/6af/319/54e/6af31954e703a700915679.webp",
-        "description": "Spacious Family Home with Pool & Separate Studio Apartment in Ponton, WalishaliDiscover a welcoming property in Ponton, Walishali, Aruba, offering space, comfort, and",
-        "source": "Aruba Listings",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-11-10T18:36:52.178275+00:00",
-        "broker": "Bold Properties Aruba",
-        "source_type": "aggregator",
-        "history_key": "f88829cbd2c575cfccd01ef547d0a47c66da6f0d",
-        "aliases": [
-          "https://arubalistings.com/sale/ponton/house-3794-walishali-14"
-        ]
-      },
-      "old": {
-        "name": "Walishali 14",
-        "url": "https://arubalistings.com/sale/ponton/house-3794-walishali-14",
-        "price": 675000.0,
-        "location": "Ponton",
-        "type": "House",
-        "beds": "5",
-        "baths": "3",
-        "size": "201 m²",
-        "building_area": "",
-        "land_area": "",
-        "image": "https://arubalistings.com/storage/app/uploads/public/6af/319/54e/6af31954e703a700915679.webp",
-        "description": "Spacious Family Home with Pool & Separate Studio Apartment in Ponton, WalishaliDiscover a welcoming property in Ponton, Walishali, Aruba, offering space, comfort, and",
-        "source": "Aruba Listings",
-        "mls": "",
-        "status": "ineligible",
-        "detected_at": "2026-11-10T18:36:52.178275+00:00",
-        "broker": "Bold Properties Aruba",
-        "source_type": "aggregator",
-        "history_key": "f88829cbd2c575cfccd01ef547d0a47c66da6f0d",
-        "aliases": [
-          "https://arubalistings.com/sale/ponton/house-3794-walishali-14"
-        ],
-        "change_candidate": {
-          "signature": "452fde8d87b0359ca91fbd1915721bed44484f66afda74e6108245a55c622301",
-          "observed_at": "2026-11-21T18:19:41.245038+00:00"
-        },
-        "last_seen_at": "2026-11-21T18:19:41.245043+00:00",
-        "last_checked_at": "2026-11-22T17:48:25.561987+00:00"
-      },
-      "queued_at": "2026-11-22T18:45:14.987455+00:00"
-    }
-  ],
+  "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
     "new": [],
@@ -21620,21 +21502,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "changes",
-      "subject": "Aruba Property Alert — 2 price reduction",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>PRICE REDUCTIONS</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><h2 style='margin:0 0 8px;font-size:22px'>Alto Vista 53 B</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$505,000</div><div style='margin-bottom:8px'><strong>PRICE REDUCTION:</strong> $548,000 → $505,000 (7.8% reduction)</div><div><strong>Location:</strong> Alto Vista</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 241 m²</div><div><strong>Land area:</strong> 659 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 4 beds · 3 baths</div><p style='margin:12px 0'>House For Sale New listing Property type: Residential Lot size: 659 M2 Built up size: 241 M2 Bedrooms: 4 Bathrooms: 3 For Sale | Maid Room USD 505,000</p><div><strong>Broker/source:</strong> Berkshire Hathaway Aruba (Berkshire Hathaway Aruba)</div><div><strong>First detected:</strong> 2026-11-07</div><div style='margin:15px 0'><img src='https://bhhsaruba.com/storage/app/uploads/public/6ae/d4d/55c/thumb_25670_627_470_0_0_crop.webp' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://bhhsaruba.com/listings/alto-vista-53-b' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><h2 style='margin:0 0 8px;font-size:22px'>Walishali 14</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$655,000</div><div style='margin-bottom:8px'><strong>PRICE REDUCTION:</strong> $675,000 → $655,000 (3.0% reduction)</div><div><strong>Location:</strong> Ponton</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div><strong>Source area (scope unspecified):</strong> 201 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 5 beds · 3 baths</div><p style='margin:12px 0'>Spacious Family Home with Pool &amp; Separate Studio Apartment in Ponton, WalishaliDiscover a welcoming property in Ponton, Walishali, Aruba, offering space, comfort, and</p><div><strong>Broker/source:</strong> Bold Properties Aruba (Aruba Listings)</div><div><strong>First detected:</strong> 2026-11-10</div><div style='margin:15px 0'><img src='https://arubalistings.com/storage/app/uploads/public/6af/319/54e/6af31954e703a700915679.webp' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://arubalistings.com/sale/ponton/house-3794-walishali-14' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_reductions": [
-          "9028076de5931924bcb63cb0321d2da5d52843762e6b5a623c39bcfa803638fc",
-          "9051069e9a7c6e0c8f9ff355e4a834d7696871524965bda200e06ec5fd8a88e1"
-        ],
-        "pending_major_changes": []
-      },
-      "created_at": "2026-11-22T18:45:14.988008+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
