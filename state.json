@@ -15898,160 +15898,15 @@
       "last_seen_at": "2026-11-23T13:14:14.816200+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Kas Paloma 18 - B, Oranjestad, Aruba, Oranjestad, Aruba",
-      "url": "https://www.realtor.com/international/aw/kas-paloma-18-b-oranjestad-aruba-oranjestad-aruba-310121377336/",
-      "price": 710675.0,
-      "location": "Kas Paloma 18 - B, Oranjestad, Aruba, Oranjestad, Aruba",
-      "type": "House",
-      "beds": "6",
-      "baths": "5",
-      "size": "",
-      "building_area": "210 m²",
-      "land_area": "1,133 m²",
-      "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/8746b5ead2d0eb54001d193ddd1ab573.jpg",
-      "description": "House",
-      "source": "Realtor International Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-11-23T13:14:14.739605+00:00",
-      "source_type": "aggregator",
-      "history_key": "30e46c80f59ce9c654313d35c21bc31487b2c4e7",
-      "last_seen_at": "2026-11-23T13:14:14.739621+00:00",
-      "queued_at": "2026-11-23T13:15:28.871220+00:00"
-    },
-    {
-      "name": "San Nicolas, Sint Nicolaas, Aruba, Sint Nicolaas, Aruba",
-      "url": "https://www.realtor.com/international/aw/san-nicolas-sint-nicolaas-aruba-sint-nicolaas-aruba-310121377335/",
-      "price": 269000.0,
-      "location": "San Nicolas, Sint Nicolaas, Aruba, Sint Nicolaas, Aruba",
-      "type": "House",
-      "beds": "3",
-      "baths": "2",
-      "size": "",
-      "building_area": "192 m²",
-      "land_area": "727 m²",
-      "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/917887aacb625bf02907a2b026f9743c.jpg",
-      "description": "House",
-      "source": "Realtor International Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-11-23T13:14:14.816182+00:00",
-      "source_type": "aggregator",
-      "history_key": "e6bda20a339f1722b91f6c685eff7a34425cf98f",
-      "last_seen_at": "2026-11-23T13:14:14.816200+00:00",
-      "queued_at": "2026-11-23T13:15:28.871236+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
-    "new": [
-      {
-        "name": "Kas Paloma 18 - B, Oranjestad, Aruba, Oranjestad, Aruba",
-        "url": "https://www.realtor.com/international/aw/kas-paloma-18-b-oranjestad-aruba-oranjestad-aruba-310121377336/",
-        "price": 710675.0,
-        "location": "Kas Paloma 18 - B, Oranjestad, Aruba, Oranjestad, Aruba",
-        "type": "House",
-        "beds": "6",
-        "baths": "5",
-        "size": "",
-        "building_area": "210 m²",
-        "land_area": "1,133 m²",
-        "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/8746b5ead2d0eb54001d193ddd1ab573.jpg",
-        "description": "House",
-        "source": "Realtor International Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-11-23T13:14:14.739605+00:00",
-        "source_type": "aggregator",
-        "history_key": "30e46c80f59ce9c654313d35c21bc31487b2c4e7",
-        "last_seen_at": "2026-11-23T13:14:14.739621+00:00"
-      },
-      {
-        "name": "San Nicolas, Sint Nicolaas, Aruba, Sint Nicolaas, Aruba",
-        "url": "https://www.realtor.com/international/aw/san-nicolas-sint-nicolaas-aruba-sint-nicolaas-aruba-310121377335/",
-        "price": 269000.0,
-        "location": "San Nicolas, Sint Nicolaas, Aruba, Sint Nicolaas, Aruba",
-        "type": "House",
-        "beds": "3",
-        "baths": "2",
-        "size": "",
-        "building_area": "192 m²",
-        "land_area": "727 m²",
-        "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/917887aacb625bf02907a2b026f9743c.jpg",
-        "description": "House",
-        "source": "Realtor International Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-11-23T13:14:14.816182+00:00",
-        "source_type": "aggregator",
-        "history_key": "e6bda20a339f1722b91f6c685eff7a34425cf98f",
-        "last_seen_at": "2026-11-23T13:14:14.816200+00:00"
-      }
-    ],
-    "reductions": [
-      {
-        "property": {
-          "name": "Walishali 14",
-          "url": "https://arubalistings.com/sale/ponton/house-3794-walishali-14",
-          "price": 655000.0,
-          "location": "Ponton",
-          "type": "House",
-          "beds": "5",
-          "baths": "3",
-          "size": "201 m²",
-          "building_area": "",
-          "land_area": "",
-          "image": "https://arubalistings.com/storage/app/uploads/public/6af/319/54e/6af31954e703a700915679.webp",
-          "description": "Spacious Family Home with Pool & Separate Studio Apartment in Ponton, WalishaliDiscover a welcoming property in Ponton, Walishali, Aruba, offering space, comfort, and",
-          "source": "Aruba Listings",
-          "mls": "",
-          "status": "available",
-          "detected_at": "2026-11-10T18:36:52.178275+00:00",
-          "broker": "Bold Properties Aruba",
-          "source_type": "aggregator",
-          "history_key": "f88829cbd2c575cfccd01ef547d0a47c66da6f0d",
-          "aliases": [
-            "https://arubalistings.com/sale/ponton/house-3794-walishali-14"
-          ]
-        },
-        "old": {
-          "name": "Walishali 14",
-          "url": "https://arubalistings.com/sale/ponton/house-3794-walishali-14",
-          "price": 675000.0,
-          "location": "Ponton",
-          "type": "House",
-          "beds": "5",
-          "baths": "3",
-          "size": "201 m²",
-          "building_area": "",
-          "land_area": "",
-          "image": "https://arubalistings.com/storage/app/uploads/public/6af/319/54e/6af31954e703a700915679.webp",
-          "description": "Spacious Family Home with Pool & Separate Studio Apartment in Ponton, WalishaliDiscover a welcoming property in Ponton, Walishali, Aruba, offering space, comfort, and",
-          "source": "Aruba Listings",
-          "mls": "",
-          "status": "ineligible",
-          "detected_at": "2026-11-10T18:36:52.178275+00:00",
-          "broker": "Bold Properties Aruba",
-          "source_type": "aggregator",
-          "history_key": "f88829cbd2c575cfccd01ef547d0a47c66da6f0d",
-          "aliases": [
-            "https://arubalistings.com/sale/ponton/house-3794-walishali-14"
-          ],
-          "change_candidate": {
-            "signature": "452fde8d87b0359ca91fbd1915721bed44484f66afda74e6108245a55c622301",
-            "observed_at": "2026-11-21T18:19:41.245038+00:00"
-          },
-          "last_seen_at": "2026-11-21T18:19:41.245043+00:00",
-          "last_checked_at": "2026-11-22T17:48:25.561987+00:00"
-        }
-      }
-    ],
+    "new": [],
+    "reductions": [],
     "major_changes": []
   },
-  "last_digest_date": "2026-11-22",
+  "last_digest_date": "2026-11-23",
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
@@ -21696,39 +21551,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 2 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Kas Paloma 18 - B, Oranjestad, Aruba, Oranjestad, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$710,675</div><div><strong>Location:</strong> Kas Paloma 18 - B, Oranjestad, Aruba, Oranjestad, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 210 m²</div><div><strong>Land area:</strong> 1,133 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 6 beds · 5 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-11-23</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/8746b5ead2d0eb54001d193ddd1ab573.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/kas-paloma-18-b-oranjestad-aruba-oranjestad-aruba-310121377336/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>San Nicolas, Sint Nicolaas, Aruba, Sint Nicolaas, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$269,000</div><div><strong>Location:</strong> San Nicolas, Sint Nicolaas, Aruba, Sint Nicolaas, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 192 m²</div><div><strong>Land area:</strong> 727 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 3 beds · 2 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-11-23</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/917887aacb625bf02907a2b026f9743c.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/san-nicolas-sint-nicolaas-aruba-sint-nicolaas-aruba-310121377335/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "222059431f2601eb588dbe1c2dc4032189a089c16a51d9fffac90d4e50342c1a",
-          "864a71b449c910c1c84e5a677b1787745c0fcb9c3bfbeb1282183985f63ad54c"
-        ]
-      },
-      "created_at": "2026-11-23T13:15:28.871742+00:00"
-    },
-    {
-      "kind": "digest",
-      "subject": "Aruba Property Daily Digest — Nov 23 — 2 new, 0 reductions",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Daily Digest</h1><p style='font-size:16px'><strong>2 new properties</strong><br><strong>0 price reductions</strong><br><strong>0 major changes</strong><br>352 qualifying properties currently detected across available sources.</p><h2>NEW SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Kas Paloma 18 - B, Oranjestad, Aruba, Oranjestad, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$710,675</div><div><strong>Location:</strong> Kas Paloma 18 - B, Oranjestad, Aruba, Oranjestad, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 210 m²</div><div><strong>Land area:</strong> 1,133 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 6 beds · 5 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-11-23</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/8746b5ead2d0eb54001d193ddd1ab573.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/kas-paloma-18-b-oranjestad-aruba-oranjestad-aruba-310121377336/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>San Nicolas, Sint Nicolaas, Aruba, Sint Nicolaas, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$269,000</div><div><strong>Location:</strong> San Nicolas, Sint Nicolaas, Aruba, Sint Nicolaas, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 192 m²</div><div><strong>Land area:</strong> 727 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 3 beds · 2 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-11-23</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/917887aacb625bf02907a2b026f9743c.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/san-nicolas-sint-nicolaas-aruba-sint-nicolaas-aruba-310121377335/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding:14px;background:#f5f5f5;border-radius:6px;font-size:13px'><strong>Source coverage:</strong> 15 sources checked successfully; 29 sources could not be checked during the latest run.</div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "date": "2026-11-23",
-        "activity": {
-          "new": [
-            "8733cf43611f60ca85a715466f1b64e4c5781375a7656f66a3aec4a79ac488b0",
-            "a39ae4568e82f8fcfbb58ff65f0e49354be4546432e9d2722b6bc1b0d80903f8"
-          ],
-          "reductions": [
-            "bf497eb394a96aacd2bab76d0b288bab80306bb31fbc9c10c151560c6bc27e1d"
-          ],
-          "major_changes": []
-        }
-      },
-      "created_at": "2026-11-23T13:15:28.872340+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
@@ -23251,5 +23074,5 @@
       "source": "RealLinkr / Aruba MLS"
     }
   ],
-  "last_digest_at": "2026-11-22T17:48:31.121192+00:00"
+  "last_digest_at": "2026-11-23T13:15:31.294781+00:00"
 }
