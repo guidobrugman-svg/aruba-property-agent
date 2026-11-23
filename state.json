@@ -15931,31 +15931,7 @@
       "last_seen_at": "2026-11-23T22:58:37.575303+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Van der Lindenstraat 7",
-      "url": "https://arubalistings.com/sale/san-nicolas/house-3832-van-der-lindenstraat-7",
-      "price": 210674.0,
-      "location": "San Nicolas",
-      "type": "House",
-      "beds": "3",
-      "baths": "2",
-      "size": "138 m²",
-      "building_area": "",
-      "land_area": "",
-      "image": "https://arubalistings.com/storage/app/uploads/public/6b0/4b6/b5c/6b04b6b5ce167260189100.webp",
-      "description": "Discover the Potential of Van Der Lindenstraat 7, San Nicolas!An affordable opportunity to own a home with additional living space in Aruba!Welcome to Van Der Lindenstraat 7,",
-      "source": "Aruba Listings",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-11-23T22:58:37.575287+00:00",
-      "broker": "RE/MAX Aruba",
-      "source_type": "aggregator",
-      "history_key": "3b63a1c01acd10d4f26a4407109fe6be0b0516f6",
-      "last_seen_at": "2026-11-23T22:58:37.575303+00:00",
-      "queued_at": "2026-11-23T22:59:58.951103+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
@@ -21609,19 +21585,7 @@
       "consecutive_failures": 0
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 1 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Van der Lindenstraat 7</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$210,674</div><div><strong>Location:</strong> San Nicolas</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> Not provided by source</div><div><strong>Source area (scope unspecified):</strong> 138 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 3 beds · 2 baths</div><p style='margin:12px 0'>Discover the Potential of Van Der Lindenstraat 7, San Nicolas!An affordable opportunity to own a home with additional living space in Aruba!Welcome to Van Der Lindenstraat 7,</p><div><strong>Broker/source:</strong> RE/MAX Aruba (Aruba Listings)</div><div><strong>First detected:</strong> 2026-11-23</div><div style='margin:15px 0'><img src='https://arubalistings.com/storage/app/uploads/public/6b0/4b6/b5c/6b04b6b5ce167260189100.webp' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://arubalistings.com/sale/san-nicolas/house-3832-van-der-lindenstraat-7' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "f8dd2b899a4c3d9743e1a7db707574b0701e78b34c6cf168a1108307a73865b2"
-        ]
-      },
-      "created_at": "2026-11-23T22:59:58.951648+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
