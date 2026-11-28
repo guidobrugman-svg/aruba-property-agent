@@ -16278,146 +16278,15 @@
       "last_seen_at": "2026-11-28T13:39:14.485977+00:00"
     }
   },
-  "pending_new": [
-    {
-      "name": "Two-Apartment complex Catalina",
-      "url": "https://bhhsaruba.com/listings/apartment-complex-ponton",
-      "price": 562000.0,
-      "location": "",
-      "type": "Apartment Complex",
-      "beds": "4",
-      "baths": "3",
-      "size": "425 M2",
-      "building_area": "191 m²",
-      "land_area": "425 m²",
-      "image": "https://bhhsaruba.com/storage/app/uploads/public/6b0/a54/20b/thumb_25849_627_470_0_0_crop.webp",
-      "description": "Commercial For Sale New listing Property type: Commercial Lot size: 425 M2 Built up size: 191 M2 Bedrooms: 4 Bathrooms: 3 For Sale USD 562,000",
-      "source": "Berkshire Hathaway Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-11-28T13:39:14.355352+00:00",
-      "source_type": "direct_broker",
-      "history_key": "90ed29d0c0ede6a151d8c07edc6e3965e14fbaf5",
-      "last_seen_at": "2026-11-28T13:39:14.355368+00:00",
-      "queued_at": "2026-11-28T13:40:20.820265+00:00"
-    },
-    {
-      "name": "Caya Soeur Meletia 16, Oranjestad, Aruba, Oranjestad, Aruba",
-      "url": "https://www.realtor.com/international/aw/caya-soeur-meletia-16-oranjestad-aruba-oranjestad-aruba-310121447150/",
-      "price": 786516.0,
-      "location": "Caya Soeur Meletia 16, Oranjestad, Aruba, Oranjestad, Aruba",
-      "type": "House",
-      "beds": "4",
-      "baths": "3",
-      "size": "",
-      "building_area": "233 m²",
-      "land_area": "815 m²",
-      "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/0ac598c8ce96982dbd6ba6a6f13119ed.jpg",
-      "description": "House",
-      "source": "Realtor International Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-11-28T13:39:14.414418+00:00",
-      "source_type": "aggregator",
-      "history_key": "4677ebb43beabe86812b631cea200347c0b21e45",
-      "last_seen_at": "2026-11-28T13:39:14.414431+00:00",
-      "queued_at": "2026-11-28T13:40:20.820283+00:00"
-    },
-    {
-      "name": "Paradera 157K, Paradera, Aruba, Paradera, Aruba",
-      "url": "https://www.realtor.com/international/aw/paradera-157k-paradera-aruba-paradera-aruba-310121447134/",
-      "price": 477528.0,
-      "location": "Paradera 157K, Paradera, Aruba, Paradera, Aruba",
-      "type": "House",
-      "beds": "6",
-      "baths": "3",
-      "size": "",
-      "building_area": "184 m²",
-      "land_area": "749 m²",
-      "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/2cfc3d61c8271bc7cf0069f17d1a84d7.jpg",
-      "description": "House",
-      "source": "Realtor International Aruba",
-      "mls": "",
-      "status": "available",
-      "detected_at": "2026-11-28T13:39:14.485964+00:00",
-      "source_type": "aggregator",
-      "history_key": "31a79c5160cc4e13ef85dfe676452a9dd0b9bd02",
-      "last_seen_at": "2026-11-28T13:39:14.485977+00:00",
-      "queued_at": "2026-11-28T13:40:20.820286+00:00"
-    }
-  ],
+  "pending_new": [],
   "pending_reductions": [],
   "pending_major_changes": [],
   "daily_activity": {
-    "new": [
-      {
-        "name": "Two-Apartment complex Catalina",
-        "url": "https://bhhsaruba.com/listings/apartment-complex-ponton",
-        "price": 562000.0,
-        "location": "",
-        "type": "Apartment Complex",
-        "beds": "4",
-        "baths": "3",
-        "size": "425 M2",
-        "building_area": "191 m²",
-        "land_area": "425 m²",
-        "image": "https://bhhsaruba.com/storage/app/uploads/public/6b0/a54/20b/thumb_25849_627_470_0_0_crop.webp",
-        "description": "Commercial For Sale New listing Property type: Commercial Lot size: 425 M2 Built up size: 191 M2 Bedrooms: 4 Bathrooms: 3 For Sale USD 562,000",
-        "source": "Berkshire Hathaway Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-11-28T13:39:14.355352+00:00",
-        "source_type": "direct_broker",
-        "history_key": "90ed29d0c0ede6a151d8c07edc6e3965e14fbaf5",
-        "last_seen_at": "2026-11-28T13:39:14.355368+00:00"
-      },
-      {
-        "name": "Caya Soeur Meletia 16, Oranjestad, Aruba, Oranjestad, Aruba",
-        "url": "https://www.realtor.com/international/aw/caya-soeur-meletia-16-oranjestad-aruba-oranjestad-aruba-310121447150/",
-        "price": 786516.0,
-        "location": "Caya Soeur Meletia 16, Oranjestad, Aruba, Oranjestad, Aruba",
-        "type": "House",
-        "beds": "4",
-        "baths": "3",
-        "size": "",
-        "building_area": "233 m²",
-        "land_area": "815 m²",
-        "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/0ac598c8ce96982dbd6ba6a6f13119ed.jpg",
-        "description": "House",
-        "source": "Realtor International Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-11-28T13:39:14.414418+00:00",
-        "source_type": "aggregator",
-        "history_key": "4677ebb43beabe86812b631cea200347c0b21e45",
-        "last_seen_at": "2026-11-28T13:39:14.414431+00:00"
-      },
-      {
-        "name": "Paradera 157K, Paradera, Aruba, Paradera, Aruba",
-        "url": "https://www.realtor.com/international/aw/paradera-157k-paradera-aruba-paradera-aruba-310121447134/",
-        "price": 477528.0,
-        "location": "Paradera 157K, Paradera, Aruba, Paradera, Aruba",
-        "type": "House",
-        "beds": "6",
-        "baths": "3",
-        "size": "",
-        "building_area": "184 m²",
-        "land_area": "749 m²",
-        "image": "https://s1.rea.global/img/400x320-fit/realtor_global/aw/2cfc3d61c8271bc7cf0069f17d1a84d7.jpg",
-        "description": "House",
-        "source": "Realtor International Aruba",
-        "mls": "",
-        "status": "available",
-        "detected_at": "2026-11-28T13:39:14.485964+00:00",
-        "source_type": "aggregator",
-        "history_key": "31a79c5160cc4e13ef85dfe676452a9dd0b9bd02",
-        "last_seen_at": "2026-11-28T13:39:14.485977+00:00"
-      }
-    ],
+    "new": [],
     "reductions": [],
     "major_changes": []
   },
-  "last_digest_date": "2026-11-27",
+  "last_digest_date": "2026-11-28",
   "source_health": {
     "Aruba Brokers": {
       "status": "ok",
@@ -22574,39 +22443,7 @@
       "last_success_at": "2026-11-25T22:47:48.000372+00:00"
     }
   },
-  "outbox": [
-    {
-      "kind": "new",
-      "subject": "Aruba Property Alert — 3 new",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Alert</h1><h2>NEW PROPERTIES</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Two-Apartment complex Catalina</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$562,000</div><div><strong>Location:</strong> Not provided by source</div><div><strong>Property type:</strong> Apartment Complex</div><div><strong>Building / built-up area:</strong> 191 m²</div><div><strong>Land area:</strong> 425 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 4 beds · 3 baths</div><p style='margin:12px 0'>Commercial For Sale New listing Property type: Commercial Lot size: 425 M2 Built up size: 191 M2 Bedrooms: 4 Bathrooms: 3 For Sale USD 562,000</p><div><strong>Broker/source:</strong> Berkshire Hathaway Aruba (Berkshire Hathaway Aruba)</div><div><strong>First detected:</strong> 2026-11-28</div><div style='margin:15px 0'><img src='https://bhhsaruba.com/storage/app/uploads/public/6b0/a54/20b/thumb_25849_627_470_0_0_crop.webp' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://bhhsaruba.com/listings/apartment-complex-ponton' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Caya Soeur Meletia 16, Oranjestad, Aruba, Oranjestad, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$786,516</div><div><strong>Location:</strong> Caya Soeur Meletia 16, Oranjestad, Aruba, Oranjestad, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 233 m²</div><div><strong>Land area:</strong> 815 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 4 beds · 3 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-11-28</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/0ac598c8ce96982dbd6ba6a6f13119ed.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/caya-soeur-meletia-16-oranjestad-aruba-oranjestad-aruba-310121447150/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Paradera 157K, Paradera, Aruba, Paradera, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$477,528</div><div><strong>Location:</strong> Paradera 157K, Paradera, Aruba, Paradera, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 184 m²</div><div><strong>Land area:</strong> 749 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 6 beds · 3 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-11-28</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/2cfc3d61c8271bc7cf0069f17d1a84d7.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/paradera-157k-paradera-aruba-paradera-aruba-310121447134/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "pending_new": [
-          "f34e4e993d44d304b8ea66957e1009ae2c62acc91b085b27acdc3542eab32e04",
-          "44981a557f0d3a331d60c953cc1f1931b001e2da1bc37b170269b338ae189f8e",
-          "9c947e4972e789ee81c590d9587ed2d25ea316276c8ba6cc65ada22a1dadf9a3"
-        ]
-      },
-      "created_at": "2026-11-28T13:40:20.820862+00:00"
-    },
-    {
-      "kind": "digest",
-      "subject": "Aruba Property Daily Digest — Nov 28 — 3 new, 0 reductions",
-      "html": "<html><body style='font-family:Arial,sans-serif;max-width:760px;margin:auto;padding:20px;color:#222'><h1>Aruba Property Daily Digest</h1><p style='font-size:16px'><strong>3 new properties</strong><br><strong>0 price reductions</strong><br><strong>0 major changes</strong><br>339 qualifying properties currently detected across available sources.</p><h2>NEW SINCE LAST DIGEST</h2><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Caya Soeur Meletia 16, Oranjestad, Aruba, Oranjestad, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$786,516</div><div><strong>Location:</strong> Caya Soeur Meletia 16, Oranjestad, Aruba, Oranjestad, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 233 m²</div><div><strong>Land area:</strong> 815 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 4 beds · 3 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-11-28</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/0ac598c8ce96982dbd6ba6a6f13119ed.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/caya-soeur-meletia-16-oranjestad-aruba-oranjestad-aruba-310121447150/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='padding:20px 0;border-bottom:1px solid #ddd'><div style='font-weight:700;color:#174f36;margin-bottom:8px'>NEW PROPERTY</div><h2 style='margin:0 0 8px;font-size:22px'>Paradera 157K, Paradera, Aruba, Paradera, Aruba</h2><div style='font-size:24px;font-weight:700;margin-bottom:12px'>$477,528</div><div><strong>Location:</strong> Paradera 157K, Paradera, Aruba, Paradera, Aruba</div><div><strong>Property type:</strong> House</div><div><strong>Building / built-up area:</strong> 184 m²</div><div><strong>Land area:</strong> 749 m²</div><div style='margin-top:8px'><strong>Development checks — listing claims:</strong></div><div><strong>Ownership:</strong> Unknown — not stated in collected source information</div><div><strong>Zoning:</strong> Unknown — not stated in collected source information</div><div><strong>Building restrictions:</strong> Unknown — not stated in collected source information</div><div><strong>Apartment construction:</strong> Unknown — not stated in collected source information</div><div style='font-size:12px'>Apartment construction permission remains unverified; confirm restrictions before relying on listing claims.</div><div><strong>Details:</strong> 6 beds · 3 baths</div><p style='margin:12px 0'>House</p><div><strong>Broker/source:</strong> Realtor International Aruba (Realtor International Aruba)</div><div><strong>First detected:</strong> 2026-11-28</div><div style='margin:15px 0'><img src='https://s1.rea.global/img/400x320-fit/realtor_global/aw/2cfc3d61c8271bc7cf0069f17d1a84d7.jpg' style='max-width:100%;height:auto;border-radius:8px' alt='Property image'></div><p style='margin-top:16px'><a href='https://www.realtor.com/international/aw/paradera-157k-paradera-aruba-paradera-aruba-310121447134/' style='display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;font-weight:600'>VIEW PROPERTY</a></p></div><div style='margin-top:25px;padding:14px;background:#f5f5f5;border-radius:6px;font-size:13px'><strong>Source coverage:</strong> 17 sources checked successfully; 27 sources could not be checked during the latest run.</div><div style='margin-top:25px;padding-top:15px;border-top:1px solid #ddd;font-size:12px;color:#555'><a href='https://github.com/guidobrugman-svg/aruba-property-agent/actions/workflows/monitor.yml'>Manage alerts in GitHub</a>. Disable the monitoring workflow to stop alerts.</div></body></html>",
-      "snapshot": {
-        "date": "2026-11-28",
-        "activity": {
-          "new": [
-            "2dac79ec9008748dbba7e90d3df9f0780018f07395b6785c11446ccbef9e2d29",
-            "4d7ce757dae44bac25b92023651e5365f7caf2878ef0eca9f5487ee1b0ee9e61",
-            "136759728f3cd41b933594bfe25588ae637d741118c2a51260afdce602d0cf6f"
-          ],
-          "reductions": [],
-          "major_changes": []
-        }
-      },
-      "created_at": "2026-11-28T13:40:20.821439+00:00"
-    }
-  ],
+  "outbox": [],
   "legacy_queues": {
     "pending_new": [],
     "pending_reductions": [],
@@ -24129,5 +23966,5 @@
       "source": "RealLinkr / Aruba MLS"
     }
   ],
-  "last_digest_at": "2026-11-27T14:52:41.965131+00:00"
+  "last_digest_at": "2026-11-28T13:40:23.301761+00:00"
 }
